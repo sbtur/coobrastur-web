@@ -1,5 +1,5 @@
 import { NavigationMenuListProps } from '@radix-ui/react-navigation-menu';
-import { NavigationMenuList } from '@workspace/ui/external/ui/shadcn/navigation-menu';
+import { NavigationMenuList } from '../navigation-menu';
 
 type ListProps = NavigationMenuListProps & {
   className?: string;

@@ -1,5 +1,5 @@
 import { NavigationMenuTriggerProps } from '@radix-ui/react-navigation-menu';
-import { NavigationMenuTrigger } from '@workspace/ui/external/ui/shadcn/navigation-menu';
+import { NavigationMenuTrigger } from '../navigation-menu';
 
 type TriggerProps = NavigationMenuTriggerProps & {
   className?: string;

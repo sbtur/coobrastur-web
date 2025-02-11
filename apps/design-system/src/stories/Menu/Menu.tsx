@@ -29,7 +29,7 @@ export const Default: Story = {
           <Menu.Content>
             <ul className='grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]'>
               <li className='row-span-3'>
-                <Menu.Item asChild>
+                <Menu.Link asChild>
                   <a
                     className='flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md'
                     href='/'
@@ -43,24 +43,24 @@ export const Default: Story = {
                       Source.
                     </p>
                   </a>
-                </Menu.Item>
+                </Menu.Link>
               </li>
-              <Menu.Item>
+              <Menu.Link>
                 Re-usable components built using Radix UI and Tailwind CSS.
-              </Menu.Item>
-              <Menu.Item>
+              </Menu.Link>
+              <Menu.Link>
                 How to install dependencies and structure your app.
-              </Menu.Item>
-              <Menu.Item>
+              </Menu.Link>
+              <Menu.Link>
                 Styles for headings, paragraphs, lists...etc
-              </Menu.Item>
+              </Menu.Link>
             </ul>
           </Menu.Content>
         </Menu.Item>
         <Menu.Item>
-          <a href='/docs'>
+          <Menu.Link>
             <Menu.Link>Documentation</Menu.Link>
-          </a>
+          </Menu.Link>
         </Menu.Item>
       </Menu.List>
     </Menu.Root>

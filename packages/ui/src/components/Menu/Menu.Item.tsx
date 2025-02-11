@@ -1,5 +1,5 @@
 import { NavigationMenuItemProps } from '@radix-ui/react-navigation-menu';
-import { NavigationMenuItem } from '@workspace/ui/external/ui/shadcn/navigation-menu';
+import { NavigationMenuItem } from '../navigation-menu';
 
 type ItemProps = NavigationMenuItemProps & {
   children: React.ReactNode;

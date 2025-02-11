@@ -1,6 +1,6 @@
 import { cn } from '@workspace/ui/lib/utils';
 import { NavigationMenuLinkProps } from '@radix-ui/react-navigation-menu';
-import { NavigationMenuLink } from '@workspace/ui/external/ui/shadcn/navigation-menu';
+import { NavigationMenuLink } from '../navigation-menu';
 
 type LinkProps = NavigationMenuLinkProps & {
   children: React.ReactNode;
