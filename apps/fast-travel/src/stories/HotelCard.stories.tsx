@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Image from 'next/image';
+import NextImage from 'next/image';
 import { HotelCard, type HotelCardProps } from '@workspace/ui/components';
 
 const meta = {
@@ -18,6 +18,7 @@ type Story = StoryObj<typeof HotelCard>;
 const baseArgs: HotelCardProps = {
   title: 'Sky Borges Hotel Alpenhaus',
   address: 'Avenida Borges De Medeiros, 4206, Gramado, RS',
+  href: '#',
   image: {
     src: '/images/hotel.jpeg',
     alt: 'Sky Borges Hotel Alpenhaus - Luxury room with a view to the garden',
@@ -45,23 +46,11 @@ export const RightAligned: Story = {
 export const WithNextImage: Story = {
   args: {
     ...baseArgs,
-    renderImage: ({
-      src,
-      alt,
-      className,
-    }: {
-      src: string;
-      alt: string;
-      className: string;
-    }) => (
-      <Image
-        src={src}
-        alt={alt}
-        width={400}
-        height={300}
-        className={className}
-      />
-    ),
+    image: {
+      src: '/images/hotel.jpeg',
+      alt: 'Sky Borges Hotel Alpenhaus - Luxury room with a view to the garden',
+    },
+    renderImage: (props) => <NextImage {...props} />,
   },
 };
 
