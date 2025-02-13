@@ -13,7 +13,7 @@ const iconVariants = cva('inline-flex shrink-0', {
     color: {
       primary: 'text-primary',
       secondary: 'text-secondary',
-      muted: 'text-muted-foreground',
+      neutral: 'text-neutral-400',
       white: 'text-white',
     },
   },
