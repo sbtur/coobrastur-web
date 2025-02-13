@@ -66,8 +66,8 @@
   --color-neutral-900: 210 10% 24%; /* #383d41 */
   --color-neutral-950: 210 10% 15%; /* #22262a */
 
-  --font-family-primary: Montserrat, sans-serif;
-  --font-family-secondary: Source Sans Pro, sans-serif;
+  --font-family-primary: 'Montserrat', sans-serif;
+  --font-family-secondary: 'Source Sans Pro', sans-serif;
 
   --font-title-2xlarge: 64px;
   --font-title-xlarge: 48px;
@@ -224,8 +224,6 @@
     font-family: var(--font-family-secondary), sans-serif;
   }
 }
-
-
 
 @layer base {
   * {

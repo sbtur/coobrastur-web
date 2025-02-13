@@ -1,4 +1,5 @@
-export { Text } from './Text/Text';
-export { Title } from './Title/Title';
-export { Heading } from './Heading';
-export { Menu } from './Menu';
+export * from './Navigation';
+export * from './Blocks';
+export * from './Layouts';
+export * from './DataEntry';
+export * from './DataDisplay';

@@ -13,8 +13,8 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['var(--font-primary)', ...fontFamily.sans],
-        secondary: ['var(--font-secondary)', ...fontFamily.sans],
+        primary: ['var(--font-family-primary)', ...fontFamily.sans],
+        secondary: ['var(--font-family-secondary)', ...fontFamily.sans],
         sans: ['var(--font-sans)', ...fontFamily.sans],
         mono: ['var(--font-mono)', ...fontFamily.mono],
       },
