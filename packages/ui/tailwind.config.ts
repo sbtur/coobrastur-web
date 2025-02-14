@@ -44,7 +44,7 @@ const config = {
           hover: 'hsl(var(--color-success-hover))',
           focus: 'hsl(var(--color-success-focus))',
         },
-        destructive: {
+        danger: {
           DEFAULT: 'hsl(var(--color-danger))',
           foreground: 'hsl(var(--color-foreground))',
           hover: 'hsl(var(--color-danger-hover))',
