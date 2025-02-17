@@ -8,6 +8,9 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
+  args: {
+    children: 'HOTÉIS',
+  },
   tags: ['autodocs'],
 } satisfies Meta<typeof Badge>;
 
@@ -15,23 +18,17 @@ export default meta;
 
 type Story = StoryObj<typeof Badge>;
 
-export const Default: Story = {
-  args: {
-    children: 'HOTÉIS',
-  },
-};
+export const Default: Story = {};
 
 export const Secondary: Story = {
   args: {
     variant: 'secondary',
-    children: 'HOTÉIS',
   },
 };
 
 export const Outline: Story = {
   args: {
     variant: 'outline',
-    children: 'HOTÉIS',
   },
 };
 
