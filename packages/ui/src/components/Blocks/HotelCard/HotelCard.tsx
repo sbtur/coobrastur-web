@@ -9,7 +9,7 @@ import {
 } from '@workspace/ui/components';
 import { Text } from '@workspace/ui/components';
 import { cn } from '@workspace/ui/lib/utils';
-import { MD } from '@workspace/ui/lib/icons';
+import { MdArrowRightAlt } from '@workspace/ui/lib/icons';
 import { cva, VariantProps } from 'class-variance-authority';
 
 const hotelCardVariants = cva('', {
@@ -94,7 +94,7 @@ export const HotelCard = ({
         <Text>{address}</Text>
         <Link href={href} className={hotelCardVariants({ align })}>
           {actionLabel}
-          <Icon icon={MD.MdArrowRightAlt} />
+          <Icon icon={MdArrowRightAlt} />
         </Link>
       </div>
     </div>

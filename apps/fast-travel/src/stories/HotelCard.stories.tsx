@@ -47,6 +47,8 @@ export const WithNextImage: Story = {
   args: {
     ...baseArgs,
     image: {
+      width: 300,
+      height: 200,
       src: '/images/hotel.jpeg',
       alt: 'Sky Borges Hotel Alpenhaus - Luxury room with a view to the garden',
     },

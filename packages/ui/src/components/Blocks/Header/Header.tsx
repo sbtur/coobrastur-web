@@ -5,7 +5,7 @@ import {
   Icon,
   Button,
 } from '@workspace/ui/components';
-import { MD } from '@workspace/ui/lib/icons';
+import { MdKeyboardArrowDown, MdArrowRightAlt } from '@workspace/ui/lib/icons';
 
 export const Header = () => {
   return (
@@ -61,10 +61,10 @@ export const Header = () => {
         </Menu.Root>
         <div className='space-x-4'>
           <Button variant='outline-overlay'>
-            Acessos <Icon icon={MD.MdKeyboardArrowDown} color='white' />
+            Acessos <Icon icon={MdKeyboardArrowDown} color='white' />
           </Button>
           <Button variant='overlay'>
-            Simule sua assinatura <Icon icon={MD.MdArrowRightAlt} />
+            Simule sua assinatura <Icon icon={MdArrowRightAlt} />
           </Button>
         </div>
       </Container>

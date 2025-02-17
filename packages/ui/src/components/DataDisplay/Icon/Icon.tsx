@@ -10,7 +10,7 @@ const iconVariants = cva('inline-flex shrink-0', {
       lg: 'text-2xl', // 24px
       xl: 'text-3xl', // 30px
     },
-    color: {
+    variant: {
       primary: 'text-primary',
       secondary: 'text-secondary',
       neutral: 'text-neutral-400',
@@ -19,19 +19,13 @@ const iconVariants = cva('inline-flex shrink-0', {
   },
   defaultVariants: {
     size: 'md',
-    color: 'primary',
+    variant: 'primary',
   },
 });
 
 type IconVariants = VariantProps<typeof iconVariants>;
 
-export interface IconProps
-  extends Omit<IconBaseProps, 'color' | 'size'>,
-    IconVariants {
-  /**
-   * The icon component from react-icons
-   * @example icon={MdHome}
-   */
+export interface IconProps extends Omit<IconBaseProps, 'size'>, IconVariants {
   icon: IconType;
   className?: string;
 }
@@ -39,13 +33,13 @@ export interface IconProps
 export const Icon = ({
   icon: IconComponent,
   size,
-  color,
+  variant,
   className,
   ...props
 }: IconProps) => {
   return (
     <IconComponent
-      className={cn(iconVariants({ size, color }), className)}
+      className={cn(iconVariants({ size, variant }), className)}
       aria-hidden='true'
       {...props}
     />

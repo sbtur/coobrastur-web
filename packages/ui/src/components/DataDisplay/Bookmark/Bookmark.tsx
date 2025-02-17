@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { Icon } from '@workspace/ui/components';
-import { MD } from '@workspace/ui/lib/icons';
+import {
+  MdOutlineFavorite,
+  MdOutlineFavoriteBorder,
+} from '@workspace/ui/lib/icons';
 import { cn } from '@workspace/ui/lib/utils';
 const bookmarkVariants = cva(
   'flex items-center justify-center appearance-none border-0 p-0 rounded-full bg-white transition-colors',
@@ -43,11 +46,7 @@ export const Bookmark = ({
       aria-label={active ? 'Remove from favorites' : 'Add to favorites'}
     >
       <Icon
-        icon={
-          active || isHovered
-            ? MD.MdOutlineFavorite
-            : MD.MdOutlineFavoriteBorder
-        }
+        icon={active || isHovered ? MdOutlineFavorite : MdOutlineFavoriteBorder}
         color='neutral'
         className='w-1/2 h-1/2 transition-transform hover:scale-110'
       />

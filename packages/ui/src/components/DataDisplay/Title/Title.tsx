@@ -1,4 +1,3 @@
-import { forwardRef } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@workspace/ui/lib/utils';
 
@@ -26,7 +25,7 @@ const titleVariants = cva('font-bold', {
       neutral: 'text-white',
       success: 'text-success',
       warning: 'text-warning',
-      danger: 'text-destructive',
+      danger: 'text-danger',
     },
   },
   defaultVariants: {
@@ -43,24 +42,29 @@ export interface TitleProps
   truncate?: boolean;
 }
 
-export const Title = forwardRef<HTMLHeadingElement, TitleProps>(
-  ({ className, as, size, variant, truncate, children, ...props }, ref) => {
-    const Component = as || 'h2';
+export const Title = ({
+  className,
+  as,
+  size,
+  variant,
+  truncate,
+  children,
+  ...props
+}: TitleProps) => {
+  const Component = as || 'h2';
 
-    return (
-      <Component
-        className={cn(
-          titleVariants({ as, size, variant }),
-          truncate && 'truncate',
-          className
-        )}
-        ref={ref}
-        {...props}
-      >
-        {children}
-      </Component>
-    );
-  }
-);
+  return (
+    <Component
+      className={cn(
+        titleVariants({ as, size, variant }),
+        truncate && 'truncate',
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </Component>
+  );
+};
 
 Title.displayName = 'Title';

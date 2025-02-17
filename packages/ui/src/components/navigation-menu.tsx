@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import { cva } from 'class-variance-authority';
-import { MD } from '@workspace/ui/lib/icons';
+import { MdKeyboardArrowDown } from '@workspace/ui/lib/icons';
 import { cn } from '@workspace/ui/lib/utils';
 
 const NavigationMenu = React.forwardRef<
@@ -53,7 +53,7 @@ const NavigationMenuTrigger = React.forwardRef<
     {...props}
   >
     {children}{' '}
-    <MD.MdKeyboardArrowDown
+    <MdKeyboardArrowDown
       className='relative top-[1px] ml-1 h-5 w-5 transition duration-200 group-data-[state=open]:rotate-180'
       aria-hidden='true'
     />

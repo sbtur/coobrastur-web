@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Badge, Icon } from '@workspace/ui/components';
-import { MD } from '@workspace/ui/lib/icons';
+import { MdHotel } from '@workspace/ui/lib/icons';
 
 const meta = {
   title: 'DataDisplay/Badge',
@@ -57,7 +57,7 @@ export const WithIcon: Story = {
   args: {
     children: (
       <>
-        <Icon icon={MD.MdHotel} className='mr-1 h-4 w-4' />
+        <Icon icon={MdHotel} className='mr-1 h-4 w-4' />
         HOTÉIS
       </>
     ),

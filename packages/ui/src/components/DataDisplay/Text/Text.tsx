@@ -1,5 +1,4 @@
-import type React from 'react';
-import { forwardRef, type ElementType } from 'react';
+import { type ElementType } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@workspace/ui/lib/utils';
 
@@ -30,11 +29,11 @@ const textVariants = cva('', {
       justify: 'text-justify',
     },
     variant: {
-      base: 'text-base',
+      base: 'text-neutral-950',
       featured: 'text-primary',
       success: 'text-success',
       warning: 'text-warning',
-      danger: 'text-destructive',
+      danger: 'text-danger',
     },
   },
   defaultVariants: {
@@ -46,45 +45,39 @@ const textVariants = cva('', {
   },
 });
 
-export interface TextProps<T extends ElementType = 'p'>
+export interface TextProps
   extends React.HTMLAttributes<HTMLElement>,
     VariantProps<typeof textVariants> {
-  as?: T;
+  as?: ElementType;
   truncate?: boolean;
 }
 
-export const Text = forwardRef(
-  <T extends ElementType = 'p'>(
-    {
-      className,
-      as,
-      size,
-      spacing,
-      weight,
-      align,
-      truncate,
-      variant,
-      children,
-      ...props
-    }: TextProps<T>,
-    ref: React.ComponentPropsWithRef<T>['ref']
-  ) => {
-    const Component = as || 'p';
+export const Text = ({
+  className,
+  as,
+  size,
+  spacing,
+  weight,
+  align,
+  truncate,
+  variant,
+  children,
+  ...props
+}: TextProps) => {
+  const Component = as || 'p';
 
-    return (
-      <Component
-        className={cn(
-          textVariants({ variant, size, spacing, weight, align }),
-          truncate && 'truncate',
-          className
-        )}
-        ref={ref}
-        {...props}
-      >
-        {children}
-      </Component>
-    );
-  }
-);
+  return (
+    <Component
+      className={cn(
+        textVariants({ variant, size, spacing, weight, align }),
+        truncate && 'truncate',
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </Component>
+  );
+};
 
 Text.displayName = 'Text';
