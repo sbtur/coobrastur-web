@@ -2,19 +2,22 @@ import { NavigationMenuListProps } from '@radix-ui/react-navigation-menu';
 import { NavigationMenuList } from '@workspace/ui/components/navigation-menu';
 import { cn } from '@workspace/ui/lib/utils';
 
-type ListProps = NavigationMenuListProps & {
+type DropdownProps = NavigationMenuListProps & {
   className?: string;
   children: React.ReactNode;
 };
 
-export const List = ({ className, children }: ListProps) => {
+export const Dropdown = ({ className, children }: DropdownProps) => {
   return (
     <NavigationMenuList
-      className={cn('flex space-x-6 lg:space-x-3', className)}
+      className={cn(
+        'grid w-[300px] gap-3 py-4 px-2 md:w-[400px] lg:grid-cols-2 lg:w-[500px]',
+        className
+      )}
     >
       {children}
     </NavigationMenuList>
   );
 };
 
-List.displayName = 'MenuList';
+Dropdown.displayName = 'MenuDropdown';

@@ -68,7 +68,7 @@ export const HotelCard = ({
     <div
       className={cn(
         'group relative flex w-full max-w-md flex-col overflow-hidden rounded-xl bg-white transition-all hover:shadow-md',
-        className
+        className,
       )}
       {...props}
     >
@@ -77,18 +77,18 @@ export const HotelCard = ({
           {...image}
           src={image.src}
           alt={image.alt}
-          className='h-full w-full object-cover transition-transform duration-300 group-hover:scale-105'
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
           renderComponent={renderImage}
         />
         <Bookmark
-          className='absolute left-4 top-4'
+          className="absolute left-4 top-4"
           onClick={() => console.log('Saved to favorites')}
         />
       </div>
       <div
         className={cn('flex flex-col gap-2 p-4', hotelCardVariants({ align }))}
       >
-        <Title as='h3' size='xsmall'>
+        <Title as="h3" size="xsmall">
           {title}
         </Title>
         <Text>{address}</Text>

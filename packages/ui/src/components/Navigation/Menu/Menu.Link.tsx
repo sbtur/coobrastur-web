@@ -11,7 +11,7 @@ export const Link = ({ className, children }: LinkProps) => {
   return (
     <NavigationMenuLink
       className={cn(
-        'font-secondary text-white hover:text-primary-hover focus:text-primary-focus cursor-pointer',
+        'font-secondary text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 cursor-pointer [.isLight_&]:text-white',
         className
       )}
     >

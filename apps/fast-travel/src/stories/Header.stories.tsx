@@ -1,23 +1,160 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Header } from '@workspace/ui/components';
+import {
+  Button,
+  Container,
+  Icon,
+  Image,
+  Menu,
+  Wrapper,
+} from '@workspace/ui/components';
+import { MdKeyboardArrowDown } from '@workspace/ui/lib/icons';
+import ImageNext from 'next/image';
+
+const HeaderStory = () => <div />;
 
 const meta = {
   title: 'Blocks/Header',
-  component: Header,
+  component: HeaderStory,
   parameters: {
     layout: 'centered',
-    backgrounds: {
-      default: 'primary',
-    },
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof Header>;
+} satisfies Meta<typeof HeaderStory>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    children: 'Header content',
+  render: () => (
+    <Wrapper>
+      <Container className='py-6 px-4 bg-white'>
+        <div className='logo'>
+          <Image
+            src='/images/logo-grupro-coobrastur-dark.png'
+            alt='Logo Grupo Coobrastur'
+            width={245}
+            height={40}
+            renderComponent={({ ...props }) => <ImageNext {...props} />}
+          />
+        </div>
+        <Menu.Root>
+          <Menu.List>
+            <Menu.Item>
+              <Menu.Trigger>O Clube</Menu.Trigger>
+              <Menu.Content>
+                <Menu.Dropdown>
+                  <Menu.DropdownItem>
+                    <Menu.DropdownLink href='#'>
+                      <div className='text-primary leading-none'>Sobre Nós</div>
+                      <p className='line-clamp-2 text-sm leading-snug text-gray-400'>
+                        Conheça a empresa
+                      </p>
+                    </Menu.DropdownLink>
+                  </Menu.DropdownItem>
+                  <Menu.DropdownItem>
+                    <Menu.DropdownLink href='#'>
+                      <div className='text-primary leading-none'>Planos</div>
+                      <p className='line-clamp-2 text-sm leading-snug text-gray-400'>
+                        Conheça os planos
+                      </p>
+                    </Menu.DropdownLink>
+                  </Menu.DropdownItem>
+                </Menu.Dropdown>
+              </Menu.Content>
+            </Menu.Item>
+            <Menu.Item>
+              <Menu.Link href='#'>Planos</Menu.Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Menu.Link href='#'>Agência de Viagens</Menu.Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Menu.Link href='#'>Destinos</Menu.Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Menu.Link href='#'>Hotéis</Menu.Link>
+            </Menu.Item>
+          </Menu.List>
+        </Menu.Root>
+        <div className='space-x-4'>
+          <Button size='lg'>
+            Acessos <Icon icon={MdKeyboardArrowDown} color='white' />
+          </Button>
+          <Button variant='outline' size='lg'>
+            Planos
+          </Button>
+        </div>
+      </Container>
+    </Wrapper>
+  ),
+};
+
+export const Light: Story = {
+  parameters: {
+    backgrounds: {
+      default: 'primary',
+    },
   },
+  render: () => (
+    <Wrapper>
+      <Container as='header' className='py-6 px-4 isLight'>
+        <div className='logo'>
+          <Image
+            src='/images/logo-grupro-coobrastur-light.png'
+            alt='Logo Grupo Coobrastur'
+            width={245}
+            height={40}
+            renderComponent={({ ...props }) => <ImageNext {...props} />}
+          />
+        </div>
+        <Menu.Root>
+          <Menu.List>
+            <Menu.Item>
+              <Menu.Trigger>O Clube</Menu.Trigger>
+              <Menu.Content>
+                <Menu.Dropdown>
+                  <Menu.DropdownItem>
+                    <Menu.DropdownLink href='#'>
+                      <div className='text-primary leading-none'>Sobre Nós</div>
+                      <p className='line-clamp-2 text-sm leading-snug text-gray-400'>
+                        Conheça a empresa
+                      </p>
+                    </Menu.DropdownLink>
+                  </Menu.DropdownItem>
+                  <Menu.DropdownItem>
+                    <Menu.DropdownLink href='#'>
+                      <div className='text-primary leading-none'>Planos</div>
+                      <p className='line-clamp-2 text-sm leading-snug text-gray-400'>
+                        Conheça os planos
+                      </p>
+                    </Menu.DropdownLink>
+                  </Menu.DropdownItem>
+                </Menu.Dropdown>
+              </Menu.Content>
+            </Menu.Item>
+            <Menu.Item>
+              <Menu.Link href='#'>Planos</Menu.Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Menu.Link href='#'>Agência de Viagens</Menu.Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Menu.Link href='#'>Destinos</Menu.Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Menu.Link href='#'>Hotéis</Menu.Link>
+            </Menu.Item>
+          </Menu.List>
+        </Menu.Root>
+        <div className='space-x-4'>
+          <Button size='lg'>
+            Acessos <Icon icon={MdKeyboardArrowDown} color='white' />
+          </Button>
+          <Button variant='outline-white' size='lg'>
+            Planos
+          </Button>
+        </div>
+      </Container>
+    </Wrapper>
+  ),
 };

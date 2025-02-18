@@ -6,65 +6,59 @@
 @tailwind utilities;
 
 :root {
-  --color-blue-50: 208 100% 97%; /* #eef7ff */
-  --color-blue-100: 212 100% 93%; /* #daebff */
-  --color-blue-200: 211 100% 87%; /* #bdddff */
-  --color-blue-300: 209 100% 78%; /* #90c9ff */
-  --color-blue-400: 211 100% 65%; /* #4da3ff */ /* main */
-  --color-blue-500: 215 97% 60%; /* #3588fc */
-  --color-blue-600: 219 88% 53%; /* #1f68f1 */
-  --color-blue-700: 222 81% 48%; /* #1752de */
-  --color-blue-800: 224 76% 40%; /* #1943b4 */
-  --color-blue-900: 222 69% 33%; /* #1a3c8e */
-  --color-blue-950: 224 61% 21%; /* #152656 */
+  --color-blue-50: #eef7ff;
+  --color-blue-100: #daebff;
+  --color-blue-200: #bdddff;
+  --color-blue-300: #90c9ff;
+  --color-blue-400: #4da3ff;
+  --color-blue-500: #3588fc;
+  --color-blue-600: #1f68f1;
+  --color-blue-700: #1752de;
+  --color-blue-800: #1943b4;
+  --color-blue-900: #1a3c8e;
+  --color-blue-950: #152656;
 
-  --color-green-50: 147 43% 96%; /* #f0f9f4 */
-  --color-green-100: 147 43% 91%; /* #daf1e3 */
-  --color-green-200: 147 43% 83%; /* #b7e3cb */
-  --color-green-300: 147 43% 73%; /* #88cdac */
-  --color-green-400: 147 43% 55%; /* #4eaa81 */ /* main */
-  --color-green-500: 147 43% 45%; /* #34956d */
-  --color-green-600: 147 43% 37%; /* #247756 */
-  --color-green-700: 147 43% 31%; /* #1d5f47 */
-  --color-green-800: 147 43% 26%; /* #194c3a */
-  --color-green-900: 147 43% 21%; /* #153f31 */
-  --color-green-950: 147 43% 12%; /* #0b231b */
+  --color-green-50: #f0f9f4;
+  --color-green-100: #daf1e3;
+  --color-green-200: #b7e3cb;
+  --color-green-300: #88cdac;
+  --color-green-400: #4eaa81;
+  --color-green-500: #34956d;
+  --color-green-600: #247756;
+  --color-green-700: #1d5f47;
+  --color-green-800: #194c3a;
+  --color-green-900: #153f31;
+  --color-green-950: #0b231b;
 
-  --color-yellow-50: 57 92% 95%; /* #fefde8 */
-  --color-yellow-100: 54 100% 88%; /* #fefcc3 */
-  --color-yellow-200: 54 100% 75%; /* #fff689 */
-  --color-yellow-300: 54 100% 60%; /* #fee946 */
-  --color-yellow-400: 54 95% 53%; /* #fbd814 */
-  --color-yellow-500: 48 89% 47%; /* #ebbe07 */
-  --color-yellow-600: 42 97% 43%; /* #db9f03 */ /* main */
-  --color-yellow-700: 36 90% 34%; /* #a26906 */
-  --color-yellow-800: 33 82% 27%; /* #86530d */
-  --color-yellow-900: 30 73% 23%; /* #724311 */
-  --color-yellow-950: 30 85% 14%; /* #422306 */
+  --color-yellow-50: #fefde8;
+  --color-yellow-100: #fefcc3;
+  --color-yellow-200: #fff689;
+  --color-yellow-300: #fee946;
+  --color-yellow-400: #fbd814;
+  --color-yellow-500: #ebbe07;
+  --color-yellow-600: #db9f03;
+  --color-yellow-700: #a26906;
+  --color-yellow-800: #86530d;
+  --color-yellow-900: #724311;
+  --color-yellow-950: #422306;
 
-  --color-red-50: 0 100% 97%; /* #fdf3f4 */
-  --color-red-100: 0 100% 95%; /* #fbe8ea */
-  --color-red-200: 0 100% 91%; /* #f6d5d8 */
-  --color-red-300: 0 100% 83%; /* #efb2b7 */
-  --color-red-400: 0 77% 72%; /* #e68692 */
-  --color-red-500: 0 61% 60%; /* #d85b6d */
-  --color-red-600: 0 55% 50%; /* #c33b56 */
-  --color-red-700: 0 57% 44%; /* #b0304c */ /* main */
-  --color-red-800: 0 57% 35%; /* #892841 */
-  --color-red-900: 0 54% 30%; /* #76253c */
-  --color-red-950: 0 61% 16%; /* #41101d */
+  --color-red-50: #fdf3f4;
+  --color-red-100: #fbe8ea;
+  --color-red-200: #f6d5d8;
+  --color-red-300: #efb2b7;
+  --color-red-400: #e68692;
+  --color-red-500: #d85b6d;
+  --color-red-600: #c33b56;
+  --color-red-700: #b0304c;
+  --color-red-800: #892841;
+  --color-red-900: #76253c;
+  --color-red-950: #41101d;
 
-  --color-neutral-50: 210 20% 97%; /* #f4f6f7 */
-  --color-neutral-100: 210 20% 92%; /* #e4e8e9 */
-  --color-neutral-200: 210 20% 83%; /* #cbd2d6 */
-  --color-neutral-300: 210 20% 71%; /* #a7b3b9 */
-  --color-neutral-400: 210 20% 55%; /* #7c8b94 */
-  --color-neutral-500: 210 10% 45%; /* #667680 */ /* main */
-  --color-neutral-600: 210 10% 36%; /* #535e67 */
-  --color-neutral-700: 210 10% 30%; /* #474f57 */
-  --color-neutral-800: 210 10% 27%; /* #3f454b */
-  --color-neutral-900: 210 10% 24%; /* #383d41 */
-  --color-neutral-950: 210 10% 15%; /* #22262a */
+  --color-neutral-500: #ffffff;
+  --color-neutral-600: #f2f4f5;
+  --color-neutral-700: #f2f4f5;
+  --color-neutral-800: #9fa9af;
+  --color-neutral-900: #667680;
 
   --font-family-primary: 'Montserrat', sans-serif;
   --font-family-secondary: 'Source Sans Pro', sans-serif;
@@ -115,13 +109,6 @@
   --color-warning-dark: var(--color-yellow-900);
   --color-warning-light: var(--color-yellow-300);
 
-  --color-highlight: 345 100% 55%;
-  --color-highlight-hover: 340 78% 50%;
-  --color-highlight-active: 340 78% 50%;
-  --color-highlight-focus: 340 78% 50%;
-  --color-highlight-dark: 348 62% 30%;
-  --color-highlight-light: 6 100% 70%;
-
   --color-feature: var(--color-primary);
   --color-feature-hover: var(--color-primary-hover);
   --color-feature-active: var(--color-primary-active);
@@ -129,16 +116,16 @@
   --color-feature-dark: var(--color-primary-dark);
   --color-feature-light: var(--color-primary-light);
 
-  --color-text: var(--color-neutral-500);
+  --color-text: var(--color-neutral-900);
   --color-foreground: 0, 0%, 100%;
   --color-background: 0, 0%, 100%;
-  --color-background-disabled: var(--color-neutral-300);
+  --color-background-disabled: var(--color-neutral-600);
 
-  --color-border: var(--color-neutral-400);
-  --color-border-hover: var(--color-neutral-500);
-  --color-border-active: var(--color-neutral-500);
-  --color-border-focus: var(--color-neutral-500);
-  --color-border-disabled: var(--color-neutral-300);
+  --color-border: var(--color-neutral-600);
+  --color-border-hover: var(--color-neutral-700);
+  --color-border-active: var(--color-neutral-700);
+  --color-border-focus: var(--color-neutral-700);
+  --color-border-disabled: var(--color-neutral-800);
 }
 
 @layer base {
@@ -212,7 +199,8 @@
   textarea,
   select,
   button {
-    font-family: var(--font-family-primary), sans-serif;
+    font-family: var(--font-family-secondary), sans-serif;
+    font-size: var(--font-body-large);
   }
 
   h1,

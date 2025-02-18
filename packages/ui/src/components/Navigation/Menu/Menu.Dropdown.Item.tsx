@@ -2,17 +2,17 @@ import { NavigationMenuItemProps } from '@radix-ui/react-navigation-menu';
 import { NavigationMenuItem } from '@workspace/ui/components/navigation-menu';
 import { cn } from '@workspace/ui/lib/utils';
 
-type ItemProps = NavigationMenuItemProps & {
+type DropdownItemProps = NavigationMenuItemProps & {
   children: React.ReactNode;
   className?: string;
 };
 
-export const Item = ({ className, children }: ItemProps) => {
+export const DropdownItem = ({ className, children }: DropdownItemProps) => {
   return (
-    <NavigationMenuItem className={cn('p-2 lg:p-1', className)}>
+    <NavigationMenuItem className={cn('p-2', className)}>
       {children}
     </NavigationMenuItem>
   );
 };
 
-Item.displayName = 'MenuItem';
+DropdownItem.displayName = 'DropdownItem';

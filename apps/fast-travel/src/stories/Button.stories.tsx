@@ -19,8 +19,8 @@ const meta = {
         'link',
         'success',
         'warning',
-        'overlay',
-        'outline-overlay',
+        'white',
+        'outline-white',
       ],
     },
     size: {
@@ -93,10 +93,10 @@ export const Warning: Story = {
   },
 };
 
-export const Overlay: Story = {
+export const White: Story = {
   args: {
-    variant: 'overlay',
-    children: 'Overlay',
+    variant: 'white',
+    children: 'White',
   },
   parameters: {
     backgrounds: {
@@ -105,10 +105,10 @@ export const Overlay: Story = {
   },
 };
 
-export const OutlineOverlay: Story = {
+export const OutlineWhite: Story = {
   args: {
-    variant: 'outline-overlay',
-    children: 'Outline Overlay',
+    variant: 'outline-white',
+    children: 'Outline White',
   },
   parameters: {
     backgrounds: {
