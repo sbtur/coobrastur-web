@@ -7,18 +7,18 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-primary/20 text-primary',
-        secondary: 'bg-secondary/20 text-secondary',
-        outline: 'border border-primary text-primary',
-        success: 'bg-success/20 text-success',
-        danger: 'bg-danger/20 text-danger',
-        warning: 'bg-warning/20 text-warning',
+        default: 'bg-secondary text-primary-100',
+        secondary: 'bg-primary text-secondary-100',
+        outline: 'border-2 border-primary-100 text-primary-100',
+        success: 'bg-success text-success-100',
+        danger: 'bg-danger text-danger-100',
+        warning: 'bg-warning text-warning-100',
       },
     },
     defaultVariants: {
       variant: 'default',
     },
-  }
+  },
 );
 
 export interface BadgeProps extends VariantProps<typeof badgeVariants> {

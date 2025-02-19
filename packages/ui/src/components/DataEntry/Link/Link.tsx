@@ -4,12 +4,12 @@ import { cva, VariantProps } from 'class-variance-authority';
 
 import { cn } from '@workspace/ui/lib/utils';
 
-const linkVariants = cva('mt-2 inline-flex items-center', {
+const linkVariants = cva('inline-flex items-center', {
   variants: {
     variant: {
-      primary: 'text-primary hover:text-primary-hover',
-      secondary: 'text-secondary hover:text-secondary-hover',
-      neutral: 'text-white hover:text-gray-400',
+      primary: 'text-highlight hover:text-highlight-hover',
+      secondary: 'text-secondary-300 hover:text-secondary-hover',
+      neutral: 'text-white hover:text-neutral',
     },
     size: {
       small: 'text-sm',
@@ -27,27 +27,23 @@ export interface LinkProps extends VariantProps<typeof linkVariants> {
   children: React.ReactNode;
   href: string;
   className?: string;
-  renderComponent?: (props: LinkProps) => React.ReactElement;
 }
 
 export const Link = ({
   children,
   href,
-  renderComponent,
   variant = 'primary',
   size,
+  className,
   ...props
 }: LinkProps) => {
-  const linkProps = {
-    children,
-    href,
-    className: cn(linkVariants({ variant, size }), props.className),
-    ...props,
-  };
-
-  if (renderComponent) {
-    return renderComponent(linkProps);
-  }
-
-  return <a {...linkProps}>{children}</a>;
+  return (
+    <a
+      className={cn(linkVariants({ variant, size }), className)}
+      href={href}
+      {...props}
+    >
+      {children}
+    </a>
+  );
 };

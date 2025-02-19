@@ -19,10 +19,10 @@ const meta = {
       options: [
         'primary',
         'secondary',
-        'neutral',
         'success',
         'warning',
         'danger',
+        'white',
       ],
     },
   },
@@ -45,10 +45,10 @@ export const Secondary: Story = {
   },
 };
 
-export const Neutral: Story = {
+export const White: Story = {
   args: {
-    variant: 'neutral',
-    children: 'Neutral Title',
+    variant: 'white',
+    children: 'White Title',
   },
   parameters: {
     backgrounds: {

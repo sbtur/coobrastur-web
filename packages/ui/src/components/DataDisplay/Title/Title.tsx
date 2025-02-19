@@ -21,12 +21,12 @@ const titleVariants = cva('font-bold', {
       '2xlarge': 'text-6xl',
     },
     variant: {
-      primary: 'text-primary-dark',
-      secondary: 'text-secondary',
-      neutral: 'text-white',
-      success: 'text-success',
-      warning: 'text-warning',
-      danger: 'text-danger',
+      primary: 'text-text-primary',
+      secondary: 'text-text-secondary',
+      success: 'text-text-success',
+      warning: 'text-text-warning',
+      danger: 'text-text-danger',
+      white: 'text-neutral-100',
     },
   },
   defaultVariants: {
@@ -59,7 +59,7 @@ export const Title = ({
       className={cn(
         titleVariants({ as, size, variant }),
         truncate && 'truncate',
-        className
+        className,
       )}
       {...props}
     >

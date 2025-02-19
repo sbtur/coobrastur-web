@@ -40,8 +40,8 @@ export const Heading = ({
     <Component
       className={cn(
         headingVariants({ align, spacing }),
-        'flex flex-col',
-        className
+        'w-full flex flex-col gap-3',
+        className,
       )}
     >
       {children}

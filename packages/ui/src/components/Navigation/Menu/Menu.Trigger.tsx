@@ -8,7 +8,7 @@ type TriggerProps = NavigationMenuTriggerProps & {
 
 export const Trigger = ({ children }: TriggerProps) => {
   return (
-    <NavigationMenuTrigger className='font-secondary text-neutral-900 [.isLight_&]:text-white'>
+    <NavigationMenuTrigger className="font-secondary text-neutral-600 [.isLight_&]:text-white">
       {children}
     </NavigationMenuTrigger>
   );

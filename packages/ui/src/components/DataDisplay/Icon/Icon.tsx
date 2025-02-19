@@ -1,4 +1,4 @@
-import type { IconBaseProps,IconType } from 'react-icons';
+import type { IconBaseProps, IconType } from 'react-icons';
 
 import { cva, type VariantProps } from 'class-variance-authority';
 
@@ -13,15 +13,15 @@ const iconVariants = cva('inline-flex shrink-0', {
       xl: 'text-3xl', // 30px
     },
     variant: {
-      primary: 'text-primary',
-      secondary: 'text-secondary',
+      primary: 'text-primary-100',
+      secondary: 'text-secondary-100',
       neutral: 'text-neutral-400',
       white: 'text-white',
     },
   },
   defaultVariants: {
     size: 'md',
-    variant: 'primary',
+    variant: 'neutral',
   },
 });
 
@@ -42,7 +42,7 @@ export const Icon = ({
   return (
     <IconComponent
       className={cn(iconVariants({ size, variant }), className)}
-      aria-hidden='true'
+      aria-hidden="true"
       {...props}
     />
   );

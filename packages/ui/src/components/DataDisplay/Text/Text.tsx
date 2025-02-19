@@ -14,6 +14,7 @@ const textVariants = cva('', {
       xlarge: 'text-2xl',
     },
     spacing: {
+      none: 'mb-0',
       small: 'mb-1',
       normal: 'mb-2',
       large: 'mb-4',
@@ -31,16 +32,16 @@ const textVariants = cva('', {
       justify: 'text-justify',
     },
     variant: {
-      base: 'text-neutral-950',
-      featured: 'text-primary',
-      success: 'text-success',
-      warning: 'text-warning',
-      danger: 'text-danger',
+      base: 'text-text',
+      featured: 'text-text-primary',
+      success: 'text-text-success',
+      warning: 'text-text-warning',
+      danger: 'text-text-danger',
     },
   },
   defaultVariants: {
     size: 'base',
-    spacing: 'normal',
+    spacing: 'none',
     weight: 'normal',
     align: 'left',
     variant: 'base',
@@ -73,7 +74,7 @@ export const Text = ({
       className={cn(
         textVariants({ variant, size, spacing, weight, align }),
         truncate && 'truncate',
-        className
+        className,
       )}
       {...props}
     >
