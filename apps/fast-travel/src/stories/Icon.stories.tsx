@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import { Icon } from '@workspace/ui/components';
 import { MdHome } from '@workspace/ui/lib/icons';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
   title: 'DataDisplay/Icon',

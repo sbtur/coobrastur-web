@@ -1,7 +1,6 @@
+import { Title } from '../Title';
 import { Heading as Root, type HeadingProps } from './Heading';
 import { HeadingText } from './Heading.Text';
-
-import { Title } from '../Title';
 
 export type { HeadingProps };
 

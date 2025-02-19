@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import ImageNext from 'next/image';
+
 import {
   Button,
   Container,
@@ -8,7 +9,8 @@ import {
   Wrapper,
 } from '@workspace/ui/components';
 import { MdKeyboardArrowDown } from '@workspace/ui/lib/icons';
-import ImageNext from 'next/image';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const HeaderStory = () => <div />;
 

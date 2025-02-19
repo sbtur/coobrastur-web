@@ -1,11 +1,16 @@
+'use client';
+
 import { useState } from 'react';
+
 import { cva, type VariantProps } from 'class-variance-authority';
+
 import { Icon } from '@workspace/ui/components';
 import {
   MdOutlineFavorite,
   MdOutlineFavoriteBorder,
 } from '@workspace/ui/lib/icons';
 import { cn } from '@workspace/ui/lib/utils';
+
 const bookmarkVariants = cva(
   'flex items-center justify-center appearance-none border-0 p-0 rounded-full bg-white transition-colors',
   {
@@ -19,7 +24,7 @@ const bookmarkVariants = cva(
     defaultVariants: {
       size: 'medium',
     },
-  }
+  },
 );
 
 export interface BookmarkProps extends VariantProps<typeof bookmarkVariants> {
@@ -38,7 +43,7 @@ export const Bookmark = ({
 
   return (
     <button
-      type='button'
+      type="button"
       className={cn(bookmarkVariants({ size }), className)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -47,8 +52,8 @@ export const Bookmark = ({
     >
       <Icon
         icon={active || isHovered ? MdOutlineFavorite : MdOutlineFavoriteBorder}
-        color='neutral'
-        className='w-1/2 h-1/2 transition-transform hover:scale-110'
+        color="neutral"
+        className="w-1/2 h-1/2 transition-transform hover:scale-110"
       />
     </button>
   );

@@ -1,5 +1,7 @@
-import type { IconType, IconBaseProps } from 'react-icons';
+import type { IconBaseProps,IconType } from 'react-icons';
+
 import { cva, type VariantProps } from 'class-variance-authority';
+
 import { cn } from '@workspace/ui/lib/utils';
 
 const iconVariants = cva('inline-flex shrink-0', {

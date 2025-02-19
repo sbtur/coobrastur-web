@@ -1,16 +1,18 @@
 import * as React from 'react';
+
+import { cva, VariantProps } from 'class-variance-authority';
+
 import {
   Bookmark,
   Icon,
   Image,
   ImageProps,
   Link,
+  Text,
   Title,
 } from '@workspace/ui/components';
-import { Text } from '@workspace/ui/components';
-import { cn } from '@workspace/ui/lib/utils';
 import { MdArrowRightAlt } from '@workspace/ui/lib/icons';
-import { cva, VariantProps } from 'class-variance-authority';
+import { cn } from '@workspace/ui/lib/utils';
 
 const hotelCardVariants = cva('', {
   variants: {

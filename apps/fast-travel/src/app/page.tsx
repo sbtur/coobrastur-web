@@ -1,5 +1,6 @@
-import { DropdownMenu } from '@workspace/ui/components';
 import Image from 'next/image';
+
+import { DropdownMenu } from '@workspace/ui/components';
 
 export default function Home() {
   return (

@@ -1,4 +1,4 @@
-import { DropdownMenuProps } from '@radix-ui/react-dropdown-menu';
+import { Button } from '@workspace/ui/components';
 import {
   DropdownMenu as Root,
   DropdownMenuContent,
@@ -13,7 +13,8 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@workspace/ui/components/dropdown-menu';
-import { Button } from '@workspace/ui/components';
+
+import { DropdownMenuProps } from '@radix-ui/react-dropdown-menu';
 
 export const DropdownMenu = ({ children }: DropdownMenuProps) => {
   return (

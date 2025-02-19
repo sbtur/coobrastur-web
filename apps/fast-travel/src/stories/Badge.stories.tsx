@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import { Badge, Icon } from '@workspace/ui/components';
 import { MdHotel } from '@workspace/ui/lib/icons';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
   title: 'DataDisplay/Badge',

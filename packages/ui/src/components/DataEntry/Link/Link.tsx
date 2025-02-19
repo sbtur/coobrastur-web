@@ -1,6 +1,8 @@
-import { cn } from '@workspace/ui/lib/utils';
-import { cva, VariantProps } from 'class-variance-authority';
 import React from 'react';
+
+import { cva, VariantProps } from 'class-variance-authority';
+
+import { cn } from '@workspace/ui/lib/utils';
 
 const linkVariants = cva('mt-2 inline-flex items-center', {
   variants: {
