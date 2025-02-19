@@ -17,4 +17,4 @@ quote_type = single
 max_line_length = 80
 
 [*.md]
-trim_trailing_whitespace = false
+trim_trailing_whitespace = falseinsert_final_newline = false
