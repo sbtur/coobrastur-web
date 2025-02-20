@@ -4,7 +4,7 @@ import { HOTELS } from './helpers/hotels';
 
 export const Hotels = () => {
   return (
-    <Container size="full" as="section" padding="lg" className="bg-white">
+    <Container size="full" as="section" padding="lg" className="bg-background">
       <Container>
         <Heading.Root align="center">
           <Badge variant="default">Hotéis</Badge>

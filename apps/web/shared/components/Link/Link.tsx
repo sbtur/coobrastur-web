@@ -14,7 +14,7 @@ type LinkProps = Omit<NextLinkProps, 'as' | 'passHref' | 'legacyBehavior'> &
   };
 
 export const Link = ({ href, children, ...props }: LinkProps) => (
-  <LinkNext href={href} passHref legacyBehavior>
+  <LinkNext href={href} passHref legacyBehavior {...props}>
     <LinkUI {...props}>{children}</LinkUI>
   </LinkNext>
 );

@@ -7,10 +7,11 @@ import { cn } from '@workspace/ui/lib/utils';
 const linkVariants = cva('inline-flex items-center', {
   variants: {
     variant: {
-      primary: 'text-highlight hover:text-highlight-hover',
-      secondary: 'text-secondary-300 hover:text-secondary-hover',
-      neutral: 'text-text',
-      white: 'text-white',
+      primary: 'text-highlight hover:text-highlight-hover [&_svg]:text-current',
+      secondary:
+        'text-secondary-300 hover:text-secondary-hover [&_svg]:text-current',
+      neutral: 'text-text hover:text-text-hover [&_svg]:text-current',
+      white: 'text-white [&_svg]:text-current',
     },
     size: {
       sm: 'text-sm',
@@ -28,6 +29,7 @@ export interface LinkProps extends VariantProps<typeof linkVariants> {
   children: ReactNode;
   href?: string;
   className?: string;
+  target?: string;
 }
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>(

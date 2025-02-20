@@ -7,44 +7,42 @@ import { cn } from '@workspace/ui/lib/utils';
 
 const iconVariants = cva('inline-flex shrink-0', {
   variants: {
-    size: {
-      sm: 'text-base', // 16px
-      md: 'text-xl', // 20px
-      lg: 'text-2xl', // 24px
-      xl: 'text-3xl', // 30px
-    },
     variant: {
-      primary: 'text-highlight',
-      secondary: 'text-primary',
-      neutral: 'text-neutral-400',
-      white: 'text-white',
+      primary: 'text-highlight group-[.hover]:text-highlight-hover',
+      secondary: 'text-primary group-[.hover]:text-secondary-hover',
+      neutral: 'text-neutral-400 group-[.hover]:text-neutral-500',
+      white: 'text-white group-[.hover]:text-neutral-100',
     },
   },
   defaultVariants: {
-    size: 'md',
     variant: 'neutral',
   },
 } as const);
 
+interface IconSize {
+  size?: 14 | 16 | 20 | 24;
+}
+
 type IconVariants = VariantProps<typeof iconVariants>;
 
-export interface IconProps extends IconVariants {
+export interface IconProps extends IconVariants, IconSize {
   icon: LucideIcon;
   className?: string;
 }
 
 export const Icon = ({
   icon: IconComponent,
-  size,
+  size = 16,
   variant,
   className,
   ...props
 }: IconProps) => {
-  const IconElement = IconComponent as unknown as React.ElementType;
+  const IconElement = IconComponent;
   return (
     <IconElement
-      className={cn(iconVariants({ size, variant }), className)}
+      className={cn(iconVariants({ variant }), className)}
       aria-hidden="true"
+      size={size}
       {...props}
     />
   );

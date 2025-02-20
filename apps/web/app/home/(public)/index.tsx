@@ -8,6 +8,7 @@ import { Advantages } from './interfaces/Advantages';
 import { Destinations } from './interfaces/Destinations';
 import { Hotels } from './interfaces/Hotels';
 import { Partners } from './interfaces/Partners';
+import { Support } from './interfaces/Support';
 import { Testimonials } from './interfaces/Testimonials';
 
 export function HomePublic() {
@@ -48,6 +49,8 @@ export function HomePublic() {
         <Advantages />
 
         <Destinations />
+
+        <Support />
 
         <Testimonials />
 
