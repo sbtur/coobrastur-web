@@ -1,6 +1,6 @@
 import { Badge, Container, Heading } from '@workspace/ui/components';
 
-import { Image } from '@components/Image';
+import { Image } from '@components';
 
 import { Card } from './components/Card';
 import { ADVANTAGES } from './helpers';

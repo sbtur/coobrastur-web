@@ -5,7 +5,7 @@
     "paths": {
       "@*": ["./*"],
       "@workspace/ui/*": ["../../packages/ui/src/*"],
-      "@components/*": ["./shared/components/*"],
+      "@components": ["./shared/components/"],
       "@providers": ["./shared/providers"],
       "@hooks/*": ["./shared/hooks/*"],
       "@utils/*": ["./shared/utils/*"]

@@ -1,8 +1,6 @@
 import { Button, Container, Heading } from '@workspace/ui/components';
 
-import { Footer } from '@components/Footer';
-import { Header } from '@components/Header';
-import { Image } from '@components/Image';
+import { Footer, Header, Image } from '@components';
 
 import { Advantages } from './interfaces/Advantages';
 import { Destinations } from './interfaces/Destinations';
@@ -39,6 +37,41 @@ export function HomePublic() {
             Quero Viajar
           </Button>
         </Heading.Root>
+
+        <div className="w-[718px] mx-auto absolute bottom-14 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4 p-8 rounded-full bg-white justify-around">
+          <div>
+            <Image
+              src="/images/shared/logos/coob.png"
+              alt="Coob+"
+              width={112}
+              height={25}
+            />
+          </div>
+          <div>
+            <Image
+              src="/images/shared/logos/viajar-faz-bem.png"
+              alt="Viajar Faz Bem"
+              width={101}
+              height={27}
+            />
+          </div>
+          <div>
+            <Image
+              src="/images/shared/logos/meridien.png"
+              alt="Meridien"
+              width={120}
+              height={35}
+            />
+          </div>
+          <div>
+            <Image
+              src="/images/shared/logos/banstur.png"
+              alt="Basntur"
+              width={125}
+              height={23}
+            />
+          </div>
+        </div>
       </Container>
 
       <Container size="full" className="relative z-10">

@@ -1,7 +1,7 @@
 import { Icon, IconProps, Text, Title } from '@workspace/ui/components';
 import { ArrowRight } from '@workspace/ui/lib/icons';
 
-import { Link } from '@components/Link';
+import { Link } from '@components';
 
 import { Image } from '@shared/components/Image';
 

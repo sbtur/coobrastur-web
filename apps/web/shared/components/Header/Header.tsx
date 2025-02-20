@@ -11,7 +11,7 @@ export function Header() {
     >
       <div className="logo">
         <Image
-          src="/images/shared/logo/logo-grupo-coobrastur-light.png"
+          src="/images/shared/logos/logo-grupo-coobrastur-light.png"
           alt="Logo Grupo Coobrastur"
           width={245}
           height={40}

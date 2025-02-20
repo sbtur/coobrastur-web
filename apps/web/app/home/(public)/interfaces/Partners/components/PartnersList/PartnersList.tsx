@@ -1,6 +1,6 @@
 import { Container } from '@workspace/ui/components';
 
-import { Image } from '@components/Image';
+import { Image } from '@components';
 
 import { PARTNERS } from '../../helpers';
 
