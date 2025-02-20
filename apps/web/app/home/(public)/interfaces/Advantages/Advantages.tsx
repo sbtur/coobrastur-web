@@ -3,7 +3,7 @@ import { Badge, Container, Heading } from '@workspace/ui/components';
 import { Image } from '@components/Image';
 
 import { Card } from './components/Card';
-import { ADVANTAGES } from './helpers/advantages';
+import { ADVANTAGES } from './helpers';
 
 export const Advantages = () => {
   return (

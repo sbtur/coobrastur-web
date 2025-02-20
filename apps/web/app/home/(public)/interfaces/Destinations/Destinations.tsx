@@ -1,6 +1,6 @@
 import { Badge, Container, Heading, HotelCard } from '@workspace/ui/components';
 
-import { DESTINATIONS } from './helpers/destinations';
+import { DESTINATIONS } from './helpers';
 
 export const Destinations = () => {
   return (
@@ -17,7 +17,7 @@ export const Destinations = () => {
           </Heading.Text>
         </Heading.Root>
 
-        <Container className="grid grid-cols-5 gap-2 px-20 mt-6">
+        <Container className="grid grid-cols-5 gap-2 mt-6">
           {DESTINATIONS.slice(0, 5).map(hotel => (
             <HotelCard
               size="sm"

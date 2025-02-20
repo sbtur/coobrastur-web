@@ -1,6 +1,6 @@
 import { Badge, Container, Heading, HotelCard } from '@workspace/ui/components';
 
-import { HOTELS } from './helpers/hotels';
+import { HOTELS } from './helpers';
 
 export const Hotels = () => {
   return (

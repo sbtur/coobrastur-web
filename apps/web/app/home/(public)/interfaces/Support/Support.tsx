@@ -3,7 +3,7 @@ import React from 'react';
 import { Badge, Container, Heading } from '@workspace/ui/components';
 
 import { Card } from './components/Card';
-import { SUPPORT } from './helpers/support';
+import { SUPPORT } from './helpers';
 
 export const Support = () => {
   return (
