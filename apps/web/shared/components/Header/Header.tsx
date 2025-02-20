@@ -3,15 +3,15 @@ import Image from 'next/image';
 import { Button, Container, Icon, Menu } from '@workspace/ui/components';
 import { MdKeyboardArrowDown } from '@workspace/ui/lib/icons';
 
-export function Header(): JSX.Element {
+export function Header() {
   return (
     <Container
       as="header"
-      className="py-6 px-4 border-b border-white/20 isLight"
+      className="flex items-center justify-between py-6 px-4 border-b border-white/20 isLight"
     >
       <div className="logo">
         <Image
-          src="/images/logo/logo-grupo-coobrastur-light.png"
+          src="/images/shared/logo/logo-grupo-coobrastur-light.png"
           alt="Logo Grupo Coobrastur"
           width={245}
           height={40}

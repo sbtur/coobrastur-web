@@ -1,3 +1,4 @@
+import React from 'react';
 import type { IconBaseProps, IconType } from 'react-icons';
 
 import { cva, type VariantProps } from 'class-variance-authority';
@@ -23,11 +24,13 @@ const iconVariants = cva('inline-flex shrink-0', {
     size: 'md',
     variant: 'neutral',
   },
-});
+} as const);
 
 type IconVariants = VariantProps<typeof iconVariants>;
 
-export interface IconProps extends Omit<IconBaseProps, 'size'>, IconVariants {
+export interface IconProps
+  extends Omit<IconBaseProps, 'size' | 'className'>,
+    IconVariants {
   icon: IconType;
   className?: string;
 }
@@ -39,8 +42,9 @@ export const Icon = ({
   className,
   ...props
 }: IconProps) => {
+  const IconElement = IconComponent as React.ElementType;
   return (
-    <IconComponent
+    <IconElement
       className={cn(iconVariants({ size, variant }), className)}
       aria-hidden="true"
       {...props}

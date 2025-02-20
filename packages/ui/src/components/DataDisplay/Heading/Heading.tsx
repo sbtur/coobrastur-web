@@ -5,9 +5,9 @@ import { cn } from '@workspace/ui/lib/utils';
 const headingVariants = cva('', {
   variants: {
     align: {
-      left: 'items-start',
-      center: 'items-center',
-      right: 'items-end',
+      left: 'items-start text-left',
+      center: 'items-center text-center',
+      right: 'items-end text-right',
     },
     spacing: {
       small: 'mb-2',
@@ -16,7 +16,7 @@ const headingVariants = cva('', {
       xlarge: 'mb-6',
     },
     defaultVariants: {
-      align: 'lef',
+      align: 'left',
       spacing: 'medium',
     },
   },
@@ -40,7 +40,7 @@ export const Heading = ({
     <Component
       className={cn(
         headingVariants({ align, spacing }),
-        'w-full flex flex-col gap-3',
+        'w-full flex flex-col gap-3 mx-auto',
         className,
       )}
     >

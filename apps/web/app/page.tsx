@@ -1,9 +1,6 @@
-import { type ReactNode } from 'react';
+import { HomePrivate, HomePublic } from './home';
 
-export default function Page(): ReactNode {
-  return (
-    <div className="flex items-center justify-center min-h-svh">
-      <h1>Hello there!</h1>
-    </div>
-  );
+const ISAUTHENTICATED = false;
+export default function Page() {
+  return ISAUTHENTICATED ? <HomePrivate /> : <HomePublic />;
 }

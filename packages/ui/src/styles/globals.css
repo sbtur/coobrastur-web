@@ -24,7 +24,6 @@
   --color-neutral-300: #d8dcde;
   --color-neutral-400: #9fa9af;
   --color-neutral-500: #667680;
-  --color-neutral-600: #667680;
 
   --color-highlight-100: #4da3ff;
   --color-highlight-200: #4593e6;
@@ -68,13 +67,13 @@
   --color-warning-active: var(--color-warning-300);
   --color-warning-focus: var(--color-warning-300);
 
-  --color-text: var(--color-neutral-600);
+  --color-text: var(--color-neutral-500);
   --color-text-primary: var(--color-primary-200);
   --color-text-secondary: var(--color-secondary-200);
   --color-text-success: var(--color-success-200);
   --color-text-warning: var(--color-warning-200);
   --color-text-danger: var(--color-danger-200);
-
+  --color-text-highlight: var(--color-highlight-100);
   --color-foreground: var(--color-primary-200);
   --color-background: var(--color-neutral-100);
   --color-background-disabled: var(--color-neutral-300);

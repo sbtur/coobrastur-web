@@ -1,0 +1,20 @@
+import type { ReactNode } from 'react';
+import type { LinkProps as NextLinkProps } from 'next/link';
+import LinkNext from 'next/link';
+
+import {
+  Link as LinkUI,
+  type LinkProps as LinkUIProps,
+} from '@workspace/ui/components';
+
+type LinkProps = Omit<NextLinkProps, 'as' | 'passHref' | 'legacyBehavior'> &
+  LinkUIProps & {
+    children: ReactNode;
+    className?: string;
+  };
+
+export const Link = ({ href, children, ...props }: LinkProps) => (
+  <LinkNext href={href} passHref legacyBehavior>
+    <LinkUI {...props}>{children}</LinkUI>
+  </LinkNext>
+);

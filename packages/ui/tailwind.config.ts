@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
-import tailwindcssAnimate from 'tailwindcss-animate';
 import { fontFamily } from 'tailwindcss/defaultTheme';
+import tailwindcssAnimate from 'tailwindcss-animate';
 
 const config = {
   darkMode: ['class'],
@@ -29,15 +29,15 @@ const config = {
           warning: 'var(--color-text-warning)',
           danger: 'var(--color-text-danger)',
           success: 'var(--color-text-success)',
+          highlight: 'var(--color-text-highlight)',
         },
         neutral: {
-          DEFAULT: 'var(--color-neutral-600)',
+          DEFAULT: 'var(--color-neutral-500)',
           100: 'var(--color-neutral-100)',
           200: 'var(--color-neutral-200)',
           300: 'var(--color-neutral-300)',
           400: 'var(--color-neutral-400)',
           500: 'var(--color-neutral-500)',
-          600: 'var(--color-neutral-600)',
         },
         border: 'var(--color-border)',
         input: 'var(--color-neutral-200)',
@@ -48,9 +48,6 @@ const config = {
           100: 'var(--color-primary-100)',
           200: 'var(--color-primary-200)',
           300: 'var(--color-primary-300)',
-          hover: 'var(--color-primary-hover)',
-          focus: 'var(--color-primary-focus)',
-          dark: 'var(--color-primary-dark)',
         },
         secondary: {
           DEFAULT: 'var(--color-secondary-200)',

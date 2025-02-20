@@ -1,23 +1,24 @@
+import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 
-import '@workspace/ui/globals.css';
+import { Wrapper } from '@workspace/ui/components';
 
 import { Providers } from '@providers';
+
+import '@workspace/ui/globals.css';
 
 export const metadata: Metadata = {
   title: 'Coobrastur',
   description: 'Coobrastur',
 };
 
-type LayoutProps = {
-  children: JSX.Element | JSX.Element[];
-};
-
-function Layout({ children }: LayoutProps): JSX.Element {
+function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Wrapper>{children}</Wrapper>
+        </Providers>
       </body>
     </html>
   );

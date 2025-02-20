@@ -1,6 +1,7 @@
+'use client';
 import * as React from 'react';
 
-import { cva, VariantProps } from 'class-variance-authority';
+import { cva, type VariantProps } from 'class-variance-authority';
 
 import {
   Bookmark,
@@ -25,20 +26,20 @@ const hotelCardVariants = cva('', {
   defaultVariants: {
     align: 'center',
   },
-});
+} as const);
 
 const imageVariants = cva('relative w-full rounded-xl overflow-hidden', {
   variants: {
     size: {
-      small: 'h-[260px]',
-      medium: 'h-[415px]',
-      large: 'h-[600px]',
+      sm: 'h-[260px]',
+      md: 'h-[415px]',
+      lg: 'h-[600px]',
     },
   },
   defaultVariants: {
-    size: 'medium',
+    size: 'md',
   },
-});
+} as const);
 
 type HotelCardVariants = VariantProps<typeof hotelCardVariants> &
   VariantProps<typeof imageVariants>;
@@ -60,12 +61,12 @@ export const HotelCard = ({
   address,
   image,
   renderImage,
-  actionLabel = 'More details',
+  actionLabel,
   href,
-  align = 'center',
+  align,
   size,
   ...props
-}: HotelCardProps): JSX.Element => {
+}: HotelCardProps) => {
   return (
     <div
       className={cn(
@@ -90,10 +91,12 @@ export const HotelCard = ({
       <div
         className={cn('flex flex-col gap-2 p-4', hotelCardVariants({ align }))}
       >
-        <Title as="h3" size="xsmall">
+        <Title as="h3" size="xs">
           {title}
         </Title>
-        <Text>{address}</Text>
+        <Text size="sm" className={hotelCardVariants({ align })}>
+          {address}
+        </Text>
         <Link href={href} className={hotelCardVariants({ align })}>
           {actionLabel}
           <Icon icon={MdArrowRightAlt} />

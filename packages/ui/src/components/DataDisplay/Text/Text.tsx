@@ -7,17 +7,17 @@ import { cn } from '@workspace/ui/lib/utils';
 const textVariants = cva('', {
   variants: {
     size: {
-      xsmall: 'text-xs',
-      small: 'text-sm',
-      base: 'text-base',
-      large: 'text-xl',
-      xlarge: 'text-2xl',
+      xs: 'text-xs', // 12px
+      sm: 'text-sm', // 14px
+      base: 'text-base', // 16px
+      lg: 'text-xl', // 20px
+      xl: 'text-2xl', // 24px
     },
     spacing: {
-      none: 'mb-0',
-      small: 'mb-1',
-      normal: 'mb-2',
-      large: 'mb-4',
+      none: 'mb-0', // 0px
+      sm: 'mb-1', // 4px
+      md: 'mb-2', // 8px
+      lg: 'mb-4', // 16px
     },
     weight: {
       normal: 'font-normal',
@@ -29,7 +29,6 @@ const textVariants = cva('', {
       left: 'text-left',
       center: 'text-center',
       right: 'text-right',
-      justify: 'text-justify',
     },
     variant: {
       base: 'text-text',

@@ -5,20 +5,20 @@ import { cn } from '@workspace/ui/lib/utils';
 const titleVariants = cva('font-bold', {
   variants: {
     as: {
-      h1: 'text-5xl',
-      h2: 'text-4xl',
-      h3: 'text-3xl',
-      h4: 'text-2xl',
-      h5: 'text-lg',
-      h6: 'text-base',
+      h1: 'text-5xl', // 48px
+      h2: 'text-4xl', // 36px
+      h3: 'text-3xl', // 30px
+      h4: 'text-2xl', // 24px
+      h5: 'text-lg', // 18px
+      h6: 'text-base', // 16px
     },
     size: {
-      xsmall: 'text-lg',
-      small: 'text-2xl',
-      medium: 'text-3xl',
-      large: 'text-4xl',
-      xlarge: 'text-5xl',
-      '2xlarge': 'text-6xl',
+      xs: 'text-lg', // 18px
+      sm: 'text-2xl', // 24px
+      md: 'text-3xl', // 30px
+      lg: 'text-4xl', // 36px
+      xl: 'text-5xl', // 48px
+      '2xl': 'text-6xl', // 60px
     },
     variant: {
       primary: 'text-text-primary',
@@ -28,13 +28,18 @@ const titleVariants = cva('font-bold', {
       danger: 'text-text-danger',
       white: 'text-neutral-100',
     },
+    align: {
+      left: 'text-left',
+      center: 'text-center',
+      right: 'text-right',
+    },
   },
   defaultVariants: {
     as: 'h2',
-    size: 'xlarge',
+    size: 'md',
     variant: 'primary',
   },
-});
+} as const);
 
 export interface TitleProps
   extends Omit<React.HTMLAttributes<HTMLHeadingElement>, 'color'>,
@@ -49,6 +54,7 @@ export const Title = ({
   size,
   variant,
   truncate,
+  align,
   children,
   ...props
 }: TitleProps) => {
@@ -57,7 +63,7 @@ export const Title = ({
   return (
     <Component
       className={cn(
-        titleVariants({ as, size, variant }),
+        titleVariants({ as, size, variant, align }),
         truncate && 'truncate',
         className,
       )}

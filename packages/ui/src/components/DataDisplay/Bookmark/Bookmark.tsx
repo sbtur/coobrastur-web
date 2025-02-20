@@ -16,15 +16,15 @@ const bookmarkVariants = cva(
   {
     variants: {
       size: {
-        small: 'h-8 w-8',
-        medium: 'h-10 w-10',
-        large: 'h-12 w-12',
+        sm: 'h-8 w-8',
+        md: 'h-10 w-10',
+        lg: 'h-12 w-12',
       },
     },
     defaultVariants: {
-      size: 'medium',
+      size: 'md',
     },
-  },
+  } as const,
 );
 
 export interface BookmarkProps extends VariantProps<typeof bookmarkVariants> {
