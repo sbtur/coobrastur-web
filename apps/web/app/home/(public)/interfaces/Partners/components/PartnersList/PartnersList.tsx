@@ -2,7 +2,7 @@ import { Container } from '@workspace/ui/components';
 
 import { Image } from '@components/Image';
 
-import { PARTNERS } from './partners';
+import { PARTNERS } from '../../helpers/partners';
 
 export const PartnersList = () => {
   return (

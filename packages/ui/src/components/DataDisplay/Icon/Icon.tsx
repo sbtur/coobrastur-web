@@ -1,7 +1,7 @@
 import React from 'react';
-import type { IconBaseProps, IconType } from 'react-icons';
 
 import { cva, type VariantProps } from 'class-variance-authority';
+import { LucideIcon } from 'lucide-react';
 
 import { cn } from '@workspace/ui/lib/utils';
 
@@ -14,8 +14,8 @@ const iconVariants = cva('inline-flex shrink-0', {
       xl: 'text-3xl', // 30px
     },
     variant: {
-      primary: 'text-primary-100',
-      secondary: 'text-secondary-100',
+      primary: 'text-highlight',
+      secondary: 'text-primary',
       neutral: 'text-neutral-400',
       white: 'text-white',
     },
@@ -28,10 +28,8 @@ const iconVariants = cva('inline-flex shrink-0', {
 
 type IconVariants = VariantProps<typeof iconVariants>;
 
-export interface IconProps
-  extends Omit<IconBaseProps, 'size' | 'className'>,
-    IconVariants {
-  icon: IconType;
+export interface IconProps extends IconVariants {
+  icon: LucideIcon;
   className?: string;
 }
 
@@ -42,7 +40,7 @@ export const Icon = ({
   className,
   ...props
 }: IconProps) => {
-  const IconElement = IconComponent as React.ElementType;
+  const IconElement = IconComponent as unknown as React.ElementType;
   return (
     <IconElement
       className={cn(iconVariants({ size, variant }), className)}
