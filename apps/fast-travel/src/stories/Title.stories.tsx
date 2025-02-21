@@ -12,7 +12,7 @@ const meta = {
   argTypes: {
     size: {
       control: 'select',
-      options: ['xsmall', 'small', 'medium', 'large', 'xlarge', '2xlarge'],
+      options: ['xs', 'sm', 'base', 'lg', 'xl', '2xl'],
     },
     variant: {
       control: 'select',
@@ -80,28 +80,28 @@ export const Danger: Story = {
 
 export const Small: Story = {
   args: {
-    size: 'small',
+    size: 'sm',
     children: 'Small Title',
   },
 };
 
 export const Large: Story = {
   args: {
-    size: 'large',
+    size: 'lg',
     children: 'Large Title',
   },
 };
 
 export const ExtraLarge: Story = {
   args: {
-    size: 'xlarge',
+    size: 'xl',
     children: 'Extra Large Title',
   },
 };
 
 export const DoubleExtraLarge: Story = {
   args: {
-    size: '2xlarge',
+    size: '2xl',
     children: '2XL Title',
   },
 };

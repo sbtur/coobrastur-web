@@ -1,14 +1,7 @@
-'use client';
-
-import { useState } from 'react';
-
 import { cva, type VariantProps } from 'class-variance-authority';
 
 import { Icon } from '@workspace/ui/components';
-import {
-  MdOutlineFavorite,
-  MdOutlineFavoriteBorder,
-} from '@workspace/ui/lib/icons';
+import { Heart } from '@workspace/ui/lib/icons';
 import { cn } from '@workspace/ui/lib/utils';
 
 const bookmarkVariants = cva(
@@ -39,21 +32,19 @@ export const Bookmark = ({
   active = false,
   className,
 }: BookmarkProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <button
       type="button"
       className={cn(bookmarkVariants({ size }), className)}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       onClick={onClick}
       aria-label={active ? 'Remove from favorites' : 'Add to favorites'}
     >
       <Icon
-        icon={active || isHovered ? MdOutlineFavorite : MdOutlineFavoriteBorder}
-        color="neutral"
-        className="w-1/2 h-1/2 transition-transform hover:scale-110"
+        icon={Heart}
+        variant="neutral"
+        className={`w-1/2 h-1/2 transition-transform hover:scale-110 hover:fill-neutral-400 ${
+          active ? 'fill-neutral-400' : ''
+        }`}
       />
     </button>
   );

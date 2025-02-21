@@ -8,7 +8,7 @@ import {
   Menu,
   Wrapper,
 } from '@workspace/ui/components';
-import { MdKeyboardArrowDown } from '@workspace/ui/lib/icons';
+import { ChevronDown } from '@workspace/ui/lib/icons';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -29,11 +29,11 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: () => (
     <Wrapper>
-      <Container className='py-6 px-4 bg-white'>
-        <div className='logo'>
+      <Container className="flex items-center justify-between py-6 px-4 border-b border-white/20 bg-background">
+        <div className="logo">
           <Image
-            src='/images/logo-grupro-coobrastur-dark.png'
-            alt='Logo Grupo Coobrastur'
+            src="/images/logo-grupro-coobrastur-dark.png"
+            alt="Logo Grupo Coobrastur"
             width={245}
             height={40}
             renderComponent={({ ...props }) => <ImageNext {...props} />}
@@ -46,17 +46,17 @@ export const Default: Story = {
               <Menu.Content>
                 <Menu.Dropdown>
                   <Menu.DropdownItem>
-                    <Menu.DropdownLink href='#'>
-                      <div className='text-primary leading-none'>Sobre Nós</div>
-                      <p className='line-clamp-2 text-sm leading-snug text-gray-400'>
+                    <Menu.DropdownLink href="#">
+                      <div className="text-primary leading-none">Sobre Nós</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-gray-400">
                         Conheça a empresa
                       </p>
                     </Menu.DropdownLink>
                   </Menu.DropdownItem>
                   <Menu.DropdownItem>
-                    <Menu.DropdownLink href='#'>
-                      <div className='text-primary leading-none'>Planos</div>
-                      <p className='line-clamp-2 text-sm leading-snug text-gray-400'>
+                    <Menu.DropdownLink href="#">
+                      <div className="text-primary leading-none">Planos</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-gray-400">
                         Conheça os planos
                       </p>
                     </Menu.DropdownLink>
@@ -65,24 +65,24 @@ export const Default: Story = {
               </Menu.Content>
             </Menu.Item>
             <Menu.Item>
-              <Menu.Link href='#'>Planos</Menu.Link>
+              <Menu.Link href="#">Planos</Menu.Link>
             </Menu.Item>
             <Menu.Item>
-              <Menu.Link href='#'>Agência de Viagens</Menu.Link>
+              <Menu.Link href="#">Agência de Viagens</Menu.Link>
             </Menu.Item>
             <Menu.Item>
-              <Menu.Link href='#'>Destinos</Menu.Link>
+              <Menu.Link href="#">Destinos</Menu.Link>
             </Menu.Item>
             <Menu.Item>
-              <Menu.Link href='#'>Hotéis</Menu.Link>
+              <Menu.Link href="#">Hotéis</Menu.Link>
             </Menu.Item>
           </Menu.List>
         </Menu.Root>
-        <div className='space-x-4'>
-          <Button size='lg'>
-            Acessos <Icon icon={MdKeyboardArrowDown} color='white' />
+        <div className="space-x-4">
+          <Button size="lg">
+            Acessos <Icon icon={ChevronDown} variant="white" />
           </Button>
-          <Button variant='outline' size='lg'>
+          <Button variant="outline" size="lg">
             Planos
           </Button>
         </div>
@@ -99,11 +99,15 @@ export const Light: Story = {
   },
   render: () => (
     <Wrapper>
-      <Container as='header' className='py-6 px-4 isLight'>
-        <div className='logo'>
+      <Container
+        as="header"
+        size="full"
+        className="flex items-center justify-between py-6 px-4 border-b border-white/20 isLight"
+      >
+        <div className="logo">
           <Image
-            src='/images/logo-grupro-coobrastur-light.png'
-            alt='Logo Grupo Coobrastur'
+            src="/images/logo-grupro-coobrastur-light.png"
+            alt="Logo Grupo Coobrastur"
             width={245}
             height={40}
             renderComponent={({ ...props }) => <ImageNext {...props} />}
@@ -116,17 +120,17 @@ export const Light: Story = {
               <Menu.Content>
                 <Menu.Dropdown>
                   <Menu.DropdownItem>
-                    <Menu.DropdownLink href='#'>
-                      <div className='text-primary leading-none'>Sobre Nós</div>
-                      <p className='line-clamp-2 text-sm leading-snug text-gray-400'>
+                    <Menu.DropdownLink href="#">
+                      <div className="text-primary leading-none">Sobre Nós</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-gray-400">
                         Conheça a empresa
                       </p>
                     </Menu.DropdownLink>
                   </Menu.DropdownItem>
                   <Menu.DropdownItem>
-                    <Menu.DropdownLink href='#'>
-                      <div className='text-primary leading-none'>Planos</div>
-                      <p className='line-clamp-2 text-sm leading-snug text-gray-400'>
+                    <Menu.DropdownLink href="#">
+                      <div className="text-primary leading-none">Planos</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-gray-400">
                         Conheça os planos
                       </p>
                     </Menu.DropdownLink>
@@ -135,24 +139,24 @@ export const Light: Story = {
               </Menu.Content>
             </Menu.Item>
             <Menu.Item>
-              <Menu.Link href='#'>Planos</Menu.Link>
+              <Menu.Link href="#">Planos</Menu.Link>
             </Menu.Item>
             <Menu.Item>
-              <Menu.Link href='#'>Agência de Viagens</Menu.Link>
+              <Menu.Link href="#">Agência de Viagens</Menu.Link>
             </Menu.Item>
             <Menu.Item>
-              <Menu.Link href='#'>Destinos</Menu.Link>
+              <Menu.Link href="#">Destinos</Menu.Link>
             </Menu.Item>
             <Menu.Item>
-              <Menu.Link href='#'>Hotéis</Menu.Link>
+              <Menu.Link href="#">Hotéis</Menu.Link>
             </Menu.Item>
           </Menu.List>
         </Menu.Root>
-        <div className='space-x-4'>
-          <Button size='lg'>
-            Acessos <Icon icon={MdKeyboardArrowDown} color='white' />
+        <div className="space-x-4">
+          <Button size="lg">
+            Acessos <Icon icon={ChevronDown} variant="white" />
           </Button>
-          <Button variant='outline-white' size='lg'>
+          <Button variant="outline-white" size="lg">
             Planos
           </Button>
         </div>

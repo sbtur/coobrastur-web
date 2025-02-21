@@ -45,7 +45,7 @@ const textVariants = cva('', {
     align: 'left',
     variant: 'base',
   },
-});
+} as const);
 
 export interface TextProps
   extends React.HTMLAttributes<HTMLElement>,

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { cva } from 'class-variance-authority';
 
-import { MdKeyboardArrowDown } from '@workspace/ui/lib/icons';
+import { ChevronDown } from '@workspace/ui/lib/icons';
 import { cn } from '@workspace/ui/lib/utils';
 
 import { Icon } from './DataDisplay';
@@ -59,7 +59,7 @@ const NavigationMenuTrigger = React.forwardRef<
   >
     {children}{' '}
     <Icon
-      icon={MdKeyboardArrowDown}
+      icon={ChevronDown}
       className="text-white relative top-[1px] ml-1 h-5 w-5 transition duration-200 group-data-[state=open]:rotate-180"
     />
   </NavigationMenuPrimitive.Trigger>

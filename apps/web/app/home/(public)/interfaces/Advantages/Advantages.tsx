@@ -1,4 +1,10 @@
-import { Badge, Container, Heading } from '@workspace/ui/components';
+import {
+  Badge,
+  Container,
+  Heading,
+  Text,
+  Title,
+} from '@workspace/ui/components';
 
 import { Image } from '@components';
 
@@ -9,16 +15,16 @@ export const Advantages = () => {
   return (
     <Container as="section" padding="lg" size="full" className="bg-white">
       <Container>
-        <Heading.Root align="center">
+        <Heading align="center">
           <Badge variant="default">Vantagens</Badge>
-          <Heading.Title align="center" size="xl">
+          <Title align="center" size="xl">
             Descubra o jeito inteligente de viajar
-          </Heading.Title>
-          <Heading.Text>
+          </Title>
+          <Text>
             Junte-se ao melhor clube de assinatura de viagens do Brasil e
             aproveite as melhores vantagens.
-          </Heading.Text>
-        </Heading.Root>
+          </Text>
+        </Heading>
         <div className="flex justify-center items-center">
           <div className="flex gap-2 mt-4">
             <div className="flex flex-col gap-4">

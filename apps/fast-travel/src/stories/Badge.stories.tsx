@@ -1,5 +1,5 @@
 import { Badge, Icon } from '@workspace/ui/components';
-import { MdHotel } from '@workspace/ui/lib/icons';
+import { Hotel } from '@workspace/ui/lib/icons';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -58,7 +58,7 @@ export const WithIcon: Story = {
   args: {
     children: (
       <>
-        <Icon icon={MdHotel} className='mr-1 h-4 w-4' />
+        <Icon icon={Hotel} variant="secondary" className="mr-1 h-4 w-4" />
         HOTÉIS
       </>
     ),

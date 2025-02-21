@@ -12,7 +12,7 @@ import {
   Text,
   Title,
 } from '@workspace/ui/components';
-import { MdArrowRightAlt } from '@workspace/ui/lib/icons';
+import { ArrowRight } from '@workspace/ui/lib/icons';
 import { cn } from '@workspace/ui/lib/utils';
 
 const hotelCardVariants = cva('', {
@@ -99,7 +99,7 @@ export const HotelCard = ({
         </Text>
         <Link href={href} className={hotelCardVariants({ align })}>
           {actionLabel}
-          <Icon icon={MdArrowRightAlt} />
+          <Icon icon={ArrowRight} />
         </Link>
       </div>
     </div>

@@ -1,15 +1,15 @@
 import React from 'react';
 
 import { cva, type VariantProps } from 'class-variance-authority';
-import { LucideIcon } from 'lucide-react';
 
+import { LucideIcon } from '@workspace/ui/lib/icons';
 import { cn } from '@workspace/ui/lib/utils';
 
 const iconVariants = cva('inline-flex shrink-0', {
   variants: {
     variant: {
       primary: 'text-highlight group-[.hover]:text-highlight-hover',
-      secondary: 'text-primary group-[.hover]:text-secondary-hover',
+      secondary: 'text-primary-100 group-[.hover]:text-secondary-hover',
       neutral: 'text-neutral-400 group-[.hover]:text-neutral-500',
       white: 'text-white group-[.hover]:text-neutral-100',
     },
@@ -19,20 +19,24 @@ const iconVariants = cva('inline-flex shrink-0', {
   },
 } as const);
 
-interface IconSize {
-  size?: 14 | 16 | 20 | 24;
-}
+export const IconSize = {
+  sm: 14,
+  md: 16,
+  lg: 20,
+  xl: 24,
+} as const;
 
 type IconVariants = VariantProps<typeof iconVariants>;
 
-export interface IconProps extends IconVariants, IconSize {
+export interface IconProps extends IconVariants {
   icon: LucideIcon;
   className?: string;
+  size?: keyof typeof IconSize;
 }
 
 export const Icon = ({
   icon: IconComponent,
-  size = 16,
+  size = 'md',
   variant,
   className,
   ...props
@@ -42,7 +46,7 @@ export const Icon = ({
     <IconElement
       className={cn(iconVariants({ variant }), className)}
       aria-hidden="true"
-      size={size}
+      size={IconSize[size]}
       {...props}
     />
   );

@@ -1,13 +1,13 @@
 import Image from 'next/image';
 
 import { Button, Container, Icon, Menu } from '@workspace/ui/components';
-import { MdKeyboardArrowDown } from '@workspace/ui/lib/icons';
+import { ChevronDown } from '@workspace/ui/lib/icons';
 
 export function Header() {
   return (
     <Container
       as="header"
-      className="flex items-center justify-between py-6 px-4 border-b border-white/20 isLight"
+      className="flex items-center justify-between py-6 px-4 border-b border-white/20 relative z-10 isLight"
     >
       <div className="logo">
         <Image
@@ -58,7 +58,7 @@ export function Header() {
       </Menu.Root>
       <div className="space-x-4">
         <Button size="lg">
-          Acessos <Icon icon={MdKeyboardArrowDown} color="white" />
+          Acessos <Icon icon={ChevronDown} variant="white" />
         </Button>
         <Button variant="outline-white" size="lg">
           Planos

@@ -1,5 +1,3 @@
-import NextImage from 'next/image';
-
 import { HotelCard, type HotelCardProps } from '@workspace/ui/components';
 
 import type { Meta, StoryObj } from '@storybook/react';
@@ -42,19 +40,6 @@ export const RightAligned: Story = {
   args: {
     ...baseArgs,
     align: 'right',
-  },
-};
-
-export const WithNextImage: Story = {
-  args: {
-    ...baseArgs,
-    image: {
-      width: 300,
-      height: 200,
-      src: '/images/hotel.jpeg',
-      alt: 'Sky Borges Hotel Alpenhaus - Luxury room with a view to the garden',
-    },
-    renderImage: (props) => <NextImage {...props} />,
   },
 };
 

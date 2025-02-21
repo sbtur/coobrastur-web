@@ -1,6 +1,12 @@
 import React from 'react';
 
-import { Badge, Container, Heading } from '@workspace/ui/components';
+import {
+  Badge,
+  Container,
+  Heading,
+  Text,
+  Title,
+} from '@workspace/ui/components';
 
 import { Card } from './components/Card';
 import { SUPPORT } from './helpers';
@@ -14,16 +20,16 @@ export const Support = () => {
       className="bg-[#254262] bg-gradient-to-r from-[rgba(47,98,153,0)] from-[31.41%] to-[#2F6299] to-[129.86%]"
     >
       <Container>
-        <Heading.Root align="left">
-          <Badge variant="default">Tudo o que precisa para a sua viagem</Badge>
-          <Heading.Title size="xl" variant="white">
-            Conte com suporte completo
-          </Heading.Title>
-          <Heading.Text className="text-white">
-            A combinação ideal para transformar sua viagem dos sonhos em uma
-            experiência única e inesquecível
-          </Heading.Text>
-        </Heading.Root>
+        <Heading align="left">
+          <Badge variant="default">Suporte</Badge>
+          <Title size="xl" variant="white">
+            Suporte especializado para você
+          </Title>
+          <Text className="text-white">
+            Conte com nossa equipe de especialistas para te ajudar a escolher o
+            melhor destino.
+          </Text>
+        </Heading>
         <Container className="flex gap-2 mt-6">
           {SUPPORT.map(support => (
             <Card key={support.title} content={support} />

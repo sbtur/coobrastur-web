@@ -43,7 +43,7 @@ export const Card = ({ content }: { content: CardProps }) => {
         Saiba mais{' '}
         <Icon
           icon={ArrowRight}
-          size={14}
+          size="sm"
           variant="white"
           className="transition-transform duration-300 group-hover:translate-x-1"
         />
