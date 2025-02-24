@@ -1,4 +1,6 @@
-import { Icon, IconProps, Text, Title } from '@workspace/ui/components';
+import { Icon, IconProps } from '@workspace/ui/components/DataDisplay/Icon';
+import { Text } from '@workspace/ui/components/DataDisplay/Text';
+import { Title } from '@workspace/ui/components/DataDisplay/Title';
 
 interface Advantage {
   icon: IconProps['icon'];

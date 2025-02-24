@@ -1,4 +1,4 @@
-import { Button } from '@workspace/ui/components';
+import { Button } from '@workspace/ui/components/DataEntry/Button';
 import {
   Dialog,
   DialogContent,

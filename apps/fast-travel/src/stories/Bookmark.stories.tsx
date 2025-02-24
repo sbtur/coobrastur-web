@@ -1,4 +1,4 @@
-import { Bookmark } from '@workspace/ui/components';
+import { Bookmark } from '@workspace/ui/components/DataDisplay/Bookmark';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

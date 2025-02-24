@@ -1,13 +1,10 @@
-import ImageNext from 'next/image';
+import Image from 'next/image';
 
-import {
-  Button,
-  Container,
-  Icon,
-  Image,
-  Menu,
-  Wrapper,
-} from '@workspace/ui/components';
+import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
+import { Button } from '@workspace/ui/components/DataEntry/Button';
+import { Container } from '@workspace/ui/components/Layouts/Container';
+import { Wrapper } from '@workspace/ui/components/Layouts/Wrapper';
+import { Menu } from '@workspace/ui/components/Navigation/Menu';
 import { ChevronDown } from '@workspace/ui/lib/icons';
 
 import type { Meta, StoryObj } from '@storybook/react';
@@ -36,7 +33,6 @@ export const Default: Story = {
             alt="Logo Grupo Coobrastur"
             width={245}
             height={40}
-            renderComponent={({ ...props }) => <ImageNext {...props} />}
           />
         </div>
         <Menu.Root>
@@ -110,7 +106,6 @@ export const Light: Story = {
             alt="Logo Grupo Coobrastur"
             width={245}
             height={40}
-            renderComponent={({ ...props }) => <ImageNext {...props} />}
           />
         </div>
         <Menu.Root>

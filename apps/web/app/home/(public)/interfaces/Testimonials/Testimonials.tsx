@@ -1,10 +1,8 @@
-import {
-  Badge,
-  Container,
-  Heading,
-  Text,
-  Title,
-} from '@workspace/ui/components';
+import { Badge } from '@workspace/ui/components/DataDisplay/Badge';
+import { Heading } from '@workspace/ui/components/DataDisplay/Heading';
+import { Text } from '@workspace/ui/components/DataDisplay/Text';
+import { Title } from '@workspace/ui/components/DataDisplay/Title';
+import { Container } from '@workspace/ui/components/Layouts/Container';
 
 export const Testimonials = () => {
   return (

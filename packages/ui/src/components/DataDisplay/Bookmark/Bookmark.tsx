@@ -1,4 +1,4 @@
-import { Icon, IconWrapper } from '@workspace/ui/components';
+import { Icon, IconWrapper } from '@workspace/ui/components/DataDisplay/Icon';
 import { Heart } from '@workspace/ui/lib/icons';
 
 export interface BookmarkProps {

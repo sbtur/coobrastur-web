@@ -1,4 +1,4 @@
-import { Icon } from '@workspace/ui/components';
+import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
 import { Home } from '@workspace/ui/lib/icons';
 
 import type { Meta, StoryObj } from '@storybook/react';

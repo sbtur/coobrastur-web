@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import { Bookmark } from '@workspace/ui/components/DataDisplay/Bookmark';
 import { Dialog } from '@workspace/ui/components/DataDisplay/Dialog';
 import { Icon, IconWrapper } from '@workspace/ui/components/DataDisplay/Icon';
@@ -10,22 +8,10 @@ import { Link } from '@workspace/ui/components/DataEntry/Link';
 import { Separator } from '@workspace/ui/components/separator';
 import { ArrowRight, Share2 } from '@workspace/ui/lib/icons';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import { Image } from '@components/Image';
 
-const meta: Meta<typeof Dialog> = {
-  title: 'Block/Hotel Dialog',
-  component: Dialog,
-  tags: ['autodocs'],
-  parameters: {
-    layout: 'centered',
-  },
-};
-
-export default meta;
-type Story = StoryObj<typeof Dialog>;
-
-export const Default: Story = {
-  render: () => (
+export const HotelDialog = () => {
+  return (
     <Dialog.Root defaultOpen>
       <Dialog.Content className="flex p-0 gap-0">
         <div className="max-w-[480px]">
@@ -94,5 +80,5 @@ export const Default: Story = {
         </div>
       </Dialog.Content>
     </Dialog.Root>
-  ),
+  );
 };

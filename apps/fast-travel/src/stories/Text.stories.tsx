@@ -1,4 +1,4 @@
-import { Text } from '@workspace/ui/components';
+import { Text } from '@workspace/ui/components/DataDisplay/Text';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

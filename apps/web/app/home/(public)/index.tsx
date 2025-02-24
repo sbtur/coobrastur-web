@@ -1,6 +1,7 @@
-import { Container } from '@workspace/ui/components';
+import { Container } from '@workspace/ui/components/Layouts/Container';
 
-import { Footer, Header } from '@components';
+import { Footer } from '@components/Footer';
+import { Header } from '@components/Header';
 
 import { Advantages } from './interfaces/Advantages';
 import { Destinations } from './interfaces/Destinations';

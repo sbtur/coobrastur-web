@@ -1,4 +1,5 @@
-import { Badge, Icon } from '@workspace/ui/components';
+import { Badge } from '@workspace/ui/components/DataDisplay/Badge';
+import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
 import { Hotel } from '@workspace/ui/lib/icons';
 
 import type { Meta, StoryObj } from '@storybook/react';

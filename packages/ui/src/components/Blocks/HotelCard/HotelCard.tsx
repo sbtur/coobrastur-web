@@ -3,15 +3,12 @@ import * as React from 'react';
 
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import {
-  Bookmark,
-  Icon,
-  Image,
-  ImageProps,
-  Link,
-  Text,
-  Title,
-} from '@workspace/ui/components';
+import { Bookmark } from '@workspace/ui/components/DataDisplay/Bookmark';
+import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
+import { Image, ImageProps } from '@workspace/ui/components/DataDisplay/Image';
+import { Text } from '@workspace/ui/components/DataDisplay/Text';
+import { Title } from '@workspace/ui/components/DataDisplay/Title';
+import { Link } from '@workspace/ui/components/DataEntry/Link';
 import { ArrowRight } from '@workspace/ui/lib/icons';
 import { cn } from '@workspace/ui/lib/utils';
 

@@ -1,9 +1,10 @@
-import { Icon, IconProps, Text, Title } from '@workspace/ui/components';
+import { Icon, IconProps } from '@workspace/ui/components/DataDisplay/Icon';
+import { Text } from '@workspace/ui/components/DataDisplay/Text';
+import { Title } from '@workspace/ui/components/DataDisplay/Title';
+import { Link } from '@workspace/ui/components/DataEntry/Link';
 import { ArrowRight } from '@workspace/ui/lib/icons';
 
-import { Link } from '@components';
-
-import { Image } from '@shared/components/Image';
+import { Image } from '@components/Image';
 
 interface CardProps {
   icon: IconProps['icon'] | string;

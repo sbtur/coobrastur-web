@@ -5,7 +5,7 @@ import LinkNext from 'next/link';
 import {
   Link as LinkUI,
   type LinkProps as LinkUIProps,
-} from '@workspace/ui/components';
+} from '@workspace/ui/components/DataEntry/Link';
 
 type LinkProps = Omit<NextLinkProps, 'as' | 'passHref' | 'legacyBehavior'> &
   LinkUIProps & {

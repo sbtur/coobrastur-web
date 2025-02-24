@@ -2,10 +2,9 @@ import * as React from 'react';
 
 import { cva } from 'class-variance-authority';
 
+import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
 import { ChevronDown } from '@workspace/ui/lib/icons';
 import { cn } from '@workspace/ui/lib/utils';
-
-import { Icon } from './DataDisplay';
 
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 

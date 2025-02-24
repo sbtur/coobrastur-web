@@ -1,6 +1,9 @@
-import { Button, Container, Heading, Title } from '@workspace/ui/components';
+import { Heading } from '@workspace/ui/components/DataDisplay/Heading';
+import { Title } from '@workspace/ui/components/DataDisplay/Title';
+import { Button } from '@workspace/ui/components/DataEntry/Button';
+import { Container } from '@workspace/ui/components/Layouts/Container';
 
-import { Image } from '@components';
+import { Image } from '@components/Image';
 
 export const Display = () => {
   return (

@@ -1,4 +1,7 @@
-import { HotelCard, type HotelCardProps } from '@workspace/ui/components';
+import {
+  HotelCard,
+  type HotelCardProps,
+} from '@workspace/ui/components/Blocks/HotelCard';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

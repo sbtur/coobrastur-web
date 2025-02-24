@@ -1,6 +1,9 @@
-import { Container, Text, Title } from '@workspace/ui/components';
+import { Text } from '@workspace/ui/components/DataDisplay/Text';
+import { Title } from '@workspace/ui/components/DataDisplay/Title';
+import { Container } from '@workspace/ui/components/Layouts/Container';
 
-import { Image, Link } from '@components';
+import { Image } from '@components/Image';
+import { Link } from '@components/Link';
 
 import { NAVIGATIONS } from './helpers';
 

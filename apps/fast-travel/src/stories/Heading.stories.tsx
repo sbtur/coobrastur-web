@@ -1,4 +1,6 @@
-import { Heading, Text, Title } from '@workspace/ui/components';
+import { Heading } from '@workspace/ui/components/DataDisplay/Heading';
+import { Text } from '@workspace/ui/components/DataDisplay/Text';
+import { Title } from '@workspace/ui/components/DataDisplay/Title';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
