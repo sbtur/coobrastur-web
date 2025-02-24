@@ -1,41 +1,24 @@
-import { cva, type VariantProps } from 'class-variance-authority';
-
-import { Icon } from '@workspace/ui/components';
+import { Icon, IconWrapper } from '@workspace/ui/components';
 import { Heart } from '@workspace/ui/lib/icons';
-import { cn } from '@workspace/ui/lib/utils';
 
-const bookmarkVariants = cva(
-  'flex items-center justify-center appearance-none border-0 p-0 rounded-full bg-white transition-colors',
-  {
-    variants: {
-      size: {
-        sm: 'h-8 w-8',
-        md: 'h-10 w-10',
-        lg: 'h-12 w-12',
-      },
-    },
-    defaultVariants: {
-      size: 'md',
-    },
-  } as const,
-);
-
-export interface BookmarkProps extends VariantProps<typeof bookmarkVariants> {
+export interface BookmarkProps {
   onClick?: () => void;
   active?: boolean;
   className?: string;
+  size?: 'sm' | 'md' | 'lg';
 }
 
 export const Bookmark = ({
-  size,
+  size = 'md',
   onClick,
   active = false,
   className,
 }: BookmarkProps) => {
   return (
-    <button
-      type="button"
-      className={cn(bookmarkVariants({ size }), className)}
+    <IconWrapper
+      as="button"
+      size={size}
+      className={className}
       onClick={onClick}
       aria-label={active ? 'Remove from favorites' : 'Add to favorites'}
     >
@@ -46,6 +29,6 @@ export const Bookmark = ({
           active ? 'fill-neutral-400' : ''
         }`}
       />
-    </button>
+    </IconWrapper>
   );
 };

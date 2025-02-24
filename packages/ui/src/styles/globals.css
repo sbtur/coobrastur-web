@@ -169,3 +169,12 @@
     font-family: var(--font-family-primary), sans-serif;
   }
 }
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

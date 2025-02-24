@@ -1,5 +1,6 @@
-import type { Preview } from '@storybook/react';
 import '@workspace/ui/globals.css';
+
+import type { Preview } from '@storybook/react';
 
 const BREAKPOINTS_INT = {
   'xsmall-375': 375,
@@ -22,7 +23,7 @@ const customViewports = Object.fromEntries(
         },
       },
     ];
-  })
+  }),
 );
 
 const preview: Preview = {
