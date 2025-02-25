@@ -1,6 +1,8 @@
-export const HOTELS = [
+import { Hotel } from '../types/hotels';
+
+export const HOTELS: Hotel[] = [
   {
-    id: '7257',
+    id: 7257,
     broker: 'coobrastur',
     name: 'Jurerê Beach Village',
     unique_id: '7257',
@@ -33,7 +35,7 @@ export const HOTELS = [
     },
   },
   {
-    id: '4481',
+    id: 4481,
     broker: 'coobrastur',
     name: 'Costão do Santinho Resort',
     unique_id: '4481',
@@ -67,7 +69,7 @@ export const HOTELS = [
     },
   },
   {
-    id: '4038',
+    id: 4038,
     broker: 'coobrastur',
     name: 'Das Nações Hotel',
     unique_id: '4038',
@@ -100,7 +102,7 @@ export const HOTELS = [
     },
   },
   {
-    id: '3678',
+    id: 3678,
     broker: 'coobrastur',
     name: 'Mercure Florianópolis',
     unique_id: '3678',
@@ -133,7 +135,7 @@ export const HOTELS = [
     },
   },
   {
-    id: '6254',
+    id: 6254,
     broker: 'coobrastur',
     name: 'Intercity Florianópolis',
     unique_id: '6254',
@@ -166,7 +168,7 @@ export const HOTELS = [
     },
   },
   {
-    id: '6964',
+    id: 6964,
     broker: 'coobrastur',
     name: 'Intercity Portofino Florianópolis',
     unique_id: '6964',
@@ -199,7 +201,7 @@ export const HOTELS = [
     },
   },
   {
-    id: '3644',
+    id: 3644,
     broker: 'coobrastur',
     name: 'Oceania Park Hotel',
     unique_id: '3644',
@@ -232,7 +234,7 @@ export const HOTELS = [
     },
   },
   {
-    id: '405',
+    id: 405,
     broker: 'coobrastur',
     name: 'São Sebastião da Praia Hotel',
     unique_id: '405',
@@ -265,7 +267,7 @@ export const HOTELS = [
     },
   },
   {
-    id: '4872',
+    id: 4872,
     broker: 'coobrastur',
     name: 'Slaviero Baía Norte Florianópolis',
     unique_id: '4872',
@@ -298,7 +300,7 @@ export const HOTELS = [
     },
   },
   {
-    id: '7256',
+    id: 7256,
     broker: 'coobrastur',
     name: 'Balmare Hotel',
     unique_id: '7256',
@@ -331,7 +333,7 @@ export const HOTELS = [
     },
   },
   {
-    id: '6572',
+    id: 6572,
     broker: 'coobrastur',
     name: 'Porto Madero Hotel',
     unique_id: '6572',
@@ -364,7 +366,7 @@ export const HOTELS = [
     },
   },
   {
-    id: '3608',
+    id: 3608,
     broker: 'coobrastur',
     name: 'Praia Brava Hotel',
     unique_id: '3608',
@@ -398,7 +400,7 @@ export const HOTELS = [
     },
   },
   {
-    id: '4330',
+    id: 4330,
     broker: 'coobrastur',
     name: 'Marinas Palace Hotel',
     unique_id: '4330',
@@ -431,7 +433,7 @@ export const HOTELS = [
     },
   },
   {
-    id: '4174',
+    id: 4174,
     broker: 'coobrastur',
     name: 'Cambirela Hotel',
     unique_id: '4174',
@@ -464,7 +466,7 @@ export const HOTELS = [
     },
   },
   {
-    id: '4314',
+    id: 4314,
     broker: 'coobrastur',
     name: 'Canto da Ilha Hotel',
     unique_id: '4314',
@@ -498,7 +500,7 @@ export const HOTELS = [
     },
   },
   {
-    id: '105',
+    id: 105,
     broker: 'coobrastur',
     name: 'Castelmar Hotel',
     unique_id: '105',

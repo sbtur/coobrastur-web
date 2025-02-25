@@ -6,23 +6,41 @@ import { Title } from '@workspace/ui/components/DataDisplay/Title';
 import { Button } from '@workspace/ui/components/DataEntry/Button';
 import { Link } from '@workspace/ui/components/DataEntry/Link';
 import { Separator } from '@workspace/ui/components/separator';
-import { ArrowRight, Share2 } from '@workspace/ui/lib/icons';
+import { ArrowRight, Share2, X } from '@workspace/ui/lib/icons';
 
 import { Image } from '@components/Image';
 
-export const HotelDialog = () => {
+export interface HotelDialogProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export const HotelDialog = ({ isOpen, onClose }: HotelDialogProps) => {
   return (
-    <Dialog.Root defaultOpen>
-      <Dialog.Content className="flex p-0 gap-0">
+    <Dialog.Root open={isOpen}>
+      <Dialog.Content className="flex p-0 gap-0" hideCloseButton>
+        <Dialog.Close
+          asChild
+          className="absolute -right-7 -top-6 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
+        >
+          <button onClick={onClose}>
+            <X className="h-8 w-8 text-white" />
+            <span className="sr-only">Fechar</span>
+          </button>
+        </Dialog.Close>
         <div className="max-w-[480px]">
           <div className="p-10 pr-4">
             <Dialog.Header>
-              <Title as="h2" size="sm">
-                Sky Borges Hotel Alpenhaus
-              </Title>
-              <Text size="sm">
-                Avenida Borges De Medeiros, 4206, Gramado, RS
-              </Text>
+              <Dialog.Title asChild>
+                <Title as="h2" size="sm">
+                  Sky Borges Hotel Alpenhaus
+                </Title>
+              </Dialog.Title>
+              <Dialog.Description asChild>
+                <Text size="sm">
+                  Avenida Borges De Medeiros, 4206, Gramado, RS
+                </Text>
+              </Dialog.Description>
             </Dialog.Header>
             <div className="max-h-[280px] pr-4 mt-6 overflow-y-auto">
               <Text size="sm">
@@ -65,7 +83,7 @@ export const HotelDialog = () => {
 
         <div className="flex-1 min-h-full relative rounded-r-[20px] overflow-hidden">
           <Image
-            src="/images/hotel.jpeg"
+            src="/images/mocks/thumb-hotel.jpg"
             alt="Hotel"
             fill
             className="object-cover"

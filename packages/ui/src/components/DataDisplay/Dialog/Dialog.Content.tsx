@@ -21,11 +21,23 @@ const contentVariants = cva('', {
 export interface ContentProps extends VariantProps<typeof contentVariants> {
   children: React.ReactNode;
   className?: string;
+  hideCloseButton?: boolean;
 }
 
-export const Content = ({ children, size, className }: ContentProps) => {
+export const Content = ({
+  children,
+  size,
+  className,
+  hideCloseButton = false,
+}: ContentProps) => {
   return (
-    <DialogContent className={cn(contentVariants({ size }), className)}>
+    <DialogContent
+      className={cn(
+        contentVariants({ size }),
+        `${hideCloseButton && '[&>button[aria-label="Close"]]:hidden'}`,
+        className,
+      )}
+    >
       {children}
     </DialogContent>
   );

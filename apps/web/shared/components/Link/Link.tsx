@@ -7,7 +7,10 @@ import {
   type LinkProps as LinkUIProps,
 } from '@workspace/ui/components/DataEntry/Link';
 
-type LinkProps = Omit<NextLinkProps, 'as' | 'passHref' | 'legacyBehavior'> &
+export type LinkProps = Omit<
+  NextLinkProps,
+  'as' | 'passHref' | 'legacyBehavior'
+> &
   LinkUIProps & {
     children: ReactNode;
     className?: string;

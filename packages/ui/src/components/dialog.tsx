@@ -17,14 +17,13 @@ export interface DialogTriggerProps
   asChild?: boolean;
 }
 
-const DialogTrigger = React.forwardRef<
-  HTMLButtonElement,
-  DialogTriggerProps
->(({ children, ...props }, ref) => (
-  <DialogPrimitive.Trigger ref={ref} {...props}>
-    {children}
-  </DialogPrimitive.Trigger>
-));
+const DialogTrigger = React.forwardRef<HTMLButtonElement, DialogTriggerProps>(
+  ({ children, ...props }, ref) => (
+    <DialogPrimitive.Trigger ref={ref} {...props}>
+      {children}
+    </DialogPrimitive.Trigger>
+  ),
+);
 
 DialogTrigger.displayName = DialogPrimitive.Trigger.displayName;
 
@@ -62,7 +61,10 @@ const DialogContent = React.forwardRef<
       {...props}
     >
       {children}
-      <DialogPrimitive.Close className="absolute -right-7 -top-6 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+      <DialogPrimitive.Close
+        className="absolute -right-7 -top-6 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
+        aria-label="Close"
+      >
         <X className="h-8 w-8 text-white" />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>

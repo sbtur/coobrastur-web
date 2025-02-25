@@ -1,24 +1,46 @@
-import {
-  HotelCard,
-  type HotelCardProps,
-} from '@workspace/ui/components/Blocks/HotelCard';
+import { HotelCard } from '@workspace/ui/components/Blocks/HotelCard';
+import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
+import { Text } from '@workspace/ui/components/DataDisplay/Text';
+import { Title } from '@workspace/ui/components/DataDisplay/Title';
+import { ArrowRight } from '@workspace/ui/lib/icons';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
+const HotelCardComponent = () => {
+  return (
+    <HotelCard.Root>
+      <HotelCard.Image>
+        <img src="/images/hotel.jpeg" alt="Sky Borges Hotel Alpenhaus" />
+      </HotelCard.Image>
+      <HotelCard.Description>
+        <Title as="h3" size="xs" align="center">
+          Sky Borges Hotel Alpenhaus
+        </Title>
+        <Text size="sm" align="center">
+          Avenida Borges De Medeiros, 4206, Gramado, RS
+        </Text>
+        <HotelCard.Button type="link" href="#" className="justify-center">
+          Ver mais detalhes <Icon icon={ArrowRight} variant="primary" />
+        </HotelCard.Button>
+      </HotelCard.Description>
+    </HotelCard.Root>
+  );
+};
+
 const meta = {
   title: 'Blocks/HotelCard',
-  component: HotelCard,
+  component: HotelCardComponent,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof HotelCard>;
+} satisfies Meta<typeof HotelCardComponent>;
 
 export default meta;
 
-type Story = StoryObj<typeof HotelCard>;
+type Story = StoryObj<typeof HotelCardComponent>;
 
-const baseArgs: HotelCardProps = {
+const baseArgs: Story = {
   title: 'Sky Borges Hotel Alpenhaus',
   address: 'Avenida Borges De Medeiros, 4206, Gramado, RS',
   href: '#',
