@@ -10,7 +10,7 @@ type ItemProps = NavigationMenuItemProps & {
 
 export const Item = ({ className, children }: ItemProps) => {
   return (
-    <NavigationMenuItem className={cn('p-2 lg:p-1', className)}>
+    <NavigationMenuItem className={cn('text-nowrap !space-x-0', className)}>
       {children}
     </NavigationMenuItem>
   );

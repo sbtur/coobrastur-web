@@ -10,7 +10,7 @@ type DropdownItemProps = NavigationMenuItemProps & {
 
 export const DropdownItem = ({ className, children }: DropdownItemProps) => {
   return (
-    <NavigationMenuItem className={cn('p-2', className)}>
+    <NavigationMenuItem className={cn('p-1', className)}>
       {children}
     </NavigationMenuItem>
   );

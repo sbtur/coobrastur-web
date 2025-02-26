@@ -2,25 +2,28 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@workspace/ui/lib/utils';
 
-const headingVariants = cva('w-full flex flex-col gap-3 mx-auto', {
-  variants: {
-    align: {
-      left: 'items-start text-left',
-      center: 'items-center text-center',
-      right: 'items-end text-right',
+const headingVariants = cva(
+  'w-full flex flex-col gap-3 mx-auto items-center text-center',
+  {
+    variants: {
+      align: {
+        left: 'md:items-start md:text-left',
+        center: 'md:items-center md:text-center',
+        right: 'md:items-end md:text-right',
+      },
+      spacing: {
+        sm: 'mb-2',
+        md: 'mb-3',
+        lg: 'mb-4',
+        xl: 'mb-6',
+      },
+      defaultVariants: {
+        align: 'left',
+        spacing: 'md',
+      },
     },
-    spacing: {
-      sm: 'mb-2',
-      md: 'mb-3',
-      lg: 'mb-4',
-      xl: 'mb-6',
-    },
-    defaultVariants: {
-      align: 'left',
-      spacing: 'md',
-    },
-  },
-} as const);
+  } as const,
+);
 
 export interface HeadingProps
   extends React.HTMLAttributes<HTMLElement>,

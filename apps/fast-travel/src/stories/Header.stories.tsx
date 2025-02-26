@@ -1,10 +1,15 @@
 import Image from 'next/image';
 
+import {
+  MENU_ITEMS,
+  MenuDesktop,
+  MenuMobile,
+  MenuResponsive,
+} from '@workspace/ui/components/Blocks/Navigation';
 import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
 import { Button } from '@workspace/ui/components/DataEntry/Button';
 import { Container } from '@workspace/ui/components/Layouts/Container';
 import { Wrapper } from '@workspace/ui/components/Layouts/Wrapper';
-import { Menu } from '@workspace/ui/components/Navigation/Menu';
 import { ChevronDown } from '@workspace/ui/lib/icons';
 
 import type { Meta, StoryObj } from '@storybook/react';
@@ -25,65 +30,59 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
-    <Wrapper>
-      <Container className="flex items-center justify-between py-6 px-4 border-b border-white/20 bg-background">
-        <div className="logo">
-          <Image
-            src="/images/logo-grupro-coobrastur-dark.png"
-            alt="Logo Grupo Coobrastur"
-            width={245}
-            height={40}
-          />
-        </div>
-        <Menu.Root>
-          <Menu.List>
-            <Menu.Item>
-              <Menu.Trigger>O Clube</Menu.Trigger>
-              <Menu.Content>
-                <Menu.Dropdown>
-                  <Menu.DropdownItem>
-                    <Menu.DropdownLink href="#">
-                      <div className="text-primary leading-none">Sobre Nós</div>
-                      <p className="line-clamp-2 text-sm leading-snug text-gray-400">
-                        Conheça a empresa
-                      </p>
-                    </Menu.DropdownLink>
-                  </Menu.DropdownItem>
-                  <Menu.DropdownItem>
-                    <Menu.DropdownLink href="#">
-                      <div className="text-primary leading-none">Planos</div>
-                      <p className="line-clamp-2 text-sm leading-snug text-gray-400">
-                        Conheça os planos
-                      </p>
-                    </Menu.DropdownLink>
-                  </Menu.DropdownItem>
-                </Menu.Dropdown>
-              </Menu.Content>
-            </Menu.Item>
-            <Menu.Item>
-              <Menu.Link href="#">Planos</Menu.Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Menu.Link href="#">Agência de Viagens</Menu.Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Menu.Link href="#">Destinos</Menu.Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Menu.Link href="#">Hotéis</Menu.Link>
-            </Menu.Item>
-          </Menu.List>
-        </Menu.Root>
-        <div className="space-x-4">
-          <Button size="lg">
-            Acessos <Icon icon={ChevronDown} variant="white" />
-          </Button>
-          <Button variant="outline" size="lg">
-            Planos
-          </Button>
-        </div>
-      </Container>
-    </Wrapper>
+    <Container className="w-full flex items-center justify-between py-6 px-4 gap-8 border-b border-neutral-200">
+      <div className="w-[180px] lg:w-[245px]">
+        <Image
+          src="/images/logo-grupo-coobrastur-dark.png"
+          alt="Logo Grupo Coobrastur"
+          width={245}
+          height={40}
+        />
+      </div>
+      <div className="hidden lg:block">
+        <MenuDesktop menus={MENU_ITEMS} />
+      </div>
+      <div className="hidden md:block lg:hidden">
+        <MenuResponsive menus={MENU_ITEMS} />
+      </div>
+      <div className="hidden md:flex flex-nowrap gap-4">
+        <Button size="sm">
+          Acessos <Icon icon={ChevronDown} variant="white" />
+        </Button>
+        <Button variant="outline" size="sm">
+          Planos
+        </Button>
+      </div>
+    </Container>
+  ),
+};
+
+export const Mobile: Story = {
+  parameters: {
+    viewport: {
+      defaultViewport: 'xsmall-375',
+    },
+  },
+  render: () => (
+    <Container className="w-full flex items-center justify-between py-6 px-4 gap-8 border-b border-neutral-200">
+      <div className="w-[180px] lg:w-[245px]">
+        <Image
+          src="/images/logo-grupo-coobrastur-dark.png"
+          alt="Logo Grupo Coobrastur"
+          width={245}
+          height={40}
+        />
+      </div>
+      <MenuMobile menus={MENU_ITEMS} />
+      <div className="hidden md:flex flex-nowrap gap-4">
+        <Button size="sm">
+          Acessos <Icon icon={ChevronDown} variant="white" />
+        </Button>
+        <Button variant="outline" size="sm">
+          Planos
+        </Button>
+      </div>
+    </Container>
   ),
 };
 
@@ -98,60 +97,22 @@ export const Light: Story = {
       <Container
         as="header"
         size="full"
-        className="flex items-center justify-between py-6 px-4 border-b border-white/20 isLight"
+        className="w-full flex items-center justify-between py-6 px-4 gap-8 border-b border-white/20 isLight"
       >
-        <div className="logo">
+        <div className="w-[180px] lg:w-[245px]">
           <Image
-            src="/images/logo-grupro-coobrastur-light.png"
+            src="/images/logo-grupo-coobrastur-light.png"
             alt="Logo Grupo Coobrastur"
             width={245}
             height={40}
           />
         </div>
-        <Menu.Root>
-          <Menu.List>
-            <Menu.Item>
-              <Menu.Trigger>O Clube</Menu.Trigger>
-              <Menu.Content>
-                <Menu.Dropdown>
-                  <Menu.DropdownItem>
-                    <Menu.DropdownLink href="#">
-                      <div className="text-primary leading-none">Sobre Nós</div>
-                      <p className="line-clamp-2 text-sm leading-snug text-gray-400">
-                        Conheça a empresa
-                      </p>
-                    </Menu.DropdownLink>
-                  </Menu.DropdownItem>
-                  <Menu.DropdownItem>
-                    <Menu.DropdownLink href="#">
-                      <div className="text-primary leading-none">Planos</div>
-                      <p className="line-clamp-2 text-sm leading-snug text-gray-400">
-                        Conheça os planos
-                      </p>
-                    </Menu.DropdownLink>
-                  </Menu.DropdownItem>
-                </Menu.Dropdown>
-              </Menu.Content>
-            </Menu.Item>
-            <Menu.Item>
-              <Menu.Link href="#">Planos</Menu.Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Menu.Link href="#">Agência de Viagens</Menu.Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Menu.Link href="#">Destinos</Menu.Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Menu.Link href="#">Hotéis</Menu.Link>
-            </Menu.Item>
-          </Menu.List>
-        </Menu.Root>
-        <div className="space-x-4">
-          <Button size="lg">
+        <MenuDesktop menus={MENU_ITEMS} />
+        <div className="hidden md:flex flex-nowrap gap-4">
+          <Button size="sm">
             Acessos <Icon icon={ChevronDown} variant="white" />
           </Button>
-          <Button variant="outline-white" size="lg">
+          <Button variant="outline-white" size="sm">
             Planos
           </Button>
         </div>

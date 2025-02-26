@@ -5,9 +5,10 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
+  DialogTrigger,
 } from '../../dialog';
 import { Content, type ContentProps } from './Dialog.Content';
-import { Trigger } from './Dialog.Trigger';
+// import { Trigger } from './Dialog.Trigger';
 
 export const Dialog = {
   Root: DialogUI,
@@ -16,9 +17,9 @@ export const Dialog = {
   Footer: DialogFooter,
   Header: DialogHeader,
   Title: DialogTitle,
-  Trigger,
+  Trigger: DialogTrigger,
   Content,
 };
-export type { TriggerProps } from './Dialog.Trigger';
+// export type { TriggerProps } from './Dialog.Trigger';
 
 export type { ContentProps };

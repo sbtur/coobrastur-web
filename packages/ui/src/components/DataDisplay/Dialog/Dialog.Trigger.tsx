@@ -1,4 +1,4 @@
-import { DialogTrigger } from '../../dialog';
+import { DialogTrigger } from '@workspace/ui/components/dialog';
 
 import { DialogTriggerProps } from '@radix-ui/react-dialog';
 

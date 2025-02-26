@@ -26,7 +26,10 @@ type Story = StoryObj<typeof Dialog>;
 
 export const Default: Story = {
   render: () => (
-    <Dialog.Root defaultOpen>
+    <Dialog.Root>
+      <Dialog.Trigger asChild>
+        <Button type="button">Abrir hotel</Button>
+      </Dialog.Trigger>
       <Dialog.Content className="flex p-0 gap-0">
         <div className="max-w-[480px]">
           <div className="p-10 pr-4">

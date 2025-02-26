@@ -10,12 +10,7 @@ type DropdownProps = NavigationMenuListProps & {
 
 export const Dropdown = ({ className, children }: DropdownProps) => {
   return (
-    <NavigationMenuList
-      className={cn(
-        'grid w-[300px] gap-3 py-4 px-2 md:w-[400px] lg:grid-cols-2 lg:w-[500px]',
-        className
-      )}
-    >
+    <NavigationMenuList className={cn('grid w-[400px] py-5 px-4', className)}>
       {children}
     </NavigationMenuList>
   );
