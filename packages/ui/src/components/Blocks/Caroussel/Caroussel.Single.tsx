@@ -19,11 +19,14 @@ export const CarousselSingle = (props: CarousselProps) => {
 
   return (
     <Caroussel.Root>
-      <Caroussel.Container ref={emblaRef} className="w-[1024px]">
+      <Caroussel.Container
+        ref={emblaRef}
+        className="w-[340px] sm:w-[600px] md:w-[720px] lg:w-[980px] xl:w-[1200px] 2xl:w-[1500px]"
+      >
         {slides.map(slide => (
           <Caroussel.Item
             key={slide.name}
-            className="flex-[0_0_100%] h-[350px] p-0 items-center justify-center bg-highlight rounded-2xl"
+            className="flex-[0_0_100%] h-[350px] p-0 rounded-2xl"
           >
             <img
               src={slide.image}

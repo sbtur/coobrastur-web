@@ -72,7 +72,7 @@ export const ButtonWrapper = ({
   return (
     <div
       className={cn(
-        'absolute z-10 top-1/2 -translate-y-1/2 w-full flex items-center justify-between',
+        'absolute z-10 top-1/2 -translate-y-1/2 w-full items-center justify-between hidden sm:flex',
         className,
       )}
       {...props}

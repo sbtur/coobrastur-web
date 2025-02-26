@@ -24,9 +24,15 @@ export const CarousselUI = (props: CarousselProps) => {
 
   return (
     <Caroussel.Root>
-      <Caroussel.Container ref={emblaRef} className="max-w-7xl">
+      <Caroussel.Container
+        ref={emblaRef}
+        className="w-[340px] sm:w-[600px] md:w-[720px] lg:w-[980px] xl:w-[1200px] 2xl:w-[1500px]"
+      >
         {slides.map(slide => (
-          <Caroussel.Item key={slide.name} className="flex-[0_0_25%]">
+          <Caroussel.Item
+            key={slide.name}
+            className="flex-[0_0_85%] sm:flex-[0_0_50%] md:flex-[0_0_50%] lg:flex-[0_0_25%]"
+          >
             <HotelCard.Root>
               <HotelCard.Image>
                 <img src={slide.image} alt={slide.name} />
