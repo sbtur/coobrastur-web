@@ -18,24 +18,37 @@ const iconWrapperVariants = cva(
   } as const,
 );
 
-export interface IconWrapperProps
-  extends VariantProps<typeof iconWrapperVariants>,
-    React.HTMLAttributes<HTMLButtonElement> {
-  as?: 'button' | 'div';
+type BaseProps = VariantProps<typeof iconWrapperVariants> & {
   children: React.ReactElement;
   className?: string;
-}
+};
+
+type ButtonWrapperProps = BaseProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    as: 'button';
+  };
+
+type DivWrapperProps = BaseProps &
+  React.HTMLAttributes<HTMLDivElement> & {
+    as?: 'div';
+  };
+
+export type IconWrapperProps = ButtonWrapperProps | DivWrapperProps;
 
 export const IconWrapper = ({
   children,
   size,
   className,
   as = 'div',
+  ...props
 }: IconWrapperProps) => {
   const Component = as;
 
   return (
-    <Component className={cn(iconWrapperVariants({ size }), className)}>
+    <Component
+      className={cn(iconWrapperVariants({ size }), className)}
+      {...(props as any)}
+    >
       {children}
     </Component>
   );

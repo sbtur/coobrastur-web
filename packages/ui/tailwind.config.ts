@@ -10,6 +10,7 @@ const config = {
     '../../apps/web/app/**/*.{ts,tsx}',
     '../../apps/web/components/**/*.{ts,tsx}',
     '../../apps/web/shared/**/*.{ts,tsx}',
+    '../../apps/fast-travel/src/**/*.{ts,tsx}',
     '../../packages/ui/src/components/**/*.{ts,tsx}',
     '../../packages/ui/src/external/ui/**/*.{ts,tsx}',
   ],
