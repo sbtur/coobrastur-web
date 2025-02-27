@@ -1,6 +1,8 @@
 import { LucideHeadset, LucideLuggage } from '@workspace/ui/lib/icons';
 
-export const SUPPORT = [
+import { Support } from '../types/support.types';
+
+export const SUPPORT: Support[] = [
   {
     icon: '/images/icons/clara.png',
     title: 'Dúvidas? Fale com a Clara',
@@ -23,4 +25,4 @@ export const SUPPORT = [
       'Oferecemos uma agência de viagens com soluções personalizadas para tornar sua experiência ainda mais incrível.',
     href: 'https://wa.me/5511999999999',
   },
-] as const;
+];

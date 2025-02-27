@@ -30,7 +30,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
-    <Container className="w-full flex items-center justify-between py-6 px-4 gap-8 border-b border-neutral-200">
+    <Container className="w-full flex items-center justify-between py-6 px-4 gap-8 border-b border-neutral-200 relative z-10">
       <div className="w-[180px] lg:w-[245px]">
         <Image
           src="/images/logo-grupo-coobrastur-dark.png"
@@ -64,7 +64,7 @@ export const Mobile: Story = {
     },
   },
   render: () => (
-    <Container className="w-full flex items-center justify-between py-6 px-4 gap-8 border-b border-neutral-200">
+    <Container className="w-full flex items-center justify-between py-6 px-4 gap-8 border-b border-neutral-200 relative z-10">
       <div className="w-[180px] lg:w-[245px]">
         <Image
           src="/images/logo-grupo-coobrastur-dark.png"
@@ -97,7 +97,7 @@ export const Light: Story = {
       <Container
         as="header"
         size="full"
-        className="w-full flex items-center justify-between py-6 px-4 gap-8 border-b border-white/20 isLight"
+        className="w-full flex items-center justify-between py-6 px-4 gap-8 border-b border-white/20 relative z-10 isLight"
       >
         <div className="w-[180px] lg:w-[245px]">
           <Image

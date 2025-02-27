@@ -27,6 +27,7 @@ interface UseCarousselReturn {
   selectedIndex: number;
   scrollSnaps: number[];
   onDotButtonClick: (index: number) => void;
+  isHidden: boolean;
 }
 
 const defaultOptions: EmblaOptionsType = {
@@ -36,7 +37,7 @@ const defaultOptions: EmblaOptionsType = {
 };
 
 const defaultAutoplayOptions: AutoplayOptionsType = {
-  playOnInit: true,
+  playOnInit: false,
   delay: 3000,
   stopOnMouseEnter: true,
   stopOnInteraction: false,
@@ -77,5 +78,6 @@ export const useCaroussel = (props: UseCarousselProps): UseCarousselReturn => {
     selectedIndex,
     scrollSnaps,
     onDotButtonClick,
+    isHidden: prevBtnDisabled && nextBtnDisabled,
   };
 };

@@ -18,7 +18,9 @@ export const Testimonials = () => {
           <Title align="center" size="xl">
             Junte-se a mais de 75 mil assinantes
           </Title>
-          <Text>Veja o que os membros do Grupo Coobrastur têm a dizer:</Text>
+          <Text align="center">
+            Veja o que os membros do Grupo Coobrastur têm a dizer:
+          </Text>
         </Heading>
       </Container>
     </Container>

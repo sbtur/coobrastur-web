@@ -1,12 +1,12 @@
-import { Hotel } from '../types/hotels';
+import { HotelResponse } from '../types/hotels.types';
 
-export const HOTELS: Hotel[] = [
+export const HOTELS: HotelResponse[] = [
   {
     id: 7257,
     broker: 'coobrastur',
     name: 'Jurerê Beach Village',
     unique_id: '7257',
-    image: 'https://www.coobmais.com.br/images/hotel/7257/01.jpg',
+    image: '/images/mocks/places/place-1.jpg',
     city: {
       slug: 'florianópolis',
       name: 'Florianópolis',
@@ -39,7 +39,7 @@ export const HOTELS: Hotel[] = [
     broker: 'coobrastur',
     name: 'Costão do Santinho Resort',
     unique_id: '4481',
-    image: 'https://www.coobmais.com.br/images/hotel/4481/01.jpg',
+    image: '/images/mocks/places/place-2.jpg',
     city: {
       slug: 'florianópolis',
       name: 'Florianópolis',
@@ -73,7 +73,7 @@ export const HOTELS: Hotel[] = [
     broker: 'coobrastur',
     name: 'Das Nações Hotel',
     unique_id: '4038',
-    image: 'https://www.coobmais.com.br/images/hotel/4038/01.jpg',
+    image: '/images/mocks/places/place-3.jpg',
     city: {
       slug: 'florianópolis',
       name: 'Florianópolis',
@@ -106,7 +106,7 @@ export const HOTELS: Hotel[] = [
     broker: 'coobrastur',
     name: 'Mercure Florianópolis',
     unique_id: '3678',
-    image: 'https://www.coobmais.com.br/images/hotel/3678/01.jpg',
+    image: '/images/mocks/places/place-4.jpg',
     city: {
       slug: 'florianópolis',
       name: 'Florianópolis',
@@ -139,7 +139,7 @@ export const HOTELS: Hotel[] = [
     broker: 'coobrastur',
     name: 'Intercity Florianópolis',
     unique_id: '6254',
-    image: 'https://www.coobmais.com.br/images/hotel/6254/01.jpg',
+    image: '/images/mocks/places/place-5.jpg',
     city: {
       slug: 'florianópolis',
       name: 'Florianópolis',
@@ -172,7 +172,7 @@ export const HOTELS: Hotel[] = [
     broker: 'coobrastur',
     name: 'Intercity Portofino Florianópolis',
     unique_id: '6964',
-    image: 'https://www.coobmais.com.br/images/hotel/6964/01.jpg',
+    image: '/images/mocks/places/place-6.jpg',
     city: {
       slug: 'florianópolis',
       name: 'Florianópolis',
@@ -205,7 +205,7 @@ export const HOTELS: Hotel[] = [
     broker: 'coobrastur',
     name: 'Oceania Park Hotel',
     unique_id: '3644',
-    image: 'https://www.coobmais.com.br/images/hotel/3644/01.jpg',
+    image: '/images/mocks/places/place-7.jpg',
     city: {
       slug: 'florianópolis',
       name: 'Florianópolis',
@@ -238,7 +238,7 @@ export const HOTELS: Hotel[] = [
     broker: 'coobrastur',
     name: 'São Sebastião da Praia Hotel',
     unique_id: '405',
-    image: 'https://www.coobmais.com.br/images/hotel/405/01.jpg',
+    image: '/images/mocks/places/place-8.jpg',
     city: {
       slug: 'florianópolis',
       name: 'Florianópolis',
@@ -271,7 +271,7 @@ export const HOTELS: Hotel[] = [
     broker: 'coobrastur',
     name: 'Slaviero Baía Norte Florianópolis',
     unique_id: '4872',
-    image: 'https://www.coobmais.com.br/images/hotel/4872/01.jpg',
+    image: '/images/mocks/places/place-9.jpg',
     city: {
       slug: 'florianópolis',
       name: 'Florianópolis',
@@ -304,7 +304,7 @@ export const HOTELS: Hotel[] = [
     broker: 'coobrastur',
     name: 'Balmare Hotel',
     unique_id: '7256',
-    image: 'https://www.coobmais.com.br/images/hotel/7256/01.jpg',
+    image: '/images/mocks/places/place-10.jpg',
     city: {
       slug: 'florianópolis',
       name: 'Florianópolis',
@@ -337,7 +337,7 @@ export const HOTELS: Hotel[] = [
     broker: 'coobrastur',
     name: 'Porto Madero Hotel',
     unique_id: '6572',
-    image: 'https://www.coobmais.com.br/images/hotel/6572/01.jpg',
+    image: '/images/mocks/places/place-11.jpg',
     city: {
       slug: 'florianópolis',
       name: 'Florianópolis',
@@ -370,7 +370,7 @@ export const HOTELS: Hotel[] = [
     broker: 'coobrastur',
     name: 'Praia Brava Hotel',
     unique_id: '3608',
-    image: 'https://www.coobmais.com.br/images/hotel/3608/01.jpg',
+    image: '/images/mocks/places/place-12.jpg',
     city: {
       slug: 'florianópolis',
       name: 'Florianópolis',
@@ -397,139 +397,6 @@ export const HOTELS: Hotel[] = [
     position: {
       lng: -484154,
       lat: -274,
-    },
-  },
-  {
-    id: 4330,
-    broker: 'coobrastur',
-    name: 'Marinas Palace Hotel',
-    unique_id: '4330',
-    image: 'https://www.coobmais.com.br/images/hotel/4330/01.jpg',
-    city: {
-      slug: 'florianópolis',
-      name: 'Florianópolis',
-    },
-    country: {
-      slug: 'brasil',
-      name: 'Brasil',
-    },
-    state: 'SC',
-    coordinates: {
-      longitude: '-484565.0',
-      latitude: '-274284.0',
-    },
-    street: 'Rua Manoel Mancellos Moura, 630, Canasvieiras, Florianópolis, SC',
-    complement: '',
-    points: 15000,
-    total_days: 3,
-    extra: 0,
-    is_preferential: true,
-    available_to_book: true,
-    absolute_url: '/brasil/sc/florianopolis/marinas-palace-hotel/',
-    by_request: false,
-    position: {
-      lng: -484565,
-      lat: -274284,
-    },
-  },
-  {
-    id: 4174,
-    broker: 'coobrastur',
-    name: 'Cambirela Hotel',
-    unique_id: '4174',
-    image: 'https://www.coobmais.com.br/images/hotel/4174/01.jpg',
-    city: {
-      slug: 'florianópolis',
-      name: 'Florianópolis',
-    },
-    country: {
-      slug: 'brasil',
-      name: 'Brasil',
-    },
-    state: 'SC',
-    coordinates: {
-      longitude: '-485866.0',
-      latitude: '-275813.0',
-    },
-    street: 'Av. Marinheiro Max Schramm, 2199, Estreito, Florianópolis, SC',
-    complement: '',
-    points: 15000,
-    total_days: 3,
-    extra: 46.2,
-    is_preferential: false,
-    available_to_book: true,
-    absolute_url: '/brasil/sc/florianopolis/cambirela-hotel/',
-    by_request: false,
-    position: {
-      lng: -485866,
-      lat: -275813,
-    },
-  },
-  {
-    id: 4314,
-    broker: 'coobrastur',
-    name: 'Canto da Ilha Hotel',
-    unique_id: '4314',
-    image: 'https://www.coobmais.com.br/images/hotel/4314/01.jpg',
-    city: {
-      slug: 'florianópolis',
-      name: 'Florianópolis',
-    },
-    country: {
-      slug: 'brasil',
-      name: 'Brasil',
-    },
-    state: 'SC',
-    coordinates: {
-      longitude: '-484234.0',
-      latitude: '-274079.0',
-    },
-    street:
-      'Av. Luiz Boiteux Piazza, 4.810, Ponta das Canas, Florianópolis, SC',
-    complement: '',
-    points: 15000,
-    total_days: 3,
-    extra: 0,
-    is_preferential: true,
-    available_to_book: true,
-    absolute_url: '/brasil/sc/florianopolis/canto-da-ilha-hotel/',
-    by_request: false,
-    position: {
-      lng: -484234,
-      lat: -274079,
-    },
-  },
-  {
-    id: 105,
-    broker: 'coobrastur',
-    name: 'Castelmar Hotel',
-    unique_id: '105',
-    image: 'https://www.coobmais.com.br/images/hotel/105/01.jpg',
-    city: {
-      slug: 'florianópolis',
-      name: 'Florianópolis',
-    },
-    country: {
-      slug: 'brasil',
-      name: 'Brasil',
-    },
-    state: 'SC',
-    coordinates: {
-      longitude: '-485607.0',
-      latitude: '-275909.0',
-    },
-    street: 'Rua Felipe Schmidt, 1.260, Centro, Florianópolis, SC',
-    complement: '',
-    points: 15000,
-    total_days: 3,
-    extra: 0,
-    is_preferential: true,
-    available_to_book: true,
-    absolute_url: '/brasil/sc/florianopolis/castelmar-hotel/',
-    by_request: false,
-    position: {
-      lng: -485607,
-      lat: -275909,
     },
   },
 ];

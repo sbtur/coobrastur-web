@@ -7,7 +7,7 @@ import { Image } from '@components/Image';
 
 export const Display = () => {
   return (
-    <Container size="full" padding="none" className="bg-background h-screen">
+    <Container padding="none" className="bg-background h-screen">
       <div className="fixed top-0 left-0 right-0 h-full">
         <Image
           src="/images/pages/home/display/display.jpg"
@@ -17,13 +17,12 @@ export const Display = () => {
           priority
         />
       </div>
-      <div className="relative h-full border border-transparent">
-        <Heading align="center" className="w-2/3 mt-24">
+      <Container size="xl" className="h-full border border-transparent">
+        <Heading align="center" className="lg:w-2/3 mt-24">
           <Title
             align="center"
             variant="white"
-            size="2xl"
-            className="text-[56px] leading-none"
+            className="text-3xl lg:text-[56px] leading-none"
           >
             Viaje mais todos os anos com a sua assinatura de hotéis
           </Title>
@@ -31,7 +30,7 @@ export const Display = () => {
             Quero Viajar
           </Button>
         </Heading>
-        <div className="w-[718px] mx-auto absolute bottom-28 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4 p-8 rounded-full bg-white justify-around">
+        <div className="w-full lg:w-[718px] mx-auto absolute bottom-28 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4 p-8 rounded-full bg-white justify-around">
           <div>
             <Image
               src="/images/shared/logos/coob.png"
@@ -65,7 +64,7 @@ export const Display = () => {
             />
           </div>
         </div>
-      </div>
+      </Container>
     </Container>
   );
 };

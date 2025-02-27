@@ -12,7 +12,7 @@ export const DropdownLink = ({ className, children }: DropdownLinkProps) => {
   return (
     <NavigationMenuLink
       className={cn(
-        'block select-none space-y-1 rounded p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100/50 hover:text-neutral hover:cursor-pointer focus:bg-neutral focus:text-neutral [.isLight_&]:text-white',
+        'block select-none space-y-1 rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100/50 hover:text-neutral hover:cursor-pointer focus:bg-neutral focus:text-neutral [.isLight_&]:text-white',
         className,
       )}
     >

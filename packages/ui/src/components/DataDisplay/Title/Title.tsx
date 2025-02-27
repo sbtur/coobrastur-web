@@ -16,9 +16,9 @@ const titleVariants = cva('font-bold', {
       xs: 'text-lg', // 18px
       sm: 'text-2xl', // 24px
       md: 'text-3xl', // 30px
-      lg: 'text-4xl', // 36px
-      xl: 'text-5xl', // 48px
-      '2xl': 'text-6xl', // 60px
+      lg: 'text-2xl lg:text-4xl', //24px-36px
+      xl: 'text-3xl xl:text-[40px]', //30px-40px
+      '2xl': 'text-4xl xl:text-6xl', //40px-60px
     },
     variant: {
       primary: 'text-text-primary',

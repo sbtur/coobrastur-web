@@ -1,4 +1,4 @@
-import { Icon, IconProps } from '@workspace/ui/components/DataDisplay/Icon';
+import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
 import { Text } from '@workspace/ui/components/DataDisplay/Text';
 import { Title } from '@workspace/ui/components/DataDisplay/Title';
 import { Link } from '@workspace/ui/components/DataEntry/Link';
@@ -6,17 +6,15 @@ import { ArrowRight } from '@workspace/ui/lib/icons';
 
 import { Image } from '@components/Image';
 
+import { Support } from '../../types/support.types';
+
 interface CardProps {
-  icon: IconProps['icon'] | string;
-  title: string;
-  description: string;
-  href: string;
-  target?: string;
+  content: Support;
 }
 
-export const Card = ({ content }: { content: CardProps }) => {
+export const Card = ({ content }: CardProps) => {
   return (
-    <div className="w-[290] bg-white/5 rounded-2xl space-y-2 p-6 hover:bg-white/15 hover:scale-105 transition-all duration-300">
+    <div className="w-[290px] bg-white/5 rounded-2xl space-y-2 p-6 hover:bg-white/15 hover:scale-105 transition-all duration-300">
       <div className="w-10 h-10 bg-background rounded-md border-2 border-secondary-100 flex items-center justify-center">
         {typeof content.icon === 'string' ? (
           <Image

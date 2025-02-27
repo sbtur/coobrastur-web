@@ -20,11 +20,15 @@ export const HotelDialog = () => {
           className="absolute right-3 top-3 md:right-0 lg:-right-7 md:-top-10 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
         >
           <button onClick={() => console.log('close')}>
-            <Icon icon={X} className="h-8 w-8" variant="neutral" />
+            <Icon
+              icon={X}
+              className="h-8 w-8 max-md:text-neutral"
+              variant="white"
+            />
             <span className="sr-only">Fechar</span>
           </button>
         </Dialog.Close>
-        <div className="min-h-full overflow-y-auto md:flex md:rounded-[20px]">
+        <div className="overflow-y-auto md:flex md:rounded-[20px]">
           <div className="md:w-1/2 lg:w-2/3">
             <div className="py-10 px-8 lg:px-10">
               <Dialog.Header>
@@ -74,7 +78,7 @@ export const HotelDialog = () => {
             </Dialog.Footer>
           </div>
 
-          <div className="md:w-1/2 relative pb-[70px] md:pb-0">
+          <div className="h-[500px] md:h-auto md:w-1/2 relative pb-[70px] md:pb-0">
             <picture>
               <img
                 src="/images/places/place-5.jpg"

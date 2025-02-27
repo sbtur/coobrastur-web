@@ -25,7 +25,6 @@ const dotVariants = cva('w-2 h-2 rounded-full', {
     selected: false,
   },
 });
-
 export interface ButtonDotProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof dotVariants> {

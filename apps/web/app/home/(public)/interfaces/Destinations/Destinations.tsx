@@ -9,14 +9,14 @@ import { DESTINATIONS } from './helpers';
 
 export const Destinations = () => {
   return (
-    <Container as="section" padding="lg" size="full" className="bg-white">
-      <Container>
+    <Container as="section" padding="lg" className="bg-white">
+      <Container size="xl">
         <Heading align="center">
           <Badge variant="default">Destinos</Badge>
           <Title align="center" size="xl">
             Escolha o destino dos seus sonhos
           </Title>
-          <Text>
+          <Text align="center">
             Aqui, você encontra os destinos mais incríveis com as melhores
             acomodações.
           </Text>

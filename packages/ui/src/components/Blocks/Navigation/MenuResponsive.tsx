@@ -15,7 +15,7 @@ export const MenuResponsive = ({ menus }: { menus: MenuItem[] }) => {
     <Sheet>
       <SheetTrigger asChild>
         <button type="button" className="h-8 w-8">
-          <Icon icon={MenuIcon} className="h-8 w-8" />
+          <Icon icon={MenuIcon} className="h-8 w-8" variant="white" />
         </button>
       </SheetTrigger>
       <SheetContent side="top">

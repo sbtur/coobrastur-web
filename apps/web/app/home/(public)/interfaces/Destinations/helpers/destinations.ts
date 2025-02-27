@@ -1,8 +1,9 @@
-export const DESTINATIONS = [
+import { DestinationResponse } from '../types/destination.types';
+
+export const DESTINATIONS: DestinationResponse[] = [
   {
     id: '1',
-    image:
-      'https://viajar-faz-bem-production.s3.amazonaws.com/portal/city/2021-05-29T233444.6171880000--5412f074-02a5-4d72-a9b2-6ae03cddd27b.jpg',
+    image: '/images/mocks/places/place-1.jpg',
     city: {
       slug: 'gramado',
       name: 'Gramado',
@@ -19,8 +20,7 @@ export const DESTINATIONS = [
   },
   {
     id: '2',
-    image:
-      'https://viajar-faz-bem-production.s3.amazonaws.com/portal/city/2021-05-29T232954.8866670000--9d6ef6b0-e723-4dfc-be01-544fee99a346.jpg',
+    image: '/images/mocks/places/place-2.jpg',
     city: {
       slug: 'florianopolis',
       name: 'Florianópolis',
@@ -37,8 +37,7 @@ export const DESTINATIONS = [
   },
   {
     id: '3',
-    image:
-      'https://viajar-faz-bem-production.s3.amazonaws.com/portal/city/2021-05-29T232542.6716510000--10fa4b4c-254d-471c-996b-f9d68144d3ef.jpg',
+    image: '/images/mocks/places/place-3.jpg',
     city: {
       slug: 'curitiba',
       name: 'Curitiba',
@@ -55,8 +54,7 @@ export const DESTINATIONS = [
   },
   {
     id: '4',
-    image:
-      'https://viajar-faz-bem-production.s3.amazonaws.com/portal/city/2021-05-29T234256.5943440000--08ca8c1c-1a0a-4ff9-868b-cd654004be1b.jpg',
+    image: '/images/mocks/places/place-4.jpg',
     city: {
       slug: 'rio-de-janeiro',
       name: 'Rio de Janeiro',
@@ -73,8 +71,7 @@ export const DESTINATIONS = [
   },
   {
     id: '5',
-    image:
-      'https://viajar-faz-bem-production.s3.amazonaws.com/portal/city/2021-05-29T233038.9882470000--d3ff92d3-5ae7-41c6-b786-e2354ca96c74.jpg',
+    image: '/images/mocks/places/place-5.jpg',
     city: {
       slug: 'maceio',
       name: 'Maceió',
@@ -91,8 +88,7 @@ export const DESTINATIONS = [
   },
   {
     id: '6',
-    image:
-      'https://viajar-faz-bem-production.s3.amazonaws.com/portal/city/2021-05-29T233830.8694680000--c9138fe3-f6a8-4836-b3f0-3f863414a9cb.jpg',
+    image: '/images/mocks/places/place-6.jpg',
     city: {
       slug: 'natal',
       name: 'Natal',
@@ -109,8 +105,7 @@ export const DESTINATIONS = [
   },
   {
     id: '7',
-    image:
-      'https://viajar-faz-bem-production.s3.amazonaws.com/portal/city/2021-05-29T233012.4654790000--71154c48-d951-4b46-b8d6-df5cbf2410f7.jpg',
+    image: '/images/mocks/places/place-7.jpg',
     city: {
       slug: 'fortaleza',
       name: 'Fortaleza',
@@ -127,8 +122,7 @@ export const DESTINATIONS = [
   },
   {
     id: '8',
-    image:
-      'https://viajar-faz-bem-production.s3.amazonaws.com/portal/city/2021-05-29T235725.2951300000--d038ce1a-800b-46a7-8837-70fd633dbf91.jpg',
+    image: '/images/mocks/places/place-8.jpg',
     city: {
       slug: 'porto-seguro',
       name: 'Porto Seguro',

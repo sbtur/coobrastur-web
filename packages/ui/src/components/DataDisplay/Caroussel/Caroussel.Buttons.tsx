@@ -11,7 +11,8 @@ export interface CarousselButtonProps
   onClick: () => void;
 }
 
-export interface CarousselButtonWrapperProps {
+export interface CarousselButtonWrapperProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   children: ReactNode;
 }
@@ -25,7 +26,10 @@ const ButtonBase = ({ children, className, ...props }: ButtonBaseProps) => {
   return (
     <IconWrapper
       as="button"
-      className={cn('shadow-none', className)}
+      className={cn(
+        'shadow-none absolute z-10 top-1/2 -translate-y-1/2 disabled:opacity-50',
+        className,
+      )}
       {...props}
     >
       {children}
@@ -38,11 +42,11 @@ export const ButtonPrevious = ({
   ...props
 }: CarousselButtonProps) => {
   const Component = children || (
-    <Icon icon={ChevronLeft} size="lg" variant="primary" />
+    <Icon icon={ChevronLeft} size="lg" variant="neutral" />
   );
 
   return (
-    <ButtonBase className={cn(className)} {...props}>
+    <ButtonBase className={cn('left-0', className)} {...props}>
       {Component}
     </ButtonBase>
   );
@@ -58,7 +62,7 @@ export const ButtonNext = ({
   );
 
   return (
-    <ButtonBase className={cn(className)} {...props}>
+    <ButtonBase className={cn('right-0', className)} {...props}>
       {Component}
     </ButtonBase>
   );
@@ -71,10 +75,7 @@ export const ButtonWrapper = ({
 }: CarousselButtonWrapperProps) => {
   return (
     <div
-      className={cn(
-        'absolute z-10 top-1/2 -translate-y-1/2 w-full items-center justify-between hidden sm:flex',
-        className,
-      )}
+      className={cn('items-center justify-between flex', className)}
       {...props}
     >
       {children}
