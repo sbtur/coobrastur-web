@@ -3,8 +3,8 @@ import { Menu } from '@workspace/ui/components/Navigation/Menu';
 import type { MenuItem } from './Menu.types';
 
 export const MenuDropdown = ({ menu }: { menu: MenuItem }) => (
-  <Menu.Item>
-    <Menu.Trigger>{menu.label}</Menu.Trigger>
+  <>
+    <Menu.Trigger asChild>{menu.label}</Menu.Trigger>
     <Menu.Content>
       <Menu.Dropdown>
         {menu.items?.map(item => (
@@ -21,5 +21,5 @@ export const MenuDropdown = ({ menu }: { menu: MenuItem }) => (
         ))}
       </Menu.Dropdown>
     </Menu.Content>
-  </Menu.Item>
+  </>
 );

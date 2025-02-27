@@ -12,8 +12,8 @@ const containerVariants = cva('mx-auto relative', {
       sm: 'max-w-3xl', // 768px
       md: 'max-w-5xl', // 1024px
       lg: 'max-w-7xl', // 1280px
-      xl: 'max-w-[1440px]', // 1440px
-      full: 'max-w-full [&:is(section)]:px-3', // 100%
+      xl: 'max-w-[1440px] px-4', // 1440px
+      full: 'max-w-full [&:is(section)]:px-2', // 100%
     },
     padding: {
       none: '', // 0px

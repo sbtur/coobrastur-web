@@ -12,7 +12,7 @@ export const ADVANTAGES: Advantage[] = [
     icon: Hotel,
     title: 'Mais de 2.000 hotéis',
     description:
-      'Grande variedade de Hotéis credenciados em todo o Brasil. Lorem ipsum dolor sit amet, consectetur.',
+      'Grande variedade de Hotéis credenciados em todo o Brasil. Lorem ipsum dolor sit amet.',
   },
   {
     icon: WalletIcon,
@@ -23,8 +23,7 @@ export const ADVANTAGES: Advantage[] = [
   {
     icon: Banknote,
     title: 'Economia Garantida',
-    description:
-      'Até 60% de economia em comparação com sites de hospedagem. Lorem ipsum dolor sit amet.',
+    description: 'Até 60% de economia em comparação com sites de hospedagem.',
   },
   {
     icon: MessageSquare,

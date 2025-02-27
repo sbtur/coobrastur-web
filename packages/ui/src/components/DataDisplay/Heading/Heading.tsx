@@ -2,7 +2,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@workspace/ui/lib/utils';
 
-const headingVariants = cva('w-full flex flex-col gap-3 mx-auto px-10', {
+const headingVariants = cva('w-full flex flex-col gap-3 mx-auto px-8', {
   variants: {
     align: {
       left: 'items-start text-left',

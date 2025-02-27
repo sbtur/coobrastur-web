@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
 import {
-  MENU_ITEMS,
   MenuDesktop,
   MenuMobile,
   MenuResponsive,
@@ -11,12 +10,13 @@ import { Button } from '@workspace/ui/components/DataEntry/Button';
 import { Container } from '@workspace/ui/components/Layouts/Container';
 import { ChevronDown } from '@workspace/ui/lib/icons';
 
+import { MENU_ITEMS } from './helpers/menu';
+
 export function Header() {
   return (
-    <Container>
+    <Container size="xl">
       <Container
         as="header"
-        size="xl"
         className="flex items-center justify-between py-6 px-4 gap-8 border-b border-white/20 relative z-10 isLight"
       >
         <div className="w-[180px] lg:w-[245px]">
@@ -24,7 +24,8 @@ export function Header() {
             src="/images/shared/logos/logo-grupo-coobrastur-light.png"
             alt="Logo Grupo Coobrastur"
             width={245}
-            height={40}
+            height={36}
+            className="w-[180px] h-auto lg:w-[245px] lg:h-[36px]"
           />
         </div>
         <div className="hidden lg:block">

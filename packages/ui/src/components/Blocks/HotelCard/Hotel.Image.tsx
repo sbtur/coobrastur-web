@@ -2,7 +2,6 @@ import { cloneElement, isValidElement, ReactElement } from 'react';
 
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import { Bookmark } from '@workspace/ui/components/DataDisplay/Bookmark';
 import { cn } from '@workspace/ui/lib/utils';
 
 const imageVariants = cva('relative w-full rounded-xl overflow-hidden', {
@@ -38,13 +37,5 @@ export const HotelImage = ({ children, size }: HotelImageProps) => {
       })
     : children;
 
-  return (
-    <div className={cn(imageVariants({ size }))}>
-      {image}
-      <Bookmark
-        className="absolute left-4 top-4"
-        onClick={() => console.log('Saved to favorites')}
-      />
-    </div>
-  );
+  return <div className={cn(imageVariants({ size }))}>{image}</div>;
 };

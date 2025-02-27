@@ -20,8 +20,9 @@ export const AdvantagesListDesktop = () => {
         <Image
           src="/images/pages/home/advantages-featured.png"
           alt="Hotel"
-          fill
-          className="object-cover w-full"
+          width={610}
+          height={400}
+          className="object-cover w-full h-full"
         />
       </div>
       <div className="space-y-4">

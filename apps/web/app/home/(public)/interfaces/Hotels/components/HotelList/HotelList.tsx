@@ -1,6 +1,8 @@
 'use client';
 
 import { HotelCard } from '@workspace/ui/components/Blocks/HotelCard';
+import { Badge } from '@workspace/ui/components/DataDisplay/Badge';
+import { Bookmark } from '@workspace/ui/components/DataDisplay/Bookmark';
 import { Caroussel } from '@workspace/ui/components/DataDisplay/Caroussel';
 import { useCaroussel } from '@workspace/ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
 import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
@@ -37,7 +39,7 @@ export const HotelList = ({ hotels }: HotelListProps) => {
   if (isEnabled) return <HotelDialog isOpen={isEnabled} onClose={toggle} />;
 
   return (
-    <Section className="px-4">
+    <Section className="md:px-4">
       <Caroussel.Root>
         <Caroussel.Container ref={emblaRef}>
           {hotels.map(hotel => (
@@ -46,9 +48,24 @@ export const HotelList = ({ hotels }: HotelListProps) => {
               className="flex-[0_0_85%] sm:flex-[0_0_50%] md:flex-[0_0_50%] lg:flex-[0_0_25%]"
             >
               <HotelCard.Root>
-                <HotelCard.Image>
-                  <Image src={hotel.image} alt={hotel.name} fill />
-                </HotelCard.Image>
+                <HotelCard.ImageWrapper>
+                  <>
+                    <HotelCard.ImageIcon>
+                      <Bookmark
+                        onClick={() => console.log('Saved to favorites')}
+                      />
+                      {hotel.is_preferential && <Badge>Preferencial</Badge>}
+                    </HotelCard.ImageIcon>
+                    <HotelCard.Image>
+                      <Image
+                        src={hotel.image}
+                        alt={hotel.name}
+                        width={315}
+                        height={416}
+                      />
+                    </HotelCard.Image>
+                  </>
+                </HotelCard.ImageWrapper>
                 <HotelCard.Description>
                   <Title as="h3" size="xs" align="center">
                     {hotel.name}

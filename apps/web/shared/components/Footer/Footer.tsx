@@ -37,6 +37,7 @@ export const Footer = () => {
                   width={24}
                   height={24}
                   alt="Facebook"
+                  className="w-6 h-6"
                 />
               </Link>
               <Link href="/">
@@ -45,6 +46,7 @@ export const Footer = () => {
                   width={24}
                   height={24}
                   alt="Instagram"
+                  className="w-6 h-6"
                 />
               </Link>
               <Link href="/">
@@ -53,6 +55,7 @@ export const Footer = () => {
                   width={24}
                   height={24}
                   alt="Linkedin"
+                  className="w-6 h-6"
                 />
               </Link>
               <Link href="/">
@@ -61,6 +64,7 @@ export const Footer = () => {
                   width={24}
                   height={24}
                   alt="Youtube"
+                  className="w-6 h-6"
                 />
               </Link>
             </div>
