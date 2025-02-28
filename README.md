@@ -1,31 +1,73 @@
-# shadcn/ui monorepo template
+# Coobrastur - Plataforma de Viagens
 
-This template is for creating a monorepo with shadcn/ui.
+## Tecnologias Utilizadas
 
-## Usage
+- **Frontend**: Next.js 15, React 19
+- **Estilização**: Tailwind CSS, Shadcn UI
+- **Gerenciamento de Estado**:
+- **Monorepo**: Turborepo com pnpm
+- **Tipagem**: TypeScript
+- **Componentes**: Design System próprio baseado em Shadcn UI
+
+## Estrutura do Projeto
+
+O projeto segue uma arquitetura de monorepo, organizada da seguinte forma:
+
+```
+coobrastur/
+├── apps/                  # Aplicações
+│   ├── web/               # Site principal
+│   └── fast-travel/       # Aplicação complementar
+├── packages/              # Pacotes compartilhados
+│   ├── ui/                # Biblioteca de componentes
+│   ├── eslint-config/     # Configurações de linting
+│   └── typescript-config/ # Configurações de TypeScript
+```
+
+## Instalação e Execução
+
+### Pré-requisitos
+
+- Node.js 20 ou superior
+- pnpm 9.12.3 ou superior
+
+### Instalação
 
 ```bash
-pnpm dlx shadcn@latest init
+# Clone o repositório
+git clone https://github.com/seu-usuario/coobrastur.git
+cd coobrastur
+
+# Instale as dependências
+pnpm install
 ```
 
-## Adding components
-
-To add components to your app, run the following command at the root of your `web` app:
+### Execução
 
 ```bash
-pnpm dlx shadcn@latest add button -c apps/web
+# Desenvolvimento
+pnpm dev
+
+# Build
+pnpm build
+
+# Storybook (documentação de componentes)
+pnpm storybook
 ```
 
-This will place the ui components in the `packages/ui/src/components` directory.
+## Desenvolvimento
 
-## Tailwind
+### Estrutura de Componentes
 
-Your `tailwind.config.ts` and `globals.css` are already set up to use the components from the `ui` package.
+Os componentes seguem uma estrutura organizada:
 
-## Using components
+- **Layouts**: Componentes estruturais
+- **DataDisplay**: Componentes para exibição de dados
+- **DataEntry**: Componentes de formulário
+- **Navigation**: Componentes de navegação
 
-To use the components in your app, import them from the `ui` package.
+### Convenções de Código
 
-```tsx
-import { Button } from "@workspace/ui/components/ui/button"
-```
+- Utilizamos ESLint e Prettier para manter a consistência do código
+- Componentes são criados seguindo o padrão de composição
+- Tipagem estrita com TypeScript
