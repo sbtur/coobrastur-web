@@ -4,15 +4,16 @@ import { Text } from '@workspace/ui/components/DataDisplay/Text';
 import { Title } from '@workspace/ui/components/DataDisplay/Title';
 import { Container } from '@workspace/ui/components/Layouts/Container';
 
+import { TestimonialsList } from './components';
+
 export const Testimonials = () => {
   return (
     <Container
       as="section"
-      size="full"
       padding="lg"
       className="bg-gradient-to-t from-gray-50 to-white"
     >
-      <Container>
+      <Container size="xl">
         <Heading align="center">
           <Badge variant="default">Depoimentos</Badge>
           <Title align="center" size="xl">
@@ -22,6 +23,7 @@ export const Testimonials = () => {
             Veja o que os membros do Grupo Coobrastur têm a dizer:
           </Text>
         </Heading>
+        <TestimonialsList />
       </Container>
     </Container>
   );

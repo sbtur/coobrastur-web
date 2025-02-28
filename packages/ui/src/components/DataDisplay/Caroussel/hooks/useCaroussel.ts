@@ -43,9 +43,11 @@ const defaultAutoplayOptions: AutoplayOptionsType = {
   stopOnInteraction: false,
 };
 
-export const useCaroussel = (props: UseCarousselProps): UseCarousselReturn => {
-  const { options, autoplay, fade } = props;
-
+export const useCaroussel = ({
+  options,
+  autoplay,
+  fade,
+}: UseCarousselProps): UseCarousselReturn => {
   const autoplayOptions = autoplay?.active
     ? [Autoplay({ ...defaultAutoplayOptions, ...autoplay.options })]
     : [];

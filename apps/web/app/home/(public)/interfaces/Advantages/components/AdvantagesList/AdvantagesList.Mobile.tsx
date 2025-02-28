@@ -8,20 +8,12 @@ import { Card } from '../../components/Card';
 import { ADVANTAGES } from '../../helpers';
 
 export const AdvantagesListMobile = () => {
-  const {
-    emblaRef,
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-    selectedIndex,
-    scrollSnaps,
-    onDotButtonClick,
-  } = useCaroussel({
-    options: {
-      loop: false,
-    },
-  });
+  const { emblaRef, selectedIndex, scrollSnaps, onDotButtonClick } =
+    useCaroussel({
+      options: {
+        loop: false,
+      },
+    });
 
   return (
     <div>
