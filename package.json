@@ -7,12 +7,17 @@
     "dev": "turbo dev",
     "storybook": "turbo run storybook",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "clean-modules": "rm -rf node_modules */**/node_modules"
   },
   "devDependencies": {
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "@workspace/eslint-config": "workspace:*",
     "@workspace/typescript-config": "workspace:*",
     "prettier": "^3.2.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "turbo": "^2.3.0",
     "typescript": "5.5.4"
   },

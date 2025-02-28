@@ -1,5 +1,6 @@
+import { Text } from '@workspace/ui/components/DataDisplay/Text';
+
 import type { Meta, StoryObj } from '@storybook/react';
-import { Text } from '@workspace/ui/components';
 
 const meta = {
   title: 'DataDisplay/Text',
@@ -11,7 +12,7 @@ const meta = {
   argTypes: {
     size: {
       control: 'select',
-      options: ['xsmall', 'small', 'base', 'large', 'xlarge'],
+      options: ['xs', 'sm', 'base', 'lg', 'xl'],
     },
     variant: {
       control: 'select',

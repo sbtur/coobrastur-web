@@ -1,20 +1,23 @@
 import { type ElementType } from 'react';
+
 import { cva, type VariantProps } from 'class-variance-authority';
+
 import { cn } from '@workspace/ui/lib/utils';
 
 const textVariants = cva('', {
   variants: {
     size: {
-      xsmall: 'text-xs',
-      small: 'text-sm',
-      base: 'text-base',
-      large: 'text-xl',
-      xlarge: 'text-2xl',
+      xs: 'text-xs', // 12px
+      sm: 'text-sm', // 14px
+      base: 'text-base', // 16px
+      lg: 'text-xl', // 20px
+      xl: 'text-2xl', // 24px
     },
     spacing: {
-      small: 'mb-1',
-      normal: 'mb-2',
-      large: 'mb-4',
+      none: 'mb-0', // 0px
+      sm: 'mb-1', // 4px
+      md: 'mb-2', // 8px
+      lg: 'mb-4', // 16px
     },
     weight: {
       normal: 'font-normal',
@@ -26,24 +29,23 @@ const textVariants = cva('', {
       left: 'text-left',
       center: 'text-center',
       right: 'text-right',
-      justify: 'text-justify',
     },
     variant: {
-      base: 'text-neutral-950',
-      featured: 'text-primary',
-      success: 'text-success',
-      warning: 'text-warning',
-      danger: 'text-danger',
+      base: 'text-text',
+      featured: 'text-text-primary',
+      success: 'text-text-success',
+      warning: 'text-text-warning',
+      danger: 'text-text-danger',
     },
   },
   defaultVariants: {
     size: 'base',
-    spacing: 'normal',
+    spacing: 'none',
     weight: 'normal',
     align: 'left',
     variant: 'base',
   },
-});
+} as const);
 
 export interface TextProps
   extends React.HTMLAttributes<HTMLElement>,
@@ -71,7 +73,7 @@ export const Text = ({
       className={cn(
         textVariants({ variant, size, spacing, weight, align }),
         truncate && 'truncate',
-        className
+        className,
       )}
       {...props}
     >

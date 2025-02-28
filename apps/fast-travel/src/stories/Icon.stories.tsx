@@ -1,6 +1,7 @@
+import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
+import { Home } from '@workspace/ui/lib/icons';
+
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon } from '@workspace/ui/components';
-import { MdHome } from '@workspace/ui/lib/icons';
 
 const meta = {
   title: 'DataDisplay/Icon',
@@ -12,7 +13,7 @@ const meta = {
   argTypes: {
     size: {
       control: 'select',
-      options: ['sm', 'default', 'lg', 'xl'],
+      options: ['sm', 'md', 'lg', 'xl'],
     },
     variant: {
       control: 'select',
@@ -26,55 +27,65 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    icon: MdHome,
+    icon: Home,
   },
 };
 
 export const Small: Story = {
   args: {
-    icon: MdHome,
+    icon: Home,
     size: 'sm',
   },
 };
 
 export const Large: Story = {
   args: {
-    icon: MdHome,
+    icon: Home,
     size: 'lg',
   },
 };
 
 export const ExtraLarge: Story = {
   args: {
-    icon: MdHome,
+    icon: Home,
     size: 'xl',
   },
 };
 
 export const Primary: Story = {
   args: {
-    icon: MdHome,
+    icon: Home,
     variant: 'primary',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    icon: MdHome,
+    icon: Home,
     variant: 'secondary',
   },
 };
 
 export const Neutral: Story = {
+  parameters: {
+    backgrounds: {
+      default: 'primary',
+    },
+  },
   args: {
-    icon: MdHome,
+    icon: Home,
     variant: 'neutral',
   },
 };
 
 export const White: Story = {
+  parameters: {
+    backgrounds: {
+      default: 'primary',
+    },
+  },
   args: {
-    icon: MdHome,
+    icon: Home,
     variant: 'white',
   },
 };

@@ -1,51 +1,50 @@
-import { cn } from '@workspace/ui/lib/utils';
-import { cva, VariantProps } from 'class-variance-authority';
-import React from 'react';
+import { forwardRef, type ReactNode } from 'react';
 
-const linkVariants = cva('mt-2 inline-flex items-center', {
+import { cva, type VariantProps } from 'class-variance-authority';
+
+import { cn } from '@workspace/ui/lib/utils';
+
+const linkVariants = cva('inline-flex items-center', {
   variants: {
     variant: {
-      primary: 'text-primary hover:text-primary-hover',
-      secondary: 'text-secondary hover:text-secondary-hover',
-      neutral: 'text-white hover:text-gray-400',
+      primary: 'text-highlight hover:text-highlight-hover [&_svg]:text-current',
+      secondary:
+        'text-secondary-300 hover:text-secondary-hover [&_svg]:text-current',
+      neutral: 'text-text hover:text-text-hover [&_svg]:text-current',
+      white: 'text-white [&_svg]:text-current',
     },
     size: {
-      small: 'text-sm',
-      medium: 'text-base',
-      large: 'text-lg',
+      sm: 'text-sm',
+      md: 'text-base',
+      lg: 'text-lg',
     },
   },
   defaultVariants: {
     variant: 'primary',
-    size: 'medium',
+    size: 'md',
   },
-});
+} as const);
 
 export interface LinkProps extends VariantProps<typeof linkVariants> {
-  children: React.ReactNode;
-  href: string;
+  children: ReactNode;
+  href?: string;
   className?: string;
-  renderComponent?: (props: LinkProps) => React.ReactElement;
+  target?: string;
 }
 
-export const Link = ({
-  children,
-  href,
-  renderComponent,
-  variant = 'primary',
-  size,
-  ...props
-}: LinkProps) => {
-  const linkProps = {
-    children,
-    href,
-    className: cn(linkVariants({ variant, size }), props.className),
-    ...props,
-  };
+export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
+  ({ children, href, variant, size, className, ...props }, ref) => {
+    return (
+      <a
+        className={cn(linkVariants({ variant, size }), className)}
+        href={href}
+        {...props}
+        ref={ref}
+      >
+        {children}
+      </a>
+    );
+  },
+);
 
-  if (renderComponent) {
-    return renderComponent(linkProps);
-  }
-
-  return <a {...linkProps}>{children}</a>;
-};
+Link.displayName = 'Link';

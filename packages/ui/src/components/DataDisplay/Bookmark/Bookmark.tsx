@@ -1,55 +1,34 @@
-import { useState } from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
-import { Icon } from '@workspace/ui/components';
-import {
-  MdOutlineFavorite,
-  MdOutlineFavoriteBorder,
-} from '@workspace/ui/lib/icons';
-import { cn } from '@workspace/ui/lib/utils';
-const bookmarkVariants = cva(
-  'flex items-center justify-center appearance-none border-0 p-0 rounded-full bg-white transition-colors',
-  {
-    variants: {
-      size: {
-        small: 'h-8 w-8',
-        medium: 'h-10 w-10',
-        large: 'h-12 w-12',
-      },
-    },
-    defaultVariants: {
-      size: 'medium',
-    },
-  }
-);
+import { Icon, IconWrapper } from '@workspace/ui/components/DataDisplay/Icon';
+import { Heart } from '@workspace/ui/lib/icons';
 
-export interface BookmarkProps extends VariantProps<typeof bookmarkVariants> {
+export interface BookmarkProps {
   onClick?: () => void;
   active?: boolean;
   className?: string;
+  size?: 'sm' | 'md' | 'lg';
 }
 
 export const Bookmark = ({
-  size,
+  size = 'md',
   onClick,
   active = false,
   className,
 }: BookmarkProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <button
-      type='button'
-      className={cn(bookmarkVariants({ size }), className)}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+    <IconWrapper
+      as="button"
+      size={size}
+      className={className}
       onClick={onClick}
       aria-label={active ? 'Remove from favorites' : 'Add to favorites'}
     >
       <Icon
-        icon={active || isHovered ? MdOutlineFavorite : MdOutlineFavoriteBorder}
-        color='neutral'
-        className='w-1/2 h-1/2 transition-transform hover:scale-110'
+        icon={Heart}
+        variant="neutral"
+        className={`w-1/2 h-1/2 transition-transform hover:scale-110 hover:fill-neutral-400 ${
+          active ? 'fill-neutral-400' : ''
+        }`}
       />
-    </button>
+    </IconWrapper>
   );
 };

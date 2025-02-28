@@ -1,39 +1,40 @@
 import * as React from 'react';
-import { Slot } from '@radix-ui/react-slot';
+
 import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@workspace/ui/lib/utils';
 
+import { Slot } from '@radix-ui/react-slot';
+
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0',
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0',
   {
     variants: {
       variant: {
-        default: 'bg-primary text-primary-foreground hover:bg-primary-hover',
-        danger: 'bg-danger text-danger-foreground hover:bg-danger-hover',
-        outline:
-          'border border-input bg-transparent text-white hover:bg-accent hover:text-accent-foreground',
+        default: 'bg-highlight text-white hover:bg-highlight-hover',
         secondary:
-          'bg-secondary text-secondary-foreground hover:bg-secondary-hover',
-        ghost: 'hover:bg-accent hover:text-accent-foreground',
-        link: 'text-primary underline-offset-4 hover:underline',
+          'bg-secondary-100 text-secondary-300 hover:bg-secondary-hover',
+        danger: 'bg-danger text-white hover:bg-danger-hover',
+        outline: 'border-2 border-highlight bg-white text-highlight',
+        ghost: 'text-text bg-white hover:text-neutral-300',
+        link: 'text-highlight underline-offset-4 hover:underline',
         success: 'text-white bg-success hover:bg-success-hover',
         warning: 'text-white bg-warning hover:bg-warning-hover',
-        overlay: 'bg-white text-secondary hover:text-secondary-hover',
-        'outline-overlay': 'border border-white bg-transparent text-white',
+        white: 'bg-white text-highlight hover:text-highlight-hover',
+        'outline-white': 'border-2 border-white bg-transparent text-white',
       },
       size: {
-        default: 'h-10 px-6 py-4',
-        sm: 'h-9 rounded px-3 py-3',
-        lg: 'h-11 rounded px-8 py-4',
-        icon: 'h-10 w-10',
+        default: 'h-10 px-4 py-3 text-base',
+        sm: 'h-9 px-3 py-3 text-sm',
+        lg: 'h-11 px-8 py-4 text-lg',
+        icon: 'px-4 py-3',
       },
     },
     defaultVariants: {
       variant: 'default',
       size: 'default',
     },
-  }
+  } as const,
 );
 
 export interface ButtonProps
@@ -52,7 +53,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       />
     );
-  }
+  },
 );
 Button.displayName = 'Button';
 

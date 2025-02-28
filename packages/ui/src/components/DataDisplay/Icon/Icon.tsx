@@ -1,46 +1,50 @@
-import type { IconType, IconBaseProps } from 'react-icons';
 import { cva, type VariantProps } from 'class-variance-authority';
+
+import { LucideIcon } from '@workspace/ui/lib/icons';
 import { cn } from '@workspace/ui/lib/utils';
 
 const iconVariants = cva('inline-flex shrink-0', {
   variants: {
-    size: {
-      sm: 'text-base', // 16px
-      md: 'text-xl', // 20px
-      lg: 'text-2xl', // 24px
-      xl: 'text-3xl', // 30px
-    },
     variant: {
-      primary: 'text-primary',
-      secondary: 'text-secondary',
-      neutral: 'text-neutral-400',
-      white: 'text-white',
+      primary: 'text-highlight group-[.hover]:text-highlight-hover',
+      secondary: 'text-primary-100 group-[.hover]:text-secondary-hover',
+      neutral: 'text-neutral-400 group-[.hover]:text-neutral-500',
+      white: 'text-white group-[.hover]:text-neutral-100',
     },
   },
   defaultVariants: {
-    size: 'md',
-    variant: 'primary',
+    variant: 'neutral',
   },
-});
+} as const);
+
+export const IconSize = {
+  sm: 14,
+  md: 16,
+  lg: 20,
+  xl: 24,
+} as const;
 
 type IconVariants = VariantProps<typeof iconVariants>;
 
-export interface IconProps extends Omit<IconBaseProps, 'size'>, IconVariants {
-  icon: IconType;
+export interface IconProps extends IconVariants {
+  icon: LucideIcon;
   className?: string;
+  size?: keyof typeof IconSize;
 }
 
 export const Icon = ({
   icon: IconComponent,
-  size,
+  size = 'md',
   variant,
   className,
   ...props
 }: IconProps) => {
+  const IconElement = IconComponent;
   return (
-    <IconComponent
-      className={cn(iconVariants({ size, variant }), className)}
-      aria-hidden='true'
+    <IconElement
+      className={cn(iconVariants({ variant }), className)}
+      aria-hidden="true"
+      size={IconSize[size]}
       {...props}
     />
   );

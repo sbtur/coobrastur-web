@@ -1,5 +1,6 @@
-import { NavigationMenuTriggerProps } from '@radix-ui/react-navigation-menu';
 import { NavigationMenuTrigger } from '@workspace/ui/components/navigation-menu';
+
+import { NavigationMenuTriggerProps } from '@radix-ui/react-navigation-menu';
 
 type TriggerProps = NavigationMenuTriggerProps & {
   children: React.ReactNode;
@@ -7,7 +8,7 @@ type TriggerProps = NavigationMenuTriggerProps & {
 
 export const Trigger = ({ children }: TriggerProps) => {
   return (
-    <NavigationMenuTrigger className='font-secondary text-white'>
+    <NavigationMenuTrigger className="h-fit font-secondary text-text [.isLight_&]:text-white">
       {children}
     </NavigationMenuTrigger>
   );

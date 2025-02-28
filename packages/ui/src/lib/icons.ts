@@ -1,1 +1,1 @@
-export * from 'react-icons/md';
+export * from 'lucide-react';

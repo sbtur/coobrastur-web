@@ -1,30 +1,27 @@
-import { Geist, Geist_Mono } from 'next/font/google';
+import { ReactNode } from 'react';
+import type { Metadata } from 'next';
+
+import { Wrapper } from '@workspace/ui/components/Layouts/Wrapper';
+
+import { Providers } from '@providers';
 
 import '@workspace/ui/globals.css';
-import { Providers } from '@/components/providers';
 
-const fontSans = Geist({
-  subsets: ['latin'],
-  variable: '--font-sans',
-});
+export const metadata: Metadata = {
+  title: 'Coobrastur',
+  description: 'Coobrastur',
+};
 
-const fontMono = Geist_Mono({
-  subsets: ['latin'],
-  variable: '--font-mono',
-});
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang='en' suppressHydrationWarning>
-      <body
-        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}
-      >
-        <Providers>{children}</Providers>
+    <html lang="pt-BR" suppressHydrationWarning>
+      <body>
+        <Providers>
+          <Wrapper>{children}</Wrapper>
+        </Providers>
       </body>
     </html>
   );
 }
+
+export default Layout;

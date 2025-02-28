@@ -1,5 +1,6 @@
+import { Title } from '@workspace/ui/components/DataDisplay/Title';
+
 import type { Meta, StoryObj } from '@storybook/react';
-import { Title } from '@workspace/ui/components';
 
 const meta = {
   title: 'DataDisplay/Title',
@@ -11,17 +12,17 @@ const meta = {
   argTypes: {
     size: {
       control: 'select',
-      options: ['xsmall', 'small', 'medium', 'large', 'xlarge', '2xlarge'],
+      options: ['xs', 'sm', 'base', 'lg', 'xl', '2xl'],
     },
     variant: {
       control: 'select',
       options: [
         'primary',
         'secondary',
-        'neutral',
         'success',
         'warning',
         'danger',
+        'white',
       ],
     },
   },
@@ -44,10 +45,10 @@ export const Secondary: Story = {
   },
 };
 
-export const Neutral: Story = {
+export const White: Story = {
   args: {
-    variant: 'neutral',
-    children: 'Neutral Title',
+    variant: 'white',
+    children: 'White Title',
   },
   parameters: {
     backgrounds: {
@@ -79,28 +80,28 @@ export const Danger: Story = {
 
 export const Small: Story = {
   args: {
-    size: 'small',
+    size: 'sm',
     children: 'Small Title',
   },
 };
 
 export const Large: Story = {
   args: {
-    size: 'large',
+    size: 'lg',
     children: 'Large Title',
   },
 };
 
 export const ExtraLarge: Story = {
   args: {
-    size: 'xlarge',
+    size: 'xl',
     children: 'Extra Large Title',
   },
 };
 
 export const DoubleExtraLarge: Story = {
   args: {
-    size: '2xlarge',
+    size: '2xl',
     children: '2XL Title',
   },
 };

@@ -1,5 +1,6 @@
+import { Bookmark } from '@workspace/ui/components/DataDisplay/Bookmark';
+
 import type { Meta, StoryObj } from '@storybook/react';
-import { Bookmark } from '@workspace/ui/components';
 
 const meta = {
   title: 'DataDisplay/Bookmark',
@@ -26,18 +27,18 @@ export const Active: Story = {
 
 export const Small: Story = {
   args: {
-    size: 'small',
+    size: 'sm',
   },
 };
 
 export const Medium: Story = {
   args: {
-    size: 'medium',
+    size: 'md',
   },
 };
 
 export const Large: Story = {
   args: {
-    size: 'large',
+    size: 'lg',
   },
 };
