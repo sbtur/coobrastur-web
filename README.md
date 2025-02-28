@@ -1,4 +1,5 @@
-# Coobrastur - Plataforma de Viagens
+![logo-grupo-coobrastur-light](https://github.com/user-attachments/assets/8dba9677-d2d5-43c4-a886-abf0a150fee7)
+
 
 ## Tecnologias Utilizadas
 
