@@ -13,13 +13,13 @@ export const Support = () => {
       padding="lg"
       className="bg-[#254262] bg-gradient-to-r from-[rgba(47,98,153,0)] from-[31.41%] to-[#2F6299] to-[129.86%]"
     >
-      <Container size="xl">
-        <Heading align="center">
+      <Container size="xl" className="lg:pt-24">
+        <Heading align="left">
           <Badge variant="default">Suporte</Badge>
-          <Title size="xl" variant="white" align="center">
+          <Title size="xl" variant="white" align="left">
             Suporte especializado para você
           </Title>
-          <Text className="text-white" align="center">
+          <Text className="text-white" align="left">
             Conte com nossa equipe de especialistas para te ajudar a escolher o
             melhor destino.
           </Text>

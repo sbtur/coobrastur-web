@@ -6,10 +6,10 @@ import { SupportListMobile } from './SupportList.Mobile';
 export const SupportList = () => {
   return (
     <Section>
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <SupportListDesktop />
       </div>
-      <div className="block md:hidden">
+      <div className="block lg:hidden">
         <SupportListMobile />
       </div>
     </Section>
