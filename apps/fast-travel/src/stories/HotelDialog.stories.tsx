@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import Image from 'next/image';
 
 import { Bookmark } from '@workspace/ui/components/DataDisplay/Bookmark';
+import { Caroussel } from '@workspace/ui/components/DataDisplay/Caroussel';
+import { useCaroussel } from '@workspace/ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
 import { Dialog } from '@workspace/ui/components/DataDisplay/Dialog';
 import { Icon, IconWrapper } from '@workspace/ui/components/DataDisplay/Icon';
 import { Text } from '@workspace/ui/components/DataDisplay/Text';
@@ -18,10 +21,50 @@ import {
 
 import type { Meta, StoryObj } from '@storybook/react';
 
+const HOTELS = [
+  {
+    name: 'Hotel 1',
+    image: '/images/places/place-1.jpg',
+  },
+  {
+    name: 'Hotel 2',
+    image: '/images/places/place-2.jpg',
+  },
+  {
+    name: 'Hotel 3',
+    image: '/images/places/place-3.jpg',
+  },
+  {
+    name: 'Hotel 4',
+    image: '/images/places/place-4.jpg',
+  },
+  {
+    name: 'Hotel 5',
+    image: '/images/places/place-5.jpg',
+  },
+  {
+    name: 'Hotel 6',
+    image: '/images/places/place-6.jpg',
+  },
+];
+
 export const HotelDialog = () => {
   const [isShowGallery, setIsShowGallery] = useState(false);
 
-  const handleShowGallery = () => setIsShowGallery(!isShowGallery);
+  const {
+    emblaRef,
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick,
+    selectedIndex,
+    scrollSnaps,
+    onDotButtonClick,
+  } = useCaroussel({});
+
+  const handleShowGallery = () => {
+    setIsShowGallery(!isShowGallery);
+  };
 
   return (
     <Dialog.Root defaultOpen>
@@ -31,7 +74,7 @@ export const HotelDialog = () => {
       <Dialog.Content className="h-full md:h-auto p-0 gap-0" hideCloseButton>
         <Dialog.Close
           asChild
-          className="absolute right-3 top-3 md:right-0 lg:-right-7 md:-top-10 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
+          className="absolute right-3 top-3 z-10 md:right-0 lg:-right-7 md:-top-10 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
         >
           <button onClick={() => console.log('close')}>
             <Icon
@@ -42,11 +85,11 @@ export const HotelDialog = () => {
             <span className="sr-only">Fechar</span>
           </button>
         </Dialog.Close>
-        <div className="overflow-y-auto md:flex md:rounded-[20px] h-[570px] relative">
+        <div className="overflow-y-auto md:flex md:rounded-[20px] md:h-[570px] relative">
           <div
             className={`${
               isShowGallery ? 'w-0 overflow-hidden' : 'md:w-1/2 lg:w-2/3'
-            } h-full transition-all duration-300 group`}
+            } md:h-full transition-all duration-300 group`}
           >
             <div className="group-[.w-0]:hidden transition-all duration-300">
               <div className="py-10 px-8 lg:px-10">
@@ -101,7 +144,7 @@ export const HotelDialog = () => {
           <div
             className={`${isShowGallery ? 'w-full' : 'md:h-auto md:w-1/2'} h-full relative pb-[70px] md:pb-0 transition-all duration-300 group`}
           >
-            <div className="absolute top-0 right-0 p-4 w-full">
+            <div className="hidden md:block absolute top-0 right-0 p-4 w-full z-10">
               <div
                 className={`${isShowGallery ? 'hidden' : 'flex gap-4 flex-wrap justify-end'}`}
               >
@@ -136,13 +179,50 @@ export const HotelDialog = () => {
               </div>
             </div>
 
-            <picture>
-              <img
-                src="/images/places/place-5.jpg"
-                alt="Hotel"
-                className="w-full h-full object-cover"
-              />
-            </picture>
+            <Caroussel.Root className="h-full">
+              <Caroussel.Container
+                ref={emblaRef}
+                className="p-0 rounded-none h-full"
+              >
+                {HOTELS.map(hotel => (
+                  <Caroussel.Item
+                    key={hotel.name}
+                    className="flex-[0_0_100%] p-0 rounded-none relative"
+                  >
+                    <Image
+                      src={hotel.image}
+                      alt={hotel.name}
+                      width={355}
+                      height={800}
+                      className="w-full h-full md:h-[570px] object-cover"
+                    />
+                  </Caroussel.Item>
+                ))}
+              </Caroussel.Container>
+              <Caroussel.ButtonWrapper className="md:flex">
+                <Caroussel.ButtonPrevious
+                  onClick={onPrevButtonClick}
+                  disabled={prevBtnDisabled}
+                  className="ml-4"
+                />
+                <Caroussel.ButtonNext
+                  onClick={onNextButtonClick}
+                  disabled={nextBtnDisabled}
+                  className="mr-4"
+                />
+              </Caroussel.ButtonWrapper>
+              <Caroussel.ButtonDotWrapper className="absolute bottom-[110px] left-0 right-0 z-10">
+                {scrollSnaps.map((_, index) => (
+                  <Caroussel.ButtonDot
+                    key={index}
+                    onClick={() => onDotButtonClick(index)}
+                    index={index}
+                    selectedIndex={selectedIndex}
+                  />
+                ))}
+              </Caroussel.ButtonDotWrapper>
+            </Caroussel.Root>
+
             <Button
               size="lg"
               className="absolute bottom-0 left-0 right-0 h-[70px] md:h-[90px] rounded-none"
