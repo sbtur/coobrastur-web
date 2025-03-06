@@ -3,6 +3,8 @@ import { Image } from '@components/Image';
 import { Card } from '../../components/Card';
 import { ADVANTAGES } from '../../helpers';
 
+import advantageImage from '@images/pages/home/advantages-featured.png';
+
 export const AdvantagesListDesktop = () => {
   const [advantage1, advantage2, advantage3, advantage4] = ADVANTAGES;
 
@@ -18,7 +20,7 @@ export const AdvantagesListDesktop = () => {
       </div>
       <div className="relative rounded-2xl overflow-hidden bg-neutral-200">
         <Image
-          src="/images/pages/home/advantages-featured.png"
+          src={advantageImage}
           alt="Hotel"
           width={610}
           height={400}

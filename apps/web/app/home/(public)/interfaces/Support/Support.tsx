@@ -13,15 +13,15 @@ export const Support = () => {
       padding="lg"
       className="bg-[#254262] bg-gradient-to-r from-[rgba(47,98,153,0)] from-[31.41%] to-[#2F6299] to-[129.86%]"
     >
-      <Container size="xl">
-        <Heading align="center">
-          <Badge variant="default">Suporte</Badge>
-          <Title size="xl" variant="white" align="center">
-            Suporte especializado para você
+      <Container size="xl" className="lg:pt-24">
+        <Heading align="left">
+          <Badge variant="default">Tudo o que precisa para a sua viagem</Badge>
+          <Title size="xl" variant="white" align="left">
+            Conte com suporte completo
           </Title>
-          <Text className="text-white" align="center">
-            Conte com nossa equipe de especialistas para te ajudar a escolher o
-            melhor destino.
+          <Text className="text-white" align="left">
+            A combinação ideal para transformar sua viagem dos sonhos em uma
+            experiência única e inesquecível
           </Text>
         </Heading>
 

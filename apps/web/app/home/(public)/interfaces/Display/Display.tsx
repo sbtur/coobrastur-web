@@ -5,16 +5,19 @@ import { Container } from '@workspace/ui/components/Layouts/Container';
 
 import { Image } from '@components/Image';
 
+import displayImage from '@images/pages/home/display/display.jpg';
+
 export const Display = () => {
   return (
     <Container padding="none" className="bg-background h-screen">
       <div className="fixed top-0 left-0 right-0 h-full">
         <Image
-          src="/images/pages/home/display/display.jpg"
+          src={displayImage}
           alt="Logo"
           fill
           className="object-cover fixed inset-0 -z-10"
           priority
+          placeholder="blur"
         />
       </div>
       <Container size="xl" className="h-full border border-transparent">

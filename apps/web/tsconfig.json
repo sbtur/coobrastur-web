@@ -7,8 +7,9 @@
       "@components/*": ["./shared/components/*"],
       "@providers": ["./shared/providers"],
       "@hooks/*": ["./shared/hooks/*"],
-      "@utils/*": ["./shared/utils/*"],
-      "@app/*": ["./app/*"]
+      "@app/*": ["./app/*"],
+      "@images/*": ["./public/images/*"],
+      "@helpers/*": ["./shared/helpers/*"]
     },
     "plugins": [
       {

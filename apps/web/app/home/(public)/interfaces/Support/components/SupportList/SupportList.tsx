@@ -1,15 +1,29 @@
+'use client';
+import dynamic from 'next/dynamic';
+
 import { Section } from '@workspace/ui/components/Layouts/Section';
 
-import { SupportListDesktop } from './SupportList.Desktop';
-import { SupportListMobile } from './SupportList.Mobile';
+const SupportListDesktop = dynamic(
+  () => import('./SupportList.Desktop').then(mod => mod.SupportListDesktop),
+  {
+    ssr: false,
+  },
+);
+
+const SupportListMobile = dynamic(
+  () => import('./SupportList.Mobile').then(mod => mod.SupportListMobile),
+  {
+    ssr: false,
+  },
+);
 
 export const SupportList = () => {
   return (
     <Section>
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <SupportListDesktop />
       </div>
-      <div className="block md:hidden">
+      <div className="block lg:hidden">
         <SupportListMobile />
       </div>
     </Section>
