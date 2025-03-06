@@ -4,6 +4,8 @@ import { cn } from '@workspace/ui/lib/utils';
 
 import { DialogContent } from '../../dialog';
 
+import { DialogContentProps } from '@radix-ui/react-dialog';
+
 const contentVariants = cva('', {
   variants: {
     size: {
@@ -18,7 +20,9 @@ const contentVariants = cva('', {
   },
 });
 
-export interface ContentProps extends VariantProps<typeof contentVariants> {
+export interface ContentProps
+  extends DialogContentProps,
+    VariantProps<typeof contentVariants> {
   children: React.ReactNode;
   className?: string;
   hideCloseButton?: boolean;
@@ -29,9 +33,11 @@ export const Content = ({
   size,
   className,
   hideCloseButton = false,
+  ...props
 }: ContentProps) => {
   return (
     <DialogContent
+      {...props}
       className={cn(
         contentVariants({ size }),
         `${hideCloseButton && '[&>button[aria-label="Close"]]:hidden'}`,

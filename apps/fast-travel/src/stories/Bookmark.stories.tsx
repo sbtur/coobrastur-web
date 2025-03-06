@@ -24,21 +24,3 @@ export const Active: Story = {
     active: true,
   },
 };
-
-export const Small: Story = {
-  args: {
-    size: 'sm',
-  },
-};
-
-export const Medium: Story = {
-  args: {
-    size: 'md',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'lg',
-  },
-};
