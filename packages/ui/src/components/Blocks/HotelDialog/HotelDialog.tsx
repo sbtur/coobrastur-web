@@ -79,6 +79,9 @@ export const HotelDialog = () => {
           </div>
 
           <div className="h-[500px] md:h-auto md:w-1/2 relative pb-[70px] md:pb-0">
+            <div className="absolute top-0 right-0">
+              <Bookmark onClick={() => console.log('Saved to favorites')} />
+            </div>
             <picture>
               <img
                 src="/images/places/place-5.jpg"
