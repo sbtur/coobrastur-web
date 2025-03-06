@@ -1,16 +1,11 @@
 import Image from 'next/image';
 
-import {
-  MenuDesktop,
-  MenuMobile,
-  MenuResponsive,
-} from '@workspace/ui/components/Blocks/Navigation';
 import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
 import { Button } from '@workspace/ui/components/DataEntry/Button';
 import { Container } from '@workspace/ui/components/Layouts/Container';
 import { ChevronDown } from '@workspace/ui/lib/icons';
 
-import { MENU_ITEMS } from './helpers/menu';
+import { Menu } from './Menu';
 
 export function Header() {
   return (
@@ -28,15 +23,7 @@ export function Header() {
             className="w-[180px] h-auto lg:w-[245px] lg:h-[36px]"
           />
         </div>
-        <div className="hidden lg:block">
-          <MenuDesktop menus={MENU_ITEMS} />
-        </div>
-        <div className="hidden md:block lg:hidden">
-          <MenuResponsive menus={MENU_ITEMS} />
-        </div>
-        <div className="md:hidden">
-          <MenuMobile menus={MENU_ITEMS} />
-        </div>
+        <Menu />
         <div className="hidden md:flex flex-nowrap gap-4">
           <Button size="sm">
             Acessos <Icon icon={ChevronDown} variant="white" />
