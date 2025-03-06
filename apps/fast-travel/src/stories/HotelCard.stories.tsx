@@ -1,4 +1,5 @@
 import { HotelCard } from '@workspace/ui/components/Blocks/HotelCard';
+import { Bookmark } from '@workspace/ui/components/DataDisplay/Bookmark';
 import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
 import { Text } from '@workspace/ui/components/DataDisplay/Text';
 import { Title } from '@workspace/ui/components/DataDisplay/Title';
@@ -9,9 +10,17 @@ import type { Meta, StoryObj } from '@storybook/react';
 const HotelCardComponent = () => {
   return (
     <HotelCard.Root>
-      <HotelCard.Image>
-        <img src="/images/hotel.jpeg" alt="Sky Borges Hotel Alpenhaus" />
-      </HotelCard.Image>
+      <HotelCard.ImageWrapper>
+        <>
+          <HotelCard.ImageIcon>
+            <Bookmark onClick={() => console.log('Saved to favorites')} />
+          </HotelCard.ImageIcon>
+          <HotelCard.Image>
+            <img src="/images/hotel.jpeg" alt="Sky Borges Hotel Alpenhaus" />
+          </HotelCard.Image>
+        </>
+      </HotelCard.ImageWrapper>
+
       <HotelCard.Description>
         <Title as="h3" size="xs" align="center">
           Sky Borges Hotel Alpenhaus
@@ -40,15 +49,7 @@ export default meta;
 
 type Story = StoryObj<typeof HotelCardComponent>;
 
-const baseArgs: Story = {
-  title: 'Sky Borges Hotel Alpenhaus',
-  address: 'Avenida Borges De Medeiros, 4206, Gramado, RS',
-  href: '#',
-  image: {
-    src: '/images/hotel.jpeg',
-    alt: 'Sky Borges Hotel Alpenhaus - Luxury room with a view to the garden',
-  },
-};
+const baseArgs: Story = {};
 
 export const Default: Story = {
   args: baseArgs,
