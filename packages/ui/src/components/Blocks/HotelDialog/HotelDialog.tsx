@@ -1,12 +1,12 @@
-import { Bookmark } from '@workspace/ui/components/DataDisplay/Bookmark';
-import { Dialog } from '@workspace/ui/components/DataDisplay/Dialog';
-import { Icon, IconWrapper } from '@workspace/ui/components/DataDisplay/Icon';
-import { Text } from '@workspace/ui/components/DataDisplay/Text';
-import { Title } from '@workspace/ui/components/DataDisplay/Title';
-import { Button } from '@workspace/ui/components/DataEntry/Button';
-import { Link } from '@workspace/ui/components/DataEntry/Link';
-import { Separator } from '@workspace/ui/components/separator';
-import { ArrowRight, Share2, X } from '@workspace/ui/lib/icons';
+import { Bookmark } from '@coobrastur/ui/components/DataDisplay/Bookmark';
+import { Dialog } from '@coobrastur/ui/components/DataDisplay/Dialog';
+import { Icon, IconWrapper } from '@coobrastur/ui/components/DataDisplay/Icon';
+import { Text } from '@coobrastur/ui/components/DataDisplay/Text';
+import { Title } from '@coobrastur/ui/components/DataDisplay/Title';
+import { Button } from '@coobrastur/ui/components/DataEntry/Button';
+import { Link } from '@coobrastur/ui/components/DataEntry/Link';
+import { Separator } from '@coobrastur/ui/components/separator';
+import { ArrowRight, Share2, X } from '@coobrastur/ui/lib/icons';
 
 export const HotelDialog = () => {
   return (

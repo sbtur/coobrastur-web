@@ -1,11 +1,11 @@
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 
-import { Wrapper } from '@workspace/ui/components/Layouts/Wrapper';
+import { Wrapper } from '@coobrastur/ui/components/Layouts/Wrapper';
 
 import { Providers } from '@providers';
 
-import '@workspace/ui/globals.css';
+import '@coobrastur/ui/globals.css';
 
 export const metadata: Metadata = {
   title: 'Coobrastur',

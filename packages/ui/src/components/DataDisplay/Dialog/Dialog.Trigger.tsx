@@ -1,5 +1,4 @@
-import { DialogTrigger } from '@workspace/ui/components/dialog';
-
+import { DialogTrigger } from '@coobrastur/ui/components/dialog';
 import { DialogTriggerProps } from '@radix-ui/react-dialog';
 
 export interface TriggerProps extends DialogTriggerProps {

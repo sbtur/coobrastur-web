@@ -1,6 +1,5 @@
-import { NavigationMenuLink } from '@workspace/ui/components/navigation-menu';
-import { cn } from '@workspace/ui/lib/utils';
-
+import { NavigationMenuLink } from '@coobrastur/ui/components/navigation-menu';
+import { cn } from '@coobrastur/ui/lib/utils';
 import { NavigationMenuLinkProps } from '@radix-ui/react-navigation-menu';
 
 type DropdownLinkProps = NavigationMenuLinkProps & {

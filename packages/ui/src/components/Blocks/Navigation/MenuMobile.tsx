@@ -1,11 +1,11 @@
-import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
-import { Menu } from '@workspace/ui/components/Navigation/Menu';
+import { Icon } from '@coobrastur/ui/components/DataDisplay/Icon';
+import { Menu } from '@coobrastur/ui/components/Navigation/Menu';
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
-} from '@workspace/ui/components/sheet';
-import { Menu as MenuIcon } from '@workspace/ui/lib/icons';
+} from '@coobrastur/ui/components/sheet';
+import { Menu as MenuIcon } from '@coobrastur/ui/lib/icons';
 
 import type { MenuItem } from './Menu.types';
 

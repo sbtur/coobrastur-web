@@ -1,5 +1,5 @@
-import { Icon, IconWrapper } from '@workspace/ui/components/DataDisplay/Icon';
-import { Heart } from '@workspace/ui/lib/icons';
+import { Icon, IconWrapper } from '@coobrastur/ui/components/DataDisplay/Icon';
+import { Heart } from '@coobrastur/ui/lib/icons';
 
 export interface BookmarkProps {
   onClick?: () => void;

@@ -1,4 +1,4 @@
-import { HotelDialog } from '@workspace/ui/components/Blocks/HotelDialog';
+import { HotelDialog } from '@coobrastur/ui/components/Blocks/HotelDialog';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

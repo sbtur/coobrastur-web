@@ -5,7 +5,7 @@ import LinkNext from 'next/link';
 import {
   Link as LinkUI,
   type LinkProps as LinkUIProps,
-} from '@workspace/ui/components/DataEntry/Link';
+} from '@coobrastur/ui/components/DataEntry/Link';
 
 export type LinkProps = Omit<
   NextLinkProps,

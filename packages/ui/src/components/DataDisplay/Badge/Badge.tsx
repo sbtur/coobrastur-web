@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import { cn } from '@workspace/ui/lib/utils';
+import { cn } from '@coobrastur/ui/lib/utils';
 
 const badgeVariants = cva(
   'uppercase inline-flex items-center justify-center rounded px-3 py-2 text-xs font-semibold transition-colors gap-2',

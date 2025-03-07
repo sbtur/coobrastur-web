@@ -1,8 +1,8 @@
-import { Badge } from '@workspace/ui/components/DataDisplay/Badge';
-import { Heading } from '@workspace/ui/components/DataDisplay/Heading';
-import { Text } from '@workspace/ui/components/DataDisplay/Text';
-import { Title } from '@workspace/ui/components/DataDisplay/Title';
-import { Container } from '@workspace/ui/components/Layouts/Container';
+import { Badge } from '@coobrastur/ui/components/DataDisplay/Badge';
+import { Heading } from '@coobrastur/ui/components/DataDisplay/Heading';
+import { Text } from '@coobrastur/ui/components/DataDisplay/Text';
+import { Title } from '@coobrastur/ui/components/DataDisplay/Title';
+import { Container } from '@coobrastur/ui/components/Layouts/Container';
 
 import { AdvantagesList } from './components/AdvantagesList';
 

@@ -9,7 +9,7 @@ const MenuLoading = () => (
 
 const MenuDesktop = dynamic(
   () =>
-    import('@workspace/ui/components/Blocks/Navigation/MenuDesktop').then(
+    import('@coobrastur/ui/components/Blocks/Navigation/MenuDesktop').then(
       mod => mod.MenuDesktop,
     ),
   {
@@ -20,7 +20,7 @@ const MenuDesktop = dynamic(
 
 const MenuMobile = dynamic(
   () =>
-    import('@workspace/ui/components/Blocks/Navigation/MenuMobile').then(
+    import('@coobrastur/ui/components/Blocks/Navigation/MenuMobile').then(
       mod => mod.MenuMobile,
     ),
   {
@@ -31,7 +31,7 @@ const MenuMobile = dynamic(
 
 const MenuResponsive = dynamic(
   () =>
-    import('@workspace/ui/components/Blocks/Navigation/MenuResponsive').then(
+    import('@coobrastur/ui/components/Blocks/Navigation/MenuResponsive').then(
       mod => mod.MenuResponsive,
     ),
   {

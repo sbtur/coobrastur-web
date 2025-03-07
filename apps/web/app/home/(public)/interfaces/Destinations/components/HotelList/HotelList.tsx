@@ -1,13 +1,13 @@
 'use client';
-import { HotelCard } from '@workspace/ui/components/Blocks/HotelCard';
-import { Bookmark } from '@workspace/ui/components/DataDisplay/Bookmark';
-import { Caroussel } from '@workspace/ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@workspace/ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
-import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
-import { Text } from '@workspace/ui/components/DataDisplay/Text';
-import { Title } from '@workspace/ui/components/DataDisplay/Title';
-import { Section } from '@workspace/ui/components/Layouts/Section';
-import { ArrowRight } from '@workspace/ui/lib/icons';
+import { HotelCard } from '@coobrastur/ui/components/Blocks/HotelCard';
+import { Bookmark } from '@coobrastur/ui/components/DataDisplay/Bookmark';
+import { Caroussel } from '@coobrastur/ui/components/DataDisplay/Caroussel';
+import { useCaroussel } from '@coobrastur/ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import { Icon } from '@coobrastur/ui/components/DataDisplay/Icon';
+import { Text } from '@coobrastur/ui/components/DataDisplay/Text';
+import { Title } from '@coobrastur/ui/components/DataDisplay/Title';
+import { Section } from '@coobrastur/ui/components/Layouts/Section';
+import { ArrowRight } from '@coobrastur/ui/lib/icons';
 
 import { Image } from '@components/Image';
 

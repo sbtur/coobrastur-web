@@ -1,4 +1,4 @@
-import { Button } from '@workspace/ui/components';
+import { Button } from '@coobrastur/ui/components';
 import {
   DropdownMenu as Root,
   DropdownMenuContent,
@@ -12,8 +12,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from '@workspace/ui/components/dropdown-menu';
-
+} from '@coobrastur/ui/components/dropdown-menu';
 import { DropdownMenuProps } from '@radix-ui/react-dropdown-menu';
 
 export const DropdownMenu = ({ children }: DropdownMenuProps) => {
@@ -22,7 +21,7 @@ export const DropdownMenu = ({ children }: DropdownMenuProps) => {
       <DropdownMenuTrigger asChild>
         <Button>Open</Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className='w-56'>
+      <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>

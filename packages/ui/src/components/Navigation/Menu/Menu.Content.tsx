@@ -1,5 +1,4 @@
-import { NavigationMenuContent } from '@workspace/ui/components/navigation-menu';
-
+import { NavigationMenuContent } from '@coobrastur/ui/components/navigation-menu';
 import { NavigationMenuContentProps } from '@radix-ui/react-navigation-menu';
 
 type ContentProps = NavigationMenuContentProps & {

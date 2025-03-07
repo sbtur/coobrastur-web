@@ -1,4 +1,4 @@
-import { Menu } from '@workspace/ui/components/Navigation/Menu';
+import { Menu } from '@coobrastur/ui/components/Navigation/Menu';
 
 import type { MenuItem } from './Menu.types';
 

@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import { cn } from '@workspace/ui/lib/utils';
+import { cn } from '@coobrastur/ui/lib/utils';
 
 const iconWrapperVariants = cva(
   'flex items-center justify-center appearance-none border-0 rounded-full bg-white transition-colors shadow-xl',

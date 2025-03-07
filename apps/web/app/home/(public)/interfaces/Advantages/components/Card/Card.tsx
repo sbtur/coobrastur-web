@@ -1,6 +1,6 @@
-import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
-import { Text } from '@workspace/ui/components/DataDisplay/Text';
-import { Title } from '@workspace/ui/components/DataDisplay/Title';
+import { Icon } from '@coobrastur/ui/components/DataDisplay/Icon';
+import { Text } from '@coobrastur/ui/components/DataDisplay/Text';
+import { Title } from '@coobrastur/ui/components/DataDisplay/Title';
 
 import { Advantage } from '../../types/advantage.types';
 

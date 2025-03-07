@@ -5,12 +5,12 @@ import {
   MenuDesktop,
   MenuMobile,
   MenuResponsive,
-} from '@workspace/ui/components/Blocks/Navigation';
-import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
-import { Button } from '@workspace/ui/components/DataEntry/Button';
-import { Container } from '@workspace/ui/components/Layouts/Container';
-import { Wrapper } from '@workspace/ui/components/Layouts/Wrapper';
-import { ChevronDown } from '@workspace/ui/lib/icons';
+} from '@coobrastur/ui/components/Blocks/Navigation';
+import { Icon } from '@coobrastur/ui/components/DataDisplay/Icon';
+import { Button } from '@coobrastur/ui/components/DataEntry/Button';
+import { Container } from '@coobrastur/ui/components/Layouts/Container';
+import { Wrapper } from '@coobrastur/ui/components/Layouts/Wrapper';
+import { ChevronDown } from '@coobrastur/ui/lib/icons';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

@@ -1,8 +1,8 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import { cn } from '@workspace/ui/lib/utils';
-
 import { DialogContent } from '../../dialog';
+
+import { cn } from '@coobrastur/ui/lib/utils';
 
 const contentVariants = cva('', {
   variants: {

@@ -1,9 +1,9 @@
 import Image from 'next/image';
 
-import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
-import { Button } from '@workspace/ui/components/DataEntry/Button';
-import { Container } from '@workspace/ui/components/Layouts/Container';
-import { ChevronDown } from '@workspace/ui/lib/icons';
+import { Icon } from '@coobrastur/ui/components/DataDisplay/Icon';
+import { Button } from '@coobrastur/ui/components/DataEntry/Button';
+import { Container } from '@coobrastur/ui/components/Layouts/Container';
+import { ChevronDown } from '@coobrastur/ui/lib/icons';
 
 import { Menu } from './Menu';
 

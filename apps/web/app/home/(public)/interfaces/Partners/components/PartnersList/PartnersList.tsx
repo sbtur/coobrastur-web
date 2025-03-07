@@ -1,8 +1,8 @@
 'use client';
 
-import { Caroussel } from '@workspace/ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@workspace/ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
-import { Section } from '@workspace/ui/components/Layouts/Section';
+import { Caroussel } from '@coobrastur/ui/components/DataDisplay/Caroussel';
+import { useCaroussel } from '@coobrastur/ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import { Section } from '@coobrastur/ui/components/Layouts/Section';
 
 import { Image } from '@components/Image';
 

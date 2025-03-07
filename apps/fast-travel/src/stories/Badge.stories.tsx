@@ -1,6 +1,6 @@
-import { Badge } from '@workspace/ui/components/DataDisplay/Badge';
-import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
-import { Hotel } from '@workspace/ui/lib/icons';
+import { Badge } from '@coobrastur/ui/components/DataDisplay/Badge';
+import { Icon } from '@coobrastur/ui/components/DataDisplay/Icon';
+import { Hotel } from '@coobrastur/ui/lib/icons';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

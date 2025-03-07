@@ -3,7 +3,7 @@ import {
   Hotel,
   MessageSquare,
   WalletIcon,
-} from '@workspace/ui/lib/icons';
+} from '@coobrastur/ui/lib/icons';
 
 import { Advantage } from '../types/advantage.types';
 

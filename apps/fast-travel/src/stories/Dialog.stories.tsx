@@ -1,4 +1,4 @@
-import { Button } from '@workspace/ui/components/DataEntry/Button';
+import { Button } from '@coobrastur/ui/components/DataEntry/Button';
 import {
   Dialog,
   DialogContent,
@@ -7,7 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@workspace/ui/components/dialog';
+} from '@coobrastur/ui/components/dialog';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

@@ -1,6 +1,6 @@
-import { ButtonProps } from '@workspace/ui/components/button';
-import { Button } from '@workspace/ui/components/DataEntry/Button';
-import { Link, LinkProps } from '@workspace/ui/components/DataEntry/Link';
+import { ButtonProps } from '@coobrastur/ui/components/button';
+import { Button } from '@coobrastur/ui/components/DataEntry/Button';
+import { Link, LinkProps } from '@coobrastur/ui/components/DataEntry/Link';
 
 type BaseProps = {
   children: React.ReactNode;

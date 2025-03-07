@@ -14,7 +14,7 @@ export { DropdownMenu } from './DropdownMenu';
 //   DropdownMenuSubContent,
 //   DropdownMenuSubTrigger,
 //   DropdownMenuTrigger,
-// } from '@workspace/ui/components/dropdown-menu';
+// } from '@coobrastur/ui/components/dropdown-menu';
 
 // export type {
 //   DropdownMenuProps,

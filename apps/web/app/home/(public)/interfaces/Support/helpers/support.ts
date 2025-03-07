@@ -1,4 +1,4 @@
-import { LucideHeadset, LucideLuggage } from '@workspace/ui/lib/icons';
+import { LucideHeadset, LucideLuggage } from '@coobrastur/ui/lib/icons';
 
 import { Support } from '../types/support.types';
 

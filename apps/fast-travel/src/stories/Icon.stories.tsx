@@ -1,5 +1,5 @@
-import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
-import { Home } from '@workspace/ui/lib/icons';
+import { Icon } from '@coobrastur/ui/components/DataDisplay/Icon';
+import { Home } from '@coobrastur/ui/lib/icons';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

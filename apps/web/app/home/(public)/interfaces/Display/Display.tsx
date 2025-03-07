@@ -1,7 +1,7 @@
-import { Heading } from '@workspace/ui/components/DataDisplay/Heading';
-import { Title } from '@workspace/ui/components/DataDisplay/Title';
-import { Button } from '@workspace/ui/components/DataEntry/Button';
-import { Container } from '@workspace/ui/components/Layouts/Container';
+import { Heading } from '@coobrastur/ui/components/DataDisplay/Heading';
+import { Title } from '@coobrastur/ui/components/DataDisplay/Title';
+import { Button } from '@coobrastur/ui/components/DataEntry/Button';
+import { Container } from '@coobrastur/ui/components/Layouts/Container';
 
 import { Image } from '@components/Image';
 

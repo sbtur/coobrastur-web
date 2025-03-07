@@ -1,4 +1,4 @@
-import { Button } from '@workspace/ui/components/DataEntry/Button';
+import { Button } from '@coobrastur/ui/components/DataEntry/Button';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

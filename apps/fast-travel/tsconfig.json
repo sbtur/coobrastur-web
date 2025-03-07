@@ -1,5 +1,5 @@
 {
-  "extends": "@workspace/typescript-config/nextjs.json",
+  "extends": "@coobrastur/typescript-config/nextjs.json",
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -18,7 +18,7 @@
     "preserveSymlinks": true,
     "baseUrl": ".",
     "paths": {
-      "@workspace/ui/*": ["../../packages/ui/src/*"]
+      "@coobrastur/ui/*": ["../../packages/ui/src/*"]
     },
     "plugins": [
       {

@@ -1,7 +1,7 @@
 'use client';
 import dynamic from 'next/dynamic';
 
-import { Section } from '@workspace/ui/components/Layouts/Section';
+import { Section } from '@coobrastur/ui/components/Layouts/Section';
 
 const AdvantagesListDesktop = dynamic(
   () =>

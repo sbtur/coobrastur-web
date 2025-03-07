@@ -1,4 +1,4 @@
-import { IconProps } from '@workspace/ui/components/DataDisplay/Icon';
+import { IconProps } from '@coobrastur/ui/components/DataDisplay/Icon';
 
 export type Advantage = {
   icon: IconProps['icon'];

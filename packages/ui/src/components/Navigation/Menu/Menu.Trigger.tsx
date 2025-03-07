@@ -1,5 +1,4 @@
-import { NavigationMenuTrigger } from '@workspace/ui/components/navigation-menu';
-
+import { NavigationMenuTrigger } from '@coobrastur/ui/components/navigation-menu';
 import { NavigationMenuTriggerProps } from '@radix-ui/react-navigation-menu';
 
 type TriggerProps = NavigationMenuTriggerProps & {

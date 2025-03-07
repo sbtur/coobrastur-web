@@ -1,8 +1,8 @@
-import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
-import { Text } from '@workspace/ui/components/DataDisplay/Text';
-import { Title } from '@workspace/ui/components/DataDisplay/Title';
-import { Link } from '@workspace/ui/components/DataEntry/Link';
-import { ArrowRight } from '@workspace/ui/lib/icons';
+import { Icon } from '@coobrastur/ui/components/DataDisplay/Icon';
+import { Text } from '@coobrastur/ui/components/DataDisplay/Text';
+import { Title } from '@coobrastur/ui/components/DataDisplay/Title';
+import { Link } from '@coobrastur/ui/components/DataEntry/Link';
+import { ArrowRight } from '@coobrastur/ui/lib/icons';
 
 import { Image } from '@components/Image';
 

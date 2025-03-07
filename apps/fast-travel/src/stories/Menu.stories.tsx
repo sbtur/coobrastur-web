@@ -4,7 +4,7 @@ import {
   MenuItem,
   MenuMobile,
   MenuResponsive,
-} from '@workspace/ui/components/Blocks/Navigation';
+} from '@coobrastur/ui/components/Blocks/Navigation';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

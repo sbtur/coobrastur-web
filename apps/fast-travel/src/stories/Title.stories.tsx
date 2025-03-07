@@ -1,4 +1,4 @@
-import { Title } from '@workspace/ui/components/DataDisplay/Title';
+import { Title } from '@coobrastur/ui/components/DataDisplay/Title';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

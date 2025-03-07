@@ -2,7 +2,7 @@ import {
   CarousselProps,
   CarousselSingle,
   CarousselUI,
-} from '@workspace/ui/components/Blocks/Caroussel';
+} from '@coobrastur/ui/components/Blocks/Caroussel';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
