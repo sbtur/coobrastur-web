@@ -37,7 +37,7 @@ export const config = [
           groups: [
             ['^react', '^next', '^@next'],
             ['^\\w'],
-            ['^@workspace'],
+            ['^@coobrastur'],
             [
               '^@components(/.*|$)',
               '^@providers(/.*|$)',

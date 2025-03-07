@@ -1,4 +1,4 @@
-import { cn } from '@workspace/ui/lib/utils';
+import { cn } from '@ui/lib/utils';
 
 export interface HotelDescriptionProps {
   children: React.ReactNode;

@@ -1,4 +1,5 @@
-import { Button } from '@workspace/ui/components/DataEntry/Button';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from '@ui/components/DataEntry/Button';
 import {
   Dialog,
   DialogContent,
@@ -7,9 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@workspace/ui/components/dialog';
-
-import type { Meta, StoryObj } from '@storybook/react';
+} from '@ui/components/dialog';
 
 const meta: Meta<typeof Dialog> = {
   title: 'Data Display/Dialog',

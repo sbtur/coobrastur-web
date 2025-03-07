@@ -1,12 +1,12 @@
 'use client';
 import { useState } from 'react';
 
-import { Section } from '@workspace/ui/components/Layouts/Section';
-
 import { Image } from '@components/Image';
 
 import { VIDEOS } from '../helpers/videos';
 import { TestimonialsCaroussel } from './TestimonialsCaroussel';
+
+import { Section } from '@ui/components/Layouts/Section';
 
 export const TestimonialsList = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);

@@ -1,29 +1,22 @@
 'use client';
-
 import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-
-import { Bookmark } from '@workspace/ui/components/DataDisplay/Bookmark';
-import { Caroussel } from '@workspace/ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@workspace/ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
-import { Dialog } from '@workspace/ui/components/DataDisplay/Dialog';
-import { Icon, IconWrapper } from '@workspace/ui/components/DataDisplay/Icon';
-import { Text } from '@workspace/ui/components/DataDisplay/Text';
-import { Title } from '@workspace/ui/components/DataDisplay/Title';
-import { Button } from '@workspace/ui/components/DataEntry/Button';
-import { Link } from '@workspace/ui/components/DataEntry/Link';
-import { Separator } from '@workspace/ui/components/separator';
-import {
-  ArrowRight,
-  ChevronLeft,
-  Share2,
-  Table,
-  X,
-} from '@workspace/ui/lib/icons';
 
 import { Image } from '@components/Image';
 
 import { HOTELSDETAILS } from '../../helpers/hotelsDialog';
+
+import { Bookmark } from '@ui/components/DataDisplay/Bookmark';
+import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
+import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import { Dialog } from '@ui/components/DataDisplay/Dialog';
+import { Icon, IconWrapper } from '@ui/components/DataDisplay/Icon';
+import { Text } from '@ui/components/DataDisplay/Text';
+import { Title } from '@ui/components/DataDisplay/Title';
+import { Button } from '@ui/components/DataEntry/Button';
+import { Link } from '@ui/components/DataEntry/Link';
+import { Separator } from '@ui/components/separator';
+import { ArrowRight, ChevronLeft, Share2, Table, X } from '@ui/lib/icons';
 
 export interface HotelDialogProps {
   isOpen: boolean;

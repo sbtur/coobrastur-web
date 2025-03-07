@@ -1,10 +1,10 @@
 'use client';
-import { Caroussel } from '@workspace/ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@workspace/ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
-import { Text } from '@workspace/ui/components/DataDisplay/Text';
-import { Title } from '@workspace/ui/components/DataDisplay/Title';
-
 import { TESTIMONIALS } from '../helpers/testimonials';
+
+import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
+import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import { Text } from '@ui/components/DataDisplay/Text';
+import { Title } from '@ui/components/DataDisplay/Title';
 
 export const TestimonialsCaroussel = () => {
   const {

@@ -1,10 +1,9 @@
+import type { Meta, StoryObj } from '@storybook/react';
 import {
   CarousselProps,
   CarousselSingle,
   CarousselUI,
-} from '@workspace/ui/components/Blocks/Caroussel';
-
-import type { Meta, StoryObj } from '@storybook/react';
+} from '@ui/components/Blocks/Caroussel';
 
 const PLACES = Array.from(Array(10).keys()).map(index => ({
   name: `Place ${index + 1}`,

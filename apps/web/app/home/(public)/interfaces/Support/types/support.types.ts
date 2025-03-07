@@ -1,4 +1,4 @@
-import { IconProps } from '@workspace/ui/components/DataDisplay/Icon';
+import { IconProps } from '@ui/components/DataDisplay/Icon';
 
 export type Support = {
   icon: string | IconProps['icon'];

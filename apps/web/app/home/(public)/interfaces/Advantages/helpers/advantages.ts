@@ -1,11 +1,6 @@
-import {
-  Banknote,
-  Hotel,
-  MessageSquare,
-  WalletIcon,
-} from '@workspace/ui/lib/icons';
-
 import { Advantage } from '../types/advantage.types';
+
+import { Banknote, Hotel, MessageSquare, WalletIcon } from '@ui/lib/icons';
 
 export const ADVANTAGES: Advantage[] = [
   {

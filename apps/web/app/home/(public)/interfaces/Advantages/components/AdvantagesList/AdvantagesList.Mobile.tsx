@@ -1,11 +1,11 @@
 'use client';
-import { Caroussel } from '@workspace/ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@workspace/ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
-
 import { Image } from '@components/Image';
 
 import { Card } from '../../components/Card';
 import { ADVANTAGES } from '../../helpers';
+
+import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
+import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
 
 export const AdvantagesListMobile = () => {
   const { emblaRef, selectedIndex, scrollSnaps, onDotButtonClick } =

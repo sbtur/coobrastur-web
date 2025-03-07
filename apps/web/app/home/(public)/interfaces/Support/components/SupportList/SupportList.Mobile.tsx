@@ -1,10 +1,10 @@
 'use client';
 
-import { Caroussel } from '@workspace/ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@workspace/ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
-
 import { SUPPORT } from '../../helpers/support';
 import { Card } from '../Card';
+
+import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
+import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
 
 export const SupportListMobile = () => {
   const { emblaRef, selectedIndex, scrollSnaps, onDotButtonClick } =

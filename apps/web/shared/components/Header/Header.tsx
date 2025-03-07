@@ -1,11 +1,11 @@
 import Image from 'next/image';
 
-import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
-import { Button } from '@workspace/ui/components/DataEntry/Button';
-import { Container } from '@workspace/ui/components/Layouts/Container';
-import { ChevronDown } from '@workspace/ui/lib/icons';
-
 import { Menu } from './Menu';
+
+import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Button } from '@ui/components/DataEntry/Button';
+import { Container } from '@ui/components/Layouts/Container';
+import { ChevronDown } from '@ui/lib/icons';
 
 export function Header() {
   return (

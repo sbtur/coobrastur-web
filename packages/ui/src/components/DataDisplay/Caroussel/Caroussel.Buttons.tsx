@@ -1,8 +1,8 @@
 import { ReactElement, ReactNode } from 'react';
 
-import { Icon, IconWrapper } from '@workspace/ui/components/DataDisplay/Icon';
-import { ChevronLeft, ChevronRight } from '@workspace/ui/lib/icons';
-import { cn } from '@workspace/ui/lib/utils';
+import { Icon, IconWrapper } from '@ui/components/DataDisplay/Icon';
+import { ChevronLeft, ChevronRight } from '@ui/lib/icons';
+import { cn } from '@ui/lib/utils';
 
 export interface CarousselButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {

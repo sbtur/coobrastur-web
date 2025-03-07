@@ -1,6 +1,5 @@
-import { Button } from '@workspace/ui/components/DataEntry/Button';
-
 import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from '@ui/components/DataEntry/Button';
 
 const meta = {
   title: 'DataEntry/Button',

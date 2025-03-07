@@ -1,6 +1,6 @@
 import { forwardRef, ReactNode } from 'react';
 
-import { cn } from '@workspace/ui/lib/utils';
+import { cn } from '@ui/lib/utils';
 
 export interface CarousselContainerProps {
   children: ReactNode;
