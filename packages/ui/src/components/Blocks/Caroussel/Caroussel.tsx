@@ -1,12 +1,12 @@
 import { CarousselProps } from './Caroussel.types';
 
-import { HotelCard } from '@coobrastur/ui/components/Blocks/HotelCard';
-import { Caroussel } from '@coobrastur/ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@coobrastur/ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
-import { Icon } from '@coobrastur/ui/components/DataDisplay/Icon';
-import { Text } from '@coobrastur/ui/components/DataDisplay/Text';
-import { Title } from '@coobrastur/ui/components/DataDisplay/Title';
-import { ArrowRight } from '@coobrastur/ui/lib/icons';
+import { HotelCard } from '@ui/components/Blocks/HotelCard';
+import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
+import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Text } from '@ui/components/DataDisplay/Text';
+import { Title } from '@ui/components/DataDisplay/Title';
+import { ArrowRight } from '@ui/lib/icons';
 
 export const CarousselUI = (props: CarousselProps) => {
   const { slides, options } = props;

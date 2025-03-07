@@ -1,6 +1,6 @@
-import { Menu } from '@coobrastur/ui/components/Navigation/Menu';
-
 import type { MenuItem } from './Menu.types';
+
+import { Menu } from '@ui/components/Navigation/Menu';
 
 export const MenuDropdown = ({ menu }: { menu: MenuItem }) => (
   <>

@@ -1,4 +1,5 @@
-import { Button } from '@coobrastur/ui/components';
+import { DropdownMenuProps } from '@radix-ui/react-dropdown-menu';
+import { Button } from '@ui/components';
 import {
   DropdownMenu as Root,
   DropdownMenuContent,
@@ -12,8 +13,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from '@coobrastur/ui/components/dropdown-menu';
-import { DropdownMenuProps } from '@radix-ui/react-dropdown-menu';
+} from '@ui/components/dropdown-menu';
 
 export const DropdownMenu = ({ children }: DropdownMenuProps) => {
   return (

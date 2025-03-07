@@ -2,10 +2,10 @@ import * as React from 'react';
 
 import { cva } from 'class-variance-authority';
 
-import { Icon } from '@coobrastur/ui/components/DataDisplay/Icon';
-import { ChevronDown } from '@coobrastur/ui/lib/icons';
-import { cn } from '@coobrastur/ui/lib/utils';
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
+import { Icon } from '@ui/components/DataDisplay/Icon';
+import { ChevronDown } from '@ui/lib/icons';
+import { cn } from '@ui/lib/utils';
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,

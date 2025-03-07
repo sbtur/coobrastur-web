@@ -2,7 +2,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { DialogContent } from '../../dialog';
 
-import { cn } from '@coobrastur/ui/lib/utils';
+import { cn } from '@ui/lib/utils';
 
 const contentVariants = cva('', {
   variants: {

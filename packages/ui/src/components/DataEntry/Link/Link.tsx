@@ -2,7 +2,7 @@ import { forwardRef, type ReactNode } from 'react';
 
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import { cn } from '@coobrastur/ui/lib/utils';
+import { cn } from '@ui/lib/utils';
 
 const linkVariants = cva('inline-flex items-center', {
   variants: {

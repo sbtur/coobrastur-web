@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import { cn } from '@coobrastur/ui/lib/utils';
+import { cn } from '@ui/lib/utils';
 
 const titleVariants = cva('font-bold', {
   variants: {

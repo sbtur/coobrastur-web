@@ -1,4 +1,4 @@
-import { UseCarousselProps } from '@coobrastur/ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import { UseCarousselProps } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
 
 export interface CarousselProps {
   slides: {

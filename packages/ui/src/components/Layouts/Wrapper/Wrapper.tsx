@@ -1,4 +1,4 @@
-import { cn } from '@coobrastur/ui/lib/utils';
+import { cn } from '@ui/lib/utils';
 
 interface WrapperProps extends React.PropsWithChildren {
   className?: string;

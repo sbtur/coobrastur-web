@@ -1,4 +1,4 @@
-import { cn } from '@coobrastur/ui/lib/utils';
+import { cn } from '@ui/lib/utils';
 
 export interface HotelCardProps {
   children: React.ReactNode;

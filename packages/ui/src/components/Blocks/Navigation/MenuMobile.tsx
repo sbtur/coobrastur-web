@@ -1,13 +1,9 @@
-import { Icon } from '@coobrastur/ui/components/DataDisplay/Icon';
-import { Menu } from '@coobrastur/ui/components/Navigation/Menu';
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from '@coobrastur/ui/components/sheet';
-import { Menu as MenuIcon } from '@coobrastur/ui/lib/icons';
-
 import type { MenuItem } from './Menu.types';
+
+import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Menu } from '@ui/components/Navigation/Menu';
+import { Sheet, SheetContent, SheetTrigger } from '@ui/components/sheet';
+import { Menu as MenuIcon } from '@ui/lib/icons';
 
 export const MenuMobile = ({ menus }: { menus: MenuItem[] }) => {
   return (

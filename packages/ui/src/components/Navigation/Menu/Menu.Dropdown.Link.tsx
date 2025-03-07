@@ -1,6 +1,6 @@
-import { NavigationMenuLink } from '@coobrastur/ui/components/navigation-menu';
-import { cn } from '@coobrastur/ui/lib/utils';
 import { NavigationMenuLinkProps } from '@radix-ui/react-navigation-menu';
+import { NavigationMenuLink } from '@ui/components/navigation-menu';
+import { cn } from '@ui/lib/utils';
 
 type DropdownLinkProps = NavigationMenuLinkProps & {
   children: React.ReactNode;

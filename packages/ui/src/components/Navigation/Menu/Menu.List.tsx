@@ -1,6 +1,6 @@
-import { NavigationMenuList } from '@coobrastur/ui/components/navigation-menu';
-import { cn } from '@coobrastur/ui/lib/utils';
 import { NavigationMenuListProps } from '@radix-ui/react-navigation-menu';
+import { NavigationMenuList } from '@ui/components/navigation-menu';
+import { cn } from '@ui/lib/utils';
 
 type ListProps = NavigationMenuListProps & {
   className?: string;

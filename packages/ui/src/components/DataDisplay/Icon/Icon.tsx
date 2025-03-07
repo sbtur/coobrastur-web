@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import { LucideIcon } from '@coobrastur/ui/lib/icons';
-import { cn } from '@coobrastur/ui/lib/utils';
+import { LucideIcon } from '@ui/lib/icons';
+import { cn } from '@ui/lib/utils';
 
 const iconVariants = cva('inline-flex shrink-0', {
   variants: {

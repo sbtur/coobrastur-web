@@ -2,7 +2,7 @@ import type { HTMLAttributes, ReactNode } from 'react';
 
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import { cn } from '@coobrastur/ui/lib/utils';
+import { cn } from '@ui/lib/utils';
 
 type SectionElement = 'div' | 'section';
 

@@ -1,7 +1,7 @@
 import { CarousselProps } from './Caroussel.types';
 
-import { Caroussel } from '@coobrastur/ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@coobrastur/ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
+import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
 
 export const CarousselSingle = (props: CarousselProps) => {
   const { slides, options } = props;
