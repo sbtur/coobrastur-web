@@ -1,5 +1,6 @@
 import { Footer } from '@components/Footer';
 import { Header } from '@components/Header';
+import { MobileNavigation } from '@components/MobileNavigation';
 
 import { Advantages } from './interfaces/Advantages';
 import { Destinations } from './interfaces/Destinations';
@@ -19,7 +20,11 @@ export function HomePublic() {
         <Display />
       </Container>
 
-      <Container as="main" className="relative z-10">
+      <Container as="main" className="relative z-10 bg-background">
+        <div className="block md:hidden">
+          <MobileNavigation />
+        </div>
+
         <Hotels />
 
         <Partners />

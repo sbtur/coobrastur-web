@@ -32,7 +32,7 @@ export const Display = () => {
             Quero Viajar
           </Button>
         </Heading>
-        <div className="w-full lg:w-[718px] mx-auto absolute bottom-28 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4 p-8 rounded-full bg-white justify-around">
+        <div className="w-full lg:w-[718px] mx-auto absolute bottom-28 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4 p-4 md:p-8 rounded-[10px] md:rounded-[20px] bg-white justify-around">
           <div>
             <Image
               src="/images/shared/logos/coob.png"
