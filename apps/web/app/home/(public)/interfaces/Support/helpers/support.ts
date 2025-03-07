@@ -1,6 +1,6 @@
-import { LucideHeadset, LucideLuggage } from '@coobrastur/ui/lib/icons';
-
 import { Support } from '../types/support.types';
+
+import { LucideHeadset, LucideLuggage } from '@ui/lib/icons';
 
 export const SUPPORT: Support[] = [
   {

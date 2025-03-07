@@ -1,6 +1,5 @@
-import { Title } from '@coobrastur/ui/components/DataDisplay/Title';
-
 import type { Meta, StoryObj } from '@storybook/react';
+import { Title } from '@ui/components/DataDisplay/Title';
 
 const meta = {
   title: 'DataDisplay/Title',

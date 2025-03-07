@@ -1,12 +1,12 @@
-import { Icon } from '@coobrastur/ui/components/DataDisplay/Icon';
-import { Text } from '@coobrastur/ui/components/DataDisplay/Text';
-import { Title } from '@coobrastur/ui/components/DataDisplay/Title';
-import { Link } from '@coobrastur/ui/components/DataEntry/Link';
-import { ArrowRight } from '@coobrastur/ui/lib/icons';
-
 import { Image } from '@components/Image';
 
 import { Support } from '../../types/support.types';
+
+import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Text } from '@ui/components/DataDisplay/Text';
+import { Title } from '@ui/components/DataDisplay/Title';
+import { Link } from '@ui/components/DataEntry/Link';
+import { ArrowRight } from '@ui/lib/icons';
 
 interface CardProps {
   content: Support;

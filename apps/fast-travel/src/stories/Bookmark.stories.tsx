@@ -1,6 +1,5 @@
-import { Bookmark } from '@coobrastur/ui/components/DataDisplay/Bookmark';
-
 import type { Meta, StoryObj } from '@storybook/react';
+import { Bookmark } from '@ui/components/DataDisplay/Bookmark';
 
 const meta = {
   title: 'DataDisplay/Bookmark',

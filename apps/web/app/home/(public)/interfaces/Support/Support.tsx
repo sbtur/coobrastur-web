@@ -1,10 +1,10 @@
-import { Badge } from '@coobrastur/ui/components/DataDisplay/Badge';
-import { Heading } from '@coobrastur/ui/components/DataDisplay/Heading';
-import { Text } from '@coobrastur/ui/components/DataDisplay/Text';
-import { Title } from '@coobrastur/ui/components/DataDisplay/Title';
-import { Container } from '@coobrastur/ui/components/Layouts/Container';
-
 import { SupportList } from './components/SupportList/SupportList';
+
+import { Badge } from '@ui/components/DataDisplay/Badge';
+import { Heading } from '@ui/components/DataDisplay/Heading';
+import { Text } from '@ui/components/DataDisplay/Text';
+import { Title } from '@ui/components/DataDisplay/Title';
+import { Container } from '@ui/components/Layouts/Container';
 
 export const Support = () => {
   return (

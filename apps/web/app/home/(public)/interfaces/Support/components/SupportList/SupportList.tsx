@@ -1,7 +1,7 @@
 'use client';
 import dynamic from 'next/dynamic';
 
-import { Section } from '@coobrastur/ui/components/Layouts/Section';
+import { Section } from '@ui/components/Layouts/Section';
 
 const SupportListDesktop = dynamic(
   () => import('./SupportList.Desktop').then(mod => mod.SupportListDesktop),

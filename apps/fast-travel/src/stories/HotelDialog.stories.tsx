@@ -1,6 +1,5 @@
-import { HotelDialog } from '@coobrastur/ui/components/Blocks/HotelDialog';
-
 import type { Meta, StoryObj } from '@storybook/react';
+import { HotelDialog } from '@ui/components/Blocks/HotelDialog';
 
 const meta: Meta<typeof HotelDialog> = {
   title: 'Block/Hotel Dialog',

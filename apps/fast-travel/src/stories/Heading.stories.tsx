@@ -1,8 +1,7 @@
-import { Heading } from '@coobrastur/ui/components/DataDisplay/Heading';
-import { Text } from '@coobrastur/ui/components/DataDisplay/Text';
-import { Title } from '@coobrastur/ui/components/DataDisplay/Title';
-
 import type { Meta, StoryObj } from '@storybook/react';
+import { Heading } from '@ui/components/DataDisplay/Heading';
+import { Text } from '@ui/components/DataDisplay/Text';
+import { Title } from '@ui/components/DataDisplay/Title';
 
 const meta = {
   title: 'DataDisplay/Heading',

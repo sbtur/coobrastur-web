@@ -1,11 +1,10 @@
-import { Heading } from '@coobrastur/ui/components/DataDisplay/Heading';
-import { Title } from '@coobrastur/ui/components/DataDisplay/Title';
-import { Button } from '@coobrastur/ui/components/DataEntry/Button';
-import { Container } from '@coobrastur/ui/components/Layouts/Container';
-
 import { Image } from '@components/Image';
 
 import displayImage from '@images/pages/home/display/display.jpg';
+import { Heading } from '@ui/components/DataDisplay/Heading';
+import { Title } from '@ui/components/DataDisplay/Title';
+import { Button } from '@ui/components/DataEntry/Button';
+import { Container } from '@ui/components/Layouts/Container';
 
 export const Display = () => {
   return (

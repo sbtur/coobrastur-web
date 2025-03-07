@@ -1,8 +1,7 @@
-import { Badge } from '@coobrastur/ui/components/DataDisplay/Badge';
-import { Icon } from '@coobrastur/ui/components/DataDisplay/Icon';
-import { Hotel } from '@coobrastur/ui/lib/icons';
-
 import type { Meta, StoryObj } from '@storybook/react';
+import { Badge } from '@ui/components/DataDisplay/Badge';
+import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Hotel } from '@ui/lib/icons';
 
 const meta = {
   title: 'DataDisplay/Badge',

@@ -1,18 +1,17 @@
 import Image from 'next/image';
 
+import type { Meta, StoryObj } from '@storybook/react';
 import {
   MENU_ITEMS,
   MenuDesktop,
   MenuMobile,
   MenuResponsive,
-} from '@coobrastur/ui/components/Blocks/Navigation';
-import { Icon } from '@coobrastur/ui/components/DataDisplay/Icon';
-import { Button } from '@coobrastur/ui/components/DataEntry/Button';
-import { Container } from '@coobrastur/ui/components/Layouts/Container';
-import { Wrapper } from '@coobrastur/ui/components/Layouts/Wrapper';
-import { ChevronDown } from '@coobrastur/ui/lib/icons';
-
-import type { Meta, StoryObj } from '@storybook/react';
+} from '@ui/components/Blocks/Navigation';
+import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Button } from '@ui/components/DataEntry/Button';
+import { Container } from '@ui/components/Layouts/Container';
+import { Wrapper } from '@ui/components/Layouts/Wrapper';
+import { ChevronDown } from '@ui/lib/icons';
 
 const HeaderStory = () => <div />;
 

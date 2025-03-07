@@ -1,4 +1,4 @@
-import { MenuItem } from '@coobrastur/ui/components/Blocks/Navigation';
+import { MenuItem } from '@ui/components/Blocks/Navigation';
 
 export const MENU_ITEMS: MenuItem[] = [
   {

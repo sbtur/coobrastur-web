@@ -1,5 +1,3 @@
-import { Container } from '@coobrastur/ui/components/Layouts/Container';
-
 import { Footer } from '@components/Footer';
 import { Header } from '@components/Header';
 
@@ -10,6 +8,8 @@ import { Hotels } from './interfaces/Hotels';
 import { Partners } from './interfaces/Partners';
 import { Support } from './interfaces/Support';
 import { Testimonials } from './interfaces/Testimonials';
+
+import { Container } from '@ui/components/Layouts/Container';
 
 export function HomePublic() {
   return (

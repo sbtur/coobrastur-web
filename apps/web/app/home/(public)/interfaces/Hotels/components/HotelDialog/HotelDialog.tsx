@@ -1,14 +1,14 @@
-import { Bookmark } from '@coobrastur/ui/components/DataDisplay/Bookmark';
-import { Dialog } from '@coobrastur/ui/components/DataDisplay/Dialog';
-import { Icon, IconWrapper } from '@coobrastur/ui/components/DataDisplay/Icon';
-import { Text } from '@coobrastur/ui/components/DataDisplay/Text';
-import { Title } from '@coobrastur/ui/components/DataDisplay/Title';
-import { Button } from '@coobrastur/ui/components/DataEntry/Button';
-import { Link } from '@coobrastur/ui/components/DataEntry/Link';
-import { Separator } from '@coobrastur/ui/components/separator';
-import { ArrowRight, Share2, X } from '@coobrastur/ui/lib/icons';
-
 import { Image } from '@components/Image';
+
+import { Bookmark } from '@ui/components/DataDisplay/Bookmark';
+import { Dialog } from '@ui/components/DataDisplay/Dialog';
+import { Icon, IconWrapper } from '@ui/components/DataDisplay/Icon';
+import { Text } from '@ui/components/DataDisplay/Text';
+import { Title } from '@ui/components/DataDisplay/Title';
+import { Button } from '@ui/components/DataEntry/Button';
+import { Link } from '@ui/components/DataEntry/Link';
+import { Separator } from '@ui/components/separator';
+import { ArrowRight, Share2, X } from '@ui/lib/icons';
 
 export interface HotelDialogProps {
   isOpen: boolean;

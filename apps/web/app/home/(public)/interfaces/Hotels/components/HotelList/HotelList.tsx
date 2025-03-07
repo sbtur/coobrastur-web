@@ -1,21 +1,21 @@
 'use client';
 
-import { HotelCard } from '@coobrastur/ui/components/Blocks/HotelCard';
-import { Badge } from '@coobrastur/ui/components/DataDisplay/Badge';
-import { Bookmark } from '@coobrastur/ui/components/DataDisplay/Bookmark';
-import { Caroussel } from '@coobrastur/ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@coobrastur/ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
-import { Icon } from '@coobrastur/ui/components/DataDisplay/Icon';
-import { Text } from '@coobrastur/ui/components/DataDisplay/Text';
-import { Title } from '@coobrastur/ui/components/DataDisplay/Title';
-import { Section } from '@coobrastur/ui/components/Layouts/Section';
-import { ArrowRight } from '@coobrastur/ui/lib/icons';
-
 import { Image } from '@components/Image';
 import { useToggle } from '@hooks/useToggle';
 
 import { HotelResponse } from '../../types/hotels.types';
 import { HotelDialog } from '../HotelDialog';
+
+import { HotelCard } from '@ui/components/Blocks/HotelCard';
+import { Badge } from '@ui/components/DataDisplay/Badge';
+import { Bookmark } from '@ui/components/DataDisplay/Bookmark';
+import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
+import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Text } from '@ui/components/DataDisplay/Text';
+import { Title } from '@ui/components/DataDisplay/Title';
+import { Section } from '@ui/components/Layouts/Section';
+import { ArrowRight } from '@ui/lib/icons';
 
 interface HotelListProps {
   hotels: HotelResponse[];

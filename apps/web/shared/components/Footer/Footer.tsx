@@ -1,11 +1,11 @@
-import { Text } from '@coobrastur/ui/components/DataDisplay/Text';
-import { Title } from '@coobrastur/ui/components/DataDisplay/Title';
-import { Container } from '@coobrastur/ui/components/Layouts/Container';
-
 import { Image } from '@components/Image';
 import { Link } from '@components/Link';
 
 import { NAVIGATIONS } from './helpers';
+
+import { Text } from '@ui/components/DataDisplay/Text';
+import { Title } from '@ui/components/DataDisplay/Title';
+import { Container } from '@ui/components/Layouts/Container';
 
 export const Footer = () => {
   return (

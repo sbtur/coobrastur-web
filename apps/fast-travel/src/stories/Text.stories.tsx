@@ -1,6 +1,5 @@
-import { Text } from '@coobrastur/ui/components/DataDisplay/Text';
-
 import type { Meta, StoryObj } from '@storybook/react';
+import { Text } from '@ui/components/DataDisplay/Text';
 
 const meta = {
   title: 'DataDisplay/Text',

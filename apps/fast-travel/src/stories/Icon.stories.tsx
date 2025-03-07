@@ -1,7 +1,6 @@
-import { Icon } from '@coobrastur/ui/components/DataDisplay/Icon';
-import { Home } from '@coobrastur/ui/lib/icons';
-
 import type { Meta, StoryObj } from '@storybook/react';
+import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Home } from '@ui/lib/icons';
 
 const meta = {
   title: 'DataDisplay/Icon',

@@ -1,8 +1,8 @@
-import { Icon } from '@coobrastur/ui/components/DataDisplay/Icon';
-import { Text } from '@coobrastur/ui/components/DataDisplay/Text';
-import { Title } from '@coobrastur/ui/components/DataDisplay/Title';
-
 import { Advantage } from '../../types/advantage.types';
+
+import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Text } from '@ui/components/DataDisplay/Text';
+import { Title } from '@ui/components/DataDisplay/Title';
 
 export const Card = ({ advantage }: { advantage: Advantage }) => {
   return (

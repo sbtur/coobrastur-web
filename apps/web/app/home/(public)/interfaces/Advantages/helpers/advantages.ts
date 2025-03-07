@@ -1,11 +1,6 @@
-import {
-  Banknote,
-  Hotel,
-  MessageSquare,
-  WalletIcon,
-} from '@coobrastur/ui/lib/icons';
-
 import { Advantage } from '../types/advantage.types';
+
+import { Banknote, Hotel, MessageSquare, WalletIcon } from '@ui/lib/icons';
 
 export const ADVANTAGES: Advantage[] = [
   {
