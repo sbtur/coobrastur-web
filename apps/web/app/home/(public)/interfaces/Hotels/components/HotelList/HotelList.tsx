@@ -1,5 +1,8 @@
 'use client';
 
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
 import { Image } from '@components/Image';
 import { useToggle } from '@hooks/useToggle';
 
@@ -23,6 +26,7 @@ interface HotelListProps {
 
 export const HotelList = ({ hotels }: HotelListProps) => {
   const { isEnabled, toggle } = useToggle();
+  const { push } = useRouter();
 
   const {
     emblaRef,
@@ -36,10 +40,29 @@ export const HotelList = ({ hotels }: HotelListProps) => {
     isHidden,
   } = useCaroussel({});
 
-  if (isEnabled) return <HotelDialog isOpen={isEnabled} onClose={toggle} />;
+  const handleOpenHotel = (hotelId: number) => {
+    push(`?h=${hotelId}`, {
+      scroll: false,
+    });
+    toggle();
+  };
+
+  const handleCloseHotel = () => {
+    push('/', {
+      scroll: false,
+    });
+    toggle();
+  };
+
+  useEffect(() => {
+    console.log('renderizando');
+  }, []);
 
   return (
     <Section className="md:px-4">
+      {isEnabled && (
+        <HotelDialog isOpen={isEnabled} onClose={handleCloseHotel} />
+      )}
       <Caroussel.Root>
         <Caroussel.Container ref={emblaRef}>
           {hotels.map(hotel => (
@@ -73,7 +96,10 @@ export const HotelList = ({ hotels }: HotelListProps) => {
                   <Text size="sm" align="center">
                     {hotel.street}
                   </Text>
-                  <HotelCard.Button type="button" onClick={toggle}>
+                  <HotelCard.Button
+                    type="button"
+                    onClick={() => handleOpenHotel(hotel.id)}
+                  >
                     Ver mais detalhes{' '}
                     <Icon icon={ArrowRight} variant="primary" />
                   </HotelCard.Button>
