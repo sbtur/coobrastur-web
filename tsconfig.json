@@ -1,4 +1,3 @@
 {
-  "extends": "@workspace/typescript-config/base.json"
+  "extends": "@coobrastur/typescript-config/base.json"
 }
-

@@ -1,4 +1,4 @@
-import '@workspace/ui/globals.css';
+import '@coobrastur/ui/globals.css';
 
 import type { Preview } from '@storybook/react';
 

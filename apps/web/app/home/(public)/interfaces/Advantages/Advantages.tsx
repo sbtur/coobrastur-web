@@ -1,10 +1,10 @@
-import { Badge } from '@workspace/ui/components/DataDisplay/Badge';
-import { Heading } from '@workspace/ui/components/DataDisplay/Heading';
-import { Text } from '@workspace/ui/components/DataDisplay/Text';
-import { Title } from '@workspace/ui/components/DataDisplay/Title';
-import { Container } from '@workspace/ui/components/Layouts/Container';
-
 import { AdvantagesList } from './components/AdvantagesList';
+
+import { Badge } from '@ui/components/DataDisplay/Badge';
+import { Heading } from '@ui/components/DataDisplay/Heading';
+import { Text } from '@ui/components/DataDisplay/Text';
+import { Title } from '@ui/components/DataDisplay/Title';
+import { Container } from '@ui/components/Layouts/Container';
 
 export const Advantages = () => {
   return (

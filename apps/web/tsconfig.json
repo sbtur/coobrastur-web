@@ -1,9 +1,10 @@
 {
-  "extends": "@workspace/typescript-config/nextjs.json",
+  "extends": "@coobrastur/typescript-config/nextjs.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@workspace/ui/*": ["../../packages/ui/src/*"],
+      "@ui/components/*": ["../../packages/ui/src/components/*"],
+      "@ui/lib/*": ["../../packages/ui/src/lib/*"],
       "@components/*": ["./shared/components/*"],
       "@providers": ["./shared/providers"],
       "@hooks/*": ["./shared/hooks/*"],

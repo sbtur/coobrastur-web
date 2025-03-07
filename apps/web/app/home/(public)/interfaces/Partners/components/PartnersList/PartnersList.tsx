@@ -1,12 +1,12 @@
 'use client';
 
-import { Caroussel } from '@workspace/ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@workspace/ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
-import { Section } from '@workspace/ui/components/Layouts/Section';
-
 import { Image } from '@components/Image';
 
 import { PARTNERS } from '../../helpers';
+
+import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
+import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import { Section } from '@ui/components/Layouts/Section';
 
 export const PartnersList = () => {
   const {

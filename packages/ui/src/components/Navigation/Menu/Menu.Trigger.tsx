@@ -1,6 +1,5 @@
-import { NavigationMenuTrigger } from '@workspace/ui/components/navigation-menu';
-
 import { NavigationMenuTriggerProps } from '@radix-ui/react-navigation-menu';
+import { NavigationMenuTrigger } from '@ui/components/navigation-menu';
 
 type TriggerProps = NavigationMenuTriggerProps & {
   children: React.ReactNode;

@@ -11,8 +11,8 @@
   },
   "aliases": {
     "components": "@/components",
-    "utils": "@workspace/ui/lib/utils",
-    "ui": "@workspace/ui/components",
+    "utils": "@coobrastur/ui/lib/utils",
+    "ui": "@coobrastur/ui/components",
     "lib": "@/lib",
     "hooks": "@/hooks"
   },

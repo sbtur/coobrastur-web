@@ -1,11 +1,10 @@
-import { HotelCard } from '@workspace/ui/components/Blocks/HotelCard';
-import { Bookmark } from '@workspace/ui/components/DataDisplay/Bookmark';
-import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
-import { Text } from '@workspace/ui/components/DataDisplay/Text';
-import { Title } from '@workspace/ui/components/DataDisplay/Title';
-import { ArrowRight } from '@workspace/ui/lib/icons';
-
 import type { Meta, StoryObj } from '@storybook/react';
+import { HotelCard } from '@ui/components/Blocks/HotelCard';
+import { Bookmark } from '@ui/components/DataDisplay/Bookmark';
+import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Text } from '@ui/components/DataDisplay/Text';
+import { Title } from '@ui/components/DataDisplay/Title';
+import { ArrowRight } from '@ui/lib/icons';
 
 const HotelCardComponent = () => {
   return (

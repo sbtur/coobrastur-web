@@ -1,12 +1,11 @@
+import type { Meta, StoryObj } from '@storybook/react';
 import {
   MENU_ITEMS,
   MenuDesktop,
   MenuItem,
   MenuMobile,
   MenuResponsive,
-} from '@workspace/ui/components/Blocks/Navigation';
-
-import type { Meta, StoryObj } from '@storybook/react';
+} from '@ui/components/Blocks/Navigation';
 
 const Menu = () => <div />;
 

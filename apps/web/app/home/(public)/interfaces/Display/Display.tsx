@@ -1,11 +1,10 @@
-import { Heading } from '@workspace/ui/components/DataDisplay/Heading';
-import { Title } from '@workspace/ui/components/DataDisplay/Title';
-import { Button } from '@workspace/ui/components/DataEntry/Button';
-import { Container } from '@workspace/ui/components/Layouts/Container';
-
 import { Image } from '@components/Image';
 
 import displayImage from '@images/pages/home/display/display.jpg';
+import { Heading } from '@ui/components/DataDisplay/Heading';
+import { Title } from '@ui/components/DataDisplay/Title';
+import { Button } from '@ui/components/DataEntry/Button';
+import { Container } from '@ui/components/Layouts/Container';
 
 export const Display = () => {
   return (

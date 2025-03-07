@@ -3,22 +3,22 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { HotelCard } from '@workspace/ui/components/Blocks/HotelCard';
-import { Badge } from '@workspace/ui/components/DataDisplay/Badge';
-import { Bookmark } from '@workspace/ui/components/DataDisplay/Bookmark';
-import { Caroussel } from '@workspace/ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@workspace/ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
-import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
-import { Text } from '@workspace/ui/components/DataDisplay/Text';
-import { Title } from '@workspace/ui/components/DataDisplay/Title';
-import { Section } from '@workspace/ui/components/Layouts/Section';
-import { ArrowRight } from '@workspace/ui/lib/icons';
-
 import { Image } from '@components/Image';
 import { useToggle } from '@hooks/useToggle';
 
 import { HotelResponse } from '../../types/hotels.types';
 import { HotelDialog } from '../HotelDialog';
+
+import { HotelCard } from '@ui/components/Blocks/HotelCard';
+import { Badge } from '@ui/components/DataDisplay/Badge';
+import { Bookmark } from '@ui/components/DataDisplay/Bookmark';
+import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
+import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Text } from '@ui/components/DataDisplay/Text';
+import { Title } from '@ui/components/DataDisplay/Title';
+import { Section } from '@ui/components/Layouts/Section';
+import { ArrowRight } from '@ui/lib/icons';
 
 interface HotelListProps {
   hotels: HotelResponse[];

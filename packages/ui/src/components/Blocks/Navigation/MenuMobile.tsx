@@ -1,13 +1,9 @@
-import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
-import { Menu } from '@workspace/ui/components/Navigation/Menu';
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from '@workspace/ui/components/sheet';
-import { Menu as MenuIcon } from '@workspace/ui/lib/icons';
-
 import type { MenuItem } from './Menu.types';
+
+import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Menu } from '@ui/components/Navigation/Menu';
+import { Sheet, SheetContent, SheetTrigger } from '@ui/components/sheet';
+import { Menu as MenuIcon } from '@ui/lib/icons';
 
 export const MenuMobile = ({ menus }: { menus: MenuItem[] }) => {
   return (

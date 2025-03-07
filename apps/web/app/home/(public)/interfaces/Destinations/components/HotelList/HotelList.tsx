@@ -1,17 +1,17 @@
 'use client';
-import { HotelCard } from '@workspace/ui/components/Blocks/HotelCard';
-import { Bookmark } from '@workspace/ui/components/DataDisplay/Bookmark';
-import { Caroussel } from '@workspace/ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@workspace/ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
-import { Icon } from '@workspace/ui/components/DataDisplay/Icon';
-import { Text } from '@workspace/ui/components/DataDisplay/Text';
-import { Title } from '@workspace/ui/components/DataDisplay/Title';
-import { Section } from '@workspace/ui/components/Layouts/Section';
-import { ArrowRight } from '@workspace/ui/lib/icons';
-
 import { Image } from '@components/Image';
 
 import { DestinationResponse } from '../../types/destination.types';
+
+import { HotelCard } from '@ui/components/Blocks/HotelCard';
+import { Bookmark } from '@ui/components/DataDisplay/Bookmark';
+import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
+import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Text } from '@ui/components/DataDisplay/Text';
+import { Title } from '@ui/components/DataDisplay/Title';
+import { Section } from '@ui/components/Layouts/Section';
+import { ArrowRight } from '@ui/lib/icons';
 
 interface HotelListProps {
   hotels: DestinationResponse[];

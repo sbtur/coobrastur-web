@@ -8,7 +8,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@workspace/ui": "workspace:*",
+    "@coobrastur/ui": "workspace:*",
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
@@ -27,8 +27,8 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@workspace/eslint-config": "workspace:^",
-    "@workspace/typescript-config": "workspace:*",
+    "@coobrastur/eslint-config": "workspace:^",
+    "@coobrastur/typescript-config": "workspace:*",
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
     "eslint-plugin-storybook": "^0.11.2",

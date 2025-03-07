@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import { cn } from '@workspace/ui/lib/utils';
+import { cn } from '@ui/lib/utils';
 
 const headingVariants = cva('w-full flex flex-col gap-3 mx-auto px-8', {
   variants: {
