@@ -1,11 +1,13 @@
 {
   "extends": "@coobrastur/typescript-config/react-library.json",
   "compilerOptions": {
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
     "baseUrl": ".",
     "paths": {
       "@ui/components*": ["./src/components/*"],
       "@ui/lib*": ["./src/lib/*"],
-      "@ui/hooks*": ["./src/hooks/*"]
+      "@ui/hooks*": ["./src/hooks/*"],
+      "@ui/tests": ["./src/helpers/tests/tests-setup.ts"]
     }
   },
   "include": ["."],

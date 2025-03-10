@@ -4,7 +4,10 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.6",
@@ -19,26 +22,32 @@
     "embla-carousel-fade": "^8.5.2",
     "embla-carousel-react": "^8.5.2",
     "lucide-react": "0.456.0",
-    "next-themes": "^0.4.3",
     "postcss-import": "^16.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-icons": "^5.4.0",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@turbo/gen": "^2.2.3",
+    "@coobrastur/eslint-config": "workspace:*",
+    "@coobrastur/typescript-config": "workspace:*",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/node": "^22.9.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "@coobrastur/eslint-config": "workspace:*",
-    "@coobrastur/typescript-config": "workspace:*",
     "autoprefixer": "^10.4.20",
+    "jsdom": "^26.0.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "vitest": "^3.0.8"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "exports": {
     "./globals.css": "./src/styles/globals.css",
