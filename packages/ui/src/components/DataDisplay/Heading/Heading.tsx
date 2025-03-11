@@ -22,12 +22,11 @@ const headingVariants = cva('w-full flex flex-col gap-3 mx-auto px-8', {
   },
 } as const);
 
-export interface HeadingProps
-  extends React.HTMLAttributes<HTMLElement>,
-    VariantProps<typeof headingVariants> {
+export type HeadingProps = VariantProps<typeof headingVariants> & {
+  children: React.ReactNode;
   as?: 'header' | 'div';
   className?: string;
-}
+};
 
 export const Heading = ({
   children,

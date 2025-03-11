@@ -2,7 +2,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@ui/lib/utils';
 
-const badgeVariants = cva(
+export const badgeVariants = cva(
   'uppercase inline-flex items-center justify-center rounded px-3 py-2 text-xs font-semibold transition-colors gap-2',
   {
     variants: {
@@ -21,10 +21,10 @@ const badgeVariants = cva(
   } as const,
 );
 
-export interface BadgeProps extends VariantProps<typeof badgeVariants> {
+export type BadgeProps = VariantProps<typeof badgeVariants> & {
   className?: string;
   children: React.ReactNode;
-}
+};
 
 export const Badge = ({ className, variant, children }: BadgeProps) => {
   return (
