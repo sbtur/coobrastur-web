@@ -1,5 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 
+import { ICON_SIZES } from './constants';
+
 import { LucideIcon } from '@ui/lib/icons';
 import { cn } from '@ui/lib/utils';
 
@@ -17,19 +19,12 @@ const iconVariants = cva('inline-flex shrink-0', {
   },
 } as const);
 
-export const IconSize = {
-  sm: 14,
-  md: 16,
-  lg: 20,
-  xl: 24,
-} as const;
-
 type IconVariants = VariantProps<typeof iconVariants>;
 
 export interface IconProps extends IconVariants {
   icon: LucideIcon;
   className?: string;
-  size?: keyof typeof IconSize;
+  size?: keyof typeof ICON_SIZES;
 }
 
 export const Icon = ({
@@ -44,7 +39,7 @@ export const Icon = ({
     <IconElement
       className={cn(iconVariants({ variant }), className)}
       aria-hidden="true"
-      size={IconSize[size]}
+      size={ICON_SIZES[size]}
       {...props}
     />
   );
