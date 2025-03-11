@@ -7,7 +7,8 @@
       "@ui/components*": ["./src/components/*"],
       "@ui/lib*": ["./src/lib/*"],
       "@ui/hooks*": ["./src/hooks/*"],
-      "@ui/tests": ["./src/helpers/tests/tests-setup.ts"]
+      "@ui/tests": ["./src/helpers/tests/tests-setup.ts"],
+      "@ui/helpers*": ["./src/helpers/*"]
     }
   },
   "include": ["."],

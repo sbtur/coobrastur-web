@@ -20,6 +20,7 @@ export default defineConfig({
       '@ui/components': path.resolve(__dirname, './src/components'),
       '@ui/lib': path.resolve(__dirname, './src/lib'),
       '@ui/hooks': path.resolve(__dirname, './src/hooks'),
+      '@ui/helpers': path.resolve(__dirname, './src/helpers'),
     },
   },
 });

@@ -1,0 +1,49 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Text > should match snapshot for base variant 1`] = `
+<p
+  class="text-base mb-0 font-normal text-left text-text"
+>
+  Text
+</p>
+`;
+
+exports[`Text > should match snapshot for danger variant 1`] = `
+<p
+  class="text-base mb-0 font-normal text-left text-text-danger"
+>
+  Text
+</p>
+`;
+
+exports[`Text > should match snapshot for featured variant 1`] = `
+<p
+  class="text-base mb-0 font-normal text-left text-text-primary"
+>
+  Text
+</p>
+`;
+
+exports[`Text > should match snapshot for success variant 1`] = `
+<p
+  class="text-base mb-0 font-normal text-left text-text-success"
+>
+  Text
+</p>
+`;
+
+exports[`Text > should match snapshot for warning variant 1`] = `
+<p
+  class="text-base mb-0 font-normal text-left text-text-warning"
+>
+  Text
+</p>
+`;
+
+exports[`Text > should match snapshot with default props 1`] = `
+<p
+  class="text-base mb-0 font-normal text-left text-text"
+>
+  Text
+</p>
+`;

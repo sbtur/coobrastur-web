@@ -1,0 +1,121 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Title > should match snapshot for 2xl size 1`] = `
+<h2
+  class="font-bold text-4xl xl:text-6xl text-text-primary"
+>
+  Title
+</h2>
+`;
+
+exports[`Title > should match snapshot for center alignment 1`] = `
+<h2
+  class="font-bold text-3xl text-text-primary text-center"
+>
+  Title
+</h2>
+`;
+
+exports[`Title > should match snapshot for danger variant 1`] = `
+<h2
+  class="font-bold text-3xl text-text-danger"
+>
+  Title
+</h2>
+`;
+
+exports[`Title > should match snapshot for left alignment 1`] = `
+<h2
+  class="font-bold text-3xl text-text-primary text-left"
+>
+  Title
+</h2>
+`;
+
+exports[`Title > should match snapshot for lg size 1`] = `
+<h2
+  class="font-bold text-2xl lg:text-4xl text-text-primary"
+>
+  Title
+</h2>
+`;
+
+exports[`Title > should match snapshot for md size 1`] = `
+<h2
+  class="font-bold text-3xl text-text-primary"
+>
+  Title
+</h2>
+`;
+
+exports[`Title > should match snapshot for primary variant 1`] = `
+<h2
+  class="font-bold text-3xl text-text-primary"
+>
+  Title
+</h2>
+`;
+
+exports[`Title > should match snapshot for right alignment 1`] = `
+<h2
+  class="font-bold text-3xl text-text-primary text-right"
+>
+  Title
+</h2>
+`;
+
+exports[`Title > should match snapshot for secondary variant 1`] = `
+<h2
+  class="font-bold text-3xl text-text-secondary"
+>
+  Title
+</h2>
+`;
+
+exports[`Title > should match snapshot for sm size 1`] = `
+<h2
+  class="font-bold text-2xl text-text-primary"
+>
+  Title
+</h2>
+`;
+
+exports[`Title > should match snapshot for success variant 1`] = `
+<h2
+  class="font-bold text-3xl text-text-success"
+>
+  Title
+</h2>
+`;
+
+exports[`Title > should match snapshot for warning variant 1`] = `
+<h2
+  class="font-bold text-3xl text-text-warning"
+>
+  Title
+</h2>
+`;
+
+exports[`Title > should match snapshot for white variant 1`] = `
+<h2
+  class="font-bold text-3xl text-neutral-100"
+>
+  Title
+</h2>
+`;
+
+exports[`Title > should match snapshot for xl size 1`] = `
+<h2
+  class="font-bold text-3xl xl:text-[40px] text-text-primary"
+>
+  Title
+</h2>
+`;
+
+exports[`Title > should match snapshot for xs size 1`] = `
+<h2
+  class="font-bold text-lg text-text-primary"
+>
+  Title
+</h2>
+`;

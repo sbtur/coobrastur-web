@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Button > should create a snapshot for danger variant 1`] = `
+exports[`Button > should match a snapshot for danger variant 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -87,7 +87,7 @@ exports[`Button > should create a snapshot for danger variant 1`] = `
 }
 `;
 
-exports[`Button > should create a snapshot for default variant 1`] = `
+exports[`Button > should match a snapshot for default variant 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -160,7 +160,7 @@ exports[`Button > should create a snapshot for default variant 1`] = `
 }
 `;
 
-exports[`Button > should create a snapshot for ghost variant 1`] = `
+exports[`Button > should match a snapshot for ghost variant 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -261,7 +261,7 @@ exports[`Button > should create a snapshot for ghost variant 1`] = `
 }
 `;
 
-exports[`Button > should create a snapshot for link variant 1`] = `
+exports[`Button > should match a snapshot for link variant 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -397,7 +397,7 @@ exports[`Button > should create a snapshot for link variant 1`] = `
 }
 `;
 
-exports[`Button > should create a snapshot for outline variant 1`] = `
+exports[`Button > should match a snapshot for outline variant 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -491,7 +491,7 @@ exports[`Button > should create a snapshot for outline variant 1`] = `
 }
 `;
 
-exports[`Button > should create a snapshot for outline-white variant 1`] = `
+exports[`Button > should match a snapshot for outline-white variant 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -620,7 +620,7 @@ exports[`Button > should create a snapshot for outline-white variant 1`] = `
 }
 `;
 
-exports[`Button > should create a snapshot for secondary variant 1`] = `
+exports[`Button > should match a snapshot for secondary variant 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -700,7 +700,7 @@ exports[`Button > should create a snapshot for secondary variant 1`] = `
 }
 `;
 
-exports[`Button > should create a snapshot for success variant 1`] = `
+exports[`Button > should match a snapshot for success variant 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -808,7 +808,7 @@ exports[`Button > should create a snapshot for success variant 1`] = `
 }
 `;
 
-exports[`Button > should create a snapshot for warning variant 1`] = `
+exports[`Button > should match a snapshot for warning variant 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -923,7 +923,7 @@ exports[`Button > should create a snapshot for warning variant 1`] = `
 }
 `;
 
-exports[`Button > should create a snapshot for white variant 1`] = `
+exports[`Button > should match a snapshot for white variant 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
