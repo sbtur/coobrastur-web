@@ -1,4 +1,6 @@
-export interface HotelDetails {
+import { CATEGORY_LABELS } from './accommodation-category.types';
+
+export type AccommodationDetail = {
   id: number;
   broker: string;
   name: string;
@@ -23,6 +25,7 @@ export interface HotelDetails {
   total_days: number;
   extra: number;
   is_preferential: boolean;
+  category: (typeof CATEGORY_LABELS)[keyof typeof CATEGORY_LABELS];
   available_to_book: boolean;
   absolute_url: string;
   by_request: boolean;
@@ -33,4 +36,4 @@ export interface HotelDetails {
   description: string;
   amenities: string[];
   gallery: string[];
-}
+};
