@@ -1,13 +1,13 @@
-import { HotelList } from './components/HotelList';
-import { HOTELS } from './helpers';
+import { AccommodationList } from './components/AccommodationList';
 
+import { ACCOMMODATIONS } from '@mocks/accommodations/accommodations';
 import { Badge } from '@ui/components/DataDisplay/Badge';
 import { Heading } from '@ui/components/DataDisplay/Heading';
 import { Text } from '@ui/components/DataDisplay/Text';
 import { Title } from '@ui/components/DataDisplay/Title';
 import { Container } from '@ui/components/Layouts/Container';
 
-export const Hotels = () => {
+export const Accommodations = () => {
   return (
     <Container as="section" padding="lg" className="bg-background">
       <Container size="xl">
@@ -23,7 +23,7 @@ export const Hotels = () => {
           </Text>
         </Heading>
 
-        <HotelList hotels={HOTELS} />
+        <AccommodationList accommodations={ACCOMMODATIONS} />
       </Container>
     </Container>
   );

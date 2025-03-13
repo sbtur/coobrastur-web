@@ -1,4 +1,4 @@
-import { AccommodationDetail as TAccommodationDetail } from '@types/accommodation/accommodation-detail.types';
+import { AccommodationDetail as TAccommodationDetail } from '@shared/types/accommodation/accommodation-detail.types';
 
 export const ACCOMMODATIONSDETAILS: TAccommodationDetail[] = [
   {

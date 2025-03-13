@@ -4,8 +4,7 @@ import { useSearchParams } from 'next/navigation';
 
 import { Image } from '@components/Image';
 
-import { HOTELSDETAILS } from '../../helpers/hotelsDialog';
-
+import { ACCOMMODATIONSDETAILS } from '@mocks/accommodations/accommodations-details';
 import { Bookmark } from '@ui/components/DataDisplay/Bookmark';
 import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
 import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
@@ -18,17 +17,20 @@ import { Link } from '@ui/components/DataEntry/Link';
 import { Separator } from '@ui/components/separator';
 import { ArrowRight, ChevronLeft, Share2, Table, X } from '@ui/lib/icons';
 
-export interface HotelDialogProps {
+export interface AccommodationDialogProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export const HotelDialog = ({ isOpen, onClose }: HotelDialogProps) => {
+export const AccommodationDialog = ({
+  isOpen,
+  onClose,
+}: AccommodationDialogProps) => {
   const [isShowGallery, setIsShowGallery] = useState(false);
   const searchParams = useSearchParams();
 
-  const hotel = HOTELSDETAILS.find(
-    hotel => hotel.id === Number(searchParams.get('h')),
+  const accommodation = ACCOMMODATIONSDETAILS.find(
+    accommodation => accommodation.id === Number(searchParams.get('h')),
   );
 
   const {
@@ -77,22 +79,22 @@ export const HotelDialog = ({ isOpen, onClose }: HotelDialogProps) => {
                 <Dialog.Header>
                   <Dialog.Title asChild className="text-2xl">
                     <Title as="h2" size="sm">
-                      {hotel?.name}
+                      {accommodation?.name}
                     </Title>
                   </Dialog.Title>
                   <Dialog.Description asChild>
-                    <Text size="sm">{hotel?.street}</Text>
+                    <Text size="sm">{accommodation?.street}</Text>
                   </Dialog.Description>
                 </Dialog.Header>
                 <div className="max-h-[280px] py-4 pr-4 mt-6 overflow-y-auto">
-                  <Text size="sm">{hotel?.description}</Text>
+                  <Text size="sm">{accommodation?.description}</Text>
 
                   <div className="mt-6">
                     <Title as="h3" size="xs">
                       Comodidades:
                     </Title>
                     <ul className="grid grid-cols-3 gap-x-4 gap-y-2 text-sm text-text mt-4">
-                      {hotel?.amenities.map(amenity => (
+                      {accommodation?.amenities.map(amenity => (
                         <li key={amenity}>{amenity}</li>
                       ))}
                     </ul>
@@ -157,14 +159,14 @@ export const HotelDialog = ({ isOpen, onClose }: HotelDialogProps) => {
                 ref={emblaRef}
                 className="p-0 rounded-none h-full"
               >
-                {hotel?.gallery.map(image => (
+                {accommodation?.gallery.map(image => (
                   <Caroussel.Item
                     key={image}
                     className="flex-[0_0_100%] p-0 rounded-none relative"
                   >
                     <Image
                       src={image}
-                      alt={hotel?.name}
+                      alt={accommodation?.name}
                       width={355}
                       height={800}
                       className="w-full h-full md:h-[570px] object-cover"

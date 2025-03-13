@@ -1,10 +1,10 @@
 import { Header } from '@components/Header';
 import { MobileNavigation } from '@components/MobileNavigation';
 
+import { Accommodations } from './containers/Accommodations';
 import { Advantages } from './containers/Advantages';
 import { Destinations } from './containers/Destinations';
 import { Display } from './containers/Display';
-import { Hotels } from './containers/Hotels';
 import { Partners } from './containers/Partners';
 import { Support } from './containers/Support';
 import { Testimonials } from './containers/Testimonials';
@@ -24,7 +24,7 @@ export function HomePublic() {
           <MobileNavigation />
         </div>
 
-        <Hotels />
+        <Accommodations />
 
         <Partners />
 

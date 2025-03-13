@@ -12,7 +12,7 @@
       "@images/*": ["./public/images/*"],
       "@helpers/*": ["./shared/helpers/*"],
       "@mocks/*": ["./shared/mocks/*"],
-      "@types/*": ["./shared/types/*"]
+      "@shared/*": ["./shared/*"]
     },
     "plugins": [
       {

@@ -1,7 +1,7 @@
 import { Image } from '@components/Image';
 
-import { Accommodation } from '@types/accommodation/accommodation.types';
-import { CATEGORY_COLORS } from '@types/accommodation/accommodation-category.types';
+import { Accommodation } from '@shared/types/accommodation/accommodation.types';
+import { CATEGORY_COLORS } from '@shared/types/accommodation/accommodation-category.types';
 import { HotelCard as HotelCardUI } from '@ui/components/Blocks/HotelCard';
 import { Badge } from '@ui/components/DataDisplay/Badge';
 import { Bookmark } from '@ui/components/DataDisplay/Bookmark';

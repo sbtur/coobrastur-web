@@ -1,10 +1,10 @@
 'use client';
 
-import { HotelCard } from '@components/HotelCard/HotelCard';
+import { HotelCard } from '@components/HotelCard';
 import { HotelDialog } from '@components/HotelDialog';
 import { useHotelListDetail } from '@hooks/useHotelListDetail';
 
-import { ACCOMMODATIONSDETAILS } from '@mocks/accommodations/accommodations-details';
+import { ACCOMMODATIONS } from '@mocks/accommodations/accommodations';
 import { Container } from '@ui/components/Layouts/Container';
 
 export const HotelList = () => {
@@ -19,7 +19,7 @@ export const HotelList = () => {
         size="xl"
         className="md:px-4 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-10"
       >
-        {ACCOMMODATIONSDETAILS.map(accommodation => (
+        {ACCOMMODATIONS.map(accommodation => (
           <HotelCard
             onClick={handleOpenHotel}
             accommodation={accommodation}

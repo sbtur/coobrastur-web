@@ -1,6 +1,6 @@
-import { Accommodation as TAccommodation } from '@types/accommodation/accommodation.types';
+import { Accommodation as TAccommodation } from '@shared/types/accommodation/accommodation.types';
 
-export const ACCOMODATIONS: TAccommodation[] = [
+export const ACCOMMODATIONS: TAccommodation[] = [
   {
     id: 7257,
     broker: 'coobrastur',
