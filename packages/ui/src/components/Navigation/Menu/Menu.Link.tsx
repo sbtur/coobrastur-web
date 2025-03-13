@@ -7,13 +7,14 @@ type LinkProps = NavigationMenuLinkProps & {
   className?: string;
 };
 
-export const Link = ({ className, children }: LinkProps) => {
+export const Link = ({ className, children, ...props }: LinkProps) => {
   return (
     <NavigationMenuLink
       className={cn(
         'font-secondary text-text cursor-pointer [.isLight_&]:text-white',
         className,
       )}
+      {...props}
     >
       {children}
     </NavigationMenuLink>

@@ -10,7 +10,6 @@ export const SearchPlace = () => {
   return (
     <>
       <Header />
-      <Separator className="w-[85%] md:w-full mx-auto" />
       <Search />
       <Separator />
       <SearchFilters />

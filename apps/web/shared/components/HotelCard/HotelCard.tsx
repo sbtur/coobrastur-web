@@ -35,7 +35,10 @@ export const HotelCard = ({ accommodation, onClick }: HotelCardProps) => {
       </HotelCardUI.ImageWrapper>
       <HotelCardUI.Description>
         {accommodation.category && (
-          <Badge variant={CATEGORY_COLORS[accommodation.category]}>
+          <Badge
+            variant={CATEGORY_COLORS[accommodation.category]}
+            className="mx-auto"
+          >
             {accommodation.category}
           </Badge>
         )}
