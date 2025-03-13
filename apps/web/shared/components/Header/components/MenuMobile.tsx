@@ -1,6 +1,5 @@
-import { Link } from '@components/Link';
-
 import { MenuItem } from '../types/Menu.types';
+import { MenuLink } from './MenuLink';
 
 import { Icon } from '@ui/components/DataDisplay/Icon';
 import { Menu } from '@ui/components/Navigation/Menu';
@@ -23,9 +22,7 @@ export const MenuMobile = ({ menus }: { menus: MenuItem[] }) => {
           <Menu.List>
             {menus.map(menu => (
               <Menu.Item key={menu.label}>
-                <Link href={menu.href} passHref legacyBehavior>
-                  <Menu.Link href={menu.href}>{menu.label}</Menu.Link>
-                </Link>
+                <MenuLink href={menu.href} label={menu.label} />
               </Menu.Item>
             ))}
           </Menu.List>
