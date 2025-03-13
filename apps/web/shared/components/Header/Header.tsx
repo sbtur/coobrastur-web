@@ -2,21 +2,27 @@ import Image from 'next/image';
 
 import { Menu } from './Menu';
 
+import logoDark from '@images/shared/logos/logo-grupo-coobrastur-dark.png';
+import logoLight from '@images/shared/logos/logo-grupo-coobrastur-light.png';
 import { Icon } from '@ui/components/DataDisplay/Icon';
 import { Button } from '@ui/components/DataEntry/Button';
 import { Container } from '@ui/components/Layouts/Container';
 import { ChevronDown } from '@ui/lib/icons';
 
-export function Header() {
+type HeaderProps = {
+  isLight?: boolean;
+};
+
+export function Header({ isLight = false }: HeaderProps) {
   return (
     <Container size="xl">
       <Container
         as="header"
-        className="flex items-center justify-between py-6 px-4 gap-8 border-b border-white/20 relative z-10 isLight"
+        className={`flex items-center justify-between py-6 px-4 gap-8 border-b border-white/20 relative z-10 ${isLight ? 'isLight' : ''}`}
       >
         <div className="w-[180px] lg:w-[245px]">
           <Image
-            src="/images/shared/logos/logo-grupo-coobrastur-light.png"
+            src={isLight ? logoLight : logoDark}
             alt="Logo Grupo Coobrastur"
             width={245}
             height={36}
@@ -28,7 +34,7 @@ export function Header() {
           <Button size="sm">
             Acessos <Icon icon={ChevronDown} variant="white" />
           </Button>
-          <Button variant="outline-white" size="sm">
+          <Button variant={isLight ? 'outline-white' : 'outline'} size="sm">
             Planos
           </Button>
         </div>

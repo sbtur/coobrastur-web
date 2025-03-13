@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { Image } from '@components/Image';
@@ -53,10 +52,6 @@ export const HotelList = ({ hotels }: HotelListProps) => {
     });
     toggle();
   };
-
-  useEffect(() => {
-    console.log('renderizando');
-  }, []);
 
   return (
     <Section className="md:px-4">

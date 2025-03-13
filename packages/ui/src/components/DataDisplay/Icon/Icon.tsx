@@ -2,7 +2,6 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { ICON_SIZES } from './constants';
 
-import { LucideIcon } from '@ui/lib/icons';
 import { cn } from '@ui/lib/utils';
 
 const iconVariants = cva('inline-flex shrink-0', {
@@ -22,7 +21,7 @@ const iconVariants = cva('inline-flex shrink-0', {
 type IconVariants = VariantProps<typeof iconVariants>;
 
 export interface IconProps extends IconVariants {
-  icon: LucideIcon;
+  icon: React.ElementType;
   className?: string;
   size?: keyof typeof ICON_SIZES;
 }

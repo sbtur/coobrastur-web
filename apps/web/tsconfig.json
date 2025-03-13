@@ -10,7 +10,9 @@
       "@hooks/*": ["./shared/hooks/*"],
       "@app/*": ["./app/*"],
       "@images/*": ["./public/images/*"],
-      "@helpers/*": ["./shared/helpers/*"]
+      "@helpers/*": ["./shared/helpers/*"],
+      "@mocks/*": ["./shared/mocks/*"],
+      "@types/*": ["./shared/types/*"]
     },
     "plugins": [
       {

@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 
+import { Footer } from '@components/Footer';
 import { Providers } from '@providers';
 
 import '@coobrastur/ui/globals.css';
@@ -17,7 +18,10 @@ function Layout({ children }: { children: ReactNode }) {
     <html lang="pt-BR" suppressHydrationWarning>
       <body>
         <Providers>
-          <Wrapper>{children}</Wrapper>
+          <Wrapper>
+            {children}
+            <Footer />
+          </Wrapper>
         </Providers>
       </body>
     </html>

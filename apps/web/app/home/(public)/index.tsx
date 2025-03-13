@@ -1,14 +1,13 @@
-import { Footer } from '@components/Footer';
 import { Header } from '@components/Header';
 import { MobileNavigation } from '@components/MobileNavigation';
 
-import { Advantages } from './interfaces/Advantages';
-import { Destinations } from './interfaces/Destinations';
-import { Display } from './interfaces/Display';
-import { Hotels } from './interfaces/Hotels';
-import { Partners } from './interfaces/Partners';
-import { Support } from './interfaces/Support';
-import { Testimonials } from './interfaces/Testimonials';
+import { Advantages } from './containers/Advantages';
+import { Destinations } from './containers/Destinations';
+import { Display } from './containers/Display';
+import { Hotels } from './containers/Hotels';
+import { Partners } from './containers/Partners';
+import { Support } from './containers/Support';
+import { Testimonials } from './containers/Testimonials';
 
 import { Container } from '@ui/components/Layouts/Container';
 
@@ -16,7 +15,7 @@ export function HomePublic() {
   return (
     <>
       <Container as="section" className="relative h-screen">
-        <Header />
+        <Header isLight />
         <Display />
       </Container>
 
@@ -36,8 +35,6 @@ export function HomePublic() {
         <Support />
 
         <Testimonials />
-
-        <Footer />
       </Container>
     </>
   );

@@ -36,6 +36,6 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     label: 'Hotéis',
-    href: '#',
+    href: '/search-place',
   },
 ];
