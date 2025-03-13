@@ -8,10 +8,7 @@ const MenuLoading = () => (
 );
 
 const MenuDesktop = dynamic(
-  () =>
-    import('@ui/components/Blocks/Navigation/MenuDesktop').then(
-      mod => mod.MenuDesktop,
-    ),
+  () => import('./components/MenuDesktop').then(mod => mod.MenuDesktop),
   {
     ssr: false,
     loading: () => <MenuLoading />,
@@ -19,10 +16,7 @@ const MenuDesktop = dynamic(
 );
 
 const MenuMobile = dynamic(
-  () =>
-    import('@ui/components/Blocks/Navigation/MenuMobile').then(
-      mod => mod.MenuMobile,
-    ),
+  () => import('./components/MenuMobile').then(mod => mod.MenuMobile),
   {
     ssr: false,
     loading: () => <MenuLoading />,
@@ -30,10 +24,7 @@ const MenuMobile = dynamic(
 );
 
 const MenuResponsive = dynamic(
-  () =>
-    import('@ui/components/Blocks/Navigation/MenuResponsive').then(
-      mod => mod.MenuResponsive,
-    ),
+  () => import('./components/MenuResponsive').then(mod => mod.MenuResponsive),
   {
     ssr: false,
     loading: () => <MenuLoading />,

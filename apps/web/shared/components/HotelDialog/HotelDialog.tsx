@@ -4,8 +4,7 @@ import { useSearchParams } from 'next/navigation';
 
 import { Image } from '@components/Image';
 
-import { HOTELSDETAILS } from '../../helpers/hotelsDialog';
-
+import { ACCOMMODATIONSDETAILS } from '@mocks/accommodations/accommodations-details';
 import { Bookmark } from '@ui/components/DataDisplay/Bookmark';
 import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
 import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
@@ -27,7 +26,7 @@ export const HotelDialog = ({ isOpen, onClose }: HotelDialogProps) => {
   const [isShowGallery, setIsShowGallery] = useState(false);
   const searchParams = useSearchParams();
 
-  const hotel = HOTELSDETAILS.find(
+  const hotel = ACCOMMODATIONSDETAILS.find(
     hotel => hotel.id === Number(searchParams.get('h')),
   );
 
