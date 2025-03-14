@@ -32,15 +32,15 @@ export const NAVIGATIONS = [
         href: '#',
       },
       {
-        label: 'Fale Conosco',
+        label: 'Dúvidas Frequentes',
         href: '#',
       },
       {
-        label: 'Política de Privacidade',
+        label: 'Como Funciona',
         href: '#',
       },
       {
-        label: 'Termos e Condições',
+        label: 'Política de Uso',
         href: '#',
       },
     ],
@@ -49,19 +49,19 @@ export const NAVIGATIONS = [
     title: 'Produto',
     items: [
       {
-        label: 'Assinatura',
+        label: 'Planos',
         href: '#',
       },
       {
-        label: 'Política de Privacidade',
+        label: 'Agência de Viagens',
         href: '#',
       },
       {
-        label: 'Termos e Condições',
+        label: 'Portal do Viajante',
         href: '#',
       },
       {
-        label: 'Política de Cookies',
+        label: 'Simulador',
         href: '#',
       },
     ],

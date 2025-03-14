@@ -1,5 +1,5 @@
 import { Header } from '@components/Header';
-import { MobileNavigation } from '@components/MobileNavigation';
+import { UserMobileNavigation } from '@components/UserMobileNavigation';
 
 import { Accommodations } from './containers/Accommodations';
 import { Advantages } from './containers/Advantages';
@@ -21,7 +21,7 @@ export function HomePublic() {
 
       <Container as="main" className="relative z-10 bg-background">
         <div className="block md:hidden">
-          <MobileNavigation />
+          <UserMobileNavigation />
         </div>
 
         <Accommodations />
