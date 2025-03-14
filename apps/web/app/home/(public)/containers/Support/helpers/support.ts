@@ -1,6 +1,6 @@
 import { Support } from '../types/support.types';
 
-import { LucideHeadset, LucideLuggage } from '@ui/lib/icons';
+import { LucideLuggage, PhoneCall } from '@ui/lib/icons';
 
 export const SUPPORT: Support[] = [
   {
@@ -12,7 +12,7 @@ export const SUPPORT: Support[] = [
     target: '_blank',
   },
   {
-    icon: LucideHeadset,
+    icon: PhoneCall,
     title: 'Atendimento Exclusivo',
     description:
       'Nossos agentes são treinados e estão prontos para ouvir suas necessidades, oferecendo soluções rápidas e eficazes.',

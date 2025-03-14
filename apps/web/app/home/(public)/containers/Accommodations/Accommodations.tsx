@@ -14,12 +14,14 @@ export const Accommodations = () => {
         <Heading align="center">
           <Badge variant="default">Hotéis</Badge>
           <Title align="center" size="xl">
-            Encontre os melhores hotéis
+            Os melhores hotéis com café da manhã para 2 pessoas
           </Title>
           <Text align="center">
-            Descubra uma seleção exclusiva de hotéis e resorts para tornar sua
-            viagem ainda mais especial. Oferecemos opções que combinam conforto,
-            qualidade e experiências únicas.
+            Aproveite mais de 2.000 hotéis, resorts e pousadas no Brasil
+            <span className="text-highlight font-semibold">
+              {' '}
+              economizando até 60% nas diárias!
+            </span>
           </Text>
         </Heading>
 
