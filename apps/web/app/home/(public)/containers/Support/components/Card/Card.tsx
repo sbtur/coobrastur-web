@@ -24,7 +24,7 @@ export const Card = ({ content }: CardProps) => {
             height={40}
           />
         ) : (
-          <Icon icon={content.icon} variant="primary" />
+          <Icon icon={content.icon} variant="secondary" />
         )}
       </div>
       <Title size="xs" variant="white">

@@ -1,4 +1,10 @@
-import { forwardRef, type ReactNode } from 'react';
+import {
+  cloneElement,
+  forwardRef,
+  isValidElement,
+  ReactElement,
+  type ReactNode,
+} from 'react';
 
 import { cva, type VariantProps } from 'class-variance-authority';
 
@@ -30,10 +36,21 @@ export interface LinkProps extends VariantProps<typeof linkVariants> {
   href?: string;
   className?: string;
   target?: string;
+  asChild?: boolean;
 }
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
-  ({ children, href, variant, size, className, ...props }, ref) => {
+  (
+    { children, href, variant, size, className, asChild = false, ...props },
+    ref,
+  ) => {
+    console.log(children);
+    if (asChild && isValidElement(children)) {
+      return cloneElement(children as ReactElement<LinkProps>, {
+        ...props,
+      });
+    }
+
     return (
       <a
         className={cn(linkVariants({ variant, size }), className)}

@@ -1,9 +1,8 @@
 import { Header } from '@components/Header';
-import { MobileNavigation } from '@components/MobileNavigation';
+import { UserMobileNavigation } from '@components/UserMobileNavigation';
 
 import { Accommodations } from './containers/Accommodations';
 import { Advantages } from './containers/Advantages';
-import { Destinations } from './containers/Destinations';
 import { Display } from './containers/Display';
 import { Partners } from './containers/Partners';
 import { Support } from './containers/Support';
@@ -21,16 +20,14 @@ export function HomePublic() {
 
       <Container as="main" className="relative z-10 bg-background">
         <div className="block md:hidden">
-          <MobileNavigation />
+          <UserMobileNavigation />
         </div>
+
+        <Advantages />
 
         <Accommodations />
 
         <Partners />
-
-        <Advantages />
-
-        <Destinations />
 
         <Support />
 

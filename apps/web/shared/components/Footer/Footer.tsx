@@ -1,7 +1,7 @@
 import { Image } from '@components/Image';
 import { Link } from '@components/Link';
 
-import { NAVIGATIONS } from './helpers';
+import { NAVIGATIONS } from './helpers/navigation';
 
 import { Text } from '@ui/components/DataDisplay/Text';
 import { Title } from '@ui/components/DataDisplay/Title';

@@ -7,23 +7,24 @@ export const ADVANTAGES: Advantage[] = [
     icon: Hotel,
     title: 'Mais de 2.000 hotéis',
     description:
-      'Grande variedade de Hotéis credenciados em todo o Brasil. Lorem ipsum dolor sit amet.',
+      'Hotéis selecionados a dedo para você viver experiências incríveis, com economia e café da manhã sempre garantido para você e um acompanhante.',
   },
   {
     icon: WalletIcon,
     title: 'Pagamento Flexível',
     description:
-      'Valor mensal que não compromete o limite do seu cartão de crédito. Lorem ipsum dolor sit amet.',
+      '12 mensalidades ao ano com um valor que cabe no seu bolso e com pagamento que não ocupa o limite do seu cartão de crédito.',
   },
   {
     icon: Banknote,
-    title: 'Economia Garantida',
-    description: 'Até 60% de economia em comparação com sites de hospedagem.',
+    title: 'Economia certa',
+    description:
+      'Com nossa Assinatura, você garanta até 60% de economia no valor das diárias em hotéis em comparação a sites de hospedagem.',
   },
   {
     icon: MessageSquare,
-    title: 'Atendimento Exclusivo',
+    title: 'Atendimento personalizado',
     description:
-      'Conte com o suporte personalizado que você merece para planejar viagens inesquecíveis.',
+      'Ajudamos você a viver viagens inesquecíveis com suporte especializado em todas as etapas, do planejamento ao check-out.',
   },
 ];

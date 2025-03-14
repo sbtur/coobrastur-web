@@ -1,5 +1,7 @@
 import { Image } from '@components/Image';
 
+import { PARTNERS } from './helpers/partners';
+
 import displayImage from '@images/pages/home/display/display.jpg';
 import { Heading } from '@ui/components/DataDisplay/Heading';
 import { Title } from '@ui/components/DataDisplay/Title';
@@ -33,38 +35,11 @@ export const Display = () => {
           </Button>
         </Heading>
         <div className="w-full lg:w-[718px] mx-auto absolute bottom-28 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4 p-4 md:p-8 rounded-[10px] md:rounded-[20px] bg-white justify-around">
-          <div>
-            <Image
-              src="/images/shared/logos/coob.png"
-              alt="Coob+"
-              width={112}
-              height={25}
-            />
-          </div>
-          <div>
-            <Image
-              src="/images/shared/logos/viajar-faz-bem.png"
-              alt="Viajar Faz Bem"
-              width={101}
-              height={27}
-            />
-          </div>
-          <div>
-            <Image
-              src="/images/shared/logos/meridien.png"
-              alt="Meridien"
-              width={120}
-              height={35}
-            />
-          </div>
-          <div>
-            <Image
-              src="/images/shared/logos/banstur.png"
-              alt="Basntur"
-              width={125}
-              height={23}
-            />
-          </div>
+          {PARTNERS.map(partner => (
+            <div key={partner.alt}>
+              <Image {...partner} />
+            </div>
+          ))}
         </div>
       </Container>
     </Container>
