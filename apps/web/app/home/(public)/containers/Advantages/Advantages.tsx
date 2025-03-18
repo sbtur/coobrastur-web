@@ -13,11 +13,10 @@ export const Advantages = () => {
         <Heading align="center">
           <Badge variant="default">Vantagens</Badge>
           <Title align="center" size="xl">
-            Descubra o jeito inteligente de viajar
+            O jeito inteligente de viajar
           </Title>
           <Text align="center">
-            Junte-se ao melhor clube de assinatura de viagens do Brasil e
-            aproveite as melhores vantagens.
+            Confira as principais vantagens em ter uma Assinatura de Hotéis!
           </Text>
         </Heading>
         <AdvantagesList />

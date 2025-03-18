@@ -20,7 +20,8 @@ export const Testimonials = () => {
             Junte-se a mais de 75 mil assinantes
           </Title>
           <Text align="center">
-            Veja o que os membros do Grupo Coobrastur têm a dizer:
+            Veja o que os viajantes do Grupo Coobrastur têm a dizer sobre nossa
+            Assinatura de Hotéis
           </Text>
         </Heading>
         <TestimonialsList />

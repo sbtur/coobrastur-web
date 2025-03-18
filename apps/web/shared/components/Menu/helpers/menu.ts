@@ -1,4 +1,4 @@
-import { MenuItem } from '@ui/components/Blocks/Navigation';
+import { MenuItem } from '../types/Menu.types';
 
 export const MENU_ITEMS: MenuItem[] = [
   {
@@ -24,15 +24,11 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     label: 'Planos',
-    href: '#',
+    href: '/plans',
   },
   {
     label: 'Agência de Viagens',
-    href: '#',
-  },
-  {
-    label: 'Destinos',
-    href: '#',
+    href: '/travel-agency',
   },
   {
     label: 'Hotéis',

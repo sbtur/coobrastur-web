@@ -15,9 +15,9 @@ export const Partners = () => {
           className="md:w-6/12 xl:w-4/12 p-0 md:text-left md:items-start"
         >
           <Badge variant="default">Hotéis Parceiros</Badge>
-          <Title size="xl">Principais redes</Title>
+          <Title size="xl">Experiências de hospedagem</Title>
           <Text align="center" className="md:text-left">
-            Encontre as melhores redes hoteleiras aqui.
+            As principais redes hoteleiras do mundo estão aqui.
           </Text>
         </Heading>
 
