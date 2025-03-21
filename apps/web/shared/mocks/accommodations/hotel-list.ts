@@ -1,0 +1,60 @@
+export const HOTELS_MOCK = [
+  {
+    id: 1,
+    name: 'Sky Borges Hotel Alpenhaus',
+    address: 'Avenida Borges De Medeiros, 4206, Gramado, RS',
+    category: 'SILVER',
+    images: [
+      'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2940&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2725&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2940&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=2949&auto=format&fit=crop',
+    ],
+    amenities: {
+      hasPool: true,
+      has24hReception: true,
+      isPetFriendly: true,
+    },
+    additionalPrice: 1000,
+    isBookable: true,
+    isRequestable: false,
+  },
+  {
+    id: 2,
+    name: 'Grand Hotel Ravenala',
+    address: 'Rua das Hortênsias, 1250, Gramado, RS',
+    category: 'MASTER',
+    images: [
+      'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2940&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2940&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2940&auto=format&fit=crop',
+    ],
+    amenities: {
+      hasPool: true,
+      has24hReception: true,
+      isPetFriendly: false,
+    },
+    additionalPrice: 1000,
+    isBookable: true,
+    isRequestable: false,
+  },
+  {
+    id: 3,
+    name: 'Pousada Villa Bella',
+    address: 'Rua das Azaleias, 789, Canela, RS',
+    category: 'SILVER',
+    images: [
+      'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=2948&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=2940&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2940&auto=format&fit=crop',
+    ],
+    amenities: {
+      hasPool: false,
+      has24hReception: true,
+      isPetFriendly: true,
+    },
+    additionalPrice: 0,
+    isBookable: false,
+    isRequestable: true,
+  },
+];

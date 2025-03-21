@@ -13,6 +13,7 @@
     "components": "@/components",
     "utils": "@coobrastur/ui/lib/utils",
     "ui": "@coobrastur/ui/components",
+    "mocks": "@/coobrastur/mocks",
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
