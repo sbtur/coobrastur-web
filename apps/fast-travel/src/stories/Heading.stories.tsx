@@ -42,7 +42,7 @@ export const Center: Story = {
     align: 'center',
   },
   render: ({ ...args }) => (
-    <Heading {...args}>
+    <Heading>
       <Title>Center Heading</Title>
       <Text>Center Text</Text>
     </Heading>
