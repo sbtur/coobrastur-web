@@ -1,5 +1,6 @@
-import type { MenuItem } from './Menu.types';
-import { MenuDropdown } from './MenuDropdown';
+import { MenuDropdown } from './components/MenuDropdown';
+import { MenuLink } from './components/MenuLink';
+import { MenuItem } from './types/Menu.types';
 
 import { Icon } from '@ui/components/DataDisplay/Icon';
 import { Menu } from '@ui/components/Navigation/Menu';
@@ -22,7 +23,7 @@ export const MenuResponsive = ({ menus }: { menus: MenuItem[] }) => {
                 {menu.items ? (
                   <MenuDropdown menu={menu} />
                 ) : (
-                  <Menu.Link href={menu.href}>{menu.label}</Menu.Link>
+                  <MenuLink href={menu.href} label={menu.label} />
                 )}
               </Menu.Item>
             ))}

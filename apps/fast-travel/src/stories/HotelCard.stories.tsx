@@ -1,13 +1,92 @@
+import Image from 'next/image';
+
 import type { Meta, StoryObj } from '@storybook/react';
 import { HotelCard } from '@ui/components/Blocks/HotelCard';
+import { Badge } from '@ui/components/DataDisplay/Badge';
 import { Bookmark } from '@ui/components/DataDisplay/Bookmark';
 import { Icon } from '@ui/components/DataDisplay/Icon';
 import { Text } from '@ui/components/DataDisplay/Text';
 import { Title } from '@ui/components/DataDisplay/Title';
 import { ArrowRight } from '@ui/lib/icons';
 
-const HotelCardComponent = () => {
-  return (
+type HotelCardProps = React.ComponentProps<typeof HotelCard.Root> & {
+  accommodation: {
+    id: number;
+    broker: string;
+    name: string;
+    unique_id: string;
+    image: string;
+    city: { slug: string; name: string };
+    country: { slug: string; name: string };
+    state: string;
+    coordinates: { longitude: string; latitude: string };
+    street: string;
+    complement: string;
+    points: number;
+    total_days: number;
+    extra: number;
+    is_preferential: boolean;
+    category: string;
+    available_to_book: boolean;
+    absolute_url: string;
+    by_request: boolean;
+    position: { lng: number; lat: number };
+  };
+  onClick: (accommodationId: number) => void;
+};
+
+const meta = {
+  title: 'Block/HotelCard',
+  component: HotelCard.Root,
+  parameters: {
+    layout: 'centered',
+  },
+  args: {
+    accommodation: {
+      id: 7257,
+      broker: 'coobrastur',
+      name: 'Jurerê Beach Village',
+      unique_id: '7257',
+      image: '/images/places/place-1.jpg',
+      city: {
+        slug: 'florianópolis',
+        name: 'Florianópolis',
+      },
+      country: {
+        slug: 'brasil',
+        name: 'Brasil',
+      },
+      state: 'SC',
+      coordinates: {
+        longitude: '-484896.0',
+        latitude: '-274394.0',
+      },
+      street: 'Alameda César Nascimento, 646, Jurerê, Florianópolis, SC',
+      complement: '',
+      points: 15000,
+      total_days: 3,
+      extra: 448.8,
+      is_preferential: false,
+      category: 'Gold',
+      available_to_book: true,
+      absolute_url: '/brasil/sc/florianopolis/jurere-beach-village/',
+      by_request: false,
+      position: {
+        lng: -484896,
+        lat: -274394,
+      },
+    },
+    onClick: () => {},
+  },
+  tags: ['autodocs'],
+} satisfies Meta<HotelCardProps>;
+
+export default meta;
+
+type Story = StoryObj<HotelCardProps>;
+
+export const Default: Story = {
+  render: ({ accommodation, onClick }) => (
     <HotelCard.Root>
       <HotelCard.ImageWrapper>
         <>
@@ -15,83 +94,78 @@ const HotelCardComponent = () => {
             <Bookmark onClick={() => console.log('Saved to favorites')} />
           </HotelCard.ImageIcon>
           <HotelCard.Image>
-            <img src="/images/hotel.jpeg" alt="Sky Borges Hotel Alpenhaus" />
+            <Image
+              src={accommodation.image}
+              alt={accommodation.name}
+              width={315}
+              height={416}
+            />
           </HotelCard.Image>
         </>
       </HotelCard.ImageWrapper>
-
       <HotelCard.Description>
+        {accommodation.category && (
+          <Badge variant="default" className="mx-auto">
+            {accommodation.category}
+          </Badge>
+        )}
         <Title as="h3" size="xs" align="center">
-          Sky Borges Hotel Alpenhaus
+          {accommodation.name}
         </Title>
         <Text size="sm" align="center">
-          Avenida Borges De Medeiros, 4206, Gramado, RS
+          {accommodation.street}
         </Text>
-        <HotelCard.Button type="link" href="#" className="justify-center">
+        <HotelCard.Button
+          type="button"
+          onClick={() => onClick(accommodation.id)}
+        >
           Ver mais detalhes <Icon icon={ArrowRight} variant="primary" />
         </HotelCard.Button>
       </HotelCard.Description>
     </HotelCard.Root>
-  );
-};
-
-const meta = {
-  title: 'Blocks/HotelCard',
-  component: HotelCardComponent,
-  parameters: {
-    layout: 'centered',
-  },
-  tags: ['autodocs'],
-} satisfies Meta<typeof HotelCardComponent>;
-
-export default meta;
-
-type Story = StoryObj<typeof HotelCardComponent>;
-
-const baseArgs: Story = {};
-
-export const Default: Story = {
-  args: baseArgs,
-};
-
-export const LeftAligned: Story = {
-  args: {
-    ...baseArgs,
-    align: 'left',
-  },
-};
-
-export const RightAligned: Story = {
-  args: {
-    ...baseArgs,
-    align: 'right',
-  },
-};
-
-export const WithCustomActionLabel: Story = {
-  args: {
-    ...baseArgs,
-    actionLabel: 'Book Now',
-  },
+  ),
 };
 
 export const withSmallImage: Story = {
   args: {
-    ...baseArgs,
-    size: 'small',
+    ...Default.args,
   },
-};
-
-export const withMediumImage: Story = {
-  args: {
-    ...baseArgs,
-    size: 'medium',
-  },
-};
-
-export const withLargeImage: Story = {
-  args: {
-    ...baseArgs,
-    size: 'large',
-  },
+  render: ({ accommodation, onClick }) => (
+    <HotelCard.Root>
+      <HotelCard.ImageWrapper>
+        <>
+          <HotelCard.ImageIcon>
+            <Bookmark onClick={() => console.log('Saved to favorites')} />
+          </HotelCard.ImageIcon>
+          <HotelCard.Image size="sm">
+            <Image
+              src={accommodation.image}
+              alt={accommodation.name}
+              width={315}
+              height={416}
+            />
+          </HotelCard.Image>
+        </>
+      </HotelCard.ImageWrapper>
+      <HotelCard.Description>
+        {accommodation.category && (
+          <Badge variant="default" className="mx-auto">
+            {accommodation.category}
+          </Badge>
+        )}
+        <Title as="h3" size="xs" align="center">
+          {accommodation.name}
+        </Title>
+        <Text size="sm" align="center">
+          {accommodation.street}
+        </Text>
+        <HotelCard.Button
+          type="button"
+          onClick={() => onClick(accommodation.id)}
+        >
+          Ver mais detalhes <Icon icon={ArrowRight} variant="primary" />
+        </HotelCard.Button>
+      </HotelCard.Description>
+    </HotelCard.Root>
+  ),
 };

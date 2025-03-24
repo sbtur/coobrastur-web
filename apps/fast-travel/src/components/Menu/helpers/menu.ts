@@ -1,4 +1,4 @@
-import { MenuItem } from '../Menu.types';
+import { MenuItem } from '../types/Menu.types';
 
 export const MENU_ITEMS: MenuItem[] = [
   {
@@ -24,18 +24,14 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     label: 'Planos',
-    href: '#',
+    href: '/plans',
   },
   {
     label: 'Agência de Viagens',
-    href: '#',
-  },
-  {
-    label: 'Destinos',
-    href: '#',
+    href: '/travel-agency',
   },
   {
     label: 'Hotéis',
-    href: '#',
+    href: '/search-place',
   },
 ];
