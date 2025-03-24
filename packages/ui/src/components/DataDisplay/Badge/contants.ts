@@ -7,4 +7,5 @@ export const BADGE_VARIANTS = {
   warning: 'warning',
   neutral: 'neutral',
 } as const;
+
 export type BadgeVariant = keyof typeof BADGE_VARIANTS;
