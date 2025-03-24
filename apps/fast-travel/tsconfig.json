@@ -19,8 +19,7 @@
     "baseUrl": ".",
     "paths": {
       "@ui/components/*": ["../../packages/ui/src/components/*"],
-      "@ui/lib/*": ["../../packages/ui/src/lib/*"],
-      "@components/*": ["../../apps/web/shared/components/*"]
+      "@ui/lib/*": ["../../packages/ui/src/lib/*"]
     },
     "plugins": [
       {
