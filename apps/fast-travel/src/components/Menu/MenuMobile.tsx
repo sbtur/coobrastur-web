@@ -1,16 +1,20 @@
-import type { MenuItem } from './Menu.types';
+import { MenuLink } from './components/MenuLink';
+import { MenuItem } from './types/Menu.types';
 
 import { Icon } from '@ui/components/DataDisplay/Icon';
 import { Menu } from '@ui/components/Navigation/Menu';
 import { Sheet, SheetContent, SheetTrigger } from '@ui/components/sheet';
-import { Menu as MenuIcon } from '@ui/lib/icons';
+import { AlignRight } from '@ui/lib/icons';
 
 export const MenuMobile = ({ menus }: { menus: MenuItem[] }) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
         <button type="button" className="h-8 w-8">
-          <Icon icon={MenuIcon} className="h-8 w-8" variant="white" />
+          <Icon
+            icon={AlignRight}
+            className="h-8 w-8 text-primary-200 [.isLight_&]:text-white"
+          />
         </button>
       </SheetTrigger>
       <SheetContent>
@@ -18,7 +22,7 @@ export const MenuMobile = ({ menus }: { menus: MenuItem[] }) => {
           <Menu.List>
             {menus.map(menu => (
               <Menu.Item key={menu.label}>
-                <Menu.Link href={menu.href}>{menu.label}</Menu.Link>
+                <MenuLink href={menu.href} label={menu.label} />
               </Menu.Item>
             ))}
           </Menu.List>

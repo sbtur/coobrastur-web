@@ -1,5 +1,6 @@
-import type { MenuItem } from './Menu.types';
-import { MenuDropdown } from './MenuDropdown';
+import { MenuDropdown } from './components/MenuDropdown';
+import { MenuLink } from './components/MenuLink';
+import { MenuItem } from './types/Menu.types';
 
 import { Menu } from '@ui/components/Navigation/Menu';
 
@@ -12,7 +13,7 @@ export const MenuDesktop = ({ menus }: { menus: MenuItem[] }) => {
             {menu.items ? (
               <MenuDropdown menu={menu} />
             ) : (
-              <Menu.Link href={menu.href}>{menu.label}</Menu.Link>
+              <MenuLink href={menu.href} label={menu.label} />
             )}
           </Menu.Item>
         ))}
