@@ -41,7 +41,7 @@ const config = {
           500: 'var(--color-neutral-500)',
         },
         border: 'var(--color-border)',
-        input: 'var(--color-neutral-200)',
+        input: 'var(--color-neutral-300)',
         ring: 'hsl(var(--ring))',
         background: 'var(--color-background)',
         foreground: 'var(--color-foreground)',
