@@ -1,3 +1,5 @@
+import { forwardRef } from 'react';
+
 import { cn } from '@ui/lib/utils';
 
 type BaseProps = {
@@ -17,16 +19,15 @@ type DivWrapperProps = BaseProps &
 
 export type IconWrapperProps = ButtonWrapperProps | DivWrapperProps;
 
-export const IconWrapper = ({
-  children,
-  className,
-  as = 'div',
-  ...props
-}: IconWrapperProps) => {
+export const IconWrapper = forwardRef<
+  HTMLDivElement | HTMLButtonElement,
+  IconWrapperProps
+>(({ children, className, as = 'div', ...props }, ref) => {
   const Component = as;
 
   return (
     <Component
+      ref={ref}
       className={cn(
         'w-fit h-fit p-3 flex items-center justify-center appearance-none border-0 rounded-full bg-white transition-colors shadow-xl text-xs text-text',
         className,
@@ -36,4 +37,6 @@ export const IconWrapper = ({
       {children}
     </Component>
   );
-};
+});
+
+IconWrapper.displayName = 'IconWrapper';
