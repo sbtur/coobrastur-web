@@ -5,8 +5,13 @@ import { AccommodationDetail, CATEGORY_COLORS } from '@coobrastur/types-shared';
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { Badge } from '@ui/components/DataDisplay/Badge';
-import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@ui/components/DataDisplay/Caroussel';
 import { Icon } from '@ui/components/DataDisplay/Icon';
 import { Text } from '@ui/components/DataDisplay/Text';
 import { Title } from '@ui/components/DataDisplay/Title';
@@ -88,53 +93,26 @@ const HotelDetailsComponent = ({ accommodation }: HotelDetailsProps) => {
     unavailableToBook: !available_to_book && !by_request,
   };
 
-  const {
-    emblaRef,
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-    isHidden,
-  } = useCaroussel({});
-
   return (
-    <div className="grid grid-cols-3 w-[860px] h-[330px]">
+    <div className="grid grid-cols-3 w-[860px] min-h-[330px]">
       <div className="col-span-1">
-        <Caroussel.Root className="h-full">
-          <Caroussel.Container
-            ref={emblaRef}
-            className="p-0 rounded-none rounded-s-2xl h-full"
-          >
-            {images.map((image: string) => (
-              <Caroussel.Item
-                key={image}
-                className="flex-[0_0_100%] p-0 group relative"
-              >
+        <Carousel className="h-full" opts={{ loop: true }}>
+          <CarouselContent className="h-full">
+            {images.map(image => (
+              <CarouselItem key={image} className="flex-[0_0_100%] group">
                 <Image
                   src={image}
                   alt={name}
                   width={290}
                   height={330}
-                  className="w-full h-[350px] object-cover transition-transform duration-300 group-hover:scale-105 rounded-none"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-s-2xl"
                 />
-              </Caroussel.Item>
+              </CarouselItem>
             ))}
-          </Caroussel.Container>
-          <Caroussel.ButtonWrapper
-            className={`hidden ${isHidden ? 'hidden' : 'md:flex'}`}
-          >
-            <Caroussel.ButtonPrevious
-              onClick={onPrevButtonClick}
-              disabled={prevBtnDisabled}
-              className="-ml-4"
-            />
-            <Caroussel.ButtonNext
-              onClick={onNextButtonClick}
-              disabled={nextBtnDisabled}
-              className="-mr-6"
-            />
-          </Caroussel.ButtonWrapper>
-        </Caroussel.Root>
+          </CarouselContent>
+          <CarouselPrevious className="-left-6" />
+          <CarouselNext className="-right-6" />
+        </Carousel>
       </div>
       <div className="col-span-2 border border-border rounded-e-[10px] px-7 py-6">
         <Badge variant={CATEGORY_COLORS[category]} className="mb-4">
@@ -225,24 +203,14 @@ const HotelDetailsComponent = ({ accommodation }: HotelDetailsProps) => {
 };
 
 const meta = {
-  title: 'Components/HotelDetails',
+  title: 'Block/HotelDetails',
   component: HotelDetailsComponent,
   parameters: {
     layout: 'centered',
-    viewport: {
-      defaultViewport: 'centered',
-    },
   },
   args: {
     accommodation: defaultAccommodation,
   },
-  decorators: [
-    Story => (
-      <div className="w-[80vw] mx-auto">
-        <Story />
-      </div>
-    ),
-  ],
   tags: ['autodocs'],
 } satisfies Meta<HotelDetailsProps>;
 
