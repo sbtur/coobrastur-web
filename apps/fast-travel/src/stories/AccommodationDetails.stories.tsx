@@ -61,7 +61,7 @@ const defaultAccommodation: AccommodationDetail = {
   description:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.O Sky Borges Hotel Alpenhaus é um hotel 4 estrelas em Gramado, com fácil acesso às principais atrações da cidade, incluindo o Palácio dos Festivais e o Centro de Convenções Expogramado. Este hotel oferece quartosconfortáveis, piscina térmica coberta, sauna e academia.',
   amenities: ['Piscina', 'Recepção 24h', 'Pet Friendly'],
-  images: [
+  gallery: [
     '/images/places/place-1.jpg',
     '/images/places/place-2.jpg',
     '/images/places/place-3.jpg',
@@ -77,7 +77,7 @@ export type HotelDetailsProps = {
 const HotelDetailsComponent = ({ accommodation }: HotelDetailsProps) => {
   const {
     name,
-    images,
+    gallery,
     category,
     street,
     amenities,
@@ -98,7 +98,7 @@ const HotelDetailsComponent = ({ accommodation }: HotelDetailsProps) => {
       <div className="col-span-1">
         <Carousel className="h-full" opts={{ loop: true }}>
           <CarouselContent className="h-full">
-            {images.map(image => (
+            {gallery.map(image => (
               <CarouselItem key={image} className="flex-[0_0_100%] group">
                 <Image
                   src={image}
@@ -203,7 +203,7 @@ const HotelDetailsComponent = ({ accommodation }: HotelDetailsProps) => {
 };
 
 const meta = {
-  title: 'Block/HotelDetails',
+  title: 'Block/Accommodation Detail',
   component: HotelDetailsComponent,
   parameters: {
     layout: 'centered',

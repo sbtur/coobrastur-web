@@ -1,6 +1,6 @@
-import { Accommodation as TAccommodation } from '@shared/types/accommodation/accommodation.types';
+import { Accommodation } from '@coobrastur/types-shared';
 
-export const ACCOMMODATIONS: TAccommodation[] = [
+export const ACCOMMODATIONS: Accommodation[] = [
   {
     id: 7257,
     broker: 'coobrastur',
@@ -95,7 +95,7 @@ export const ACCOMMODATIONS: TAccommodation[] = [
     total_days: 3,
     extra: 0,
     is_preferential: true,
-    category: 'Vip',
+    category: 'Diamante',
     available_to_book: true,
     absolute_url: '/brasil/sc/florianopolis/das-nacoes-hotel/',
     by_request: false,
@@ -402,7 +402,7 @@ export const ACCOMMODATIONS: TAccommodation[] = [
     total_days: 3,
     extra: 0,
     is_preferential: true,
-    category: 'Vip',
+    category: 'Gold',
     available_to_book: true,
     absolute_url: '/brasil/sc/florianopolis/praia-brava-hotel/',
     by_request: false,

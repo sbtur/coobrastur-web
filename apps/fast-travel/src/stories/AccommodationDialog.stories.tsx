@@ -204,7 +204,7 @@ export const HotelDialog = () => {
 };
 
 const meta: Meta<typeof HotelDialog> = {
-  title: 'Block/Hotel Dialog',
+  title: 'Block/Accommodation Dialog',
   component: HotelDialog,
   tags: ['autodocs'],
   parameters: {

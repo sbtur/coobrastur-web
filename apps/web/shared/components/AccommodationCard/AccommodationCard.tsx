@@ -1,10 +1,17 @@
+import { Accommodation, CATEGORY_COLORS } from '@coobrastur/types-shared';
+
 import { Image } from '@components/Image';
 
-import { Accommodation } from '@shared/types/accommodation/accommodation.types';
-import { CATEGORY_COLORS } from '@shared/types/accommodation/accommodation-category.types';
-import { HotelCard as HotelCardUI } from '@ui/components/Blocks/HotelCard';
 import { Badge } from '@ui/components/DataDisplay/Badge';
 import { Bookmark } from '@ui/components/DataDisplay/Bookmark';
+import {
+  HotelButton,
+  HotelCard,
+  HotelDescription,
+  HotelImage,
+  HotelImageIcon,
+  HotelImageWrapper,
+} from '@ui/components/DataDisplay/HotelCard';
 import { Icon } from '@ui/components/DataDisplay/Icon';
 import { Text } from '@ui/components/DataDisplay/Text';
 import { Title } from '@ui/components/DataDisplay/Title';
@@ -20,23 +27,23 @@ export const AccommodationCard = ({
   onClick,
 }: HotelCardProps) => {
   return (
-    <HotelCardUI.Root>
-      <HotelCardUI.ImageWrapper>
+    <HotelCard>
+      <HotelImageWrapper>
         <>
-          <HotelCardUI.ImageIcon>
+          <HotelImageIcon>
             <Bookmark onClick={() => console.log('Saved to favorites')} />
-          </HotelCardUI.ImageIcon>
-          <HotelCardUI.Image>
+          </HotelImageIcon>
+          <HotelImage>
             <Image
               src={accommodation.image}
               alt={accommodation.name}
               width={315}
               height={416}
             />
-          </HotelCardUI.Image>
+          </HotelImage>
         </>
-      </HotelCardUI.ImageWrapper>
-      <HotelCardUI.Description>
+      </HotelImageWrapper>
+      <HotelDescription>
         {accommodation.category && (
           <Badge
             variant={CATEGORY_COLORS[accommodation.category]}
@@ -51,13 +58,10 @@ export const AccommodationCard = ({
         <Text size="sm" align="center">
           {accommodation.street}
         </Text>
-        <HotelCardUI.Button
-          type="button"
-          onClick={() => onClick(accommodation.id)}
-        >
+        <HotelButton type="button" onClick={() => onClick(accommodation.id)}>
           Ver mais detalhes <Icon icon={ArrowRight} variant="primary" />
-        </HotelCardUI.Button>
-      </HotelCardUI.Description>
-    </HotelCardUI.Root>
+        </HotelButton>
+      </HotelDescription>
+    </HotelCard>
   );
 };

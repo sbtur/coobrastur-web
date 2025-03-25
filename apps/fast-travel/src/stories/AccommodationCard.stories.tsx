@@ -1,15 +1,22 @@
 import Image from 'next/image';
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { HotelCard } from '@ui/components/Blocks/HotelCard';
 import { Badge } from '@ui/components/DataDisplay/Badge';
 import { Bookmark } from '@ui/components/DataDisplay/Bookmark';
+import {
+  HotelButton,
+  HotelCard,
+  HotelDescription,
+  HotelImage,
+  HotelImageIcon,
+  HotelImageWrapper,
+} from '@ui/components/DataDisplay/HotelCard';
 import { Icon } from '@ui/components/DataDisplay/Icon';
 import { Text } from '@ui/components/DataDisplay/Text';
 import { Title } from '@ui/components/DataDisplay/Title';
 import { ArrowRight } from '@ui/lib/icons';
 
-type HotelCardProps = React.ComponentProps<typeof HotelCard.Root> & {
+type HotelCardProps = React.ComponentProps<typeof HotelCard> & {
   accommodation: {
     id: number;
     broker: string;
@@ -36,8 +43,8 @@ type HotelCardProps = React.ComponentProps<typeof HotelCard.Root> & {
 };
 
 const meta = {
-  title: 'Block/HotelCard',
-  component: HotelCard.Root,
+  title: 'Data Display/Accommodation Card',
+  component: HotelCard,
   parameters: {
     layout: 'centered',
   },
@@ -87,23 +94,23 @@ type Story = StoryObj<HotelCardProps>;
 
 export const Default: Story = {
   render: ({ accommodation, onClick }) => (
-    <HotelCard.Root>
-      <HotelCard.ImageWrapper>
+    <HotelCard>
+      <HotelImageWrapper>
         <>
-          <HotelCard.ImageIcon>
+          <HotelImageIcon>
             <Bookmark onClick={() => console.log('Saved to favorites')} />
-          </HotelCard.ImageIcon>
-          <HotelCard.Image>
+          </HotelImageIcon>
+          <HotelImage>
             <Image
               src={accommodation.image}
               alt={accommodation.name}
               width={315}
               height={416}
             />
-          </HotelCard.Image>
+          </HotelImage>
         </>
-      </HotelCard.ImageWrapper>
-      <HotelCard.Description>
+      </HotelImageWrapper>
+      <HotelDescription>
         {accommodation.category && (
           <Badge variant="default" className="mx-auto">
             {accommodation.category}
@@ -115,14 +122,11 @@ export const Default: Story = {
         <Text size="sm" align="center">
           {accommodation.street}
         </Text>
-        <HotelCard.Button
-          type="button"
-          onClick={() => onClick(accommodation.id)}
-        >
+        <HotelButton type="button" onClick={() => onClick(accommodation.id)}>
           Ver mais detalhes <Icon icon={ArrowRight} variant="primary" />
-        </HotelCard.Button>
-      </HotelCard.Description>
-    </HotelCard.Root>
+        </HotelButton>
+      </HotelDescription>
+    </HotelCard>
   ),
 };
 
@@ -131,23 +135,23 @@ export const withSmallImage: Story = {
     ...Default.args,
   },
   render: ({ accommodation, onClick }) => (
-    <HotelCard.Root>
-      <HotelCard.ImageWrapper>
+    <HotelCard>
+      <HotelImageWrapper>
         <>
-          <HotelCard.ImageIcon>
+          <HotelImageIcon>
             <Bookmark onClick={() => console.log('Saved to favorites')} />
-          </HotelCard.ImageIcon>
-          <HotelCard.Image size="sm">
+          </HotelImageIcon>
+          <HotelImage size="sm">
             <Image
               src={accommodation.image}
               alt={accommodation.name}
               width={315}
               height={416}
             />
-          </HotelCard.Image>
+          </HotelImage>
         </>
-      </HotelCard.ImageWrapper>
-      <HotelCard.Description>
+      </HotelImageWrapper>
+      <HotelDescription>
         {accommodation.category && (
           <Badge variant="default" className="mx-auto">
             {accommodation.category}
@@ -159,13 +163,10 @@ export const withSmallImage: Story = {
         <Text size="sm" align="center">
           {accommodation.street}
         </Text>
-        <HotelCard.Button
-          type="button"
-          onClick={() => onClick(accommodation.id)}
-        >
+        <HotelButton type="button" onClick={() => onClick(accommodation.id)}>
           Ver mais detalhes <Icon icon={ArrowRight} variant="primary" />
-        </HotelCard.Button>
-      </HotelCard.Description>
-    </HotelCard.Root>
+        </HotelButton>
+      </HotelDescription>
+    </HotelCard>
   ),
 };

@@ -25,6 +25,7 @@
     "@types/react-dom": "^19.0.4",
     "@coobrastur/eslint-config": "workspace:*",
     "@coobrastur/typescript-config": "workspace:*",
+    "@coobrastur/types-shared": "workspace:*",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
