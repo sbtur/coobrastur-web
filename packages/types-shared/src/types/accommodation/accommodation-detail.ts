@@ -35,5 +35,5 @@ export type AccommodationDetail = {
   };
   description: string;
   amenities: string[];
-  images: string[];
+  gallery: string[];
 };
