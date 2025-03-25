@@ -44,7 +44,6 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
     { children, href, variant, size, className, asChild = false, ...props },
     ref,
   ) => {
-    console.log(children);
     if (asChild && isValidElement(children)) {
       return cloneElement(children as ReactElement<LinkProps>, {
         ...props,
