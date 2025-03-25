@@ -3,6 +3,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@/*": ["./*"],
+      "@coobrastur/ui/*": ["../../packages/ui/src/*"],
       "@ui/components/*": ["../../packages/ui/src/components/*"],
       "@ui/lib/*": ["../../packages/ui/src/lib/*"],
       "@components/*": ["./shared/components/*"],

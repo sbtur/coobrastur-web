@@ -4,6 +4,7 @@
     "types": ["vitest/globals", "@testing-library/jest-dom"],
     "baseUrl": ".",
     "paths": {
+      "@coobrastur/ui/*": ["./src/*"],
       "@ui/components/*": ["./src/components/*"],
       "@ui/lib/*": ["./src/lib/*"],
       "@ui/hooks/*": ["./src/hooks/*"],
