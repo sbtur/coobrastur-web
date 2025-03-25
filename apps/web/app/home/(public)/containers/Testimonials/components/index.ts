@@ -1,1 +1,1 @@
-export * from './TestimonialsList';
+export * from './testimonials-list';

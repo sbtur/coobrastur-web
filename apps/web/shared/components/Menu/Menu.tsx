@@ -1,35 +1,7 @@
-'use client';
-import dynamic from 'next/dynamic';
-
+import { MenuDesktop } from './components/menu-desktop';
+import { MenuMobile } from './components/menu-mobile';
+import { MenuResponsive } from './components/menu-responsive';
 import { MENU_ITEMS } from './helpers/menu';
-
-const MenuLoading = () => (
-  <div className="h-6 animate-pulse bg-gray-200/10 rounded" />
-);
-
-const MenuDesktop = dynamic(
-  () => import('./components/MenuDesktop').then(mod => mod.MenuDesktop),
-  {
-    ssr: false,
-    loading: () => <MenuLoading />,
-  },
-);
-
-const MenuMobile = dynamic(
-  () => import('./components/MenuMobile').then(mod => mod.MenuMobile),
-  {
-    ssr: false,
-    loading: () => <MenuLoading />,
-  },
-);
-
-const MenuResponsive = dynamic(
-  () => import('./components/MenuResponsive').then(mod => mod.MenuResponsive),
-  {
-    ssr: false,
-    loading: () => <MenuLoading />,
-  },
-);
 
 export const Menu = () => (
   <>

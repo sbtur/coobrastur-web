@@ -5,7 +5,7 @@ import LinkNext from 'next/link';
 import {
   Link as LinkUI,
   type LinkProps as LinkUIProps,
-} from '@ui/components/DataEntry/Link';
+} from '@ui/components/data-entry/link';
 
 export type LinkProps = NextLinkProps &
   LinkUIProps & {

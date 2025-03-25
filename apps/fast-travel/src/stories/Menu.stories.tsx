@@ -1,10 +1,10 @@
 import {
   Menu,
+  MENU_ITEMS,
   MenuDesktop,
   MenuMobile,
   MenuResponsive,
-} from '@components/Menu';
-import { MENU_ITEMS } from '@components/Menu/helpers/menu';
+} from '@components/menu';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

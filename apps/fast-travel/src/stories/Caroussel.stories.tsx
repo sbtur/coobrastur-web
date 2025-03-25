@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { HotelCard } from '@ui/components/Blocks/HotelCard';
 import {
   Carousel,
   CarouselContent,
@@ -10,10 +9,17 @@ import {
   CarouselNext,
   CarouselPrevious,
   CarouselProps,
-} from '@ui/components/DataDisplay/Caroussel';
-import { Icon } from '@ui/components/DataDisplay/Icon';
-import { Text } from '@ui/components/DataDisplay/Text';
-import { Title } from '@ui/components/DataDisplay/Title';
+} from '@ui/components/data-display/caroussel';
+import {
+  HotelButton,
+  HotelCard,
+  HotelDescription,
+  HotelImage,
+  HotelImageWrapper,
+} from '@ui/components/data-display/hotel-card';
+import { Icon } from '@ui/components/data-display/icon';
+import { Text } from '@ui/components/data-display/text';
+import { Title } from '@ui/components/data-display/title';
 import { ArrowRight } from '@ui/lib/icons';
 
 const PLACES = Array.from(Array(10).keys()).map(index => ({
@@ -45,27 +51,29 @@ const CarouselComponent = (args?: CarouselProps) => (
           key={slide.name}
           className="flex-[0_0_85%] sm:flex-[0_0_50%] md:flex-[0_0_50%] lg:flex-[0_0_25%]"
         >
-          <HotelCard.Root>
-            <HotelCard.Image>
-              <Image
-                src={slide.image}
-                alt={slide.name}
-                width={300}
-                height={300}
-              />
-            </HotelCard.Image>
-            <HotelCard.Description>
+          <HotelCard>
+            <HotelImageWrapper>
+              <HotelImage>
+                <Image
+                  src={slide.image}
+                  alt={slide.name}
+                  width={300}
+                  height={300}
+                />
+              </HotelImage>
+            </HotelImageWrapper>
+            <HotelDescription>
               <Title as="h3" size="xs" align="center">
                 {slide.name}
               </Title>
               <Text size="sm" align="center">
                 {slide.description}
               </Text>
-              <HotelCard.Button type="link" href="#" className="justify-center">
+              <HotelButton type="link" href="#" className="justify-center">
                 Ver mais detalhes <Icon icon={ArrowRight} variant="primary" />
-              </HotelCard.Button>
-            </HotelCard.Description>
-          </HotelCard.Root>
+              </HotelButton>
+            </HotelDescription>
+          </HotelCard>
         </CarouselItem>
       ))}
     </CarouselContent>

@@ -1,12 +1,12 @@
-import { Image } from '@components/Image';
+import { Image } from '@components/image';
 
 import { PARTNERS } from './helpers/partners';
 
 import displayImage from '@images/pages/home/display/display.jpg';
-import { Heading } from '@ui/components/DataDisplay/Heading';
-import { Title } from '@ui/components/DataDisplay/Title';
-import { Button } from '@ui/components/DataEntry/Button';
-import { Container } from '@ui/components/Layouts/Container';
+import { Heading } from '@ui/components/data-display/heading';
+import { Title } from '@ui/components/data-display/title';
+import { Button } from '@ui/components/data-entry/button';
+import { Container } from '@ui/components/layouts/container';
 
 export const Display = () => {
   return (

@@ -1,1 +1,1 @@
-export * from './Advantages';
+export * from './advantages';

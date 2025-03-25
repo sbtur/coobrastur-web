@@ -1,23 +1,10 @@
-import { Menu as Root } from './Menu';
-import { Content } from './Menu.Content';
-import { Dropdown } from './Menu.Dropdown';
-import { DropdownItem } from './Menu.Dropdown.Item';
-import { DropdownLink } from './Menu.Dropdown.Link';
-import { Item } from './Menu.Item';
-import { Link } from './Menu.Link';
-import { List } from './Menu.List';
-import { Trigger } from './Menu.Trigger';
-
-export type { MenuProps } from './Menu';
-
-export const Menu = {
-  Root,
-  Content,
-  Item,
-  List,
-  Trigger,
-  Link,
-  Dropdown,
-  DropdownItem,
-  DropdownLink,
-} as const;
+export type { MenuProps } from './menu';
+export { Menu } from './menu';
+export { MenuContent } from './menu-content';
+export { MenuDropdown } from './menu-dropdown';
+export { MenuDropdownItem } from './menu-dropdown-item';
+export { MenuDropdownLink } from './menu-dropdown-link';
+export { MenuItem } from './menu-item';
+export { MenuLink } from './menu-link';
+export { MenuList } from './menu-list';
+export { MenuTrigger } from './menu-trigger';

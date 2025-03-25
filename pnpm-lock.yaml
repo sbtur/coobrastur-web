@@ -151,6 +151,9 @@ importers:
       '@coobrastur/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
+      '@coobrastur/types-shared':
+        specifier: workspace:*
+        version: link:../../packages/types-shared
       '@coobrastur/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config

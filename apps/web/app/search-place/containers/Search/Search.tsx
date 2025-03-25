@@ -1,9 +1,9 @@
 import { MapPin, Search as SearchIcon } from 'lucide-react';
 
-import { Icon } from '@ui/components/DataDisplay/Icon';
-import { Text } from '@ui/components/DataDisplay/Text';
-import { Button } from '@ui/components/DataEntry/Button';
-import { Container } from '@ui/components/Layouts/Container';
+import { Icon } from '@ui/components/data-display/icon';
+import { Text } from '@ui/components/data-display/text';
+import { Button } from '@ui/components/data-entry/button';
+import { Container } from '@ui/components/layouts/container';
 
 export const Search = () => {
   return (

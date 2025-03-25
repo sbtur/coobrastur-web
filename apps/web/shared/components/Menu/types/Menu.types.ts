@@ -1,11 +1,11 @@
-export interface MenuDropdownItem {
+export interface IMenuDropdownItem {
   label: string;
   href: string;
   description?: string;
 }
 
-export interface MenuItem {
+export interface IMenuItem {
   label: string;
   href: string;
-  items?: MenuDropdownItem[];
+  items?: IMenuDropdownItem[];
 }

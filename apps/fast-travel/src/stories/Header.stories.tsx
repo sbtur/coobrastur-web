@@ -1,13 +1,17 @@
 import Image from 'next/image';
 
-import { MenuDesktop, MenuMobile, MenuResponsive } from '@components/Menu';
-import { MENU_ITEMS } from '@components/Menu/helpers/menu';
+import {
+  MENU_ITEMS,
+  MenuDesktop,
+  MenuMobile,
+  MenuResponsive,
+} from '@components/menu';
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon } from '@ui/components/DataDisplay/Icon';
-import { Button } from '@ui/components/DataEntry/Button';
-import { Container } from '@ui/components/Layouts/Container';
-import { Wrapper } from '@ui/components/Layouts/Wrapper';
+import { Icon } from '@ui/components/data-display/icon';
+import { Button } from '@ui/components/data-entry/button';
+import { Container } from '@ui/components/layouts/container';
+import { Wrapper } from '@ui/components/layouts/wrapper';
 import { ChevronDown } from '@ui/lib/icons';
 
 const HeaderStory = () => <div />;
