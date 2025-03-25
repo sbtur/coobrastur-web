@@ -1,12 +1,12 @@
 import { NavigationMenuContentProps } from '@radix-ui/react-navigation-menu';
 import { NavigationMenuContent } from '@ui/components/navigation-menu';
 
-type ContentProps = NavigationMenuContentProps & {
+type MenuContentProps = NavigationMenuContentProps & {
   className?: string;
   children: React.ReactNode;
 };
 
-export const Content = ({ className, children }: ContentProps) => {
+export const MenuContent = ({ className, children }: MenuContentProps) => {
   return (
     <NavigationMenuContent className={className}>
       {children}
@@ -14,4 +14,4 @@ export const Content = ({ className, children }: ContentProps) => {
   );
 };
 
-Content.displayName = 'MenuContent';
+MenuContent.displayName = 'MenuContent';

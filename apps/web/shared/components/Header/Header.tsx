@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { Link } from '@components/Link';
-import { Menu } from '@components/Menu';
+import { Menu } from '@components/menu';
 
 import logoDark from '@images/shared/logos/logo-grupo-coobrastur-dark.png';
 import logoLight from '@images/shared/logos/logo-grupo-coobrastur-light.png';

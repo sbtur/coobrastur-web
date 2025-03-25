@@ -1,10 +1,16 @@
-import { MenuItem } from '@ui/components/Blocks/Navigation';
+import { IMenuItem } from '@components/menu/types/menu.types';
+
 import { Icon } from '@ui/components/DataDisplay/Icon';
-import { Menu } from '@ui/components/Navigation/Menu';
+import {
+  Menu,
+  MenuItem,
+  MenuLink,
+  MenuList,
+} from '@ui/components/navigation/menu';
 import { Sheet, SheetContent, SheetTrigger } from '@ui/components/sheet';
 import { Menu as MenuIcon } from '@ui/lib/icons';
 
-export const MenuMobile = ({ menus }: { menus: MenuItem[] }) => {
+export const MenuMobile = ({ menus }: { menus: IMenuItem[] }) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -17,15 +23,15 @@ export const MenuMobile = ({ menus }: { menus: MenuItem[] }) => {
         </button>
       </SheetTrigger>
       <SheetContent>
-        <Menu.Root>
-          <Menu.List>
+        <Menu>
+          <MenuList>
             {menus.map(menu => (
-              <Menu.Item key={menu.label}>
-                <Menu.Link href={menu.href}>{menu.label}</Menu.Link>
-              </Menu.Item>
+              <MenuItem key={menu.label}>
+                <MenuLink href={menu.href}>{menu.label}</MenuLink>
+              </MenuItem>
             ))}
-          </Menu.List>
-        </Menu.Root>
+          </MenuList>
+        </Menu>
       </SheetContent>
     </Sheet>
   );

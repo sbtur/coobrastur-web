@@ -2,12 +2,12 @@ import { NavigationMenuLinkProps } from '@radix-ui/react-navigation-menu';
 import { NavigationMenuLink } from '@ui/components/navigation-menu';
 import { cn } from '@ui/lib/utils';
 
-type LinkProps = NavigationMenuLinkProps & {
+type MenuLinkProps = NavigationMenuLinkProps & {
   children: React.ReactNode;
   className?: string;
 };
 
-export const Link = ({ className, children, ...props }: LinkProps) => {
+export const MenuLink = ({ className, children, ...props }: MenuLinkProps) => {
   return (
     <NavigationMenuLink
       className={cn(
@@ -21,4 +21,4 @@ export const Link = ({ className, children, ...props }: LinkProps) => {
   );
 };
 
-Link.displayName = 'MenuLink';
+MenuLink.displayName = 'MenuLink';

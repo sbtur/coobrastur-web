@@ -1,6 +1,6 @@
-import { MenuItem } from '../types/Menu.types';
+import { IMenuItem } from '../types/menu.types';
 
-export const MENU_ITEMS: MenuItem[] = [
+export const MENU_ITEMS: IMenuItem[] = [
   {
     label: 'O Clube',
     href: '#',

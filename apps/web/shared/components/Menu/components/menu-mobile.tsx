@@ -1,12 +1,12 @@
-import { MenuLink } from './components/MenuLink';
-import { MenuItem } from './types/Menu.types';
+import { IMenuItem } from '../types/menu.types';
+import { MenuLink } from './menu-link';
 
 import { Icon } from '@ui/components/DataDisplay/Icon';
-import { Menu } from '@ui/components/Navigation/Menu';
+import { Menu, MenuItem, MenuList } from '@ui/components/navigation/menu';
 import { Sheet, SheetContent, SheetTrigger } from '@ui/components/sheet';
 import { AlignRight } from '@ui/lib/icons';
 
-export const MenuMobile = ({ menus }: { menus: MenuItem[] }) => {
+export const MenuMobile = ({ menus }: { menus: IMenuItem[] }) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -18,15 +18,15 @@ export const MenuMobile = ({ menus }: { menus: MenuItem[] }) => {
         </button>
       </SheetTrigger>
       <SheetContent>
-        <Menu.Root>
-          <Menu.List>
+        <Menu>
+          <MenuList>
             {menus.map(menu => (
-              <Menu.Item key={menu.label}>
+              <MenuItem key={menu.label}>
                 <MenuLink href={menu.href} label={menu.label} />
-              </Menu.Item>
+              </MenuItem>
             ))}
-          </Menu.List>
-        </Menu.Root>
+          </MenuList>
+        </Menu>
       </SheetContent>
     </Sheet>
   );

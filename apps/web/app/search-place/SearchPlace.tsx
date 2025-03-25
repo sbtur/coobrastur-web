@@ -1,4 +1,4 @@
-import { Header } from '@components/Header';
+import { Header } from '@components/header';
 
 import { AccommodationList } from './containers/AccommodationList';
 import { Search } from './containers/Search';

@@ -1,19 +1,21 @@
+'use client';
+
 import { usePathname } from 'next/navigation';
 
 import { Link } from '@components/Link';
 
-import { Menu } from '@ui/components/Navigation/Menu';
+import { MenuLink as MenuLinkUI } from '@ui/components/navigation/menu';
 
 export const MenuLink = ({ href, label }: { href: string; label: string }) => {
   const pathname = usePathname();
   return (
     <Link href={href} passHref legacyBehavior>
-      <Menu.Link
+      <MenuLinkUI
         href={href}
         className={pathname === href ? 'font-semibold' : ''}
       >
         {label}
-      </Menu.Link>
+      </MenuLinkUI>
     </Link>
   );
 };

@@ -1,5 +1,5 @@
-import { Header } from '@components/Header';
-import { UserMobileNavigation } from '@components/UserMobileNavigation';
+import { Header } from '@components/header';
+import { UserMobileNavigation } from '@components/user-mobile-navigation';
 
 import { Accommodations } from './containers/Accommodations';
 import { Advantages } from './containers/Advantages';

@@ -1,18 +1,24 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { Menu } from '@ui/components/Navigation/Menu';
+import { MenuLink } from '@ui/components/navigation/menu';
 
-export const MenuLink = ({ href, label }: { href: string; label: string }) => {
+export const MenuLinkComposed = ({
+  href,
+  label,
+}: {
+  href: string;
+  label: string;
+}) => {
   const pathname = usePathname();
   return (
     <Link href={href} passHref legacyBehavior>
-      <Menu.Link
+      <MenuLink
         href={href}
         className={pathname === href ? 'font-semibold' : ''}
       >
         {label}
-      </Menu.Link>
+      </MenuLink>
     </Link>
   );
 };

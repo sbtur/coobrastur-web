@@ -1,13 +1,13 @@
-import { MenuDropdown } from './components/MenuDropdown';
-import { MenuLink } from './components/MenuLink';
-import { MenuItem } from './types/Menu.types';
+import { IMenuItem } from '../types/menu.types';
+import { MenuDropdown } from './menu-dropdown';
+import { MenuLink } from './menu-link';
 
 import { Icon } from '@ui/components/DataDisplay/Icon';
-import { Menu } from '@ui/components/Navigation/Menu';
+import { Menu, MenuItem, MenuList } from '@ui/components/navigation/menu';
 import { Sheet, SheetContent, SheetTrigger } from '@ui/components/sheet';
 import { Menu as MenuIcon } from '@ui/lib/icons';
 
-export const MenuResponsive = ({ menus }: { menus: MenuItem[] }) => {
+export const MenuResponsive = ({ menus }: { menus: IMenuItem[] }) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -16,19 +16,19 @@ export const MenuResponsive = ({ menus }: { menus: MenuItem[] }) => {
         </button>
       </SheetTrigger>
       <SheetContent side="top">
-        <Menu.Root className="mx-auto">
-          <Menu.List>
+        <Menu className="mx-auto">
+          <MenuList>
             {menus.map(menu => (
-              <Menu.Item key={menu.label}>
+              <MenuItem key={menu.label}>
                 {menu.items ? (
                   <MenuDropdown menu={menu} />
                 ) : (
                   <MenuLink href={menu.href} label={menu.label} />
                 )}
-              </Menu.Item>
+              </MenuItem>
             ))}
-          </Menu.List>
-        </Menu.Root>
+          </MenuList>
+        </Menu>
       </SheetContent>
     </Sheet>
   );
