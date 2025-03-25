@@ -1,6 +1,8 @@
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 
+import { mangueira, sourceSans3 } from 'assets/fonts';
+
 import { Footer } from '@components/footer';
 import { Providers } from '@providers';
 
@@ -15,7 +17,11 @@ export const metadata: Metadata = {
 
 function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html
+      lang="pt-BR"
+      suppressHydrationWarning
+      className={`${mangueira.variable} ${sourceSans3.variable}`}
+    >
       <body>
         <Providers>
           <Wrapper>

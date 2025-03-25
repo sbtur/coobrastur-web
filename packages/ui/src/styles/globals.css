@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 :root {
-  --font-family-primary: 'Mangueira', sans-serif;
+  --font-family-primary: 'Montserrat', sans-serif;
   --font-family-secondary: 'Source Sans Pro', sans-serif;
 
   --font-title-5xl: 80px;

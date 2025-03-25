@@ -96,19 +96,17 @@ export const Default: Story = {
   render: ({ accommodation, onClick }) => (
     <HotelCard>
       <HotelImageWrapper>
-        <>
-          <HotelImageIcon>
-            <Bookmark onClick={() => console.log('Saved to favorites')} />
-          </HotelImageIcon>
-          <HotelImage>
-            <Image
-              src={accommodation.image}
-              alt={accommodation.name}
-              width={315}
-              height={416}
-            />
-          </HotelImage>
-        </>
+        <HotelImageIcon>
+          <Bookmark onClick={() => console.log('Saved to favorites')} />
+        </HotelImageIcon>
+        <HotelImage>
+          <Image
+            src={accommodation.image}
+            alt={accommodation.name}
+            width={315}
+            height={416}
+          />
+        </HotelImage>
       </HotelImageWrapper>
       <HotelDescription>
         {accommodation.category && (
