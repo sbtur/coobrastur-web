@@ -5,7 +5,6 @@ import { PARTNERS } from '../../helpers';
 import {
   Carousel,
   CarouselContent,
-  CarouselDot,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
@@ -36,7 +35,6 @@ export const PartnersList = () => {
         </CarouselContent>
         <CarouselPrevious className="-left-6" />
         <CarouselNext className="-right-6" />
-        <CarouselDot />
       </Carousel>
     </Section>
   );

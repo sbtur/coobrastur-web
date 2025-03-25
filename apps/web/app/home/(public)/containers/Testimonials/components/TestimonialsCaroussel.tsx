@@ -3,7 +3,6 @@ import { TESTIMONIALS } from '../helpers/testimonials';
 import {
   Carousel,
   CarouselContent,
-  CarouselDot,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
@@ -13,8 +12,8 @@ import { Title } from '@ui/components/DataDisplay/Title';
 
 export const TestimonialsCaroussel = () => {
   return (
-    <Carousel className="h-full" opts={{ loop: true }}>
-      <CarouselContent className="h-full">
+    <Carousel opts={{ loop: true }}>
+      <CarouselContent>
         {TESTIMONIALS.map(item => (
           <CarouselItem key={item.id} className="flex-[0_0_100%]">
             <div className="w-full h-[245px] border-2 border-secondary-200 rounded-[20px] p-10 bg-secondary-100">
@@ -31,7 +30,6 @@ export const TestimonialsCaroussel = () => {
       </CarouselContent>
       <CarouselPrevious className="-left-6" />
       <CarouselNext className="-right-6" />
-      <CarouselDot />
     </Carousel>
   );
 };
