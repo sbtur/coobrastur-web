@@ -1,4 +1,4 @@
-import { IconProps } from '@ui/components/DataDisplay/Icon';
+import { IconProps } from '@ui/components/data-display/icon';
 
 export type Advantage = {
   icon: IconProps['icon'];

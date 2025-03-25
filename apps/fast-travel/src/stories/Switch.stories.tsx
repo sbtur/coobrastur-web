@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { Switch } from '@ui/components/DataEntry/Switch';
+import { Switch } from '@ui/components/data-entry/switch';
 
 const meta: Meta<typeof Switch> = {
   title: 'Data Entry/Switch',

@@ -1,11 +1,11 @@
-import { Image } from '@components/Image';
+import { Image } from '@components/image';
 
 import { Support } from '../../types/support.types';
 
-import { Icon } from '@ui/components/DataDisplay/Icon';
-import { Text } from '@ui/components/DataDisplay/Text';
-import { Title } from '@ui/components/DataDisplay/Title';
-import { Link } from '@ui/components/DataEntry/Link';
+import { Icon } from '@ui/components/data-display/icon';
+import { Text } from '@ui/components/data-display/text';
+import { Title } from '@ui/components/data-display/title';
+import { Link } from '@ui/components/data-entry/link';
 import { ArrowRight } from '@ui/lib/icons';
 
 interface CardProps {

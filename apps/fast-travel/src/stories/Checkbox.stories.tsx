@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@ui/components/DataEntry/Button';
-import { Checkbox, CheckboxWrapper } from '@ui/components/DataEntry/Checkbox';
+import { Button } from '@ui/components/data-entry/button';
+import { Checkbox, CheckboxWrapper } from '@ui/components/data-entry/checkbox';
 import {
   Form,
   FormControl,
@@ -8,8 +8,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@ui/components/DataEntry/Form';
-import { Label } from '@ui/components/DataEntry/Label';
+} from '@ui/components/data-entry/form';
+import { Label } from '@ui/components/data-entry/label';
 import { useForm } from '@ui/lib/form';
 import { v, zodResolver } from '@ui/lib/validation';
 

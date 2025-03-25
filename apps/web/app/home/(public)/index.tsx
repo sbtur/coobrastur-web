@@ -1,14 +1,14 @@
 import { Header } from '@components/header';
 import { UserMobileNavigation } from '@components/user-mobile-navigation';
 
-import { Accommodations } from './containers/Accommodations';
-import { Advantages } from './containers/Advantages';
-import { Display } from './containers/Display';
-import { Partners } from './containers/Partners';
-import { Support } from './containers/Support';
-import { Testimonials } from './containers/Testimonials';
+import { Accommodations } from './containers/accommodations';
+import { Advantages } from './containers/advantages';
+import { Display } from './containers/display';
+import { Partners } from './containers/partners';
+import { Support } from './containers/support';
+import { Testimonials } from './containers/testimonials';
 
-import { Container } from '@ui/components/Layouts/Container';
+import { Container } from '@ui/components/layouts/container';
 
 export function HomePublic() {
   return (

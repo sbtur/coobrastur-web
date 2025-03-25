@@ -1,13 +1,13 @@
 import Image from 'next/image';
 
-import { Link } from '@components/Link';
+import { Link } from '@components/link';
 import { Menu } from '@components/menu';
 
 import logoDark from '@images/shared/logos/logo-grupo-coobrastur-dark.png';
 import logoLight from '@images/shared/logos/logo-grupo-coobrastur-light.png';
-import { Icon } from '@ui/components/DataDisplay/Icon';
-import { Button } from '@ui/components/DataEntry/Button';
-import { Container } from '@ui/components/Layouts/Container';
+import { Icon } from '@ui/components/data-display/icon';
+import { Button } from '@ui/components/data-entry/button';
+import { Container } from '@ui/components/layouts/container';
 import { Separator } from '@ui/components/separator';
 import { ChevronDown } from '@ui/lib/icons';
 

@@ -1,7 +1,7 @@
 import { IMenuItem } from '../types/menu.types';
 import { MenuLink } from './menu-link';
 
-import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Icon } from '@ui/components/data-display/icon';
 import { Menu, MenuItem, MenuList } from '@ui/components/navigation/menu';
 import { Sheet, SheetContent, SheetTrigger } from '@ui/components/sheet';
 import { AlignRight } from '@ui/lib/icons';

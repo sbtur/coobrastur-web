@@ -2,8 +2,8 @@ import { MENU_ITEMS } from '@components/menu/helpers/menu';
 
 import { MenuMobile } from './menu-mobile';
 
-import { Icon } from '@ui/components/DataDisplay/Icon';
-import { Button } from '@ui/components/DataEntry/Button';
+import { Icon } from '@ui/components/data-display/icon';
+import { Button } from '@ui/components/data-entry/button';
 import { ArrowRight, UserRound } from '@ui/lib/icons';
 
 export const UserMobileNavigation = () => {

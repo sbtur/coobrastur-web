@@ -1,5 +1,5 @@
-import { Button } from '@ui/components/DataEntry/Button';
-import { Checkbox, CheckboxWrapper } from '@ui/components/DataEntry/Checkbox';
+import { Button } from '@ui/components/data-entry/button';
+import { Checkbox, CheckboxWrapper } from '@ui/components/data-entry/checkbox';
 import {
   Form,
   FormControl,
@@ -8,8 +8,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@ui/components/DataEntry/Form';
-import { Input } from '@ui/components/DataEntry/Input';
+} from '@ui/components/data-entry/form';
+import { Input } from '@ui/components/data-entry/input';
 import { useForm } from '@ui/lib/form';
 import { v, zodResolver } from '@ui/lib/validation';
 

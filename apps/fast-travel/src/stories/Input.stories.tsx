@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon } from '@ui/components/DataDisplay/Icon';
-import { Button } from '@ui/components/DataEntry/Button';
+import { Icon } from '@ui/components/data-display/icon';
+import { Button } from '@ui/components/data-entry/button';
 import {
   Form,
   FormControl,
@@ -8,8 +8,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@ui/components/DataEntry/Form';
-import { Input, InputIcon } from '@ui/components/DataEntry/Input';
+} from '@ui/components/data-entry/form';
+import { Input, InputIcon } from '@ui/components/data-entry/input';
 import { useForm } from '@ui/lib/form';
 import { Lock, Mail, Search } from '@ui/lib/icons';
 import { v, zodResolver } from '@ui/lib/validation';

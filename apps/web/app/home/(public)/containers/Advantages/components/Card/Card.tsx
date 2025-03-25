@@ -1,8 +1,8 @@
 import { Advantage } from '../../types/advantage.types';
 
-import { Icon } from '@ui/components/DataDisplay/Icon';
-import { Text } from '@ui/components/DataDisplay/Text';
-import { Title } from '@ui/components/DataDisplay/Title';
+import { Icon } from '@ui/components/data-display/icon';
+import { Text } from '@ui/components/data-display/text';
+import { Title } from '@ui/components/data-display/title';
 
 export const Card = ({ advantage }: { advantage: Advantage }) => {
   return (

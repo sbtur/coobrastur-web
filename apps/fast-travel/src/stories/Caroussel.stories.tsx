@@ -9,17 +9,17 @@ import {
   CarouselNext,
   CarouselPrevious,
   CarouselProps,
-} from '@ui/components/DataDisplay/Caroussel';
+} from '@ui/components/data-display/caroussel';
 import {
   HotelButton,
   HotelCard,
   HotelDescription,
   HotelImage,
   HotelImageWrapper,
-} from '@ui/components/DataDisplay/HotelCard';
-import { Icon } from '@ui/components/DataDisplay/Icon';
-import { Text } from '@ui/components/DataDisplay/Text';
-import { Title } from '@ui/components/DataDisplay/Title';
+} from '@ui/components/data-display/hotel-card';
+import { Icon } from '@ui/components/data-display/icon';
+import { Text } from '@ui/components/data-display/text';
+import { Title } from '@ui/components/data-display/title';
 import { ArrowRight } from '@ui/lib/icons';
 
 const PLACES = Array.from(Array(10).keys()).map(index => ({

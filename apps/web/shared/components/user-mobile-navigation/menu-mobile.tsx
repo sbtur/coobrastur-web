@@ -1,6 +1,6 @@
 import { IMenuItem } from '@components/menu/types/menu.types';
 
-import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Icon } from '@ui/components/data-display/icon';
 import {
   Menu,
   MenuItem,

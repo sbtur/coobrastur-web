@@ -1,10 +1,10 @@
-import { PartnersList } from './components/PartnersList';
+import { PartnersList } from './components/partners-list';
 
-import { Badge } from '@ui/components/DataDisplay/Badge';
-import { Heading } from '@ui/components/DataDisplay/Heading';
-import { Text } from '@ui/components/DataDisplay/Text';
-import { Title } from '@ui/components/DataDisplay/Title';
-import { Container } from '@ui/components/Layouts/Container';
+import { Badge } from '@ui/components/data-display/badge';
+import { Heading } from '@ui/components/data-display/heading';
+import { Text } from '@ui/components/data-display/text';
+import { Title } from '@ui/components/data-display/title';
+import { Container } from '@ui/components/layouts/container';
 
 export const Partners = () => {
   return (

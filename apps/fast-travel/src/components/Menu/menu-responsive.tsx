@@ -2,7 +2,7 @@ import { MenuDropdownComposed as MenuDropdown } from './components/menu-dropdown
 import { MenuLinkComposed as MenuLink } from './components/menu-link';
 import { MenuItem as MenuItemType } from './types/Menu.types';
 
-import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Icon } from '@ui/components/data-display/icon';
 import { Menu, MenuItem, MenuList } from '@ui/components/navigation/menu';
 import { Sheet, SheetContent, SheetTrigger } from '@ui/components/sheet';
 import { Menu as MenuIcon } from '@ui/lib/icons';

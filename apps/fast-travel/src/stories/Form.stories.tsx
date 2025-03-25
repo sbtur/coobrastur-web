@@ -1,4 +1,4 @@
-import { FormUI } from '@components/Form/Form';
+import { FormUI } from '@components/form';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
