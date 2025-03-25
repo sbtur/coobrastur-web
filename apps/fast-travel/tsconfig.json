@@ -18,6 +18,8 @@
     "preserveSymlinks": true,
     "baseUrl": ".",
     "paths": {
+      "@/*": ["./*"],
+      "@coobrastur/ui/*": ["../../packages/ui/src/*"],
       "@ui/components/*": ["../../packages/ui/src/components/*"],
       "@ui/lib/*": ["../../packages/ui/src/lib/*"],
       "@components/*": ["./src/components/*"]
