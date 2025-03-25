@@ -1,36 +1,24 @@
-'use client';
-
 import { Image } from '@components/Image';
 
 import { PARTNERS } from '../../helpers';
 
-import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselDot,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@ui/components/DataDisplay/Caroussel';
 import { Section } from '@ui/components/Layouts/Section';
 
 export const PartnersList = () => {
-  const {
-    emblaRef,
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-    selectedIndex,
-    scrollSnaps,
-    onDotButtonClick,
-    isHidden,
-  } = useCaroussel({
-    options: {
-      loop: false,
-    },
-  });
-
   return (
     <Section spacing="none" className="mt-6 md:mt-0 md:w-10/12">
-      <Caroussel.Root className="lg:pr-[50px]">
-        <Caroussel.Container ref={emblaRef} className="lg:h-[160px]">
+      <Carousel className="h-full" opts={{ loop: true }}>
+        <CarouselContent className="h-full">
           {PARTNERS.map(item => (
-            <Caroussel.Item
+            <CarouselItem
               key={item.name}
               className="flex-[0_0_33%] md:flex-[0_0_25%] lg:flex-[0_0_20%] xl:flex-[0_0_16.6%] group"
             >
@@ -43,34 +31,13 @@ export const PartnersList = () => {
                   className="object-contain rounded-2xl pointer-events-none"
                 />
               </picture>
-            </Caroussel.Item>
+            </CarouselItem>
           ))}
-        </Caroussel.Container>
-        <Caroussel.ButtonWrapper
-          className={`hidden ${isHidden ? 'hidden' : 'lg:flex '}`}
-        >
-          <Caroussel.ButtonPrevious
-            onClick={onPrevButtonClick}
-            disabled={prevBtnDisabled}
-            className="transition-colors shadow-xl -ml-[50px]"
-          />
-          <Caroussel.ButtonNext
-            onClick={onNextButtonClick}
-            disabled={nextBtnDisabled}
-            className="transition-colors shadow-xl"
-          />
-        </Caroussel.ButtonWrapper>
-        <Caroussel.ButtonDotWrapper className="lg:hidden">
-          {scrollSnaps.map((_, index) => (
-            <Caroussel.ButtonDot
-              key={index}
-              onClick={() => onDotButtonClick(index)}
-              index={index}
-              selectedIndex={selectedIndex}
-            />
-          ))}
-        </Caroussel.ButtonDotWrapper>
-      </Caroussel.Root>
+        </CarouselContent>
+        <CarouselPrevious className="-left-6" />
+        <CarouselNext className="-right-6" />
+        <CarouselDot />
+      </Carousel>
     </Section>
   );
 };

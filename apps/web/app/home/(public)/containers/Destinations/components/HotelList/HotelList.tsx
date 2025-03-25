@@ -1,12 +1,17 @@
-'use client';
 import { Image } from '@components/Image';
 
 import { DestinationResponse } from '../../types/destination.types';
 
 import { HotelCard } from '@ui/components/Blocks/HotelCard';
 import { Bookmark } from '@ui/components/DataDisplay/Bookmark';
-import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselDot,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@ui/components/DataDisplay/Caroussel';
 import { Icon } from '@ui/components/DataDisplay/Icon';
 import { Text } from '@ui/components/DataDisplay/Text';
 import { Title } from '@ui/components/DataDisplay/Title';
@@ -18,24 +23,12 @@ interface HotelListProps {
 }
 
 export const HotelList = ({ hotels }: HotelListProps) => {
-  const {
-    emblaRef,
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-    selectedIndex,
-    scrollSnaps,
-    onDotButtonClick,
-    isHidden,
-  } = useCaroussel({});
-
   return (
     <Section className="md:px-4">
-      <Caroussel.Root>
-        <Caroussel.Container ref={emblaRef}>
+      <Carousel className="h-full" opts={{ loop: true }}>
+        <CarouselContent className="h-full">
           {hotels.map(hotel => (
-            <Caroussel.Item
+            <CarouselItem
               key={hotel.id}
               className="flex-[0_0_85%] sm:flex-[0_0_50%] md:flex-[0_0_50%] lg:flex-[0_0_25%]"
             >
@@ -75,34 +68,13 @@ export const HotelList = ({ hotels }: HotelListProps) => {
                   </HotelCard.Button>
                 </HotelCard.Description>
               </HotelCard.Root>
-            </Caroussel.Item>
+            </CarouselItem>
           ))}
-        </Caroussel.Container>
-        <Caroussel.ButtonWrapper
-          className={`hidden ${isHidden ? 'hidden' : 'md:flex'}`}
-        >
-          <Caroussel.ButtonPrevious
-            onClick={onPrevButtonClick}
-            disabled={prevBtnDisabled}
-            className="-ml-4"
-          />
-          <Caroussel.ButtonNext
-            onClick={onNextButtonClick}
-            disabled={nextBtnDisabled}
-            className="-mr-6"
-          />
-        </Caroussel.ButtonWrapper>
-        <Caroussel.ButtonDotWrapper>
-          {scrollSnaps.map((_, index) => (
-            <Caroussel.ButtonDot
-              key={index}
-              onClick={() => onDotButtonClick(index)}
-              index={index}
-              selectedIndex={selectedIndex}
-            />
-          ))}
-        </Caroussel.ButtonDotWrapper>
-      </Caroussel.Root>
+        </CarouselContent>
+        <CarouselPrevious className="left-3" />
+        <CarouselNext className="right-3" />
+        <CarouselDot />
+      </Carousel>
     </Section>
   );
 };

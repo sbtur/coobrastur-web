@@ -1,40 +1,26 @@
-'use client';
-
 import { SUPPORT } from '../../helpers/support';
 import { Card } from '../Card';
 
-import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselDot,
+  CarouselItem,
+} from '@ui/components/DataDisplay/Caroussel';
 
 export const SupportListMobile = () => {
-  const { emblaRef, selectedIndex, scrollSnaps, onDotButtonClick } =
-    useCaroussel({
-      options: {
-        loop: false,
-      },
-    });
-
   return (
     <div>
-      <Caroussel.Root>
-        <Caroussel.Container ref={emblaRef}>
+      <Carousel className="h-full" opts={{ loop: true }}>
+        <CarouselContent className="h-full">
           {SUPPORT.map(item => (
-            <Caroussel.Item key={item.title} className="flex-[0_0_75%]">
+            <CarouselItem key={item.title} className="flex-[0_0_75%]">
               <Card key={item.title} content={item} />
-            </Caroussel.Item>
+            </CarouselItem>
           ))}
-        </Caroussel.Container>
-        <Caroussel.ButtonDotWrapper>
-          {scrollSnaps.map((_, index) => (
-            <Caroussel.ButtonDot
-              key={index}
-              onClick={() => onDotButtonClick(index)}
-              index={index}
-              selectedIndex={selectedIndex}
-            />
-          ))}
-        </Caroussel.ButtonDotWrapper>
-      </Caroussel.Root>
+        </CarouselContent>
+        <CarouselDot />
+      </Carousel>
     </div>
   );
 };

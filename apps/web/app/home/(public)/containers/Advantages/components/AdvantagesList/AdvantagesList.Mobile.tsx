@@ -1,41 +1,32 @@
-'use client';
 import { Image } from '@components/Image';
 
 import { Card } from '../../components/Card';
 import { ADVANTAGES } from '../../helpers';
 
-import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselDot,
+  CarouselItem,
+} from '@ui/components/DataDisplay/Caroussel';
 
 export const AdvantagesListMobile = () => {
-  const { emblaRef, selectedIndex, scrollSnaps, onDotButtonClick } =
-    useCaroussel({
-      options: {
-        loop: false,
-      },
-    });
-
   return (
     <div>
-      <Caroussel.Root>
-        <Caroussel.Container ref={emblaRef}>
+      <Carousel>
+        <CarouselContent>
           {ADVANTAGES.map(item => (
-            <Caroussel.Item key={item.title} className="flex-[0_0_75%]">
+            <CarouselItem
+              key={item.title}
+              className="flex-[0_0_85%] sm:flex-[0_0_50%] md:flex-[0_0_50%] lg:flex-[0_0_25%]"
+            >
               <Card advantage={item} />
-            </Caroussel.Item>
+            </CarouselItem>
           ))}
-        </Caroussel.Container>
-        <Caroussel.ButtonDotWrapper>
-          {scrollSnaps.map((_, index) => (
-            <Caroussel.ButtonDot
-              key={index}
-              onClick={() => onDotButtonClick(index)}
-              index={index}
-              selectedIndex={selectedIndex}
-            />
-          ))}
-        </Caroussel.ButtonDotWrapper>
-      </Caroussel.Root>
+        </CarouselContent>
+        <CarouselDot />
+      </Carousel>
+
       <div className="mt-4 rounded-2xl overflow-hidden">
         <Image
           src="/images/pages/home/advantages-featured.png"

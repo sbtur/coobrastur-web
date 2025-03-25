@@ -1,22 +1,7 @@
-'use client';
-import dynamic from 'next/dynamic';
+import { AdvantagesListDesktop } from './AdvantagesList.Desktop';
+import { AdvantagesListMobile } from './AdvantagesList.Mobile';
 
 import { Section } from '@ui/components/Layouts/Section';
-
-const AdvantagesListDesktop = dynamic(
-  () =>
-    import('./AdvantagesList.Desktop').then(mod => mod.AdvantagesListDesktop),
-  {
-    ssr: false,
-  },
-);
-
-const AdvantagesListMobile = dynamic(
-  () => import('./AdvantagesList.Mobile').then(mod => mod.AdvantagesListMobile),
-  {
-    ssr: false,
-  },
-);
 
 export const AdvantagesList = () => {
   return (

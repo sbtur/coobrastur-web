@@ -1,5 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 
+import { useCarousel } from './Carousel';
+
 import { cn } from '@ui/lib/utils';
 
 const dotVariants = cva('w-2 h-2 rounded-full', {
@@ -25,57 +27,38 @@ const dotVariants = cva('w-2 h-2 rounded-full', {
     selected: false,
   },
 });
-export interface ButtonDotProps
+export interface CarouselDotProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof dotVariants> {
-  children?: React.ReactNode;
-  className?: string;
-  index: number;
-  selectedIndex: number;
-}
-
-export interface ButtonDotWrapperProps
-  extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode;
   className?: string;
 }
 
-export const ButtonDot = ({
-  children,
+export const CarouselDot = ({
   className,
-  index,
-  selectedIndex,
   variant,
   ...props
-}: ButtonDotProps) => {
-  return (
-    <button
-      type="button"
-      className={cn(
-        dotVariants({ variant, selected: selectedIndex === index }),
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </button>
-  );
-};
+}: CarouselDotProps) => {
+  const { scrollSnaps, selectedIndex, onDotButtonClick } = useCarousel();
 
-export const ButtonDotWrapper = ({
-  children,
-  className,
-  ...props
-}: ButtonDotWrapperProps) => {
   return (
     <div
       className={cn(
         'flex gap-3 items-center justify-center w-full mt-4',
         className,
       )}
-      {...props}
     >
-      {children}
+      {scrollSnaps.map((_, index) => (
+        <button
+          type="button"
+          className={cn(
+            dotVariants({ variant, selected: selectedIndex === index }),
+            className,
+          )}
+          key={index}
+          onClick={() => onDotButtonClick(index)}
+          {...props}
+        />
+      ))}
     </div>
   );
 };

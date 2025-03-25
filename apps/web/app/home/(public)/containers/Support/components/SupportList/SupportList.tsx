@@ -1,21 +1,7 @@
-'use client';
-import dynamic from 'next/dynamic';
+import { SupportListDesktop } from './SupportList.Desktop';
+import { SupportListMobile } from './SupportList.Mobile';
 
 import { Section } from '@ui/components/Layouts/Section';
-
-const SupportListDesktop = dynamic(
-  () => import('./SupportList.Desktop').then(mod => mod.SupportListDesktop),
-  {
-    ssr: false,
-  },
-);
-
-const SupportListMobile = dynamic(
-  () => import('./SupportList.Mobile').then(mod => mod.SupportListMobile),
-  {
-    ssr: false,
-  },
-);
 
 export const SupportList = () => {
   return (
