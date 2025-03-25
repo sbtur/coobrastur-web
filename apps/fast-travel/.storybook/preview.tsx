@@ -1,3 +1,7 @@
+import React from 'react';
+
+import { StorybookWrapper } from '../src/components/storybook-wrapper';
+
 import '@coobrastur/ui/globals.css';
 
 import type { Preview } from '@storybook/react';
@@ -47,6 +51,13 @@ const preview: Preview = {
       ],
     },
   },
+  decorators: [
+    Story => (
+      <StorybookWrapper>
+        <Story />
+      </StorybookWrapper>
+    ),
+  ],
 };
 
 export default preview;
