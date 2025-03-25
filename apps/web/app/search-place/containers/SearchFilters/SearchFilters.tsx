@@ -1,9 +1,14 @@
-'use client';
 import { CATEGORY } from '../../helpers/category';
 import { FILTERS } from '../../helpers/filters';
 
-import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselDot,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@ui/components/DataDisplay/Caroussel';
 import { Icon } from '@ui/components/DataDisplay/Icon';
 import { Text } from '@ui/components/DataDisplay/Text';
 import {
@@ -17,19 +22,6 @@ import { Container } from '@ui/components/Layouts/Container';
 import { ChevronDown, Hotel } from '@ui/lib/icons';
 
 export const SearchFilters = () => {
-  const {
-    emblaRef,
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-    isHidden,
-  } = useCaroussel({
-    options: {
-      loop: false,
-    },
-  });
-
   return (
     <Container padding="md" className="bg-background lg:shadow-lg lg:mb-8">
       <Container
@@ -43,10 +35,10 @@ export const SearchFilters = () => {
           </span>
         </Text>
         <div className="bg-background shadow-lg mb-8 lg:mb-0 pb-6 lg:pb-0 lg:shadow-none">
-          <Caroussel.Root>
-            <Caroussel.Container ref={emblaRef}>
+          <Carousel className="h-full" opts={{ loop: true }}>
+            <CarouselContent className="h-full">
               {FILTERS.map(filter => (
-                <Caroussel.Item
+                <CarouselItem
                   key={filter.value}
                   className="flex-[0_0_25%] lg:flex-[0_0_16%] flex items-center justify-center"
                 >
@@ -59,24 +51,12 @@ export const SearchFilters = () => {
                       {filter.label}
                     </Text>
                   </button>
-                </Caroussel.Item>
+                </CarouselItem>
               ))}
-            </Caroussel.Container>
-            <Caroussel.ButtonWrapper
-              className={`hidden ${isHidden ? 'hidden' : 'md:flex'}`}
-            >
-              <Caroussel.ButtonPrevious
-                onClick={onPrevButtonClick}
-                disabled={prevBtnDisabled}
-                className="transition-colors shadow-xl -ml-[40px]"
-              />
-              <Caroussel.ButtonNext
-                onClick={onNextButtonClick}
-                disabled={nextBtnDisabled}
-                className="transition-colors shadow-xl -mr-[40px]"
-              />
-            </Caroussel.ButtonWrapper>
-          </Caroussel.Root>
+            </CarouselContent>
+            <CarouselPrevious className="-left-6" />
+            <CarouselNext className="-right-6" />
+          </Carousel>
         </div>
         <div className="w-fit mx-auto lg:mx-0 border border-border rounded-md p-3">
           <DropdownMenu>

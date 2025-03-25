@@ -6,8 +6,14 @@ import { Image } from '@components/Image';
 
 import { ACCOMMODATIONSDETAILS } from '@mocks/accommodations/accommodations-details';
 import { Bookmark } from '@ui/components/DataDisplay/Bookmark';
-import { Caroussel } from '@ui/components/DataDisplay/Caroussel';
-import { useCaroussel } from '@ui/components/DataDisplay/Caroussel/hooks/useCaroussel';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselDot,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@ui/components/DataDisplay/Caroussel';
 import { Dialog } from '@ui/components/DataDisplay/Dialog';
 import { Icon, IconWrapper } from '@ui/components/DataDisplay/Icon';
 import { Text } from '@ui/components/DataDisplay/Text';
@@ -22,24 +28,13 @@ export interface HotelDialogProps {
   onClose: () => void;
 }
 
-export const HotelDialog = ({ isOpen, onClose }: HotelDialogProps) => {
+export const AccommodationDialog = ({ isOpen, onClose }: HotelDialogProps) => {
   const [isShowGallery, setIsShowGallery] = useState(false);
   const searchParams = useSearchParams();
 
   const hotel = ACCOMMODATIONSDETAILS.find(
     hotel => hotel.id === Number(searchParams.get('h')),
   );
-
-  const {
-    emblaRef,
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-    selectedIndex,
-    scrollSnaps,
-    onDotButtonClick,
-  } = useCaroussel({});
 
   const handleShowGallery = () => {
     setIsShowGallery(!isShowGallery);
@@ -151,13 +146,10 @@ export const HotelDialog = ({ isOpen, onClose }: HotelDialogProps) => {
               </div>
             </div>
 
-            <Caroussel.Root className="h-full">
-              <Caroussel.Container
-                ref={emblaRef}
-                className="p-0 rounded-none h-full"
-              >
+            <Carousel className="h-full" opts={{ loop: true }}>
+              <CarouselContent className="h-full">
                 {hotel?.gallery.map(image => (
-                  <Caroussel.Item
+                  <CarouselItem
                     key={image}
                     className="flex-[0_0_100%] p-0 rounded-none relative"
                   >
@@ -168,32 +160,13 @@ export const HotelDialog = ({ isOpen, onClose }: HotelDialogProps) => {
                       height={800}
                       className="w-full h-full md:h-[570px] object-cover"
                     />
-                  </Caroussel.Item>
+                  </CarouselItem>
                 ))}
-              </Caroussel.Container>
-              <Caroussel.ButtonWrapper className="md:flex">
-                <Caroussel.ButtonPrevious
-                  onClick={onPrevButtonClick}
-                  disabled={prevBtnDisabled}
-                  className="ml-4"
-                />
-                <Caroussel.ButtonNext
-                  onClick={onNextButtonClick}
-                  disabled={nextBtnDisabled}
-                  className="mr-4"
-                />
-              </Caroussel.ButtonWrapper>
-              <Caroussel.ButtonDotWrapper className="absolute bottom-[110px] left-0 right-0 z-10">
-                {scrollSnaps.map((_, index) => (
-                  <Caroussel.ButtonDot
-                    key={index}
-                    onClick={() => onDotButtonClick(index)}
-                    index={index}
-                    selectedIndex={selectedIndex}
-                  />
-                ))}
-              </Caroussel.ButtonDotWrapper>
-            </Caroussel.Root>
+              </CarouselContent>
+              <CarouselPrevious className="left-3" />
+              <CarouselNext className="right-3" />
+              <CarouselDot />
+            </Carousel>
 
             <Button
               size="lg"

@@ -15,7 +15,10 @@ type HotelCardProps = {
   accommodation: Accommodation;
 };
 
-export const HotelCard = ({ accommodation, onClick }: HotelCardProps) => {
+export const AccommodationCard = ({
+  accommodation,
+  onClick,
+}: HotelCardProps) => {
   return (
     <HotelCardUI.Root>
       <HotelCardUI.ImageWrapper>

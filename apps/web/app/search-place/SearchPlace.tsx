@@ -1,6 +1,6 @@
 import { Header } from '@components/Header';
 
-import { HotelList } from './containers/HotelList';
+import { AccommodationList } from './containers/AccommodationList';
 import { Search } from './containers/Search';
 import { SearchFilters } from './containers/SearchFilters';
 
@@ -13,7 +13,7 @@ export const SearchPlace = () => {
       <Search />
       <Separator />
       <SearchFilters />
-      <HotelList />
+      <AccommodationList />
     </>
   );
 };

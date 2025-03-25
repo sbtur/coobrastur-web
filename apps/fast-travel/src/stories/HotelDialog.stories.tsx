@@ -186,7 +186,7 @@ export const HotelDialog = () => {
               </CarouselContent>
               <CarouselPrevious className="left-3" />
               <CarouselNext className="right-3" />
-              <CarouselDot />
+              <CarouselDot className="absolute bottom-[60px]" />
             </Carousel>
 
             <Button
