@@ -2,7 +2,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@ui/lib/utils';
 
-const titleVariants = cva('font-bold', {
+const titleVariants = cva('font-bold font-primary', {
   variants: {
     as: {
       h1: 'text-5xl', // 48px
@@ -21,11 +21,11 @@ const titleVariants = cva('font-bold', {
       '2xl': 'text-4xl xl:text-6xl', //40px-60px
     },
     variant: {
-      primary: 'text-text-primary',
-      secondary: 'text-text-secondary',
-      success: 'text-text-success',
-      warning: 'text-text-warning',
-      danger: 'text-text-danger',
+      primary: 'text-primary',
+      secondary: 'text-secondary',
+      success: 'text-success',
+      warning: 'text-warning',
+      danger: 'text-danger',
       white: 'text-neutral-100',
     },
     align: {
