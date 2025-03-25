@@ -8,7 +8,6 @@ import {
   Mountain,
   Sun,
   Waves,
-  WavesLadder,
 } from '@ui/lib/icons';
 
 export const FILTERS: Filter[] = [
@@ -30,7 +29,7 @@ export const FILTERS: Filter[] = [
   {
     label: 'Resort',
     value: 'resort',
-    icon: WavesLadder,
+    icon: Waves,
   },
   {
     label: 'Praia',

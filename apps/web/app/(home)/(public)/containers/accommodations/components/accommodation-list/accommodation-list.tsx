@@ -2,11 +2,12 @@
 
 import { useRouter } from 'next/navigation';
 
+import { Accommodation } from '@coobrastur/types-shared';
+
 import { AccommodationCard } from '@components/accommodation-card';
 import { AccommodationDialog } from '@components/accommodation-dialog';
 import { useToggle } from '@hooks/useToggle';
 
-import { Accommodation } from '@shared/types/accommodation/accommodation.types';
 import {
   Carousel,
   CarouselContent,
