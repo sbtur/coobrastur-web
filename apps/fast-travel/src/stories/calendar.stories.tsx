@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { addDays } from 'date-fns';
+
 import {
   Calendar,
   DateRange,
@@ -22,14 +24,29 @@ const meta = {
 export default meta;
 
 export const DatePicker = () => {
-  const [date, setDate] = useState<Date | undefined>(new Date());
+  const todayDate = new Date();
+  const [date, setDate] = useState<Date | undefined>(todayDate);
 
   return <Calendar mode="single" selected={date} onSelect={setDate} />;
 };
 
+export const DatePickerDisabled = () => {
+  const todayDate = new Date();
+  const [date, setDate] = useState<Date | undefined>(todayDate);
+
+  return (
+    <Calendar
+      mode="single"
+      selected={date}
+      onSelect={setDate}
+      disabled={{ before: todayDate }}
+    />
+  );
+};
+
 export const DateRage = () => {
   const todayDate = new Date();
-  const twoDaysFromNow = new Date(Date.now() + 48 * 60 * 60 * 1000);
+  const twoDaysFromNow = addDays(new Date(), 2);
 
   const [date, setDate] = useState<DateRange | undefined>({
     from: todayDate,
