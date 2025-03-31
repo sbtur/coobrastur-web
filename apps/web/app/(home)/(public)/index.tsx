@@ -8,6 +8,7 @@ import { Partners } from './containers/partners';
 import { Support } from './containers/support';
 import { Testimonials } from './containers/testimonials';
 
+import { MENU_ITEMS } from '@shared/helpers/menu';
 import { Container } from '@ui/components/layouts/container';
 
 export function HomePublic() {
@@ -20,7 +21,7 @@ export function HomePublic() {
 
       <Container as="main" className="relative z-10 bg-background">
         <div className="block md:hidden">
-          <UserMobileNavigation />
+          <UserMobileNavigation menuItems={MENU_ITEMS} />
         </div>
 
         <Advantages />

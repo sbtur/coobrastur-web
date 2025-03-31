@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { Link } from '@components/link';
 import { Menu } from '@components/menu';
 
+import { MENU_ITEMS } from '@/shared/helpers/menu';
+
 import logoDark from '@images/shared/logos/logo-grupo-coobrastur-dark.png';
 import logoLight from '@images/shared/logos/logo-grupo-coobrastur-light.png';
 import { Icon } from '@ui/components/data-display/icon';
@@ -34,7 +36,7 @@ export function Header({ isLight = false }: HeaderProps) {
               />
             </Link>
           </div>
-          <Menu />
+          <Menu menuItems={MENU_ITEMS} />
           <div className="hidden md:flex flex-nowrap gap-4">
             <Button size="sm">
               Acessos <Icon icon={ChevronDown} variant="white" />
