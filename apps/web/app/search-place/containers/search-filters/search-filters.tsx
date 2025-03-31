@@ -3,14 +3,14 @@ import { CarouselFilters } from './carousel-filters';
 
 import { Icon } from '@ui/components/data-display/icon';
 import { Text } from '@ui/components/data-display/text';
+import { Container } from '@ui/components/layouts/container';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
-} from '@ui/components/dropdown-menu';
-import { Container } from '@ui/components/layouts/container';
+} from '@ui/components/navigation/dropdown-menu';
 import { ChevronDown, Hotel } from '@ui/lib/icons';
 
 export const SearchFilters = () => {
