@@ -6,8 +6,6 @@ import { mangueira, sourceSans3 } from 'assets/fonts';
 import { Footer } from '@components/footer';
 import { Providers } from '@providers';
 
-import { Header } from '@/shared/components/header';
-
 import '@coobrastur/ui/globals.css';
 
 import { Wrapper } from '@ui/components/layouts/wrapper';
