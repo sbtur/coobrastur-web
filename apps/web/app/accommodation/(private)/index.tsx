@@ -1,15 +1,18 @@
 import { Button } from '@coobrastur/ui/components/button';
 import { Badge } from '@coobrastur/ui/components/data-display/badge';
 import { Heading } from '@coobrastur/ui/components/data-display/heading';
+import { Icon } from '@coobrastur/ui/components/data-display/icon';
 import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Title } from '@coobrastur/ui/components/data-display/title';
 import { Container } from '@coobrastur/ui/components/layouts/container';
 import { Section } from '@coobrastur/ui/components/layouts/section';
 import { Separator } from '@coobrastur/ui/components/separator';
+import { Calendar, Globe, Mail, Phone } from '@coobrastur/ui/lib/icons';
 
 import { Amenities } from '../components/amenities';
 import { CollapsibleDescription } from '../components/collapsible-description';
 import { ImageGallery } from '../components/image-gallery';
+import { Policies } from '../components/policies';
 
 export default function AccommodationPrivate() {
   return (
@@ -63,48 +66,53 @@ export default function AccommodationPrivate() {
               ]}
             />
           </Section>
-          <Section>
+          <Section className="space-y-3">
             <Title as="h3" size="sm" className="mb-3">
               Informações do hotel
             </Title>
-            <Text>(21)3529-1216 - (21) 3231-8031</Text>
-            <Text>reservas.arosa@rederiohoteis.com.br</Text>
-            <Text>rederiohoteis.com/arosa-hotel-na-lapa</Text>
+            <Text className="flex items-center gap-3">
+              <Icon icon={Phone} variant="primary" />
+              (21)3529-1216 - (21) 3231-8031
+            </Text>
+            <Text className="flex items-center gap-3">
+              <Icon icon={Mail} variant="primary" />
+              reservas.arosa@rederiohoteis.com.br
+            </Text>
+            <Text className="flex items-center gap-3">
+              <Icon icon={Globe} variant="primary" />
+              rederiohoteis.com/arosa-hotel-na-lapa
+            </Text>
           </Section>
-          <Section>
+          <Section className="max-w-[600px]">
             <Title as="h3" size="sm" className="mb-3">
               Períodos de pacote
             </Title>
-            <Text>
-              Os <span className="text-highlight">períodos de pacotes</span>{' '}
+            <div className="space-y-2">
+              <Text className="flex items-center gap-2 text-lg">
+                <Icon icon={Calendar} variant="secondary" />
+                <span className="font-bold">20/05/2025</span> Consciência Negra
+              </Text>
+              <Text className="flex items-center gap-2 text-lg">
+                <Icon icon={Calendar} variant="secondary" />
+                <span className="font-bold">20/05/2025</span> Carnaval e Desfile
+                das Campeãs
+              </Text>
+            </div>
+            <Text className="mt-3">
+              Os <strong className="text-highlight">períodos de pacotes</strong>{' '}
               podem variar conforme a temporada (baixa, média ou alta) e regras
               específicas do pacote, como datas restritas, mínimo de noites ou
-              validade para uso.Para período(s) de feriado(s) e pacote(s), vide{' '}
+              validade para uso.
+            </Text>
+            <Text className="mt-3">
+              Para período(s) de feriado(s) e pacote(s), vide{' '}
               <strong>
                 políticas de cancelamento e multa em caso de no-show
               </strong>{' '}
               no momento da reserva.
             </Text>
           </Section>
-          <Section>
-            <Title as="h3" size="sm" className="mb-3">
-              Política de gratuidade
-            </Title>
-            <Text>
-              01 criança de até 6 anos será acomodada gratuitamente na mesma
-              cama dos pais ou responsáveis. De acordo com o Estatuto da Criança
-              e do Adolescente (Lei 8.069/90 Art 82), é proibida a hospedagem de
-              criança ou adolescente em hotel, motel, pensão ou estabelecimento
-              congênere, salvo se autorizado ou acompanhado pelos pais (em
-              conjunto) ou responsável legal, ou portar termo do Juizado de
-              Menores com a autorização do pai e mãe ausente. No momento do
-              check-in é obrigatório apresentar o documento original de
-              identificação quando na presença dos pais ou autorização por
-              escrito quando acompanhado de responsável devidamente
-              identificado. Essas exigências tem como objetivo proteger a
-              criança ou adolescente.
-            </Text>
-          </Section>
+          <Policies />
           <Section>
             <Title as="h3" size="sm" className="mb-3">
               Localização
