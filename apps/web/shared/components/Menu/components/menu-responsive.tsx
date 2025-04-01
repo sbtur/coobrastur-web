@@ -1,4 +1,5 @@
-import { IMenuItem } from '../types/menu.types';
+import { IMenuItem } from '@/shared/types/menu.types';
+
 import { MenuDropdown } from './menu-dropdown';
 import { MenuLink } from './menu-link';
 

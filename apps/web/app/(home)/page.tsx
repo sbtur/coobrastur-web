@@ -1,15 +1,11 @@
-'use client';
-import { usePageAuth } from '@/shared/hooks/use-page-auth';
+import { Suspense } from 'react';
 
-import { HomePrivate } from './(private)';
-import { HomePublic } from './(public)';
+import { Home } from './home';
 
 export default function Page() {
-  const { token } = usePageAuth();
-
-  if (token) {
-    return <HomePrivate />;
-  }
-
-  return <HomePublic />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Home />
+    </Suspense>
+  );
 }
