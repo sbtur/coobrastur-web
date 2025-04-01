@@ -27,7 +27,6 @@ function Layout({ children }: { children: ReactNode }) {
       <body>
         <Providers>
           <Wrapper>
-            <Header />
             {children}
             <Footer />
           </Wrapper>
