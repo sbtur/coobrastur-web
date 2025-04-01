@@ -93,7 +93,7 @@ export const AccommodationDialog = ({ isOpen, onClose }: HotelDialogProps) => {
                   </div>
                 </div>
                 <div className="text-center mt-6 md:text-left">
-                  <Link href="/">
+                  <Link href="/accommodation">
                     Ir para a página do Hotel <Icon icon={ArrowRight} />
                   </Link>
                 </div>

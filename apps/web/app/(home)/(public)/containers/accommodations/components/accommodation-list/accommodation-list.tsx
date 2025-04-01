@@ -6,7 +6,7 @@ import { Accommodation } from '@coobrastur/types-shared';
 
 import { AccommodationCard } from '@components/accommodation-card';
 import { AccommodationDialog } from '@components/accommodation-dialog';
-import { useToggle } from '@hooks/useToggle';
+import { useToggle } from '@hooks/use-toggle';
 
 import {
   Carousel,

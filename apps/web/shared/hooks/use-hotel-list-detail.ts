@@ -1,6 +1,6 @@
 import { usePathname, useRouter } from 'next/navigation';
 
-import { useToggle } from '@hooks/useToggle';
+import { useToggle } from '@hooks/use-toggle';
 
 export const useHotelListDetail = () => {
   const { isEnabled, toggle } = useToggle();

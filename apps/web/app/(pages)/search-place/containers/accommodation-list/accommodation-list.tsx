@@ -2,7 +2,7 @@
 
 import { AccommodationCard } from '@components/accommodation-card';
 import { AccommodationDialog } from '@components/accommodation-dialog';
-import { useHotelListDetail } from '@hooks/useHotelListDetail';
+import { useHotelListDetail } from '@hooks/use-hotel-list-detail';
 
 import { ACCOMMODATIONS } from '@mocks/accommodations/accommodations';
 import { Container } from '@ui/components/layouts/container';
