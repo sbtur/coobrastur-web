@@ -2,7 +2,7 @@ import {
   MediaQuery as MediaQueryReact,
   useCustomMediaQuery,
   useMediaQuery,
-} from '@hooks/useMediaQuery';
+} from '@hooks/use-media-query';
 
 export const Desktop = ({ children }: { children: React.ReactNode }) => {
   const { isLargeScreen } = useMediaQuery();
