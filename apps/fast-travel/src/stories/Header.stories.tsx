@@ -1,22 +1,23 @@
 import Image from 'next/image';
 
-import type { Meta, StoryObj } from '@storybook/react';
 import {
   MENU_ITEMS,
   MenuDesktop,
   MenuMobile,
   MenuResponsive,
-} from '@ui/components/Blocks/Navigation';
-import { Icon } from '@ui/components/DataDisplay/Icon';
-import { Button } from '@ui/components/DataEntry/Button';
-import { Container } from '@ui/components/Layouts/Container';
-import { Wrapper } from '@ui/components/Layouts/Wrapper';
+} from '@components/menu';
+
+import type { Meta, StoryObj } from '@storybook/react';
+import { Icon } from '@ui/components/data-display/icon';
+import { Button } from '@ui/components/data-entry/button';
+import { Container } from '@ui/components/layouts/container';
+import { Wrapper } from '@ui/components/layouts/wrapper';
 import { ChevronDown } from '@ui/lib/icons';
 
 const HeaderStory = () => <div />;
 
 const meta = {
-  title: 'Blocks/Header',
+  title: 'Block/Header',
   component: HeaderStory,
   parameters: {
     layout: 'centered',

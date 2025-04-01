@@ -1,12 +1,16 @@
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 
-import { Footer } from '@components/Footer';
+import { mangueira, sourceSans3 } from 'assets/fonts';
+
+import { Footer } from '@components/footer';
 import { Providers } from '@providers';
+
+import { Header } from '@/shared/components/header';
 
 import '@coobrastur/ui/globals.css';
 
-import { Wrapper } from '@ui/components/Layouts/Wrapper';
+import { Wrapper } from '@ui/components/layouts/wrapper';
 
 export const metadata: Metadata = {
   title: 'Coobrastur',
@@ -15,7 +19,11 @@ export const metadata: Metadata = {
 
 function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html
+      lang="pt-BR"
+      suppressHydrationWarning
+      className={`${mangueira.variable} ${sourceSans3.variable}`}
+    >
       <body>
         <Providers>
           <Wrapper>

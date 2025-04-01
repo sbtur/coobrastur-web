@@ -1,13 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import {
+  Menu,
   MENU_ITEMS,
   MenuDesktop,
-  MenuItem,
   MenuMobile,
   MenuResponsive,
-} from '@ui/components/Blocks/Navigation';
+} from '@components/menu';
 
-const Menu = () => <div />;
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
   title: 'Navigation/Menu',

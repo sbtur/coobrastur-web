@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Title } from '@ui/components/DataDisplay/Title';
+import { Title } from '@ui/components/data-display/title';
 
 const meta = {
   title: 'DataDisplay/Title',

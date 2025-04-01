@@ -1,11 +1,11 @@
-import { Image } from '@components/Image';
-import { Link } from '@components/Link';
+import { Image } from '@components/image';
+import { Link } from '@components/link';
 
 import { NAVIGATIONS } from './helpers/navigation';
 
-import { Text } from '@ui/components/DataDisplay/Text';
-import { Title } from '@ui/components/DataDisplay/Title';
-import { Container } from '@ui/components/Layouts/Container';
+import { Text } from '@ui/components/data-display/text';
+import { Title } from '@ui/components/data-display/title';
+import { Container } from '@ui/components/layouts/container';
 
 export const Footer = () => {
   return (

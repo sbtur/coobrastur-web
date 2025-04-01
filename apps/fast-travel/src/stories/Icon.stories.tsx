@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Icon } from '@ui/components/data-display/icon';
 import { Home } from '@ui/lib/icons';
 
 const meta = {

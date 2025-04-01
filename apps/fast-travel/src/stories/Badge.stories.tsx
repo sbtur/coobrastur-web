@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Badge } from '@ui/components/DataDisplay/Badge';
-import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Badge } from '@ui/components/data-display/badge';
+import { Icon } from '@ui/components/data-display/icon';
 import { Hotel } from '@ui/lib/icons';
 
 const meta = {

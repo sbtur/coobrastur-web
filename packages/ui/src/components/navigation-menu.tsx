@@ -3,7 +3,7 @@ import * as React from 'react';
 import { cva } from 'class-variance-authority';
 
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
-import { Icon } from '@ui/components/DataDisplay/Icon';
+import { Icon } from '@ui/components/data-display/icon';
 import { ChevronDown } from '@ui/lib/icons';
 import { cn } from '@ui/lib/utils';
 

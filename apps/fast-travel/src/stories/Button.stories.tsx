@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@ui/components/DataEntry/Button';
+import { Button } from '@ui/components/data-entry/button';
 
 const meta = {
-  title: 'DataEntry/Button',
+  title: 'Data Entry/Button',
   component: Button,
   parameters: {
     layout: 'centered',

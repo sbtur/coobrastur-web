@@ -1,0 +1,57 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Badge > should match snapshot for danger variant 1`] = `
+<div
+  class="w-fit uppercase inline-flex items-center justify-center rounded px-3 py-2 text-xs font-semibold transition-colors gap-2 bg-danger-100 text-danger-300"
+>
+  Test
+</div>
+`;
+
+exports[`Badge > should match snapshot for default variant 1`] = `
+<div
+  class="w-fit uppercase inline-flex items-center justify-center rounded px-3 py-2 text-xs font-semibold transition-colors gap-2 bg-secondary text-primary-100"
+>
+  Test
+</div>
+`;
+
+exports[`Badge > should match snapshot for neutral variant 1`] = `
+<div
+  class="w-fit uppercase inline-flex items-center justify-center rounded px-3 py-2 text-xs font-semibold transition-colors gap-2 bg-neutral-200 text-neutral-500"
+>
+  Test
+</div>
+`;
+
+exports[`Badge > should match snapshot for outline variant 1`] = `
+<div
+  class="w-fit uppercase inline-flex items-center justify-center rounded px-3 py-2 text-xs font-semibold transition-colors gap-2 border-2 border-primary-100 text-primary-100"
+>
+  Test
+</div>
+`;
+
+exports[`Badge > should match snapshot for secondary variant 1`] = `
+<div
+  class="w-fit uppercase inline-flex items-center justify-center rounded px-3 py-2 text-xs font-semibold transition-colors gap-2 bg-primary text-secondary-100"
+>
+  Test
+</div>
+`;
+
+exports[`Badge > should match snapshot for success variant 1`] = `
+<div
+  class="w-fit uppercase inline-flex items-center justify-center rounded px-3 py-2 text-xs font-semibold transition-colors gap-2 bg-success-100 text-success-300"
+>
+  Test
+</div>
+`;
+
+exports[`Badge > should match snapshot for warning variant 1`] = `
+<div
+  class="w-fit uppercase inline-flex items-center justify-center rounded px-3 py-2 text-xs font-semibold transition-colors gap-2 bg-warning-100 text-warning-300"
+>
+  Test
+</div>
+`;

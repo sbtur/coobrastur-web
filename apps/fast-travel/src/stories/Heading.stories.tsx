@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Heading } from '@ui/components/DataDisplay/Heading';
-import { Text } from '@ui/components/DataDisplay/Text';
-import { Title } from '@ui/components/DataDisplay/Title';
+import { Heading } from '@ui/components/data-display/heading';
+import { Text } from '@ui/components/data-display/text';
+import { Title } from '@ui/components/data-display/title';
 
 const meta = {
   title: 'DataDisplay/Heading',
@@ -42,7 +42,7 @@ export const Center: Story = {
     align: 'center',
   },
   render: ({ ...args }) => (
-    <Heading {...args}>
+    <Heading>
       <Title>Center Heading</Title>
       <Text>Center Text</Text>
     </Heading>

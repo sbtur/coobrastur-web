@@ -13,18 +13,20 @@
     "@coobrastur/ui": "workspace:*",
     "class-variance-authority": "^0.7.0",
     "lucide-react": "0.456.0",
-    "next": "^15.1.0",
+    "motion": "^12.6.2",
+    "next": "^15.2.3",
     "next-themes": "^0.4.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-responsive": "^10.0.1"
   },
   "devDependencies": {
+    "@coobrastur/eslint-config": "workspace:*",
+    "@coobrastur/types-shared": "workspace:*",
+    "@coobrastur/typescript-config": "workspace:*",
     "@types/node": "^20",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "@coobrastur/eslint-config": "workspace:*",
-    "@coobrastur/typescript-config": "workspace:*",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"

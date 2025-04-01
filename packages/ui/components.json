@@ -11,10 +11,10 @@
   },
   "iconLibrary": "lucide",
   "aliases": {
-    "components": "@coobrastur/ui/components",
-    "utils": "@coobrastur/ui/lib/utils",
-    "hooks": "@coobrastur/ui/hooks",
-    "lib": "@coobrastur/ui/lib",
+    "components": "@/components",
+    "utils": "@ui/lib/utils",
+    "hooks": "@ui/hooks",
+    "lib": "@ui/lib",
     "ui": "@coobrastur/ui/components"
   }
 }
