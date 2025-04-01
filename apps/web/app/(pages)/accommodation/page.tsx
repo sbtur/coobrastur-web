@@ -1,16 +1,11 @@
-'use client';
+import { Suspense } from 'react';
 
-import { usePageAuth } from '@/shared/hooks/use-page-auth';
+import Accommodation from './accommodation';
 
-import AccommodationPrivate from './(private)';
-import AccommodationPublic from './(public)';
-
-export default function Accommodation() {
-  const { token } = usePageAuth();
-
-  if (token) {
-    return <AccommodationPrivate />;
-  }
-
-  return <AccommodationPublic />;
+export default function AccommodationPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Accommodation />
+    </Suspense>
+  );
 }

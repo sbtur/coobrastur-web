@@ -1,6 +1,6 @@
 import { Link } from '@components/link';
 
-import { IMenuItem } from '../types/menu.types';
+import { IMenuItem } from '@/shared/types/menu.types';
 
 import {
   MenuContent,

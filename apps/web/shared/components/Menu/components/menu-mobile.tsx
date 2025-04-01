@@ -1,4 +1,5 @@
-import { IMenuItem } from '../types/menu.types';
+import { IMenuItem } from '@/shared/types/menu.types';
+
 import { MenuLink } from './menu-link';
 
 import { Icon } from '@ui/components/data-display/icon';
