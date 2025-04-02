@@ -19,11 +19,8 @@ type HeaderProps = {
 
 export function Header({ isLight = false }: HeaderProps) {
   return (
-    <Container size="xl">
-      <Container
-        as="header"
-        className={`relative z-10 ${isLight ? 'isLight' : ''}`}
-      >
+    <header>
+      <Container className={`relative z-10 ${isLight ? 'isLight' : ''}`}>
         <div className="flex items-center justify-between gap-8 py-6 px-4 ">
           <div className="w-[180px] lg:w-[245px]">
             <Link href="/">
@@ -48,6 +45,6 @@ export function Header({ isLight = false }: HeaderProps) {
         </div>
         <Separator className="w-[85%] md:w-full mx-auto [.isLight_&]:bg-white/20" />
       </Container>
-    </Container>
+    </header>
   );
 }

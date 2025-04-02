@@ -1,3 +1,5 @@
+import { Section } from '@coobrastur/ui/components/layouts/section';
+
 import { CATEGORY } from '../../helpers/category';
 import { CarouselFilters } from './carousel-filters';
 
@@ -15,11 +17,8 @@ import { ChevronDown, Hotel } from '@ui/lib/icons';
 
 export const SearchFilters = () => {
   return (
-    <Container padding="md" className="bg-background lg:shadow-lg lg:mb-8">
-      <Container
-        size="lg"
-        className="px-0 lg:px-8 lg:flex items-center justify-between"
-      >
+    <Section spacing="md" className="lg:shadow-lg lg:mb-8">
+      <Container className="max-w-7xl lg:px-8 lg:flex items-center justify-between">
         <Text className="hidden lg:block">
           Hotéis em <br />
           <span className="font-primary text-primary-300 text-2xl font-bold">
@@ -50,6 +49,6 @@ export const SearchFilters = () => {
           </DropdownMenu>
         </div>
       </Container>
-    </Container>
+    </Section>
   );
 };

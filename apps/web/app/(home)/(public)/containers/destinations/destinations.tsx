@@ -1,3 +1,5 @@
+import { Section } from '@coobrastur/ui/components/layouts/section';
+
 import { HotelList } from './components/hotel-list';
 import { DESTINATIONS } from './helpers';
 
@@ -9,8 +11,8 @@ import { Container } from '@ui/components/layouts/container';
 
 export const Destinations = () => {
   return (
-    <Container as="section" padding="lg" className="bg-white">
-      <Container size="xl">
+    <Section>
+      <Container>
         <Heading align="center">
           <Badge variant="default">Destinos</Badge>
           <Title align="center" size="xl">
@@ -24,6 +26,6 @@ export const Destinations = () => {
 
         <HotelList hotels={DESTINATIONS} />
       </Container>
-    </Container>
+    </Section>
   );
 };

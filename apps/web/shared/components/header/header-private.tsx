@@ -15,8 +15,8 @@ import { Separator } from '@ui/components/separator';
 
 export const HeaderPrivate = () => {
   return (
-    <Container size="xl">
-      <Container as="header" className="relative z-10">
+    <header>
+      <Container className="relative z-10">
         <div className="flex items-center gap-7">
           <div className="h-[50px] flex items-center gap-3">
             <Image
@@ -86,6 +86,6 @@ export const HeaderPrivate = () => {
         </div>
         <Separator className="w-[85%] md:w-full mx-auto [.isLight_&]:bg-white/20" />
       </Container>
-    </Container>
+    </header>
   );
 };

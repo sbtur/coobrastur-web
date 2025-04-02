@@ -6,11 +6,12 @@ import { Heading } from '@ui/components/data-display/heading';
 import { Text } from '@ui/components/data-display/text';
 import { Title } from '@ui/components/data-display/title';
 import { Container } from '@ui/components/layouts/container';
+import { Section } from '@ui/components/layouts/section';
 
 export const Accommodations = () => {
   return (
-    <Container as="section" padding="lg" className="bg-background">
-      <Container size="xl">
+    <Section as="section">
+      <Container>
         <Heading align="center">
           <Badge variant="default">Hotéis</Badge>
           <Title align="center" size="xl">
@@ -27,6 +28,6 @@ export const Accommodations = () => {
 
         <AccommodationList accommodations={ACCOMMODATIONS} />
       </Container>
-    </Container>
+    </Section>
   );
 };

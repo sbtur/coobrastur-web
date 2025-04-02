@@ -9,11 +9,8 @@ import { Container } from '@ui/components/layouts/container';
 
 export const Footer = () => {
   return (
-    <Container
-      as="section"
-      className="bg-[linear-gradient(14deg,#F4FAFE_10.1%,#FFF_90.4%)]"
-    >
-      <Container as="footer" size="xl" className="pt-20 pb-5">
+    <footer className="relative bg-[linear-gradient(14deg,#F4FAFE_10.1%,#FFF_90.4%)]">
+      <Container className="pt-20 pb-5">
         <div className="grid grid-cols-2 lg:grid-cols-4 xl:gap-10 xl:pl-28">
           {NAVIGATIONS.map(navigation => (
             <div className="flex flex-col gap-3" key={navigation.title}>
@@ -74,6 +71,6 @@ export const Footer = () => {
           </Text>
         </div>
       </Container>
-    </Container>
+    </footer>
   );
 };

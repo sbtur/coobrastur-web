@@ -10,7 +10,7 @@ import { Container } from '@ui/components/layouts/container';
 
 export const Display = () => {
   return (
-    <Container padding="none" className="bg-background h-screen">
+    <div className="bg-background h-screen">
       <div className="fixed top-0 left-0 right-0 h-full">
         <Image
           src={displayImage}
@@ -21,7 +21,7 @@ export const Display = () => {
           placeholder="blur"
         />
       </div>
-      <Container size="xl" className="h-full border border-transparent">
+      <Container className="h-full border border-transparent">
         <Heading align="center" className="lg:w-2/3 mt-24">
           <Title
             align="center"
@@ -42,6 +42,6 @@ export const Display = () => {
           ))}
         </div>
       </Container>
-    </Container>
+    </div>
   );
 };

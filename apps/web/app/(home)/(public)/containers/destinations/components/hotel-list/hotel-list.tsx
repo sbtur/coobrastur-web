@@ -1,3 +1,5 @@
+import { Content } from '@coobrastur/ui/components/layouts/content';
+
 import { Image } from '@components/image';
 
 import { DestinationResponse } from '../../types/destination.types';
@@ -22,7 +24,6 @@ import {
 import { Icon } from '@ui/components/data-display/icon';
 import { Text } from '@ui/components/data-display/text';
 import { Title } from '@ui/components/data-display/title';
-import { Section } from '@ui/components/layouts/section';
 import { ArrowRight } from '@ui/lib/icons';
 
 interface HotelListProps {
@@ -31,7 +32,7 @@ interface HotelListProps {
 
 export const HotelList = ({ hotels }: HotelListProps) => {
   return (
-    <Section className="md:px-4">
+    <Content className="md:px-4">
       <Carousel className="h-full" opts={{ loop: true }}>
         <CarouselContent className="h-full">
           {hotels.map(hotel => (
@@ -76,6 +77,6 @@ export const HotelList = ({ hotels }: HotelListProps) => {
         <CarouselNext className="right-3" />
         <CarouselDot />
       </Carousel>
-    </Section>
+    </Content>
   );
 };

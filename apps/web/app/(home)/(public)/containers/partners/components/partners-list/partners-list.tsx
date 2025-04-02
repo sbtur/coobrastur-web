@@ -9,11 +9,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@ui/components/data-display/caroussel';
-import { Section } from '@ui/components/layouts/section';
 
 export const PartnersList = () => {
   return (
-    <Section spacing="none" className="mt-6 md:mt-0 md:w-10/12">
+    <div className="mt-6 md:mt-0 md:w-10/12">
       <Carousel className="h-full" opts={{ loop: true }}>
         <CarouselContent className="h-full">
           {PARTNERS.map(item => (
@@ -36,6 +35,6 @@ export const PartnersList = () => {
         <CarouselPrevious className="-left-6" />
         <CarouselNext className="-right-6" />
       </Carousel>
-    </Section>
+    </div>
   );
 };

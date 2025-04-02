@@ -5,11 +5,12 @@ import { Heading } from '@ui/components/data-display/heading';
 import { Text } from '@ui/components/data-display/text';
 import { Title } from '@ui/components/data-display/title';
 import { Container } from '@ui/components/layouts/container';
+import { Section } from '@ui/components/layouts/section';
 
 export const Partners = () => {
   return (
-    <Container as="section" padding="lg" className="bg-background">
-      <Container size="xl" className="md:flex gap-10">
+    <Section as="section">
+      <Container className="md:flex gap-10">
         <Heading
           align="center"
           className="md:w-6/12 xl:w-4/12 p-0 md:text-left md:items-start"
@@ -23,6 +24,6 @@ export const Partners = () => {
 
         <PartnersList />
       </Container>
-    </Container>
+    </Section>
   );
 };

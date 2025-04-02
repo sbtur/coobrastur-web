@@ -16,7 +16,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@ui/components/data-display/caroussel';
-import { Section } from '@ui/components/layouts/section';
+import { Content } from '@ui/components/layouts/content';
 
 interface AccommodationListProps {
   accommodations: Accommodation[];
@@ -43,7 +43,7 @@ export const AccommodationList = ({
   };
 
   return (
-    <Section className="md:px-4">
+    <Content>
       {isEnabled && (
         <AccommodationDialog isOpen={isEnabled} onClose={handleCloseHotel} />
       )}
@@ -66,6 +66,6 @@ export const AccommodationList = ({
         <CarouselNext className="-right-6" />
         <CarouselDot />
       </Carousel>
-    </Section>
+    </Content>
   );
 };
