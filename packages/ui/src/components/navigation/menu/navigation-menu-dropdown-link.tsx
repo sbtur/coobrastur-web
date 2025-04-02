@@ -1,16 +1,17 @@
+import { NavigationMenuLink } from './navigation-menu';
+
 import { NavigationMenuLinkProps } from '@radix-ui/react-navigation-menu';
-import { NavigationMenuLink } from '@ui/components/navigation-menu';
 import { cn } from '@ui/lib/utils';
 
-type MenuDropdownLinkProps = NavigationMenuLinkProps & {
+type NavigationMenuDropdownLinkProps = NavigationMenuLinkProps & {
   children: React.ReactNode;
   className?: string;
 };
 
-export const MenuDropdownLink = ({
+export const NavigationMenuDropdownLink = ({
   className,
   children,
-}: MenuDropdownLinkProps) => {
+}: NavigationMenuDropdownLinkProps) => {
   return (
     <NavigationMenuLink
       className={cn(
@@ -23,4 +24,4 @@ export const MenuDropdownLink = ({
   );
 };
 
-MenuDropdownLink.displayName = 'MenuDropdownLink';
+NavigationMenuDropdownLink.displayName = 'NavigationMenuDropdownLink';

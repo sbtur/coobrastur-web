@@ -1,11 +1,20 @@
+import { Fragment } from 'react';
+
 import { IMenuItem } from '@/shared/types/menu.types';
 
 import { MenuDropdown } from './menu-dropdown';
-import { MenuLink } from './menu-link';
+import { MenuItem } from './menu-item';
 
 import { Icon } from '@ui/components/data-display/icon';
-import { Menu, MenuItem, MenuList } from '@ui/components/navigation/menu';
-import { Sheet, SheetContent, SheetTrigger } from '@ui/components/sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from '@ui/components/data-display/sheet';
+import {
+  NavigationMenu,
+  NavigationMenuList,
+} from '@ui/components/navigation/menu';
 import { Menu as MenuIcon } from '@ui/lib/icons';
 
 export const MenuResponsive = ({ menus }: { menus: IMenuItem[] }) => {
@@ -17,19 +26,19 @@ export const MenuResponsive = ({ menus }: { menus: IMenuItem[] }) => {
         </button>
       </SheetTrigger>
       <SheetContent side="top">
-        <Menu className="mx-auto">
-          <MenuList>
+        <NavigationMenu className="mx-auto">
+          <NavigationMenuList>
             {menus.map(menu => (
-              <MenuItem key={menu.label}>
+              <Fragment key={menu.label}>
                 {menu.items ? (
                   <MenuDropdown menu={menu} />
                 ) : (
-                  <MenuLink href={menu.href} label={menu.label} />
+                  <MenuItem href={menu.href}>{menu.label}</MenuItem>
                 )}
-              </MenuItem>
+              </Fragment>
             ))}
-          </MenuList>
-        </Menu>
+          </NavigationMenuList>
+        </NavigationMenu>
       </SheetContent>
     </Sheet>
   );

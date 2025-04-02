@@ -1,17 +1,18 @@
-import { Button } from '@coobrastur/ui/components/button';
-import { Badge } from '@coobrastur/ui/components/data-display/badge';
-import { Heading } from '@coobrastur/ui/components/data-display/heading';
-import { Icon } from '@coobrastur/ui/components/data-display/icon';
 import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Title } from '@coobrastur/ui/components/data-display/title';
 import { Container } from '@coobrastur/ui/components/layouts/container';
-import { Separator } from '@coobrastur/ui/components/separator';
 import { Calendar, Globe, Mail, Phone } from '@coobrastur/ui/lib/icons';
 
 import { Amenities } from '../components/amenities';
 import { CollapsibleDescription } from '../components/collapsible-description';
 import { ImageGallery } from '../components/image-gallery';
 import { Policies } from '../components/policies';
+
+import { Badge } from '@ui/components/data-display/badge';
+import { Heading } from '@ui/components/data-display/heading';
+import { Icon } from '@ui/components/data-display/icon';
+import { Separator } from '@ui/components/data-display/separator';
+import { Button } from '@ui/components/data-entry/button';
 
 export default function AccommodationPrivate() {
   return (

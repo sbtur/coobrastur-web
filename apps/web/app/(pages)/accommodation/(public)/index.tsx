@@ -1,14 +1,15 @@
-import { Button } from '@coobrastur/ui/components/button';
-import { Badge } from '@coobrastur/ui/components/data-display/badge';
-import { Heading } from '@coobrastur/ui/components/data-display/heading';
-import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Title } from '@coobrastur/ui/components/data-display/title';
 import { Container } from '@coobrastur/ui/components/layouts/container';
-import { Separator } from '@coobrastur/ui/components/separator';
 
 import { Amenities } from '../components/amenities';
 import { CollapsibleDescription } from '../components/collapsible-description';
 import { ImageGallery } from '../components/image-gallery';
+
+import { Badge } from '@ui/components/data-display/badge';
+import { Heading } from '@ui/components/data-display/heading';
+import { Separator } from '@ui/components/data-display/separator';
+import { Text } from '@ui/components/data-display/text';
+import { Button } from '@ui/components/data-entry/button';
 
 export default function AccommodationPublic() {
   return (

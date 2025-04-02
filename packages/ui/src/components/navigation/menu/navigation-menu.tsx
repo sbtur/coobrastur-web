@@ -31,13 +31,28 @@ const NavigationMenuList = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <NavigationMenuPrimitive.List
     ref={ref}
-    className={cn('group flex flex-1 list-none', className)}
+    className={cn(
+      'group flex flex-1 list-none',
+      'flex-col gap-4 sm:flex-row sm:items-center sm:justify-center sm:gap-6',
+      className,
+    )}
     {...props}
   />
 ));
 NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName;
 
-const NavigationMenuItem = NavigationMenuPrimitive.Item;
+const NavigationMenuItem = React.forwardRef<
+  React.ElementRef<typeof NavigationMenuPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Item>
+>(({ className, ...props }, ref) => (
+  <NavigationMenuPrimitive.Item
+    ref={ref}
+    className={cn('text-nowrap !space-x-0', className)}
+    {...props}
+  />
+));
+
+NavigationMenuItem.displayName = NavigationMenuPrimitive.Item.displayName;
 
 const navigationMenuTriggerStyle = cva(
   'group inline-flex h-10 w-max items-center justify-center transition-colors disabled:pointer-events-none disabled:opacity-50',
@@ -49,7 +64,12 @@ const NavigationMenuTrigger = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <NavigationMenuPrimitive.Trigger
     ref={ref}
-    className={cn(navigationMenuTriggerStyle(), 'group', className)}
+    className={cn(
+      navigationMenuTriggerStyle(),
+      'group',
+      'h-fit font-secondary text-text [.isLight_&]:text-white',
+      className,
+    )}
     {...props}
   >
     {children}{' '}
@@ -76,7 +96,22 @@ const NavigationMenuContent = React.forwardRef<
 ));
 NavigationMenuContent.displayName = NavigationMenuPrimitive.Content.displayName;
 
-const NavigationMenuLink = NavigationMenuPrimitive.Link;
+const NavigationMenuLink = React.forwardRef<
+  React.ElementRef<typeof NavigationMenuPrimitive.Link>,
+  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Link>
+>(({ className, children, ...props }, ref) => (
+  <NavigationMenuPrimitive.Link
+    ref={ref}
+    className={cn(
+      'font-secondary text-text cursor-pointer [.isLight_&]:text-white',
+      className,
+    )}
+    {...props}
+  >
+    {children}
+  </NavigationMenuPrimitive.Link>
+));
+NavigationMenuLink.displayName = NavigationMenuPrimitive.Link.displayName;
 
 const NavigationMenuViewport = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Viewport>,

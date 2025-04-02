@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@coobrastur/ui/components/accordion';
+} from '@coobrastur/ui/components/data-display/accordion';
 import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Title } from '@coobrastur/ui/components/data-display/title';
 

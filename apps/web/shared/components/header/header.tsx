@@ -8,9 +8,9 @@ import { MENU_ITEMS } from '@/shared/helpers/menu';
 import logoDark from '@images/shared/logos/logo-grupo-coobrastur-dark.png';
 import logoLight from '@images/shared/logos/logo-grupo-coobrastur-light.png';
 import { Icon } from '@ui/components/data-display/icon';
+import { Separator } from '@ui/components/data-display/separator';
 import { Button } from '@ui/components/data-entry/button';
 import { Container } from '@ui/components/layouts/container';
-import { Separator } from '@ui/components/separator';
 import { ChevronDown } from '@ui/lib/icons';
 
 type HeaderProps = {
@@ -43,7 +43,7 @@ export function Header({ isLight = false }: HeaderProps) {
             </Button>
           </div>
         </div>
-        <Separator className="w-[85%] md:w-full mx-auto [.isLight_&]:bg-white/20" />
+        <Separator className="w-[85%] md:w-full" />
       </Container>
     </header>
   );
