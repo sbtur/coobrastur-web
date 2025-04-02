@@ -3,8 +3,12 @@ import { IMenuItem } from '@/shared/types/menu.types';
 import { MenuLink } from './menu-link';
 
 import { Icon } from '@ui/components/data-display/icon';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from '@ui/components/data-display/sheet';
 import { Menu, MenuItem, MenuList } from '@ui/components/navigation/menu';
-import { Sheet, SheetContent, SheetTrigger } from '@ui/components/sheet';
 import { AlignRight } from '@ui/lib/icons';
 
 export const MenuMobile = ({ menus }: { menus: IMenuItem[] }) => {

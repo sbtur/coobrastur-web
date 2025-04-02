@@ -4,8 +4,12 @@ import { MenuDropdown } from './menu-dropdown';
 import { MenuLink } from './menu-link';
 
 import { Icon } from '@ui/components/data-display/icon';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from '@ui/components/data-display/sheet';
 import { Menu, MenuItem, MenuList } from '@ui/components/navigation/menu';
-import { Sheet, SheetContent, SheetTrigger } from '@ui/components/sheet';
 import { Menu as MenuIcon } from '@ui/lib/icons';
 
 export const MenuResponsive = ({ menus }: { menus: IMenuItem[] }) => {

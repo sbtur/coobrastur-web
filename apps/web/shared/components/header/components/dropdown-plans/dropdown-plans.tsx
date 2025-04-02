@@ -12,7 +12,7 @@ import {
 } from './dropdown-plans.animations';
 
 import { Icon } from '@ui/components/data-display/icon';
-import { Separator } from '@ui/components/separator';
+import { Separator } from '@ui/components/data-display/separator';
 import { ChevronDown, ChevronUp } from '@ui/lib/icons';
 
 export const DropdownPlans = () => {
@@ -54,10 +54,7 @@ export const DropdownPlans = () => {
                 <span className="pr-4 font-primary text-lg font-bold">
                   Meus Planos
                 </span>{' '}
-                <Separator
-                  orientation="vertical"
-                  className="bg-white/20 h-full m-0"
-                />
+                <Separator orientation="vertical" className="m-0 opacity-25" />
                 <span className="grid h-fit pl-3 text-xs text-white  justify-items-center underline">
                   <Icon
                     icon={ChevronDown}

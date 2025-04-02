@@ -10,8 +10,8 @@ import { DropdownPlans } from './components/dropdown-plans';
 import logoDark from '@images/shared/logos/logo-grupo-coobrastur-dark.png';
 import { MENU_PRIVATE_ITEMS } from '@shared/helpers/menu-private';
 import { Icon } from '@ui/components/data-display/icon';
+import { Separator } from '@ui/components/data-display/separator';
 import { Container } from '@ui/components/layouts/container';
-import { Separator } from '@ui/components/separator';
 
 export const HeaderPrivate = () => {
   return (
@@ -84,7 +84,7 @@ export const HeaderPrivate = () => {
             </div>
           </div>
         </div>
-        <Separator className="w-[85%] md:w-full mx-auto [.isLight_&]:bg-white/20" />
+        <Separator className="w-[85%] md:w-full mx-auto" />
       </Container>
     </header>
   );
