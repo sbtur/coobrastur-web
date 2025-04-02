@@ -9,17 +9,16 @@ import { Support } from './containers/support';
 import { Testimonials } from './containers/testimonials';
 
 import { MENU_ITEMS } from '@shared/helpers/menu';
-import { Container } from '@ui/components/layouts/container';
 
 export function HomePublic() {
   return (
     <>
-      <Container as="section" className="relative h-screen">
+      <div className="relative h-screen">
         <Header isLight />
         <Display />
-      </Container>
+      </div>
 
-      <Container as="main" className="relative z-10 bg-background">
+      <div className="relative z-10 bg-background">
         <div className="block md:hidden">
           <UserMobileNavigation menuItems={MENU_ITEMS} />
         </div>
@@ -33,7 +32,7 @@ export function HomePublic() {
         <Support />
 
         <Testimonials />
-      </Container>
+      </div>
     </>
   );
 }

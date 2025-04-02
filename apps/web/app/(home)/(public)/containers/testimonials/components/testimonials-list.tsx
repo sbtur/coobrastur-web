@@ -6,7 +6,7 @@ import { Image } from '@components/image';
 import { VIDEOS } from '../helpers/videos';
 import { TestimonialsCaroussel } from './testimonials-carousel';
 
-import { Section } from '@ui/components/layouts/section';
+import { Content } from '@ui/components/layouts/content';
 
 export const TestimonialsList = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -20,7 +20,7 @@ export const TestimonialsList = () => {
   };
 
   return (
-    <Section className="px-4 lg:grid lg:grid-cols-[2fr_1fr] md:gap-8 items-center">
+    <Content className="px-4 lg:grid lg:grid-cols-[2fr_1fr] md:gap-8 items-center">
       <div className="w-full grid grid-cols-2 md:grid-cols-none md:flex gap-2 mx-auto">
         {VIDEOS.map((video, index) => (
           <div
@@ -40,6 +40,6 @@ export const TestimonialsList = () => {
       </div>
 
       <TestimonialsCaroussel />
-    </Section>
+    </Content>
   );
 };

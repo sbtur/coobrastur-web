@@ -4,7 +4,6 @@ import { Heading } from '@coobrastur/ui/components/data-display/heading';
 import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Title } from '@coobrastur/ui/components/data-display/title';
 import { Container } from '@coobrastur/ui/components/layouts/container';
-import { Section } from '@coobrastur/ui/components/layouts/section';
 import { Separator } from '@coobrastur/ui/components/separator';
 
 import { Amenities } from '../components/amenities';
@@ -13,7 +12,7 @@ import { ImageGallery } from '../components/image-gallery';
 
 export default function AccommodationPublic() {
   return (
-    <Container size="xl" className="py-12">
+    <Container className="py-12">
       <Heading className="p-0 gap-0">
         <Badge className="mb-2">Gold</Badge>
         <Title>Intercity Florianópolis</Title>
@@ -22,9 +21,9 @@ export default function AccommodationPublic() {
 
       <ImageGallery />
 
-      <div className="flex gap-4 justify-between">
+      <div className="flex gap-4 justify-between mt-8">
         <main className="grid flex-1 gap-4 md:pr-10">
-          <Section>
+          <section>
             <Title as="h3" size="sm" className="mb-3">
               Informações
             </Title>
@@ -47,8 +46,8 @@ export default function AccommodationPublic() {
                 in arcu.
               </Text>
             </CollapsibleDescription>
-          </Section>
-          <Section>
+          </section>
+          <section>
             <Title as="h3" size="sm" className="mb-3">
               Comodidades
             </Title>
@@ -62,15 +61,15 @@ export default function AccommodationPublic() {
                 'pool',
               ]}
             />
-          </Section>
-          <Section>
+          </section>
+          <section>
             <Title as="h3" size="sm" className="mb-3">
               Localização
             </Title>
             <Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Text>
-          </Section>
+          </section>
         </main>
         <aside className="w-[450px]">
           <div className="grid gap-3 place-items-center rounded-[20px] bg-white p-9 shadow-lg">

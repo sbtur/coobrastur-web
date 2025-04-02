@@ -5,15 +5,12 @@ import { Heading } from '@ui/components/data-display/heading';
 import { Text } from '@ui/components/data-display/text';
 import { Title } from '@ui/components/data-display/title';
 import { Container } from '@ui/components/layouts/container';
+import { Section } from '@ui/components/layouts/section';
 
 export const Testimonials = () => {
   return (
-    <Container
-      as="section"
-      padding="lg"
-      className="bg-gradient-to-t from-gray-50 to-white"
-    >
-      <Container size="xl">
+    <Section as="section" className="bg-gradient-to-t from-gray-50 to-white">
+      <Container>
         <Heading align="center">
           <Badge variant="default">Depoimentos</Badge>
           <Title align="center" size="xl">
@@ -26,6 +23,6 @@ export const Testimonials = () => {
         </Heading>
         <TestimonialsList />
       </Container>
-    </Container>
+    </Section>
   );
 };

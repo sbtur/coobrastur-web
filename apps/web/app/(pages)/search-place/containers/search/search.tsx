@@ -1,3 +1,5 @@
+import { Section } from '@coobrastur/ui/components/layouts/section';
+
 import { Icon } from '@ui/components/data-display/icon';
 import { Text } from '@ui/components/data-display/text';
 import { Button } from '@ui/components/data-entry/button';
@@ -6,11 +8,8 @@ import { MapPin, Search as SearchIcon } from '@ui/lib/icons';
 
 export const Search = () => {
   return (
-    <Container as="section" padding="lg" className="bg-background">
-      <Container
-        size="xl"
-        className="flex flex-col items-center justify-center "
-      >
+    <Section>
+      <Container className="flex flex-col items-center justify-center ">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 bg-background rounded-[10px] p-2 md:p-4 shadow-lg">
             <div className="w-[280px] md:w-[380px] pl-4 md:pl-14">
@@ -30,6 +29,6 @@ export const Search = () => {
           </div>
         </div>
       </Container>
-    </Container>
+    </Section>
   );
 };

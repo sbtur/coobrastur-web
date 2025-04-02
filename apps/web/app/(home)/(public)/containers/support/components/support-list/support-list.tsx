@@ -1,17 +1,17 @@
 import { SupportListDesktop } from './support-list-desktop';
 import { SupportListMobile } from './support-list-mobile';
 
-import { Section } from '@ui/components/layouts/section';
+import { Content } from '@ui/components/layouts/content';
 
 export const SupportList = () => {
   return (
-    <Section>
+    <Content className="bg-transparent">
       <div className="hidden lg:block">
         <SupportListDesktop />
       </div>
       <div className="block lg:hidden">
         <SupportListMobile />
       </div>
-    </Section>
+    </Content>
   );
 };
