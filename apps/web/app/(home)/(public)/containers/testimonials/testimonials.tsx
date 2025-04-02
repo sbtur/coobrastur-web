@@ -9,14 +9,14 @@ import { Section } from '@ui/components/layouts/section';
 
 export const Testimonials = () => {
   return (
-    <Section as="section" className="bg-gradient-to-t from-gray-50 to-white">
+    <Section as="section">
       <Container>
         <Heading align="center">
           <Badge variant="default">Depoimentos</Badge>
           <Title align="center" size="xl">
             Junte-se a mais de 75 mil assinantes
           </Title>
-          <Text align="center">
+          <Text align="center" className="!max-w-full">
             Veja o que os viajantes do Grupo Coobrastur têm a dizer sobre nossa
             Assinatura de Hotéis
           </Text>

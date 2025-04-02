@@ -35,10 +35,10 @@ export function Header({ isLight = false }: HeaderProps) {
           </div>
           <Menu menuItems={MENU_ITEMS} />
           <div className="hidden md:flex flex-nowrap gap-4">
-            <Button size="sm">
+            <Button>
               Acessos <Icon icon={ChevronDown} variant="white" />
             </Button>
-            <Button variant={isLight ? 'outline-white' : 'outline'} size="sm">
+            <Button variant={isLight ? 'outline-white' : 'outline'}>
               Planos
             </Button>
           </div>

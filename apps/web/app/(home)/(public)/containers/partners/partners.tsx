@@ -13,7 +13,7 @@ export const Partners = () => {
       <Container className="md:flex gap-10">
         <Heading
           align="center"
-          className="md:w-6/12 xl:w-4/12 p-0 md:text-left md:items-start"
+          className="md:w-4/12 xl:w-4/12 p-0 md:text-left md:items-start"
         >
           <Badge variant="default">Hotéis Parceiros</Badge>
           <Title size="xl">Experiências de hospedagem</Title>

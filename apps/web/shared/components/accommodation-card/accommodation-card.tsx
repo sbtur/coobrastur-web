@@ -1,11 +1,11 @@
 import { Accommodation, CATEGORY_COLORS } from '@coobrastur/types-shared';
+import { Button } from '@coobrastur/ui/components/data-entry/button';
 
 import { Image } from '@components/image';
 
 import { Badge } from '@ui/components/data-display/badge';
 import { Bookmark } from '@ui/components/data-display/bookmark';
 import {
-  HotelButton,
   HotelCard,
   HotelDescription,
   HotelImage,
@@ -29,38 +29,23 @@ export const AccommodationCard = ({
   return (
     <HotelCard>
       <HotelImageWrapper>
-        <>
-          <HotelImageIcon>
-            <Bookmark onClick={() => console.log('Saved to favorites')} />
-          </HotelImageIcon>
-          <HotelImage>
-            <Image
-              src={accommodation.image}
-              alt={accommodation.name}
-              width={315}
-              height={416}
-            />
-          </HotelImage>
-        </>
+        <HotelImage>
+          <Image
+            src={accommodation.image}
+            alt={accommodation.name}
+            width={315}
+            height={416}
+          />
+        </HotelImage>
       </HotelImageWrapper>
       <HotelDescription>
-        {accommodation.category && (
-          <Badge
-            variant={CATEGORY_COLORS[accommodation.category]}
-            className="mx-auto"
-          >
-            {accommodation.category}
-          </Badge>
-        )}
-        <Title as="h3" size="xs" align="center">
+        <Title as="h3" size="xs">
           {accommodation.name}
         </Title>
-        <Text size="sm" align="center">
-          {accommodation.street}
-        </Text>
-        <HotelButton type="button" onClick={() => onClick(accommodation.id)}>
+        <Text size="sm">{accommodation.street}</Text>
+        <Button variant="link" onClick={() => onClick(accommodation.id)}>
           Ver mais detalhes <Icon icon={ArrowRight} variant="primary" />
-        </HotelButton>
+        </Button>
       </HotelDescription>
     </HotelCard>
   );

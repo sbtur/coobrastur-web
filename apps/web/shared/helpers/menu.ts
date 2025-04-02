@@ -2,7 +2,7 @@ import { IMenuItem } from '@shared/types/menu.types';
 
 export const MENU_ITEMS: IMenuItem[] = [
   {
-    label: 'O Clube',
+    label: 'O Grupo Coobrastur',
     href: '#',
     items: [
       {

@@ -103,7 +103,7 @@ const NavigationMenuLink = React.forwardRef<
   <NavigationMenuPrimitive.Link
     ref={ref}
     className={cn(
-      'font-secondary text-text cursor-pointer [.isLight_&]:text-white',
+      'font-secondary text-text cursor-pointer [.isLight_&]:text-white hover:text-highlight-300 [.isLight_&]:hover:text-secondary-100 [&[data-active]]:font-bold [.isLight_&][&[data-active]]:text-secondary-100 [&[data-active]]:text-highlight-300 transition-all duration-300',
       className,
     )}
     {...props}

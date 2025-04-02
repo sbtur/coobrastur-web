@@ -2,7 +2,7 @@ import { Image } from '@components/image';
 
 import { PARTNERS } from './helpers/partners';
 
-import displayImage from '@images/pages/home/display/display.jpg';
+import displayImage from '@images/pages/home/display/display.webp';
 import { Heading } from '@ui/components/data-display/heading';
 import { Title } from '@ui/components/data-display/title';
 import { Button } from '@ui/components/data-entry/button';
@@ -28,13 +28,13 @@ export const Display = () => {
             variant="white"
             className="text-3xl lg:text-[56px] leading-none"
           >
-            Viaje mais todos os anos com a sua assinatura de hotéis
+            Viaje mais todos os anos com a nossa Assinatura de hotéis
           </Title>
           <Button variant="outline-white" className="mt-5">
             Quero Viajar
           </Button>
         </Heading>
-        <div className="w-full lg:w-[718px] mx-auto absolute bottom-28 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4 p-4 md:p-8 rounded-[10px] md:rounded-[20px] bg-white justify-around">
+        <div className="w-full lg:w-[718px] mx-auto absolute bottom-36 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-4 p-5 rounded-md bg-white shadow-lg justify-around">
           {PARTNERS.map(partner => (
             <div key={partner.alt}>
               <Image {...partner} />

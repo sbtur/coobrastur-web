@@ -1,3 +1,5 @@
+import { Image } from '@components/image';
+
 import { SupportList } from './components/support-list';
 
 import { Badge } from '@ui/components/data-display/badge';
@@ -11,21 +13,28 @@ export const Support = () => {
   return (
     <Section
       as="section"
-      className="bg-[#254262] bg-gradient-to-r from-[rgba(47,98,153,0)] from-[31.41%] to-[#2F6299] to-[129.86%]"
+      className="bg-[#001F3D] bg-gradient-to-r from-[#001F3D] from-[31.41%] to-[#2E6299] relative"
     >
-      <Container className="lg:pt-24">
-        <Heading align="left">
+      <Container className="lg:pt-16">
+        <Heading align="left" className="px-0">
           <Badge variant="default">Tudo o que precisa para a sua viagem</Badge>
           <Title size="xl" variant="white" align="left">
             Conte com suporte completo
           </Title>
-          <Text className="text-white" align="left">
+          <Text className="text-white !max-w-full" align="left">
             A combinação ideal para transformar sua viagem dos sonhos em uma
             experiência única e inesquecível
           </Text>
         </Heading>
 
         <SupportList />
+        <Image
+          src="/images/pages/home/support-image.png"
+          alt="Imagem chat bot Clara sendo utilizado no celular"
+          width={506}
+          height={622}
+          className="absolute right-0 -bottom-[56px] hidden lg:block"
+        />
       </Container>
     </Section>
   );

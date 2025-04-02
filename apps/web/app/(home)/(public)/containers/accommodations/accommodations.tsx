@@ -14,7 +14,7 @@ export const Accommodations = () => {
       <Container>
         <Heading align="center">
           <Badge variant="default">Hotéis</Badge>
-          <Title align="center" size="xl">
+          <Title align="center" size="xl" className="md:w-[600px]">
             Os melhores hotéis com café da manhã para 2 pessoas
           </Title>
           <Text align="center">

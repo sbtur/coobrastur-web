@@ -1,7 +1,5 @@
-import { IconProps } from '@ui/components/data-display/icon';
-
 export type Support = {
-  icon: string | IconProps['icon'];
+  icon: string;
   title: string;
   description: string;
   href: string;

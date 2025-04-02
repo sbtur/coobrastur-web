@@ -20,7 +20,7 @@ export const PartnersList = () => {
               key={item.name}
               className="flex-[0_0_33%] md:flex-[0_0_25%] lg:flex-[0_0_20%] xl:flex-[0_0_16.6%] group"
             >
-              <picture className="relative z-10 p-2 bg-background border rounded-2xl flex items-center justify-center shadow-md shadow-black/5 group-hover:shadow-lg transition-all duration-300">
+              <picture className="relative z-10 p-2 bg-background border rounded-2xl flex items-center justify-center shadow-lg shadow-black/6 transition-all duration-300">
                 <Image
                   src={item.image}
                   alt={item.name}

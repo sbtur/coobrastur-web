@@ -4,7 +4,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@ui/lib/utils';
 
-const textVariants = cva('', {
+const textVariants = cva('[.heading_&]:max-w-[500px]', {
   variants: {
     size: {
       xs: 'text-xs', // 12px
@@ -31,7 +31,7 @@ const textVariants = cva('', {
       right: 'text-right',
     },
     variant: {
-      base: 'text-text',
+      base: 'text-text-body',
       featured: 'text-text-primary',
       success: 'text-text-success',
       warning: 'text-text-warning',

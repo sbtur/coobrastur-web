@@ -67,7 +67,7 @@
   --color-warning-active: var(--color-warning-300);
   --color-warning-focus: var(--color-warning-300);
 
-  --color-text: var(--color-neutral-500);
+  --color-body: var(--color-neutral-500);
   --color-text-primary: var(--color-primary-200);
   --color-text-secondary: var(--color-secondary-200);
   --color-text-success: var(--color-success-200);

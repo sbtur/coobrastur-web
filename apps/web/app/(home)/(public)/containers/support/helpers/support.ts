@@ -1,7 +1,5 @@
 import { Support } from '../types/support.types';
 
-import { LucideLuggage, PhoneCall } from '@ui/lib/icons';
-
 export const SUPPORT: Support[] = [
   {
     icon: '/images/icons/clara.png',
@@ -12,14 +10,14 @@ export const SUPPORT: Support[] = [
     target: '_blank',
   },
   {
-    icon: PhoneCall,
+    icon: '/images/icons/phone-call.svg',
     title: 'Atendimento Exclusivo',
     description:
       'Nossos agentes são treinados e estão prontos para ouvir suas necessidades, oferecendo soluções rápidas e eficazes.',
     href: 'https://wa.me/5511999999999',
   },
   {
-    icon: LucideLuggage,
+    icon: '/images/icons/luggage.svg',
     title: 'Agência de Viagens',
     description:
       'Oferecemos uma agência de viagens com soluções personalizadas para tornar sua experiência ainda mais incrível.',

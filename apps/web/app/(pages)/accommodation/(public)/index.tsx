@@ -73,7 +73,7 @@ export default function AccommodationPublic() {
           </section>
         </main>
         <aside className="w-[450px]">
-          <div className="grid gap-3 place-items-center rounded-[20px] bg-white p-9 shadow-lg">
+          <div className="grid gap-3 rounded-[20px] bg-white p-9 shadow-lg">
             <Badge>Gold</Badge>
             <Title>Intercity Florianópolis</Title>
             <Text>Av. Paulo Fontes, 1210, Centro de Florianópolis</Text>
