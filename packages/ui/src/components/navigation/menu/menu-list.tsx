@@ -1,5 +1,6 @@
+import { NavigationMenuList } from './navigation-menu';
+
 import { NavigationMenuListProps } from '@radix-ui/react-navigation-menu';
-import { NavigationMenuList } from '@ui/components/navigation-menu';
 import { cn } from '@ui/lib/utils';
 
 type MenuListProps = NavigationMenuListProps & {

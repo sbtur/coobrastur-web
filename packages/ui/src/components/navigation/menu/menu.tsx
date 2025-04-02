@@ -1,5 +1,6 @@
+import { NavigationMenu } from './navigation-menu';
+
 import { NavigationMenuProps } from '@radix-ui/react-navigation-menu';
-import { NavigationMenu } from '@ui/components/navigation-menu';
 
 export type MenuProps = NavigationMenuProps & {
   className?: string;

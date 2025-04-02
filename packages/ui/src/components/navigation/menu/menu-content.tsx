@@ -1,5 +1,6 @@
+import { NavigationMenuContent } from './navigation-menu';
+
 import { NavigationMenuContentProps } from '@radix-ui/react-navigation-menu';
-import { NavigationMenuContent } from '@ui/components/navigation-menu';
 
 type MenuContentProps = NavigationMenuContentProps & {
   className?: string;

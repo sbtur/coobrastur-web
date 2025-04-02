@@ -1,6 +1,8 @@
-import { IMenuItem } from '@/shared/types/menu.types';
+'use client';
 
-import { MenuLink } from './menu-link';
+import { Link } from '@components/link';
+
+import { IMenuItem } from '@/shared/types/menu.types';
 
 import { Icon } from '@ui/components/data-display/icon';
 import {
@@ -8,7 +10,12 @@ import {
   SheetContent,
   SheetTrigger,
 } from '@ui/components/data-display/sheet';
-import { Menu, MenuItem, MenuList } from '@ui/components/navigation/menu';
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from '@ui/components/navigation/menu';
 import { AlignRight } from '@ui/lib/icons';
 
 export const MenuMobile = ({ menus }: { menus: IMenuItem[] }) => {
@@ -23,15 +30,19 @@ export const MenuMobile = ({ menus }: { menus: IMenuItem[] }) => {
         </button>
       </SheetTrigger>
       <SheetContent>
-        <Menu>
-          <MenuList>
+        <NavigationMenu>
+          <NavigationMenuList>
             {menus.map(menu => (
-              <MenuItem key={menu.label}>
-                <MenuLink href={menu.href} label={menu.label} />
-              </MenuItem>
+              <NavigationMenuItem key={menu.label}>
+                <Link href={menu.href} passHref legacyBehavior>
+                  <NavigationMenuLink href={menu.href}>
+                    {menu.label}
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
             ))}
-          </MenuList>
-        </Menu>
+          </NavigationMenuList>
+        </NavigationMenu>
       </SheetContent>
     </Sheet>
   );

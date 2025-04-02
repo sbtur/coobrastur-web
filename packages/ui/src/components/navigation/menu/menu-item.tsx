@@ -1,5 +1,6 @@
+import { NavigationMenuItem } from './navigation-menu';
+
 import { NavigationMenuItemProps } from '@radix-ui/react-navigation-menu';
-import { NavigationMenuItem } from '@ui/components/navigation-menu';
 import { cn } from '@ui/lib/utils';
 
 type MenuItemProps = NavigationMenuItemProps & {
