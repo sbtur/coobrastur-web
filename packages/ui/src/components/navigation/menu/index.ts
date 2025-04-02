@@ -1,10 +1,3 @@
-export type { MenuProps } from './menu';
-export { Menu } from './menu';
-export { MenuContent } from './menu-content';
-export { MenuItem } from './menu-item';
-export { MenuLink } from './menu-link';
-export { MenuList } from './menu-list';
-export { MenuTrigger } from './menu-trigger';
 export * from './navigation-menu';
 export { NavigationMenuDropdown } from './navigation-menu-dropdown';
 export { NavigationMenuDropdownItem } from './navigation-menu-dropdown-item';
