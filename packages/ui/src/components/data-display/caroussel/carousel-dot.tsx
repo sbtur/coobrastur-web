@@ -7,11 +7,11 @@ import { cn } from '@ui/lib/utils';
 const dotVariants = cva('w-2 h-2 rounded-full', {
   variants: {
     variant: {
-      default: 'bg-neutral-600',
+      default: 'bg-neutral-400',
       white: '',
     },
     selected: {
-      true: 'bg-neutral-600',
+      true: 'bg-neutral-400',
       false: 'bg-neutral-300',
     },
   },
@@ -52,7 +52,6 @@ export const CarouselDot = ({
           type="button"
           className={cn(
             dotVariants({ variant, selected: selectedIndex === index }),
-            className,
           )}
           key={index}
           onClick={() => onDotButtonClick(index)}

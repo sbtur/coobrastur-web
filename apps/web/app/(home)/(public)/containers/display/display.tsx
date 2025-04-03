@@ -1,6 +1,6 @@
 import { Image } from '@components/image';
 
-import { PARTNERS } from './helpers/partners';
+import { PARTNERS } from '@/shared/helpers/data/partners';
 
 import displayImage from '@images/pages/home/display/display.webp';
 import { Heading } from '@ui/components/data-display/heading';
@@ -22,9 +22,8 @@ export const Display = () => {
         />
       </div>
       <Container className="h-full border border-transparent">
-        <Heading align="center" className="lg:w-2/3 mt-24">
+        <Heading className="lg:w-2/3 mt-24 items-center text-center">
           <Title
-            align="center"
             variant="white"
             className="text-3xl lg:text-[56px] leading-none"
           >
@@ -34,10 +33,15 @@ export const Display = () => {
             Quero Viajar
           </Button>
         </Heading>
-        <div className="w-full lg:w-[718px] mx-auto absolute bottom-36 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-4 p-5 rounded-md bg-white shadow-lg justify-around">
+        <div className="hidden lg:flex w-full lg:w-[718px] mx-auto absolute bottom-36 left-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-4 p-5 rounded-md bg-white shadow-lg justify-around">
           {PARTNERS.map(partner => (
-            <div key={partner.alt}>
-              <Image {...partner} />
+            <div key={partner.alt} className="max-w-[130px]">
+              <Image
+                {...partner}
+                width={130}
+                height={30}
+                className="w-full h-full object-contain"
+              />
             </div>
           ))}
         </div>

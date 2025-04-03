@@ -11,12 +11,10 @@ export const Advantages = () => {
   return (
     <Section as="section">
       <Container>
-        <Heading align="center">
+        <Heading className="items-center text-center">
           <Badge variant="default">Vantagens</Badge>
-          <Title align="center" size="xl">
-            O jeito inteligente de viajar
-          </Title>
-          <Text align="center">
+          <Title size="xl">Descubra o jeito inteligente de viajar</Title>
+          <Text>
             Confira as principais vantagens em ter uma Assinatura de Hotéis!
           </Text>
         </Heading>

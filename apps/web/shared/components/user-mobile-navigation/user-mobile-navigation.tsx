@@ -1,30 +1,48 @@
-import { IMenuItem } from '@/shared/types/menu.types';
+import { Text } from '@coobrastur/ui/components/data-display/text';
+import { Button } from '@coobrastur/ui/components/data-entry/button';
 
-import { MenuMobile } from './menu-mobile';
+import { Image } from '@components/image';
 
-import { Icon } from '@ui/components/data-display/icon';
-import { Button } from '@ui/components/data-entry/button';
-import { ArrowRight, UserRound } from '@ui/lib/icons';
+import { PARTNERS } from '@/shared/helpers/data/partners';
 
-type UserMobileNavigationProps = {
-  menuItems: IMenuItem[];
-};
-
-export const UserMobileNavigation = ({
-  menuItems,
-}: UserMobileNavigationProps) => {
+export const UserMobileNavigation = () => {
   return (
-    <div className="w-[300px] mx-auto pb-[50px] relative">
-      <div className="absolute -top-[20px] left-0 right-0 z-10 flex items-center justify-between gap-4 rounded-[10px] p-2 pr-5 bg-background shadow-lg">
-        <Button>
+    <div className="w-full sticky bottom-0 z-10 lg:hidden bg-background">
+      <div className="flex justify-around items-center gap-4 p-2">
+        {PARTNERS.map(partner => (
+          <div key={partner.alt} className="max-w-[70px]">
+            <Image
+              {...partner}
+              width={70}
+              height={18}
+              className="w-full h-full object-contain"
+            />
+          </div>
+        ))}
+      </div>
+      <div className="flex gap-4 shadow-lg rounded-t-md overflow-hidden ">
+        <Button className="md:w-[45%] h-[70px] rounded-none">
           Assine Agora
-          <Icon icon={ArrowRight} variant="white" />
         </Button>
-        <button className="grid justify-items-center gap-1 text-text text-xs">
-          <Icon icon={UserRound} />
-          Acesso
-        </button>
-        <MenuMobile menus={menuItems} />
+        <div className="flex-1 flex justify-center items-center gap-2 px-3">
+          <Image
+            src="/images/shared/clara-profile.png"
+            alt="Converse com a Clara"
+            width={48}
+            height={48}
+          />
+          <Text className="leading-5">
+            Olá, eu sou a Clara!
+            <br />
+            <a
+              href="#"
+              target="_blank"
+              className="text-text-highlight text-sm font-bold underline"
+            >
+              Dúvidas? Fale comigo
+            </a>
+          </Text>
+        </div>
       </div>
     </div>
   );

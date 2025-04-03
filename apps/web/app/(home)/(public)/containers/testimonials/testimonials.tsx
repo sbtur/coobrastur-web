@@ -11,12 +11,10 @@ export const Testimonials = () => {
   return (
     <Section as="section">
       <Container>
-        <Heading align="center">
+        <Heading className="items-center text-center">
           <Badge variant="default">Depoimentos</Badge>
-          <Title align="center" size="xl">
-            Junte-se a mais de 75 mil assinantes
-          </Title>
-          <Text align="center" className="!max-w-full">
+          <Title size="xl">Junte-se a mais de 75 mil assinantes</Title>
+          <Text className="!max-w-full">
             Veja o que os viajantes do Grupo Coobrastur têm a dizer sobre nossa
             Assinatura de Hotéis
           </Text>

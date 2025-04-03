@@ -1,3 +1,5 @@
+import { PAGE_NAME } from '@/shared/helpers/page-names';
+
 import { IMenuItem } from '@shared/types/menu.types';
 
 export const MENU_ITEMS: IMenuItem[] = [
@@ -24,14 +26,14 @@ export const MENU_ITEMS: IMenuItem[] = [
   },
   {
     label: 'Planos',
-    href: '/plans',
+    href: PAGE_NAME.planos,
   },
   {
     label: 'Agência de Viagens',
-    href: '/travel-agency',
+    href: PAGE_NAME.agencia,
   },
   {
     label: 'Hotéis',
-    href: '/search-place',
+    href: PAGE_NAME.hoteis,
   },
 ];

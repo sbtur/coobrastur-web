@@ -93,6 +93,11 @@ const config = {
           focus: 'var(--color-highlight-focus)',
         },
       },
+      boxShadow: {
+        DEFAULT:
+          '0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06)',
+        lg: '0px 5px 51.2px 0px rgba(0, 0, 0, 0.05)',
+      },
       keyframes: {
         'accordion-down': {
           from: {

@@ -5,6 +5,7 @@ import { PARTNERS } from '../../helpers';
 import {
   Carousel,
   CarouselContent,
+  CarouselDot,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
@@ -32,8 +33,9 @@ export const PartnersList = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="-left-6" />
-        <CarouselNext className="-right-6" />
+        <CarouselPrevious className="hidden lg:block -left-4" />
+        <CarouselNext className="hidden lg:block -right-4" />
+        <CarouselDot className="lg:hidden" />
       </Carousel>
     </div>
   );

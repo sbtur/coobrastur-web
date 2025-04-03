@@ -13,7 +13,7 @@ export const AdvantagesListDesktop = () => {
   }
 
   return (
-    <div className="w-fit grid grid-cols-[minmax(290px,400px)_minmax(350px,900px)_minmax(290px,400px)] gap-4 2xl:gap-8 mx-auto">
+    <div className="w-fit hidden lg:grid grid-cols-[minmax(290px,400px)_minmax(350px,900px)_minmax(290px,400px)] gap-4 2xl:gap-8 mx-auto">
       <div className="space-y-4">
         <Card advantage={advantage1} />
         <Card advantage={advantage2} />

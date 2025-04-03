@@ -11,7 +11,7 @@ export const Footer = () => {
   return (
     <footer className="bg-gradient-to-t from-[#E0ECF3] via-[#E0ECF3] via-60% to-white relative">
       <Container className="pt-20 pb-5">
-        <div className="grid grid-cols-2 lg:grid-cols-4 xl:gap-10 xl:pl-28">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-10 xl:pl-28">
           {NAVIGATIONS.map(navigation => (
             <div className="flex flex-col gap-3" key={navigation.title}>
               <Title as="h2" size="xs">
@@ -21,13 +21,13 @@ export const Footer = () => {
                 item.href ? (
                   <Link
                     href={item.href}
-                    className="text-text-body"
+                    className="text-sm lg:text-base text-text-body"
                     key={item.label}
                   >
                     {item.label}
                   </Link>
                 ) : (
-                  <Text className="[&:has(:)]:after:underline" key={item.label}>
+                  <Text className="text-sm lg:text-base" key={item.label}>
                     {item.label}
                   </Text>
                 ),

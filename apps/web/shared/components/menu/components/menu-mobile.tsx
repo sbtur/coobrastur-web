@@ -16,17 +16,18 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from '@ui/components/navigation/menu';
-import { AlignRight } from '@ui/lib/icons';
+import { MenuIcon } from '@ui/lib/icons';
 
 export const MenuMobile = ({ menus }: { menus: IMenuItem[] }) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <button type="button" className="h-8 w-8">
+        <button type="button" className="grid lg:hidden">
           <Icon
-            icon={AlignRight}
+            icon={MenuIcon}
             className="h-8 w-8 text-primary-200 [.isLight_&]:text-white"
           />
+          <span className="text-xs text-white">Menu</span>
         </button>
       </SheetTrigger>
       <SheetContent>

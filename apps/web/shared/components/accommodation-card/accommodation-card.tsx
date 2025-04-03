@@ -39,11 +39,17 @@ export const AccommodationCard = ({
         </HotelImage>
       </HotelImageWrapper>
       <HotelDescription>
-        <Title as="h3" size="xs">
+        <Title as="h3" size="xs" className="text-center lg:text-left">
           {accommodation.name}
         </Title>
-        <Text size="sm">{accommodation.street}</Text>
-        <Button variant="link" onClick={() => onClick(accommodation.id)}>
+        <Text size="sm" className="text-center lg:text-left">
+          {accommodation.street}
+        </Text>
+        <Button
+          variant="link"
+          className="mx-auto lg:mx-0"
+          onClick={() => onClick(accommodation.id)}
+        >
           Ver mais detalhes <Icon icon={ArrowRight} variant="primary" />
         </Button>
       </HotelDescription>

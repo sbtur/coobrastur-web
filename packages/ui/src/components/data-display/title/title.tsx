@@ -28,11 +28,6 @@ const titleVariants = cva('font-bold font-primary', {
       danger: 'text-danger',
       white: 'text-neutral-100',
     },
-    align: {
-      left: 'text-left',
-      center: 'text-center',
-      right: 'text-right',
-    },
   },
   defaultVariants: {
     as: 'h2',
@@ -54,7 +49,6 @@ export const Title = ({
   size,
   variant,
   truncate,
-  align,
   children,
   ...props
 }: TitleProps) => {
@@ -63,7 +57,7 @@ export const Title = ({
   return (
     <Component
       className={cn(
-        titleVariants({ as, size, variant, align }),
+        titleVariants({ as, size, variant }),
         truncate && 'truncate',
         className,
       )}

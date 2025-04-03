@@ -12,7 +12,7 @@ import {
 
 export const MenuDesktop = ({ menus }: { menus: IMenuItem[] }) => {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="hidden lg:block">
       <NavigationMenuList>
         {menus.map(menu => (
           <Fragment key={menu.label}>

@@ -5,10 +5,12 @@ import { Image } from '@components/image';
 import { Link } from '@components/link';
 import { Menu } from '@components/menu';
 
+import { PAGE_NAME } from '@/shared/helpers/page-names';
+
 import { DropdownPlans } from './components/dropdown-plans';
 
 import logoDark from '@images/shared/logos/logo-grupo-coobrastur-dark.png';
-import { MENU_PRIVATE_ITEMS } from '@shared/helpers/menu-private';
+import { MENU_PRIVATE_ITEMS } from '@shared/helpers/data/menu-private';
 import { Icon } from '@ui/components/data-display/icon';
 import { Separator } from '@ui/components/data-display/separator';
 import { Container } from '@ui/components/layouts/container';
@@ -19,12 +21,14 @@ export const HeaderPrivate = () => {
       <Container className="relative z-10">
         <div className="flex items-center gap-7">
           <div className="h-[50px] flex items-center gap-3">
-            <Image
-              src="/images/shared/logos/coob-2.png"
-              alt="Logo Coobrastur"
-              width={78}
-              height={22}
-            />
+            <Link href={PAGE_NAME.home}>
+              <Image
+                src="/images/shared/logos/coob-2.png"
+                alt="Logo Coobrastur"
+                width={78}
+                height={22}
+              />
+            </Link>
             <Separator
               orientation="vertical"
               className="bg-neutral-200 h-full m-0"

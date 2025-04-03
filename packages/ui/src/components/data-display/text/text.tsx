@@ -4,12 +4,12 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@ui/lib/utils';
 
-const textVariants = cva('[.heading_&]:max-w-[500px]', {
+const textVariants = cva('[.heading_&]:lg:max-w-[500px]', {
   variants: {
     size: {
       xs: 'text-xs', // 12px
       sm: 'text-sm', // 14px
-      base: 'text-base', // 16px
+      base: 'text-lg lg:text-base', //18px  16px
       lg: 'text-xl', // 20px
       xl: 'text-2xl', // 24px
     },
@@ -18,17 +18,6 @@ const textVariants = cva('[.heading_&]:max-w-[500px]', {
       sm: 'mb-1', // 4px
       md: 'mb-2', // 8px
       lg: 'mb-4', // 16px
-    },
-    weight: {
-      normal: 'font-normal',
-      medium: 'font-medium',
-      semibold: 'font-semibold',
-      bold: 'font-bold',
-    },
-    align: {
-      left: 'text-left',
-      center: 'text-center',
-      right: 'text-right',
     },
     variant: {
       base: 'text-text-body',
@@ -41,8 +30,6 @@ const textVariants = cva('[.heading_&]:max-w-[500px]', {
   defaultVariants: {
     size: 'base',
     spacing: 'none',
-    weight: 'normal',
-    align: 'left',
     variant: 'base',
   },
 } as const);
@@ -59,8 +46,6 @@ export const Text = ({
   as,
   size,
   spacing,
-  weight,
-  align,
   truncate,
   variant,
   children,
@@ -71,7 +56,7 @@ export const Text = ({
   return (
     <Component
       className={cn(
-        textVariants({ variant, size, spacing, weight, align }),
+        textVariants({ variant, size, spacing }),
         truncate && 'truncate',
         className,
       )}

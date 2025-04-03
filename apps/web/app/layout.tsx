@@ -5,6 +5,7 @@ import { mangueira, sourceSans3 } from 'assets/fonts';
 
 import { Footer } from '@components/footer';
 import { Image } from '@components/image';
+import { UserMobileNavigation } from '@components/user-mobile-navigation';
 import { Providers } from '@providers';
 
 import '@coobrastur/ui/globals.css';
@@ -25,12 +26,15 @@ function Layout({ children }: { children: ReactNode }) {
         <Providers>
           {children}
           <Footer />
+
+          <UserMobileNavigation />
+
           <Image
             src="/images/shared/chat-clara.png"
             alt="Converse com a Clara"
             width={264}
             height={74}
-            className="fixed bottom-5 right-5 z-10"
+            className="hidden lg:block fixed bottom-5 right-5 z-10"
           />
         </Providers>
       </body>

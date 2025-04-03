@@ -18,9 +18,9 @@ export const Card = ({ content }: CardProps) => {
       <Image
         src={content.icon}
         alt={content.title}
-        width={40}
-        height={40}
-        className="w-[40px] h-[40px] object-cover rounded-[5px]"
+        width={45}
+        height={45}
+        className="w-[45px] h-[45px] object-cover rounded-[5px]"
       />
 
       <Title size="xs" variant="white">

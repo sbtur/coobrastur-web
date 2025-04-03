@@ -52,7 +52,7 @@ export const AccommodationList = ({
           {accommodations.map(accommodation => (
             <CarouselItem
               key={accommodation.name}
-              className="flex-[0_0_85%] sm:flex-[0_0_50%] md:flex-[0_0_50%] lg:flex-[0_0_25%]"
+              className="flex-[0_0_95%] md:flex-[0_0_50%] lg:flex-[0_0_25%]"
             >
               <AccommodationCard
                 onClick={handleOpenHotel}
@@ -62,8 +62,8 @@ export const AccommodationList = ({
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="-left-6" />
-        <CarouselNext className="-right-6" />
+        <CarouselPrevious className="-left-4" />
+        <CarouselNext className="-right-4" />
         <CarouselDot />
       </Carousel>
     </Content>
