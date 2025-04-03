@@ -5,8 +5,16 @@ import { useRouter } from 'next/navigation';
 import { Accommodation } from '@coobrastur/types-shared';
 
 import { AccommodationCard } from '@components/accommodation-card';
-import { AccommodationDialog } from '@components/accommodation-dialog';
+import {
+  AccommodationDialog,
+  AccommodationDialogMobile,
+} from '@components/accommodation-dialog';
 import { useToggle } from '@hooks/use-toggle';
+
+import {
+  ResponsiveLargerThan,
+  ResponsiveSmallerThan,
+} from '@/shared/components/responsive';
 
 import {
   Carousel,
@@ -45,7 +53,20 @@ export const AccommodationList = ({
   return (
     <Content>
       {isEnabled && (
-        <AccommodationDialog isOpen={isEnabled} onClose={handleCloseHotel} />
+        <>
+          <ResponsiveLargerThan breakpoint="lg">
+            <AccommodationDialog
+              isOpen={isEnabled}
+              onClose={handleCloseHotel}
+            />
+          </ResponsiveLargerThan>
+          <ResponsiveSmallerThan breakpoint="lg">
+            <AccommodationDialogMobile
+              isOpen={isEnabled}
+              onClose={handleCloseHotel}
+            />
+          </ResponsiveSmallerThan>
+        </>
       )}
       <Carousel className="h-full" opts={{ loop: true }}>
         <CarouselContent className="h-full">
