@@ -8,6 +8,7 @@ import { Menu } from '@components/menu';
 import { PAGE_NAME } from '@/shared/helpers/page-names';
 
 import { DropdownPlans } from './components/dropdown-plans';
+import { Header } from './header';
 
 import logoDark from '@images/shared/logos/logo-grupo-coobrastur-dark.png';
 import { MENU_PRIVATE_ITEMS } from '@shared/helpers/data/menu-private';
@@ -17,8 +18,8 @@ import { Container } from '@ui/components/layouts/container';
 
 export const HeaderPrivate = () => {
   return (
-    <header>
-      <Container className="relative z-10">
+    <Header>
+      <Container>
         <div className="flex items-center gap-7">
           <div className="h-[50px] flex items-center gap-3">
             <Link href={PAGE_NAME.home}>
@@ -62,7 +63,9 @@ export const HeaderPrivate = () => {
             </span>
           </Text>
         </div>
-        <Separator className="w-[85%] md:w-full mx-auto [.isLight_&]:bg-white/20" />
+      </Container>
+      <Separator className="w-[85%] md:w-full mx-auto [.isLight_&]:bg-white/20" />
+      <Container>
         <div className="flex items-center justify-between gap-8 py-6 px-4 ">
           <div className="w-[180px] lg:w-[245px]">
             <Link href="/">
@@ -88,8 +91,8 @@ export const HeaderPrivate = () => {
             </div>
           </div>
         </div>
-        <Separator className="w-[85%] md:w-full mx-auto" />
       </Container>
-    </header>
+      <Separator className="w-[85%] md:w-full mx-auto" />
+    </Header>
   );
 };

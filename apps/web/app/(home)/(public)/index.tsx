@@ -1,4 +1,4 @@
-import { Header } from '@components/header';
+import { HeaderPublic } from '@components/header/header-public';
 
 import { Accommodations } from './containers/accommodations';
 import { Advantages } from './containers/advantages';
@@ -10,8 +10,8 @@ import { Testimonials } from './containers/testimonials';
 export function HomePublic() {
   return (
     <>
+      <HeaderPublic light />
       <div className="relative h-screen">
-        <Header isLight />
         <Display />
       </div>
 

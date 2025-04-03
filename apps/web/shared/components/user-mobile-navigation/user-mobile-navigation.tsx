@@ -20,16 +20,14 @@ export const UserMobileNavigation = () => {
           </div>
         ))}
       </div>
-      <div className="flex gap-4 shadow-lg rounded-t-md overflow-hidden ">
-        <Button className="md:w-[45%] h-[70px] rounded-none">
-          Assine Agora
-        </Button>
-        <div className="flex-1 flex justify-center items-center gap-2 px-3">
+      <div className="flex gap-4 h-[90px] shadow-lg rounded-t-md overflow-hidden ">
+        <Button className="md:w-[45%] h-full rounded-none">Assine Agora</Button>
+        <div className="h-full flex-1 flex justify-center items-center gap-2 pr-3">
           <Image
             src="/images/shared/clara-profile.png"
             alt="Converse com a Clara"
-            width={48}
-            height={48}
+            width={40}
+            height={40}
           />
           <Text className="leading-5">
             Olá, eu sou a Clara!
