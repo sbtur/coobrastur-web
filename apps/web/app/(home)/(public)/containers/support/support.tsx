@@ -1,6 +1,11 @@
+import { Content } from '@coobrastur/ui/components/layouts/content';
+
 import { Image } from '@components/image';
 
-import { SupportList } from './components/support-list';
+import {
+  SupportListDesktop,
+  SupportListMobile,
+} from './components/support-list';
 
 import { Badge } from '@ui/components/data-display/badge';
 import { Heading } from '@ui/components/data-display/heading';
@@ -27,7 +32,11 @@ export const Support = () => {
           </Text>
         </Heading>
 
-        <SupportList />
+        <Content className="bg-transparent">
+          <SupportListDesktop />
+          <SupportListMobile />
+        </Content>
+
         <Image
           src="/images/pages/home/support-image.png"
           alt="Imagem chat bot Clara sendo utilizado no celular"

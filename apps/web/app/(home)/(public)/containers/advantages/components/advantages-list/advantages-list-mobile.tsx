@@ -1,5 +1,3 @@
-import { Image } from '@components/image';
-
 import { Card } from '../../components/card';
 import { ADVANTAGES } from '../../helpers';
 
@@ -24,16 +22,6 @@ export const AdvantagesListMobile = () => {
           ))}
         </CarouselContent>
       </Carousel>
-
-      <div className="mt-4 rounded-2xl overflow-hidden">
-        <Image
-          src="/images/pages/home/advantages-featured.png"
-          alt="Hotel"
-          width={610}
-          height={408}
-          className="w-full"
-        />
-      </div>
     </div>
   );
 };

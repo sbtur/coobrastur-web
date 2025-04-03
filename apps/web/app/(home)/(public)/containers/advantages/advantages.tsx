@@ -1,7 +1,11 @@
 import { Content } from '@coobrastur/ui/components/layouts/content';
 
-import { AdvantagesListDesktop } from './components/advantages-list/advantages-list-desktop';
-import { AdvantagesListMobile } from './components/advantages-list/advantages-list-mobile';
+import { Image } from '@components/image';
+
+import {
+  AdvantagesListDesktop,
+  AdvantagesListMobile,
+} from './components/advantages-list';
 
 import { Badge } from '@ui/components/data-display/badge';
 import { Heading } from '@ui/components/data-display/heading';
@@ -26,6 +30,15 @@ export const Advantages = () => {
           <AdvantagesListMobile />
         </Content>
       </Container>
+      <div className="mt-4 overflow-hidden lg:hidden">
+        <Image
+          src="/images/pages/home/advantages-featured.gif"
+          alt="Hotel"
+          width={610}
+          height={408}
+          className="w-full"
+        />
+      </div>
     </Section>
   );
 };

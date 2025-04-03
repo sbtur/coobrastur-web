@@ -68,12 +68,16 @@ export const AccommodationList = ({
           </ResponsiveSmallerThan>
         </>
       )}
-      <Carousel className="h-full" opts={{ loop: true }}>
+      <Carousel
+        className="h-full"
+        autoplay={{ playOnInit: true }}
+        opts={{ loop: true, align: 'start' }}
+      >
         <CarouselContent className="h-full">
           {accommodations.map(accommodation => (
             <CarouselItem
               key={accommodation.name}
-              className="flex-[0_0_95%] md:flex-[0_0_50%] lg:flex-[0_0_25%]"
+              className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_25%]"
             >
               <AccommodationCard
                 onClick={handleOpenHotel}

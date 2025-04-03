@@ -16,9 +16,10 @@ export const Display = () => {
           src={displayImage}
           alt="Logo"
           fill
-          className="object-cover fixed inset-0 -z-10"
+          className="object-cover object-[33%_50%] fixed inset-0 -z-10"
           priority
           placeholder="blur"
+          quality={100}
         />
       </div>
       <Container className="h-full border border-transparent">

@@ -1,1 +1,2 @@
-export * from './advantages-list';
+export * from './advantages-list-desktop';
+export * from './advantages-list-mobile';

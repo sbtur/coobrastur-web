@@ -14,7 +14,11 @@ import {
 export const PartnersList = () => {
   return (
     <div className="mt-6 md:mt-0 md:w-10/12">
-      <Carousel className="h-full" opts={{ loop: true }}>
+      <Carousel
+        className="h-full"
+        autoplay={{ playOnInit: true }}
+        opts={{ loop: true, align: 'start' }}
+      >
         <CarouselContent className="h-full">
           {PARTNERS.map(item => (
             <CarouselItem

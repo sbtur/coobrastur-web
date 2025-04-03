@@ -12,6 +12,7 @@
   "dependencies": {
     "@coobrastur/ui": "workspace:*",
     "class-variance-authority": "^0.7.0",
+    "embla-carousel-class-names": "^8.5.2",
     "lucide-react": "0.456.0",
     "motion": "^12.6.2",
     "next": "^15.2.3",

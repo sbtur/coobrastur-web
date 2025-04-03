@@ -3,6 +3,7 @@
 import * as React from 'react';
 
 import Autoplay, { AutoplayOptionsType } from 'embla-carousel-autoplay';
+import ClassNames from 'embla-carousel-class-names';
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from 'embla-carousel-react';
@@ -79,7 +80,7 @@ const Carousel = React.forwardRef<
       ? [Autoplay({ ...defaultAutoplayOptions, ...autoplay })]
       : [];
 
-    const pluginsConf = [...autoplayOptions, ...(plugins || [])];
+    const pluginsConf = [...autoplayOptions, ClassNames(), ...(plugins || [])];
 
     const [carouselRef, api] = useEmblaCarousel(
       {

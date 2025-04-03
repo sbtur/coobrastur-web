@@ -14,7 +14,7 @@ interface CardProps {
 
 export const Card = ({ content }: CardProps) => {
   return (
-    <div className=" bg-white/5 rounded-2xl space-y-2 p-6 hover:bg-white/15 lg:hover:scale-105 lg:transition-all lg:duration-300">
+    <div className="bg-white/5 rounded-2xl space-y-2 p-4 min-h-[230px] hover:bg-white/15 transition-all duration-300">
       <Image
         src={content.icon}
         alt={content.title}
