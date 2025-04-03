@@ -67,7 +67,7 @@ const NavigationMenuTrigger = React.forwardRef<
     className={cn(
       navigationMenuTriggerStyle(),
       'group',
-      'h-fit font-secondary text-text [.isLight_&]:text-white',
+      'h-fit font-secondary text-text-body [.isLight_&]:text-white',
       className,
     )}
     {...props}
@@ -75,7 +75,7 @@ const NavigationMenuTrigger = React.forwardRef<
     {children}{' '}
     <Icon
       icon={ChevronDown}
-      className="text-text relative top-[1px] ml-1 h-5 w-5 transition duration-200 group-data-[state=open]:rotate-180 [.isLight_&]:text-white"
+      className="text-text-body relative top-[1px] ml-1 h-5 w-5 transition duration-200 group-data-[state=open]:rotate-180 [.isLight_&]:text-white"
     />
   </NavigationMenuPrimitive.Trigger>
 ));
@@ -103,7 +103,7 @@ const NavigationMenuLink = React.forwardRef<
   <NavigationMenuPrimitive.Link
     ref={ref}
     className={cn(
-      'font-secondary text-text cursor-pointer [.isLight_&]:text-white hover:text-highlight-300 [.isLight_&]:hover:text-secondary-100 [&[data-active]]:font-bold [.isLight_&][&[data-active]]:text-secondary-100 [&[data-active]]:text-highlight-300 transition-all duration-300',
+      'font-secondary text-text-body cursor-pointer [.isLight_&]:text-white hover:text-highlight-300 [.isLight_&]:hover:text-secondary-100 [&[data-active]]:font-bold [.isLight_&][&[data-active]]:text-secondary-100 [&[data-active]]:text-highlight-300 transition-all duration-300',
       className,
     )}
     {...props}
