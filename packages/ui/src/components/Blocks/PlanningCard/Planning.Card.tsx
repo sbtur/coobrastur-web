@@ -1,6 +1,8 @@
 import { cn } from '@ui/lib/utils';
-import { Badge } from '@ui/components/DataDisplay/Badge';
-import { Check } from '@ui/lib/icons';
+import {
+  RadioGroup,
+  RadioGroupItem,
+} from '@ui/components/DataEntry/RadioButton';
 
 export interface PlanningCardProps {
   children: React.ReactNode;
@@ -9,34 +11,23 @@ export interface PlanningCardProps {
   isSelected?: boolean;
 }
 
-export const PlanningCard = ({
-  children,
-  className,
-  badge,
-  isSelected,
-}: PlanningCardProps) => {
+export const PlanningCard = ({ children, isSelected }: PlanningCardProps) => {
   return (
     <div
       className={cn(
-        'group relative flex w-full max-w-sm flex-col overflow-hidden rounded-xl bg-white p-6',
-        className,
+        'group relative w-full max-w-sm overflow-hidden rounded-[20px] bg-white p-4 shadow-xl',
       )}
     >
-      <div className="absolute right-4 top-4">
-        <div
-          className={cn(
-            'flex h-8 w-8 items-center justify-center rounded-full border',
-            isSelected ? 'bg-blue-500' : 'border-gray-200 bg-white',
-          )}
-        >
-          {isSelected && <Check className="h-5 w-5 text-white" />}
-        </div>
-      </div>
-      {badge && (
-        <div className="mb-4 flex justify-center">
-          <Badge variant="neutral">{badge}</Badge>
-        </div>
-      )}
+      {/* <div className="relative flex justify-end">
+        <>
+          <RadioGroup defaultValue="vip">
+            <RadioGroupItem
+              value={isSelected ? 'selected' : 'notSelected'}
+              className="h-9 w-9"
+            />
+          </RadioGroup>
+        </>
+      </div> */}
       {children}
     </div>
   );
