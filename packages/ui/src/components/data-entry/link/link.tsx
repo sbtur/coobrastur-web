@@ -16,7 +16,7 @@ const linkVariants = cva('inline-flex items-center', {
       primary: 'text-highlight hover:text-highlight-hover [&_svg]:text-current',
       secondary:
         'text-secondary-300 hover:text-secondary-hover [&_svg]:text-current',
-      neutral: 'text-text hover:text-text-hover [&_svg]:text-current',
+      neutral: 'text-text-body hover:text-text-body [&_svg]:text-current',
       white: 'text-white [&_svg]:text-current',
     },
     size: {

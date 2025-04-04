@@ -10,14 +10,11 @@ import { Section } from '@ui/components/layouts/section';
 export const Partners = () => {
   return (
     <Section as="section">
-      <Container className="md:flex gap-10">
-        <Heading
-          align="center"
-          className="md:w-6/12 xl:w-4/12 p-0 md:text-left md:items-start"
-        >
+      <Container className="md:flex gap-10 px-0">
+        <Heading className="md:w-4/12 xl:w-4/12 p-0 text-center items-center md:text-left md:items-start">
           <Badge variant="default">Hotéis Parceiros</Badge>
           <Title size="xl">Experiências de hospedagem</Title>
-          <Text align="center" className="md:text-left">
+          <Text className="w-[300px]">
             As principais redes hoteleiras do mundo estão aqui.
           </Text>
         </Heading>

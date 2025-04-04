@@ -1,8 +1,6 @@
 'use client';
 import { useState } from 'react';
 
-import { AnimatePresence, motion } from 'motion/react';
-
 import { Badge } from '@coobrastur/ui/components/data-display/badge';
 
 import {
@@ -11,6 +9,7 @@ import {
   dropdownVariants,
 } from './dropdown-plans.animations';
 
+import { AnimatePresence, motion } from '@lib/motion';
 import { Icon } from '@ui/components/data-display/icon';
 import { Separator } from '@ui/components/data-display/separator';
 import { ChevronDown, ChevronUp } from '@ui/lib/icons';

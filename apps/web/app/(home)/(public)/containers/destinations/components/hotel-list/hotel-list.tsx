@@ -2,6 +2,8 @@ import { Content } from '@coobrastur/ui/components/layouts/content';
 
 import { Image } from '@components/image';
 
+import { Link } from '@/shared/components/link';
+
 import { DestinationResponse } from '../../types/destination.types';
 
 import { Bookmark } from '@ui/components/data-display/bookmark';
@@ -14,7 +16,6 @@ import {
   CarouselPrevious,
 } from '@ui/components/data-display/caroussel';
 import {
-  HotelButton,
   HotelCard,
   HotelDescription,
   HotelImage,
@@ -58,16 +59,14 @@ export const HotelList = ({ hotels }: HotelListProps) => {
                   </HotelImage>
                 </HotelImageWrapper>
                 <HotelDescription>
-                  <Title as="h3" size="xs" align="center">
+                  <Title as="h3" size="xs">
                     {hotel.city.name}
                   </Title>
-                  <Text size="sm" align="center">
-                    {hotel.state.name}
-                  </Text>
-                  <HotelButton type="link" href="#" className="justify-center">
+                  <Text size="sm">{hotel.state.name}</Text>
+                  <Link href={`/destinations/${hotel.id}`}>
                     Ver mais detalhes{' '}
                     <Icon icon={ArrowRight} variant="primary" />
-                  </HotelButton>
+                  </Link>
                 </HotelDescription>
               </HotelCard>
             </CarouselItem>

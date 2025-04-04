@@ -4,22 +4,24 @@ import { Card } from '../card';
 import {
   Carousel,
   CarouselContent,
-  CarouselDot,
   CarouselItem,
 } from '@ui/components/data-display/caroussel';
 
 export const SupportListMobile = () => {
   return (
-    <div>
-      <Carousel className="h-full" opts={{ loop: true }}>
-        <CarouselContent className="h-full">
+    <div className="px-4 lg:px-0">
+      <Carousel
+        className="lg:hidden h-full mt-8"
+        autoplay={{ playOnInit: true }}
+        opts={{ loop: true, align: 'start' }}
+      >
+        <CarouselContent className="h-full w-full">
           {SUPPORT.map(item => (
-            <CarouselItem key={item.title} className="flex-[0_0_75%]">
+            <CarouselItem key={item.title} className="flex-[0_0_95%]">
               <Card key={item.title} content={item} />
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselDot />
       </Carousel>
     </div>
   );

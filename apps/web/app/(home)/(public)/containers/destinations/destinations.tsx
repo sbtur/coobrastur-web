@@ -13,12 +13,10 @@ export const Destinations = () => {
   return (
     <Section>
       <Container>
-        <Heading align="center">
+        <Heading className="items-center text-center">
           <Badge variant="default">Destinos</Badge>
-          <Title align="center" size="xl">
-            Escolha o destino dos seus sonhos
-          </Title>
-          <Text align="center">
+          <Title size="xl">Escolha o destino dos seus sonhos</Title>
+          <Text>
             Aqui, você encontra os destinos mais incríveis com as melhores
             acomodações.
           </Text>

@@ -19,10 +19,7 @@ export const MenuItem = ({
   return (
     <NavigationMenuItem>
       <Link href={href} passHref legacyBehavior>
-        <NavigationMenuLink
-          href={href}
-          className={pathname === href ? 'font-semibold' : ''}
-        >
+        <NavigationMenuLink href={href} active={pathname === href}>
           {children}
         </NavigationMenuLink>
       </Link>

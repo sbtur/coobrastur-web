@@ -1,7 +1,8 @@
 import { Text } from '@coobrastur/ui/components/data-display/text';
 
+import { AMENITIES_DATA, AmenityKey } from '@utils/data/amenities';
+
 import { Image } from '@/shared/components/image';
-import { AMENITIES_DATA, AmenityKey } from '@/shared/helpers/amenities';
 
 type AmenitiesProps = {
   amenities: AmenityKey[];

@@ -4,6 +4,9 @@ import { useSearchParams } from 'next/navigation';
 
 import { Image } from '@components/image';
 
+import { buttonsAnimations, galleryAnimations } from './animations';
+
+import { AnimatePresence, motion } from '@lib/motion';
 import { ACCOMMODATIONSDETAILS } from '@mocks/accommodations/accommodations-details';
 import { Bookmark } from '@ui/components/data-display/bookmark';
 import {
@@ -39,6 +42,7 @@ export const AccommodationDialog = ({ isOpen, onClose }: HotelDialogProps) => {
   const handleShowGallery = () => {
     setIsShowGallery(!isShowGallery);
   };
+
   return (
     <Dialog.Root open={isOpen}>
       <Dialog.Content
@@ -60,90 +64,121 @@ export const AccommodationDialog = ({ isOpen, onClose }: HotelDialogProps) => {
             <span className="sr-only">Fechar</span>
           </button>
         </Dialog.Close>
-        <div className="overflow-y-auto md:flex md:rounded-[20px] md:min-h-[570px] relative">
-          <div
-            className={`${
-              isShowGallery ? 'w-0 overflow-hidden' : 'md:w-1/2 lg:w-2/3'
-            } md:h-full transition-all duration-300 group`}
+        <div className="overflow-y-auto md:flex md:rounded-[20px] md:h-[570px] justify-between relative">
+          <motion.div
+            variants={galleryAnimations}
+            initial="contentVisible"
+            animate={isShowGallery ? 'contentHidden' : 'contentVisible'}
+            className="h-full"
           >
-            <div className="group-[.w-0]:hidden transition-all duration-300">
-              <div className="py-10 px-8 lg:px-10">
-                <Dialog.Header>
-                  <Dialog.Title asChild className="text-2xl">
-                    <Title as="h2" size="sm">
-                      {hotel?.name}
-                    </Title>
-                  </Dialog.Title>
-                  <Dialog.Description asChild>
-                    <Text size="sm">{hotel?.street}</Text>
-                  </Dialog.Description>
-                </Dialog.Header>
-                <div className="max-h-[280px] py-4 pr-4 mt-6 overflow-y-auto">
-                  <Text size="sm">{hotel?.description}</Text>
+            <motion.div
+              variants={buttonsAnimations}
+              initial="visible"
+              animate={isShowGallery ? 'hidden' : 'visible'}
+              exit="visible"
+              className="group-[.w-0]:hidden py-10 px-8 lg:px-10"
+            >
+              <Dialog.Header>
+                <Dialog.Title asChild className="text-2xl">
+                  <Title as="h2" size="sm">
+                    {hotel?.name}
+                  </Title>
+                </Dialog.Title>
+                <Dialog.Description asChild>
+                  <Text size="sm" className="text-text-body">
+                    {hotel?.street}
+                  </Text>
+                </Dialog.Description>
+              </Dialog.Header>
+              <div className="max-h-[280px] py-4 pr-4 mt-6 overflow-y-auto">
+                <Text size="sm">{hotel?.description}</Text>
 
-                  <div className="mt-6">
-                    <Title as="h3" size="xs">
-                      Comodidades:
-                    </Title>
-                    <ul className="grid grid-cols-3 gap-x-4 gap-y-2 text-sm text-text mt-4">
-                      {hotel?.amenities.map(amenity => (
-                        <li key={amenity}>{amenity}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div className="text-center mt-6 md:text-left">
-                  <Link href="/accommodation">
-                    Ir para a página do Hotel <Icon icon={ArrowRight} />
-                  </Link>
+                <div className="mt-6">
+                  <Title as="h3" size="xs">
+                    Comodidades:
+                  </Title>
+                  <ul className="grid grid-cols-3 gap-x-4 gap-y-2 text-sm text-text-body mt-4">
+                    {hotel?.amenities.map(amenity => (
+                      <li key={amenity}>{amenity}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-              <Separator />
-              <Dialog.Footer className="flex-row h-[90px] md:pl-7 lg:pl-10 pr-0 gap-3 items-center justify-center md:justify-start">
-                <Bookmark />
-                <IconWrapper>
-                  <Icon icon={Share2} />
-                </IconWrapper>
-              </Dialog.Footer>
-            </div>
-          </div>
+              <div className="text-center mt-6 md:text-left">
+                <Link href="/accommodation">
+                  Ir para a página do Hotel <Icon icon={ArrowRight} />
+                </Link>
+              </div>
+            </motion.div>
+            <Separator />
+            <Dialog.Footer className="flex-row h-[90px] md:pl-7 lg:pl-10 pr-0 gap-3 items-center justify-center md:justify-start">
+              <Bookmark />
+              <IconWrapper>
+                <Icon icon={Share2} />
+              </IconWrapper>
+            </Dialog.Footer>
+          </motion.div>
 
-          <div
-            className={`${isShowGallery ? 'w-full' : 'md:h-auto md:w-1/2'} h-full relative pb-[70px] md:pb-0 transition-all duration-300 group`}
+          <motion.div
+            variants={galleryAnimations}
+            initial="galleryClose"
+            animate={isShowGallery ? 'galleryOpen' : 'galleryClose'}
+            transition={{
+              duration: 0.5,
+            }}
+            className="full relative pb-[70px] md:pb-0 group"
           >
             <div className="hidden md:block absolute top-0 right-0 p-4 w-full z-10">
-              <div
-                className={`${isShowGallery ? 'hidden' : 'flex gap-4 flex-wrap justify-end'}`}
-              >
-                <IconWrapper
-                  as="button"
-                  onClick={handleShowGallery}
-                  className="flex items-center gap-2"
-                >
-                  <Icon icon={Table} />
-                  Mostrar todas as fotos
-                </IconWrapper>
-              </div>
+              <AnimatePresence mode="wait">
+                {!isShowGallery ? (
+                  <motion.div
+                    variants={buttonsAnimations}
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    className="gap-4 flex-wrap justify-end"
+                  >
+                    <IconWrapper
+                      as="button"
+                      onClick={handleShowGallery}
+                      className="flex items-center gap-2"
+                    >
+                      <Icon icon={Table} />
+                      Mostrar todas as fotos
+                    </IconWrapper>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    variants={buttonsAnimations}
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    className="flex justify-between gap-4"
+                  >
+                    <IconWrapper
+                      as="button"
+                      onClick={handleShowGallery}
+                      className="flex items-center gap-2"
+                    >
+                      <Icon icon={ChevronLeft} />
+                      Voltar
+                    </IconWrapper>
 
-              <div
-                className={`${isShowGallery ? 'flex justify-between gap-4' : 'hidden'}`}
-              >
-                <IconWrapper
-                  as="button"
-                  onClick={handleShowGallery}
-                  className="flex items-center gap-2"
-                >
-                  <Icon icon={ChevronLeft} />
-                  Voltar
-                </IconWrapper>
-
-                <div className="flex gap-4">
-                  <Bookmark />
-                  <IconWrapper as="button">
-                    <Icon icon={Share2} />
-                  </IconWrapper>
-                </div>
-              </div>
+                    <motion.div
+                      variants={buttonsAnimations}
+                      initial="hidden"
+                      animate="visible"
+                      exit="hidden"
+                      className="flex gap-4"
+                    >
+                      <Bookmark />
+                      <IconWrapper as="button">
+                        <Icon icon={Share2} />
+                      </IconWrapper>
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             <Carousel className="h-full" opts={{ loop: true }}>
@@ -165,7 +200,7 @@ export const AccommodationDialog = ({ isOpen, onClose }: HotelDialogProps) => {
               </CarouselContent>
               <CarouselPrevious className="left-3" />
               <CarouselNext className="right-3" />
-              <CarouselDot />
+              <CarouselDot className="absolute bottom-[110px] z-10" />
             </Carousel>
 
             <Button
@@ -175,7 +210,7 @@ export const AccommodationDialog = ({ isOpen, onClose }: HotelDialogProps) => {
               Assine e planeje sua viagem{' '}
               <Icon icon={ArrowRight} variant="white" />
             </Button>
-          </div>
+          </motion.div>
         </div>
       </Dialog.Content>
     </Dialog.Root>
