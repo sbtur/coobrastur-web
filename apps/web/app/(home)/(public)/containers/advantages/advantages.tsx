@@ -37,6 +37,7 @@ export const Advantages = () => {
           width={610}
           height={408}
           className="w-full"
+          unoptimized
         />
       </div>
     </Section>

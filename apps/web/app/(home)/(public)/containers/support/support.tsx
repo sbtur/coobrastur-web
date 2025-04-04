@@ -7,6 +7,7 @@ import {
   SupportListMobile,
 } from './components/support-list';
 
+import supportImage from '@images/pages/home/support-image.png';
 import { Badge } from '@ui/components/data-display/badge';
 import { Heading } from '@ui/components/data-display/heading';
 import { Text } from '@ui/components/data-display/text';
@@ -38,11 +39,12 @@ export const Support = () => {
         </Content>
 
         <Image
-          src="/images/pages/home/support-image.png"
+          src={supportImage}
           alt="Imagem chat bot Clara sendo utilizado no celular"
           width={506}
           height={622}
           className="absolute right-0 -bottom-[56px] hidden lg:block"
+          placeholder="blur"
         />
       </Container>
     </Section>

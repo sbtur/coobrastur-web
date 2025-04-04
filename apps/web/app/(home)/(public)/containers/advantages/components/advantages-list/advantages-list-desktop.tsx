@@ -23,6 +23,7 @@ export const AdvantagesListDesktop = () => {
           width={610}
           height={400}
           className="object-cover w-full h-full"
+          unoptimized
         />
       </div>
       <div className="space-y-4">

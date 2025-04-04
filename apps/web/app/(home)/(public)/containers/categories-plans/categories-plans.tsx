@@ -2,7 +2,7 @@ import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Title } from '@coobrastur/ui/components/data-display/title';
 import { Section } from '@coobrastur/ui/components/layouts/section';
 
-import CategorySilver from '@images/icons/coobrastur-logo.svg';
+import CategoryIcon from '@images/icons/coobrastur-logo.svg';
 import { Container } from '@ui/components/layouts/container';
 
 const CATEGORIES_PLANS = [
@@ -44,7 +44,7 @@ export const CategoriesPlans = () => {
               <div
                 className={`h-10 w-10 bg-white rounded-full flex justify-center items-center content-center lg:absolute lg:-left-6`}
               >
-                <CategorySilver
+                <CategoryIcon
                   className={`${category.foregroundColor} hover:scale-105 transition-all duration-300`}
                 />
               </div>
