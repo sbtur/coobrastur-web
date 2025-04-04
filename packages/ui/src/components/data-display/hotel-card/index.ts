@@ -1,4 +1,3 @@
-export { HotelButton } from './hotel-button';
 export { HotelCard, type HotelCardProps } from './hotel-card';
 export {
   HotelDescription,

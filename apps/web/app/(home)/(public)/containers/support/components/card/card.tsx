@@ -1,4 +1,4 @@
-import { Image } from '@components/image';
+import { Image } from '@/shared/components/image';
 
 import { Support } from '../../types/support.types';
 
@@ -14,19 +14,15 @@ interface CardProps {
 
 export const Card = ({ content }: CardProps) => {
   return (
-    <div className=" bg-white/5 rounded-2xl space-y-2 p-6 hover:bg-white/15 lg:hover:scale-105 lg:transition-all lg:duration-300">
-      <div className="w-10 h-10 bg-background rounded-md border-2 border-secondary-100 flex items-center justify-center">
-        {typeof content.icon === 'string' ? (
-          <Image
-            src={content.icon}
-            alt={content.title}
-            width={40}
-            height={40}
-          />
-        ) : (
-          <Icon icon={content.icon} variant="secondary" />
-        )}
-      </div>
+    <div className="bg-white/5 rounded-2xl space-y-2 p-4 min-h-[230px] hover:bg-white/15 group transition-all duration-300">
+      <Image
+        src={content.icon}
+        alt={content.title}
+        width={45}
+        height={45}
+        className="w-[45px] h-[45px] object-cover rounded-[5px] group-hover:scale-110 transition-all duration-300"
+      />
+
       <Title size="xs" variant="white">
         {content.title}
       </Title>

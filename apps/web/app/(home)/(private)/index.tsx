@@ -1,16 +1,22 @@
 import { HeaderPrivate } from '@components/header';
 
+import { Accommodations } from '../(public)/containers/accommodations';
+import { Support } from '../(public)/containers/support';
+import { Testimonials } from '../(public)/containers/testimonials';
+
 import { Container } from '@ui/components/layouts/container';
 
 export function HomePrivate() {
   return (
     <>
-      <Container as="section" className="relative h-screen">
-        <HeaderPrivate />
-      </Container>
+      <HeaderPrivate />
 
-      <Container as="main" className="relative z-10 bg-background">
-        <div>Conteudo</div>
+      <Container as="main">
+        <Accommodations />
+
+        <Support />
+
+        <Testimonials />
       </Container>
     </>
   );

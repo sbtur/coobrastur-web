@@ -1,12 +1,6 @@
-import { Button } from '@coobrastur/ui/components/button';
-import { Badge } from '@coobrastur/ui/components/data-display/badge';
-import { Heading } from '@coobrastur/ui/components/data-display/heading';
-import { Icon } from '@coobrastur/ui/components/data-display/icon';
 import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Title } from '@coobrastur/ui/components/data-display/title';
 import { Container } from '@coobrastur/ui/components/layouts/container';
-import { Section } from '@coobrastur/ui/components/layouts/section';
-import { Separator } from '@coobrastur/ui/components/separator';
 import { Calendar, Globe, Mail, Phone } from '@coobrastur/ui/lib/icons';
 
 import { Amenities } from '../components/amenities';
@@ -14,9 +8,15 @@ import { CollapsibleDescription } from '../components/collapsible-description';
 import { ImageGallery } from '../components/image-gallery';
 import { Policies } from '../components/policies';
 
+import { Badge } from '@ui/components/data-display/badge';
+import { Heading } from '@ui/components/data-display/heading';
+import { Icon } from '@ui/components/data-display/icon';
+import { Separator } from '@ui/components/data-display/separator';
+import { Button } from '@ui/components/data-entry/button';
+
 export default function AccommodationPrivate() {
   return (
-    <Container size="xl" className="py-12">
+    <Container className="py-12">
       <Heading className="p-0 gap-0">
         <Badge className="mb-2">Gold</Badge>
         <Title>Intercity Florianópolis</Title>
@@ -25,9 +25,9 @@ export default function AccommodationPrivate() {
 
       <ImageGallery />
 
-      <div className="flex gap-4 justify-between">
+      <div className="flex gap-4 justify-between mt-8">
         <main className="grid flex-1 gap-4 md:pr-10">
-          <Section>
+          <section>
             <Title as="h3" size="sm" className="mb-3">
               Informações
             </Title>
@@ -50,8 +50,8 @@ export default function AccommodationPrivate() {
                 in arcu.
               </Text>
             </CollapsibleDescription>
-          </Section>
-          <Section>
+          </section>
+          <section>
             <Title as="h3" size="sm" className="mb-3">
               Comodidades
             </Title>
@@ -65,8 +65,8 @@ export default function AccommodationPrivate() {
                 'pool',
               ]}
             />
-          </Section>
-          <Section className="space-y-3">
+          </section>
+          <section className="space-y-3">
             <Title as="h3" size="sm" className="mb-3">
               Informações do hotel
             </Title>
@@ -82,8 +82,8 @@ export default function AccommodationPrivate() {
               <Icon icon={Globe} variant="primary" />
               rederiohoteis.com/arosa-hotel-na-lapa
             </Text>
-          </Section>
-          <Section className="max-w-[600px]">
+          </section>
+          <section className="max-w-[600px]">
             <Title as="h3" size="sm" className="mb-3">
               Períodos de pacote
             </Title>
@@ -111,16 +111,16 @@ export default function AccommodationPrivate() {
               </strong>{' '}
               no momento da reserva.
             </Text>
-          </Section>
+          </section>
           <Policies />
-          <Section>
+          <section>
             <Title as="h3" size="sm" className="mb-3">
               Localização
             </Title>
             <Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Text>
-          </Section>
+          </section>
         </main>
         <aside className="w-[450px]">
           <div className="grid gap-3 place-items-center rounded-[20px] bg-white p-9 shadow-lg">

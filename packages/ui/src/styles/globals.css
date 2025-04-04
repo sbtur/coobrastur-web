@@ -67,7 +67,7 @@
   --color-warning-active: var(--color-warning-300);
   --color-warning-focus: var(--color-warning-300);
 
-  --color-text: var(--color-neutral-500);
+  --color-body: var(--color-neutral-500);
   --color-text-primary: var(--color-primary-200);
   --color-text-secondary: var(--color-secondary-200);
   --color-text-success: var(--color-success-200);
@@ -87,6 +87,10 @@
   --color-border-divider: var(--color-neutral-200);
   --color-border-error: var(--color-danger-200);
   --color-border-success: var(--color-success-200);
+
+  --color-plans-silver: 204 11% 45%;
+  --color-plans-gold: 42 66% 50%;
+  --color-plans-diamond: 209 54% 39%;
 }
 
 @layer base {

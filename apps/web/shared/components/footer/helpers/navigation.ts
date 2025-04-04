@@ -1,14 +1,9 @@
 export const NAVIGATIONS = [
   {
-    title: 'O Clube',
+    title: 'Grupo Coobrastur',
     items: [
       {
-        label: 'O Grupo Coobrastur',
-        href: '#',
-        target: '_blank',
-      },
-      {
-        label: 'Vantagens',
+        label: 'Quem Somos',
         href: '#',
         target: '_blank',
       },
@@ -19,6 +14,11 @@ export const NAVIGATIONS = [
       },
       {
         label: 'Dúvidas Frequentes',
+        href: '#',
+        target: '_blank',
+      },
+      {
+        label: 'Política de Uso',
         href: '#',
         target: '_blank',
       },
@@ -28,20 +28,18 @@ export const NAVIGATIONS = [
     title: 'Atendimento',
     items: [
       {
-        label: 'Contato',
+        label: 'Central de Ajuda',
         href: '#',
       },
       {
-        label: 'Dúvidas Frequentes',
+        label: 'Fale com um especialista',
         href: '#',
       },
       {
-        label: 'Como Funciona',
-        href: '#',
+        label: 'Atendimento: (11) 3192-2020',
       },
       {
-        label: 'Política de Uso',
-        href: '#',
+        label: 'Cobrança: (54) 3278-9899',
       },
     ],
   },
@@ -60,10 +58,6 @@ export const NAVIGATIONS = [
         label: 'Portal do Viajante',
         href: '#',
       },
-      {
-        label: 'Simulador',
-        href: '#',
-      },
     ],
   },
   {
@@ -79,4 +73,4 @@ export const NAVIGATIONS = [
       },
     ],
   },
-] as const;
+];

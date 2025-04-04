@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import { DialogContent } from '../../dialog';
+import { DialogContent } from './dialog';
 
 import { DialogContentProps } from '@radix-ui/react-dialog';
 import { cn } from '@ui/lib/utils';

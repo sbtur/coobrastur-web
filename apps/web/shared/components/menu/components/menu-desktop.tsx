@@ -1,24 +1,29 @@
+import { Fragment } from 'react';
+
 import { IMenuItem } from '@/shared/types/menu.types';
 
 import { MenuDropdown } from './menu-dropdown';
-import { MenuLink } from './menu-link';
+import { MenuItem } from './menu-item';
 
-import { Menu, MenuItem, MenuList } from '@ui/components/navigation/menu';
+import {
+  NavigationMenu,
+  NavigationMenuList,
+} from '@ui/components/navigation/menu';
 
 export const MenuDesktop = ({ menus }: { menus: IMenuItem[] }) => {
   return (
-    <Menu>
-      <MenuList>
+    <NavigationMenu className="hidden lg:block">
+      <NavigationMenuList>
         {menus.map(menu => (
-          <MenuItem key={menu.label}>
+          <Fragment key={menu.label}>
             {menu.items ? (
               <MenuDropdown menu={menu} />
             ) : (
-              <MenuLink href={menu.href} label={menu.label} />
+              <MenuItem href={menu.href}>{menu.label}</MenuItem>
             )}
-          </MenuItem>
+          </Fragment>
         ))}
-      </MenuList>
-    </Menu>
+      </NavigationMenuList>
+    </NavigationMenu>
   );
 };

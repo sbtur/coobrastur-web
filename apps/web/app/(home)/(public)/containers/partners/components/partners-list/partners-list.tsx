@@ -5,23 +5,27 @@ import { PARTNERS } from '../../helpers';
 import {
   Carousel,
   CarouselContent,
+  CarouselDot,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
 } from '@ui/components/data-display/caroussel';
-import { Section } from '@ui/components/layouts/section';
 
 export const PartnersList = () => {
   return (
-    <Section spacing="none" className="mt-6 md:mt-0 md:w-10/12">
-      <Carousel className="h-full" opts={{ loop: true }}>
-        <CarouselContent className="h-full">
+    <div className="mt-6 md:mt-0 md:w-10/12">
+      <Carousel
+        className="h-full px-10"
+        autoplay={{ playOnInit: true }}
+        opts={{ loop: true, align: 'start' }}
+      >
+        <CarouselContent className="h-full pb-2">
           {PARTNERS.map(item => (
             <CarouselItem
               key={item.name}
               className="flex-[0_0_33%] md:flex-[0_0_25%] lg:flex-[0_0_20%] xl:flex-[0_0_16.6%] group"
             >
-              <picture className="relative z-10 p-2 bg-background border rounded-2xl flex items-center justify-center shadow-md shadow-black/5 group-hover:shadow-lg transition-all duration-300">
+              <picture className="relative z-10 p-2 bg-background border rounded-2xl flex items-center justify-center shadow-md shadow-black/6 transition-all duration-300">
                 <Image
                   src={item.image}
                   alt={item.name}
@@ -33,9 +37,10 @@ export const PartnersList = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="-left-6" />
-        <CarouselNext className="-right-6" />
+        <CarouselPrevious className="hidden lg:block -left-4" />
+        <CarouselNext className="hidden lg:block -right-4" />
+        <CarouselDot className="lg:hidden" />
       </Carousel>
-    </Section>
+    </div>
   );
 };

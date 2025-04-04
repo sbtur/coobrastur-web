@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { cva, type VariantProps } from 'class-variance-authority';
 
 import { ICON_SIZES } from './constants';
@@ -21,24 +23,41 @@ const iconVariants = cva('inline-flex shrink-0', {
 type IconVariants = VariantProps<typeof iconVariants>;
 
 export interface IconProps extends IconVariants {
-  icon: React.ElementType;
+  icon: React.ElementType | string;
   className?: string;
   size?: keyof typeof ICON_SIZES;
+  alt?: string;
 }
 
 export const Icon = ({
-  icon: IconComponent,
+  icon,
   size = 'md',
   variant,
   className,
+  alt = '',
   ...props
 }: IconProps) => {
-  const IconElement = IconComponent;
+  const iconSize = ICON_SIZES[size];
+
+  if (typeof icon === 'string') {
+    return (
+      <Image
+        src={icon}
+        alt={alt}
+        width={iconSize}
+        height={iconSize}
+        className={cn(iconVariants({ variant }), className)}
+        {...props}
+      />
+    );
+  }
+
+  const IconElement = icon;
   return (
     <IconElement
       className={cn(iconVariants({ variant }), className)}
       aria-hidden="true"
-      size={ICON_SIZES[size]}
+      size={iconSize}
       {...props}
     />
   );

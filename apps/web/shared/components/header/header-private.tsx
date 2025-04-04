@@ -4,27 +4,32 @@ import { UserRoundCheck } from '@coobrastur/ui/lib/icons';
 import { Image } from '@components/image';
 import { Link } from '@components/link';
 import { Menu } from '@components/menu';
+import { MENU_PRIVATE_ITEMS } from '@utils/data/menu-private';
+
+import { PAGE_NAME } from '@/shared/helpers/page-names';
 
 import { DropdownPlans } from './components/dropdown-plans';
+import { Header } from './header';
 
 import logoDark from '@images/shared/logos/logo-grupo-coobrastur-dark.png';
-import { MENU_PRIVATE_ITEMS } from '@shared/helpers/menu-private';
 import { Icon } from '@ui/components/data-display/icon';
+import { Separator } from '@ui/components/data-display/separator';
 import { Container } from '@ui/components/layouts/container';
-import { Separator } from '@ui/components/separator';
 
 export const HeaderPrivate = () => {
   return (
-    <Container size="xl">
-      <Container as="header" className="relative z-10">
+    <Header>
+      <Container>
         <div className="flex items-center gap-7">
           <div className="h-[50px] flex items-center gap-3">
-            <Image
-              src="/images/shared/logos/coob-2.png"
-              alt="Logo Coobrastur"
-              width={78}
-              height={22}
-            />
+            <Link href={PAGE_NAME.home}>
+              <Image
+                src="/images/shared/logos/coob-2.png"
+                alt="Logo Coobrastur"
+                width={78}
+                height={22}
+              />
+            </Link>
             <Separator
               orientation="vertical"
               className="bg-neutral-200 h-full m-0"
@@ -58,7 +63,9 @@ export const HeaderPrivate = () => {
             </span>
           </Text>
         </div>
-        <Separator className="w-[85%] md:w-full mx-auto [.isLight_&]:bg-white/20" />
+      </Container>
+      <Separator className="w-[85%] md:w-full mx-auto [.isLight_&]:bg-white/20" />
+      <Container>
         <div className="flex items-center justify-between gap-8 py-6 px-4 ">
           <div className="w-[180px] lg:w-[245px]">
             <Link href="/">
@@ -84,8 +91,8 @@ export const HeaderPrivate = () => {
             </div>
           </div>
         </div>
-        <Separator className="w-[85%] md:w-full mx-auto [.isLight_&]:bg-white/20" />
       </Container>
-    </Container>
+      <Separator className="w-[85%] md:w-full mx-auto" />
+    </Header>
   );
 };

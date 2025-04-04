@@ -9,7 +9,5 @@ export const HotelDescription = ({
   children,
   className,
 }: HotelDescriptionProps) => {
-  return (
-    <div className={cn('flex flex-col gap-2 p-4', className)}>{children}</div>
-  );
+  return <div className={cn('space-y-2 mt-3', className)}>{children}</div>;
 };

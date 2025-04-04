@@ -1,3 +1,5 @@
+import { Section } from '@coobrastur/ui/components/layouts/section';
+
 import { HotelList } from './components/hotel-list';
 import { DESTINATIONS } from './helpers';
 
@@ -9,14 +11,12 @@ import { Container } from '@ui/components/layouts/container';
 
 export const Destinations = () => {
   return (
-    <Container as="section" padding="lg" className="bg-white">
-      <Container size="xl">
-        <Heading align="center">
+    <Section>
+      <Container>
+        <Heading className="items-center text-center">
           <Badge variant="default">Destinos</Badge>
-          <Title align="center" size="xl">
-            Escolha o destino dos seus sonhos
-          </Title>
-          <Text align="center">
+          <Title size="xl">Escolha o destino dos seus sonhos</Title>
+          <Text>
             Aqui, você encontra os destinos mais incríveis com as melhores
             acomodações.
           </Text>
@@ -24,6 +24,6 @@ export const Destinations = () => {
 
         <HotelList hotels={DESTINATIONS} />
       </Container>
-    </Container>
+    </Section>
   );
 };

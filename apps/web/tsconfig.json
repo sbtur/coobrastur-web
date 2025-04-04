@@ -13,8 +13,10 @@
       "@app/*": ["./app/*"],
       "@images/*": ["./public/images/*"],
       "@helpers/*": ["./shared/helpers/*"],
+      "@utils/*": ["./shared/utils/*"],
       "@mocks/*": ["./shared/mocks/*"],
-      "@shared/*": ["./shared/*"]
+      "@shared/*": ["./shared/*"],
+      "@lib/*": ["./shared/lib/*"]
     },
     "plugins": [
       {

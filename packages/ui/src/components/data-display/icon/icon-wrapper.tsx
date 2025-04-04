@@ -29,7 +29,7 @@ export const IconWrapper = forwardRef<
     <Component
       ref={ref}
       className={cn(
-        'w-fit h-fit p-3 flex items-center justify-center appearance-none border-0 rounded-full bg-white transition-colors shadow-xl text-xs text-text',
+        'w-fit h-fit p-3 flex items-center justify-center appearance-none border-0 rounded-full bg-white transition-colors shadow-xl text-xs text-text-body',
         className,
       )}
       {...(props as any)}
