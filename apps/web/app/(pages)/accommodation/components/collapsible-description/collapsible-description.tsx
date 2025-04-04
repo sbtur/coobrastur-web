@@ -2,8 +2,6 @@
 
 import { useState } from 'react';
 
-import { motion } from 'motion/react';
-
 import { Collapsible } from '@coobrastur/ui/components/data-display/collapsible';
 import {
   CollapsibleContent,
@@ -12,6 +10,8 @@ import {
 import { Icon } from '@coobrastur/ui/components/data-display/icon';
 import { Button } from '@coobrastur/ui/components/data-entry/button';
 import { ArrowRight } from '@coobrastur/ui/lib/icons';
+
+import { motion } from '@lib/motion';
 
 const MotionCollapsibleContent = motion(CollapsibleContent);
 

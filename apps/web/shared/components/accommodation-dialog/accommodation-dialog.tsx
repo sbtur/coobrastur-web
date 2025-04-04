@@ -2,12 +2,11 @@
 import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-import { AnimatePresence, motion } from 'motion/react';
-
 import { Image } from '@components/image';
 
 import { buttonsAnimations, galleryAnimations } from './animations';
 
+import { AnimatePresence, motion } from '@lib/motion';
 import { ACCOMMODATIONSDETAILS } from '@mocks/accommodations/accommodations-details';
 import { Bookmark } from '@ui/components/data-display/bookmark';
 import {
