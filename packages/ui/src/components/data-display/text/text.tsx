@@ -9,7 +9,7 @@ const textVariants = cva('[.heading_&]:lg:max-w-[500px]', {
     size: {
       xs: 'text-xs', // 12px
       sm: 'text-sm', // 14px
-      base: 'text-lg lg:text-base', //18px  16px
+      base: 'text-base', // 16px
       lg: 'text-xl', // 20px
       xl: 'text-2xl', // 24px
     },

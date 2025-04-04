@@ -2,6 +2,7 @@ import { HeaderPublic } from '@components/header/header-public';
 
 import { Accommodations } from './containers/accommodations';
 import { Advantages } from './containers/advantages';
+import { CategoriesPlans } from './containers/categories-plans';
 import { Display } from './containers/display';
 import { Partners } from './containers/partners';
 import { Support } from './containers/support';
@@ -21,6 +22,8 @@ export function HomePublic() {
         <Accommodations />
 
         <Partners />
+
+        <CategoriesPlans />
 
         <Support />
 

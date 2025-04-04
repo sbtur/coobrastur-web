@@ -92,6 +92,11 @@ const config = {
           hover: 'var(--color-highlight-hover)',
           focus: 'var(--color-highlight-focus)',
         },
+        plan: {
+          silver: 'hsl(var(--color-plans-silver) / <alpha-value>)',
+          gold: 'hsl(var(--color-plans-gold) / <alpha-value>)',
+          diamond: 'hsl(var(--color-plans-diamond) / <alpha-value>)',
+        },
       },
       boxShadow: {
         DEFAULT:

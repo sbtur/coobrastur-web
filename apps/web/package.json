@@ -24,6 +24,7 @@
     "@coobrastur/eslint-config": "workspace:*",
     "@coobrastur/types-shared": "workspace:*",
     "@coobrastur/typescript-config": "workspace:*",
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
