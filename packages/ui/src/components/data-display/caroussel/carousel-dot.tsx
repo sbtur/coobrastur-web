@@ -43,7 +43,7 @@ export const CarouselDot = ({
   return (
     <div
       className={cn(
-        'flex gap-3 items-center justify-center w-full mt-4',
+        'flex gap-3 items-center justify-center w-full mt-8',
         className,
       )}
     >

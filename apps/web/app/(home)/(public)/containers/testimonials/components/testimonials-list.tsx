@@ -20,7 +20,7 @@ export const TestimonialsList = () => {
   };
 
   return (
-    <Content className="lg:px-4 lg:grid lg:grid-cols-[2fr_1fr] md:gap-8 items-center">
+    <Content className="grid grid-cols-1 gap-2 lg:px-4 lg:grid-cols-[2fr_1fr] md:gap-8 items-center">
       <div className="w-[96%] lg:w-full grid grid-cols-2 md:grid-cols-none md:flex gap-2 mx-auto">
         {VIDEOS.map((video, index) => (
           <div

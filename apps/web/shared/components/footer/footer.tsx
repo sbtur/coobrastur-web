@@ -11,7 +11,7 @@ export const Footer = () => {
   return (
     <footer className="bg-gradient-to-t from-[#E0ECF3] via-[#E0ECF3] via-60% to-white relative">
       <Container className="pt-20 pb-5">
-        <div className="grid grid-flow-col grid-rows-2 lg:grid-cols-4 lg:grid-flow-row gap-6 xl:gap-10 xl:pl-28">
+        <div className="grid grid-rows-2 grid-flow-col lg:grid-cols-4 lg:grid-rows-none gap-6 xl:gap-10 xl:pl-28">
           {NAVIGATIONS.map(navigation => (
             <div className="flex flex-col gap-3" key={navigation.title}>
               <Title as="h2" size="xs">

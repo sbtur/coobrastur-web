@@ -51,7 +51,7 @@ export const AccommodationList = ({
   };
 
   return (
-    <Content>
+    <Content className="px-4 lg:px-0">
       {isEnabled && (
         <>
           <ResponsiveLargerThan breakpoint="lg">
