@@ -1,6 +1,5 @@
 import { Image } from '@components/image';
-
-import { PARTNERS } from '@/shared/helpers/data/partners';
+import { PARTNERS } from '@utils/data/partners';
 
 import displayImage from '@images/pages/home/display/display.webp';
 import { Heading } from '@ui/components/data-display/heading';

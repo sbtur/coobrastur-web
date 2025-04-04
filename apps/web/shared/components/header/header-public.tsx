@@ -1,6 +1,5 @@
 import { Menu } from '@components/menu';
-
-import { MENU_ITEMS } from '@/shared/helpers/data/menu';
+import { MENU_ITEMS } from '@utils/data/menu';
 
 import { DropdownAccess } from './components/dropdown-access';
 import { Logo } from './components/logo';

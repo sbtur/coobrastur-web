@@ -2,8 +2,7 @@ import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Button } from '@coobrastur/ui/components/data-entry/button';
 
 import { Image } from '@components/image';
-
-import { PARTNERS } from '@/shared/helpers/data/partners';
+import { PARTNERS } from '@utils/data/partners';
 
 export const UserMobileNavigation = () => {
   return (

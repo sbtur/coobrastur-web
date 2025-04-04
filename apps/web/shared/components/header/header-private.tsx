@@ -4,6 +4,7 @@ import { UserRoundCheck } from '@coobrastur/ui/lib/icons';
 import { Image } from '@components/image';
 import { Link } from '@components/link';
 import { Menu } from '@components/menu';
+import { MENU_PRIVATE_ITEMS } from '@utils/data/menu-private';
 
 import { PAGE_NAME } from '@/shared/helpers/page-names';
 
@@ -11,7 +12,6 @@ import { DropdownPlans } from './components/dropdown-plans';
 import { Header } from './header';
 
 import logoDark from '@images/shared/logos/logo-grupo-coobrastur-dark.png';
-import { MENU_PRIVATE_ITEMS } from '@shared/helpers/data/menu-private';
 import { Icon } from '@ui/components/data-display/icon';
 import { Separator } from '@ui/components/data-display/separator';
 import { Container } from '@ui/components/layouts/container';
