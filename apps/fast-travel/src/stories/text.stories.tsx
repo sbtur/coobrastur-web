@@ -17,14 +17,6 @@ const meta = {
       control: 'select',
       options: ['base', 'featured', 'success', 'warning', 'danger'],
     },
-    weight: {
-      control: 'select',
-      options: ['normal', 'medium', 'semibold', 'bold'],
-    },
-    align: {
-      control: 'select',
-      options: ['left', 'center', 'right', 'justify'],
-    },
   },
 } satisfies Meta<typeof Text>;
 
@@ -66,14 +58,12 @@ export const Danger: Story = {
 };
 export const Bold: Story = {
   args: {
-    weight: 'bold',
     children: 'Bold text example',
   },
 };
 
 export const Semibold: Story = {
   args: {
-    weight: 'semibold',
     children: 'Semibold text example',
   },
 };

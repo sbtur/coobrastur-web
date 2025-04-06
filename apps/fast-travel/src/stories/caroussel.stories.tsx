@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import { Button } from '@coobrastur/ui/components/data-entry/button';
+
 import type { Meta, StoryObj } from '@storybook/react';
 import {
   Carousel,
@@ -11,7 +13,6 @@ import {
   CarouselProps,
 } from '@ui/components/data-display/caroussel';
 import {
-  HotelButton,
   HotelCard,
   HotelDescription,
   HotelImage,
@@ -63,15 +64,15 @@ const CarouselComponent = (args?: CarouselProps) => (
               </HotelImage>
             </HotelImageWrapper>
             <HotelDescription>
-              <Title as="h3" size="xs" align="center">
+              <Title as="h3" size="xs" className="text-center lg:text-left">
                 {slide.name}
               </Title>
-              <Text size="sm" align="center">
+              <Text size="sm" className="text-center lg:text-left">
                 {slide.description}
               </Text>
-              <HotelButton type="link" href="#" className="justify-center">
+              <Button variant="link" className="mx-auto lg:mx-0">
                 Ver mais detalhes <Icon icon={ArrowRight} variant="primary" />
-              </HotelButton>
+              </Button>
             </HotelDescription>
           </HotelCard>
         </CarouselItem>

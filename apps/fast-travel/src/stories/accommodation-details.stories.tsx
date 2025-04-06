@@ -13,10 +13,10 @@ import {
   CarouselPrevious,
 } from '@ui/components/data-display/caroussel';
 import { Icon } from '@ui/components/data-display/icon';
+import { Separator } from '@ui/components/data-display/separator';
 import { Text } from '@ui/components/data-display/text';
 import { Title } from '@ui/components/data-display/title';
 import { Button } from '@ui/components/data-entry/button';
-import { Separator } from '@ui/components/separator';
 import {
   ArrowRight,
   CalendarClock,
