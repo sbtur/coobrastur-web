@@ -19,7 +19,7 @@ export const Support = () => {
   return (
     <Section
       as="section"
-      className="pt-14 bg-[#001F3D] bg-gradient-to-r from-[#001F3D] from-[31.41%] to-[#2E6299] relative"
+      className="pt-14 mt-24 bg-[#001F3D] bg-gradient-to-r from-[#001F3D] from-[31.41%] to-[#2E6299] relative"
     >
       <Container className="lg:pt-16">
         <Heading className="px-0 items-center text-center lg:items-start lg:text-left">
