@@ -3,7 +3,7 @@ import { Icon } from '@ui/components/data-display/icon';
 import { Home } from '@ui/lib/icons';
 
 const meta = {
-  title: 'DataDisplay/Icon',
+  title: 'Data Display/Icon',
   component: Icon,
   parameters: {
     layout: 'centered',

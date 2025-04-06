@@ -4,7 +4,7 @@ import { Text } from '@ui/components/data-display/text';
 import { Title } from '@ui/components/data-display/title';
 
 const meta = {
-  title: 'DataDisplay/Heading',
+  title: 'Data Display/Heading',
   component: Heading,
   parameters: {
     layout: 'centered',

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Text } from '@ui/components/data-display/text';
 
 const meta = {
-  title: 'DataDisplay/Text',
+  title: 'Data Display/Text',
   component: Text,
   parameters: {
     layout: 'centered',
