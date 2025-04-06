@@ -1,1 +1,2 @@
-export * from './plan-card';
+export * from './plan-cards';
+export * from './plan-cards-mobile';

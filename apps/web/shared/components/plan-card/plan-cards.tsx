@@ -39,7 +39,7 @@ import {
   PLANS_OPTIONS,
 } from './utils/plans-categories';
 
-export const PlanCard = () => {
+export const PlanCards = () => {
   const form = useForm({
     defaultValues: {
       category: '',
@@ -58,10 +58,10 @@ export const PlanCard = () => {
         e.preventDefault();
         console.log(form.getValues());
       }}
-      className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-[1200px] mx-auto mt-10"
+      className="grid grid-cols-1 lg:grid-cols-3 gap-4 px-4 lg:px-0 max-w-[1200px] lg:mx-auto mt-10"
     >
       {PLANS_CATEGORIES.map(category => (
-        <Card className="max-w-[370px] bg-white" key={category.id}>
+        <Card className="lg:max-w-[370px] bg-white" key={category.id}>
           <CardHeader className="px-10 relative">
             <div className="absolute top-4 right-4">
               <Controller

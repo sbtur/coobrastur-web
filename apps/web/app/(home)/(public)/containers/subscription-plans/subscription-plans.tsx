@@ -4,7 +4,11 @@ import { Title } from '@coobrastur/ui/components/data-display/title';
 import { Container } from '@coobrastur/ui/components/layouts/container';
 import { Section } from '@coobrastur/ui/components/layouts/section';
 
-import { PlanCard } from '@/shared/components/plan-card/plan-card';
+import { PlanCards, PlanCardsMobile } from '@/shared/components/plan-card';
+import {
+  ResponsiveLargerThan,
+  ResponsiveSmallerThan,
+} from '@/shared/components/responsive';
 
 export const SubscriptionPlans = () => {
   return (
@@ -20,7 +24,12 @@ export const SubscriptionPlans = () => {
           </Text>
         </Heading>
       </Container>
-      <PlanCard />
+      <ResponsiveSmallerThan breakpoint="md">
+        <PlanCardsMobile />
+      </ResponsiveSmallerThan>
+      <ResponsiveLargerThan breakpoint="md">
+        <PlanCards />
+      </ResponsiveLargerThan>
     </Section>
   );
 };
