@@ -27,7 +27,7 @@ export const Support = () => {
           <Title size="xl" variant="white">
             Conte com suporte completo
           </Title>
-          <Text className="text-white max-w-[310px] lg:!max-w-full">
+          <Text className="text-white max-w-[700px] xl:max-w-full">
             A combinação ideal para transformar sua viagem dos sonhos em uma
             experiência única e inesquecível
           </Text>
