@@ -1,4 +1,3 @@
-import { Source_Sans_3 } from 'next/font/google';
 import localFont from 'next/font/local';
 
 export const mangueira = localFont({
@@ -6,24 +5,75 @@ export const mangueira = localFont({
     {
       path: '../public/fonts/mangueira/Mangueira-Regular.otf',
       weight: '400',
-      style: 'italic',
+      style: 'normal',
     },
     {
       path: '../public/fonts/mangueira/Mangueira-SemiBold.otf',
       weight: '600',
-      style: 'italic',
+      style: 'normal',
     },
     {
       path: '../public/fonts/mangueira/Mangueira-Bold.otf',
       weight: '700',
-      style: 'italic',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/mangueira/Mangueira-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/mangueira/Mangueira-SemiBold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/mangueira/Mangueira-Bold.woff2',
+      weight: '700',
+      style: 'normal',
     },
   ],
   variable: '--font-mangueira',
+  display: 'swap',
+  fallback: ['system-ui', 'arial'],
+  preload: true,
 });
 
-export const sourceSans3 = Source_Sans_3({
-  weight: ['400', '600', '700'],
-  subsets: ['latin'],
-  variable: '--font-source-sans',
+export const sourceSansPro = localFont({
+  src: [
+    {
+      path: '../public/fonts/source-sans-pro/SourceSansPro-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/source-sans-pro/SourceSansPro-SemiBold.otf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/source-sans-pro/SourceSansPro-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/source-sans-pro/SourceSansPro-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/source-sans-pro/SourceSansPro-SemiBold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/source-sans-pro/SourceSansPro-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-source-sans-pro',
+  display: 'swap',
+  fallback: ['system-ui', 'arial'],
+  preload: true,
 });

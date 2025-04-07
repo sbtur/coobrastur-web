@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 
-import { mangueira, sourceSans3 } from 'assets/fonts';
+import { mangueira, sourceSansPro } from 'assets/fonts';
 
 import { Footer } from '@components/footer';
 import { Image } from '@components/image';
@@ -20,7 +20,7 @@ function Layout({ children }: { children: ReactNode }) {
     <html
       lang="pt-BR"
       suppressHydrationWarning
-      className={`${mangueira.variable} ${sourceSans3.variable}`}
+      className={`${mangueira.variable} ${sourceSansPro.variable}`}
     >
       <body>
         <Providers>

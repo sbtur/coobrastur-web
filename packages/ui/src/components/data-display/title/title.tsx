@@ -21,11 +21,11 @@ const titleVariants = cva('font-bold font-primary', {
       '2xl': 'text-4xl xl:text-6xl', //40px-60px
     },
     variant: {
-      primary: 'text-primary',
-      secondary: 'text-secondary',
-      success: 'text-success',
-      warning: 'text-warning',
-      danger: 'text-danger',
+      primary: 'text-primary-300',
+      secondary: 'text-secondary-300',
+      success: 'text-success-300',
+      warning: 'text-warning-300',
+      danger: 'text-danger-300',
       white: 'text-neutral-100',
     },
   },

@@ -71,7 +71,18 @@ export const AccommodationList = ({
       <Carousel
         className="h-full"
         autoplay={{ playOnInit: true }}
-        opts={{ loop: true, align: 'start' }}
+        opts={{
+          loop: true,
+          align: 'start',
+          breakpoints: {
+            '(min-width: 1024px)': {
+              slidesToScroll: 4,
+            },
+            '(max-width: 1024px)': {
+              slidesToScroll: 1,
+            },
+          },
+        }}
       >
         <CarouselContent className="h-full">
           {accommodations.map(accommodation => (

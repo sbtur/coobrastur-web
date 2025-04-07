@@ -5,6 +5,7 @@ import { Advantages } from './containers/advantages';
 import { CategoriesPlans } from './containers/categories-plans';
 import { Display } from './containers/display';
 import { Partners } from './containers/partners';
+import { SubscriptionPlans } from './containers/subscription-plans';
 import { Support } from './containers/support';
 import { Testimonials } from './containers/testimonials';
 
@@ -24,6 +25,8 @@ export function HomePublic() {
         <Partners />
 
         <CategoriesPlans />
+
+        <SubscriptionPlans />
 
         <Support />
 

@@ -2,12 +2,8 @@ import { useState } from 'react';
 
 import { addDays } from 'date-fns';
 
-import {
-  Calendar,
-  DateRange,
-} from '@coobrastur/ui/components/data-entry/calendar';
-
 import type { Meta } from '@storybook/react';
+import { Calendar, DateRange } from '@ui/components/data-entry/calendar';
 
 const meta = {
   title: 'Data Entry/Calendar',

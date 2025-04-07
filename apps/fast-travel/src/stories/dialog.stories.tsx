@@ -1,5 +1,3 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@ui/components/data-entry/button';
 import {
   Dialog,
   DialogContent,
@@ -8,7 +6,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@ui/components/dialog';
+} from '@coobrastur/ui/components/data-display/dialog/dialog';
+
+import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from '@ui/components/data-entry/button';
 
 const meta: Meta<typeof Dialog> = {
   title: 'Data Display/Dialog',

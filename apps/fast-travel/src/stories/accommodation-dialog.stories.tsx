@@ -13,11 +13,11 @@ import {
 } from '@ui/components/data-display/caroussel';
 import { Dialog } from '@ui/components/data-display/dialog';
 import { Icon, IconWrapper } from '@ui/components/data-display/icon';
+import { Separator } from '@ui/components/data-display/separator';
 import { Text } from '@ui/components/data-display/text';
 import { Title } from '@ui/components/data-display/title';
 import { Button } from '@ui/components/data-entry/button';
 import { Link } from '@ui/components/data-entry/link';
-import { Separator } from '@ui/components/separator';
 import { ArrowRight, ChevronLeft, Share2, Table, X } from '@ui/lib/icons';
 
 const HOTELS = [

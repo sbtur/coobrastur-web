@@ -1,20 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta } from '@storybook/react';
 import { Heading } from '@ui/components/data-display/heading';
 import { Text } from '@ui/components/data-display/text';
 import { Title } from '@ui/components/data-display/title';
 
 const meta = {
-  title: 'DataDisplay/Heading',
+  title: 'Data Display/Heading',
   component: Heading,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {
-    align: {
-      control: 'select',
-      options: ['left', 'center', 'right'],
-    },
     spacing: {
       control: 'select',
       options: ['small', 'medium', 'large', 'xlarge'],
@@ -23,40 +19,10 @@ const meta = {
 } satisfies Meta<typeof Heading>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  args: {
-    align: 'left',
-  },
-  render: ({ ...args }) => (
-    <Heading {...args}>
-      <Title>Default Heading</Title>
-      <Text>Default Text</Text>
-    </Heading>
-  ),
-};
-
-export const Center: Story = {
-  args: {
-    align: 'center',
-  },
-  render: ({ ...args }) => (
-    <Heading>
-      <Title>Center Heading</Title>
-      <Text>Center Text</Text>
-    </Heading>
-  ),
-};
-
-export const Right: Story = {
-  args: {
-    align: 'right',
-  },
-  render: ({ ...args }) => (
-    <Heading {...args}>
-      <Title>Right Heading</Title>
-      <Text>Right Text</Text>
-    </Heading>
-  ),
-};
+export const Default = () => (
+  <Heading>
+    <Title>Center Heading</Title>
+    <Text>Center Text</Text>
+  </Heading>
+);

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Bookmark } from '@ui/components/data-display/bookmark';
 
 const meta = {
-  title: 'DataDisplay/Bookmark',
+  title: 'Data Display/Bookmark',
   component: Bookmark,
   parameters: {
     layout: 'centered',
@@ -20,6 +20,6 @@ export const Default: Story = {
 
 export const Active: Story = {
   args: {
-    active: true,
+    isActive: true,
   },
 };
