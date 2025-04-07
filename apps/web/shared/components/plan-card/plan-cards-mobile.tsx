@@ -115,7 +115,7 @@ export const PlanCardsMobile = () => {
                 >
                   {category.name}
                 </Badge>
-                <CardTitle className="text-2xl text-primary font-primary">
+                <CardTitle className="text-2xl text-primary-300 font-primary">
                   Categoria {category.name}
                 </CardTitle>
                 <Text
@@ -181,7 +181,7 @@ export const PlanCardsMobile = () => {
                   name="dailies"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-primary font-bold font-primary">
+                      <FormLabel className="text-primary-300 font-bold font-primary">
                         Número de diárias:
                       </FormLabel>
                       <Select

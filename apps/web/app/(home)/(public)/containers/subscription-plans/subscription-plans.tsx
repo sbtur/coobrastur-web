@@ -12,7 +12,7 @@ import {
 
 export const SubscriptionPlans = () => {
   return (
-    <Section className="bg-primary">
+    <Section className="bg-primary-300">
       <Container>
         <Heading className="text-center items-center">
           <Title size="xl" variant="white">

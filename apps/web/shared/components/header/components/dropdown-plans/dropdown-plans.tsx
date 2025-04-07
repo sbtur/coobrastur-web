@@ -19,7 +19,7 @@ export const DropdownPlans = () => {
 
   return (
     <div className="relative w-[280px] min-h-[70px]">
-      <div className="absolute w-full rounded-[10px] shadow-md bg-primary">
+      <div className="absolute w-full rounded-[10px] shadow-md bg-primary-300">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="w-full flex items-start justify-end text-white"
