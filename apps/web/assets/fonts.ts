@@ -3,22 +3,23 @@ import localFont from 'next/font/local';
 export const mangueira = localFont({
   src: [
     {
-      path: '../public/fonts/mangueira/Mangueira-Regular.otf',
+      path: './mangueira/Mangueira-Regular.otf',
       weight: '400',
       style: 'italic',
     },
     {
-      path: '../public/fonts/mangueira/Mangueira-SemiBold.otf',
+      path: './mangueira/Mangueira-SemiBold.otf',
       weight: '600',
       style: 'italic',
     },
     {
-      path: '../public/fonts/mangueira/Mangueira-Bold.otf',
+      path: './mangueira/Mangueira-Bold.otf',
       weight: '700',
       style: 'italic',
     },
   ],
   variable: '--font-mangueira',
+  display: 'swap',
 });
 
 export const sourceSansPro = localFont({
@@ -40,4 +41,5 @@ export const sourceSansPro = localFont({
     },
   ],
   variable: '--font-source-sans-pro',
+  display: 'swap',
 });
