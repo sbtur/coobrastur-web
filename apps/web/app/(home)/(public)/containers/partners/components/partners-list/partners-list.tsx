@@ -15,7 +15,7 @@ export const PartnersList = () => {
   return (
     <div className="mt-6 md:mt-0 md:w-10/12">
       <Carousel
-        className="h-full px-10"
+        className="h-full lg:px-10"
         autoplay={{ playOnInit: true }}
         opts={{ loop: true, align: 'start' }}
       >
