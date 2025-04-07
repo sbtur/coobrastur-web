@@ -132,7 +132,7 @@ export const PlanCards = () => {
                             disabled={isSelectionDisabled}
                           />
                           <div>
-                            <div className="text-base font-bold font-primary">
+                            <div className="text-primary-300 font-bold font-primary">
                               {plan.name}
                             </div>
                             <div className="text-sm text-text-body">
@@ -183,8 +183,10 @@ export const PlanCards = () => {
 
             <div className="space-y-4">
               <div className="flex items-baseline justify-center">
-                <span className="text-4xl font-bold text-navy-800">223,90</span>
-                <span className="text-gray-600 ml-1">/ Por mês</span>
+                <span className="text-4xl font-bold text-primary-300">
+                  223,90
+                </span>
+                <span className="text-text-body ml-1">/ Por mês</span>
               </div>
 
               <Button
@@ -197,7 +199,7 @@ export const PlanCards = () => {
 
               <a
                 href="https://wa.me/"
-                className="block text-center text-sm text-gray-500 hover:text-gray-700 underline"
+                className="block text-center text-sm text-text-body hover:text-gray-700 underline"
               >
                 Fale com um consultor no WhatsApp
               </a>

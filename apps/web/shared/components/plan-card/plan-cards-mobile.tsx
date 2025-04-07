@@ -66,13 +66,13 @@ export const PlanCardsMobile = () => {
       }}
       className="px-4 mt-10"
     >
-      <Tabs defaultValue="Silver" className="grid gap-1 p-0">
+      <Tabs defaultValue="31" className="grid gap-1 p-0">
         <TabsList className="h-fit justify-between">
           {PLANS_CATEGORIES.map(category => (
             <TabsTrigger
               value={category.value}
               key={category.id}
-              className="border border-input rounded-md p-0 text-left bg-primary text-white relative"
+              className="border border-input rounded-md p-0 text-left bg-primary-300 text-white relative"
             >
               <Controller
                 name="category"
@@ -157,7 +157,7 @@ export const PlanCardsMobile = () => {
                                 disabled={isSelectionDisabled}
                               />
                               <div>
-                                <div className="text-base font-bold font-primary">
+                                <div className="text-base font-bold font-primary-300">
                                   {plan.name}
                                 </div>
                                 <div className="text-sm text-text-body">
