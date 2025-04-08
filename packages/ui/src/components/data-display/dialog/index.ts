@@ -9,15 +9,17 @@ import {
 } from './dialog';
 import { Content, type ContentProps } from './dialog-content';
 
-export const Dialog = {
-  Root: DialogUI,
-  Close: DialogClose,
-  Description: DialogDescription,
-  Footer: DialogFooter,
-  Header: DialogHeader,
-  Title: DialogTitle,
-  Trigger: DialogTrigger,
-  Content,
-};
+export * from './dialog';
 
-export type { ContentProps };
+// export const Dialog = {
+//   Root: DialogUI,
+//   Close: DialogClose,
+//   Description: DialogDescription,
+//   Footer: DialogFooter,
+//   Header: DialogHeader,
+//   Title: DialogTitle,
+//   Trigger: DialogTrigger,
+//   Content,
+// };
+
+// export type { ContentProps };

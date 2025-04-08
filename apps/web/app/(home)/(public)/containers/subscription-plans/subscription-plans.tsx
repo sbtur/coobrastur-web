@@ -4,7 +4,7 @@ import { Title } from '@coobrastur/ui/components/data-display/title';
 import { Container } from '@coobrastur/ui/components/layouts/container';
 import { Section } from '@coobrastur/ui/components/layouts/section';
 
-import { PlanCards, PlanCardsMobile } from '@/shared/components/plan-card';
+import { PlanCards, PlanCardsMobile } from '@/shared/components/plan-cards';
 import {
   ResponsiveLargerThan,
   ResponsiveSmallerThan,
