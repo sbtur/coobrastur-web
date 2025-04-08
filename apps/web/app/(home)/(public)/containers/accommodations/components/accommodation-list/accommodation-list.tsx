@@ -65,7 +65,6 @@ export const AccommodationList = ({
             <AccommodationDialogMobile
               isOpen={isEnabled}
               onOpenChange={toggle}
-              onClose={handleCloseHotel}
             />
           </ResponsiveSmallerThan>
         </>
