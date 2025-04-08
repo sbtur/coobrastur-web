@@ -25,7 +25,6 @@ function Layout({ children }: { children: ReactNode }) {
       <body>
         <Providers>
           {children}
-          <Footer />
 
           <UserMobileNavigation />
 
