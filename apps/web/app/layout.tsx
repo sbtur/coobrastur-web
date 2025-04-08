@@ -25,9 +25,9 @@ function Layout({ children }: { children: ReactNode }) {
       <body>
         <Providers>
           {children}
-          <Footer />
+          {/* <Footer /> */}
 
-          <UserMobileNavigation />
+          {/* <UserMobileNavigation /> */}
 
           <Image
             src="/images/shared/chat-clara.png"

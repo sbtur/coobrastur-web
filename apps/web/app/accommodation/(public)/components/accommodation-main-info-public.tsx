@@ -6,19 +6,21 @@ import { Title } from '@coobrastur/ui/components/data-display/title';
 import { Button } from '@coobrastur/ui/components/data-entry/button';
 import { ArrowRight, CreditCard, Users } from '@coobrastur/ui/lib/icons';
 
-export const Header = () => {
+import { AccommodationMainInfoContainer } from '../../components/accommodation-main-info-container';
+
+export const AccommodationMainInfoPublic = () => {
   return (
-    <header className="w-full max-w-[450px] relative">
-      <div className="w-full max-w-[450px] h-[450px] border border-neutral-200 rounded-md bg-white p-8 flex flex-col justify-between gap-4 shadow-xl fixed">
-        <Badge>Gold</Badge>
-        <div className="space-y-1 text-left">
-          <Title>Intercity Florianópolis</Title>
-          <Text>Av. Paulo Fontes, 1210, Centro de Florianópolis</Text>
-        </div>
-        <Separator />
-        <Button size="lg" className="w-full rounded-[10px]">
-          Quero me hospedar aqui <Icon icon={ArrowRight} variant="white" />
-        </Button>
+    <AccommodationMainInfoContainer>
+      <Badge>Gold</Badge>
+      <div className="space-y-1 text-left">
+        <Title>Intercity Florianópolis</Title>
+        <Text>Av. Paulo Fontes, 1210, Centro de Florianópolis</Text>
+      </div>
+      <Separator />
+      <Button size="lg" className="w-full rounded-[10px]">
+        Quero me hospedar aqui <Icon icon={ArrowRight} variant="white" />
+      </Button>
+      <div className="hidden lg:flex flex-col gap-4">
         <a
           href="#"
           target="_blank"
@@ -42,6 +44,6 @@ export const Header = () => {
           </Text>
         </div>
       </div>
-    </header>
+    </AccommodationMainInfoContainer>
   );
 };
