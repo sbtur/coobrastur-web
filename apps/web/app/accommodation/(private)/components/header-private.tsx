@@ -6,7 +6,7 @@ import { Title } from '@coobrastur/ui/components/data-display/title';
 import { Button } from '@coobrastur/ui/components/data-entry/button';
 import { ArrowRight, Receipt } from '@coobrastur/ui/lib/icons';
 
-export const HeaderLogged = () => {
+export const HeaderPrivate = () => {
   return (
     <header className="w-full max-w-[450px] relative">
       <div className="w-full max-w-[450px] h-[450px] border border-neutral-200 rounded-md bg-white p-8 flex flex-col justify-center gap-4 shadow-xl fixed">

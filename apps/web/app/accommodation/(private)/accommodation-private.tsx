@@ -5,9 +5,9 @@ import { Calendar, Globe, Mail, Phone } from '@coobrastur/ui/lib/icons';
 
 import { Amenities } from '../components/amenities';
 import { CollapsibleDescription } from '../components/collapsible-description';
-import { HeaderLogged } from '../components/header/header-logged';
 import { ImageGallery } from '../components/image-gallery';
-import { Policies } from '../components/policies';
+import { HeaderPrivate } from './components/header-private';
+import { Policies } from './components/policies';
 
 import { Icon } from '@ui/components/data-display/icon';
 
@@ -16,7 +16,7 @@ export default function AccommodationPrivate() {
     <Container className="grid gap-6 py-12 relative">
       <div className="flex gap-4">
         <ImageGallery />
-        <HeaderLogged />
+        <HeaderPrivate />
       </div>
 
       <main className="grid gap-8 max-w-[790px] md:pr-10">
