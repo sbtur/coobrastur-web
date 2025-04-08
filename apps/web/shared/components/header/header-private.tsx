@@ -57,7 +57,7 @@ export const HeaderPrivate = () => {
           </div>
           <Text className="text-xs text-neutral-400 uppercase">
             Somos um grupo empresarial de turismo completo, especializado em
-            <span className="font-bold text-primary">
+            <span className="font-bold text-primary-300">
               {' '}
               assinatura de hotéis.
             </span>

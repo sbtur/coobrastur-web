@@ -5,14 +5,19 @@ import baseConfig from '@coobrastur/ui/tailwind.config';
 
 const config = {
   ...baseConfig,
+  content: [
+    ...baseConfig.content,
+    './shared/lib/variants/**/*.{ts,tsx}',
+    './shared/components/**/*.{ts,tsx}',
+  ],
   theme: {
     ...baseConfig.theme,
     extend: {
       ...baseConfig.theme?.extend,
       fontFamily: {
         ...baseConfig.theme?.extend?.fontFamily,
-        primary: ['var(--font-mangueira)', ...fontFamily.sans],
-        secondary: ['var(--font-source-sans)', ...fontFamily.mono],
+        primary: ['var(--font-mangueira)'],
+        secondary: ['var(--font-source-sans-pro)'],
       },
     },
   },

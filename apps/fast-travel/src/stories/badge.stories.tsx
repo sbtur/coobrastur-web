@@ -4,7 +4,7 @@ import { Icon } from '@ui/components/data-display/icon';
 import { Hotel } from '@ui/lib/icons';
 
 const meta = {
-  title: 'DataDisplay/Badge',
+  title: 'Data Display/Badge',
   component: Badge,
   parameters: {
     layout: 'centered',

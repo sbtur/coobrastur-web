@@ -1,10 +1,11 @@
 import Image from 'next/image';
 
+import { Button } from '@coobrastur/ui/components/data-entry/button';
+
 import type { Meta, StoryObj } from '@storybook/react';
 import { Badge } from '@ui/components/data-display/badge';
 import { Bookmark } from '@ui/components/data-display/bookmark';
 import {
-  HotelButton,
   HotelCard,
   HotelDescription,
   HotelImage,
@@ -114,15 +115,19 @@ export const Default: Story = {
             {accommodation.category}
           </Badge>
         )}
-        <Title as="h3" size="xs" align="center">
+        <Title as="h3" size="xs" className="text-center lg:text-left">
           {accommodation.name}
         </Title>
-        <Text size="sm" align="center">
+        <Text size="sm" className="text-center lg:text-left">
           {accommodation.street}
         </Text>
-        <HotelButton type="button" onClick={() => onClick(accommodation.id)}>
+        <Button
+          variant="link"
+          className="mx-auto lg:mx-0"
+          onClick={() => onClick(accommodation.id)}
+        >
           Ver mais detalhes <Icon icon={ArrowRight} variant="primary" />
-        </HotelButton>
+        </Button>
       </HotelDescription>
     </HotelCard>
   ),
@@ -155,15 +160,19 @@ export const withSmallImage: Story = {
             {accommodation.category}
           </Badge>
         )}
-        <Title as="h3" size="xs" align="center">
+        <Title as="h3" size="xs" className="text-center lg:text-left">
           {accommodation.name}
         </Title>
-        <Text size="sm" align="center">
+        <Text size="sm" className="text-center lg:text-left">
           {accommodation.street}
         </Text>
-        <HotelButton type="button" onClick={() => onClick(accommodation.id)}>
+        <Button
+          variant="link"
+          className="mx-auto lg:mx-0"
+          onClick={() => onClick(accommodation.id)}
+        >
           Ver mais detalhes <Icon icon={ArrowRight} variant="primary" />
-        </HotelButton>
+        </Button>
       </HotelDescription>
     </HotelCard>
   ),

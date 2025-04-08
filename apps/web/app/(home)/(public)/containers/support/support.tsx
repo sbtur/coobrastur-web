@@ -19,7 +19,7 @@ export const Support = () => {
   return (
     <Section
       as="section"
-      className="pt-14 bg-[#001F3D] bg-gradient-to-r from-[#001F3D] from-[31.41%] to-[#2E6299] relative"
+      className="pt-14 mt-24 bg-[#001F3D] bg-gradient-to-r from-[#001F3D] from-[31.41%] to-[#2E6299] relative"
     >
       <Container className="lg:pt-16">
         <Heading className="px-0 items-center text-center lg:items-start lg:text-left">
@@ -27,7 +27,7 @@ export const Support = () => {
           <Title size="xl" variant="white">
             Conte com suporte completo
           </Title>
-          <Text className="text-white max-w-[310px] lg:!max-w-full">
+          <Text className="text-white max-w-[700px] xl:max-w-full">
             A combinação ideal para transformar sua viagem dos sonhos em uma
             experiência única e inesquecível
           </Text>

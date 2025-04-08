@@ -8,7 +8,7 @@ export const MENU_ITEMS: IMenuItem[] = [
     href: '#',
     items: [
       {
-        label: 'O Grupo Coobrastur',
+        label: 'Quem Somos',
         href: '#',
         description: 'Lorem ipsum dolor sit amet, consectetur.',
       },
@@ -19,6 +19,11 @@ export const MENU_ITEMS: IMenuItem[] = [
       },
       {
         label: 'Dúvidas Frequentes',
+        href: '#',
+        description: 'Lorem ipsum dolor sit amet, consectetur.',
+      },
+      {
+        label: 'Blog',
         href: '#',
         description: 'Lorem ipsum dolor sit amet, consectetur.',
       },

@@ -1,53 +1,79 @@
+'use client';
+
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from '@coobrastur/ui/components/data-entry/select';
 import { Section } from '@coobrastur/ui/components/layouts/section';
+import { Hotel } from '@coobrastur/ui/lib/icons';
+
+import {
+  ResponsiveLargerThan,
+  ResponsiveSmallerThan,
+} from '@/shared/components/responsive/responsive';
 
 import { CATEGORY } from '../../helpers/category';
-import { CarouselFilters } from './carousel-filters';
+import { Filters } from './components/filters';
+import { FiltersMobile } from './components/filters-mobile';
 
 import { Icon } from '@ui/components/data-display/icon';
 import { Text } from '@ui/components/data-display/text';
 import { Container } from '@ui/components/layouts/container';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuTrigger,
-} from '@ui/components/navigation/dropdown-menu';
-import { ChevronDown, Hotel } from '@ui/lib/icons';
 
 export const SearchFilters = () => {
   return (
-    <Section spacing="md" className="lg:shadow-lg lg:mb-8">
-      <Container className="max-w-7xl lg:px-8 lg:flex items-center justify-between">
-        <Text className="hidden lg:block">
-          Hotéis em <br />
-          <span className="font-primary text-primary-300 text-2xl font-bold">
-            Florianópolis
+    <Section
+      spacing="md"
+      className="pt-0 xl:p-0 xl:shadow-[0_5px_15px_-2px_rgba(0,0,0,0.1)] xl:mb-8"
+    >
+      <Container className="max-w-7xl xl:h-[70px] px-0 xl:px-8 xl:flex items-center justify-between">
+        <Text className="hidden xl:block">
+          Busque por <br />
+          <span className="font-primary text-primary-300 text-xl font-bold">
+            Estilo de Destino
           </span>
         </Text>
-        <CarouselFilters />
-        <div className="w-fit mx-auto lg:mx-0 border border-border rounded-md p-3">
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-2 focus:outline-none">
-              <Icon icon={Hotel} variant="primary" />
-              Categoria do Hotel
-              <Icon icon={ChevronDown} variant="primary" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-background rounded-lg w-[260px]">
-              <DropdownMenuLabel className="font-semibold border-b border-border mb-1 gap-2">
+
+        <ResponsiveLargerThan breakpoint="xl">
+          <Filters />
+        </ResponsiveLargerThan>
+        <ResponsiveSmallerThan breakpoint="xl">
+          <FiltersMobile />
+        </ResponsiveSmallerThan>
+
+        <Select>
+          <SelectTrigger className="w-[200px] max-w-[300px] mx-auto text-text-body focus:outline-none shadow-sm bg-white">
+            <SelectValue
+              placeholder={
+                <>
+                  <Icon icon={Hotel} variant="highlight" />{' '}
+                  <span className="mx-3">Categoria do Hotel</span>
+                </>
+              }
+            />
+          </SelectTrigger>
+          <SelectContent className="bg-background rounded-lg w-[260px]">
+            <SelectGroup>
+              <SelectLabel className="font-semibold border-b border-border mb-1 gap-2">
                 Selecione a Categoria
-              </DropdownMenuLabel>
+              </SelectLabel>
               {CATEGORY.map(category => (
-                <DropdownMenuItem
+                <SelectItem
                   key={category.value}
-                  className="p2 cursor-pointer hover:bg-secondary-100 rounded-sm"
+                  value={category.value}
+                  className="p-2 cursor-pointer hover:bg-secondary-100 rounded-sm"
                 >
                   {category.label}
-                </DropdownMenuItem>
+                </SelectItem>
               ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
       </Container>
     </Section>
   );

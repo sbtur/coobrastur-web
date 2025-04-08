@@ -2,32 +2,10 @@ import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Title } from '@coobrastur/ui/components/data-display/title';
 import { Section } from '@coobrastur/ui/components/layouts/section';
 
+import { CATEGORIES_PLANS } from './utils/categories-plans';
+
 import CategoryIcon from '@images/icons/coobrastur-logo.svg';
 import { Container } from '@ui/components/layouts/container';
-
-const CATEGORIES_PLANS = [
-  {
-    foregroundColor: 'text-[#6B7780]',
-    backgroundColor: 'bg-[#F2F4F5]',
-    name: 'Silver',
-    description:
-      'Aproveite hotéis Executivos para uma viagem incrível e com muito economia.',
-  },
-  {
-    foregroundColor: 'text-[#D4A72C]',
-    backgroundColor: 'bg-[#FFFACD]',
-    name: 'Gold',
-    description:
-      'Hospedagens de categoria Superior para experiências de viagem ainda mais confortável.',
-  },
-  {
-    foregroundColor: 'text-[#2E6299]',
-    backgroundColor: 'bg-[#E2F2FF]',
-    name: 'Diamante',
-    description:
-      'Hotéis e resorts de luxo no Brasil e no exterior para experiências inesquecíveis.',
-  },
-];
 
 export const CategoriesPlans = () => {
   return (
@@ -48,7 +26,9 @@ export const CategoriesPlans = () => {
                   className={`${category.foregroundColor} hover:scale-105 transition-all duration-300`}
                 />
               </div>
-              <span className="text-sm font-bold hidden lg:inline-block">
+              <span
+                className={`text-sm font-bold hidden lg:inline-block ${category.foregroundColor}`}
+              >
                 {category.name}
               </span>
             </div>

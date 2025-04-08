@@ -50,6 +50,7 @@ const config = {
           '100': 'var(--color-primary-100)',
           '200': 'var(--color-primary-200)',
           '300': 'var(--color-primary-300)',
+          '400': 'var(--color-primary-400)',
           DEFAULT: 'var(--color-primary-200)',
         },
         secondary: {

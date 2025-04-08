@@ -32,9 +32,10 @@
   --color-highlight-active: var(--color-highlight-200);
   --color-highlight-focus: var(--color-highlight-300);
 
-  --color-primary-100: #2e6299;
-  --color-primary-200: #254262;
-  --color-primary-300: #001f3d;
+  --color-primary-100: #3a7abf;
+  --color-primary-200: #2e6299;
+  --color-primary-300: #254262;
+  --color-primary-400: #001f3d;
   --color-primary-hover: var(--color-primary-200);
   --color-primary-active: var(--color-primary-200);
   --color-primary-focus: var(--color-primary-300);

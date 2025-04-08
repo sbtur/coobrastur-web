@@ -12,7 +12,7 @@ export function Header({ light = false, children }: HeaderProps) {
 
   return (
     <header
-      className={`sticky top-0 transition-all duration-200 z-50 ${isLight && !isScrolled ? 'isLight' : ''} ${isScrolled ? 'bg-white shadow-md' : ''}`}
+      className={`sticky top-0 transition-all duration-200 z-50 ${isLight && !isScrolled ? 'isLight bg-transparent' : 'bg-white'} ${isScrolled ? 'bg-white shadow-md' : ''}`}
     >
       {children}
     </header>

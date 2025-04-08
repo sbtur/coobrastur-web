@@ -6,8 +6,9 @@ import { DayPicker } from 'react-day-picker';
 import { ptBR } from 'date-fns/locale';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-import { buttonVariants } from '@coobrastur/ui/components/button';
 import { Icon } from '@coobrastur/ui/components/data-display/icon';
+
+import { buttonVariants } from '../button';
 
 import { cn } from '@ui/lib/utils';
 

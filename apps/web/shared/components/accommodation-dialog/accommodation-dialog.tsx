@@ -2,6 +2,16 @@
 import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@coobrastur/ui/components/data-display/dialog';
+
 import { Image } from '@components/image';
 
 import { buttonsAnimations, galleryAnimations } from './animations';
@@ -17,7 +27,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@ui/components/data-display/caroussel';
-import { Dialog } from '@ui/components/data-display/dialog';
 import { Icon, IconWrapper } from '@ui/components/data-display/icon';
 import { Separator } from '@ui/components/data-display/separator';
 import { Text } from '@ui/components/data-display/text';
@@ -28,10 +37,15 @@ import { ArrowRight, ChevronLeft, Share2, Table, X } from '@ui/lib/icons';
 
 export interface HotelDialogProps {
   isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
   onClose: () => void;
 }
 
-export const AccommodationDialog = ({ isOpen, onClose }: HotelDialogProps) => {
+export const AccommodationDialog = ({
+  isOpen,
+  onOpenChange,
+  onClose,
+}: HotelDialogProps) => {
   const [isShowGallery, setIsShowGallery] = useState(false);
   const searchParams = useSearchParams();
 
@@ -44,53 +58,33 @@ export const AccommodationDialog = ({ isOpen, onClose }: HotelDialogProps) => {
   };
 
   return (
-    <Dialog.Root open={isOpen}>
-      <Dialog.Content
-        className="h-full md:h-auto p-0 gap-0"
-        hideCloseButton
-        onEscapeKeyDown={onClose}
-        onInteractOutside={onClose}
-      >
-        <Dialog.Close
-          asChild
-          className="absolute right-3 top-3 z-10 md:right-0 lg:-right-7 md:-top-10 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
-        >
-          <button onClick={onClose}>
-            <Icon
-              icon={X}
-              className="h-8 w-8 max-md:text-neutral"
-              variant="white"
-            />
-            <span className="sr-only">Fechar</span>
-          </button>
-        </Dialog.Close>
-        <div className="overflow-y-auto md:flex md:rounded-[20px] md:h-[570px] justify-between relative">
+    <Dialog open={isOpen} onOpenChange={onOpenChange}>
+      <DialogContent className="max-w-[830px] h-full md:h-auto p-0 gap-0">
+        <DialogClose onClick={onClose} />
+        <div className="overflow-y-auto flex rounded-[20px] justify-between relative">
           <motion.div
             variants={galleryAnimations}
             initial="contentVisible"
             animate={isShowGallery ? 'contentHidden' : 'contentVisible'}
-            className="h-full"
+            className="h-full grid justify-between"
           >
             <motion.div
               variants={buttonsAnimations}
               initial="visible"
               animate={isShowGallery ? 'hidden' : 'visible'}
               exit="visible"
-              className="group-[.w-0]:hidden py-10 px-8 lg:px-10"
+              className="group-[.w-0]:hidden p-8 space-y-6"
             >
-              <Dialog.Header>
-                <Dialog.Title asChild className="text-2xl">
-                  <Title as="h2" size="sm">
-                    {hotel?.name}
-                  </Title>
-                </Dialog.Title>
-                <Dialog.Description asChild>
-                  <Text size="sm" className="text-text-body">
-                    {hotel?.street}
-                  </Text>
-                </Dialog.Description>
-              </Dialog.Header>
-              <div className="max-h-[280px] py-4 pr-4 mt-6 overflow-y-auto">
+              <DialogHeader>
+                <DialogTitle className="text-2xl text-left text-primary-300 font-primary font-bold">
+                  {hotel?.name}
+                </DialogTitle>
+                <DialogDescription className="text-left">
+                  {hotel?.street}
+                </DialogDescription>
+              </DialogHeader>
+
+              <div className="py-4 pr-4 h-[280px] overflow-y-auto">
                 <Text size="sm">{hotel?.description}</Text>
 
                 <div className="mt-6">
@@ -104,19 +98,14 @@ export const AccommodationDialog = ({ isOpen, onClose }: HotelDialogProps) => {
                   </ul>
                 </div>
               </div>
-              <div className="text-center mt-6 md:text-left">
+              <div className="text-left">
                 <Link href="/accommodation">
                   Ir para a página do Hotel <Icon icon={ArrowRight} />
                 </Link>
               </div>
             </motion.div>
             <Separator />
-            <Dialog.Footer className="flex-row h-[90px] md:pl-7 lg:pl-10 pr-0 gap-3 items-center justify-center md:justify-start">
-              <Bookmark />
-              <IconWrapper>
-                <Icon icon={Share2} />
-              </IconWrapper>
-            </Dialog.Footer>
+            <DialogFooter className="grid h-[90px] px-0 gap-3 items-center justify-start"></DialogFooter>
           </motion.div>
 
           <motion.div
@@ -212,7 +201,7 @@ export const AccommodationDialog = ({ isOpen, onClose }: HotelDialogProps) => {
             </Button>
           </motion.div>
         </div>
-      </Dialog.Content>
-    </Dialog.Root>
+      </DialogContent>
+    </Dialog>
   );
 };
