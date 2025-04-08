@@ -42,7 +42,7 @@ export const CollapsibleDescription = ({
             animate={{ rotate: isOpen ? 90 : 0 }}
             transition={{ duration: 0.3 }}
           >
-            <Icon icon={ArrowRight} variant="primary" size="sm" />
+            <Icon icon={ArrowRight} variant="highlight" size="sm" />
           </motion.span>
         </Button>
       </CollapsibleTrigger>
