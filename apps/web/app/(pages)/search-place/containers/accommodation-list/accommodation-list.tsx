@@ -8,12 +8,17 @@ import { ACCOMMODATIONS } from '@mocks/accommodations/accommodations';
 import { Container } from '@ui/components/layouts/container';
 
 export const AccommodationList = () => {
-  const { isEnabled, handleOpenHotel, handleCloseHotel } = useHotelListDetail();
+  const { isEnabled, handleOpenHotel, handleCloseHotel, toggle } =
+    useHotelListDetail();
 
   return (
     <Container as="section" className="pt-0 pb-8 lg:pb-14">
       {isEnabled && (
-        <AccommodationDialog isOpen={isEnabled} onClose={handleCloseHotel} />
+        <AccommodationDialog
+          isOpen={isEnabled}
+          onClose={handleCloseHotel}
+          onOpenChange={toggle}
+        />
       )}
       <div className="md:px-4 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-10">
         {ACCOMMODATIONS.map(accommodation => (

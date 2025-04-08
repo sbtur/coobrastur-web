@@ -1,7 +1,5 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-
 import { Accommodation } from '@coobrastur/types-shared';
 
 import { AccommodationCard } from '@components/accommodation-card';
@@ -9,12 +7,12 @@ import {
   AccommodationDialog,
   AccommodationDialogMobile,
 } from '@components/accommodation-dialog';
-import { useToggle } from '@hooks/use-toggle';
 
 import {
   ResponsiveLargerThan,
   ResponsiveSmallerThan,
 } from '@/shared/components/responsive';
+import { useHotelListDetail } from '@/shared/hooks/use-hotel-list-detail';
 
 import {
   Carousel,
@@ -33,22 +31,8 @@ interface AccommodationListProps {
 export const AccommodationList = ({
   accommodations,
 }: AccommodationListProps) => {
-  const { isEnabled, toggle } = useToggle();
-  const { push } = useRouter();
-
-  const handleOpenHotel = (hotelId: number) => {
-    push(`?h=${hotelId}`, {
-      scroll: false,
-    });
-    toggle();
-  };
-
-  const handleCloseHotel = () => {
-    push('/', {
-      scroll: false,
-    });
-    toggle();
-  };
+  const { isEnabled, handleOpenHotel, handleCloseHotel, toggle } =
+    useHotelListDetail();
 
   return (
     <Content className="px-4 lg:px-0">

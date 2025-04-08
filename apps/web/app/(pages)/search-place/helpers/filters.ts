@@ -1,64 +1,41 @@
 import { Filter } from '../types/filter.types';
 
-import {
-  Briefcase,
-  CirclePercent,
-  Gem,
-  House,
-  Mountain,
-  Sun,
-  Waves,
-} from '@ui/lib/icons';
+import Beach from '@images/icons/filters/beach.svg';
+import City from '@images/icons/filters/city.svg';
+import Farm from '@images/icons/filters/farm.svg';
+import Historic from '@images/icons/filters/historic.svg';
+import Lake from '@images/icons/filters/lake.svg';
+import Mountain from '@images/icons/filters/mountain.svg';
 
 export const FILTERS: Filter[] = [
   {
-    label: 'Econômico',
-    value: 'economic',
-    icon: CirclePercent,
-  },
-  {
-    label: 'Executivo',
-    value: 'executive',
-    icon: Briefcase,
-  },
-  {
-    label: 'Luxo',
-    value: 'luxury',
-    icon: Gem,
-  },
-  {
-    label: 'Resort',
-    value: 'resort',
-    icon: Waves,
-  },
-  {
-    label: 'Praia',
+    label: 'Litoral',
     value: 'beach',
-    icon: Sun,
+    icon: Beach,
   },
   {
-    label: 'Serra',
-    value: 'mountains',
+    label: 'Serras',
+    value: 'mountain',
     icon: Mountain,
   },
   {
-    label: 'Pousada',
-    value: 'pousada',
-    icon: House,
+    label: 'Urbano',
+    value: 'urban',
+    icon: City,
   },
   {
-    label: 'Lago',
-    value: 'lake',
-    icon: CirclePercent,
+    label: 'Fazenda',
+    value: 'farm',
+    icon: Farm,
   },
   {
-    label: 'Piscina',
-    value: 'pool',
-    icon: Waves,
+    label: 'Fontes Termais Minerais',
+    value: 'mineral-springs',
+    icon: Lake,
   },
   {
-    label: 'Cachoeira',
-    value: 'river',
-    icon: Waves,
+    label: 'Centro Histórico',
+    value: 'historical-center',
+    icon: Historic,
   },
 ];
