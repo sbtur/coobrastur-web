@@ -12,7 +12,7 @@ import {
 import { Icon } from '@ui/components/data-display/icon';
 import { Text } from '@ui/components/data-display/text';
 import { Title } from '@ui/components/data-display/title';
-import { ArrowRight } from '@ui/lib/icons';
+import { ArrowRight, Badge } from '@ui/lib/icons';
 
 type HotelCardProps = {
   onClick: (hotelId: number) => void;

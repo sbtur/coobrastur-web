@@ -21,10 +21,11 @@ const textVariants = cva('', {
     },
     variant: {
       base: 'text-text-body',
-      featured: 'text-text-primary',
-      success: 'text-text-success',
-      warning: 'text-text-warning',
-      danger: 'text-text-danger',
+      primary: 'text-text-primary-300',
+      highlight: 'text-highlight-100',
+      success: 'text-text-success-300',
+      warning: 'text-text-warning-300',
+      danger: 'text-text-danger-300',
     },
   },
   defaultVariants: {

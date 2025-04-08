@@ -1,204 +1,176 @@
 export type AmenityKey = keyof typeof AMENITIES_DATA;
 
 export const AMENITIES_DATA = {
-  airConditioner: {
-    name: 'Ar Condicionado',
-    icon: '/images/icons/air-conditioner.svg',
-  },
-  fan: {
-    name: 'Ventilador',
-    icon: '/images/icons/fan.svg',
-  },
-  heating: {
-    name: 'Calefação',
-    icon: '/images/icons/heating-square.svg',
-  },
-  tv: {
-    name: 'TV',
-    icon: '/images/icons/tv.svg',
-  },
-  cableTv: {
-    name: 'TV a cabo',
-    icon: '/images/icons/tv-usb.svg',
-  },
-  pool: {
-    name: 'Piscina',
-    icon: '/images/icons/swimming-pool.svg',
-  },
-  reception24h: {
-    name: 'Recepção 24h',
-    icon: '/images/icons/clock.svg',
-  },
-  telephone: {
-    name: 'Telefone',
-    icon: '/images/icons/telephone.svg',
-  },
-  wifi: {
-    name: 'Wifi',
-    icon: '/images/icons/wifi.svg',
-  },
-  minibar: {
-    name: 'Frigobar',
-    icon: '/images/icons/refrigerator.svg',
-  },
-  equippedKitchen: {
-    name: 'Cozinha Equipada',
-    icon: '/images/icons/kitchen.svg',
-  },
-  safe: {
-    name: 'Cofre',
-    icon: '/images/icons/safe-vault.svg',
-  },
-  hairDryer: {
-    name: 'Secador de Cabelo',
-    icon: '/images/icons/blow-dryer.svg',
-  },
-  bar: {
-    name: 'Bar',
-    icon: '/images/icons/bar.svg',
-  },
-  microwave: {
-    name: 'Microondas',
-    icon: '/images/icons/microwave.svg',
-  },
-  towels: {
-    name: 'Toalheiro',
-    icon: '/images/icons/towel-rack.svg',
-  },
-  restaurant: {
+  1: {
     name: 'Restaurante',
-    icon: '/images/icons/food.svg',
+    icon: '/images/icons/amenities/food.svg',
   },
-  laundry: {
+  2: {
     name: 'Lavanderia',
-    icon: '/images/icons/laundry.svg',
+    icon: '/images/icons/amenities/laundry.svg',
   },
-  parking: {
+  3: {
     name: 'Estacionamento',
-    icon: '/images/icons/parking-location.svg',
+    icon: '/images/icons/amenities/parking-location.svg',
   },
-  paidParking: {
+  4: {
     name: 'Estacionamento a pagar',
-    icon: '/images/icons/parking-lot-charge.svg',
+    icon: '/images/icons/amenities/parking-lot-charge.svg',
   },
-  heatedPool: {
+  5: {
+    name: 'Piscina ao AR LIVRE',
+    icon: '/images/icons/amenities/swimming-pool.svg',
+  },
+  6: {
     name: 'Piscina Térmica',
-    icon: '/images/icons/heated-pool.svg',
+    icon: '/images/icons/amenities/heated-pool.svg',
   },
-  sauna: {
+  7: {
     name: 'Sauna Seca',
-    icon: '/images/icons/sauna.svg',
+    icon: '/images/icons/amenities/sauna.svg',
   },
-  gym: {
+  8: {
     name: 'Espaço Fitness',
-    icon: '/images/icons/gym.svg',
+    icon: '/images/icons/amenities/gym.svg',
   },
-  gameRoom: {
+  9: {
     name: 'Sala de Jogos',
-    icon: '/images/icons/game.svg',
+    icon: '/images/icons/amenities/game.svg',
   },
-  sportsField: {
-    name: 'Quadra de Esportiva',
-    icon: '/images/icons/sportscourt.svg',
+  10: {
+    name: 'Quadra Poliesportiva',
+    icon: '/images/icons/amenities/sportscourt.svg',
   },
-  playground: {
+  11: {
     name: 'Playground',
-    icon: '/images/icons/playground-slide.svg',
+    icon: '/images/icons/amenities/playground-slide.svg',
   },
-  nearBeach: {
-    name: 'Próximo à Praia',
-    icon: '/images/icons/beach.svg',
+  12: {
+    name: 'Antena Parabólica',
+    icon: '',
   },
-  meetingRoom: {
+  13: {
+    name: 'Próximo à Beira-mar',
+    icon: '/images/icons/amenities/beach.svg',
+  },
+  14: {
     name: 'Sala de Reunião',
-    icon: '/images/icons/group-meeting-call.svg',
+    icon: '/images/icons/amenities/group-meeting-call.svg',
   },
-  smallPetsPaid: {
+  15: {
+    name: 'Secador de Cabelo',
+    icon: '/images/icons/amenities/blow-dryer.svg',
+  },
+  16: {
+    name: 'Fechadura Eletrônica',
+    icon: '',
+  },
+  17: {
     name: 'Animais de Pequeno Porte (a cobrar)',
-    icon: '/images/icons/pet-extra-charge.svg',
+    icon: '/images/icons/amenities/pet-extra-charge.svg',
   },
-  smallPetsAllowed: {
-    name: 'Aceita Animais de Pequeno Porte',
-    icon: '/images/icons/pet.svg',
-  },
-  helipad: {
+  18: {
     name: 'Heliponto',
-    icon: '/images/icons/helicopter.svg',
+    icon: '/images/icons/amenities/helicopter.svg',
   },
-  transfer: {
-    name: 'Transfer',
-    icon: '/images/icons/transfer-line.svg',
-  },
-  convenience: {
-    name: 'Conveniência',
-    icon: '/images/icons/shop-server.svg',
-  },
-  recreation: {
-    name: 'Recreação',
-    icon: '/images/icons/horse-toy.svg',
-  },
-  library: {
-    name: 'Biblioteca',
-    icon: '/images/icons/books.svg',
-  },
-  winery: {
-    name: 'Adega',
-    icon: '/images/icons/wine.svg',
-  },
-  beautyRoom: {
-    name: 'Salão de Beleza',
-    icon: '/images/icons/beauty.svg',
-  },
-  nursery: {
-    name: 'Enfermaria',
-    icon: '/images/icons/medical-kit.svg',
-  },
-  pneRoom: {
-    name: 'Apartamento PNE',
-    icon: '/images/icons/disability.svg',
-  },
-  horses: {
-    name: 'Cavalos',
-    icon: '/images/icons/horse-head.svg',
-  },
-  fishing: {
-    name: 'Pesca',
-    icon: '/images/icons/fishing-area.svg',
-  },
-  climbingWall: {
-    name: 'Parede de Escalada',
-    icon: '/images/icons/climbing-wall.svg',
-  },
-  nonSmoking: {
-    name: '100% Não Fumante',
-    icon: '/images/icons/cigarette-off.svg',
-  },
-  coveredParking: {
-    name: 'Estacionamento Coberto',
-    icon: '/images/icons/parking-lot-covered.svg',
-  },
-  generator: {
-    name: 'Gerador',
-    icon: '/images/icons/energy.svg',
-  },
-  smokingAllowed: {
-    name: 'Apto para Fumantes',
-    icon: '/images/icons/smoke.svg',
-  },
-  elevator: {
-    name: 'Elevador',
-    icon: '/images/icons/elevator.svg',
-  },
-  spa: {
-    name: 'Spa',
-    icon: '/images/icons/spa.svg',
-  },
-  hammockBalcony: {
-    name: 'Varanda com Rede',
-    icon: '/images/icons/hammock.svg',
-  },
-  seaView: {
+  19: {
     name: 'Vista para o Mar',
-    icon: '/images/icons/sea-waves.svg',
+    icon: '/images/icons/amenities/sea-waves.svg',
+  },
+  20: {
+    name: 'TV com Antena Parabólica',
+    icon: '',
+  },
+  21: {
+    name: 'Microondas',
+    icon: '/images/icons/amenities/microwave.svg',
+  },
+  22: {
+    name: 'Varanda',
+    icon: '',
+  },
+  23: {
+    name: 'Toalheiro',
+    icon: '/images/icons/amenities/towel-rack.svg',
+  },
+  24: {
+    name: 'Ventilador',
+    icon: '/images/icons/amenities/fan.svg',
+  },
+  25: {
+    name: 'Conveniência',
+    icon: '/images/icons/amenities/shop-server.svg',
+  },
+  26: {
+    name: 'Recreação',
+    icon: '/images/icons/amenities/horse-toy.svg',
+  },
+  27: {
+    name: 'Biblioteca',
+    icon: '/images/icons/amenities/books.svg',
+  },
+  28: {
+    name: 'Adega',
+    icon: '/images/icons/amenities/wine.svg',
+  },
+  29: {
+    name: 'Salão de Beleza',
+    icon: '/images/icons/amenities/beauty.svg',
+  },
+  31: {
+    name: 'Enfermaria',
+    icon: '/images/icons/amenities/medical-kit.svg',
+  },
+  34: {
+    name: 'Apartamento PNE',
+    icon: '/images/icons/amenities/disability.svg',
+  },
+  36: {
+    name: 'Cavalos',
+    icon: '/images/icons/amenities/horse-head.svg',
+  },
+  38: {
+    name: 'Pesca',
+    icon: '/images/icons/amenities/fishing-area.svg',
+  },
+  39: {
+    name: 'Parede de Escalada',
+    icon: '/images/icons/amenities/climbing-wall.svg',
+  },
+  40: {
+    name: '100% Não Fumante',
+    icon: '/images/icons/amenities/cigarette-off.svg',
+  },
+  47: {
+    name: 'Estacionamento Coberto',
+    icon: '/images/icons/amenities/parking-lot-covered.svg',
+  },
+  50: {
+    name: 'Wi-fi',
+    icon: '/images/icons/amenities/wifi.svg',
+  },
+  53: {
+    name: 'Recepção 24 horas',
+    icon: '/images/icons/amenities/clock.svg',
+  },
+  55: {
+    name: 'Gerador',
+    icon: '/images/icons/amenities/energy.svg',
+  },
+  56: {
+    name: 'Apto para Fumantes',
+    icon: '/images/icons/amenities/smoke.svg',
+  },
+  60: {
+    name: 'Elevador',
+    icon: '/images/icons/amenities/elevator.svg',
+  },
+  64: {
+    name: 'Spa',
+    icon: '/images/icons/amenities/spa.svg',
+  },
+  65: {
+    name: 'Bar',
+    icon: '/images/icons/amenities/bar.svg',
   },
 } as const;
