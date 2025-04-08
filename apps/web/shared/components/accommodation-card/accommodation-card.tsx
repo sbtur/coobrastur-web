@@ -1,15 +1,12 @@
-import { Accommodation, CATEGORY_COLORS } from '@coobrastur/types-shared';
+import { Accommodation } from '@coobrastur/types-shared';
 import { Button } from '@coobrastur/ui/components/data-entry/button';
 
 import { Image } from '@components/image';
 
-import { Badge } from '@ui/components/data-display/badge';
-import { Bookmark } from '@ui/components/data-display/bookmark';
 import {
   HotelCard,
   HotelDescription,
   HotelImage,
-  HotelImageIcon,
   HotelImageWrapper,
 } from '@ui/components/data-display/hotel-card';
 import { Icon } from '@ui/components/data-display/icon';
@@ -45,14 +42,14 @@ export const AccommodationCard = ({
         <Text size="sm" className="text-center lg:text-left">
           {accommodation.street}
         </Text>
-        <Button
-          variant="link"
-          className="mx-auto lg:mx-0"
-          onClick={() => onClick(accommodation.id)}
-        >
-          Ver mais detalhes <Icon icon={ArrowRight} variant="primary" />
-        </Button>
       </HotelDescription>
+      <Button
+        variant="link"
+        className="mx-auto lg:mx-0 py-0 w-fit lg:mt-auto"
+        onClick={() => onClick(accommodation.id)}
+      >
+        Ver mais detalhes <Icon icon={ArrowRight} variant="highlight" />
+      </Button>
     </HotelCard>
   );
 };

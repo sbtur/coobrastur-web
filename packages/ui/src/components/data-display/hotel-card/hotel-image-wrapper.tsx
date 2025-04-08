@@ -14,7 +14,7 @@ export const HotelImageWrapper = ({
   return (
     <div
       className={cn(
-        'relative w-full h-full overflow-hidden rounded-xl',
+        'relative w-full h-fit overflow-hidden rounded-xl',
         className,
       )}
     >
