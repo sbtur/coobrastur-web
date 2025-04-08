@@ -21,5 +21,5 @@ export const useHotelListDetail = () => {
     toggle();
   };
 
-  return { isEnabled, handleOpenHotel, handleCloseHotel };
+  return { isEnabled, handleOpenHotel, handleCloseHotel, toggle };
 };
