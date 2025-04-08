@@ -57,12 +57,14 @@ export const AccommodationList = ({
           <ResponsiveLargerThan breakpoint="lg">
             <AccommodationDialog
               isOpen={isEnabled}
+              onOpenChange={toggle}
               onClose={handleCloseHotel}
             />
           </ResponsiveLargerThan>
           <ResponsiveSmallerThan breakpoint="lg">
             <AccommodationDialogMobile
               isOpen={isEnabled}
+              onOpenChange={toggle}
               onClose={handleCloseHotel}
             />
           </ResponsiveSmallerThan>
@@ -70,7 +72,7 @@ export const AccommodationList = ({
       )}
       <Carousel
         className="h-full"
-        autoplay={{ playOnInit: true }}
+        autoplay={{ playOnInit: false }}
         opts={{
           loop: true,
           align: 'start',

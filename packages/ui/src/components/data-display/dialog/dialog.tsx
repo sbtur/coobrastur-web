@@ -44,7 +44,7 @@ const DialogClose = React.forwardRef<
     {...props}
   >
     <button onClick={props.onClick} aria-label="Close-Dialog">
-      <Icon icon={X} className="h-8 w-8" variant="white" />
+      <Icon icon={X} className="h-10 w-10" variant="white" />
       <span className="sr-only">Fechar</span>
     </button>
   </DialogPrimitive.Close>
