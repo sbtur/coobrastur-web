@@ -55,7 +55,7 @@ export const AccommodationList = ({
       )}
       <Carousel
         className="h-full"
-        autoplay={{ playOnInit: false }}
+        autoplay={{ playOnInit: true }}
         opts={{
           loop: true,
           align: 'start',

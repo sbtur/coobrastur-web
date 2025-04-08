@@ -1,20 +1,37 @@
+import { AccommodationDetail } from '@coobrastur/types-shared';
+import { Separator } from '@coobrastur/ui/components/data-display/separator';
 import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Title } from '@coobrastur/ui/components/data-display/title';
+import { Button } from '@coobrastur/ui/components/data-entry/button';
 import { Container } from '@coobrastur/ui/components/layouts/container';
-import { Calendar, Globe, Mail, Phone } from '@coobrastur/ui/lib/icons';
+import {
+  ArrowRight,
+  Badge,
+  Calendar,
+  Globe,
+  Mail,
+  Phone,
+  Receipt,
+} from '@coobrastur/ui/lib/icons';
 
 import { HeaderPrivate } from '@/shared/components/header';
 import { ResponsiveLargerThan } from '@/shared/components/responsive';
 
+import { AccommodationMainInfoContainer } from '../components/accommodation-main-info-container';
 import { Amenities } from '../components/amenities';
 import { CollapsibleDescription } from '../components/collapsible-description';
 import { ImageGallery } from '../components/image-gallery';
-import { AccommodationMainInfoPrivate } from './components/accommodation-main-info-private';
 import { Policies } from './components/policies';
 
 import { Icon } from '@ui/components/data-display/icon';
 
-export default function AccommodationPrivate() {
+type AccommodationPrivateProps = {
+  accommodation: AccommodationDetail;
+};
+
+export default function AccommodationPrivate({
+  accommodation,
+}: AccommodationPrivateProps) {
   return (
     <>
       <ResponsiveLargerThan breakpoint="lg">
@@ -23,8 +40,35 @@ export default function AccommodationPrivate() {
       <div className="bg-white">
         <Container className="grid gap-6 p-0 lg:py-12 lg:px-3 relative">
           <div className="lg:flex gap-4 justify-between relative">
-            <ImageGallery />
-            <AccommodationMainInfoPrivate />
+            <ImageGallery images={accommodation.gallery} />
+            <AccommodationMainInfoContainer>
+              <Badge>Gold</Badge>
+              <div className="space-y-1 text-left">
+                <Title>{accommodation.name}</Title>
+                <Text>{accommodation.street}</Text>
+              </div>
+
+              <Separator />
+
+              <Text as="div" className="my-4">
+                <span className="font-bold font-primary text-highlight-100 text-2xl">
+                  {accommodation.total_days} Diárias
+                </span>{' '}
+                <br />
+                <Icon icon={Receipt} />
+                R${accommodation.extra}{' '}
+                <Button
+                  variant="link"
+                  className="inline-block text-neutral-500 underline p-0"
+                >
+                  adicionais
+                </Button>
+              </Text>
+
+              <Button size="lg" className="w-full rounded-[10px]">
+                Reservar <Icon icon={ArrowRight} variant="white" />
+              </Button>
+            </AccommodationMainInfoContainer>
           </div>
 
           <main className="grid gap-8 max-full lg:max-w-[530px] xl:max-w-[790px] px-6 lg:p-0">
