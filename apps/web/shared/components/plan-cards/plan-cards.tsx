@@ -1,5 +1,8 @@
 'use client';
 
+import { useState } from 'react';
+import dynamic from 'next/dynamic';
+
 import { Badge } from '@coobrastur/ui/components/data-display/badge';
 import {
   Card,
@@ -8,12 +11,6 @@ import {
   CardTitle,
 } from '@coobrastur/ui/components/data-display/card';
 import { Icon } from '@coobrastur/ui/components/data-display/icon';
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from '@coobrastur/ui/components/data-display/tabs';
 import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Button } from '@coobrastur/ui/components/data-entry/button';
 import {
@@ -35,8 +32,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@coobrastur/ui/components/data-entry/select';
-import { Controller, useForm } from '@coobrastur/ui/lib/form';
-import { ArrowRight } from '@coobrastur/ui/lib/icons';
+import { useForm } from '@coobrastur/ui/lib/form';
+import { ArrowRight, Check } from '@coobrastur/ui/lib/icons';
 import { cn } from '@coobrastur/ui/lib/utils';
 
 import {
@@ -45,7 +42,17 @@ import {
   PLANS_OPTIONS,
 } from './utils/plans-categories';
 
-export const PlanCardsMobile = () => {
+const DialogForm = dynamic(
+  () => import('./components/dialog-form').then(mod => mod.DialogForm),
+  {
+    ssr: false,
+  },
+);
+
+export const PlanCards = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [categorySelected, setCategorySelected] = useState('');
+
   const form = useForm({
     defaultValues: {
       category: '',
@@ -55,61 +62,52 @@ export const PlanCardsMobile = () => {
   });
 
   const { control } = form;
-  const selectedCategory = form.watch('category');
 
+  const handleSelectCategory = (category: string) => {
+    setCategorySelected(category);
+    form.setValue('category', category);
+    const firstPlan = PLANS_OPTIONS[0]?.value;
+    if (firstPlan) {
+      form.setValue('plan', `${firstPlan}-${category}`);
+    }
+  };
   return (
-    <Form
-      form={form}
-      onSubmit={e => {
-        e.preventDefault();
-        console.log(form.getValues());
-      }}
-      className="px-4 mt-10"
-    >
-      <Tabs defaultValue="31" className="grid gap-1 p-0">
-        <TabsList className="h-fit justify-between">
-          {PLANS_CATEGORIES.map(category => (
-            <TabsTrigger
-              value={category.value}
-              key={category.id}
-              className="border border-input rounded-md p-0 text-left bg-primary-300 text-white relative"
-            >
-              <Controller
-                name="category"
-                control={control}
-                render={({ field }) => (
-                  <RadioGroup
-                    value={field.value}
-                    onValueChange={value => {
-                      field.onChange(value);
-                      const firstPlan = PLANS_OPTIONS[0]?.value;
-                      if (firstPlan) {
-                        form.setValue('plan', `${firstPlan}-${value}`);
-                      }
-                    }}
-                  >
-                    <Label
-                      htmlFor={category.value}
-                      className="text-xs uppercase h-[75px] w-full px-4 pr-8 flex flex-col justify-center"
-                    >
-                      Categoria <br />
-                      <strong>{category.name}</strong>
-                      <RadioGroupItem
-                        value={category.value}
-                        id={category.value}
-                        className="w-4 h-4 absolute top-2 right-2"
-                      />
-                    </Label>
-                  </RadioGroup>
-                )}
-              />
-            </TabsTrigger>
-          ))}
-        </TabsList>
-        {PLANS_CATEGORIES.map(category => (
-          <TabsContent value={category.value} key={category.id} className="m-0">
+    <>
+      <DialogForm
+        isOpen={isDialogOpen}
+        onOpenChange={setIsDialogOpen}
+        onClose={() => setIsDialogOpen(false)}
+      />
+      <Form
+        form={form}
+        onSubmit={e => {
+          e.preventDefault();
+        }}
+        className="grid grid-cols-1 lg:grid-cols-3 gap-4 px-4 lg:px-0 max-w-[1200px] lg:mx-auto mt-10"
+      >
+        {PLANS_CATEGORIES.map(category => {
+          const isCategoryDisabledSelected =
+            categorySelected !== category.value;
+
+          return (
             <Card className="lg:max-w-[370px] bg-white" key={category.id}>
               <CardHeader className="px-10 relative">
+                <button
+                  type="button"
+                  onClick={() => handleSelectCategory(category.value)}
+                  className={`absolute top-6 right-6 w-9 h-9 rounded-full bg-transparent border border-input flex items-center justify-center hover:bg-highlight-300 group
+                  ${!isCategoryDisabledSelected && 'bg-highlight-300'}
+                  `}
+                >
+                  <Icon
+                    icon={Check}
+                    variant="white"
+                    className={`w-7 h-7 opacity-0 group-hover:opacity-100 ${
+                      !isCategoryDisabledSelected && 'opacity-100'
+                    }`}
+                  />
+                </button>
+
                 <Badge
                   className={`${category.backgroundColor} ${category.foregroundColor}`}
                 >
@@ -135,15 +133,13 @@ export const PlanCardsMobile = () => {
                         className="space-y-2"
                       >
                         {PLANS_OPTIONS.map(plan => {
-                          const isSelectionDisabled =
-                            selectedCategory !== category.value;
                           return (
                             <Label
                               key={plan.id}
                               htmlFor={`${plan.value}-${category.value}`}
                               className={cn(
-                                'flex items-center rounded-[10px] border-2 p-4',
-                                isSelectionDisabled
+                                'flex items-center rounded-[10px] border-2 p-4 font-normal',
+                                isCategoryDisabledSelected
                                   ? 'cursor-not-allowed border-input'
                                   : 'cursor-pointer hover:border-highlight',
                                 `${plan.value}-${category.value}` ===
@@ -154,10 +150,10 @@ export const PlanCardsMobile = () => {
                                 value={`${plan.value}-${category.value}`}
                                 id={`${plan.value}-${category.value}`}
                                 className="w-6 h-6 mr-4 hover:bg-transparent"
-                                disabled={isSelectionDisabled}
+                                disabled={isCategoryDisabledSelected}
                               />
                               <div>
-                                <div className="text-base font-bold font-primary-300">
+                                <div className="text-primary-300 font-bold font-primary">
                                   {plan.name}
                                 </div>
                                 <div className="text-sm text-text-body">
@@ -187,7 +183,7 @@ export const PlanCardsMobile = () => {
                       <Select
                         onValueChange={field.onChange}
                         defaultValue={field.value}
-                        disabled={selectedCategory !== category.value}
+                        disabled={isCategoryDisabledSelected}
                       >
                         <FormControl>
                           <SelectTrigger>
@@ -208,32 +204,33 @@ export const PlanCardsMobile = () => {
 
                 <div className="space-y-4">
                   <div className="flex items-baseline justify-center">
-                    <span className="text-4xl font-bold text-navy-800">
+                    <span className="text-4xl font-bold text-primary-300 font-primary">
                       223,90
                     </span>
-                    <span className="text-gray-600 ml-1">/ Por mês</span>
+                    <span className="text-text-body ml-1">/ Por mês</span>
                   </div>
 
                   <Button
                     className="w-full rounded-[10px]"
                     size="lg"
-                    disabled={selectedCategory !== category.value}
+                    disabled={isCategoryDisabledSelected}
+                    onClick={() => setIsDialogOpen(true)}
                   >
                     Assine agora <Icon icon={ArrowRight} variant="white" />
                   </Button>
 
                   <a
                     href="https://wa.me/"
-                    className="block text-center text-sm text-gray-500 hover:text-gray-700 underline"
+                    className="block text-center text-sm text-text-body hover:text-gray-700 underline"
                   >
                     Fale com um consultor no WhatsApp
                   </a>
                 </div>
               </CardContent>
             </Card>
-          </TabsContent>
-        ))}
-      </Tabs>
-    </Form>
+          );
+        })}
+      </Form>
+    </>
   );
 };

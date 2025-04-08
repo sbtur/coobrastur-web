@@ -9,8 +9,9 @@ import { cn } from '@ui/lib/utils';
 const iconVariants = cva('inline-flex shrink-0', {
   variants: {
     variant: {
-      primary: 'text-highlight group-[.hover]:text-highlight-hover',
-      secondary: 'text-primary-100 group-[.hover]:text-secondary-hover',
+      primary: 'text-primary-300 group-[.hover]:text-highlight-hover',
+      highlight: 'text-highlight-100 group-[.hover]:text-highlight-hover',
+      secondary: 'text-seconday-100 group-[.hover]:text-secondary-hover',
       neutral: 'text-neutral-400 group-[.hover]:text-neutral-500',
       white: 'text-white group-[.hover]:text-neutral-100',
     },

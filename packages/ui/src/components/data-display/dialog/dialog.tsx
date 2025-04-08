@@ -5,6 +5,8 @@ import { ComponentRef } from 'react';
 
 import { X } from 'lucide-react';
 
+import { Icon } from '@coobrastur/ui/components/data-display/icon';
+
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { cn } from '@ui/lib/utils';
 
@@ -28,7 +30,26 @@ DialogTrigger.displayName = DialogPrimitive.Trigger.displayName;
 
 const DialogPortal = DialogPrimitive.Portal;
 
-const DialogClose = DialogPrimitive.Close;
+const DialogClose = React.forwardRef<
+  ComponentRef<typeof DialogPrimitive.Close>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Close>
+>(({ className, ...props }, ref) => (
+  <DialogPrimitive.Close
+    asChild
+    ref={ref}
+    className={cn(
+      'absolute right-0 -top-10 z-10 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground',
+      className,
+    )}
+    {...props}
+  >
+    <button onClick={props.onClick} aria-label="Close-Dialog">
+      <Icon icon={X} className="h-8 w-8" variant="white" />
+      <span className="sr-only">Fechar</span>
+    </button>
+  </DialogPrimitive.Close>
+));
+DialogClose.displayName = DialogPrimitive.Close.displayName;
 
 const DialogOverlay = React.forwardRef<
   ComponentRef<typeof DialogPrimitive.Overlay>,
@@ -55,6 +76,7 @@ const DialogContent = React.forwardRef<
       ref={ref}
       className={cn(
         'fixed grid left-[50%] top-[50%] z-50 w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-[20px]',
+        '[&>button[aria-label="Close"]]:hidden',
         className,
       )}
       {...props}
@@ -78,7 +100,7 @@ const DialogHeader = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      'flex flex-col space-y-1.5 text-center sm:text-left',
+      'flex flex-col space-y-1.5 text-center lg:text-left',
       className,
     )}
     {...props}
@@ -118,7 +140,7 @@ const DialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
-    className={cn('text-sm text-muted-foreground', className)}
+    className={cn('text-sm text-text-body', className)}
     {...props}
   />
 ));
