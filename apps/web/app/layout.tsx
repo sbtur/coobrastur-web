@@ -3,9 +3,7 @@ import type { Metadata } from 'next';
 
 import { mangueira, sourceSansPro } from 'assets/fonts';
 
-import { Footer } from '@components/footer';
 import { Image } from '@components/image';
-import { UserMobileNavigation } from '@components/user-mobile-navigation';
 import { Providers } from '@providers';
 
 import '@coobrastur/ui/globals.css';
