@@ -1,28 +1,36 @@
 'use client';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 
+type AccommodationItem = {
+  name: string;
+  uf: string;
+  country: string;
+};
+
 export const Autocomplete = ({
   items,
   onSearch,
+  onSelect,
 }: {
-  items: any[];
-  onSearch: (string: string) => void;
+  items: AccommodationItem[];
+  onSearch: (value: string) => void;
+  onSelect: (value: string) => void;
 }) => {
-  const handleOnSearch = (string: string, results: any) => {
-    onSearch(string);
+  const handleOnSearch = (value: string, results: AccommodationItem[]) => {
+    console.log('handleOnSearch', results);
+    onSearch(value);
   };
 
   const handleOnHover = (result: any) => {};
 
-  const handleOnSelect = (item: any) => {};
+  const handleOnSelect = (value: AccommodationItem) => {
+    console.log('handleOnSelect', value);
+    onSelect(value.name);
+  };
 
   const handleOnFocus = () => {};
 
-  const formatResult = (item: {
-    name: string;
-    uf: string;
-    country: string;
-  }) => {
+  const formatResult = (item: AccommodationItem) => {
     return (
       <div className="py-4 hover:bg-secondary-100 cursor-pointer">
         <span className="font-semibold text-base text-neutral-500">
@@ -65,6 +73,7 @@ export const Autocomplete = ({
       showNoResultsText="Nenhum resultado encontrado"
       maxResults={10}
       placeholder="Digite o nome da cidade ou hotel"
+      resultStringKeyName="name"
     />
   );
 };

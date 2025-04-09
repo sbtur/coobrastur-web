@@ -1,11 +1,12 @@
 'use client';
-import { useState } from 'react';
+
+import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 
 import { Section } from '@coobrastur/ui/components/layouts/section';
 
-import { AUTO_COMPLETE_MOCK } from '@/shared/mocks/search-auto-complete';
-
-import { Autocomplete } from './autocomplete';
+import { useSearch } from '../../contexts/search-context';
+import { AccommodationSearchItem } from '../../types/accommodation-search-item.types';
+import { FormatSearchResultItems } from './format-search-result-items';
 
 import { Icon } from '@ui/components/data-display/icon';
 import { Text } from '@ui/components/data-display/text';
@@ -13,44 +14,25 @@ import { Button } from '@ui/components/data-entry/button';
 import { Container } from '@ui/components/layouts/container';
 import { MapPin, Search as SearchIcon } from '@ui/lib/icons';
 
-async function autoCompleteSearch(value: string) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const places = AUTO_COMPLETE_MOCK.filter(place =>
-        place.name.toLowerCase().startsWith(value.toLowerCase()),
-      );
-
-      if (places.length <= 0) {
-        reject({
-          success: false,
-          data: [],
-          message: 'Nenhum lugar encontrado',
-        });
-      }
-
-      resolve({
-        success: true,
-        data: places,
-      });
-    }, 0);
-  });
-}
-
 export const Search = () => {
-  const [places, setPlaces] = useState<any[]>([]);
+  const {
+    searchPlaceResults,
+    handleAutoCompleteSearch,
+    handleGetAccommodations,
+    setSelectedPlaceToSearchAccommodation,
+  } = useSearch();
 
-  const handleSearch = async (value: string) => {
-    try {
-      const response = await autoCompleteSearch(value);
-      setPlaces((response as any).data);
-    } catch (err: any) {
-      setPlaces([]);
-    }
+  const handleOnSearch = (value: string) => {
+    handleAutoCompleteSearch(value);
+  };
+
+  const handleOnSelect = (value: AccommodationSearchItem) => {
+    setSelectedPlaceToSearchAccommodation(value.name);
   };
 
   return (
     <Section>
-      <Container className="flex flex-col items-center justify-center ">
+      <Container className="flex flex-col items-center justify-center">
         <div className="flex items-center justify-between">
           <form action="" onSubmit={e => e.preventDefault()}>
             <div className="flex items-center gap-2 bg-background rounded-[10px] p-2 shadow-lg">
@@ -58,11 +40,43 @@ export const Search = () => {
                 <Text className="leading-none">Escolha o Hotel ou Cidade:</Text>
                 <div className="flex items-center gap-1">
                   <Icon size="lg" icon={MapPin} variant="highlight" />
-                  <Autocomplete items={places} onSearch={handleSearch} />
+                  <ReactSearchAutocomplete
+                    items={searchPlaceResults}
+                    onSearch={handleOnSearch}
+                    onHover={() => null}
+                    onSelect={handleOnSelect}
+                    onFocus={() => null}
+                    autoFocus
+                    formatResult={FormatSearchResultItems}
+                    className="w-full p-0 font-semibold text-primary-300 placeholder:text-text-body placeholder:font-normal focus:outline-none"
+                    styling={{
+                      backgroundColor: 'white',
+                      border: '0',
+                      boxShadow: 'none',
+                      borderRadius: '0',
+                      fontFamily: 'var(--font-source-sans-pro)',
+                      fontSize: 'text-sm',
+                      color: 'var(--color-primary-300)',
+                      placeholderColor: 'var(--color-body)',
+                      clearIconMargin: '0',
+                      searchIconMargin: '0',
+                      zIndex: 4,
+                      hoverBackgroundColor: 'bg-secondary-100',
+                      lineColor: 'var(--color-primary-300)',
+                    }}
+                    showIcon={false}
+                    showNoResultsText="Nenhum resultado encontrado"
+                    maxResults={10}
+                    placeholder="Digite o nome da cidade ou hotel"
+                    resultStringKeyName="name"
+                  />
                 </div>
               </div>
 
-              <Button className="w-[63px] h-[63px] rounded-[10px]">
+              <Button
+                className="w-[63px] h-[63px] rounded-[10px]"
+                onClick={handleGetAccommodations}
+              >
                 <Icon icon={SearchIcon} variant="white" />
               </Button>
             </div>

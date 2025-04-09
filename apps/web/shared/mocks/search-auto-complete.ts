@@ -2,6 +2,8 @@ export const AUTO_COMPLETE_MOCK = [
   {
     id: 1,
     name: 'Florianópolis',
+    uf: 'SC',
+    country: 'Brasil',
   },
   {
     id: 2,
