@@ -47,7 +47,7 @@ export const sourceSansPro = localFont({
       style: 'normal',
     },
     {
-      path: '../public/fonts/source-sans-pro/SourceSansPro-SemiBold.otf',
+      path: '../public/fonts/source-sans-pro/SourceSansPro-Semibold.otf',
       weight: '600',
       style: 'normal',
     },
@@ -62,7 +62,7 @@ export const sourceSansPro = localFont({
       style: 'normal',
     },
     {
-      path: '../public/fonts/source-sans-pro/SourceSansPro-SemiBold.woff2',
+      path: '../public/fonts/source-sans-pro/SourceSansPro-Semibold.woff2',
       weight: '600',
       style: 'normal',
     },
