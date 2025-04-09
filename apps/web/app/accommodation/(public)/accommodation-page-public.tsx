@@ -4,7 +4,7 @@ import { Separator } from '@coobrastur/ui/components/data-display/separator';
 import { Title } from '@coobrastur/ui/components/data-display/title';
 import { Button } from '@coobrastur/ui/components/data-entry/button';
 import { Container } from '@coobrastur/ui/components/layouts/container';
-import { ArrowRight, Badge, CreditCard, Users } from '@coobrastur/ui/lib/icons';
+import { ArrowRight, CreditCard, Users } from '@coobrastur/ui/lib/icons';
 
 import { HeaderPublic } from '@/shared/components/header';
 import { ResponsiveLargerThan } from '@/shared/components/responsive';
