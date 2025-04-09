@@ -1,27 +1,43 @@
 'use client';
 
-import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import Image from 'next/image';
 
 import { z } from 'zod';
 
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Link } from '@shared/components/link';
+import { loginValidationSchema } from '@shared/helpers/validation';
 import { Text } from '@ui/components/data-display/text';
 import { Title } from '@ui/components/data-display/title';
 import { Button } from '@ui/components/data-entry/button';
 import { Input } from '@ui/components/data-entry/input';
 import { Label } from '@ui/components/data-entry/label';
 
-const loginSchema = z.object({
-  cpf: z.string().min(14, { message: 'CPF/CNPJ é obrigatório' }),
-  password: z.string().min(8, { message: 'Senha é obrigatória' }),
-});
+type LoginFormData = z.infer<typeof loginValidationSchema>;
 
 export default function Login() {
-  const [cpf, setCpf] = useState('');
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormData>({
+    resolver: zodResolver(loginValidationSchema),
+    defaultValues: {
+      cpfCnpj: '',
+      password: '',
+    },
+  });
+
+  const onSubmit = (values: LoginFormData) => {
+    console.log(values);
+  };
 
   return (
-    <div className="grid lg:grid-cols-2 grid-cols-1 h-screen">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="grid lg:grid-cols-2 grid-cols-1 h-screen"
+    >
       <div className="relative h-full w-full hidden lg:block">
         <Image
           src="/images/pages/login/grupo.png"
@@ -47,29 +63,32 @@ export default function Login() {
           </Text>
         </div>
         <div className="flex flex-col gap-1 mb-10">
-          <Label htmlFor="cpf_cnpj" className="pb-2 text-neutral-500">
+          <Label htmlFor="cpfCnpj" className="pb-2 text-neutral-500">
             Seu CPF/CNPJ
           </Label>
           <Input
-            id="cpf_cnpj"
+            id="cpfCnpj"
             placeholder="CPF/CNPJ"
             maxLength={14}
-            value={cpf}
-            onChange={e => {
-              const value = e.target.value.replace(/\D/g, '');
-              const formattedValue = value.replace(
-                /(\d{3})(\d{3})(\d{3})(\d{2})/,
-                '$1.$2.$3-$4',
-              );
-              setCpf(formattedValue);
-            }}
+            {...register('cpfCnpj')}
           />
+          {errors.cpfCnpj && (
+            <Text className="text-red-500">{errors.cpfCnpj.message}</Text>
+          )}
         </div>
         <div className="flex flex-col gap-1 mb-3">
           <Label htmlFor="password" className="pb-2 text-neutral-500">
             Senha
           </Label>
-          <Input id="password" type="password" placeholder="Senha" />
+          <Input
+            id="password"
+            type="password"
+            placeholder="Senha"
+            {...register('password')}
+          />
+          {errors.password && (
+            <Text className="text-red-500">{errors.password.message}</Text>
+          )}
         </div>
         <div className="flex flex-col gap-1 mb-10">
           <Link
@@ -80,13 +99,15 @@ export default function Login() {
           </Link>
         </div>
         <div className="flex flex-col gap-1">
-          <Button className="w-full p-4 mb-3">Acessar minha conta</Button>
+          <Button type="submit" className="w-full p-4 mb-3">
+            Acessar minha conta
+          </Button>
 
           <Button className="w-full p-4" variant="outline">
             Primeiro acesso
           </Button>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
