@@ -1,5 +1,16 @@
-import { SearchPlace } from './search-place';
+import { AccommodationList } from './containers/accommodation-list';
+import { Search } from './containers/search';
+import { SearchFilters } from './containers/search-filters';
 
-export default function Page() {
-  return <SearchPlace />;
+import { Separator } from '@ui/components/data-display/separator';
+
+export default async function SearchPlacePage() {
+  return (
+    <>
+      <Search />
+      <Separator />
+      <SearchFilters />
+      <AccommodationList accommodations={[]} />
+    </>
+  );
 }

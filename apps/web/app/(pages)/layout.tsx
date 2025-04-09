@@ -8,12 +8,12 @@ import '@coobrastur/ui/globals.css';
 
 function PagesLayout({ children }: { children: ReactNode }) {
   return (
-    <>
+    <div className="flex min-h-dvh flex-col">
       <HeaderPublic />
-      {children}
+      <main className="flex-1">{children}</main>
       <Footer />
       <UserMobileNavigation />
-    </>
+    </div>
   );
 }
 
