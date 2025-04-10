@@ -17,8 +17,10 @@ const cpfCnpj = z
     return !!Number(replacedDoc);
   }, 'CPF/CNPJ deve conter apenas números.');
 
+const password = z.string().min(8, { message: 'Senha é obrigatória' });
+
 export const loginValidationSchema = z.strictObject({
-  password: z.string().min(8, { message: 'Senha é obrigatória' }),
+  password: password,
   cpfCnpj: cpfCnpj,
 });
 
@@ -33,3 +35,13 @@ export const recoveryPasswordEmailValidationSchema = z.strictObject({
   cpfCnpj: cpfCnpj,
   email: z.string().email({ message: 'Email inválido' }),
 });
+
+export const newPasswordValidationSchema = z
+  .strictObject({
+    newPassword: password,
+    confirmPassword: password,
+  })
+  .refine(data => data.newPassword === data.confirmPassword, {
+    message: 'As senhas não coincidem',
+    path: ['confirmPassword'],
+  });

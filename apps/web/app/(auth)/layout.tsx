@@ -1,10 +1,5 @@
 import Image from 'next/image';
 
-// export const metadata = {
-//   title: 'Coobrastur - Login',
-//   description: 'Efetue o login para acessar o sistema',
-// };
-
 export default function AuthLayout({
   children,
 }: {
@@ -22,7 +17,7 @@ export default function AuthLayout({
             priority
           />
         </div>
-        <div className="relative h-full w-full px-[15%] py-[20%]">
+        <div className="relative h-full w-full px-[15%] pt-[15%]">
           <div className="flex flex-col gap-4 pb-2 lg:text-left text-center">
             <div className="flex justify-center lg:hidden">
               <Image
