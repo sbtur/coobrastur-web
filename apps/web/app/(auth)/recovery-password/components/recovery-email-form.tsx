@@ -1,8 +1,7 @@
 'use client';
 
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import MaskedInput from 'react-text-mask';
-import { Metadata } from 'next';
 
 import { z } from 'zod';
 
@@ -14,17 +13,17 @@ import { Button } from '@ui/components/data-entry/button';
 import { Input } from '@ui/components/data-entry/input';
 import { Label } from '@ui/components/data-entry/label';
 
-export const metadata: Metadata = {
-  title: 'Recuperar senha via email | Coobrastur',
-  description: 'Recupere sua senha através do email',
-};
+type RecoveryEmailFormData = z.infer<
+  typeof recoveryPasswordEmailValidationSchema
+>;
 
 const RecoveryEmailForm = () => {
   const {
+    control,
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<z.infer<typeof recoveryPasswordEmailValidationSchema>>({
+  } = useForm<RecoveryEmailFormData>({
     resolver: zodResolver(recoveryPasswordEmailValidationSchema),
   });
 
@@ -37,18 +36,26 @@ const RecoveryEmailForm = () => {
       <div className="relative h-full w-full">
         <div className="flex flex-col gap-1 mb-10">
           <Label htmlFor="cpfCnpj" className="pb-2 text-neutral-500">
-            Insira seu CPF
+            Insira seu CPF ou CNPJ
           </Label>
-          <MaskedInput
-            mask={cpfOrCnpjMask}
-            id="cpfCnpj"
-            placeholder="CPF/CNPJ"
-            render={(ref, props) => {
-              return (
-                <Input {...props} ref={ref as React.Ref<HTMLInputElement>} />
-              );
-            }}
+          <Controller
+            name="cpfCnpj"
+            control={control}
+            render={({ field }) => (
+              <MaskedInput
+                mask={cpfOrCnpjMask}
+                placeholder="CPF/CNPJ"
+                id="cpfCnpj"
+                {...field}
+                render={(ref, props) => (
+                  <Input {...props} ref={ref as React.Ref<HTMLInputElement>} />
+                )}
+              />
+            )}
           />
+          {errors.cpfCnpj && (
+            <Text className="text-red-500">{errors.cpfCnpj.message}</Text>
+          )}
         </div>
         <div className="flex flex-col gap-1 mb-3">
           <Label htmlFor="email" className="pb-2 text-neutral-500">

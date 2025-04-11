@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const isValidCPF = (cpf: string) => {
+export const isValidCPF = (cpf: string) => {
   if (typeof cpf !== 'string') return false;
   const cleanedCpf = cpf.replace(/[^\d]+/g, '');
   if (cleanedCpf.length !== 11 || !!cleanedCpf.match(/(\d)\1{10}/))
@@ -20,7 +20,7 @@ const isValidCPF = (cpf: string) => {
   return rest(10) === cpfNumbers[9] && rest(11) === cpfNumbers[10];
 };
 
-const isValidCNPJ = (cnpj: string) => {
+export const isValidCNPJ = (cnpj: string) => {
   if (typeof cnpj !== 'string') return false;
   const cleanedCnpj = cnpj.replace(/[^\d]+/g, '');
   if (cleanedCnpj.length !== 14 || !!cleanedCnpj.match(/(\d)\1{13}/))
@@ -48,20 +48,18 @@ const cpfCnpj = z
     if (replacedDoc.length === 11) {
       return isValidCPF(replacedDoc);
     }
-  }, 'CPF inválido.')
-  .refine(doc => {
-    const replacedDoc = doc.replace(/\D/g, '');
     if (replacedDoc.length === 14) {
       return isValidCNPJ(replacedDoc);
     }
-    return true;
-  }, 'CNPJ inválido.');
+    return false;
+  }, 'CPF/CNPJ inválido');
 
 const password = z
   .string()
   .min(6, { message: 'Senha deve ter no mínimo 6 caracteres' });
 
-export const loginValidationSchema = z.strictObject({
+export const loginValidationSchema = z.object({
+  cpfCnpj: cpfCnpj,
   password: z.string().min(1, { message: 'Senha é obrigatória' }),
 });
 
@@ -72,7 +70,8 @@ export const recoveryPasswordSMSValidationSchema = z.strictObject({
     .min(6, { message: 'Código de recuperação é obrigatório' }),
 });
 
-export const recoveryPasswordEmailValidationSchema = z.strictObject({
+export const recoveryPasswordEmailValidationSchema = z.object({
+  cpfCnpj: cpfCnpj,
   email: z.string().email({ message: 'Email inválido' }),
 });
 

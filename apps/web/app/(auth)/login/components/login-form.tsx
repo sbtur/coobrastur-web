@@ -1,6 +1,6 @@
 'use client';
 
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import MaskedInput from 'react-text-mask';
 
 import { z } from 'zod';
@@ -20,17 +20,18 @@ import { Label } from '@ui/components/data-entry/label';
 type LoginFormData = z.infer<typeof loginValidationSchema>;
 
 const LoginForm = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<z.infer<typeof loginValidationSchema>>({
-    resolver: zodResolver(loginValidationSchema),
-  });
-
   const onSubmit = (values: LoginFormData) => {
     console.log(values);
   };
+
+  const {
+    control,
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormData>({
+    resolver: zodResolver(loginValidationSchema),
+  });
 
   return (
     <>
@@ -44,16 +45,24 @@ const LoginForm = () => {
           <Label htmlFor="cpfCnpj" className="pb-2 text-neutral-500">
             Seu CPF/CNPJ
           </Label>
-          <MaskedInput
-            mask={cpfOrCnpjMask}
-            id="cpfCnpj"
-            placeholder="CPF/CNPJ"
-            render={(ref, props) => {
-              return (
-                <Input {...props} ref={ref as React.Ref<HTMLInputElement>} />
-              );
-            }}
+          <Controller
+            name="cpfCnpj"
+            control={control}
+            render={({ field }) => (
+              <MaskedInput
+                mask={cpfOrCnpjMask}
+                placeholder="CPF/CNPJ"
+                id="cpfCnpj"
+                {...field}
+                render={(ref, props) => (
+                  <Input {...props} ref={ref as React.Ref<HTMLInputElement>} />
+                )}
+              />
+            )}
           />
+          {errors.cpfCnpj && (
+            <Text className="text-red-500">{errors.cpfCnpj.message}</Text>
+          )}
         </div>
         <div className="flex flex-col gap-1 mb-3">
           <Label htmlFor="password" className="pb-2 text-neutral-500">
