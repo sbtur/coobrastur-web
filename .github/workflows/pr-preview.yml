@@ -1,0 +1,51 @@
+name: PR Preview Deployment
+
+on:
+  pull_request:
+    branches:
+      - dev
+    types: [opened, synchronize, reopened]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Create Amplify Branch
+        run: |
+          BRANCH_NAME="pr-${{ github.event.pull_request.number }}"
+          aws amplify create-branch \
+            --app-id ${{ secrets.AMPLIFY_APP_ID }} \
+            --branch-name $BRANCH_NAME \
+            --enable-auto-build
+
+      - name: Start Amplify Job
+        run: |
+          BRANCH_NAME="pr-${{ github.event.pull_request.number }}"
+          aws amplify start-job \
+            --app-id ${{ secrets.AMPLIFY_APP_ID }} \
+            --branch-name $BRANCH_NAME \
+            --job-type RELEASE
+
+      - name: Comment PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const appId = process.env.AMPLIFY_APP_ID;
+            const previewUrl = `https://pr-${prNumber}.${appId}.amplifyapp.com`;
+
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body: `🚀 Preview deployment iniciado!\n\nQuando o build terminar, você poderá ver suas mudanças em: ${previewUrl}`
+            });
