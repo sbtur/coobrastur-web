@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { z } from 'zod';
 
+import { Heading } from '@coobrastur/ui/components/data-display/heading';
 import { useForm } from '@coobrastur/ui/lib/form';
 import { zodResolver } from '@coobrastur/ui/lib/validation';
 
@@ -34,10 +35,12 @@ export default function NewPasswordForm() {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Title variant="primary">Escolha sua nova senha</Title>
-        <Text className="pb-10">
-          Para continuar, crie uma nova senha segura para acessar sua conta.
-        </Text>
+        <Heading className="pb-10 ml-0 pl-0">
+          <Title>Escolha sua nova senha</Title>
+          <Text>
+            Para continuar, crie uma nova senha segura para acessar sua conta.
+          </Text>
+        </Heading>
 
         <div className="flex flex-col gap-1 mb-8">
           <Label htmlFor="newPassword" className="pb-2 text-neutral-500">

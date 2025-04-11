@@ -1,27 +1,68 @@
 import { z } from 'zod';
 
+const isValidCPF = (cpf: string) => {
+  if (typeof cpf !== 'string') return false;
+  const cleanedCpf = cpf.replace(/[^\d]+/g, '');
+  if (cleanedCpf.length !== 11 || !!cleanedCpf.match(/(\d)\1{10}/))
+    return false;
+  const cpfNumbers = cleanedCpf.split('').map(el => Number(el));
+  const rest = (count: number) =>
+    ((cpfNumbers
+      .slice(0, count - 12)
+      .reduce(
+        (soma: number, el: number, index: number) =>
+          soma + el * (count - index),
+        0,
+      ) *
+      10) %
+      11) %
+    10;
+  return rest(10) === cpfNumbers[9] && rest(11) === cpfNumbers[10];
+};
+
+const isValidCNPJ = (cnpj: string) => {
+  if (typeof cnpj !== 'string') return false;
+  const cleanedCnpj = cnpj.replace(/[^\d]+/g, '');
+  if (cleanedCnpj.length !== 14 || !!cleanedCnpj.match(/(\d)\1{13}/))
+    return false;
+  const cnpjNumbers = cleanedCnpj.split('').map(el => Number(el));
+  const rest = (count: number) =>
+    ((cnpjNumbers
+      .slice(0, count - 12)
+      .reduce(
+        (soma: number, el: number, index: number) =>
+          soma + el * (count - index),
+        0,
+      ) *
+      10) %
+      11) %
+    10;
+  return rest(12) === cnpjNumbers[12] && rest(13) === cnpjNumbers[13];
+};
 const cpfCnpj = z
   .string({
     required_error: 'CPF/CNPJ é obrigatório.',
   })
   .refine(doc => {
     const replacedDoc = doc.replace(/\D/g, '');
-    return replacedDoc.length >= 11;
-  }, 'CPF/CNPJ deve conter no mínimo 11 caracteres.')
+    if (replacedDoc.length === 11) {
+      return isValidCPF(replacedDoc);
+    }
+  }, 'CPF inválido.')
   .refine(doc => {
     const replacedDoc = doc.replace(/\D/g, '');
-    return replacedDoc.length <= 14;
-  }, 'CPF/CNPJ deve conter no máximo 14 caracteres.')
-  .refine(doc => {
-    const replacedDoc = doc.replace(/\D/g, '');
-    return !!Number(replacedDoc);
-  }, 'CPF/CNPJ deve conter apenas números.');
+    if (replacedDoc.length === 14) {
+      return isValidCNPJ(replacedDoc);
+    }
+    return true;
+  }, 'CNPJ inválido.');
 
-const password = z.string().min(8, { message: 'Senha é obrigatória' });
+const password = z
+  .string()
+  .min(6, { message: 'Senha deve ter no mínimo 6 caracteres' });
 
 export const loginValidationSchema = z.strictObject({
-  password: password,
-  cpfCnpj: cpfCnpj,
+  password: z.string().min(1, { message: 'Senha é obrigatória' }),
 });
 
 export const recoveryPasswordSMSValidationSchema = z.strictObject({
@@ -32,7 +73,6 @@ export const recoveryPasswordSMSValidationSchema = z.strictObject({
 });
 
 export const recoveryPasswordEmailValidationSchema = z.strictObject({
-  cpfCnpj: cpfCnpj,
   email: z.string().email({ message: 'Email inválido' }),
 });
 

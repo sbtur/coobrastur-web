@@ -1,10 +1,12 @@
 'use client';
 import { useForm } from 'react-hook-form';
+import MaskedInput from 'react-text-mask';
 
 import { z } from 'zod';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { recoveryPasswordSMSValidationSchema } from '@shared/helpers/validation';
+import { cellPhoneOrPhoneMask } from '@shared/utils/input-masks';
 import { Text } from '@ui/components/data-display/text';
 import { Button } from '@ui/components/data-entry/button';
 import { Input } from '@ui/components/data-entry/input';
@@ -30,15 +32,16 @@ const RecoverySMSForm = () => {
           <Label htmlFor="phone" className="pb-2 text-neutral-500">
             Insira o número de celular vinculado à sua conta
           </Label>
-          <Input
+          <MaskedInput
+            mask={cellPhoneOrPhoneMask}
             id="phone"
             placeholder="(DDD) + Celular"
-            maxLength={11}
-            {...register('phone')}
+            render={(ref, props) => {
+              return (
+                <Input {...props} ref={ref as React.Ref<HTMLInputElement>} />
+              );
+            }}
           />
-          {errors.phone && (
-            <Text className="text-red-500">{errors.phone.message}</Text>
-          )}
         </div>
         <div className="flex flex-col gap-1 mb-3">
           <Label htmlFor="smsCode" className="pb-2 text-neutral-500">

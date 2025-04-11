@@ -1,12 +1,14 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
+import MaskedInput from 'react-text-mask';
 import { Metadata } from 'next';
 
 import { z } from 'zod';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { recoveryPasswordEmailValidationSchema } from '@shared/helpers/validation';
+import { cpfOrCnpjMask } from '@shared/utils/input-masks';
 import { Text } from '@ui/components/data-display/text';
 import { Button } from '@ui/components/data-entry/button';
 import { Input } from '@ui/components/data-entry/input';
@@ -37,15 +39,16 @@ const RecoveryEmailForm = () => {
           <Label htmlFor="cpfCnpj" className="pb-2 text-neutral-500">
             Insira seu CPF
           </Label>
-          <Input
+          <MaskedInput
+            mask={cpfOrCnpjMask}
             id="cpfCnpj"
-            placeholder="CPF"
-            maxLength={11}
-            {...register('cpfCnpj')}
+            placeholder="CPF/CNPJ"
+            render={(ref, props) => {
+              return (
+                <Input {...props} ref={ref as React.Ref<HTMLInputElement>} />
+              );
+            }}
           />
-          {errors.cpfCnpj && (
-            <Text className="text-red-500">{errors.cpfCnpj.message}</Text>
-          )}
         </div>
         <div className="flex flex-col gap-1 mb-3">
           <Label htmlFor="email" className="pb-2 text-neutral-500">

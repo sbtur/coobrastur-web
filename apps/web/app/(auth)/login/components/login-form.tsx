@@ -1,12 +1,16 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
+import MaskedInput from 'react-text-mask';
 
 import { z } from 'zod';
+
+import { Heading } from '@coobrastur/ui/components/data-display/heading';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Link } from '@shared/components/link';
 import { loginValidationSchema } from '@shared/helpers/validation';
+import { cpfOrCnpjMask } from '@shared/utils/input-masks';
 import { Text } from '@ui/components/data-display/text';
 import { Title } from '@ui/components/data-display/title';
 import { Button } from '@ui/components/data-entry/button';
@@ -31,24 +35,25 @@ const LoginForm = () => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Title variant="primary">Acesse sua conta</Title>
-        <Text className="pb-10">
-          Preencha seus dados e continue sua jornada
-        </Text>
+        <Heading className="pb-10 ml-0 pl-0">
+          <Title>Acesse sua conta</Title>
+          <Text>Preencha seus dados e continue sua jornada</Text>
+        </Heading>
 
         <div className="flex flex-col gap-1 mb-10">
           <Label htmlFor="cpfCnpj" className="pb-2 text-neutral-500">
             Seu CPF/CNPJ
           </Label>
-          <Input
+          <MaskedInput
+            mask={cpfOrCnpjMask}
             id="cpfCnpj"
             placeholder="CPF/CNPJ"
-            maxLength={14}
-            {...register('cpfCnpj')}
+            render={(ref, props) => {
+              return (
+                <Input {...props} ref={ref as React.Ref<HTMLInputElement>} />
+              );
+            }}
           />
-          {errors.cpfCnpj && (
-            <Text className="text-red-500">{errors.cpfCnpj.message}</Text>
-          )}
         </div>
         <div className="flex flex-col gap-1 mb-3">
           <Label htmlFor="password" className="pb-2 text-neutral-500">

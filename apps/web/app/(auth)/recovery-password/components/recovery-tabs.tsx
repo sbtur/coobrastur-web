@@ -2,6 +2,7 @@
 
 import { Mail, MessageSquare } from 'lucide-react';
 
+import { Heading } from '@coobrastur/ui/components/data-display/heading';
 import { Icon } from '@coobrastur/ui/components/data-display/icon';
 import { Title } from '@coobrastur/ui/components/data-display/title';
 
@@ -19,10 +20,10 @@ import { Text } from '@ui/components/data-display/text';
 export function RecoveryTabs() {
   return (
     <>
-      <Title variant="primary">Redefinir sua senha</Title>
-      <Text className="pb-10">
-        Escolha a forma mais conveniente para redefinir sua senha.
-      </Text>
+      <Heading className="pb-10 ml-0 pl-0">
+        <Title>Redefinir sua senha</Title>
+        <Text>Escolha a forma mais conveniente para redefinir sua senha.</Text>
+      </Heading>
       <Tabs defaultValue="email" className="w-full">
         <TabsList className="flex gap-5 p-1 bg-neutral-100 rounded-lg mb-[60px] justify-start">
           <TabsTrigger
