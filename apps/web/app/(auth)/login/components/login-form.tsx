@@ -1,8 +1,10 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import MaskedInput from 'react-text-mask';
 
+import { Loader } from 'lucide-react';
 import { z } from 'zod';
 
 import { Heading } from '@coobrastur/ui/components/data-display/heading';
@@ -20,6 +22,8 @@ import { Label } from '@ui/components/data-entry/label';
 type LoginFormData = z.infer<typeof loginValidationSchema>;
 
 const LoginForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const onSubmit = (values: LoginFormData) => {
     console.log(values);
   };
@@ -33,6 +37,22 @@ const LoginForm = () => {
     resolver: zodResolver(loginValidationSchema),
   });
 
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+
+    if (isLoading) {
+      timeoutId = setTimeout(() => {
+        setIsLoading(false);
+      }, 5000);
+    }
+
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [isLoading]);
+
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -42,30 +62,44 @@ const LoginForm = () => {
         </Heading>
 
         <div className="flex flex-col gap-1 mb-10">
-          <Label htmlFor="cpfCnpj" className="pb-2 text-neutral-500">
+          <Label htmlFor="cpfCnpj" className="text-neutral-500">
             Seu CPF/CNPJ
           </Label>
-          <Controller
-            name="cpfCnpj"
-            control={control}
-            render={({ field }) => (
-              <MaskedInput
-                mask={cpfOrCnpjMask}
-                placeholder="CPF/CNPJ"
-                id="cpfCnpj"
-                {...field}
-                render={(ref, props) => (
-                  <Input {...props} ref={ref as React.Ref<HTMLInputElement>} />
-                )}
-              />
-            )}
-          />
+          <div className="relative">
+            <Controller
+              name="cpfCnpj"
+              control={control}
+              render={({ field }) => (
+                <div className="relative">
+                  <MaskedInput
+                    mask={cpfOrCnpjMask}
+                    placeholder="CPF/CNPJ"
+                    id="cpfCnpj"
+                    {...field}
+                    onBlur={() => setIsLoading(true)}
+                    render={(ref, props) => (
+                      <Input
+                        {...props}
+                        ref={ref as React.Ref<HTMLInputElement>}
+                        className={isLoading ? 'pr-8' : ''}
+                      />
+                    )}
+                  />
+                  {isLoading && (
+                    <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                      <Loader className="h-4 w-4 animate-spin text-highlight-100" />
+                    </div>
+                  )}
+                </div>
+              )}
+            />
+          </div>
           {errors.cpfCnpj && (
             <Text className="text-red-500">{errors.cpfCnpj.message}</Text>
           )}
         </div>
         <div className="flex flex-col gap-1 mb-3">
-          <Label htmlFor="password" className="pb-2 text-neutral-500">
+          <Label htmlFor="password" className="text-neutral-500">
             Senha
           </Label>
           <Input

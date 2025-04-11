@@ -35,7 +35,7 @@ const RecoveryEmailForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="relative h-full w-full">
         <div className="flex flex-col gap-1 mb-10">
-          <Label htmlFor="cpfCnpj" className="pb-2 text-neutral-500">
+          <Label htmlFor="cpfCnpj" className="text-neutral-500">
             Insira seu CPF ou CNPJ
           </Label>
           <Controller
@@ -58,7 +58,7 @@ const RecoveryEmailForm = () => {
           )}
         </div>
         <div className="flex flex-col gap-1 mb-3">
-          <Label htmlFor="email" className="pb-2 text-neutral-500">
+          <Label htmlFor="email" className="text-neutral-500">
             Email
           </Label>
           <Input

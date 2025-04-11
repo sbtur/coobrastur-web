@@ -29,7 +29,7 @@ const RecoverySMSForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="relative h-full w-full">
         <div className="flex flex-col gap-1 mb-10">
-          <Label htmlFor="phone" className="pb-2 text-neutral-500">
+          <Label htmlFor="phone" className="text-neutral-500">
             Insira o número de celular vinculado à sua conta
           </Label>
           <MaskedInput
@@ -44,7 +44,7 @@ const RecoverySMSForm = () => {
           />
         </div>
         <div className="flex flex-col gap-1 mb-3">
-          <Label htmlFor="smsCode" className="pb-2 text-neutral-500">
+          <Label htmlFor="smsCode" className="text-neutral-500">
             Insira o código SMS (Token)
           </Label>
           <Input

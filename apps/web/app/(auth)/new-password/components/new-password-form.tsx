@@ -43,7 +43,7 @@ export default function NewPasswordForm() {
         </Heading>
 
         <div className="flex flex-col gap-1 mb-8">
-          <Label htmlFor="newPassword" className="pb-2 text-neutral-500">
+          <Label htmlFor="newPassword" className="text-neutral-500">
             Nova senha
           </Label>
           <div className="relative">
@@ -70,7 +70,7 @@ export default function NewPasswordForm() {
           </div>
         </div>
         <div className="flex flex-col gap-1 mb-8">
-          <Label htmlFor="confirmPassword" className="pb-2 text-neutral-500">
+          <Label htmlFor="confirmPassword" className="text-neutral-500">
             Confirmar senha
           </Label>
           <div className="relative">
