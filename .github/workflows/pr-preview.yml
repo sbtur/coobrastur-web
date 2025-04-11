@@ -7,12 +7,8 @@ on:
     types: [opened, synchronize, reopened]
 
 permissions:
-  id-token: write
-  contents: read
   pull-requests: write
-
-env:
-  AWS_REGION: us-east-1
+  contents: read
 
 jobs:
   deploy:
@@ -24,15 +20,15 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: ${{ env.AWS_REGION }}
-          audience: sts.amazonaws.com
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
 
       - name: Create Amplify Branch
         run: |
           BRANCH_NAME="pr-${{ github.event.pull_request.number }}"
           aws amplify create-branch \
-            --app-id ${{ secrets.AMPLIFY_APP_ID }} \
+            --app-id ${{ secrets.AMPLIFYID }} \
             --branch-name $BRANCH_NAME \
             --enable-auto-build || true
 
@@ -40,14 +36,14 @@ jobs:
         run: |
           BRANCH_NAME="pr-${{ github.event.pull_request.number }}"
           aws amplify start-job \
-            --app-id ${{ secrets.AMPLIFY_APP_ID }} \
+            --app-id ${{ secrets.AMPLIFYID }} \
             --branch-name $BRANCH_NAME \
             --job-type RELEASE
 
       - name: Comment PR
         uses: actions/github-script@v7
         env:
-          AMPLIFY_APP_ID: ${{ secrets.AMPLIFY_APP_ID }}
+          AMPLIFY_APP_ID: ${{ secrets.AMPLIFYID }}
         with:
           script: |
             const prNumber = context.payload.pull_request.number;
