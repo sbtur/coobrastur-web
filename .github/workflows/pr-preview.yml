@@ -23,8 +23,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::417148374980:role/
-RoleforGitHubActionsAmplifyDeployments
+          role-to-assume: arn:aws:iam::417148374980:role/RoleforGitHubActionsAmplifyDeployments
           aws-region: us-east-1
 
       - name: Create Amplify Branch
