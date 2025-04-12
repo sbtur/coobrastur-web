@@ -7,8 +7,9 @@ on:
     types: [opened, synchronize, reopened]
 
 permissions:
+  id-token: write   # Required for requesting the JWT
   pull-requests: write
-  contents: read
+  contents: read    # Required for actions/checkout
 
 jobs:
   deploy:
@@ -17,37 +18,41 @@ jobs:
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch_name || github.head_ref }}
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: arn:aws:iam::417148374980:role/CoobrasturPreviewDeploy
+          role-session-name: amplify-preview-deployment
           aws-region: us-east-1
 
       - name: Create Amplify Branch
         run: |
-          BRANCH_NAME="pr-${{ github.event.pull_request.number }}"
+          BRANCH_NAME="${{ github.event.inputs.branch_name || format('pr-{0}', github.event.pull_request.number) }}"
           aws amplify create-branch \
-            --app-id ${{ secrets.AMPLIFYID }} \
+            --app-id d276y3hlb1f86o \
             --branch-name $BRANCH_NAME \
             --enable-auto-build || true
 
       - name: Start Amplify Job
         run: |
-          BRANCH_NAME="pr-${{ github.event.pull_request.number }}"
+          BRANCH_NAME="${{ github.event.inputs.branch_name || format('pr-{0}', github.event.pull_request.number) }}"
           aws amplify start-job \
-            --app-id ${{ secrets.AMPLIFYID }} \
+            --app-id d276y3hlb1f86o \
             --branch-name $BRANCH_NAME \
             --job-type RELEASE
 
       - name: Comment PR
+        if: github.event_name == 'pull_request' || github.event.inputs.pr_number
         uses: actions/github-script@v7
         env:
-          AMPLIFY_APP_ID: ${{ secrets.AMPLIFYID }}
+          AMPLIFY_APP_ID: d276y3hlb1f86o
+          PR_NUMBER: ${{ github.event.pull_request.number || github.event.inputs.pr_number }}
         with:
           script: |
-            const prNumber = context.payload.pull_request.number;
+            const prNumber = process.env.PR_NUMBER;
             const appId = process.env.AMPLIFY_APP_ID;
             const previewUrl = `https://pr-${prNumber}.${appId}.amplifyapp.com`;
 
