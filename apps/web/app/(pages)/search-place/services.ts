@@ -37,7 +37,7 @@ export async function getAccommodations(value: string | null) {
         reject({
           success: false,
           data: [],
-          message: 'Nenhum hotel encontrado',
+          message: 'Nenhuma acomodação encontrada',
         });
       }
 
