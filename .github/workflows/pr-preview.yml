@@ -7,8 +7,9 @@ on:
     types: [opened, synchronize, reopened]
 
 permissions:
+  id-token: write   # Required for requesting the JWT
   pull-requests: write
-  contents: read
+  contents: read    # Required for actions/checkout
 
 jobs:
   deploy:
@@ -24,6 +25,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::417148374980:role/RoleforGitHubActionsAmplifyDeployments
+          role-session-name: amplify-preview-deployment
           aws-region: us-east-1
 
       - name: Create Amplify Branch
