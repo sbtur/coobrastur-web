@@ -37,28 +37,67 @@ jobs:
             --enable-auto-build || true
 
       - name: Start Amplify Job
+        id: amplify-job
         run: |
           BRANCH_NAME="${{ github.event.inputs.branch_name || format('pr-{0}', github.event.pull_request.number) }}"
-          aws amplify start-job \
+          JOB_ID=$(aws amplify start-job \
             --app-id d276y3hlb1f86o \
             --branch-name $BRANCH_NAME \
-            --job-type RELEASE
+            --job-type RELEASE --query 'jobSummary.jobId' --output text)
+
+          echo "job_id=$JOB_ID" >> $GITHUB_OUTPUT
+
+          # Get the Amplify app details to determine the correct domain
+          APP_INFO=$(aws amplify get-app --app-id d276y3hlb1f86o)
+          APP_URL=$(echo $APP_INFO | jq -r '.app.defaultDomain')
+
+          # Set the preview URL
+          PREVIEW_URL="https://$BRANCH_NAME.$APP_URL"
+          echo "preview_url=$PREVIEW_URL" >> $GITHUB_OUTPUT
+
+          # Wait for the job to complete (optional)
+          echo "Waiting for Amplify build to start..."
+          sleep 10
+
+          # Check job status periodically
+          JOB_STATUS="PENDING"
+          while [[ "$JOB_STATUS" == "PENDING" || "$JOB_STATUS" == "RUNNING" ]]; do
+            JOB_INFO=$(aws amplify get-job --app-id d276y3hlb1f86o --branch-name $BRANCH_NAME --job-id $JOB_ID)
+            JOB_STATUS=$(echo $JOB_INFO | jq -r '.job.summary.status')
+            echo "Build status: $JOB_STATUS"
+
+            if [[ "$JOB_STATUS" != "PENDING" && "$JOB_STATUS" != "RUNNING" ]]; then
+              break
+            fi
+
+            echo "Waiting for build to complete..."
+            sleep 30
+          done
+
+          if [[ "$JOB_STATUS" == "SUCCEED" ]]; then
+            echo "Build completed successfully!"
+          else
+            echo "Build ended with status: $JOB_STATUS"
+          fi
 
       - name: Comment PR
         if: github.event_name == 'pull_request' || github.event.inputs.pr_number
         uses: actions/github-script@v7
         env:
-          AMPLIFY_APP_ID: d276y3hlb1f86o
           PR_NUMBER: ${{ github.event.pull_request.number || github.event.inputs.pr_number }}
+          PREVIEW_URL: ${{ steps.amplify-job.outputs.preview_url }}
+          JOB_ID: ${{ steps.amplify-job.outputs.job_id }}
         with:
           script: |
             const prNumber = process.env.PR_NUMBER;
-            const appId = process.env.AMPLIFY_APP_ID;
-            const previewUrl = `https://pr-${prNumber}.${appId}.amplifyapp.com`;
+            const previewUrl = process.env.PREVIEW_URL;
+            const jobId = process.env.JOB_ID;
+
+            const amplifyConsoleUrl = `https://console.aws.amazon.com/amplify/home?region=us-east-1#/${process.env.AMPLIFY_APP_ID}/${prNumber}/1`;
 
             github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: prNumber,
-              body: `🚀 Preview deployment iniciado!\n\nQuando o build terminar, você poderá ver suas mudanças em: ${previewUrl}`
+              body: `🚀 Preview deployment concluído!\n\nVocê pode acessar o preview em: [${previewUrl}](${previewUrl})\n\n[Ver detalhes do build no console Amplify](${amplifyConsoleUrl})`
             });

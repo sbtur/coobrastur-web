@@ -18,3 +18,16 @@ applications:
           - 'node_modules/**/*'
       buildPath: /
     appRoot: apps/web
+    customHeaders:
+      - pattern: '**/*'
+        headers:
+          - key: 'Cache-Control'
+            value: 'public, max-age=0, must-revalidate'
+    rewrites:
+      - source: '/<*>'
+        target: '/index.html'
+        status: '200'
+    redirects:
+      - source: '</^[^.]+$|\\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|woff2|ttf|map|json|webp)$)([^.]+$)/'
+        target: '/index.html'
+        status: '200'
