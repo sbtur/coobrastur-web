@@ -23,10 +23,28 @@ applications:
         headers:
           - key: 'Cache-Control'
             value: 'public, max-age=0, must-revalidate'
+      - pattern: '/_next/static/**/*'
+        headers:
+          - key: 'Cache-Control'
+            value: 'public, max-age=31536000, immutable'
+      - pattern: '/static/**/*'
+        headers:
+          - key: 'Cache-Control'
+            value: 'public, max-age=31536000, immutable'
     rewrites:
-      - source: '/<*>'
-        target: '/index.html'
+      - source: '/_next/data/<*>'
+        target: '/_next/data/<*>'
         status: '200'
+      - source: '/_next/static/<*>'
+        target: '/_next/static/<*>'
+        status: '200'
+      - source: '/api/<*>'
+        target: '/api/<*>'
+        status: '200'
+      - source: '/<*>'
+        target: '/<*>'
+        status: '200'
+        condition: 'index.html does not exist in the request path'
     redirects:
       - source: '</^[^.]+$|\\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|woff2|ttf|map|json|webp)$)([^.]+$)/'
         target: '/index.html'
