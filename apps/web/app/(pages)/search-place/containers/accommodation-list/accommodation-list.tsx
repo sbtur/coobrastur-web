@@ -8,13 +8,13 @@ import { AccommodationDialog } from '@components/accommodation-dialog';
 
 import { useHotelListDetail } from '@/shared/hooks/use-hotel-list-detail';
 
-import { useSearch } from '../../contexts/search-context';
+import { useSearchAccommodation } from '../../providers/search-provider';
 
 import { Container } from '@ui/components/layouts/container';
 import { Content } from '@ui/components/layouts/content';
 
 export const AccommodationList = () => {
-  const { accommodationList } = useSearch();
+  const { accommodationList } = useSearchAccommodation();
   const { isEnabled, handleOpenHotel, handleCloseHotel, toggle } =
     useHotelListDetail();
 
@@ -24,15 +24,15 @@ export const AccommodationList = () => {
         as="section"
         className="flex flex-col h-full pt-0 pb-8 lg:pb-14"
       >
-        <Content className="flex flex-col items-center justify-center gap-4 h-full text-3xl font-bold text-primary-300">
+        <Content className="flex flex-col items-center justify-center text-center gap-4 h-full text-2xl leading-10 font-bold text-primary-300">
           <Icon
             icon={SearchX}
             variant="highlight"
             className="w-[60px] h-[60px]"
           />
-          Hotel não encontrado!
+          Não encontramos disponibilidade para o período selecionado.
           <br />
-          Faça uma nova busca.
+          Que tal tentar outro período?
         </Content>
       </Container>
     );

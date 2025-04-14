@@ -1,5 +1,4 @@
 'use client';
-import { useSearchParams } from 'next/navigation';
 
 import {
   Sheet,
@@ -12,7 +11,8 @@ import {
 
 import { Image } from '@components/image';
 
-import { ACCOMMODATIONSDETAILS } from '@mocks/accommodations/accommodations-details';
+import { useAccommodationDialog } from './use-accommodation-dialog';
+
 import {
   Carousel,
   CarouselContent,
@@ -35,11 +35,9 @@ export const AccommodationDialogMobile = ({
   isOpen,
   onOpenChange,
 }: AccommodationDialogMobileProps) => {
-  const searchParams = useSearchParams();
+  const { accommodation } = useAccommodationDialog();
 
-  const hotel = ACCOMMODATIONSDETAILS.find(
-    hotel => hotel.id === Number(searchParams.get('h')),
-  );
+  if (!accommodation) return null;
 
   return (
     <Sheet open={isOpen} onOpenChange={onOpenChange} key="bottom">
@@ -52,14 +50,14 @@ export const AccommodationDialogMobile = ({
             <div className="h-[285px] rounded-t-[20px] overflow-hidden">
               <Carousel className="h-full" opts={{ loop: true }}>
                 <CarouselContent className="h-full">
-                  {hotel?.gallery.map(image => (
+                  {accommodation.images.map(image => (
                     <CarouselItem
                       key={image}
                       className="flex-[0_0_100%] p-0 rounded-none relative"
                     >
                       <Image
                         src={image}
-                        alt={hotel?.name}
+                        alt={accommodation.name}
                         width={355}
                         height={800}
                         className="w-full h-full object-cover"
@@ -73,20 +71,22 @@ export const AccommodationDialogMobile = ({
 
             <div className="mt-5 px-4 pb-[20px] max-h-[300px] overflow-y-auto">
               <SheetHeader className="text-left items-start">
-                <SheetTitle className="text-left">{hotel?.name}</SheetTitle>
+                <SheetTitle className="text-left">
+                  {accommodation.name}
+                </SheetTitle>
                 <SheetDescription className="text-left">
-                  {hotel?.street}
+                  {accommodation.address}
                 </SheetDescription>
               </SheetHeader>
 
               <Text size="sm" className="mt-3">
-                {hotel?.description}
+                {accommodation.description}
               </Text>
               <Text size="sm" className="mt-3">
-                {hotel?.description}
+                {accommodation.description}
               </Text>
               <Text size="sm" className="mt-3">
-                {hotel?.description}
+                {accommodation.description}
               </Text>
 
               <div className="mt-6">
@@ -94,8 +94,8 @@ export const AccommodationDialogMobile = ({
                   Comodidades:
                 </Title>
                 <ul className="grid grid-cols-3 gap-x-4 gap-y-2 text-sm text-text-body mt-4">
-                  {hotel?.amenities.map(amenity => (
-                    <li key={amenity}>{amenity}</li>
+                  {accommodation.features.map(feature => (
+                    <li key={feature.id}>{feature.name}</li>
                   ))}
                 </ul>
               </div>

@@ -1,7 +1,7 @@
 import { AccommodationList } from './containers/accommodation-list';
 import { Search } from './containers/search';
 import { SearchFilters } from './containers/search-filters';
-import { SearchProvider } from './contexts/search-context';
+import { SearchProvider } from './providers/search-provider';
 
 import { Separator } from '@ui/components/data-display/separator';
 

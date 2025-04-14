@@ -1,12 +1,14 @@
 'use client';
 
+import { useRef } from 'react';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 
 import { Section } from '@coobrastur/ui/components/layouts/section';
 
-import { useSearch } from '../../contexts/search-context';
-import { AccommodationSearchItem } from '../../types/accommodation-search-item.types';
+import { AutoCompleteSearchResponse } from '../../http/accommodation';
+import { useSearchAccommodation } from '../../providers/search-provider';
 import { FormatSearchResultItems } from './format-search-result-items';
+import { useSearch } from './use-search';
 
 import { Icon } from '@ui/components/data-display/icon';
 import { Text } from '@ui/components/data-display/text';
@@ -15,19 +17,18 @@ import { Container } from '@ui/components/layouts/container';
 import { MapPin, Search as SearchIcon } from '@ui/lib/icons';
 
 export const Search = () => {
-  const {
-    searchPlaceResults,
-    handleAutoCompleteSearch,
-    handleGetAccommodations,
-    setSelectedPlaceToSearchAccommodation,
-  } = useSearch();
+  const { getListOfAccommodations } = useSearchAccommodation();
 
-  const handleOnSearch = (value: string) => {
-    handleAutoCompleteSearch(value);
+  const { onChangeAutoCompleteSearch, searchPlaceResults } = useSearch();
+
+  const selectedPlaceToSearchAccommodation = useRef<string>('');
+
+  const handleOnSearch = async (value: string) => {
+    onChangeAutoCompleteSearch(value);
   };
 
-  const handleOnSelect = (value: AccommodationSearchItem) => {
-    setSelectedPlaceToSearchAccommodation(value.name);
+  const handleOnSelect = (value: AutoCompleteSearchResponse) => {
+    selectedPlaceToSearchAccommodation.current = value.id;
   };
 
   return (
@@ -75,7 +76,11 @@ export const Search = () => {
 
               <Button
                 className="w-[63px] h-[63px] rounded-[10px]"
-                onClick={handleGetAccommodations}
+                onClick={() =>
+                  getListOfAccommodations({
+                    accommodationId: selectedPlaceToSearchAccommodation.current,
+                  })
+                }
               >
                 <Icon icon={SearchIcon} variant="white" />
               </Button>

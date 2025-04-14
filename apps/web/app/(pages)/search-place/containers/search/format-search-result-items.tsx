@@ -1,6 +1,6 @@
-import { AccommodationSearchItem } from '../../types/accommodation-search-item.types';
+import { AutoCompleteSearchResponse } from '../../http/accommodation';
 
-export const FormatSearchResultItems = (item: AccommodationSearchItem) => {
+export const FormatSearchResultItems = (item: AutoCompleteSearchResponse) => {
   return (
     <div className="py-4 hover:bg-secondary-100 cursor-pointer">
       <span className="font-semibold text-base text-neutral-500">
@@ -8,7 +8,7 @@ export const FormatSearchResultItems = (item: AccommodationSearchItem) => {
       </span>
       <br />
       <span className="text-sm text-neutral-400">
-        {item.uf}, {item.country}
+        {item.state}, {item.city}
       </span>
     </div>
   );

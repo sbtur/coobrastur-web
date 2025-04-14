@@ -7,7 +7,7 @@ export const useHotelListDetail = () => {
   const { push } = useRouter();
   const pathname = usePathname();
 
-  const handleOpenHotel = (hotelId: number) => {
+  const handleOpenHotel = (hotelId: string) => {
     push(`?h=${hotelId}`, {
       scroll: false,
     });

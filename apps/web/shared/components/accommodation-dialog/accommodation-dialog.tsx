@@ -1,6 +1,4 @@
 'use client';
-import { useState } from 'react';
-import { useSearchParams } from 'next/navigation';
 
 import {
   Dialog,
@@ -15,10 +13,9 @@ import {
 import { Image } from '@components/image';
 
 import { buttonsAnimations, galleryAnimations } from './animations';
+import { useAccommodationDialog } from './use-accommodation-dialog';
 
 import { AnimatePresence, motion } from '@lib/motion';
-import { ACCOMMODATIONSDETAILS } from '@mocks/accommodations/accommodations-details';
-import { Bookmark } from '@ui/components/data-display/bookmark';
 import {
   Carousel,
   CarouselContent,
@@ -33,7 +30,7 @@ import { Text } from '@ui/components/data-display/text';
 import { Title } from '@ui/components/data-display/title';
 import { Button } from '@ui/components/data-entry/button';
 import { Link } from '@ui/components/data-entry/link';
-import { ArrowRight, ChevronLeft, Share2, Table, X } from '@ui/lib/icons';
+import { ArrowRight, ChevronLeft, Table } from '@ui/lib/icons';
 
 export interface HotelDialogProps {
   isOpen: boolean;
@@ -46,16 +43,10 @@ export const AccommodationDialog = ({
   onOpenChange,
   onClose,
 }: HotelDialogProps) => {
-  const [isShowGallery, setIsShowGallery] = useState(false);
-  const searchParams = useSearchParams();
+  const { accommodation, isShowGallery, handleShowGallery } =
+    useAccommodationDialog();
 
-  const hotel = ACCOMMODATIONSDETAILS.find(
-    hotel => hotel.id === Number(searchParams.get('h')),
-  );
-
-  const handleShowGallery = () => {
-    setIsShowGallery(!isShowGallery);
-  };
+  if (!accommodation) return null;
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
@@ -77,23 +68,23 @@ export const AccommodationDialog = ({
             >
               <DialogHeader>
                 <DialogTitle className="text-2xl text-left text-primary-300 font-primary font-bold">
-                  {hotel?.name}
+                  {accommodation.name}
                 </DialogTitle>
                 <DialogDescription className="text-left">
-                  {hotel?.street}
+                  {accommodation.address}
                 </DialogDescription>
               </DialogHeader>
 
               <div className="py-4 pr-4 h-[280px] overflow-y-auto">
-                <Text size="sm">{hotel?.description}</Text>
+                <Text size="sm">{accommodation.description}</Text>
 
                 <div className="mt-6">
                   <Title as="h3" size="xs">
                     Comodidades:
                   </Title>
                   <ul className="grid grid-cols-3 gap-x-4 gap-y-2 text-sm text-text-body mt-4">
-                    {hotel?.amenities.map(amenity => (
-                      <li key={amenity}>{amenity}</li>
+                    {accommodation.features.map(feature => (
+                      <li key={feature.id}>{feature.name}</li>
                     ))}
                   </ul>
                 </div>
@@ -152,19 +143,6 @@ export const AccommodationDialog = ({
                       <Icon icon={ChevronLeft} />
                       Voltar
                     </IconWrapper>
-
-                    <motion.div
-                      variants={buttonsAnimations}
-                      initial="hidden"
-                      animate="visible"
-                      exit="hidden"
-                      className="flex gap-4"
-                    >
-                      <Bookmark />
-                      <IconWrapper as="button">
-                        <Icon icon={Share2} />
-                      </IconWrapper>
-                    </motion.div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -172,14 +150,14 @@ export const AccommodationDialog = ({
 
             <Carousel className="h-full" opts={{ loop: true }}>
               <CarouselContent className="h-full">
-                {hotel?.gallery.map(image => (
+                {accommodation.images.map(image => (
                   <CarouselItem
                     key={image}
                     className="flex-[0_0_100%] p-0 rounded-none relative"
                   >
                     <Image
                       src={image}
-                      alt={hotel?.name}
+                      alt={accommodation.name}
                       width={355}
                       height={800}
                       className="w-full h-full md:h-[570px] object-cover"
