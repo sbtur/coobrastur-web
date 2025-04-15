@@ -1,5 +1,3 @@
-'use client';
-
 import { Mail, MessageSquare } from 'lucide-react';
 
 import { Heading } from '@coobrastur/ui/components/data-display/heading';
