@@ -9,6 +9,8 @@ import { z } from 'zod';
 
 import { Heading } from '@coobrastur/ui/components/data-display/heading';
 
+import { InputPassword } from '../../new-password/components/input-password';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Link } from '@shared/components/link';
 import { loginValidationSchema } from '@shared/helpers/validation';
@@ -102,15 +104,11 @@ const LoginForm = () => {
           <Label htmlFor="password" className="text-neutral-500">
             Senha
           </Label>
-          <Input
+          <InputPassword
             id="password"
-            type="password"
             placeholder="Senha"
             {...register('password')}
           />
-          {errors.password && (
-            <Text className="text-red-500">{errors.password.message}</Text>
-          )}
         </div>
         <div className="flex flex-col gap-1 mb-10">
           <Link
