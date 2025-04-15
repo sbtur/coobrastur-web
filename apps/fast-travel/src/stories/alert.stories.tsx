@@ -12,7 +12,7 @@ const meta: Meta<typeof Alert> = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'destructive', 'warning', 'success', 'info'],
+      options: ['default', 'danger', 'warning', 'success', 'info'],
     },
   },
 };
