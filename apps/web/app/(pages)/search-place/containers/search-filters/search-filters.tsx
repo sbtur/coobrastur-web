@@ -1,5 +1,3 @@
-'use client';
-
 import {
   Select,
   SelectContent,
@@ -12,13 +10,8 @@ import {
 import { Section } from '@coobrastur/ui/components/layouts/section';
 import { Hotel } from '@coobrastur/ui/lib/icons';
 
-import {
-  ResponsiveLargerThan,
-  ResponsiveSmallerThan,
-} from '@/shared/components/responsive/responsive';
-
 import { CATEGORY } from '../../helpers/category';
-import { Filters } from './components/filters';
+import { FiltersLarger } from './components/filters-larger';
 import { FiltersMobile } from './components/filters-mobile';
 
 import { Icon } from '@ui/components/data-display/icon';
@@ -39,12 +32,8 @@ export const SearchFilters = () => {
           </span>
         </Text>
 
-        <ResponsiveLargerThan breakpoint="xl">
-          <Filters />
-        </ResponsiveLargerThan>
-        <ResponsiveSmallerThan breakpoint="xl">
-          <FiltersMobile />
-        </ResponsiveSmallerThan>
+        <FiltersLarger />
+        <FiltersMobile />
 
         <Select>
           <SelectTrigger className="w-[200px] max-w-[300px] mx-auto text-text-body focus:outline-none shadow-sm bg-white">

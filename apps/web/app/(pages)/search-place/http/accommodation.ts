@@ -3,6 +3,8 @@
 import { api_service } from '@/core/infrastructure/api/api';
 import { formatTextToCapitalizeCase } from '@/shared/helpers/format-text-to-capitalize-case';
 
+import { ACCOMMODATIONS_LIST_ID } from '../helpers/accommodations-list';
+
 type SearchAutoCompleteResponse = {
   Codigo: string;
   Texto: string;
@@ -32,8 +34,8 @@ export type AccommodationListItem = {
   id: string;
   name: string;
   address: string;
-  city: string;
-  state: string;
+  city?: string;
+  state?: string;
   image: string;
 };
 
@@ -67,7 +69,7 @@ export type InfoHotelResponse = {
 };
 
 export type AccommodationDetail = {
-  id: number;
+  id: string;
   name: string;
   address: string;
   phone: string;
@@ -154,7 +156,7 @@ export async function getAccommodationDetail({
   const features = await getAccommodationFeatures({ hotelId });
 
   const accommodation = {
-    id: response.Id,
+    id: response.Id.toString(),
     name: formatTextToCapitalizeCase(response.Name),
     address: formatTextToCapitalizeCase(response.Address),
     phone: response.Phone,
@@ -172,4 +174,23 @@ export async function getAccommodationDetail({
   };
 
   return accommodation;
+}
+
+export async function getAccommodationsStaticListById(): Promise<
+  AccommodationListItem[]
+> {
+  const accommodationsList = [];
+
+  for await (const hotelId of ACCOMMODATIONS_LIST_ID) {
+    const accommodation = await getAccommodationDetail({ hotelId });
+
+    accommodationsList.push({
+      id: accommodation.id,
+      name: accommodation.name,
+      address: accommodation.address,
+      image: accommodation.images[0] || '',
+    });
+  }
+
+  return accommodationsList;
 }
