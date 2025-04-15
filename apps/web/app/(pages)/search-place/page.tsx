@@ -15,8 +15,8 @@ import { SearchProvider } from './providers/search-provider';
 import { Separator } from '@ui/components/data-display/separator';
 
 export const metadata: Metadata = {
-  title: 'Hoteis - Coobrastur',
-  description: 'Hoteis - Coobrastur',
+  title: 'Hoteis',
+  description: 'Busque pelos melhores hotéis do Brasil',
 };
 
 export default async function SearchPlacePage({

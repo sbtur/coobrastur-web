@@ -4,10 +4,19 @@ import { getAccommodationDetail } from '@/app/(pages)/search-place/http/accommod
 
 import AccommodationPublic from '../(public)/accommodation-page-public';
 
-export const metadata: Metadata = {
-  title: 'Hotel',
-  description: 'Accommodation',
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const accommodation = await getAccommodationDetail({ hotelId: id });
+
+  return {
+    title: accommodation.name,
+    description: accommodation.description,
+  };
+}
 
 export default async function AccommodationPage({
   params,

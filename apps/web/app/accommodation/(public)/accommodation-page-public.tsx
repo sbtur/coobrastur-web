@@ -6,8 +6,9 @@ import { Container } from '@coobrastur/ui/components/layouts/container';
 import { ArrowRight, CreditCard, Users } from '@coobrastur/ui/lib/icons';
 
 import { AccommodationDetail } from '@/app/(pages)/search-place/http/accommodation';
+import { Link } from '@/shared/components/link';
 
-import { AccommodationMainInfoContainer } from '../components/accommodation-main-info-container';
+import { AccommodationMainInfoContainerMobile } from '../components/accommodation-main-info-container';
 import { Features } from '../components/features';
 import { ImageGallery } from '../components/image-gallery';
 import { HeaderLarge } from './header-large';
@@ -28,15 +29,17 @@ export default function AccommodationPublic({
         <Container className="bg-white grid gap-6 p-0 lg:py-12 lg:px-3 relative">
           <div className="lg:flex gap-4 justify-between relative">
             <ImageGallery images={accommodation.images} />
-            <AccommodationMainInfoContainer>
+            <AccommodationMainInfoContainerMobile>
               <div className="space-y-1 text-left">
                 <Title>{accommodation.name}</Title>
                 <Text>{accommodation.address}</Text>
               </div>
               <Separator />
-              <Button size="lg" className="w-full rounded-[10px]">
-                Quero me hospedar aqui{' '}
-                <Icon icon={ArrowRight} variant="white" />
+              <Button size="lg" className="w-full rounded-[10px]" asChild>
+                <Link href="/plans">
+                  Quero me hospedar aqui{' '}
+                  <Icon icon={ArrowRight} variant="white" />
+                </Link>
               </Button>
               <div className="hidden lg:flex flex-col gap-4">
                 <a
@@ -66,7 +69,7 @@ export default function AccommodationPublic({
                   </Text>
                 </div>
               </div>
-            </AccommodationMainInfoContainer>
+            </AccommodationMainInfoContainerMobile>
           </div>
 
           <main className="grid gap-8 max-full lg:max-w-[530px] xl:max-w-[790px] px-6 lg:p-0">
