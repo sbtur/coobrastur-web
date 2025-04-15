@@ -21,7 +21,7 @@ export function useSearch() {
     try {
       const response = await getAccommodationAutoCompleteSearch(value);
       setSearchPlaceResults(response);
-    } catch (err: any) {
+    } catch (err) {
       console.error('Error on auto complete search', err);
       setSearchPlaceResults([]);
     }

@@ -1,4 +1,3 @@
-import { ACCOMMODATIONS } from '@/shared/mocks/accommodations/accommodations';
 import { AUTO_COMPLETE_MOCK } from '@/shared/mocks/search-auto-complete';
 
 export async function autoCompleteSearch(value: string) {
@@ -24,27 +23,27 @@ export async function autoCompleteSearch(value: string) {
   });
 }
 
-export async function getAccommodations(value: string | null) {
-  if (!value) return null;
+// export async function getAccommodations(value: string | null) {
+//   if (!value) return null;
 
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const accommodations = ACCOMMODATIONS.filter(accommodation =>
-        accommodation.city.name.toLowerCase().startsWith(value.toLowerCase()),
-      );
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const accommodations = ACCOMMODATIONS.filter(accommodation =>
+//         accommodation.city.name.toLowerCase().startsWith(value.toLowerCase()),
+//       );
 
-      if (accommodations.length <= 0) {
-        reject({
-          success: false,
-          data: [],
-          message: 'Nenhum hotel encontrado',
-        });
-      }
+//       if (accommodations.length <= 0) {
+//         reject({
+//           success: false,
+//           data: [],
+//           message: 'Nenhum hotel encontrado',
+//         });
+//       }
 
-      resolve({
-        success: true,
-        data: accommodations,
-      });
-    }, 0);
-  });
-}
+//       resolve({
+//         success: true,
+//         data: accommodations,
+//       });
+//     }, 0);
+//   });
+// }

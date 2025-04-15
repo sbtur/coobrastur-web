@@ -1,13 +1,12 @@
 'use client';
 
-import { Accommodation } from '@coobrastur/types-shared';
-
 import { AccommodationCard } from '@components/accommodation-card';
 import {
   AccommodationDialog,
   AccommodationDialogMobile,
 } from '@components/accommodation-dialog';
 
+import { AccommodationListItem } from '@/app/(pages)/search-place/http/accommodation';
 import {
   ResponsiveLargerThan,
   ResponsiveSmallerThan,
@@ -25,7 +24,7 @@ import {
 import { Content } from '@ui/components/layouts/content';
 
 interface AccommodationListProps {
-  accommodations: Accommodation[];
+  accommodations: AccommodationListItem[];
 }
 
 export const AccommodationList = ({

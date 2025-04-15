@@ -1,4 +1,3 @@
-import { AccommodationDetail } from '@coobrastur/types-shared';
 import { Separator } from '@coobrastur/ui/components/data-display/separator';
 import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Title } from '@coobrastur/ui/components/data-display/title';
@@ -26,7 +25,7 @@ import { Policies } from './components/policies';
 import { Icon } from '@ui/components/data-display/icon';
 
 type AccommodationPrivateProps = {
-  accommodation: AccommodationDetail;
+  accommodation: any;
 };
 
 export default function AccommodationPrivate({
@@ -40,12 +39,12 @@ export default function AccommodationPrivate({
       <div className="bg-white">
         <Container className="grid gap-6 p-0 lg:py-12 lg:px-3 relative">
           <div className="lg:flex gap-4 justify-between relative">
-            <ImageGallery images={accommodation.gallery} />
+            <ImageGallery images={accommodation.images} />
             <AccommodationMainInfoContainerMobile>
               <Badge>Gold</Badge>
               <div className="space-y-1 text-left">
                 <Title>{accommodation.name}</Title>
-                <Text>{accommodation.street}</Text>
+                <Text>{accommodation.address}</Text>
               </div>
 
               <Separator />

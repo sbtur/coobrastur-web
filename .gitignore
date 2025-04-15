@@ -37,3 +37,7 @@ npm-debug.log*
 .qodo
 
 .vscode/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

@@ -1,10 +1,10 @@
 'use server';
 
-import { api_service } from '@/core/infrastructure/api/api';
+import { apiClient } from '@/core/infrastructure/api/api-client';
 import { formatTextToCapitalizeCase } from '@/shared/helpers/format-text-to-capitalize-case';
 import { FeatureKey, FEATURES_DATA } from '@/shared/utils/data/features';
 
-import { ACCOMMODATIONS_LIST_ID } from '../helpers/accommodations-list';
+import { ACCOMMODATIONS_LIST_ID } from '../helpers/accommodations-list-id';
 
 type SearchAutoCompleteResponse = {
   Codigo: string;
@@ -91,7 +91,7 @@ export type AccommodationDetail = {
 export async function getAccommodationAutoCompleteSearch(
   query: string,
 ): Promise<AutoCompleteSearchResponse[]> {
-  const response = await api_service
+  const response = await apiClient
     .get<
       SearchAutoCompleteResponse[]
     >(`Hotel/SearchAutoComplete?Texto=${query}`)
@@ -111,7 +111,7 @@ export async function getAccommodationsList({
 }: {
   cityId: string;
 }): Promise<AccommodationListItem[]> {
-  const response = await api_service
+  const response = await apiClient
     .get<ListHotelsResponse[]>(`Hotel/ListHotels?CityID=${cityId}`)
     .json();
 
@@ -134,7 +134,7 @@ export async function getAccommodationFeatures({
 }: {
   hotelId: string;
 }): Promise<AccommodationFeatures[]> {
-  const response = await api_service
+  const response = await apiClient
     .get<HotelFeatures[]>(`Hotel/HotelFeatures?HotCode=${hotelId}`)
     .json();
 
@@ -167,7 +167,7 @@ export async function getAccommodationDetail({
     Coordinates,
     Images,
     AdditionalInfo,
-  } = await api_service
+  } = await apiClient
     .get<InfoHotelResponse>(`Hotel/InfoHotel?HotelID=${hotelId}`)
     .json();
 
