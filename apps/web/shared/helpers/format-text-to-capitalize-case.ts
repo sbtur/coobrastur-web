@@ -1,5 +1,7 @@
-export const formatTextToCapitalizeCase = (text: string) => {
-  return text.replace(/\b[A-ZÀ-ÿ]{2,}\b/g, match => {
-    return match.charAt(0).toUpperCase() + match.slice(1).toLowerCase();
-  });
+export const formatTextToCapitalizeCase = (text: string): string => {
+  if (!text?.trim()) return '';
+
+  return text
+    .toLowerCase()
+    .replace(/(^|\s+)[\wÀ-ÿ]/g, letter => letter.toUpperCase());
 };

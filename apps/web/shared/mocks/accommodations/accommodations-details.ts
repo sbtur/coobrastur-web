@@ -36,15 +36,8 @@ export const ACCOMMODATIONSDETAILS: AccommodationDetail[] = [
     },
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.O Sky Borges Hotel Alpenhaus é um hotel 4 estrelas em Gramado, com fácil acesso às principais atrações da cidade, incluindo o Palácio dos Festivais e o Centro de Convenções Expogramado. Este hotel oferece quartosconfortáveis, piscina térmica coberta, sauna e academia.',
-    amenities: [
-      'Piscina',
-      'Recepção 24h',
-      'Pet Friendly',
-      'Internet',
-      'Salão de Jogos',
-      'Estacionamento',
-    ],
-    gallery: [
+    features: ['1', '2', '3', '4', '5', '6'],
+    images: [
       '/images/mocks/places/place-1.jpg',
       '/images/mocks/places/place-2.jpg',
       '/images/mocks/places/place-3.jpg',

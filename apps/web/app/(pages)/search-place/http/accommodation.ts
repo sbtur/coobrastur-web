@@ -2,6 +2,7 @@
 
 import { api_service } from '@/core/infrastructure/api/api';
 import { formatTextToCapitalizeCase } from '@/shared/helpers/format-text-to-capitalize-case';
+import { FeatureKey, FEATURES_DATA } from '@/shared/utils/data/features';
 
 import { ACCOMMODATIONS_LIST_ID } from '../helpers/accommodations-list';
 
@@ -47,6 +48,7 @@ type HotelFeatures = {
 export type AccommodationFeatures = {
   id: string;
   name: string;
+  icon: string;
 };
 
 export type InfoHotelResponse = {
@@ -136,10 +138,15 @@ export async function getAccommodationFeatures({
     .get<HotelFeatures[]>(`Hotel/HotelFeatures?HotCode=${hotelId}`)
     .json();
 
-  const features = response.map(item => ({
-    id: item.Code,
-    name: formatTextToCapitalizeCase(item.Description),
-  }));
+  const features = response.map(item => {
+    const feature = FEATURES_DATA[item.Code as FeatureKey];
+
+    return {
+      id: item.Code,
+      name: formatTextToCapitalizeCase(item.Description),
+      icon: feature ? feature.icon : '',
+    };
+  });
 
   return features;
 }

@@ -50,14 +50,14 @@ export const AccommodationDialog = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-[830px] h-full md:h-auto p-0 gap-0">
+      <DialogContent className="max-w-[980px] h-full md:h-auto p-0 gap-0">
         <DialogClose onClick={onClose} />
         <div className="overflow-y-auto flex rounded-[20px] justify-between relative">
           <motion.div
             variants={galleryAnimations}
             initial="contentVisible"
             animate={isShowGallery ? 'contentHidden' : 'contentVisible'}
-            className="h-full grid justify-between"
+            className="w-[500px] h-full grid justify-between"
           >
             <motion.div
               variants={buttonsAnimations}
@@ -84,7 +84,20 @@ export const AccommodationDialog = ({
                   </Title>
                   <ul className="grid grid-cols-3 gap-x-4 gap-y-2 text-sm text-text-body mt-4">
                     {accommodation.features.map(feature => (
-                      <li key={feature.id}>{feature.name}</li>
+                      <li key={feature.id}>
+                        <Text
+                          key={feature.name}
+                          className="flex items-center gap-1"
+                        >
+                          <Image
+                            src={feature.icon}
+                            width={24}
+                            height={24}
+                            alt={feature.name}
+                          />
+                          {feature.name}
+                        </Text>
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -106,7 +119,7 @@ export const AccommodationDialog = ({
             transition={{
               duration: 0.5,
             }}
-            className="full relative pb-[70px] md:pb-0 group"
+            className="relative pb-[70px] md:pb-0 group"
           >
             <div className="hidden md:block absolute top-0 right-0 p-4 w-full z-10">
               <AnimatePresence mode="wait">
