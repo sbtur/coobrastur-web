@@ -1,14 +1,19 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+
+import { pushUrlParams } from '@/shared/helpers/manage-url-params';
 
 import {
   AutoCompleteSearchResponse,
   getAccommodationAutoCompleteSearch,
 } from '../../http/accommodation';
+import { useSearchAccommodation } from '../../providers/search-provider';
 
 export function useSearch() {
   const [searchPlaceResults, setSearchPlaceResults] = useState<
     AutoCompleteSearchResponse[]
   >([]);
+  const { getListOfAccommodations } = useSearchAccommodation();
+  const selectedPlaceToSearchAccommodation = useRef<string>('');
 
   const onChangeAutoCompleteSearch = async (value: string) => {
     try {
@@ -20,8 +25,21 @@ export function useSearch() {
     }
   };
 
+  const handleSubmitSearch = () => {
+    getListOfAccommodations({
+      accommodationId: selectedPlaceToSearchAccommodation.current,
+    });
+
+    pushUrlParams({
+      key: 's',
+      value: selectedPlaceToSearchAccommodation.current,
+    });
+  };
+
   return {
     onChangeAutoCompleteSearch,
     searchPlaceResults,
+    handleSubmitSearch,
+    selectedPlaceToSearchAccommodation,
   };
 }

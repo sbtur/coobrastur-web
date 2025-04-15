@@ -183,7 +183,7 @@ export async function getAccommodationDetail({
   return accommodation;
 }
 
-export async function getAccommodationsStaticListById(): Promise<
+export async function getAccommodationsStaticList(): Promise<
   AccommodationListItem[]
 > {
   const accommodationsList = [];

@@ -1,15 +1,10 @@
 'use client';
 
-import { useRef } from 'react';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
-import { useRouter } from 'next/navigation';
 
 import { Section } from '@coobrastur/ui/components/layouts/section';
 
-import { pushUrlParams } from '@/shared/helpers/manage-url-params';
-
 import { AutoCompleteSearchResponse } from '../../http/accommodation';
-import { useSearchAccommodation } from '../../providers/search-provider';
 import { FormatSearchResultItems } from './format-search-result-items';
 import { useSearch } from './use-search';
 
@@ -20,11 +15,12 @@ import { Container } from '@ui/components/layouts/container';
 import { MapPin, Search as SearchIcon } from '@ui/lib/icons';
 
 export const Search = () => {
-  const { getListOfAccommodations } = useSearchAccommodation();
-
-  const { onChangeAutoCompleteSearch, searchPlaceResults } = useSearch();
-
-  const selectedPlaceToSearchAccommodation = useRef<string>('');
+  const {
+    onChangeAutoCompleteSearch,
+    searchPlaceResults,
+    handleSubmitSearch,
+    selectedPlaceToSearchAccommodation,
+  } = useSearch();
 
   const handleOnSearch = async (value: string) => {
     onChangeAutoCompleteSearch(value);
@@ -32,17 +28,6 @@ export const Search = () => {
 
   const handleOnSelect = (value: AutoCompleteSearchResponse) => {
     selectedPlaceToSearchAccommodation.current = value.id;
-  };
-
-  const handleSubmitSearch = () => {
-    getListOfAccommodations({
-      accommodationId: selectedPlaceToSearchAccommodation.current,
-    });
-
-    pushUrlParams({
-      key: 's',
-      value: selectedPlaceToSearchAccommodation.current,
-    });
   };
 
   return (
