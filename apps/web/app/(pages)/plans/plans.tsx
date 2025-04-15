@@ -40,8 +40,9 @@ export const Plans = () => {
         </ResponsiveLargerThan>
 
         <FAQ />
+        
         <div className="flex justify-center mt-11 mb-60 md:gap-5">
-          <form className="bg-white p-8 rounded-2xl shadow-md w-full max-w-2xl">
+          <form className="bg-white p-8 rounded-2xl shadow-md w-full max-w-3xl">
             <Heading>
               <Title size="sm">Tem alguma dúvida?</Title>
               <Text size="sm">

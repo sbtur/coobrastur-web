@@ -11,12 +11,12 @@ import { Title } from '@coobrastur/ui/components/data-display/title';
 
 export const FAQ = () => {
   return (
-    <div className="w-10/12 mx-auto">
-      <Badge className="mt-14">Principais Dúvidas</Badge>
+    <div className="w-11/12 mx-auto mt-14">
+      <Badge>Principais Dúvidas</Badge>
 
       <Accordion type="single" collapsible defaultValue="item-1">
         <AccordionItem value="item-1">
-          <AccordionTrigger className="text-white">
+          <AccordionTrigger>
             <Title size="sm" className="text-white">
               O que é uma Assinatura de Hotéis?
             </Title>
