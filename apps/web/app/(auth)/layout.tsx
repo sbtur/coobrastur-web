@@ -17,7 +17,7 @@ export default function AuthLayout({
             priority
           />
         </div>
-        <div className="relative h-full w-full px-[15%] pt-[15%]">
+        <div className="relative h-full w-full px-[150px] pt-[150px]">
           <div className="flex flex-col gap-4 pb-2 lg:text-left text-center">
             <div className="flex justify-center lg:hidden">
               <Image
