@@ -9,7 +9,7 @@ import { Icon } from '@ui/components/data-display/icon';
 
 export const FiltersMobile = () => {
   return (
-    <div className="lg:hidden bg-background shadow-lg mb-6 py-3">
+    <div className="xl:hidden bg-background shadow-lg mb-6 py-3">
       <Carousel
         className="h-full w-full max-w-screen-xl mx-auto px-4"
         opts={{

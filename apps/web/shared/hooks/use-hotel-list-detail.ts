@@ -1,23 +1,20 @@
-import { usePathname, useRouter } from 'next/navigation';
-
 import { useToggle } from '@hooks/use-toggle';
+
+import {
+  pushUrlParams,
+  removeUrlParams,
+} from '@/shared/helpers/manage-url-params';
 
 export const useHotelListDetail = () => {
   const { isEnabled, toggle } = useToggle();
-  const { push } = useRouter();
-  const pathname = usePathname();
 
   const handleOpenHotel = (hotelId: string) => {
-    push(`?h=${hotelId}`, {
-      scroll: false,
-    });
+    pushUrlParams({ key: 'h', value: hotelId });
     toggle();
   };
 
   const handleCloseHotel = () => {
-    push(pathname, {
-      scroll: false,
-    });
+    removeUrlParams({ key: 'h' });
     toggle();
   };
 

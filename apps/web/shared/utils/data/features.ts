@@ -117,33 +117,81 @@ export const FEATURES_DATA = {
     name: 'Salão de Beleza',
     icon: '/images/icons/features/hotel/29.svg',
   },
+  '30': {
+    name: 'Serviço Médico',
+    icon: '/images/icons/features/hotel/30.svg',
+  },
   '31': {
     name: 'Enfermaria',
     icon: '/images/icons/features/hotel/31.svg',
   },
+  '32': {
+    name: 'Internet Inclusa - Free',
+    icon: '/images/icons/features/hotel/32.svg',
+  },
+  '33': {
+    name: 'Sala de Negócios (Business Center)',
+    icon: '/images/icons/features/hotel/33.svg',
+  },
   '34': {
-    name: 'Apartamento PNE',
+    name: 'Apto p/ P.N.E.',
     icon: '/images/icons/features/hotel/34.svg',
+  },
+  '35': {
+    name: 'Parque Aquático',
+    icon: '/images/icons/features/hotel/35.svg',
   },
   '36': {
     name: 'Cavalos',
     icon: '/images/icons/features/hotel/36.svg',
   },
+  '37': {
+    name: 'Charretes',
+    icon: '/images/icons/features/hotel/37.svg',
+  },
   '38': {
-    name: 'Pesca',
+    name: 'Pescaria',
     icon: '/images/icons/features/hotel/38.svg',
   },
   '39': {
-    name: 'Parede de Escalada',
+    name: 'Paredão para Escalada',
     icon: '/images/icons/features/hotel/39.svg',
   },
   '40': {
-    name: '100% Não Fumante',
+    name: '100% NÃO Fumante',
     icon: '/images/icons/features/hotel/40.svg',
+  },
+  '41': {
+    name: 'Cofre',
+    icon: '/images/icons/features/hotel/41.svg',
+  },
+  '42': {
+    name: 'Bar Molhado',
+    icon: '/images/icons/features/hotel/42.svg',
+  },
+  '43': {
+    name: 'Campo de Futebol',
+    icon: '/images/icons/features/hotel/43.svg',
+  },
+  '44': {
+    name: 'Estacionamento NÃO Coberto',
+    icon: '/images/icons/features/hotel/44.svg',
+  },
+  '45': {
+    name: 'Internet a pagar',
+    icon: '/images/icons/features/hotel/45.svg',
   },
   '47': {
     name: 'Estacionamento Coberto',
     icon: '/images/icons/features/hotel/47.svg',
+  },
+  '48': {
+    name: 'Acesso à Internet',
+    icon: '/images/icons/features/hotel/48.svg',
+  },
+  '49': {
+    name: 'TV com Antena Parabólica',
+    icon: '/images/icons/features/hotel/49.svg',
   },
   '50': {
     name: 'Wi-fi',
@@ -153,6 +201,10 @@ export const FEATURES_DATA = {
     name: 'Recepção 24 horas',
     icon: '/images/icons/features/hotel/53.svg',
   },
+  '54': {
+    name: 'Room Service',
+    icon: '/images/icons/features/hotel/54.svg',
+  },
   '55': {
     name: 'Gerador',
     icon: '/images/icons/features/hotel/55.svg',
@@ -161,12 +213,36 @@ export const FEATURES_DATA = {
     name: 'Apto para Fumantes',
     icon: '/images/icons/features/hotel/56.svg',
   },
+  '57': {
+    name: 'Voltagem 110 V',
+    icon: '/images/icons/features/hotel/57.svg',
+  },
+  '58': {
+    name: 'Room Service 24 Hrs',
+    icon: '/images/icons/features/hotel/58.svg',
+  },
+  '59': {
+    name: 'Voltagem 220 V',
+    icon: '/images/icons/features/hotel/59.svg',
+  },
   '60': {
     name: 'Elevador',
     icon: '/images/icons/features/hotel/60.svg',
   },
+  '61': {
+    name: 'Piscina Aquecida',
+    icon: '/images/icons/features/hotel/61.svg',
+  },
+  '62': {
+    name: 'Aceita Animais de Pequeno Porte FREE',
+    icon: '/images/icons/features/hotel/62.svg',
+  },
+  '63': {
+    name: 'Sauna Úmida',
+    icon: '/images/icons/features/hotel/63.svg',
+  },
   '64': {
-    name: 'Spa',
+    name: 'SPA',
     icon: '/images/icons/features/hotel/64.svg',
   },
   '65': {

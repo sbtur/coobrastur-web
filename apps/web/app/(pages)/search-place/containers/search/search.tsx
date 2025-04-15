@@ -2,8 +2,11 @@
 
 import { useRef } from 'react';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
+import { useRouter } from 'next/navigation';
 
 import { Section } from '@coobrastur/ui/components/layouts/section';
+
+import { pushUrlParams } from '@/shared/helpers/manage-url-params';
 
 import { AutoCompleteSearchResponse } from '../../http/accommodation';
 import { useSearchAccommodation } from '../../providers/search-provider';
@@ -29,6 +32,17 @@ export const Search = () => {
 
   const handleOnSelect = (value: AutoCompleteSearchResponse) => {
     selectedPlaceToSearchAccommodation.current = value.id;
+  };
+
+  const handleSubmitSearch = () => {
+    getListOfAccommodations({
+      accommodationId: selectedPlaceToSearchAccommodation.current,
+    });
+
+    pushUrlParams({
+      key: 's',
+      value: selectedPlaceToSearchAccommodation.current,
+    });
   };
 
   return (
@@ -76,11 +90,7 @@ export const Search = () => {
 
               <Button
                 className="w-[63px] h-[63px] rounded-[10px]"
-                onClick={() =>
-                  getListOfAccommodations({
-                    accommodationId: selectedPlaceToSearchAccommodation.current,
-                  })
-                }
+                onClick={handleSubmitSearch}
               >
                 <Icon icon={SearchIcon} variant="white" />
               </Button>

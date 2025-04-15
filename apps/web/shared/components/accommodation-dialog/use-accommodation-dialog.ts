@@ -20,13 +20,18 @@ export function useAccommodationDialog(): UseAccommodationDialog {
   const searchParams = useSearchParams();
 
   useEffect(() => {
+    const hotelId = searchParams.get('h');
+
     const getAccommodation = async () => {
       const response = await getAccommodationDetail({
-        hotelId: searchParams.get('h') || '',
+        hotelId: hotelId || '',
       });
       setAccommodation(response);
     };
-    getAccommodation();
+
+    if (hotelId) {
+      getAccommodation();
+    }
   }, [searchParams]);
 
   const handleShowGallery = () => {

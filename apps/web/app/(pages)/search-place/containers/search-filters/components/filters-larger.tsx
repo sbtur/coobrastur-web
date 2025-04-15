@@ -4,7 +4,7 @@ import { FILTERS } from '../../../helpers/filters';
 
 export const FiltersLarger = () => {
   return (
-    <div className="hidden lg:flex h-full mx-auto gap-4 items-center justify-center">
+    <div className="hidden xl:flex h-full mx-auto gap-4 items-center justify-center">
       {FILTERS.map(filter => (
         <button
           key={filter.value}
