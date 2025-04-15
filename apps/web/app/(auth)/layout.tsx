@@ -6,7 +6,7 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="grid lg:grid-cols-2 grid-cols-1 h-screen">
+    <div className="grid grid-cols-1 lg:grid-cols-2h-screen">
       <div className="relative h-full w-full hidden lg:block">
         <Image
           src="/images/pages/login/grupo.png"
