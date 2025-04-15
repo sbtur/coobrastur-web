@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 import { pushUrlParams } from '@/shared/helpers/manage-url-params';
 
@@ -13,7 +14,8 @@ export function useSearch() {
     AutoCompleteSearchResponse[]
   >([]);
   const { getListOfAccommodations } = useSearchAccommodation();
-  const selectedPlaceToSearchAccommodation = useRef<string>('');
+  const { push } = useRouter();
+  const selectedSearchAccommodation = useRef<AutoCompleteSearchResponse>(null);
 
   const onChangeAutoCompleteSearch = async (value: string) => {
     try {
@@ -25,21 +27,37 @@ export function useSearch() {
     }
   };
 
-  const handleSubmitSearch = () => {
+  const handleSearchAccommodations = async () => {
+    if (!selectedSearchAccommodation.current) return;
+
     getListOfAccommodations({
-      accommodationId: selectedPlaceToSearchAccommodation.current,
+      accommodationId: selectedSearchAccommodation.current.id,
     });
 
     pushUrlParams({
       key: 's',
-      value: selectedPlaceToSearchAccommodation.current,
+      value: selectedSearchAccommodation.current.id,
     });
+  };
+
+  const handleOpenHotelFromSearch = () => {
+    if (!selectedSearchAccommodation.current) return;
+
+    push(`/accommodation/${selectedSearchAccommodation.current.id}`);
+  };
+
+  const handleSubmitSearch = () => {
+    if (selectedSearchAccommodation.current?.type === 'city') {
+      handleSearchAccommodations();
+    } else {
+      handleOpenHotelFromSearch();
+    }
   };
 
   return {
     onChangeAutoCompleteSearch,
     searchPlaceResults,
     handleSubmitSearch,
-    selectedPlaceToSearchAccommodation,
+    selectedSearchAccommodation,
   };
 }

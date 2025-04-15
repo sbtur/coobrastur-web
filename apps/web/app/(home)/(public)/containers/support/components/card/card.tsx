@@ -1,3 +1,5 @@
+import { Link } from '@components/link';
+
 import { Image } from '@/shared/components/image';
 
 import { Support } from '../../types/support.types';
@@ -5,7 +7,6 @@ import { Support } from '../../types/support.types';
 import { Icon } from '@ui/components/data-display/icon';
 import { Text } from '@ui/components/data-display/text';
 import { Title } from '@ui/components/data-display/title';
-import { Link } from '@ui/components/data-entry/link';
 import { ArrowRight } from '@ui/lib/icons';
 
 interface CardProps {

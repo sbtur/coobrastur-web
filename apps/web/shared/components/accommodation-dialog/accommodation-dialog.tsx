@@ -11,6 +11,7 @@ import {
 } from '@coobrastur/ui/components/data-display/dialog';
 
 import { Image } from '@components/image';
+import { Link } from '@components/link';
 
 import { buttonsAnimations, galleryAnimations } from './animations';
 import { useAccommodationDialog } from './use-accommodation-dialog';
@@ -29,7 +30,6 @@ import { Separator } from '@ui/components/data-display/separator';
 import { Text } from '@ui/components/data-display/text';
 import { Title } from '@ui/components/data-display/title';
 import { Button } from '@ui/components/data-entry/button';
-import { Link } from '@ui/components/data-entry/link';
 import { ArrowRight, ChevronLeft, Table } from '@ui/lib/icons';
 
 export interface HotelDialogProps {
@@ -103,7 +103,7 @@ export const AccommodationDialog = ({
                 </div>
               </div>
               <div className="text-left">
-                <Link href="/accommodation">
+                <Link href={`/accommodation/${accommodation.id}`}>
                   Ir para a página do Hotel <Icon icon={ArrowRight} />
                 </Link>
               </div>

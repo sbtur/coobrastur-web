@@ -10,6 +10,7 @@ import {
 } from '@coobrastur/ui/components/data-display/sheet';
 
 import { Image } from '@components/image';
+import { Link } from '@components/link';
 
 import { useAccommodationDialog } from './use-accommodation-dialog';
 
@@ -23,7 +24,6 @@ import { Icon } from '@ui/components/data-display/icon';
 import { Text } from '@ui/components/data-display/text';
 import { Title } from '@ui/components/data-display/title';
 import { Button } from '@ui/components/data-entry/button';
-import { Link } from '@ui/components/data-entry/link';
 import { ArrowRight } from '@ui/lib/icons';
 
 export interface AccommodationDialogMobileProps {
@@ -103,7 +103,10 @@ export const AccommodationDialogMobile = ({
           </div>
 
           <div className="w-full bg-white">
-            <Link href="/accommodation" className="py-6 pl-5 font-bold">
+            <Link
+              href={`/accommodation/${accommodation.id}`}
+              className="py-6 pl-5 font-bold"
+            >
               Ir para a página do hotel <Icon icon={ArrowRight} />
             </Link>
             <Button size="lg" className="h-[90px] w-full rounded-none">

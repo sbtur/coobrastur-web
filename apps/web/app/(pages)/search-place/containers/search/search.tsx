@@ -5,7 +5,7 @@ import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 import { Section } from '@coobrastur/ui/components/layouts/section';
 
 import { AutoCompleteSearchResponse } from '../../http/accommodation';
-import { FormatSearchResultItems } from './format-search-result-items';
+import { SearchResultContainer } from './search-result-container';
 import { useSearch } from './use-search';
 
 import { Icon } from '@ui/components/data-display/icon';
@@ -19,7 +19,7 @@ export const Search = () => {
     onChangeAutoCompleteSearch,
     searchPlaceResults,
     handleSubmitSearch,
-    selectedPlaceToSearchAccommodation,
+    selectedSearchAccommodation,
   } = useSearch();
 
   const handleOnSearch = async (value: string) => {
@@ -27,7 +27,7 @@ export const Search = () => {
   };
 
   const handleOnSelect = (value: AutoCompleteSearchResponse) => {
-    selectedPlaceToSearchAccommodation.current = value.id;
+    selectedSearchAccommodation.current = value;
   };
 
   return (
@@ -47,7 +47,7 @@ export const Search = () => {
                     onSelect={handleOnSelect}
                     onFocus={() => null}
                     autoFocus
-                    formatResult={FormatSearchResultItems}
+                    formatResult={SearchResultContainer}
                     className="w-full p-0 font-semibold text-primary-300 placeholder:text-text-body placeholder:font-normal focus:outline-none"
                     styling={{
                       backgroundColor: 'white',

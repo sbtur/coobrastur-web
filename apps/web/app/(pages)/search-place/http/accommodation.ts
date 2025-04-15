@@ -9,7 +9,7 @@ import { ACCOMMODATIONS_LIST_ID } from '../helpers/accommodations-list';
 type SearchAutoCompleteResponse = {
   Codigo: string;
   Texto: string;
-  Tipo: string;
+  Tipo: 'Cidade' | 'Hotel';
   Cidade: string;
   Estado: string;
 };
@@ -19,7 +19,7 @@ export type AutoCompleteSearchResponse = {
   name: string;
   state: string;
   city: string;
-  type: string;
+  type: 'city' | 'hotel';
 };
 
 type ListHotelsResponse = {
@@ -97,15 +97,13 @@ export async function getAccommodationAutoCompleteSearch(
     >(`Hotel/SearchAutoComplete?Texto=${query}`)
     .json();
 
-  const accommodations = response.map(item => ({
-    id: item.Codigo,
-    name: item.Texto,
-    state: item.Estado,
-    city: item.Cidade,
-    type: item.Tipo,
+  return response.map(({ Codigo, Texto, Tipo, Estado, Cidade }) => ({
+    id: Codigo,
+    name: Texto,
+    state: Estado,
+    city: Cidade,
+    type: Tipo === 'Cidade' ? 'city' : 'hotel',
   }));
-
-  return accommodations;
 }
 
 export async function getAccommodationsList({
@@ -117,14 +115,16 @@ export async function getAccommodationsList({
     .get<ListHotelsResponse[]>(`Hotel/ListHotels?CityID=${cityId}`)
     .json();
 
-  const accommodations = response.map(item => ({
-    id: item.HotCode,
-    name: item.CommercialName,
-    address: item.Address,
-    city: item.City,
-    state: item.State,
-    image: item.Photo,
-  }));
+  const accommodations = response.map(
+    ({ HotCode, CommercialName, Address, City, State, Photo }) => ({
+      id: HotCode,
+      name: CommercialName,
+      address: Address,
+      city: City,
+      state: State,
+      image: Photo,
+    }),
+  );
 
   return accommodations;
 }
@@ -138,12 +138,12 @@ export async function getAccommodationFeatures({
     .get<HotelFeatures[]>(`Hotel/HotelFeatures?HotCode=${hotelId}`)
     .json();
 
-  const features = response.map(item => {
-    const feature = FEATURES_DATA[item.Code as FeatureKey];
+  const features = response.map(({ Code, Description }) => {
+    const feature = FEATURES_DATA[Code as FeatureKey];
 
     return {
-      id: item.Code,
-      name: formatTextToCapitalizeCase(item.Description),
+      id: Code,
+      name: formatTextToCapitalizeCase(Description),
       icon: feature ? feature.icon : '',
     };
   });
@@ -156,27 +156,38 @@ export async function getAccommodationDetail({
 }: {
   hotelId: string;
 }): Promise<AccommodationDetail> {
-  const response = await api_service
+  const {
+    Id,
+    Name,
+    Address,
+    Phone,
+    Email,
+    Site,
+    Free,
+    Coordinates,
+    Images,
+    AdditionalInfo,
+  } = await api_service
     .get<InfoHotelResponse>(`Hotel/InfoHotel?HotelID=${hotelId}`)
     .json();
 
   const features = await getAccommodationFeatures({ hotelId });
 
   const accommodation = {
-    id: response.Id.toString(),
-    name: formatTextToCapitalizeCase(response.Name),
-    address: formatTextToCapitalizeCase(response.Address),
-    phone: response.Phone,
-    email: response.Email,
-    site: response.Site,
-    free: response.Free,
+    id: Id.toString(),
+    name: formatTextToCapitalizeCase(Name),
+    address: formatTextToCapitalizeCase(Address),
+    phone: Phone,
+    email: Email,
+    site: Site,
+    free: Free,
     coordinates: {
-      latitude: response.Coordinates.Latitude,
-      longitude: response.Coordinates.Longitude,
+      latitude: Coordinates.Latitude,
+      longitude: Coordinates.Longitude,
     },
-    images: response.Images,
-    description: response.AdditionalInfo.InfoB,
-    additionalInfo: response.AdditionalInfo.InfoA,
+    images: Images,
+    description: AdditionalInfo.InfoB,
+    additionalInfo: AdditionalInfo.InfoA,
     features,
   };
 
