@@ -4,18 +4,21 @@ import { useSearchParams } from 'next/navigation';
 import {
   AccommodationDetail,
   getAccommodationDetail,
-} from '@/app/(pages)/search-place/http/accommodation';
+} from '@/app/search-place/http/accommodation';
 
 type UseAccommodationDialog = {
-  accommodation: AccommodationDetail | null;
+  accommodation: AccommodationDetail;
   isShowGallery: boolean;
   handleShowGallery: () => void;
+  isLoading: boolean;
 };
 
 export function useAccommodationDialog(): UseAccommodationDialog {
-  const [accommodation, setAccommodation] =
-    useState<AccommodationDetail | null>(null);
+  const [accommodation, setAccommodation] = useState<AccommodationDetail>(
+    {} as AccommodationDetail,
+  );
   const [isShowGallery, setIsShowGallery] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const searchParams = useSearchParams();
 
@@ -27,6 +30,7 @@ export function useAccommodationDialog(): UseAccommodationDialog {
         hotelId: hotelId || '',
       });
       setAccommodation(response);
+      setIsLoading(false);
     };
 
     if (hotelId) {
@@ -38,5 +42,5 @@ export function useAccommodationDialog(): UseAccommodationDialog {
     setIsShowGallery(!isShowGallery);
   };
 
-  return { accommodation, isShowGallery, handleShowGallery };
+  return { accommodation, isShowGallery, handleShowGallery, isLoading };
 }

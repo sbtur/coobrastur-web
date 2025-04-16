@@ -1,12 +1,12 @@
 import { Image } from '@/shared/components/image';
 
-type AccommodationMainInfoContainerMobileProps = {
+type AccommodationMainInfoContainerProps = {
   children: React.ReactNode;
 };
 
-export const AccommodationMainInfoContainerMobile = ({
+export const AccommodationMainInfoContainer = ({
   children,
-}: AccommodationMainInfoContainerMobileProps) => {
+}: AccommodationMainInfoContainerProps) => {
   return (
     <header className="w-full lg:max-w-[450px] relative">
       <div

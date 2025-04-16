@@ -1,8 +1,8 @@
 'use client';
 
 import { AccommodationCard } from '@components/accommodation-card';
-import { AccommodationDialog } from '@components/accommodation-dialog';
 
+import { AccommodationDialog } from '@/shared/components/accommodation-dialog/accommodation-dialog';
 import { useHotelListDetail } from '@/shared/hooks/use-hotel-list-detail';
 
 import { useSearchAccommodation } from '../../providers/search-provider';

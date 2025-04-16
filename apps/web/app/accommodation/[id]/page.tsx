@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import { getAccommodationDetail } from '@/app/(pages)/search-place/http/accommodation';
+import { getAccommodationDetail } from '@/app/search-place/http/accommodation';
 
 import AccommodationPublic from '../(public)/accommodation-page-public';
 

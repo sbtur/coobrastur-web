@@ -16,7 +16,7 @@ import {
 import { HeaderPrivate } from '@/shared/components/header';
 import { ResponsiveLargerThan } from '@/shared/components/responsive';
 
-import { AccommodationMainInfoContainerMobile } from '../components/accommodation-main-info-container';
+import { AccommodationMainInfoContainer } from '../components/accommodation-main-info-container';
 import { CollapsibleDescription } from '../components/collapsible-description';
 import { Features } from '../components/features';
 import { ImageGallery } from '../components/image-gallery';
@@ -40,7 +40,7 @@ export default function AccommodationPrivate({
         <Container className="grid gap-6 p-0 lg:py-12 lg:px-3 relative">
           <div className="lg:flex gap-4 justify-between relative">
             <ImageGallery images={accommodation.images} />
-            <AccommodationMainInfoContainerMobile>
+            <AccommodationMainInfoContainer>
               <Badge>Gold</Badge>
               <div className="space-y-1 text-left">
                 <Title>{accommodation.name}</Title>
@@ -67,7 +67,7 @@ export default function AccommodationPrivate({
               <Button size="lg" className="w-full rounded-[10px]">
                 Reservar <Icon icon={ArrowRight} variant="white" />
               </Button>
-            </AccommodationMainInfoContainerMobile>
+            </AccommodationMainInfoContainer>
           </div>
 
           <main className="grid gap-8 max-full lg:max-w-[530px] xl:max-w-[790px] px-6 lg:p-0">

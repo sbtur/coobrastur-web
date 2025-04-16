@@ -2,7 +2,7 @@ import { Button } from '@coobrastur/ui/components/data-entry/button';
 
 import { Image } from '@components/image';
 
-import { AccommodationListItem } from '@/app/(pages)/search-place/http/accommodation';
+import { AccommodationListItem } from '@/app/search-place/http/accommodation';
 
 import {
   HotelCard,

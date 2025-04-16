@@ -1,16 +1,9 @@
 'use client';
 
 import { AccommodationCard } from '@components/accommodation-card';
-import {
-  AccommodationDialog,
-  AccommodationDialogMobile,
-} from '@components/accommodation-dialog';
+import { AccommodationDialog } from '@components/accommodation-dialog/accommodation-dialog';
 
-import { AccommodationListItem } from '@/app/(pages)/search-place/http/accommodation';
-import {
-  ResponsiveLargerThan,
-  ResponsiveSmallerThan,
-} from '@/shared/components/responsive';
+import { AccommodationListItem } from '@/app/search-place/http/accommodation';
 import { useHotelListDetail } from '@/shared/hooks/use-hotel-list-detail';
 
 import {
@@ -36,21 +29,11 @@ export const AccommodationList = ({
   return (
     <Content className="px-4 lg:px-0">
       {isEnabled && (
-        <>
-          <ResponsiveLargerThan breakpoint="lg">
-            <AccommodationDialog
-              isOpen={isEnabled}
-              onOpenChange={toggle}
-              onClose={handleCloseHotel}
-            />
-          </ResponsiveLargerThan>
-          <ResponsiveSmallerThan breakpoint="lg">
-            <AccommodationDialogMobile
-              isOpen={isEnabled}
-              onOpenChange={toggle}
-            />
-          </ResponsiveSmallerThan>
-        </>
+        <AccommodationDialog
+          isOpen={isEnabled}
+          onClose={handleCloseHotel}
+          onOpenChange={toggle}
+        />
       )}
       <Carousel
         className="h-full"
