@@ -5,7 +5,6 @@ import {
   AccordionTrigger,
 } from '@coobrastur/ui/components/data-display/accordion';
 import { Badge } from '@coobrastur/ui/components/data-display/badge';
-import { Heading } from '@coobrastur/ui/components/data-display/heading';
 import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Title } from '@coobrastur/ui/components/data-display/title';
 
@@ -17,7 +16,7 @@ export const FAQ = () => {
       <Accordion type="single" collapsible defaultValue="item-1">
         <AccordionItem value="item-1">
           <AccordionTrigger>
-            <Title size="sm" className="text-white">
+            <Title as="h3" size="sm" className="text-white">
               O que é uma Assinatura de Hotéis?
             </Title>
           </AccordionTrigger>
@@ -33,7 +32,7 @@ export const FAQ = () => {
         </AccordionItem>
         <AccordionItem value="item-2" className="text-white">
           <AccordionTrigger>
-            <Title size="sm" className="text-white">
+            <Title as="h3" size="sm" className="text-white">
               Por que ter uma Assinatura de Hotéis? 
             </Title>
           </AccordionTrigger>
@@ -51,7 +50,7 @@ export const FAQ = () => {
         </AccordionItem>
         <AccordionItem value="item-3" className="text-white">
           <AccordionTrigger>
-            <Title size="sm" className="text-white">
+            <Title as="h3" size="sm" className="text-white">
               Quais são as formas de pagamento?
             </Title>
           </AccordionTrigger>

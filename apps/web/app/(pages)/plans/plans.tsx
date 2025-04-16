@@ -1,21 +1,19 @@
 'use client';
-import { Section } from '@coobrastur/ui/components/layouts/section';
-import { Title } from '@coobrastur/ui/components/data-display/title';
 import { Badge } from '@coobrastur/ui/components/data-display/badge';
+import { Heading } from '@coobrastur/ui/components/data-display/heading';
 import { Text } from '@coobrastur/ui/components/data-display/text';
-import { Container } from '@coobrastur/ui/components/layouts/container';
-import { FAQ } from './components/faq';
+import { Title } from '@coobrastur/ui/components/data-display/title';
+import { Button } from '@coobrastur/ui/components/data-entry/button';
 import { Input } from '@coobrastur/ui/components/data-entry/input';
 import { Label } from '@coobrastur/ui/components/data-entry/label';
-import { Button } from '@coobrastur/ui/components/data-entry/button';
+import { Container } from '@coobrastur/ui/components/layouts/container';
+import { Section } from '@coobrastur/ui/components/layouts/section';
+
 import { Image } from '@components/image';
 
-import { PlanCards, PlanCardsMobile } from '@/shared/components/plan-cards';
-import {
-  ResponsiveLargerThan,
-  ResponsiveSmallerThan,
-} from '@/shared/components/responsive';
-import { Heading } from '@coobrastur/ui/components/data-display/heading';
+import { PlanCards } from '@/shared/components/plan-cards/plan-cards';
+
+import { FAQ } from './components/faq';
 
 export const Plans = () => {
   return (
@@ -32,18 +30,13 @@ export const Plans = () => {
           </Text>
         </Heading>
 
-        <ResponsiveSmallerThan breakpoint="md">
-          <PlanCardsMobile />
-        </ResponsiveSmallerThan>
-        <ResponsiveLargerThan breakpoint="md">
-          <PlanCards />
-        </ResponsiveLargerThan>
+        <PlanCards />
 
         <FAQ />
-        
+
         <div className="flex justify-center mt-11 mb-60 md:gap-5">
           <form className="bg-white p-8 rounded-2xl shadow-md w-full max-w-3xl">
-            <Heading>
+            <Heading className="p-0">
               <Title size="sm">Tem alguma dúvida?</Title>
               <Text size="sm">
                 Preencha as informações abaixo e receba o contato da nossa
