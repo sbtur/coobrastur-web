@@ -30,7 +30,7 @@ export default function NewPasswordForm() {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Heading className="pb-10 ml-0 pl-0">
+        <Heading className="pb-10 ml-0 pl-0 lg:text-left text-center">
           <Title>Escolha sua nova senha</Title>
           <Text>
             Para continuar, crie uma nova senha segura para acessar sua conta.

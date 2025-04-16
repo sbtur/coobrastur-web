@@ -18,7 +18,7 @@ import { Text } from '@ui/components/data-display/text';
 export function RecoveryTabs() {
   return (
     <>
-      <Heading className="pb-10 ml-0 pl-0">
+      <Heading className="mb-10 ml-0 px-0 lg:text-left text-center">
         <Title>Redefinir sua senha</Title>
         <Text>Escolha a forma mais conveniente para redefinir sua senha.</Text>
       </Heading>
@@ -36,7 +36,7 @@ export function RecoveryTabs() {
           </TabsTrigger>
           <TabsTrigger
             value="sms"
-            className="flex flex-col justify-center w-[115px] h-[115px] rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-lg transition-all border border-neutral-300 data-[state=active]:border-highlight-100"
+            className="flex flex-col justify-left w-[115px] h-[115px] rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-lg transition-all border border-neutral-300 data-[state=active]:border-highlight-100"
           >
             <Icon icon={MessageSquare} size="lg" className="text-highlight" />
             <Text className="text-sm">

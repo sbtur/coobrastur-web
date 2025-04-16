@@ -58,7 +58,7 @@ const LoginForm = () => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Heading className="pb-10 ml-0 pl-0">
+        <Heading className="pb-10 ml-0 pl-0 lg:text-left text-center">
           <Title>Acesse sua conta</Title>
           <Text>Preencha seus dados e continue sua jornada</Text>
         </Heading>
