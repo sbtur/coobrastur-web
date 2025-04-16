@@ -8,6 +8,7 @@ import {
 
 interface SearchContextData {
   accommodationList: AccommodationListItem[];
+  setAccommodationList: (accommodationList: AccommodationListItem[]) => void;
   isAccommodationListLoading: boolean;
   getListOfAccommodations: ({
     accommodationId,
@@ -18,16 +19,10 @@ interface SearchContextData {
 
 const SearchContext = createContext({} as SearchContextData);
 
-export function SearchProvider({
-  children,
-  accommodationsListStatic,
-}: {
-  children: ReactNode;
-  accommodationsListStatic: AccommodationListItem[];
-}) {
+export function SearchProvider({ children }: { children: ReactNode }) {
   const [accommodationList, setAccommodationList] = useState<
     AccommodationListItem[]
-  >(accommodationsListStatic || []);
+  >([]);
   const [isAccommodationListLoading, setIsAccommodationListLoading] =
     useState(false);
 
@@ -56,6 +51,7 @@ export function SearchProvider({
         accommodationList,
         isAccommodationListLoading,
         getListOfAccommodations,
+        setAccommodationList,
       }}
     >
       {children}
