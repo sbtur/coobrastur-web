@@ -28,7 +28,7 @@ const RecoverySMSForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="relative h-full w-full">
-        <div className="flex flex-col gap-1 mb-10">
+        <div className="flex flex-col gap-1 mb-6">
           <Label htmlFor="phone" className="text-neutral-500">
             Insira o número de celular vinculado à sua conta
           </Label>

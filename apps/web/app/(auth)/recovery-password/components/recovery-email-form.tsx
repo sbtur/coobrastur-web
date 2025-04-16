@@ -34,7 +34,7 @@ const RecoveryEmailForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="relative h-full w-full">
-        <div className="flex flex-col gap-1 mb-10">
+        <div className="flex flex-col gap-1 mb-6">
           <Label htmlFor="cpfCnpj" className="text-neutral-500">
             Insira seu CPF ou CNPJ
           </Label>

@@ -23,7 +23,7 @@ export function RecoveryTabs() {
         <Text>Escolha a forma mais conveniente para redefinir sua senha.</Text>
       </Heading>
       <Tabs defaultValue="email" className="w-full">
-        <TabsList className="flex gap-5 p-1 bg-neutral-100 rounded-lg mb-[60px] justify-start">
+        <TabsList className="flex gap-4 p-1 bg-neutral-100 rounded-lg mb-[60px] justify-start">
           <TabsTrigger
             value="email"
             className="flex flex-col justify-center w-[115px] h-[115px] rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-lg transition-all border border-neutral-300 data-[state=active]:border-highlight-100"
