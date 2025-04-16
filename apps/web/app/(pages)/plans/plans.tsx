@@ -1,4 +1,3 @@
-'use client';
 import { Badge } from '@coobrastur/ui/components/data-display/badge';
 import { Heading } from '@coobrastur/ui/components/data-display/heading';
 import { Text } from '@coobrastur/ui/components/data-display/text';
