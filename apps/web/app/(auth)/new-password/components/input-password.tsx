@@ -1,29 +1,26 @@
 'use client';
 
 import { useState } from 'react';
-import { UseFormRegister } from 'react-hook-form';
+import { Path, UseFormRegister } from 'react-hook-form';
 
 import { Eye, EyeOff } from 'lucide-react';
 
 import { Text } from '@ui/components/data-display/text';
 import { Input } from '@ui/components/data-entry/input';
 
-interface InputPasswordProps {
+interface InputPasswordProps<T extends Record<string, any>> {
   id: string;
   placeholder: string;
-  register?: UseFormRegister<{
-    newPassword: string;
-    confirmPassword: string;
-  }>;
+  register?: UseFormRegister<T>;
   error?: string;
 }
 
-export function InputPassword({
+export function InputPassword<T extends Record<string, any>>({
   id,
   placeholder,
   register,
   error,
-}: InputPasswordProps) {
+}: InputPasswordProps<T>) {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -32,7 +29,7 @@ export function InputPassword({
         id={id}
         type={showPassword ? 'text' : 'password'}
         placeholder={placeholder}
-        {...(register ? register(id as 'newPassword' | 'confirmPassword') : {})}
+        {...(register ? register(id as Path<T>) : {})}
       />
       {error && <Text className="text-red-500">{error}</Text>}
       <button

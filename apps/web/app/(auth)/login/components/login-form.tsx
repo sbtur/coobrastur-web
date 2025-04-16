@@ -97,7 +97,9 @@ const LoginForm = () => {
             />
           </div>
           {errors.cpfCnpj && (
-            <Text className="text-red-500">{errors.cpfCnpj.message}</Text>
+            <Text className="text-red-500 text-sm">
+              {errors.cpfCnpj.message}
+            </Text>
           )}
         </div>
         <div className="flex flex-col gap-1 mb-3">
@@ -109,6 +111,11 @@ const LoginForm = () => {
             placeholder="Senha"
             {...register('password')}
           />
+          {errors.password && (
+            <Text className="text-red-500 text-sm">
+              {errors.password.message}
+            </Text>
+          )}
         </div>
         <div className="flex flex-col gap-1 mb-10">
           <Link
