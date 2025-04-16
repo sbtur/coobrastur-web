@@ -16,8 +16,8 @@ export default function AuthLayout({
           priority
         />
       </div>
-      <div className="relative h-full w-full px-[150px] pt-[150px]">
-        <div className="flex flex-col gap-4 pb-2 lg:text-left text-center">
+      <div className="relative h-full w-full px-[150px] flex items-center justify-center">
+        <div className="flex flex-col gap-4 pb-2 lg:text-left text-center w-full max-w-[760px]">
           <div className="flex justify-center lg:hidden">
             <Image
               src="/images/pages/login/airplane-icon.svg"

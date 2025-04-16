@@ -63,7 +63,7 @@ const LoginForm = () => {
           <Text>Preencha seus dados e continue sua jornada</Text>
         </Heading>
 
-        <div className="flex flex-col gap-1 mb-10">
+        <div className="flex flex-col gap-1 mb-6">
           <Label htmlFor="cpfCnpj" className="text-neutral-500">
             Seu CPF/CNPJ
           </Label>
@@ -102,7 +102,7 @@ const LoginForm = () => {
             </Text>
           )}
         </div>
-        <div className="flex flex-col gap-1 mb-3">
+        <div className="flex flex-col gap-1 mb-2">
           <Label htmlFor="password" className="text-neutral-500">
             Senha
           </Label>
@@ -117,7 +117,7 @@ const LoginForm = () => {
             </Text>
           )}
         </div>
-        <div className="flex flex-col gap-1 mb-10">
+        <div className="flex flex-col gap-1 mb-6">
           <Link
             href="/recovery-password"
             className="text-highlight-100 text-sm underline font-bold"
