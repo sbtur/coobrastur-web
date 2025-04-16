@@ -5,25 +5,19 @@ import { AccommodationCard } from '@components/accommodation-card';
 import { AccommodationDialog } from '@/shared/components/accommodation-dialog/accommodation-dialog';
 import { useHotelListDetail } from '@/shared/hooks/use-hotel-list-detail';
 
-import { useSearchAccommodation } from '../../providers/search-provider';
-import { AccommodationNotFound } from './accommodation-not-found';
-import { AccommodationListSkeleton } from './accommodation-skeleton';
+import { useSearchProvider } from '../providers/search-provider';
+import AccommodationListSkeleton from './accommodation-list-skeleton';
 
 import { Container } from '@ui/components/layouts/container';
 import { Content } from '@ui/components/layouts/content';
 
 export const AccommodationList = () => {
-  const { accommodationList, isAccommodationListLoading } =
-    useSearchAccommodation();
   const { isEnabled, handleOpenHotel, handleCloseHotel, toggle } =
     useHotelListDetail();
+  const { accommodationList, isAccommodationListLoading } = useSearchProvider();
 
   if (isAccommodationListLoading) {
     return <AccommodationListSkeleton />;
-  }
-
-  if (!accommodationList?.length) {
-    return <AccommodationNotFound />;
   }
 
   return (

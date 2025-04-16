@@ -1,8 +1,21 @@
 'use client';
-import { createContext, ReactNode, useContext, useState } from 'react';
+import {
+  createContext,
+  ReactNode,
+  RefObject,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import { useRouter } from 'next/navigation';
 
+import { pushUrlParams } from '@/shared/helpers/manage-url-params';
+
+import { AccommodationList } from '../containers/accommodation-list';
 import {
   AccommodationListItem,
+  AutoCompleteSearchResponse,
   getAccommodationsList,
 } from '../http/accommodation';
 
@@ -10,38 +23,64 @@ interface SearchContextData {
   accommodationList: AccommodationListItem[];
   setAccommodationList: (accommodationList: AccommodationListItem[]) => void;
   isAccommodationListLoading: boolean;
-  getListOfAccommodations: ({
-    accommodationId,
-  }: {
-    accommodationId: string;
-  }) => Promise<void>;
+  getListOfAccommodations: ({ cityId }: { cityId: string }) => Promise<void>;
+  handleSubmitSearch: () => void;
+  selectedSearchAccommodation: RefObject<AutoCompleteSearchResponse | null>;
 }
 
 const SearchContext = createContext({} as SearchContextData);
 
-export function SearchProvider({ children }: { children: ReactNode }) {
+export function SearchProvider({
+  children,
+  accommodationsList,
+}: {
+  children: ReactNode;
+  accommodationsList: AccommodationListItem[];
+}) {
   const [accommodationList, setAccommodationList] = useState<
     AccommodationListItem[]
-  >([]);
+  >(accommodationsList || []);
   const [isAccommodationListLoading, setIsAccommodationListLoading] =
     useState(false);
+  const { push } = useRouter();
 
-  const getListOfAccommodations = async ({
-    accommodationId,
-  }: {
-    accommodationId: string;
-  }) => {
-    try {
-      setIsAccommodationListLoading(true);
-      const accommodations = await getAccommodationsList({
-        cityId: accommodationId,
-      });
-      setAccommodationList(accommodations);
-    } catch (err) {
-      console.error('Error on get accommodations', err);
-      setAccommodationList([]);
-    } finally {
-      setIsAccommodationListLoading(false);
+  const selectedSearchAccommodation = useRef<AutoCompleteSearchResponse>(null);
+
+  const getListOfAccommodations = async ({ cityId }: { cityId: string }) => {
+    setIsAccommodationListLoading(true);
+    const accommodations = await getAccommodationsList({
+      cityId,
+    });
+
+    setAccommodationList(accommodations);
+
+    setIsAccommodationListLoading(false);
+  };
+
+  const handleListAccommodationsFromSearch = async () => {
+    if (!selectedSearchAccommodation.current) return;
+
+    getListOfAccommodations({
+      cityId: selectedSearchAccommodation.current.id,
+    });
+
+    pushUrlParams({
+      key: 's',
+      value: selectedSearchAccommodation.current.id,
+    });
+  };
+
+  const handleRedirectToHotelPageSearch = () => {
+    if (!selectedSearchAccommodation.current) return;
+
+    push(`/accommodation/${selectedSearchAccommodation.current.id}`);
+  };
+
+  const handleSubmitSearch = () => {
+    if (selectedSearchAccommodation.current?.type === 'city') {
+      handleListAccommodationsFromSearch();
+    } else {
+      handleRedirectToHotelPageSearch();
     }
   };
 
@@ -52,6 +91,8 @@ export function SearchProvider({ children }: { children: ReactNode }) {
         isAccommodationListLoading,
         getListOfAccommodations,
         setAccommodationList,
+        handleSubmitSearch,
+        selectedSearchAccommodation,
       }}
     >
       {children}
@@ -59,7 +100,7 @@ export function SearchProvider({ children }: { children: ReactNode }) {
   );
 }
 
-export function useSearchAccommodation() {
+export function useSearchProvider() {
   const context = useContext(SearchContext);
 
   if (!context) {

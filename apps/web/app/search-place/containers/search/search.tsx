@@ -5,6 +5,7 @@ import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 import { Section } from '@coobrastur/ui/components/layouts/section';
 
 import { AutoCompleteSearchResponse } from '../../http/accommodation';
+import { useSearchProvider } from '../../providers/search-provider';
 import { SearchResultContainer } from './search-result-container';
 import { useSearch } from './use-search';
 
@@ -15,12 +16,9 @@ import { Container } from '@ui/components/layouts/container';
 import { MapPin, Search as SearchIcon } from '@ui/lib/icons';
 
 export const Search = () => {
-  const {
-    onChangeAutoCompleteSearch,
-    searchPlaceResults,
-    handleSubmitSearch,
-    selectedSearchAccommodation,
-  } = useSearch();
+  const { onChangeAutoCompleteSearch, searchPlaceResults } = useSearch();
+  const { handleSubmitSearch, selectedSearchAccommodation } =
+    useSearchProvider();
 
   const handleOnSearch = async (value: string) => {
     onChangeAutoCompleteSearch(value);
@@ -69,6 +67,7 @@ export const Search = () => {
                     maxResults={10}
                     placeholder="Digite o nome da cidade ou hotel"
                     resultStringKeyName="name"
+                    showClear={false}
                   />
                 </div>
               </div>

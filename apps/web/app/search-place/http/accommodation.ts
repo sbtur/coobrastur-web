@@ -1,5 +1,3 @@
-'use server';
-
 import { apiClient } from '@/core/infrastructure/api/api-client';
 import { formatTextToCapitalizeCase } from '@/shared/helpers/format-text-to-capitalize-case';
 import { FeatureKey, FEATURES_DATA } from '@/shared/utils/data/features';
