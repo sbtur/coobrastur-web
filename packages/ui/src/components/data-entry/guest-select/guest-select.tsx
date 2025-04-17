@@ -13,6 +13,59 @@ interface GuestOption {
   description: string
 }
 
+interface CounterButtonProps {
+  onClick: () => void
+  isDisabled?: boolean
+  icon: 'plus' | 'minus'
+}
+
+function CounterButton({ onClick, isDisabled, icon }: CounterButtonProps) {
+  const Icon = icon === 'plus' ? Plus : Minus
+
+  return (
+    <Button
+      className={cn(
+        "border border-gray-300 rounded px-2 py-2 text-gray-300",
+        isDisabled ? "bg-gray-100" : "bg-white text-primary-300"
+      )}
+      variant="outline"
+      size="icon"
+      onClick={onClick}
+    >
+      <Icon className="h-3 w-3" />
+    </Button>
+  )
+}
+
+interface GuestCounterProps {
+  option: GuestOption
+  onValueChange: (value: number) => void
+}
+
+function GuestCounter({ option, onValueChange }: GuestCounterProps) {
+  return (
+    <div className="flex items-center justify-between">
+      <div className="max-w-[180px] pr-4">
+        <Text className="font-bold font-primary text-2xl text-primary-300">{option.label}</Text>
+        <Text className="text-neutral-400 text-sm">{option.description}</Text>
+      </div>
+      <div className="flex items-center gap-6">
+        <CounterButton
+          icon="minus"
+          isDisabled={option.value <= option.min}
+          onClick={() => onValueChange(option.value - 1)}
+        />
+        <Text className="font-bold font-primary text-lg text-primary-300">{option.value}</Text>
+        <CounterButton
+          icon="plus"
+          isDisabled={option.value >= option.max}
+          onClick={() => onValueChange(option.value + 1)}
+        />
+      </div>
+    </div>
+  )
+}
+
 interface GuestSelectProps {
   roomNumber: number
   adults: GuestOption
@@ -40,75 +93,17 @@ export function GuestSelect({
         <div className="space-y-4">
           <Badge variant="default" className="bg-blue-50 p-2 text-xs font-bold">
             QUARTO {roomNumber}
-          </Badge>          
+          </Badge>
 
           <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <div className="max-w-[180px] pr-4"> 
-                <Text className="font-bold font-primary text-2xl text-primary-300">{adults.label}</Text>
-                <Text className="text-neutral-400 text-sm">{adults.description}</Text>                
-              </div>
-              <div className="flex items-center gap-6">
-                <Button
-                  className={cn(
-                    "border border-gray-300 rounded text-gray-300 px-2 py-2",
-                    adults.value <= adults.min ? "bg-gray-100" : "bg-white text-primary-300"
-                  )}
-                  variant="outline"
-                  size="icon"                  
-                  onClick={() => onAdultsChange(adults.value - 1)}  
-                >
-                  <Minus className="h-3 w-3" />
-                </Button>
-                <Text className="font-bold font-primary text-lg text-primary-300">{adults.value}</Text>                
-                <Button
-                  className={cn(
-                    "border border-gray-300 rounded px-2 py-2 text-gray-300",
-                    adults.value >= adults.max ? "bg-gray-100" : "bg-white text-primary-300"
-                  )}
-                  variant="outline"
-                  size="icon"                  
-                  onClick={() => onAdultsChange(adults.value + 1)}
-                >
-                  <Plus className="h-3 w-3" />
-                </Button>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-between">
-            <div className="max-w-[180px] pr-4">
-                <Text className="font-bold font-primary text-2xl text-primary-300">{childrenGuests.label}</Text>
-                <Text className="text-neutral-400 text-sm">{childrenGuests.description}</Text>
-              </div>
-              <div className="flex items-center gap-6">
-              <Button
-                  className={cn(
-                    "border border-gray-300 rounded text-gray-300 px-2 py-2",
-                    adults.value <= adults.min ? "bg-gray-100" : "bg-white"
-                  )}
-                  variant="outline"
-                  size="icon"                  
-                  onClick={() => onAdultsChange(adults.value - 1)}
-                >
-                  <Minus className="h-4 w-4" />
-                </Button>
-                  <Text className="font-bold font-primary text-lg text-primary-300">{childrenGuests.value}</Text>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="border border-gray-300 rounded px-2 py-2 text-primary-300"                  
-                  onClick={() => onChildrenChange(childrenGuests.value + 1)}
-                >
-                  <Plus className="h-4 w-4" />
-                </Button>
-              </div>
-            </div>
+            <GuestCounter option={adults} onValueChange={onAdultsChange} />
+            <GuestCounter option={childrenGuests} onValueChange={onChildrenChange} />
           </div>
         </div>
 
         <div className="space-y-2">
           <Button
-            variant="outline"       
+            variant="outline"
             className="w-[160px] h-[30px] text-[10px]"
             onClick={onAddRoom}
           >
