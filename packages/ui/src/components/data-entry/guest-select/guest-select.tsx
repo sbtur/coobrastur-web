@@ -38,7 +38,6 @@ function CounterButton({ onClick, isDisabled, icon }: CounterButtonProps) {
       variant="outline"
       size="icon"
       onClick={onClick}
-      disabled={isDisabled}
     >
       <Icon className="h-3 w-3" />
     </Button>
