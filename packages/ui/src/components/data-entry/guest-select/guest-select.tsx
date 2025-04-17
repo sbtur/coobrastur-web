@@ -1,7 +1,9 @@
 import { Button } from '@coobrastur/ui/components/data-entry/button'
 import { Card } from '@coobrastur/ui/components/data-display/card'
-import { Minus, Plus } from 'lucide-react'
+import { Minus, Plus, PlusCircle } from 'lucide-react'
 import { cn } from '@coobrastur/ui/lib/utils'
+import { Text } from '@coobrastur/ui/components/data-display/text'
+import { Badge } from '@coobrastur/ui/components/data-display/badge'
 
 interface GuestOption {
   value: number
@@ -33,61 +35,68 @@ export function GuestSelect({
   className,
 }: GuestSelectProps) {
   return (
-    <Card className={cn('w-full max-w-[320px] p-4', className)}>
+    <Card className={cn('w-full max-w-[348px] p-4', className)}>
       <div className="space-y-6">
         <div className="space-y-4">
-          <div className="bg-blue-50 p-2 text-sm font-medium text-blue-900">
+          <Badge variant="default" className="bg-blue-50 p-2 text-xs font-bold">
             QUARTO {roomNumber}
-          </div>
+          </Badge>          
 
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-gray-900">{adults.label}</p>
-                <p className="text-sm text-gray-500">{adults.description}</p>
+              <div>                                
+                <Text className="font-bold font-primary text-2xl text-primary-300">{adults.label}</Text>
+                <Text className="text-neutral-400 text-sm">{adults.description}</Text>                
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4">
                 <Button
+                  className={cn(
+                    "border border-gray-300 rounded text-gray-300 px-2 py-2",
+                    adults.value <= adults.min ? "bg-gray-100" : "bg-white"
+                  )}
                   variant="outline"
-                  size="icon"
-                  disabled={adults.value <= adults.min}
+                  size="icon"                  
                   onClick={() => onAdultsChange(adults.value - 1)}
                 >
-                  <Minus className="h-4 w-4" />
+                  <Minus className="h-3 w-3" />
                 </Button>
-                <span className="w-4 text-center">{adults.value}</span>
+                <Text className="font-bold font-primary text-lg text-primary-300">{adults.value}</Text>                
                 <Button
+                  className={cn(
+                    "border border-gray-300 rounded px-2 py-2",
+                    adults.value >= adults.max ? "bg-gray-100" : "bg-white"
+                  )}
                   variant="outline"
-                  size="icon"
-                  disabled={adults.value >= adults.max}
+                  size="icon"                  
                   onClick={() => onAdultsChange(adults.value + 1)}
                 >
-                  <Plus className="h-4 w-4" />
+                  <Plus className="h-3 w-3" />
                 </Button>
               </div>
             </div>
 
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-900">
-                  {childrenGuests.label}
-                </p>
-                <p className="text-sm text-gray-500">{childrenGuests.description}</p>
+                <Text className="font-bold font-primary text-2xl text-primary-300">{childrenGuests.label}</Text>
+                <Text className="text-neutral-400 text-sm">{childrenGuests.description}</Text>
               </div>
-              <div className="flex items-center gap-3">
-                <Button
+              <div className="flex items-center gap-4">
+              <Button
+                  className={cn(
+                    "border border-gray-300 rounded text-gray-300 px-2 py-2",
+                    adults.value <= adults.min ? "bg-gray-100" : "bg-white"
+                  )}
                   variant="outline"
-                  size="icon"
-                  disabled={childrenGuests.value <= childrenGuests.min}
-                  onClick={() => onChildrenChange(childrenGuests.value - 1)}
+                  size="icon"                  
+                  onClick={() => onAdultsChange(adults.value - 1)}
                 >
                   <Minus className="h-4 w-4" />
                 </Button>
-                <span className="w-4 text-center">{childrenGuests.value}</span>
+                  <Text className="font-bold font-primary text-lg text-primary-300">{childrenGuests.value}</Text>
                 <Button
                   variant="outline"
                   size="icon"
-                  disabled={childrenGuests.value >= childrenGuests.max}
+                  className="border border-gray-300 rounded px-2 py-2"                  
                   onClick={() => onChildrenChange(childrenGuests.value + 1)}
                 >
                   <Plus className="h-4 w-4" />
@@ -99,10 +108,10 @@ export function GuestSelect({
 
         <div className="space-y-2">
           <Button
-            variant="outline"
-            className="w-full"
+            variant="outline"            
             onClick={onAddRoom}
           >
+            <PlusCircle className="h-4 w-4" />
             ADICIONAR QUARTO
           </Button>
           <Button
