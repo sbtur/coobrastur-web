@@ -1,71 +1,78 @@
 'use client';
 
-import { z } from 'zod';
+import { useForm } from 'react-hook-form';
 
-import { Heading } from '@coobrastur/ui/components/data-display/heading';
-import { useForm } from '@coobrastur/ui/lib/form';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@coobrastur/ui/components/data-entry/form';
 import { zodResolver } from '@coobrastur/ui/lib/validation';
 
 import { InputPassword } from './input-password';
 
 import { newPasswordValidationSchema } from '@shared/helpers/validation';
-import { Text } from '@ui/components/data-display/text';
-import { Title } from '@ui/components/data-display/title';
 import { Button } from '@ui/components/data-entry/button';
-import { Label } from '@ui/components/data-entry/label';
 
 export default function NewPasswordForm() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<z.infer<typeof newPasswordValidationSchema>>({
+  const form = useForm({
+    defaultValues: {
+      newPassword: '',
+      confirmPassword: '',
+    },
     resolver: zodResolver(newPasswordValidationSchema),
   });
 
-  const onSubmit = (values: any) => {
-    console.log(values);
-  };
-
   return (
-    <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Heading className="pb-10 ml-0 pl-0 lg:text-left text-center">
-          <Title>Escolha sua nova senha</Title>
-          <Text>
-            Para continuar, crie uma nova senha segura para acessar sua conta.
-          </Text>
-        </Heading>
-
-        <div className="flex flex-col gap-1 mb-8">
-          <Label htmlFor="newPassword" className="text-neutral-500">
-            Nova senha
-          </Label>
-          <InputPassword
-            id="newPassword"
-            placeholder="Senha"
-            register={register}
-            error={errors.newPassword?.message}
-          />
-        </div>
-        <div className="flex flex-col gap-1 mb-8">
-          <Label htmlFor="confirmPassword" className="text-neutral-500">
-            Confirmar senha
-          </Label>
-          <InputPassword
-            id="confirmPassword"
-            placeholder="Confirmar senha"
-            register={register}
-            error={errors.confirmPassword?.message}
-          />
-        </div>
-
-        <div className="flex flex-col gap-1">
-          <Button type="submit" className="w-full p-4 mb-3">
-            Redefinir senha
-          </Button>
-        </div>
-      </form>
-    </>
+    <Form
+      form={form}
+      onSubmit={form.handleSubmit(values => {
+        console.log(values);
+      })}
+      className="mt-8"
+    >
+      <div className="space-y-4">
+        <FormField
+          control={form.control}
+          name="newPassword"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Nova senha</FormLabel>
+              <FormControl>
+                <InputPassword
+                  id="newPassword"
+                  placeholder="Senha"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="confirmPassword"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Nova senha</FormLabel>
+              <FormControl>
+                <InputPassword
+                  id="confirmPassword"
+                  placeholder="Confirmar senha"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+      </div>
+      <Button type="submit" className="w-full mt-8">
+        Redefinir senha
+      </Button>
+    </Form>
   );
 }

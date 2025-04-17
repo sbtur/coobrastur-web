@@ -54,33 +54,7 @@ const cpfCnpj = z
     return false;
   }, 'CPF/CNPJ inválido');
 
-const password = z
-  .string()
-  .min(6, { message: 'Senha deve ter no mínimo 6 caracteres' });
-
 export const loginValidationSchema = z.object({
   document: cpfCnpj,
   password: z.string().min(1, { message: 'Senha é obrigatória' }),
 });
-
-export const recoveryPasswordSMSValidationSchema = z.strictObject({
-  phone: z.string().min(11, { message: 'Telefone é obrigatório' }),
-  smsCode: z
-    .string()
-    .min(6, { message: 'Código de recuperação é obrigatório' }),
-});
-
-export const recoveryPasswordEmailValidationSchema = z.object({
-  document: cpfCnpj,
-  email: z.string().email({ message: 'Email inválido' }),
-});
-
-export const newPasswordValidationSchema = z
-  .strictObject({
-    newPassword: password,
-    confirmPassword: password,
-  })
-  .refine(data => data.newPassword === data.confirmPassword, {
-    message: 'As senhas não coincidem',
-    path: ['confirmPassword'],
-  });

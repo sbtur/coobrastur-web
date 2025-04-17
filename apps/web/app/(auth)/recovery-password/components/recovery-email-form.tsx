@@ -1,83 +1,82 @@
 'use client';
 
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import MaskedInput from 'react-text-mask';
 
 import { z } from 'zod';
 
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@coobrastur/ui/components/data-entry/form';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import { recoveryPasswordEmailValidationSchema } from '@shared/helpers/validation';
 import { cpfOrCnpjMask } from '@shared/utils/input-masks';
-import { Text } from '@ui/components/data-display/text';
 import { Button } from '@ui/components/data-entry/button';
 import { Input } from '@ui/components/data-entry/input';
-import { Label } from '@ui/components/data-entry/label';
 
 type RecoveryEmailFormData = z.infer<
   typeof recoveryPasswordEmailValidationSchema
 >;
 
 const RecoveryEmailForm = () => {
-  const {
-    control,
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<RecoveryEmailFormData>({
+  const form = useForm<RecoveryEmailFormData>({
+    defaultValues: {
+      document: '',
+      email: '',
+    },
     resolver: zodResolver(recoveryPasswordEmailValidationSchema),
   });
 
-  const onSubmit = (values: any) => {
-    console.log(values);
-  };
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="relative h-full w-full">
-        <div className="flex flex-col gap-1 mb-6">
-          <Label htmlFor="cpfCnpj" className="text-neutral-500">
-            Insira seu CPF ou CNPJ
-          </Label>
-          <Controller
-            name="cpfCnpj"
-            control={control}
-            render={({ field }) => (
-              <MaskedInput
-                mask={cpfOrCnpjMask}
-                placeholder="CPF/CNPJ"
-                id="cpfCnpj"
-                {...field}
-                render={(ref, props) => (
-                  <Input {...props} ref={ref as React.Ref<HTMLInputElement>} />
-                )}
-              />
-            )}
-          />
-          {errors.cpfCnpj && (
-            <Text className="text-red-500">{errors.cpfCnpj.message}</Text>
+    <Form form={form} onSubmit={form.handleSubmit(() => null)} className="mt-8">
+      <div className="space-y-4">
+        <FormField
+          control={form.control}
+          name="document"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Insira seu CPF ou CNPJ</FormLabel>
+              <FormControl>
+                <MaskedInput
+                  mask={cpfOrCnpjMask}
+                  placeholder="CPF/CNPJ"
+                  {...field}
+                  render={(ref, props) => (
+                    <Input
+                      ref={ref as React.Ref<HTMLInputElement>}
+                      {...props}
+                    />
+                  )}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
           )}
-        </div>
-        <div className="flex flex-col gap-1 mb-3">
-          <Label htmlFor="email" className="text-neutral-500">
-            Email
-          </Label>
-          <Input
-            id="email"
-            type="email"
-            placeholder="Email"
-            {...register('email')}
-          />
-          {errors.email && (
-            <Text className="text-red-500">{errors.email.message}</Text>
+        />
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Email</FormLabel>
+              <FormControl>
+                <Input type="email" placeholder="Email" id="email" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
           )}
-        </div>
-        <div className="flex flex-col gap-1">
-          <Button type="submit" className="w-full p-4 mb-3">
-            Redefinir senha por email
-          </Button>
-        </div>
+        />
       </div>
-    </form>
+      <Button type="submit" className="w-full mt-8">
+        Redefinir senha por email
+      </Button>
+    </Form>
   );
 };
 

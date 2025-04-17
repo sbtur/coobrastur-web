@@ -1,141 +1,99 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import MaskedInput from 'react-text-mask';
 
-import { Loader } from 'lucide-react';
-import { z } from 'zod';
-
-import { Heading } from '@coobrastur/ui/components/data-display/heading';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@coobrastur/ui/components/data-entry/form';
 
 import { InputPassword } from '../../new-password/components/input-password';
+import { loginValidationSchema } from '../../schema/login.schema';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Link } from '@shared/components/link';
-import { loginValidationSchema } from '@shared/helpers/validation';
 import { cpfOrCnpjMask } from '@shared/utils/input-masks';
-import { Text } from '@ui/components/data-display/text';
-import { Title } from '@ui/components/data-display/title';
 import { Button } from '@ui/components/data-entry/button';
 import { Input } from '@ui/components/data-entry/input';
-import { Label } from '@ui/components/data-entry/label';
-
-type LoginFormData = z.infer<typeof loginValidationSchema>;
 
 const LoginForm = () => {
-  const [isLoading, setIsLoading] = useState(false);
-
-  const onSubmit = (values: LoginFormData) => {
-    console.log(values);
-  };
-
-  const {
-    control,
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<LoginFormData>({
+  const form = useForm({
+    defaultValues: {
+      document: '',
+      password: '',
+    },
     resolver: zodResolver(loginValidationSchema),
   });
 
-  useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
-
-    if (isLoading) {
-      timeoutId = setTimeout(() => {
-        setIsLoading(false);
-      }, 5000);
-    }
-
-    return () => {
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-    };
-  }, [isLoading]);
-
   return (
-    <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Heading className="pb-10 ml-0 pl-0 lg:text-left text-center">
-          <Title>Acesse sua conta</Title>
-          <Text>Preencha seus dados e continue sua jornada</Text>
-        </Heading>
-
-        <div className="flex flex-col gap-1 mb-6">
-          <Label htmlFor="cpfCnpj" className="text-neutral-500">
-            Seu CPF/CNPJ
-          </Label>
-          <div className="relative">
-            <Controller
-              name="cpfCnpj"
-              control={control}
-              render={({ field }) => (
-                <div className="relative">
-                  <MaskedInput
-                    mask={cpfOrCnpjMask}
-                    placeholder="CPF/CNPJ"
-                    id="cpfCnpj"
-                    {...field}
-                    onBlur={() => setIsLoading(true)}
-                    render={(ref, props) => (
-                      <Input
-                        {...props}
-                        ref={ref as React.Ref<HTMLInputElement>}
-                        className={isLoading ? 'pr-8' : ''}
-                      />
-                    )}
-                  />
-                  {isLoading && (
-                    <div className="absolute right-3 top-1/2 -translate-y-1/2">
-                      <Loader className="h-4 w-4 animate-spin text-highlight-100" />
-                    </div>
+    <Form
+      form={form}
+      onSubmit={form.handleSubmit(values => {
+        console.log(values);
+      })}
+      className="mt-8"
+    >
+      <div className="space-y-4">
+        <FormField
+          control={form.control}
+          name="document"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Seu CPF/CNPJ</FormLabel>
+              <FormControl>
+                <MaskedInput
+                  mask={cpfOrCnpjMask}
+                  placeholder="CPF/CNPJ"
+                  {...field}
+                  render={(ref, props) => (
+                    <Input
+                      ref={ref as React.Ref<HTMLInputElement>}
+                      {...props}
+                    />
                   )}
-                </div>
-              )}
-            />
-          </div>
-          {errors.cpfCnpj && (
-            <Text className="text-red-500 text-sm">
-              {errors.cpfCnpj.message}
-            </Text>
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
           )}
-        </div>
-        <div className="flex flex-col gap-1 mb-2">
-          <Label htmlFor="password" className="text-neutral-500">
-            Senha
-          </Label>
-          <InputPassword
-            id="password"
-            placeholder="Senha"
-            {...register('password')}
-          />
-          {errors.password && (
-            <Text className="text-red-500 text-sm">
-              {errors.password.message}
-            </Text>
+        />
+        <FormField
+          control={form.control}
+          name="password"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Senha</FormLabel>
+              <FormControl>
+                <InputPassword placeholder="Senha" id="password" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
           )}
-        </div>
-        <div className="flex flex-col gap-1 mb-6">
-          <Link
-            href="/recovery-password"
-            className="text-highlight-100 text-sm underline font-bold"
-          >
-            Esqueci minha senha
-          </Link>
-        </div>
-        <div className="flex flex-col gap-1">
-          <Button type="submit" className="w-full p-4 mb-3">
-            Acessar minha conta
-          </Button>
+        />
+      </div>
 
-          <Button className="w-full p-4" variant="outline">
-            Primeiro acesso
-          </Button>
-        </div>
-      </form>
-    </>
+      <Link
+        href="/recovery-password"
+        className="text-highlight-100 text-sm underline font-bold block w-fit mt-2 mx-auto lg:mx-0"
+      >
+        Esqueci minha senha
+      </Link>
+
+      <div className="space-y-3 mt-8">
+        <Button type="submit" className="w-full">
+          Acessar minha conta
+        </Button>
+
+        <Button className="w-full" variant="outline" asChild>
+          <Link href="/new-account">Primeiro acesso</Link>
+        </Button>
+      </div>
+    </Form>
   );
 };
 

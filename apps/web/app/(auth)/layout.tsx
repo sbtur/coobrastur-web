@@ -9,18 +9,18 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col lg:grid lg:grid-cols-2 lg:h-screen">
-      <div className="relative lg:h-full w-full lg:block">
+    <div className="grid lg:grid-cols-2 lg:h-screen">
+      <div className="hidden lg:block relative lg:h-full w-full">
         <Image
           src="/images/pages/login/grupo.png"
           alt="Logo"
           fill
-          className="object-cover object-[33%_50%] fixed inset-0 -z-10"
+          className="object-cover object-[30%_50%] fixed inset-0 -z-10"
           priority
           quality={100}
         />
 
-        <div className="hidden lg:flex w-full lg:w-[618px] mx-auto absolute bottom-10 left-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-4 p-5 rounded-md bg-white shadow-lg justify-around">
+        <div className="flex w-9/12 absolute bottom-10 left-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-4 p-5 rounded-md bg-white shadow-lg justify-around">
           {PARTNERS.map(partner => (
             <div key={partner.alt} className="max-w-[130px]">
               <Image
@@ -33,15 +33,9 @@ export default function AuthLayout({
           ))}
         </div>
       </div>
-      <div className="flex-1 px-[10px] lg:px-[150px] flex items-center justify-center">
-        <div className="flex flex-col gap-4 pb-2 lg:text-left w-full max-w-[760px] lg:pt-0 pt-10">
-          <div className="flex justify-center lg:hidden">
-            <CategoryIcon
-              className={`text-primary-300 hover:scale-105 transition-all duration-300`}
-            />
-          </div>
-          {children}
-        </div>
+      <div className="space-y-8 p-8 lg:0 lg:grid lg:items-center">
+        <CategoryIcon className="w-[55px] h-[46px] mx-auto text-primary-300 lg:hidden" />
+        <div className="max-full lg:max-w-[480px] mx-auto">{children}</div>
       </div>
     </div>
   );
