@@ -112,8 +112,8 @@ export function GuestSelect({
 
   return (
     <Card className={cn('w-[348px] p-4', className)}>
-      <div className="space-y-6">
-        <div className="space-y-4">
+      <div className="space-y-4">
+        <div className="space-y-4 border-b border-gray-200 pb-4">
           <Badge variant="default" className="bg-blue-50 p-2 text-xs font-bold">
             QUARTO {roomNumber}
           </Badge>
@@ -132,7 +132,7 @@ export function GuestSelect({
           </div>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-4">
           <Button
             variant="outline"
             className="w-[160px] h-[30px] text-[10px]"
