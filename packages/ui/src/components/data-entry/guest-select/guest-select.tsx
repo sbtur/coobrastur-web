@@ -4,6 +4,7 @@ import { Minus, Plus, PlusCircle } from 'lucide-react'
 import { cn } from '@coobrastur/ui/lib/utils'
 import { Text } from '@coobrastur/ui/components/data-display/text'
 import { Badge } from '@coobrastur/ui/components/data-display/badge'
+import { useState } from 'react'
 
 interface GuestOption {
   value: number
@@ -15,7 +16,7 @@ interface GuestOption {
 
 interface CounterButtonProps {
   onClick: () => void
-  isDisabled?: boolean
+  isDisabled: boolean
   icon: 'plus' | 'minus'
 }
 
@@ -31,6 +32,7 @@ function CounterButton({ onClick, isDisabled, icon }: CounterButtonProps) {
       variant="outline"
       size="icon"
       onClick={onClick}
+      disabled={isDisabled}
     >
       <Icon className="h-3 w-3" />
     </Button>
@@ -40,9 +42,22 @@ function CounterButton({ onClick, isDisabled, icon }: CounterButtonProps) {
 interface GuestCounterProps {
   option: GuestOption
   onValueChange: (value: number) => void
+  minValue: number
 }
 
-function GuestCounter({ option, onValueChange }: GuestCounterProps) {
+function GuestCounter({ option, onValueChange, minValue }: GuestCounterProps) {
+  const handleIncrement = () => {
+    if (option.value < option.max) {
+      onValueChange(option.value + 1)
+    }
+  }
+
+  const handleDecrement = () => {
+    if (option.value > minValue) {
+      onValueChange(option.value - 1)
+    }
+  }
+
   return (
     <div className="flex items-center justify-between">
       <div className="max-w-[180px] pr-4">
@@ -52,14 +67,14 @@ function GuestCounter({ option, onValueChange }: GuestCounterProps) {
       <div className="flex items-center gap-6">
         <CounterButton
           icon="minus"
-          isDisabled={option.value <= option.min}
-          onClick={() => onValueChange(option.value - 1)}
+          isDisabled={option.value <= minValue}
+          onClick={handleDecrement}
         />
         <Text className="font-bold font-primary text-lg text-primary-300">{option.value}</Text>
         <CounterButton
           icon="plus"
           isDisabled={option.value >= option.max}
-          onClick={() => onValueChange(option.value + 1)}
+          onClick={handleIncrement}
         />
       </div>
     </div>
@@ -68,10 +83,6 @@ function GuestCounter({ option, onValueChange }: GuestCounterProps) {
 
 interface GuestSelectProps {
   roomNumber: number
-  adults: GuestOption
-  childrenGuests: GuestOption
-  onAdultsChange: (value: number) => void
-  onChildrenChange: (value: number) => void
   onAddRoom: () => void
   onSave: () => void
   className?: string
@@ -79,14 +90,26 @@ interface GuestSelectProps {
 
 export function GuestSelect({
   roomNumber,
-  adults,
-  childrenGuests,
-  onAdultsChange,
-  onChildrenChange,
   onAddRoom,
   onSave,
   className,
 }: GuestSelectProps) {
+  const [adults, setAdults] = useState<GuestOption>({
+    value: 1,
+    min: 1,
+    max: 10,
+    label: 'Adultos',
+    description: 'Maiores 18 anos',
+  })
+
+  const [children, setChildren] = useState<GuestOption>({
+    value: 1,
+    min: 0,
+    max: 10,
+    label: 'Crianças',
+    description: 'Até 17 anos',
+  })
+
   return (
     <Card className={cn('w-[348px] p-4', className)}>
       <div className="space-y-6">
@@ -96,8 +119,16 @@ export function GuestSelect({
           </Badge>
 
           <div className="space-y-4">
-            <GuestCounter option={adults} onValueChange={onAdultsChange} />
-            <GuestCounter option={childrenGuests} onValueChange={onChildrenChange} />
+            <GuestCounter 
+              option={adults} 
+              onValueChange={(value) => setAdults({ ...adults, value })}
+              minValue={1}
+            />
+            <GuestCounter 
+              option={children} 
+              onValueChange={(value) => setChildren({ ...children, value })}
+              minValue={0}
+            />
           </div>
         </div>
 
