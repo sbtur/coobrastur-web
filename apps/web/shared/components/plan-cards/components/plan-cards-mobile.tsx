@@ -7,8 +7,8 @@ import {
 } from '@coobrastur/ui/components/data-display/tabs';
 import { Check } from '@coobrastur/ui/lib/icons';
 
-import { PlanCard } from './components/plan-card';
-import { PLANS_CATEGORIES } from './utils/plans-categories';
+import { PlanCard } from '../components/plan-card';
+import { PLANS_CATEGORIES } from '../utils/plans-categories';
 
 export const PlanCardsMobile = () => {
   return (
