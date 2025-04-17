@@ -14,6 +14,12 @@ interface GuestOption {
   description: string
 }
 
+interface Room {
+  id: number
+  adults: GuestOption
+  children: GuestOption
+}
+
 interface CounterButtonProps {
   onClick: () => void
   isDisabled: boolean
@@ -70,7 +76,7 @@ function GuestCounter({ option, onValueChange, minValue }: GuestCounterProps) {
           isDisabled={option.value <= minValue}
           onClick={handleDecrement}
         />
-        <Text className="font-bold font-primary text-lg text-primary-300">{option.value}</Text>
+        <Text className="font-bold font-primary text-lg text-primary-300 min-w-[14px]">{option.value}</Text>
         <CounterButton
           icon="plus"
           isDisabled={option.value >= option.max}
@@ -81,62 +87,108 @@ function GuestCounter({ option, onValueChange, minValue }: GuestCounterProps) {
   )
 }
 
+interface RoomSectionProps {
+  room: Room
+  onUpdateRoom: (roomId: number, updates: Partial<Room>) => void
+}
+
+function RoomSection({ room, onUpdateRoom }: RoomSectionProps) {
+  return (
+    <div className="space-y-4 border-b border-gray-200 pb-4">
+      <Badge variant="default" className="bg-blue-50 p-2 text-xs font-bold">
+        QUARTO {room.id + 1}
+      </Badge>
+
+      <div className="space-y-4">
+        <GuestCounter 
+          option={room.adults} 
+          onValueChange={(value) => onUpdateRoom(room.id, { adults: { ...room.adults, value } })}
+          minValue={1}
+        />
+        <GuestCounter 
+          option={room.children} 
+          onValueChange={(value) => onUpdateRoom(room.id, { children: { ...room.children, value } })}
+          minValue={0}
+        />
+      </div>
+    </div>
+  )
+}
+
 interface GuestSelectProps {
-  roomNumber: number
-  onAddRoom: () => void
   onSave: () => void
   className?: string
 }
 
 export function GuestSelect({
-  roomNumber,
-  onAddRoom,
   onSave,
   className,
 }: GuestSelectProps) {
-  const [adults, setAdults] = useState<GuestOption>({
-    value: 1,
-    min: 1,
-    max: 10,
-    label: 'Adultos',
-    description: 'Maiores 18 anos',
-  })
+  const [rooms, setRooms] = useState<Room[]>([{
+    id: 0,
+    adults: {
+      value: 1,
+      min: 1,
+      max: 10,
+      label: 'Adultos',
+      description: 'Maiores 18 anos',
+    },
+    children: {
+      value: 1,
+      min: 0,
+      max: 10,
+      label: 'Crianças',
+      description: 'Até 17 anos',
+    }
+  }])
 
-  const [children, setChildren] = useState<GuestOption>({
-    value: 1,
-    min: 0,
-    max: 10,
-    label: 'Crianças',
-    description: 'Até 17 anos',
-  })
+  const handleAddRoom = () => {
+    setRooms(currentRooms => [
+      ...currentRooms,
+      {
+        id: currentRooms.length,
+        adults: {
+          value: 1,
+          min: 1,
+          max: 10,
+          label: 'Adultos',
+          description: 'Maiores 18 anos',
+        },
+        children: {
+          value: 1,
+          min: 0,
+          max: 10,
+          label: 'Crianças',
+          description: 'Até 17 anos',
+        }
+      }
+    ])
+  }
+
+  const handleUpdateRoom = (roomId: number, updates: Partial<Room>) => {
+    setRooms(currentRooms => 
+      currentRooms.map(room => 
+        room.id === roomId ? { ...room, ...updates } : room
+      )
+    )
+  }
 
   return (
     <Card className={cn('w-[348px] p-4', className)}>
       <div className="space-y-4">
-        <div className="space-y-4 border-b border-gray-200 pb-4">
-          <Badge variant="default" className="bg-blue-50 p-2 text-xs font-bold">
-            QUARTO {roomNumber}
-          </Badge>
-
-          <div className="space-y-4">
-            <GuestCounter 
-              option={adults} 
-              onValueChange={(value) => setAdults({ ...adults, value })}
-              minValue={1}
-            />
-            <GuestCounter 
-              option={children} 
-              onValueChange={(value) => setChildren({ ...children, value })}
-              minValue={0}
-            />
-          </div>
-        </div>
+        {rooms.map(room => (
+          <RoomSection 
+            key={room.id} 
+            room={room} 
+            onUpdateRoom={handleUpdateRoom}
+          />
+        ))}
 
         <div className="space-y-4">
           <Button
             variant="outline"
-            className="w-[160px] h-[30px] text-[10px]"
-            onClick={onAddRoom}
+            className="w-[160px] h-[30px] text-[10px] flex items-center"
+            onClick={handleAddRoom}
           >
             <PlusCircle className="h-3 w-3" />
             ADICIONAR QUARTO
