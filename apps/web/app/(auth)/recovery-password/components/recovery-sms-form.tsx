@@ -1,8 +1,7 @@
 'use client';
 import { useForm } from 'react-hook-form';
-import MaskedInput from 'react-text-mask';
 
-import { z } from 'zod';
+import { withMask } from 'use-mask-input';
 
 import {
   Form,
@@ -13,14 +12,14 @@ import {
   FormMessage,
 } from '@coobrastur/ui/components/data-entry/form';
 
+import { recoveryPasswordSMSValidationSchema } from '../../schema/auth.schema';
+
 import { zodResolver } from '@hookform/resolvers/zod';
-import { recoveryPasswordSMSValidationSchema } from '@shared/helpers/validation';
-import { cellPhoneOrPhoneMask } from '@shared/utils/input-masks';
 import { Button } from '@ui/components/data-entry/button';
 import { Input } from '@ui/components/data-entry/input';
 
 const RecoverySMSForm = () => {
-  const form = useForm<z.infer<typeof recoveryPasswordSMSValidationSchema>>({
+  const form = useForm({
     defaultValues: {
       phone: '',
       smsCode: '',
@@ -40,19 +39,11 @@ const RecoverySMSForm = () => {
                 Insira o número de celular vinculado à sua conta
               </FormLabel>
               <FormControl>
-                <MaskedInput
-                  mask={cellPhoneOrPhoneMask}
-                  id="phone"
-                  placeholder="(DDD) + Celular"
+                <Input
                   {...field}
-                  render={(ref, props) => {
-                    return (
-                      <Input
-                        {...props}
-                        ref={ref as React.Ref<HTMLInputElement>}
-                      />
-                    );
-                  }}
+                  placeholder="(DDD) + Celular"
+                  id="phone"
+                  ref={withMask('99 99999-9999')}
                 />
               </FormControl>
               <FormMessage />
@@ -66,20 +57,7 @@ const RecoverySMSForm = () => {
             <FormItem>
               <FormLabel>Insira o código SMS (Token)</FormLabel>
               <FormControl>
-                <MaskedInput
-                  mask={cellPhoneOrPhoneMask}
-                  id="smsCode"
-                  placeholder="(DDD) + Celular"
-                  {...field}
-                  render={(ref, props) => {
-                    return (
-                      <Input
-                        {...props}
-                        ref={ref as React.Ref<HTMLInputElement>}
-                      />
-                    );
-                  }}
-                />
+                <Input {...field} placeholder="Código SMS" id="smsCode" />
               </FormControl>
               <FormMessage />
             </FormItem>

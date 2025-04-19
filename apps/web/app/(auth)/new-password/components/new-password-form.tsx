@@ -10,12 +10,12 @@ import {
   FormLabel,
   FormMessage,
 } from '@coobrastur/ui/components/data-entry/form';
-import { zodResolver } from '@coobrastur/ui/lib/validation';
 
-import { InputPassword } from './input-password';
+import { newPasswordValidationSchema } from '../../schema/auth.schema';
 
-import { newPasswordValidationSchema } from '@shared/helpers/validation';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@ui/components/data-entry/button';
+import { InputPassword } from '@ui/components/data-entry/input/input-password';
 
 export default function NewPasswordForm() {
   const form = useForm({
@@ -43,8 +43,8 @@ export default function NewPasswordForm() {
               <FormLabel>Nova senha</FormLabel>
               <FormControl>
                 <InputPassword
-                  id="newPassword"
                   placeholder="Senha"
+                  id="newPassword"
                   {...field}
                 />
               </FormControl>

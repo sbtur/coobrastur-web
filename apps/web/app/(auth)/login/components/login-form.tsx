@@ -1,7 +1,8 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
-import MaskedInput from 'react-text-mask';
+
+import { withMask } from 'use-mask-input';
 
 import {
   Form,
@@ -12,14 +13,13 @@ import {
   FormMessage,
 } from '@coobrastur/ui/components/data-entry/form';
 
-import { InputPassword } from '../../new-password/components/input-password';
-import { loginValidationSchema } from '../../schema/login.schema';
+import { loginValidationSchema } from '../../schema/auth.schema';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Link } from '@shared/components/link';
-import { cpfOrCnpjMask } from '@shared/utils/input-masks';
 import { Button } from '@ui/components/data-entry/button';
 import { Input } from '@ui/components/data-entry/input';
+import { InputPassword } from '@ui/components/data-entry/input/input-password';
 
 const LoginForm = () => {
   const form = useForm({
@@ -46,16 +46,11 @@ const LoginForm = () => {
             <FormItem>
               <FormLabel>Seu CPF/CNPJ</FormLabel>
               <FormControl>
-                <MaskedInput
-                  mask={cpfOrCnpjMask}
-                  placeholder="CPF/CNPJ"
+                <Input
                   {...field}
-                  render={(ref, props) => (
-                    <Input
-                      ref={ref as React.Ref<HTMLInputElement>}
-                      {...props}
-                    />
-                  )}
+                  placeholder="CPF/CNPJ"
+                  id="document"
+                  ref={withMask(['999.999.999-99', '999.999.999/9999-99'])}
                 />
               </FormControl>
               <FormMessage />
@@ -69,7 +64,7 @@ const LoginForm = () => {
             <FormItem>
               <FormLabel>Senha</FormLabel>
               <FormControl>
-                <InputPassword placeholder="Senha" id="password" {...field} />
+                <InputPassword {...field} placeholder="Senha" id="password" />
               </FormControl>
               <FormMessage />
             </FormItem>

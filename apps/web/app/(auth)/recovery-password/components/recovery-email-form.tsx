@@ -1,9 +1,8 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
-import MaskedInput from 'react-text-mask';
 
-import { z } from 'zod';
+import { withMask } from 'use-mask-input';
 
 import {
   Form,
@@ -14,18 +13,14 @@ import {
   FormMessage,
 } from '@coobrastur/ui/components/data-entry/form';
 
+import { recoveryPasswordEmailValidationSchema } from '../../schema/auth.schema';
+
 import { zodResolver } from '@hookform/resolvers/zod';
-import { recoveryPasswordEmailValidationSchema } from '@shared/helpers/validation';
-import { cpfOrCnpjMask } from '@shared/utils/input-masks';
 import { Button } from '@ui/components/data-entry/button';
 import { Input } from '@ui/components/data-entry/input';
 
-type RecoveryEmailFormData = z.infer<
-  typeof recoveryPasswordEmailValidationSchema
->;
-
 const RecoveryEmailForm = () => {
-  const form = useForm<RecoveryEmailFormData>({
+  const form = useForm({
     defaultValues: {
       document: '',
       email: '',
@@ -43,16 +38,11 @@ const RecoveryEmailForm = () => {
             <FormItem>
               <FormLabel>Insira seu CPF ou CNPJ</FormLabel>
               <FormControl>
-                <MaskedInput
-                  mask={cpfOrCnpjMask}
-                  placeholder="CPF/CNPJ"
+                <Input
                   {...field}
-                  render={(ref, props) => (
-                    <Input
-                      ref={ref as React.Ref<HTMLInputElement>}
-                      {...props}
-                    />
-                  )}
+                  placeholder="CPF/CNPJ"
+                  id="document"
+                  ref={withMask(['999.999.999-99', '999.999.999/9999-99'])}
                 />
               </FormControl>
               <FormMessage />
