@@ -5,6 +5,11 @@ import baseConfig from '@coobrastur/ui/tailwind.config';
 
 const config = {
   ...baseConfig,
+  content: [
+    ...baseConfig.content,
+    './shared/lib/variants/**/*.{ts,tsx}',
+    './shared/components/**/*.{ts,tsx}',
+  ],
   theme: {
     ...baseConfig.theme,
     extend: {

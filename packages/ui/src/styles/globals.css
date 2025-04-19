@@ -163,6 +163,11 @@
     text-rendering: optimizeLegibility;
   }
 
+  html,
+  body {
+    @apply h-full;
+  }
+
   body,
   input,
   textarea,

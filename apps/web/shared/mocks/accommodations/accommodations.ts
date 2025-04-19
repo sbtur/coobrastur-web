@@ -8,19 +8,19 @@ export const ACCOMMODATIONS: Accommodation[] = [
     unique_id: '7257',
     image: '/images/mocks/places/place-1.jpg',
     city: {
-      slug: 'florianópolis',
-      name: 'Florianópolis',
+      slug: 'rio-de-janeiro',
+      name: 'Rio de Janeiro',
     },
     country: {
       slug: 'brasil',
       name: 'Brasil',
     },
-    state: 'SC',
+    state: 'RJ',
     coordinates: {
       longitude: '-484896.0',
       latitude: '-274394.0',
     },
-    street: 'Alameda César Nascimento, 646, Jurerê, Florianópolis, SC',
+    street: 'Alameda César Nascimento, 646, Jurerê, Rio de Janeiro, RJ',
     complement: '',
     points: 15000,
     total_days: 3,
@@ -28,7 +28,7 @@ export const ACCOMMODATIONS: Accommodation[] = [
     is_preferential: false,
     category: 'Gold',
     available_to_book: true,
-    absolute_url: '/brasil/sc/florianopolis/jurere-beach-village/',
+    absolute_url: '/brasil/rj/rio-de-janeiro/jurere-beach-village/',
     by_request: false,
     position: {
       lng: -484896,
