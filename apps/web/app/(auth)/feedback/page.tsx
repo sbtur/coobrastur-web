@@ -1,35 +1,28 @@
-import { Metadata } from "next";
-import Link from "next/link";
+import { Metadata } from 'next';
+import Link from 'next/link';
 
-import { Heading } from "@coobrastur/ui/components/data-display/heading";
-import { Text } from "@coobrastur/ui/components/data-display/text";
-import { Title } from "@coobrastur/ui/components/data-display/title";
-import { Button } from "@coobrastur/ui/components/data-entry/button";
+import { Heading } from '@coobrastur/ui/components/data-display/heading';
+import { Text } from '@coobrastur/ui/components/data-display/text';
+import { Title } from '@coobrastur/ui/components/data-display/title';
+import { Button } from '@coobrastur/ui/components/data-entry/button';
 
 export const metadata: Metadata = {
-    title: 'Feedback Sucesso',
-    description: 'Feedback Sucesso',
-  };
-
-
+  title: 'Feedback Sucesso',
+  description: 'Feedback Sucesso',
+};
 
 export default function FeedbackPage() {
   return (
-    <div>
-      <Heading className="px-0 pb-5">
-        <Title>Feedback Sucesso</Title>
+    <>
+      <Heading className="text-center lg:text-left p-0 gap-1">
+        <Title>Tudo certo!</Title>
         <Text>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+          Sua senha foi redefinida. Acesse sua conta com a nova senha.
         </Text>
       </Heading>
-
-
-      <div className="flex justify-center">
-        <Button className="w-full">
-          <Link href="/login"> Acessar Minha Conta</Link>
-        </Button>
-      </div>
-
-    </div>
-  )
+      <Button className="w-full mt-4">
+        <Link href="/login">Acessar Minha Conta</Link>
+      </Button>
+    </>
+  );
 }
