@@ -1,10 +1,11 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 import { Heading } from "@coobrastur/ui/components/data-display/heading";
 import { Text } from "@coobrastur/ui/components/data-display/text";
 import { Title } from "@coobrastur/ui/components/data-display/title";
 import { Button } from "@coobrastur/ui/components/data-entry/button";
-import Link from "next/link";
+
 export const metadata: Metadata = {
     title: 'Feedback Sucesso',
     description: 'Feedback Sucesso',
