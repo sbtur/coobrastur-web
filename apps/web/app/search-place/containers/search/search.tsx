@@ -4,7 +4,8 @@ import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 
 import { Section } from '@coobrastur/ui/components/layouts/section';
 
-import { AutoCompleteSearchResponse } from '../../http/accommodation';
+import { AccommodationSearchAutoComplete } from '@/@core/accommodations/accommodation.interface';
+
 import { useSearchProvider } from '../../providers/search-provider';
 import { SearchResultContainer } from './search-result-container';
 import { useSearch } from './use-search';
@@ -21,10 +22,10 @@ export const Search = () => {
     useSearchProvider();
 
   const handleOnSearch = async (value: string) => {
-    onChangeAutoCompleteSearch(value);
+    onChangeAutoCompleteSearch({ query: value });
   };
 
-  const handleOnSelect = (value: AutoCompleteSearchResponse) => {
+  const handleOnSelect = (value: AccommodationSearchAutoComplete) => {
     selectedSearchAccommodation.current = value;
   };
 

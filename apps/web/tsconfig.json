@@ -16,7 +16,8 @@
       "@utils/*": ["./shared/utils/*"],
       "@mocks/*": ["./shared/mocks/*"],
       "@shared/*": ["./shared/*"],
-      "@lib/*": ["./shared/lib/*"]
+      "@lib/*": ["./shared/lib/*"],
+      "@core/*": ["./@core/*"]
     },
     "plugins": [
       {

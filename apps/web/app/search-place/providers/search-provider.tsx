@@ -4,28 +4,27 @@ import {
   ReactNode,
   RefObject,
   useContext,
-  useEffect,
   useRef,
   useState,
 } from 'react';
 import { useRouter } from 'next/navigation';
 
+import {
+  AccommodationSearchAutoComplete,
+  AccommodationSearchByCity,
+} from '@/@core/accommodations/accommodation.interface';
+import { makeAccommodationsUseCase } from '@/@core/accommodations/make-accommodations.use-cases';
 import { pushUrlParams } from '@/shared/helpers/manage-url-params';
 
-import { AccommodationList } from '../containers/accommodation-list';
-import {
-  AccommodationListItem,
-  AutoCompleteSearchResponse,
-  getAccommodationsList,
-} from '../http/accommodation';
-
 interface SearchContextData {
-  accommodationList: AccommodationListItem[];
-  setAccommodationList: (accommodationList: AccommodationListItem[]) => void;
+  accommodationList: AccommodationSearchByCity[];
+  setAccommodationList: (
+    accommodationList: AccommodationSearchByCity[],
+  ) => void;
   isAccommodationListLoading: boolean;
   getListOfAccommodations: ({ cityId }: { cityId: string }) => Promise<void>;
   handleSubmitSearch: () => void;
-  selectedSearchAccommodation: RefObject<AutoCompleteSearchResponse | null>;
+  selectedSearchAccommodation: RefObject<AccommodationSearchAutoComplete | null>;
 }
 
 const SearchContext = createContext({} as SearchContextData);
@@ -35,26 +34,34 @@ export function SearchProvider({
   accommodationsList,
 }: {
   children: ReactNode;
-  accommodationsList: AccommodationListItem[];
+  accommodationsList: AccommodationSearchByCity[];
 }) {
   const [accommodationList, setAccommodationList] = useState<
-    AccommodationListItem[]
+    AccommodationSearchByCity[]
   >(accommodationsList || []);
   const [isAccommodationListLoading, setIsAccommodationListLoading] =
     useState(false);
   const { push } = useRouter();
 
-  const selectedSearchAccommodation = useRef<AutoCompleteSearchResponse>(null);
+  const selectedSearchAccommodation =
+    useRef<AccommodationSearchAutoComplete | null>(null);
 
   const getListOfAccommodations = async ({ cityId }: { cityId: string }) => {
-    setIsAccommodationListLoading(true);
-    const accommodations = await getAccommodationsList({
-      cityId,
-    });
+    try {
+      setIsAccommodationListLoading(true);
 
-    setAccommodationList(accommodations);
+      const accommodations =
+        await makeAccommodationsUseCase().listItemUseCase.exec({
+          cityId,
+        });
 
-    setIsAccommodationListLoading(false);
+      setIsAccommodationListLoading(false);
+      setAccommodationList(accommodations);
+    } catch (error) {
+      console.error(error);
+      setIsAccommodationListLoading(false);
+      setAccommodationList([]);
+    }
   };
 
   const handleListAccommodationsFromSearch = async () => {

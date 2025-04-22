@@ -5,7 +5,7 @@ import { Button } from '@coobrastur/ui/components/data-entry/button';
 import { Container } from '@coobrastur/ui/components/layouts/container';
 import { ArrowRight, CreditCard, Users } from '@coobrastur/ui/lib/icons';
 
-import { AccommodationDetail } from '@/app/search-place/http/accommodation';
+import { AccommodationDetail } from '@/@core/accommodations/use-cases/accommodation-details.use-case';
 import { Link } from '@/shared/components/link';
 
 import { AccommodationMainInfoContainer } from '../components/accommodation-main-info-container';

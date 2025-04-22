@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-import {
-  AccommodationDetail,
-  getAccommodationDetail,
-} from '@/app/search-place/http/accommodation';
+import { makeAccommodationsUseCase } from '@/@core/accommodations/make-accommodations.use-cases';
+import { AccommodationDetail } from '@/@core/accommodations/use-cases/accommodation-details.use-case';
 
 type UseAccommodationDialog = {
   accommodation: AccommodationDetail;
@@ -14,9 +12,7 @@ type UseAccommodationDialog = {
 };
 
 export function useAccommodationDialog(): UseAccommodationDialog {
-  const [accommodation, setAccommodation] = useState<AccommodationDetail>(
-    {} as AccommodationDetail,
-  );
+  const [accommodation, setAccommodation] = useState({} as AccommodationDetail);
   const [isShowGallery, setIsShowGallery] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -26,9 +22,10 @@ export function useAccommodationDialog(): UseAccommodationDialog {
     const hotelId = searchParams.get('h');
 
     const getAccommodation = async () => {
-      const response = await getAccommodationDetail({
-        hotelId: hotelId || '',
-      });
+      const response =
+        await makeAccommodationsUseCase().accommodationDetailsUseCase.exec({
+          hotelId: hotelId || '',
+        });
       setAccommodation(response);
       setIsLoading(false);
     };

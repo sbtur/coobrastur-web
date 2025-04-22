@@ -3,7 +3,7 @@
 import { AccommodationCard } from '@components/accommodation-card';
 import { AccommodationDialog } from '@components/accommodation-dialog/accommodation-dialog';
 
-import { AccommodationListItem } from '@/app/search-place/http/accommodation';
+import { AccommodationSearchByCity } from '@/@core/accommodations/accommodation.interface';
 import { useHotelListDetail } from '@/shared/hooks/use-hotel-list-detail';
 
 import {
@@ -17,7 +17,7 @@ import {
 import { Content } from '@ui/components/layouts/content';
 
 interface AccommodationListProps {
-  accommodations: AccommodationListItem[];
+  accommodations: AccommodationSearchByCity[];
 }
 
 export const AccommodationList = ({

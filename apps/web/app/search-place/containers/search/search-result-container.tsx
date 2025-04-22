@@ -1,6 +1,8 @@
-import { AutoCompleteSearchResponse } from '../../http/accommodation';
+import { AccommodationSearchAutoComplete } from '@/@core/accommodations/accommodation.interface';
 
-export const SearchResultContainer = (item: AutoCompleteSearchResponse) => {
+export const SearchResultContainer = (
+  item: AccommodationSearchAutoComplete,
+) => {
   return (
     <div className="py-4 hover:bg-secondary-100 cursor-pointer">
       <span className="font-semibold text-base text-neutral-500">

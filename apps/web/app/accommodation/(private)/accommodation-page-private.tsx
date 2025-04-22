@@ -13,6 +13,7 @@ import {
   Receipt,
 } from '@coobrastur/ui/lib/icons';
 
+import { AccommodationDetail } from '@/@core/accommodations/use-cases/accommodation-details.use-case';
 import { HeaderPrivate } from '@/shared/components/header';
 import { ResponsiveLargerThan } from '@/shared/components/responsive';
 
@@ -25,7 +26,10 @@ import { Policies } from './components/policies';
 import { Icon } from '@ui/components/data-display/icon';
 
 type AccommodationPrivateProps = {
-  accommodation: any;
+  accommodation: AccommodationDetail & {
+    total_days: number;
+    extra: number;
+  };
 };
 
 export default function AccommodationPrivate({

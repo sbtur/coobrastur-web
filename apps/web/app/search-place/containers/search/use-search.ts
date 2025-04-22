@@ -1,18 +1,18 @@
 import { useState } from 'react';
 
-import {
-  AutoCompleteSearchResponse,
-  getAccommodationAutoCompleteSearch,
-} from '../../http/accommodation';
+import { AccommodationSearchAutoComplete } from '@core/accommodations/accommodation.interface';
+import { makeAccommodationsUseCase } from '@core/accommodations/make-accommodations.use-cases';
 
 export function useSearch() {
   const [searchPlaceResults, setSearchPlaceResults] = useState<
-    AutoCompleteSearchResponse[]
+    AccommodationSearchAutoComplete[]
   >([]);
-  const onChangeAutoCompleteSearch = async (value: string) => {
+  const onChangeAutoCompleteSearch = async ({ query }: { query: string }) => {
     try {
-      const response = await getAccommodationAutoCompleteSearch(value);
-      setSearchPlaceResults(response);
+      const accommodationsUseCase = makeAccommodationsUseCase();
+      setSearchPlaceResults(
+        await accommodationsUseCase.searchAutoCompleteUseCase.exec(query),
+      );
     } catch (err) {
       console.error('Error on auto complete search', err);
       setSearchPlaceResults([]);

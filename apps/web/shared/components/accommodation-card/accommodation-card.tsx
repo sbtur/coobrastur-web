@@ -2,7 +2,7 @@ import { Button } from '@coobrastur/ui/components/data-entry/button';
 
 import { Image } from '@components/image';
 
-import { AccommodationListItem } from '@/app/search-place/http/accommodation';
+import { AccommodationSearchByCity } from '@/@core/accommodations/accommodation.interface';
 
 import {
   HotelCard,
@@ -17,7 +17,7 @@ import { ArrowRight } from '@ui/lib/icons';
 
 type HotelCardProps = {
   onClick: (hotelId: string) => void;
-  accommodation: AccommodationListItem;
+  accommodation: AccommodationSearchByCity;
 };
 
 export const AccommodationCard = ({
