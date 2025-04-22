@@ -8,7 +8,6 @@ import { ACCOMMODATIONS_LIST_ID } from '@/app/search-place/helpers/accommodation
 import { AccommodationList } from './containers/accommodation-list';
 import { Search } from './containers/search';
 import { SearchFilters } from './containers/search-filters';
-import SearchPlaceLoading from './loading';
 import { SearchProvider } from './providers/search-provider';
 
 import { AccommodationSearchByCity } from '@core/accommodations/accommodation.interface';
@@ -53,7 +52,6 @@ export default async function SearchPlacePage({
           </ErrorBoundary>
         </SearchProvider>
       </main>
-      <SearchPlaceLoading />
     </>
   );
 }

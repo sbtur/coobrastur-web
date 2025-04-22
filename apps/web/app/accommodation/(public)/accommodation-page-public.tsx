@@ -5,13 +5,14 @@ import { Button } from '@coobrastur/ui/components/data-entry/button';
 import { Container } from '@coobrastur/ui/components/layouts/container';
 import { ArrowRight, CreditCard, Users } from '@coobrastur/ui/lib/icons';
 
-import { AccommodationDetail } from '@/@core/accommodations/use-cases/accommodation-details.use-case';
 import { Link } from '@/shared/components/link';
 
 import { AccommodationMainInfoContainer } from '../components/accommodation-main-info-container';
+import { ButtonPageBack } from '../components/button-page-back';
 import { Features } from '../components/features';
 import { ImageGallery } from '../components/image-gallery';
 
+import { AccommodationDetail } from '@core/accommodations/use-cases/accommodation-details.use-case';
 import { Text } from '@ui/components/data-display/text';
 
 type AccommodationPublicProps = {
@@ -25,11 +26,12 @@ export default function AccommodationPublic({
     <div className="bg-white">
       <Container className="bg-white grid gap-6 p-0 lg:py-12 lg:px-3 relative">
         <div className="lg:flex gap-4 justify-between relative">
+          <ButtonPageBack />
           <ImageGallery images={accommodation.images} />
           <AccommodationMainInfoContainer>
             <div className="space-y-1 text-left">
               <Title>{accommodation.name}</Title>
-              <Text>{accommodation.address}</Text>
+              <Text className="max-w-[350px]">{accommodation.address}</Text>
             </div>
             <Separator />
             <Button size="lg" className="w-full rounded-[10px]" asChild>
