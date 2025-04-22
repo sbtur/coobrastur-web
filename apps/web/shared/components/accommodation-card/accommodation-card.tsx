@@ -1,7 +1,8 @@
-import { Accommodation } from '@coobrastur/types-shared';
 import { Button } from '@coobrastur/ui/components/data-entry/button';
 
 import { Image } from '@components/image';
+
+import { AccommodationSearchByCity } from '@/@core/accommodations/accommodation.interface';
 
 import {
   HotelCard,
@@ -12,11 +13,11 @@ import {
 import { Icon } from '@ui/components/data-display/icon';
 import { Text } from '@ui/components/data-display/text';
 import { Title } from '@ui/components/data-display/title';
-import { ArrowRight, Badge } from '@ui/lib/icons';
+import { ArrowRight } from '@ui/lib/icons';
 
 type HotelCardProps = {
-  onClick: (hotelId: number) => void;
-  accommodation: Accommodation;
+  onClick: (hotelId: string) => void;
+  accommodation: AccommodationSearchByCity;
 };
 
 export const AccommodationCard = ({
@@ -40,7 +41,7 @@ export const AccommodationCard = ({
           {accommodation.name}
         </Title>
         <Text size="sm" className="text-center lg:text-left">
-          {accommodation.street}
+          {accommodation.address}
         </Text>
       </HotelDescription>
       <Button

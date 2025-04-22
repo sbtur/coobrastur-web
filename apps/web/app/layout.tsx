@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 
 import { mangueira, sourceSansPro } from 'assets/fonts';
 
@@ -9,8 +9,11 @@ import { Providers } from '@providers';
 import '@coobrastur/ui/globals.css';
 
 export const metadata: Metadata = {
-  title: 'Coobrastur',
-  description: 'Coobrastur',
+  title: {
+    template: '%s | Grupo Coobrastur',
+    default: 'Grupo Coobrastur',
+  },
+  description: 'Viaje mais todos os anos com a nossa Assinatura de hotéis',
 };
 
 function Layout({ children }: { children: ReactNode }) {

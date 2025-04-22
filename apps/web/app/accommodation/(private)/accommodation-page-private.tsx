@@ -1,4 +1,3 @@
-import { AccommodationDetail } from '@coobrastur/types-shared';
 import { Separator } from '@coobrastur/ui/components/data-display/separator';
 import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Title } from '@coobrastur/ui/components/data-display/title';
@@ -14,19 +13,23 @@ import {
   Receipt,
 } from '@coobrastur/ui/lib/icons';
 
+import { AccommodationDetail } from '@/@core/accommodations/use-cases/accommodation-details.use-case';
 import { HeaderPrivate } from '@/shared/components/header';
 import { ResponsiveLargerThan } from '@/shared/components/responsive';
 
 import { AccommodationMainInfoContainer } from '../components/accommodation-main-info-container';
-import { Amenities } from '../components/amenities';
 import { CollapsibleDescription } from '../components/collapsible-description';
+import { Features } from '../components/features';
 import { ImageGallery } from '../components/image-gallery';
 import { Policies } from './components/policies';
 
 import { Icon } from '@ui/components/data-display/icon';
 
 type AccommodationPrivateProps = {
-  accommodation: AccommodationDetail;
+  accommodation: AccommodationDetail & {
+    total_days: number;
+    extra: number;
+  };
 };
 
 export default function AccommodationPrivate({
@@ -40,12 +43,12 @@ export default function AccommodationPrivate({
       <div className="bg-white">
         <Container className="grid gap-6 p-0 lg:py-12 lg:px-3 relative">
           <div className="lg:flex gap-4 justify-between relative">
-            <ImageGallery images={accommodation.gallery} />
+            <ImageGallery images={accommodation.images} />
             <AccommodationMainInfoContainer>
               <Badge>Gold</Badge>
               <div className="space-y-1 text-left">
                 <Title>{accommodation.name}</Title>
-                <Text>{accommodation.street}</Text>
+                <Text>{accommodation.address}</Text>
               </div>
 
               <Separator />
@@ -102,7 +105,7 @@ export default function AccommodationPrivate({
               <Title as="h3" size="sm" className="mb-3">
                 Comodidades
               </Title>
-              <Amenities amenities={[1, 10, 6, 7, 2, 5]} />
+              <Features features={accommodation.features} />
             </section>
 
             <section className="space-y-3">

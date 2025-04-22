@@ -1,17 +1,9 @@
 'use client';
 
-import { Accommodation } from '@coobrastur/types-shared';
-
 import { AccommodationCard } from '@components/accommodation-card';
-import {
-  AccommodationDialog,
-  AccommodationDialogMobile,
-} from '@components/accommodation-dialog';
+import { AccommodationDialog } from '@components/accommodation-dialog/accommodation-dialog';
 
-import {
-  ResponsiveLargerThan,
-  ResponsiveSmallerThan,
-} from '@/shared/components/responsive';
+import { AccommodationSearchByCity } from '@/@core/accommodations/accommodation.interface';
 import { useHotelListDetail } from '@/shared/hooks/use-hotel-list-detail';
 
 import {
@@ -25,7 +17,7 @@ import {
 import { Content } from '@ui/components/layouts/content';
 
 interface AccommodationListProps {
-  accommodations: Accommodation[];
+  accommodations: AccommodationSearchByCity[];
 }
 
 export const AccommodationList = ({
@@ -37,21 +29,11 @@ export const AccommodationList = ({
   return (
     <Content className="px-4 lg:px-0">
       {isEnabled && (
-        <>
-          <ResponsiveLargerThan breakpoint="lg">
-            <AccommodationDialog
-              isOpen={isEnabled}
-              onOpenChange={toggle}
-              onClose={handleCloseHotel}
-            />
-          </ResponsiveLargerThan>
-          <ResponsiveSmallerThan breakpoint="lg">
-            <AccommodationDialogMobile
-              isOpen={isEnabled}
-              onOpenChange={toggle}
-            />
-          </ResponsiveSmallerThan>
-        </>
+        <AccommodationDialog
+          isOpen={isEnabled}
+          onClose={handleCloseHotel}
+          onOpenChange={toggle}
+        />
       )}
       <Carousel
         className="h-full"

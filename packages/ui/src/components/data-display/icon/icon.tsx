@@ -14,6 +14,7 @@ const iconVariants = cva('inline-flex shrink-0', {
       secondary: 'text-seconday-100 group-[.hover]:text-secondary-hover',
       neutral: 'text-neutral-400 group-[.hover]:text-neutral-500',
       white: 'text-white group-[.hover]:text-neutral-100',
+      danger: 'text-danger-200 group-[.hover]:text-danger-hover',
     },
   },
   defaultVariants: {
