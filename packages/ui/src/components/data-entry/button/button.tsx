@@ -14,7 +14,8 @@ const buttonVariants = cva(
           'bg-highlight text-white hover:bg-highlight-hover leading-tight',
         secondary: 'bg-primary-200 text-white hover:bg-primary-hover',
         danger: 'bg-danger text-white hover:bg-danger-hover',
-        outline: 'border-2 border-highlight bg-white text-highlight',
+        outline:
+          'border-2 border-highlight bg-white text-highlight hover:bg-secondary-100',
         ghost: 'text-text bg-white hover:text-neutral-300',
         link: 'text-highlight underline-offset-4 hover:underline shadow-none',
         success: 'text-white bg-success hover:bg-success-hover',
