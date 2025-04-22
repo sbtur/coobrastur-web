@@ -1,6 +1,6 @@
 import { Button } from '@coobrastur/ui/components/data-entry/button'
 import { Card } from '@coobrastur/ui/components/data-display/card'
-import { Minus, Plus, PlusCircle } from 'lucide-react'
+import { Minus, Plus, PlusCircle, Trash } from 'lucide-react'
 import { cn } from '@coobrastur/ui/lib/utils'
 import { Text } from '@coobrastur/ui/components/data-display/text'
 import { Badge } from '@coobrastur/ui/components/data-display/badge'
@@ -89,14 +89,26 @@ function GuestCounter({ option, onValueChange, minValue }: GuestCounterProps) {
 interface RoomSectionProps {
   room: Room
   onUpdateRoom: (roomId: number, updates: Partial<Room>) => void
+  onRemoveRoom: (roomId: number) => void
 }
 
-function RoomSection({ room, onUpdateRoom }: RoomSectionProps) {
+function RoomSection({ room, onUpdateRoom, onRemoveRoom }: RoomSectionProps) {
   return (
     <div className="space-y-4 border-b border-gray-200 pb-4">
-      <Badge variant="default" className="bg-blue-50 p-2 text-xs font-bold">
-        QUARTO {room.id + 1}
-      </Badge>
+      <div className="flex items-center justify-between">
+        <Badge variant="default" className="bg-blue-50 p-2 text-xs font-bold">
+          QUARTO {room.id + 1}
+        </Badge>
+
+        {room.id > 0 && (
+          <button 
+            onClick={() => onRemoveRoom(room.id)}
+            className="flex items-center gap-1 text-neutral-400 text-xs hover:text-neutral-600"
+          >        
+            Remover <Trash className="h-3 w-3" />
+          </button>
+        )}
+      </div>
 
       <div className="space-y-4">
         <GuestCounter 
@@ -164,6 +176,14 @@ export function GuestSelect({
     ])
   }
 
+  const handleRemoveRoom = (roomId: number) => {
+    setRooms(currentRooms => 
+      currentRooms
+        .filter(room => room.id !== roomId)
+        .map((room, index) => ({ ...room, id: index }))
+    )
+  }
+
   const handleUpdateRoom = (roomId: number, updates: Partial<Room>) => {
     setRooms(currentRooms => 
       currentRooms.map(room => 
@@ -180,6 +200,7 @@ export function GuestSelect({
             key={room.id} 
             room={room} 
             onUpdateRoom={handleUpdateRoom}
+            onRemoveRoom={handleRemoveRoom}
           />
         ))}
 
