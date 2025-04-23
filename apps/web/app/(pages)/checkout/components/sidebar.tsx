@@ -4,7 +4,10 @@ import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { Calendar, CalendarCheck, Users } from 'lucide-react';
 
-import { Badge } from '@coobrastur/ui/components/data-display/badge';
+import {
+  BadgePlan,
+  type BadgePlanValue,
+} from '@coobrastur/ui/components/data-display/badge-plan/badge-plan';
 import { Title } from '@coobrastur/ui/components/data-display/title';
 
 import { AditionalFees } from './aditional-fees';
@@ -27,10 +30,11 @@ interface SidebarProps {
   checkOut: Date;
   guests: number;
   rooms: number;
-  planType: string;
+  planType: BadgePlanValue;
   planSubType: string;
   totalNights: number;
   additionalFees?: AdditionalFees;
+  handleFinalizeReservation: () => void;
 }
 
 export function Sidebar({
@@ -45,6 +49,7 @@ export function Sidebar({
   planSubType,
   totalNights,
   additionalFees,
+  handleFinalizeReservation,
 }: SidebarProps) {
   return (
     <Card className="p-6 space-y-6 max-w-[477px]">
@@ -58,9 +63,8 @@ export function Sidebar({
           />
         </div>
         <div className="flex flex-col justify-center">
-          <Badge variant="neutral" className="w-[53px] h-[29px]">
-            {planType}
-          </Badge>
+          <BadgePlan planType={planType} />
+
           <Title className="text-lg font-semibold text-primary-300">
             {hotelName}
           </Title>
@@ -119,25 +123,29 @@ export function Sidebar({
         </Text>
       </div>
 
-      <Separator />
+      {additionalFees && additionalFees.length > 0 && (
+        <>
+          <Separator />
 
-      {additionalFees && (
-        <div className="space-y-2">
-          <Text size="sm" className="text-neutral-400">
-            Valores adicionais:
-          </Text>
+          <div className="space-y-2">
+            <Text size="sm" className="text-neutral-400">
+              Valores adicionais:
+            </Text>
 
-          {additionalFees.map(fee => (
-            <AditionalFees
-              key={fee.description}
-              description={fee.description}
-              value={fee.value}
-            />
-          ))}
-        </div>
+            {additionalFees.map(fee => (
+              <AditionalFees
+                key={fee.description}
+                description={fee.description}
+                value={fee.value}
+              />
+            ))}
+          </div>
+        </>
       )}
 
-      <Button className="w-full">Finalizar Reserva</Button>
+      <Button className="w-full" onClick={handleFinalizeReservation}>
+        Finalizar Reserva
+      </Button>
     </Card>
   );
 }

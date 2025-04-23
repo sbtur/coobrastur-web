@@ -1,4 +1,5 @@
-// import { Sidebar } from '../../../../web/app/(payment)/checkout/components/sidebar'
+import { type BadgePlanValue } from '@coobrastur/ui/components/data-display/badge-plan/badge-plan';
+
 import { Sidebar } from '../../../../web/app/(pages)/checkout/components/sidebar';
 
 import type { Meta, StoryObj } from '@storybook/react';
@@ -35,8 +36,9 @@ const baseArgs = {
     },
   ],
   rooms: 1,
-  planType: 'SILVER',
+  planType: 'SILVER' as BadgePlanValue,
   planSubType: 'MASTER',
+  handleFinalizeReservation: () => {},
 };
 
 export const Default: Story = {
@@ -50,10 +52,17 @@ export const Loading: Story = {
   },
 };
 
-export const WithContent: Story = {
+export const WithAdditionalFees: Story = {
   args: {
     ...baseArgs,
     hotelName: 'Hotel Serra Azul',
     location: 'Rua Garibaldi, 152, Gramado, RS',
+  },
+};
+
+export const WithoutAdditionalFees: Story = {
+  args: {
+    ...baseArgs,
+    additionalFees: [],
   },
 };
