@@ -21,10 +21,23 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    onSelect: data => {
+      console.log('Dados selecionados:', data);
+    },
+    firstName: 'João',
+    lastName: 'Silva',
+  },
 };
 
 export const Mobile: Story = {
+  args: {
+    onSelect: data => {
+      console.log('Dados selecionados:', data);
+    },
+    firstName: 'Maria',
+    lastName: 'Santos',
+  },
   parameters: {
     viewport: {
       defaultViewport: 'mobile1',
@@ -33,6 +46,13 @@ export const Mobile: Story = {
 };
 
 export const Tablet: Story = {
+  args: {
+    onSelect: data => {
+      console.log('Dados selecionados:', data);
+    },
+    firstName: 'Pedro',
+    lastName: 'Oliveira',
+  },
   parameters: {
     viewport: {
       defaultViewport: 'tablet',
@@ -41,6 +61,13 @@ export const Tablet: Story = {
 };
 
 export const Desktop: Story = {
+  args: {
+    onSelect: data => {
+      console.log('Dados selecionados:', data);
+    },
+    firstName: 'Ana',
+    lastName: 'Souza',
+  },
   parameters: {
     viewport: {
       defaultViewport: 'desktop',

@@ -3,10 +3,12 @@ import { useForm } from 'react-hook-form';
 import { Title } from '@coobrastur/ui/components/data-display/title';
 import {
   Form,
+  FormControl,
   FormField,
   FormItem,
   FormLabel,
 } from '@coobrastur/ui/components/data-entry/form';
+import { Input } from '@coobrastur/ui/components/data-entry/input';
 import {
   RadioGroup,
   RadioGroupItem,
@@ -14,11 +16,30 @@ import {
 
 import { Container } from '../container';
 
-export function SelectDependent() {
-  const form = useForm();
+interface SelectDependentProps {
+  onSelect: (data: { firstName: string; lastName: string }) => void;
+  firstName?: string;
+  lastName?: string;
+}
+
+export function SelectDependent({
+  onSelect,
+  firstName = '',
+  lastName = '',
+}: SelectDependentProps) {
+  const form = useForm({
+    defaultValues: {
+      dependent: 'main',
+      firstName,
+      lastName,
+    },
+  });
 
   const onSubmit = (data: any) => {
-    console.log(data);
+    onSelect({
+      firstName: data.firstName,
+      lastName: data.lastName,
+    });
   };
 
   return (
@@ -62,6 +83,33 @@ export function SelectDependent() {
             </FormItem>
           )}
         />
+
+        <div className="flex gap-4 max-w-2xl">
+          <FormField
+            control={form.control}
+            name="firstName"
+            render={({ field }) => (
+              <FormItem className="flex-1">
+                <FormLabel className="text-sm">Nome</FormLabel>
+                <FormControl>
+                  <Input {...field} />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="lastName"
+            render={({ field }) => (
+              <FormItem className="flex-1">
+                <FormLabel className="text-sm">Sobrenome</FormLabel>
+                <FormControl>
+                  <Input {...field} />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+        </div>
       </Form>
     </Container>
   );
