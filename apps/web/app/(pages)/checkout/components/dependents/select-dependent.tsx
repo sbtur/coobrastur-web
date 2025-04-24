@@ -17,15 +17,19 @@ import {
 import { Container } from '../container';
 
 interface SelectDependentProps {
-  onSelect: (data: { firstName: string; lastName: string }) => void;
   firstName?: string;
   lastName?: string;
+  handleSubmit: (data: {
+    dependent: string;
+    firstName: string;
+    lastName: string;
+  }) => void;
 }
 
 export function SelectDependent({
-  onSelect,
   firstName = '',
   lastName = '',
+  handleSubmit,
 }: SelectDependentProps) {
   const form = useForm({
     defaultValues: {
@@ -35,25 +39,23 @@ export function SelectDependent({
     },
   });
 
-  const onSubmit = (data: any) => {
-    onSelect({
-      firstName: data.firstName,
-      lastName: data.lastName,
-    });
+  const onValueChange = (value: string) => {
+    form.setValue('dependent', value);
+    form.handleSubmit(handleSubmit)();
   };
 
   return (
     <Container>
       <Title> Para quem é esta reserva ?</Title>
 
-      <Form form={form} onSubmit={form.handleSubmit(onSubmit)}>
+      <Form form={form} onSubmit={form.handleSubmit(handleSubmit)}>
         <FormField
           control={form.control}
           name="dependent"
           render={({ field }) => (
             <FormItem>
               <RadioGroup
-                onValueChange={field.onChange}
+                onValueChange={onValueChange}
                 defaultValue={field.value}
                 className="flex flex-col gap-4"
               >

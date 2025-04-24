@@ -20,11 +20,21 @@ const meta: Meta<typeof SelectDependent> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const handleSubmit = (data: {
+  dependent: string;
+  firstName: string;
+  lastName: string;
+}) => {
+  console.log('handleSubmit', data);
+};
+
+const baseArgs = {
+  handleSubmit,
+};
+
 export const Default: Story = {
   args: {
-    onSelect: data => {
-      console.log('Dados selecionados:', data);
-    },
+    ...baseArgs,
     firstName: 'João',
     lastName: 'Silva',
   },
@@ -32,9 +42,7 @@ export const Default: Story = {
 
 export const Mobile: Story = {
   args: {
-    onSelect: data => {
-      console.log('Dados selecionados:', data);
-    },
+    ...baseArgs,
     firstName: 'Maria',
     lastName: 'Santos',
   },
@@ -47,9 +55,7 @@ export const Mobile: Story = {
 
 export const Tablet: Story = {
   args: {
-    onSelect: data => {
-      console.log('Dados selecionados:', data);
-    },
+    ...baseArgs,
     firstName: 'Pedro',
     lastName: 'Oliveira',
   },
@@ -62,9 +68,7 @@ export const Tablet: Story = {
 
 export const Desktop: Story = {
   args: {
-    onSelect: data => {
-      console.log('Dados selecionados:', data);
-    },
+    ...baseArgs,
     firstName: 'Ana',
     lastName: 'Souza',
   },
