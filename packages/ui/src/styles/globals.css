@@ -92,6 +92,15 @@
   --color-plans-silver: 204 11% 45%;
   --color-plans-gold: 42 66% 50%;
   --color-plans-diamond: 209 54% 39%;
+
+  --color-gold-foreground: var(--color-warning-200);
+  --color-gold-background: var(--color-warning-100);
+
+  --color-silver-background: var(--color-neutral-200);
+  --color-silver-foreground: var(--color-neutral-500);
+
+  --color-diamond-foreground: var(--color-primary-100);
+  --color-diamond-background: var(--color-secondary-200);
 }
 
 @layer base {

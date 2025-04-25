@@ -4,12 +4,14 @@ import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { Calendar, CalendarCheck, Users } from 'lucide-react';
 
-import {
-  BadgePlan,
-  type BadgePlanValue,
-} from '@coobrastur/ui/components/data-display/badge-plan/badge-plan';
+import { Badge } from '@coobrastur/ui/components/data-display/badge';
 import { Title } from '@coobrastur/ui/components/data-display/title';
 
+import {
+  type CATEGORY,
+  CATEGORY_COLORS,
+  CATEGORY_LABELS,
+} from '../../../shared/utils/plans/categories';
 import { AditionalFees } from './aditional-fees';
 
 import { Card } from '@ui/components/data-display/card';
@@ -30,7 +32,7 @@ interface SidebarProps {
   checkOut: Date;
   guests: number;
   rooms: number;
-  planType: BadgePlanValue;
+  planType: CATEGORY;
   planSubType: string;
   totalNights: number;
   additionalFees?: AdditionalFees;
@@ -63,7 +65,9 @@ export function Sidebar({
           />
         </div>
         <div className="flex flex-col justify-center">
-          <BadgePlan planType={planType} />
+          <Badge variant={CATEGORY_COLORS[CATEGORY_LABELS[planType]]}>
+            {CATEGORY_LABELS[planType]}
+          </Badge>
 
           <Title className="text-lg font-semibold text-primary-300">
             {hotelName}
@@ -95,7 +99,7 @@ export function Sidebar({
             </Text>
           </div>
         </div>
-        <Text size="sm" className="text-primary-300 flex items-center gap-1">
+        <Text size="sm" className="text-neutral-500 flex items-center gap-1">
           <Users className="w-4 h-4 text-primary-300" />
           {rooms} Quarto{rooms === 1 ? '' : 's'}, {guests} Hóspede
           {guests === 1 ? '' : 's'}
