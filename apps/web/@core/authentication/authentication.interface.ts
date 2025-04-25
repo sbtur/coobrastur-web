@@ -17,11 +17,6 @@ export interface ApiChangePasswordResult {
   Text: string;
 }
 
-export interface ApiUserFirstAccessResult {
-  Situation: 0 | 1;
-  Text: string;
-}
-
 export interface LoginParams {
   username: string;
   password: string;
@@ -47,24 +42,14 @@ export interface ChangePasswordParams {
   password: string;
 }
 
-export interface UserFirstAccessParams {
-  token: string;
-  document: string;
-  rg: string;
-  birthDate: string;
-}
-
 export interface IAuthentication {
   login({ username, password }: LoginParams): Promise<ApiLoginResult>;
   passwordReset({
     document,
     recoveryType,
   }: PasswordResetParams): Promise<ApiPasswordResetResult>;
-  changePassword({ token, password }: ChangePasswordParams): Promise<void>;
-  userFirstAccess({
+  changePassword({
     token,
-    document,
-    rg,
-    birthDate,
-  }: UserFirstAccessParams): Promise<void>;
+    password,
+  }: ChangePasswordParams): Promise<ApiChangePasswordResult>;
 }

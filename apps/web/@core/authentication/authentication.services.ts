@@ -3,8 +3,10 @@ import { jwtDecode } from 'jwt-decode';
 import { httpClient } from '@/infra/http-client/http-client';
 
 import {
+  ApiChangePasswordResult,
   ApiLoginResult,
   ApiPasswordResetResult,
+  ChangePasswordParams,
   IAuthentication,
   LoginParams,
   PasswordReset,
@@ -43,7 +45,20 @@ export function authenticationService(): IAuthentication {
 
       return response;
     },
-    changePassword: async () => {},
-    userFirstAccess: async () => {},
+    changePassword: async ({
+      token,
+      password,
+    }: ChangePasswordParams): Promise<ApiChangePasswordResult> => {
+      const response = await httpClient
+        .patch<ApiChangePasswordResult>('Login/UserPassChange', {
+          json: {
+            token,
+            password,
+          },
+        })
+        .json();
+
+      return response;
+    },
   };
 }
