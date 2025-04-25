@@ -22,19 +22,9 @@ export interface LoginParams {
   password: string;
 }
 
-export interface Login {
-  isActive: boolean;
-  accessToken: string;
-  user: string;
-}
-
 export interface PasswordResetParams {
   document: string;
   recoveryType: string;
-}
-
-export interface PasswordReset {
-  email: string;
 }
 
 export interface ChangePasswordParams {

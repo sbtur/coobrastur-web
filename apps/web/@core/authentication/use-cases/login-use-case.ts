@@ -2,11 +2,7 @@ import { jwtDecode } from 'jwt-decode';
 
 import { extractNumbers } from '@/shared/helpers/extract-numbers';
 
-import {
-  IAuthentication,
-  Login,
-  LoginParams,
-} from '../authentication.interface';
+import { IAuthentication, LoginParams } from '../authentication.interface';
 import {
   BadRequestError,
   InternalServerError,
@@ -15,6 +11,11 @@ import {
 
 import { ApiError } from '@core/types/api-error';
 
+export interface Login {
+  isActive: boolean;
+  accessToken: string;
+  user: string;
+}
 interface JwtPayload {
   unique_name: string;
   sessionType: string;

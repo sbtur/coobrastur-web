@@ -1,4 +1,4 @@
-import NextAuth from 'next-auth';
+import NextAuth, { type NextAuthResult } from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 
 import { makeLoginUseCases } from '@core/authentication/make-login-use-cases';
@@ -11,7 +11,7 @@ declare module 'next-auth' {
   }
 }
 
-export const { handlers, signIn, signOut, auth } = NextAuth({
+const result = NextAuth({
   pages: {
     signIn: '/login',
   },
@@ -39,3 +39,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     }),
   ],
 });
+
+export const handlers: NextAuthResult['handlers'] = result.handlers;
+export const auth: NextAuthResult['auth'] = result.auth;
+export const signIn: NextAuthResult['signIn'] = result.signIn;
+export const signOut: NextAuthResult['signOut'] = result.signOut;

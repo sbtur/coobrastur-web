@@ -9,12 +9,11 @@ import {
 } from 'react';
 import { useRouter } from 'next/navigation';
 
-import {
-  AccommodationSearchAutoComplete,
-  AccommodationSearchByCity,
-} from '@/@core/accommodations/accommodation.interface';
 import { makeAccommodationsUseCase } from '@/@core/accommodations/make-accommodations.use-cases';
+import { AccommodationSearchAutoComplete } from '@/@core/accommodations/use-cases/search-accommodation.use-case';
 import { pushUrlParams } from '@/shared/helpers/manage-url-params';
+
+import { AccommodationSearchByCity } from '@core/accommodations/use-cases/list-item.use-case';
 
 interface SearchContextData {
   accommodationList: AccommodationSearchByCity[];

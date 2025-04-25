@@ -1,5 +1,3 @@
-import { jwtDecode } from 'jwt-decode';
-
 import { httpClient } from '@/infra/http-client/http-client';
 
 import {
@@ -9,7 +7,6 @@ import {
   ChangePasswordParams,
   IAuthentication,
   LoginParams,
-  PasswordReset,
   PasswordResetParams,
 } from './authentication.interface';
 

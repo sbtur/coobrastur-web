@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Metadata } from 'next';
 
 import { Heading } from '@coobrastur/ui/components/data-display/heading';
@@ -20,7 +21,9 @@ export default function NewPassword() {
           Para continuar, crie uma nova senha segura para acessar sua conta.
         </Text>
       </Heading>
-      <NewPasswordForm />
+      <Suspense>
+        <NewPasswordForm />
+      </Suspense>
     </>
   );
 }

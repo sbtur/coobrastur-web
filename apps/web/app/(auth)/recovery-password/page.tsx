@@ -23,9 +23,6 @@ export const metadata: Metadata = {
 };
 
 export default function RecoveryPassword() {
-  const tabsclassNames =
-    'flex flex-col justify-center w-[145px] h-[90px] rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-lg transition-all border border-neutral-300 data-[state=active]:border-highlight-100';
-
   const tabsTitle = [
     {
       value: 'email',

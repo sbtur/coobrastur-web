@@ -1,6 +1,6 @@
 import { Text } from '@coobrastur/ui/components/data-display/text';
 
-import { AccommodationFeatures } from '@/@core/accommodations/accommodation.interface';
+import { AccommodationFeatures } from '@/@core/accommodations/use-cases/accommodation-features.use-case';
 import { Image } from '@/shared/components/image';
 
 type FeaturesProps = {

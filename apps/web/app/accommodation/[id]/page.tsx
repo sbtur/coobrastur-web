@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import AccommodationPublic from '../(public)/accommodation-page-public';
+import AccommodationPublic from '../(public)/accommodation-public';
 
 import { makeAccommodationsUseCase } from '@core/accommodations/make-accommodations.use-cases';
 

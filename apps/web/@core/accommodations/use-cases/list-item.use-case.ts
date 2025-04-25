@@ -1,8 +1,14 @@
 import { AccommodationError } from '../accommodation.errors';
-import {
-  AccommodationSearchByCity,
-  IAccommodationService,
-} from '../accommodation.interface';
+import { IAccommodationService } from '../accommodation.interface';
+
+export type AccommodationSearchByCity = {
+  id: string;
+  name: string;
+  address: string;
+  city?: string;
+  state?: string;
+  image: string;
+};
 
 export function listItemUseCase(service: IAccommodationService) {
   return {
@@ -16,7 +22,14 @@ export function listItemUseCase(service: IAccommodationService) {
           cityId,
         });
 
-        return accommodations;
+        return accommodations.map(accommodation => ({
+          id: accommodation.HotCode,
+          name: accommodation.CommercialName,
+          address: accommodation.Address,
+          city: accommodation.City,
+          state: accommodation.State,
+          image: accommodation.Photo,
+        }));
       } catch (error: unknown) {
         console.error(error);
         throw new AccommodationError('Error fetching accommodations');

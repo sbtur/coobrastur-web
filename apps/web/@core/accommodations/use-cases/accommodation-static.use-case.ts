@@ -1,8 +1,6 @@
 import { AccommodationError } from '../accommodation.errors';
-import {
-  AccommodationSearchByCity,
-  IAccommodationService,
-} from '../accommodation.interface';
+import { IAccommodationService } from '../accommodation.interface';
+import { AccommodationSearchByCity } from './list-item.use-case';
 
 export function accommodationStaticUseCase(service: IAccommodationService) {
   return {
@@ -18,9 +16,12 @@ export function accommodationStaticUseCase(service: IAccommodationService) {
           const accommodation = await service.getAccommodationDetail({
             hotelId,
           });
-          accommodationsList.push(
-            service.toAccommodationStaticList(accommodation),
-          );
+          accommodationsList.push({
+            id: accommodation.Id.toString(),
+            name: accommodation.Name,
+            address: accommodation.Address,
+            image: accommodation.Images[0] || '',
+          });
         }
 
         return accommodationsList;

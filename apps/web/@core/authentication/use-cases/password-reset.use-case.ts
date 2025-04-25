@@ -2,12 +2,15 @@ import { extractNumbers } from '@/shared/helpers/extract-numbers';
 
 import {
   IAuthentication,
-  PasswordReset,
   PasswordResetParams,
 } from '../authentication.interface';
 import { BadRequestError, InternalServerError } from '../errors/auth-errors';
 
 import { ApiError } from '@core/types/api-error';
+
+export interface PasswordReset {
+  email: string;
+}
 
 export function passwordResetUseCase(service: IAuthentication) {
   return {
