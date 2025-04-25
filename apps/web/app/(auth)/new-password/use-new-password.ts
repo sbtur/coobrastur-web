@@ -1,6 +1,6 @@
 import { useState, useTransition } from 'react';
 import { useForm } from 'react-hook-form';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import { FeedbackMessage } from '@/shared/types/request-feedback-message';
 
@@ -17,7 +17,7 @@ export const useNewPassword = () => {
   });
   const searchParams = useSearchParams();
   const token = searchParams.get('token');
-
+  const router = useRouter();
   const form = useForm({
     defaultValues: {
       newPassword: '',
@@ -34,6 +34,10 @@ export const useNewPassword = () => {
         token: token ?? '',
         password: newPassword,
       });
+
+      if (response.success) {
+        router.push('/success');
+      }
 
       setFeedbackMessage({ ...response });
     });
