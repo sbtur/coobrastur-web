@@ -21,6 +21,8 @@ const buttonVariants = cva(
         warning: 'text-white bg-warning hover:bg-warning-hover',
         white: 'bg-white text-highlight hover:text-highlight-hover',
         'outline-white':
+          'border-2 border-neutral-300 bg-white text-neutral-500 hover:bg-white/20',
+        'outline-transparent':
           'border-2 border-white bg-transparent text-white hover:bg-white/20',
         'outline-secondary':
           'border-2 border-primary-100 bg-transparent text-primary-100',

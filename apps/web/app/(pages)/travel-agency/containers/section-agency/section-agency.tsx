@@ -1,5 +1,3 @@
-// 'use client'
-
 import { Heading } from '@coobrastur/ui/components/data-display/heading';
 import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Title } from '@coobrastur/ui/components/data-display/title';
@@ -18,8 +16,8 @@ export const SectionAgency = () => {
           <Text>Segurança e diversidade em cada uma das suas aventuras.</Text>
         </Heading>
 
-       <SectionAgencyDesktop />
-       <SectionAgencyMobile />
+        <SectionAgencyDesktop />
+        <SectionAgencyMobile />
       </Container>
     </Section>
   );
