@@ -3,7 +3,7 @@
 import { AccommodationCard } from '@components/accommodation-card';
 import { AccommodationDialog } from '@components/accommodation-dialog/accommodation-dialog';
 
-import { AccommodationSearchByCity } from '@/@core/accommodations/accommodation.interface';
+import { AccommodationSearchByCity } from '@/@core/accommodations/use-cases/list-item.use-case';
 import { useHotelListDetail } from '@/shared/hooks/use-hotel-list-detail';
 
 import {

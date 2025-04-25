@@ -1,41 +1,42 @@
-export type AccommodationSearchByCity = {
-  id: string;
-  name: string;
-  address: string;
-  city?: string;
-  state?: string;
-  image: string;
+export type ApiAccommodationItemResponse = {
+  HotCode: string;
+  CommercialName: string;
+  Address: string;
+  City: string;
+  State: string;
+  Photo: string;
 };
 
-export type AccommodationSearchAutoComplete = {
-  id: string;
-  name: string;
-  state: string;
-  city: string;
-  type: 'city' | 'hotel';
+export type ApiAccommodationSearchAutoCompleteResponse = {
+  Codigo: string;
+  Texto: string;
+  Tipo: 'Cidade' | 'Hotel';
+  Cidade: string;
+  Estado: string;
 };
 
-export type AccommodationFeatures = {
-  id: string;
-  name: string;
-  icon: string;
+export type ApiAccommodationFeaturesResponse = {
+  Code: string;
+  Description: string;
 };
 
-export type AccommodationDetailSummary = {
-  id: string;
-  name: string;
-  address: string;
-  phone: string;
-  email: string;
-  site: string;
-  free: string;
-  coordinates: {
-    latitude: number;
-    longitude: number;
+export type ApiAccommodationDetailSummaryResponse = {
+  Id: number;
+  Name: string;
+  Address: string;
+  Phone: string;
+  Email: string;
+  Site: string;
+  Free: string;
+  Coordinates: {
+    Latitude: number;
+    Longitude: number;
   };
-  images: string[];
-  description: string;
-  additionalInfo: string;
+  Images: string[];
+  AdditionalInfo: {
+    InfoA: string;
+    InfoB: string;
+  };
 };
 
 export interface IAccommodationService {
@@ -43,23 +44,21 @@ export interface IAccommodationService {
     cityId,
   }: {
     cityId: string;
-  }): Promise<AccommodationSearchByCity[]>;
+  }): Promise<ApiAccommodationItemResponse[]>;
   getAccommodationsAutoCompleteByQuery({
     query,
   }: {
     query: string;
-  }): Promise<AccommodationSearchAutoComplete[]>;
+  }): Promise<ApiAccommodationSearchAutoCompleteResponse[]>;
   getAccommodationFeatures({
     hotelId,
   }: {
     hotelId: string;
-  }): Promise<AccommodationFeatures[]>;
+  }): Promise<ApiAccommodationFeaturesResponse[]>;
   getAccommodationDetail({
     hotelId,
   }: {
     hotelId: string;
-  }): Promise<AccommodationDetailSummary>;
-  toAccommodationStaticList(
-    accommodation: AccommodationDetailSummary,
-  ): Omit<AccommodationSearchByCity, 'city' | 'state'>;
+  }): Promise<ApiAccommodationDetailSummaryResponse>;
+  toAccommodationStaticList(accommodation: any): Omit<any, 'city' | 'state'>;
 }

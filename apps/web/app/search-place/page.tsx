@@ -10,8 +10,8 @@ import { Search } from './containers/search';
 import { SearchFilters } from './containers/search-filters';
 import { SearchProvider } from './providers/search-provider';
 
-import { AccommodationSearchByCity } from '@core/accommodations/accommodation.interface';
 import { makeAccommodationsUseCase } from '@core/accommodations/make-accommodations.use-cases';
+import { AccommodationSearchByCity } from '@core/accommodations/use-cases/list-item.use-case';
 
 export const metadata: Metadata = {
   title: 'Hoteis',
@@ -27,15 +27,15 @@ export default async function SearchPlacePage({
 
   let accommodationsList: AccommodationSearchByCity[] = [];
 
-  const accommodationsUseCase = makeAccommodationsUseCase();
-
   if (cityId) {
-    accommodationsList = await accommodationsUseCase.listItemUseCase.exec({
-      cityId,
-    });
+    accommodationsList = await makeAccommodationsUseCase().listItemUseCase.exec(
+      {
+        cityId,
+      },
+    );
   } else {
     accommodationsList =
-      await accommodationsUseCase.accommodationStaticUseCase.exec({
+      await makeAccommodationsUseCase().accommodationStaticUseCase.exec({
         hotelIds: ACCOMMODATIONS_LIST_ID,
       });
   }

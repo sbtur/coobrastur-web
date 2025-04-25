@@ -2,8 +2,7 @@ import { Button } from '@coobrastur/ui/components/data-entry/button';
 
 import { Image } from '@components/image';
 
-import { AccommodationSearchByCity } from '@/@core/accommodations/accommodation.interface';
-
+import { AccommodationSearchByCity } from '@core/accommodations/use-cases/list-item.use-case';
 import {
   HotelCard,
   HotelDescription,

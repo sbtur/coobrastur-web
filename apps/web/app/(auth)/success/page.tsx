@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: 'Feedback Sucesso',
 };
 
-export default function FeedbackPage() {
+export default function Feedback() {
   return (
     <>
       <Heading className="text-center lg:text-left p-0 gap-1">

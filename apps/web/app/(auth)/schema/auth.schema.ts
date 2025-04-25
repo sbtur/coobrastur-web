@@ -30,7 +30,6 @@ export const recoveryPasswordSMSValidationSchema = z.strictObject({
 
 export const recoveryPasswordEmailValidationSchema = z.object({
   document: documentSchema,
-  email: z.string().email({ message: 'Email inválido' }),
 });
 
 export const newPasswordValidationSchema = z
@@ -44,6 +43,6 @@ export const newPasswordValidationSchema = z
   });
 
 export const loginValidationSchema = z.object({
-  document: documentSchema,
+  username: documentSchema,
   password: z.string().min(1, { message: 'Senha é obrigatória' }),
 });

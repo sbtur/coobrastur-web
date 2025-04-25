@@ -1,11 +1,14 @@
-import { Suspense } from 'react';
+import { auth } from '@/auth';
 
-import { Home } from './home';
+import { HomePrivate } from './(private)/home-private';
+import { HomePublic } from './(public)/home-public';
 
-export default function Page() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Home />
-    </Suspense>
-  );
+export default async function HomePage() {
+  const session = await auth();
+
+  if (session) {
+    return <HomePrivate />;
+  }
+
+  return <HomePublic />;
 }
