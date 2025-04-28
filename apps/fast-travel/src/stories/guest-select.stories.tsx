@@ -1,5 +1,6 @@
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react';
 import { GuestSelect } from '@ui/components/data-entry/guest-select';
+import { GuestProvider } from '@ui/components/data-entry/guest-select/guest-context';
 
 const meta = {
   title: 'Components/GuestSelect',
@@ -8,13 +9,20 @@ const meta = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof GuestSelect>
+  decorators: [
+    Story => (
+      <GuestProvider>
+        <Story />
+      </GuestProvider>
+    ),
+  ],
+} satisfies Meta<typeof GuestSelect>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
     onSave: () => console.log('Salvar'),
   },
-}
+};
