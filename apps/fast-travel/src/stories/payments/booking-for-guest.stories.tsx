@@ -29,15 +29,3 @@ export const WithFirstDegreeRelative: Story = {
     },
   },
 };
-
-export const WithThirdDegreeRelative: Story = {
-  args: {},
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'Exibe o componente com a opção de parente de terceiro grau selecionada',
-      },
-    },
-  },
-};
