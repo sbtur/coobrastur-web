@@ -27,7 +27,7 @@ export const galleryAnimations = {
     },
   },
   contentVisible: {
-    width: '50%',
+    width: '70%',
     opacity: 1,
     transition: {
       duration: 0.5,

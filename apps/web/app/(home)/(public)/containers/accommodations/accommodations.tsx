@@ -1,6 +1,5 @@
 import { AccommodationList } from './components/accommodation-list';
 
-import { ACCOMMODATIONS } from '@mocks/accommodations/accommodations';
 import { Badge } from '@ui/components/data-display/badge';
 import { Heading } from '@ui/components/data-display/heading';
 import { Text } from '@ui/components/data-display/text';
@@ -25,7 +24,7 @@ export const Accommodations = () => {
           </Text>
         </Heading>
 
-        <AccommodationList accommodations={ACCOMMODATIONS} />
+        <AccommodationList accommodations={[]} />
       </Container>
     </Section>
   );

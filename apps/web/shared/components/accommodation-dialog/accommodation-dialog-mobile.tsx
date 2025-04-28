@@ -1,5 +1,4 @@
 'use client';
-import { useSearchParams } from 'next/navigation';
 
 import {
   Sheet,
@@ -11,8 +10,11 @@ import {
 } from '@coobrastur/ui/components/data-display/sheet';
 
 import { Image } from '@components/image';
+import { Link } from '@components/link';
 
-import { ACCOMMODATIONSDETAILS } from '@mocks/accommodations/accommodations-details';
+import { AccommodationDialogMobileLoading } from './accommodation-dialog-mobile-loading';
+import { useAccommodationDialog } from './use-accommodation-dialog';
+
 import {
   Carousel,
   CarouselContent,
@@ -23,7 +25,6 @@ import { Icon } from '@ui/components/data-display/icon';
 import { Text } from '@ui/components/data-display/text';
 import { Title } from '@ui/components/data-display/title';
 import { Button } from '@ui/components/data-entry/button';
-import { Link } from '@ui/components/data-entry/link';
 import { ArrowRight } from '@ui/lib/icons';
 
 export interface AccommodationDialogMobileProps {
@@ -35,31 +36,29 @@ export const AccommodationDialogMobile = ({
   isOpen,
   onOpenChange,
 }: AccommodationDialogMobileProps) => {
-  const searchParams = useSearchParams();
-
-  const hotel = ACCOMMODATIONSDETAILS.find(
-    hotel => hotel.id === Number(searchParams.get('h')),
-  );
+  const { accommodation, isLoading } = useAccommodationDialog();
 
   return (
     <Sheet open={isOpen} onOpenChange={onOpenChange} key="bottom">
-      <SheetOverlay>
-        <SheetContent
-          side="bottom"
-          className="left-0 right-0 p-0 gap-0 border-none rounded-t-[20px]"
-        >
-          <div>
+      <SheetContent
+        side="bottom"
+        className="left-0 right-0 p-0 gap-0 border-none rounded-t-[20px]"
+      >
+        {isLoading ? (
+          <AccommodationDialogMobileLoading />
+        ) : (
+          <div className="bg-white rounded-t-[20px]">
             <div className="h-[285px] rounded-t-[20px] overflow-hidden">
               <Carousel className="h-full" opts={{ loop: true }}>
                 <CarouselContent className="h-full">
-                  {hotel?.gallery.map(image => (
+                  {accommodation.images.map(image => (
                     <CarouselItem
                       key={image}
                       className="flex-[0_0_100%] p-0 rounded-none relative"
                     >
                       <Image
                         src={image}
-                        alt={hotel?.name}
+                        alt={accommodation.name}
                         width={355}
                         height={800}
                         className="w-full h-full object-cover"
@@ -73,20 +72,22 @@ export const AccommodationDialogMobile = ({
 
             <div className="mt-5 px-4 pb-[20px] max-h-[300px] overflow-y-auto">
               <SheetHeader className="text-left items-start">
-                <SheetTitle className="text-left">{hotel?.name}</SheetTitle>
+                <SheetTitle className="text-left">
+                  {accommodation.name}
+                </SheetTitle>
                 <SheetDescription className="text-left">
-                  {hotel?.street}
+                  {accommodation.address}
                 </SheetDescription>
               </SheetHeader>
 
               <Text size="sm" className="mt-3">
-                {hotel?.description}
+                {accommodation.description}
               </Text>
               <Text size="sm" className="mt-3">
-                {hotel?.description}
+                {accommodation.description}
               </Text>
               <Text size="sm" className="mt-3">
-                {hotel?.description}
+                {accommodation.description}
               </Text>
 
               <div className="mt-6">
@@ -94,25 +95,28 @@ export const AccommodationDialogMobile = ({
                   Comodidades:
                 </Title>
                 <ul className="grid grid-cols-3 gap-x-4 gap-y-2 text-sm text-text-body mt-4">
-                  {hotel?.amenities.map(amenity => (
-                    <li key={amenity}>{amenity}</li>
+                  {accommodation.features.map(feature => (
+                    <li key={feature.id}>{feature.name}</li>
                   ))}
                 </ul>
               </div>
             </div>
-          </div>
 
-          <div className="w-full bg-white">
-            <Link href="/accommodation" className="py-6 pl-5 font-bold">
-              Ir para a página do hotel <Icon icon={ArrowRight} />
-            </Link>
-            <Button size="lg" className="h-[90px] w-full rounded-none">
-              Assine e planeje sua viagem{' '}
-              <Icon icon={ArrowRight} variant="white" />
-            </Button>
+            <div className="w-full bg-white">
+              <Link
+                href={`/accommodation/${accommodation.id}`}
+                className="py-6 pl-5 font-bold"
+              >
+                Ir para a página do hotel <Icon icon={ArrowRight} />
+              </Link>
+              <Button size="lg" className="h-[90px] w-full rounded-none">
+                Assine e planeje sua viagem{' '}
+                <Icon icon={ArrowRight} variant="white" />
+              </Button>
+            </div>
           </div>
-        </SheetContent>
-      </SheetOverlay>
+        )}
+      </SheetContent>
     </Sheet>
   );
 };

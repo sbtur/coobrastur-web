@@ -1,3 +1,6 @@
+'use client';
+import { signOut } from 'next-auth/react';
+
 import { Text } from '@coobrastur/ui/components/data-display/text';
 import { UserRoundCheck } from '@coobrastur/ui/lib/icons';
 
@@ -78,6 +81,7 @@ export const HeaderPrivate = () => {
               />
             </Link>
           </div>
+          <button onClick={() => signOut()}>Sair</button>
           <Menu menuItems={MENU_PRIVATE_ITEMS} />
           <div className="flex gap-8 items-center">
             <DropdownPlans />

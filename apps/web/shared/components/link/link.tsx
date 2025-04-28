@@ -15,7 +15,7 @@ export type LinkProps = NextLinkProps &
 
 export const Link = ({ href, children, ...props }: LinkProps) => (
   <LinkUI {...props} asChild>
-    <LinkNext href={href} {...props}>
+    <LinkNext href={href} scroll={false} {...props}>
       {children}
     </LinkNext>
   </LinkUI>
