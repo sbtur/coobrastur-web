@@ -40,7 +40,7 @@ export function SmsCheck({ phoneNumber }: { phoneNumber: string }) {
           maxLength={1}
         />
       </div>
-      <Button className="w-full">Enviar código</Button>
+      <Button className="w-full">Confirmar Hóspede</Button>
     </div>
   );
 }
