@@ -7,6 +7,11 @@ const meta: Meta<typeof BookingForGuest> = {
   component: BookingForGuest,
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: 'Componente para cadastro de hóspede',
+      },
+    },
   },
   tags: ['autodocs'],
 };

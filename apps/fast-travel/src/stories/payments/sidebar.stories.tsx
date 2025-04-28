@@ -9,6 +9,11 @@ const meta = {
   component: Sidebar,
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: 'Barra lateral do checkout',
+      },
+    },
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof Sidebar>;

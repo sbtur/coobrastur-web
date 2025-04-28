@@ -6,7 +6,12 @@ const meta: Meta<typeof SelectDependent> = {
   title: 'Payments/SelectDependent',
   component: SelectDependent,
   parameters: {
-    layout: 'fullscreen',
+    layout: 'centered',
+    docs: {
+      description: {
+        component: 'Formulário para seleção de dependente (main, dependent)',
+      },
+    },
   },
   decorators: [
     Story => (

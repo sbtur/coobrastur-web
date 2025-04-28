@@ -7,6 +7,11 @@ const meta: Meta<typeof Container> = {
   component: Container,
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: 'Container para conteúdo do checkout',
+      },
+    },
   },
   tags: ['autodocs'],
 };
