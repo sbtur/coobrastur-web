@@ -35,11 +35,11 @@ export function loginUseCase(service: IAuthentication) {
           password,
         });
 
-        const jwtPayload = jwtDecode<JwtPayload>(response.AccessToken);
+        const jwtPayload = jwtDecode<JwtPayload>(response.accessToken);
 
         return {
-          isActive: response.Situation,
-          accessToken: response.AccessToken,
+          isActive: response.situation,
+          accessToken: response.accessToken,
           user: jwtPayload.unique_name,
         };
       } catch (error) {

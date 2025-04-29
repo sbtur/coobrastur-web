@@ -1,14 +1,14 @@
 'use server';
 
 import { PasswordResetParams } from '@core/authentication/authentication.interface';
-import { makeLoginUseCases } from '@core/authentication/make-login-use-cases';
+import { makeAuthenticationUseCases } from '@core/authentication/make-authentication-use-cases';
 
 export async function resetPasswordWithSMS({
   document,
   recoveryType,
 }: PasswordResetParams) {
   try {
-    await makeLoginUseCases().passwordResetUseCase.exec({
+    await makeAuthenticationUseCases().passwordResetUseCase.exec({
       document,
       recoveryType,
     });

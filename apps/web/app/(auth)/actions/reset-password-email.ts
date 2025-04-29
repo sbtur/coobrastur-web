@@ -1,17 +1,18 @@
 'use server';
 
 import { PasswordResetParams } from '@core/authentication/authentication.interface';
-import { makeLoginUseCases } from '@core/authentication/make-login-use-cases';
+import { makeAuthenticationUseCases } from '@core/authentication/make-authentication-use-cases';
 
 export async function resetPasswordWithEmail({
   document,
   recoveryType,
 }: PasswordResetParams) {
   try {
-    const response = await makeLoginUseCases().passwordResetUseCase.exec({
-      document,
-      recoveryType,
-    });
+    const response =
+      await makeAuthenticationUseCases().passwordResetUseCase.exec({
+        document,
+        recoveryType,
+      });
 
     return {
       success: true,

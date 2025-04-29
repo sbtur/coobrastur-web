@@ -1,41 +1,41 @@
 export type ApiAccommodationItemResponse = {
-  HotCode: string;
-  CommercialName: string;
-  Address: string;
-  City: string;
-  State: string;
-  Photo: string;
+  hotCode: string;
+  commercialName: string;
+  address: string;
+  city: string;
+  state: string;
+  photo: string;
 };
 
 export type ApiAccommodationSearchAutoCompleteResponse = {
-  Codigo: string;
-  Texto: string;
-  Tipo: 'Cidade' | 'Hotel';
-  Cidade: string;
-  Estado: string;
+  codigo: string;
+  texto: string;
+  tipo: 'Cidade' | 'Hotel';
+  cidade: string;
+  estado: string;
 };
 
 export type ApiAccommodationFeaturesResponse = {
-  Code: string;
-  Description: string;
+  code: string;
+  description: string;
 };
 
 export type ApiAccommodationDetailSummaryResponse = {
-  Id: number;
-  Name: string;
-  Address: string;
-  Phone: string;
-  Email: string;
-  Site: string;
-  Free: string;
-  Coordinates: {
-    Latitude: number;
-    Longitude: number;
+  id: number;
+  name: string;
+  address: string;
+  phone: string;
+  email: string;
+  site: string;
+  free: string;
+  coordinates: {
+    latitude: number;
+    longitude: number;
   };
-  Images: string[];
-  AdditionalInfo: {
-    InfoA: string;
-    InfoB: string;
+  images: string[];
+  additionalInfo: {
+    infoA: string;
+    infoB: string;
   };
 };
 

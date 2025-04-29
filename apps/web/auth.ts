@@ -1,7 +1,7 @@
 import NextAuth, { type NextAuthResult } from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 
-import { makeLoginUseCases } from '@core/authentication/make-login-use-cases';
+import { makeAuthenticationUseCases } from '@core/authentication/make-authentication-use-cases';
 
 declare module 'next-auth' {
   interface User {
@@ -22,7 +22,7 @@ const result = NextAuth({
     Credentials({
       async authorize(credentials) {
         try {
-          const user = await makeLoginUseCases().loginUseCase.exec({
+          const user = await makeAuthenticationUseCases().loginUseCase.exec({
             username: credentials.username as string,
             password: credentials.password as string,
           });

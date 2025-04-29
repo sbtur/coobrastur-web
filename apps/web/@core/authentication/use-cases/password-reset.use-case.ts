@@ -27,7 +27,7 @@ export function passwordResetUseCase(service: IAuthentication) {
         });
 
         return {
-          email: response.Email,
+          email: response.email,
         };
       } catch (error) {
         const apiError = error as ApiError;

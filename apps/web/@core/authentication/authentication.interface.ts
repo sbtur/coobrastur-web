@@ -1,20 +1,28 @@
 export interface ApiLoginResult {
-  Situation: boolean;
-  AccessToken: string;
-  Text: string;
-  Company: string[];
+  situation: boolean;
+  accessToken: string;
+  text: string;
+  company: string[];
 }
 
 export interface ApiPasswordResetResult {
-  Situation: 0 | 1;
-  Text: string;
-  Email: string;
-  Token: string;
+  situation: 0 | 1;
+  text: string;
+  email: string;
+  token: string;
 }
 
 export interface ApiChangePasswordResult {
-  Situation: 0 | 1;
-  Text: string;
+  situation: 0 | 1;
+  text: string;
+}
+export interface ApiAuthenticateVisitorParams {
+  accessKey: string;
+  password: string;
+}
+
+export interface ApiAuthenticateVisitorResult {
+  token: string;
 }
 
 export interface LoginParams {
@@ -42,4 +50,8 @@ export interface IAuthentication {
     token,
     password,
   }: ChangePasswordParams): Promise<ApiChangePasswordResult>;
+  authenticateVisitor({
+    accessKey,
+    password,
+  }: ApiAuthenticateVisitorParams): Promise<ApiAuthenticateVisitorResult>;
 }
