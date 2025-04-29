@@ -22,12 +22,12 @@ export function accommodationFeaturesUseCase(service: IAccommodationService) {
           hotelId,
         });
 
-        const features = response.map(({ Code, Description }) => {
-          const feature = FEATURES_DATA[Code as FeatureKey];
+        const features = response.map(({ code, description }) => {
+          const feature = FEATURES_DATA[code as FeatureKey];
 
           return {
-            id: Code,
-            name: formatTextToCapitalizeCase(Description),
+            id: code,
+            name: formatTextToCapitalizeCase(description),
             icon: feature ? feature.icon : '',
           };
         });

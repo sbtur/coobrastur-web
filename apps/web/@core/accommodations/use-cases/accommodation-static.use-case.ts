@@ -17,10 +17,10 @@ export function accommodationStaticUseCase(service: IAccommodationService) {
             hotelId,
           });
           accommodationsList.push({
-            id: accommodation.Id.toString(),
-            name: accommodation.Name,
-            address: accommodation.Address,
-            image: accommodation.Images[0] || '',
+            id: accommodation.id.toString(),
+            name: accommodation.name,
+            address: accommodation.address,
+            image: accommodation.images[0] || '',
           });
         }
 

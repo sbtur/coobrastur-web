@@ -23,12 +23,12 @@ export function listItemUseCase(service: IAccommodationService) {
         });
 
         return accommodations.map(accommodation => ({
-          id: accommodation.HotCode,
-          name: accommodation.CommercialName,
-          address: accommodation.Address,
-          city: accommodation.City,
-          state: accommodation.State,
-          image: accommodation.Photo,
+          id: accommodation.hotCode,
+          name: accommodation.commercialName,
+          address: accommodation.address,
+          city: accommodation.city,
+          state: accommodation.state,
+          image: accommodation.photo,
         }));
       } catch (error: unknown) {
         console.error(error);

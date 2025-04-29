@@ -1,14 +1,14 @@
 'use server';
 
 import { ChangePasswordParams } from '@core/authentication/authentication.interface';
-import { makeLoginUseCases } from '@core/authentication/make-login-use-cases';
+import { makeAuthenticationUseCases } from '@core/authentication/make-authentication-use-cases';
 
 export async function changePassword({
   token,
   password,
 }: ChangePasswordParams) {
   try {
-    await makeLoginUseCases().changePasswordUseCase.exec({
+    await makeAuthenticationUseCases().changePasswordUseCase.exec({
       token,
       password,
     });

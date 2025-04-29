@@ -1,6 +1,8 @@
 import { httpClient } from '@/infra/http-client/http-client';
 
 import {
+  ApiAuthenticateVisitorParams,
+  ApiAuthenticateVisitorResult,
   ApiChangePasswordResult,
   ApiLoginResult,
   ApiPasswordResetResult,
@@ -54,6 +56,25 @@ export function authenticationService(): IAuthentication {
           },
         })
         .json();
+
+      return response;
+    },
+    authenticateVisitor: async ({
+      accessKey,
+      password,
+    }: ApiAuthenticateVisitorParams): Promise<ApiAuthenticateVisitorResult> => {
+      const data = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL_COOB}/Auth/Authenticate`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ accessKey, password }),
+        }
+      );
+
+      const response = await data.json();
 
       return response;
     },

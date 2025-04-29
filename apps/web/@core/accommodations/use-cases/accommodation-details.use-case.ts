@@ -40,20 +40,20 @@ export function accommodationDetailsUseCase(service: IAccommodationService) {
           });
 
         return {
-          id: accommodation.Id.toString(),
-          name: formatTextToCapitalizeCase(accommodation.Name),
-          address: formatTextToCapitalizeCase(accommodation.Address),
-          phone: accommodation.Phone,
-          email: accommodation.Email,
-          site: accommodation.Site,
-          free: accommodation.Free,
+          id: accommodation.id.toString(),
+          name: formatTextToCapitalizeCase(accommodation.name),
+          address: formatTextToCapitalizeCase(accommodation.address),
+          phone: accommodation.phone,
+          email: accommodation.email,
+          site: accommodation.site,
+          free: accommodation.free,
           coordinates: {
-            latitude: accommodation.Coordinates.Latitude,
-            longitude: accommodation.Coordinates.Longitude,
+            latitude: accommodation.coordinates.latitude,
+            longitude: accommodation.coordinates.longitude,
           },
-          images: accommodation.Images,
-          description: accommodation.AdditionalInfo.InfoB,
-          additionalInfo: accommodation.AdditionalInfo.InfoA,
+          images: accommodation.images,
+          description: accommodation.additionalInfo.infoB,
+          additionalInfo: accommodation.additionalInfo.infoA,
           features,
         };
       } catch (error) {

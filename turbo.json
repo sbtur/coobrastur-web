@@ -7,7 +7,7 @@
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "env": ["API_URL_COOB"]
+      "env": ["API_URL_COOB", "CLIENT_ACCESS_KEY", "CLIENT_ACCESS_PASSWORD"]
     },
     "lint": {
       "dependsOn": ["^lint"]
@@ -19,7 +19,7 @@
       "cache": false,
       "persistent": true,
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "env": ["API_URL_COOB"]
+      "env": ["API_URL_COOB", "CLIENT_ACCESS_KEY", "CLIENT_ACCESS_PASSWORD"]
     },
     "storybook": {
       "cache": false,

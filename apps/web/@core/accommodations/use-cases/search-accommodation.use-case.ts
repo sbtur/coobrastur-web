@@ -18,11 +18,11 @@ export function searchAutoCompleteUseCase(service: IAccommodationService) {
         });
 
         return response.map(accommodation => ({
-          id: accommodation.Codigo,
-          name: accommodation.Texto,
-          state: accommodation.Estado,
-          city: accommodation.Cidade,
-          type: accommodation.Tipo === 'Cidade' ? 'city' : 'hotel',
+          id: accommodation.codigo,
+          name: accommodation.texto,
+          state: accommodation.estado,
+          city: accommodation.cidade,
+          type: accommodation.tipo === 'Cidade' ? 'city' : 'hotel',
         }));
       } catch (error) {
         console.error(error);
