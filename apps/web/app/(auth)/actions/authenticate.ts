@@ -1,5 +1,7 @@
 'use server';
 
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 import { AuthError } from 'next-auth';
 
 import { InvalidCredentialsError } from '@/@core/authentication/errors/auth-errors';
@@ -9,13 +11,15 @@ import { LoginParams } from '@core/authentication/authentication.interface';
 
 export async function authenticate(formData: LoginParams) {
   try {
-    const result = await signIn('credentials', {
+    await signIn('credentials', {
       username: formData.username,
       password: formData.password,
       redirect: false,
     });
 
-    return result;
+    // return result;
+    // revalidatePath('/');
+    redirect('/');
   } catch (error) {
     if (error instanceof AuthError) {
       return new InvalidCredentialsError();

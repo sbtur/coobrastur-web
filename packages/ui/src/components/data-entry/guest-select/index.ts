@@ -1,1 +1,1 @@
-export * from './guest-select';
+export { GuestSelect } from './guest-select';

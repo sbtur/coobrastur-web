@@ -1,9 +1,11 @@
+import { PAGE_NAME } from '@/shared/helpers/page-names';
+
 import { IMenuItem } from '@shared/types/menu.types';
 
 export const MENU_PRIVATE_ITEMS: IMenuItem[] = [
   {
     label: 'Hoteis',
-    href: '#',
+    href: PAGE_NAME.hoteis,
   },
   {
     label: 'Ajuda & Suporte',
@@ -11,6 +13,6 @@ export const MENU_PRIVATE_ITEMS: IMenuItem[] = [
   },
   {
     label: 'Indique +',
-    href: '/travel-agency',
+    href: PAGE_NAME.agencia,
   },
 ];

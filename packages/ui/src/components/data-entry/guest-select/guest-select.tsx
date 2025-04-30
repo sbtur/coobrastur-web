@@ -1,5 +1,10 @@
+import { GuestCard } from './guest-card';
 import { GuestProvider } from './guest-provider';
 
-export function GuestSelect() {
-  return <GuestProvider />;
-}
+export const GuestSelect = () => {
+  return (
+    <GuestProvider>
+      <GuestCard />
+    </GuestProvider>
+  );
+};

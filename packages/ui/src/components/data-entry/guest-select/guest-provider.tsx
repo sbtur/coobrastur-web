@@ -1,12 +1,5 @@
+'use client';
 import { createContext, Dispatch, useContext, useReducer } from 'react';
-
-import { PlusCircle } from 'lucide-react';
-
-import { cn } from '@coobrastur/ui/lib/utils';
-
-import { Card } from '../../data-display/card';
-import { Button } from '../button';
-import { RoomSection } from './room-section';
 
 export interface Room {
   id: number;
@@ -124,32 +117,12 @@ const manageRoom = (state: Room[], action: Action): Room[] => {
   }
 };
 
-export function GuestProvider() {
+export function GuestProvider({ children }: { children: React.ReactNode }) {
   const [rooms, dispatch] = useReducer(manageRoom, [initialRoom]);
 
   return (
     <GuestContext.Provider value={{ rooms, dispatch }}>
-      <Card className={cn('w-[348px] p-4')}>
-        <div className="space-y-4">
-          {rooms.map(room => (
-            <RoomSection key={room.id} room={room} />
-          ))}
-
-          <div className="space-y-4">
-            <Button
-              variant="outline"
-              className="w-[160px] h-[30px] text-[10px] flex items-center"
-              onClick={() => dispatch({ type: 'addRoom' })}
-            >
-              <PlusCircle className="h-3 w-3 uppercase" />
-              Adicionar quarto
-            </Button>
-            <Button className="w-full" onClick={() => null}>
-              Salvar
-            </Button>
-          </div>
-        </div>
-      </Card>
+      {children}
     </GuestContext.Provider>
   );
 }

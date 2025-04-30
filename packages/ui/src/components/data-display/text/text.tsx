@@ -4,7 +4,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@ui/lib/utils';
 
-const textVariants = cva('', {
+const textVariants = cva('font-secondary', {
   variants: {
     size: {
       xs: 'text-xs', // 12px
@@ -59,7 +59,7 @@ export const Text = ({
       className={cn(
         textVariants({ variant, size, spacing }),
         truncate && 'truncate',
-        className,
+        className
       )}
       {...props}
     >

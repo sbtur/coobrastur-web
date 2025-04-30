@@ -19,7 +19,6 @@ import {
 import { cn } from '@ui/lib/utils';
 
 export function DateRangePicker({
-  className,
   disabled,
   error,
   errorMessage,
@@ -39,25 +38,24 @@ export function DateRangePicker({
   } = useDataRangeActions({ defaultValue });
 
   return (
-    <div className={cn('flex flex-col gap-2', className)} ref={containerRef}>
-      <div className="flex gap-4">
+    <div className="w-full flex flex-col gap-2" ref={containerRef}>
+      <div className="grid grid-cols-2 gap-4">
         <div className="grid gap-1.5">
           <Label
             htmlFor="check-in"
             className={cn(
-              'text-sm font-medium text-neutral-500',
-              error && 'text-destructive',
+              'text-sm font-semibold text-white',
+              error && 'text-destructive'
             )}
           >
             Data de Check-in
           </Label>
-          <Button
+          <button
             id="check-in"
-            variant="outline"
             className={cn(
-              'w-[200px] justify-start text-gray-600 text-left font-normal bg-white rounded-lg border-gray-200',
+              'w-full lg:w-[200px] p-2 px-3 justify-start font-secondary text-gray-600 text-left font-semibold bg-white items-center flex gap-2 whitespace-nowrap rounded-md text-base border-gray-200 border-2 hover:bg-secondary-100',
               error && 'border-destructive',
-              isActiveButton === DATE_FIELD_ID.checkIn && activeButtonClassName,
+              isActiveButton === DATE_FIELD_ID.checkIn && activeButtonClassName
             )}
             aria-label="Selecione a data de check-in"
             onClick={() => {
@@ -72,29 +70,27 @@ export function DateRangePicker({
               });
             }}
           >
-            <Icon icon={CalendarIcon} variant="secondary" />
-            {date?.from ? format(date.from, 'dd/MM/yyyy') : 'Data de check-in'}
-          </Button>
+            <Icon icon={CalendarIcon} variant="primary" />
+            {date?.from ? format(date.from, 'dd/MM/yyyy') : 'Check-in'}
+          </button>
         </div>
 
         <div className="grid gap-1.5">
           <Label
             htmlFor="check-out"
             className={cn(
-              'text-sm font-medium text-neutral-500',
-              error && 'text-destructive',
+              'text-sm font-semibold text-white',
+              error && 'text-destructive'
             )}
           >
             Data de Check-out
           </Label>
-          <Button
+          <button
             id="check-out"
-            variant="outline"
             className={cn(
-              'w-[200px] justify-start text-gray-600 text-left font-normal bg-white rounded-lg border-gray-200',
+              'w-full lg:w-[200px] p-2 px-3 justify-start font-secondary text-gray-600 text-left font-semibold bg-white items-center flex gap-2 whitespace-nowrap rounded-md text-base border-gray-200 border-2 hover:bg-secondary-100',
               error && 'border-destructive',
-              isActiveButton === DATE_FIELD_ID.checkOut &&
-                activeButtonClassName,
+              isActiveButton === DATE_FIELD_ID.checkOut && activeButtonClassName
             )}
             onClick={() => {
               setIsOpen(true);
@@ -109,15 +105,15 @@ export function DateRangePicker({
             }}
             aria-label="Selecione a data de check-out"
           >
-            <Icon icon={CalendarCheckIcon} variant="secondary" />
-            {date?.to ? format(date.to, 'dd/MM/yyyy') : 'Data de check-out'}
-          </Button>
+            <Icon icon={CalendarCheckIcon} variant="primary" />
+            {date?.to ? format(date.to, 'dd/MM/yyyy') : 'Check-out'}
+          </button>
         </div>
       </div>
       <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger />
         <PopoverContent
-          className="w-auto p-0 bg-white rounded-xl shadow-lg border-0 -ml-10"
+          className="w-[360px] p-0 bg-white rounded-xl shadow-lg border-0 lg:-ml-10"
           align="start"
           side="bottom"
           sideOffset={8}
