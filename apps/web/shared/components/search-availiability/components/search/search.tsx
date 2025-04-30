@@ -2,6 +2,8 @@
 
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 
+import { Label } from '@coobrastur/ui/components/data-entry/label';
+
 import { SearchResultContainer } from './search-result-container';
 import { useSearch } from './use-search';
 
@@ -23,11 +25,14 @@ export const Search = () => {
 
   return (
     <div className="w-full">
-      <Text className="text-white font-semibold text-base">
+      <Label
+        htmlFor="search-accommodation"
+        className="text-sm font-semibold text-white"
+      >
         Busque por Cidade ou Hotel
-      </Text>
+      </Label>
 
-      <div className="w-full bg-white rounded-md py-1 px-3 mt-1.5 flex items-center group border-2 border-gray-200 transition-all duration-300 focus-within:border-highlight-100 focus-within:ring-1 focus-within:ring-highlight-100 focus-within:scale-105">
+      <div className="w-full bg-white rounded-md py-1 px-3 flex items-center group border-2 border-gray-200 transition-all duration-300 focus-within:border-highlight-100 focus-within:ring-1 focus-within:ring-highlight-100 focus-within:scale-105">
         <Icon size="lg" icon={MapPin} variant="primary" />
         <ReactSearchAutocomplete
           items={searchPlaceResults}
@@ -51,7 +56,7 @@ export const Search = () => {
             zIndex: 4,
             hoverBackgroundColor: 'bg-secondary-100',
             lineColor: 'var(--color-primary-300)',
-            height: '32px',
+            height: '30px',
           }}
           showIcon={false}
           showNoResultsText="Nenhum resultado encontrado"

@@ -9,7 +9,6 @@ import { DATE_FIELD_ID } from './date-range-picker.constants';
 import { DateRangePickerProps } from './date-range-picker.types';
 import { useDataRangeActions } from './use-data-range-actions';
 
-import { Button } from '@ui/components/data-entry/button';
 import { Calendar } from '@ui/components/data-entry/calendar';
 import {
   Popover,
@@ -38,8 +37,8 @@ export function DateRangePicker({
   } = useDataRangeActions({ defaultValue });
 
   return (
-    <div className="w-full flex flex-col gap-2" ref={containerRef}>
-      <div className="grid grid-cols-2 gap-4">
+    <div className="w-full flex flex-col" ref={containerRef}>
+      <div className="w-full grid grid-cols-2 gap-4">
         <div className="grid gap-1.5">
           <Label
             htmlFor="check-in"
@@ -53,7 +52,7 @@ export function DateRangePicker({
           <button
             id="check-in"
             className={cn(
-              'w-full lg:w-[200px] p-2 px-3 justify-start font-secondary text-gray-600 text-left font-semibold bg-white items-center flex gap-2 whitespace-nowrap rounded-md text-base border-gray-200 border-2 hover:bg-secondary-100',
+              'w-full p-2 px-3 justify-start font-secondary text-gray-600 text-left font-semibold bg-white items-center flex gap-2 whitespace-nowrap rounded-md text-base border-gray-200 border-2 hover:bg-secondary-100',
               error && 'border-destructive',
               isActiveButton === DATE_FIELD_ID.checkIn && activeButtonClassName
             )}
@@ -88,7 +87,7 @@ export function DateRangePicker({
           <button
             id="check-out"
             className={cn(
-              'w-full lg:w-[200px] p-2 px-3 justify-start font-secondary text-gray-600 text-left font-semibold bg-white items-center flex gap-2 whitespace-nowrap rounded-md text-base border-gray-200 border-2 hover:bg-secondary-100',
+              'w-full p-2 px-3 justify-start font-secondary text-gray-600 text-left font-semibold bg-white items-center flex gap-2 whitespace-nowrap rounded-md text-base border-gray-200 border-2 hover:bg-secondary-100',
               error && 'border-destructive',
               isActiveButton === DATE_FIELD_ID.checkOut && activeButtonClassName
             )}
@@ -113,7 +112,7 @@ export function DateRangePicker({
       <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger />
         <PopoverContent
-          className="w-[360px] p-0 bg-white rounded-xl shadow-lg border-0 lg:-ml-10"
+          className="w-[340px] lg:w-[505px] p-0 bg-white rounded-xl shadow-lg border-0 lg:-ml-20"
           align="start"
           side="bottom"
           sideOffset={8}

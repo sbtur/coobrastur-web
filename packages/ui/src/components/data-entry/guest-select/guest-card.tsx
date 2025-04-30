@@ -18,7 +18,7 @@ export function GuestCard() {
   const { rooms, dispatch } = useGuest();
 
   return (
-    <div className="relative z-10">
+    <div className="w-full relative z-10">
       <Popover>
         <div className="grid gap-1.5">
           <Label
@@ -30,7 +30,7 @@ export function GuestCard() {
           <PopoverTrigger asChild>
             <button
               id="room-and-guests"
-              className="w-full font-secondary lg:w-[200px] p-2 px-3 justify-start text-gray-600 text-left font-semibold bg-white items-center flex gap-2 whitespace-nowrap rounded-md text-base border-gray-200 border-2 hover:bg-secondary-100 data-[state=open]:border-highlight-100 data-[state=open]:ring-highlight-100 data-[state=open]:transition-all data-[state=open]:duration-300 data-[state=open]:scale-105"
+              className="w-full font-secondary p-2 px-3 justify-start text-gray-600 text-left font-semibold bg-white items-center flex gap-2 whitespace-nowrap rounded-md text-base border-gray-200 border-2 hover:bg-secondary-100 data-[state=open]:border-highlight-100 data-[state=open]:ring-highlight-100 data-[state=open]:transition-all data-[state=open]:duration-300 data-[state=open]:scale-105"
               aria-label="Selecionar quarto e hóspedes"
               onClick={() => null}
             >
@@ -41,11 +41,11 @@ export function GuestCard() {
         </div>
 
         <PopoverContent
-          className="w-auto p-0 bg-white rounded-xl shadow-lg border-0 mt-3"
+          className="w-[353px] p-0 bg-white rounded-xl shadow-lg border-0 mt-3"
           align="start"
           side="bottom"
         >
-          <Card className="w-[380px] h-fit p-4 bg-white rounded-md">
+          <Card className="w-full h-fit p-4 bg-white rounded-md">
             <div className="space-y-4">
               {rooms.map(room => (
                 <RoomSection key={room.id} room={room} />
