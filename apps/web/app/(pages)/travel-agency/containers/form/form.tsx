@@ -7,7 +7,7 @@ import { Label } from '@coobrastur/ui/components/data-entry/label';
 
 export const Form = () => {
   return (
-    <div className=" mx-auto flex flex-col justify-center items-center mt-20 lg:mt-32">
+    <div id="formulario-consultor" className="mx-auto flex flex-col justify-center items-center mt-20 lg:mt-32">
       <Heading className="text-center max-w-[530px]">
         <Title size="xl">Quer se preparar para sua próxima viagem?</Title>
         <Text size="sm">
@@ -15,7 +15,7 @@ export const Form = () => {
           contato para planejar a sua próxima grande viagem.
         </Text>
       </Heading>
-      <form className=" p-8 rounded-2xl border border-neutral-300 w-full max-w-3xl mt-8 mb-20">
+      <form className=" p-6 rounded-2xl border border-neutral-300 lg:w-full lg:max-w-3xl mt-4 mb-20 mx-8">
         <div className="grid grid-cols lg:grid-cols-2 gap-6">
           <div className="space-y-1">
             <Label htmlFor="name">Nome</Label>
@@ -72,11 +72,11 @@ export const Form = () => {
             />
           </div>
         </div>
-        <div className="flex justify-between mx-auto mt-6">
+        <div className="flex justify-between mt-6">
           <Button variant="outline-white" className="shadow-none border">
             Cancel
           </Button>
-          <Button type="submit" className="w-fit">
+          <Button type="submit" className="w-3/6 lg:w-fit">
             Falar com especialista
           </Button>
         </div>

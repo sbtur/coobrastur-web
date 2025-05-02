@@ -11,26 +11,34 @@ import { Heading } from '@coobrastur/ui/components/data-display/heading';
 import { Button } from '@coobrastur/ui/components/data-entry/button';
 import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Badge } from '@coobrastur/ui/components/data-display/badge';
+import { Link } from '@coobrastur/ui/components/data-entry/link';
+import { ArrowDown } from '@ui/lib/icons';
+import { Icon } from '@coobrastur/ui/components/data-display/icon';
 
 export default async function TravelAgency() {
   return (
     <div>
-      <Section className="mt-28 bg-gradient-to-b from-white from-25% to-[#E2F2FF] rounded-[30px] mx-8 lg:h-[618px] lg:content-center overflow-hidden">
+      <Section className="mt-8 bg-gradient-to-b from-white from-25% to-[#E2F2FF] rounded-[30px] mx-8 lg:h-[618px] lg:content-center overflow-hidden">
         <Container>
           <div className="flex flex-col lg:flex-row justify-between">
-            <div className="lg:w-1/2">
-              <Heading>
+            <div className=" lg:text-left lg:w-1/2">
+              <Heading className="text-center items-center lg:text-left lg:items-start">
                 <Badge>AGÊNCIA DE VIAGENS</Badge>
-                <Title className="text-3xl lg:text-[56px] leading-none mt-4">
+                <Title size="xl" className="mt-4">
                   Complemente sua viagem
                 </Title>
-                <Text className="mt-4">
+                <Text size="sm" className="lg:text-[18px] mt-4">
                   Com nossa Agência exclusiva para assinantes, você garante uma
                   viagem completa com toda segurança e atendimento
                   personalizado.
                 </Text>
-                <Button className="mt-8 px-8 w-2/6">Fale com um agente</Button>
-
+                <Button className="mt-8 px-8 lg:w-2/6">
+                  Fale com um agente
+                </Button>
+                <Link href="#produtos-servicos" className="text-sm text-blue-500 lg:hidden">
+                  Produtos & Serviços
+                  <ArrowDown />
+                </Link>
                 <div className="hidden lg:flex w-full lg:w-[718px] mt-12 mx-auto gap-4 p-5 rounded-md bg-white shadow-lg justify-around">
                   {PARTNERS.map(partner => (
                     <div key={partner.alt} className="max-w-[130px]">
@@ -45,9 +53,7 @@ export default async function TravelAgency() {
                 </div>
               </Heading>
             </div>
-            <div
-              className="hidden lg:flex lg:w-1/2 mt-8 lg:mt-0 justify-end relative bottom-96 left-36"
-            >
+            <div className="hidden lg:flex lg:w-1/2 mt-8 lg:mt-0 justify-end relative bottom-96 left-36">
               <Image
                 src="/images/pages/travel-agency/passaporte.png"
                 alt="Passaportes"
