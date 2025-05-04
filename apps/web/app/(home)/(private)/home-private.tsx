@@ -1,8 +1,8 @@
 import { HeaderPrivate } from '@components/header';
 
-import { Accommodations } from '../(public)/containers/accommodations';
-import { Support } from '../(public)/containers/support';
-import { Testimonials } from '../(public)/containers/testimonials';
+import { ButtonsMenu } from './containers/buttons-menu';
+import { CarousselPrivate } from './containers/caroussel-private';
+import { Promotions } from './containers/promotions';
 
 import { Container } from '@ui/components/layouts/container';
 
@@ -11,12 +11,14 @@ export function HomePrivate() {
     <>
       <HeaderPrivate />
 
-      <Container as="main">
-        <Accommodations />
-
-        <Support />
-
-        <Testimonials />
+      <Container className="w-full" as="section">
+        <CarousselPrivate />
+      </Container>
+      <Container className="w-full py-4" as="section">
+        <ButtonsMenu />
+      </Container>
+      <Container className="w-full py-4" as="section">
+        <Promotions />
       </Container>
     </>
   );

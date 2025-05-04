@@ -22,7 +22,7 @@ import { Container } from '@ui/components/layouts/container';
 
 export function CarousselPrivate() {
   return (
-    <Container className="md:h-[450px] h-screen py-8 bg-gray-100 flex flex-col md:flex-row gap-1">
+    <Container className="md:h-[450px] py-8 bg-gray-100 flex flex-col md:flex-row gap-1">
       <div className="w-full flex flex-col md:flex-row gap-1">
         <Carousel className="w-full md:w-3/4 relative">
           <CarouselContent>
@@ -59,7 +59,7 @@ export function CarousselPrivate() {
           </div>
         </Carousel>
 
-        <div className="w-full md:w-1/4">
+        <div className="w-full md:w-1/4 hidden md:block">
           <CarrouselDetails />
         </div>
       </div>
