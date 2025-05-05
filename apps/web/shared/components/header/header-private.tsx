@@ -81,7 +81,7 @@ export const HeaderPrivate = () => {
               />
             </Link>
           </div>
-          <button onClick={() => signOut()}>Sair</button>
+          {/* <button onClick={() => signOut()}>Sair</button> */}
           <Menu menuItems={MENU_PRIVATE_ITEMS} />
           <div className="flex gap-8 items-center">
             <DropdownPlans />

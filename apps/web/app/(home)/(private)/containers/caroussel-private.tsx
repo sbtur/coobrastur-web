@@ -23,7 +23,7 @@ import { Container } from '@ui/components/layouts/container';
 export function CarousselPrivate() {
   return (
     <Container className="md:h-[450px] py-8 bg-gray-100 flex flex-col md:flex-row gap-1">
-      <div className="w-full flex flex-col md:flex-row gap-1">
+      <div className="w-full flex flex-col md:flex-row gap-1 px-10">
         <Carousel className="w-full md:w-3/4 relative">
           <CarouselContent>
             <CarouselItem className="relative">

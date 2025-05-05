@@ -22,6 +22,7 @@ import {
   HotelImageWrapper,
 } from '@ui/components/data-display/hotel-card';
 import { Icon } from '@ui/components/data-display/icon';
+import { Container } from '@ui/components/layouts/container';
 
 const PLACES = Array.from(Array(10).keys()).map(index => ({
   name: `Place ${index + 1}`,
@@ -31,7 +32,7 @@ const PLACES = Array.from(Array(10).keys()).map(index => ({
 
 export function Promotions() {
   return (
-    <>
+    <Container className="w-full py-4 px-10" as="section">
       <div className="items-center max-w-[600px] mx-auto text-center mb-10">
         <Badge variant="default" className="mb-5">
           Promocionais
@@ -81,10 +82,14 @@ export function Promotions() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <div className="absolute lg:left-[20px] top-1/3 translate-y-1/2 z-10">
+          <CarouselPrevious />
+        </div>
+        <div className="absolute lg:right-[20px] top-1/3 translate-y-1/2 z-10">
+          <CarouselNext />
+        </div>
         <CarouselDot />
       </Carousel>
-    </>
+    </Container>
   );
 }
