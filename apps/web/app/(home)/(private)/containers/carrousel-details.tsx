@@ -2,10 +2,15 @@ import { Calendar, CalendarCheck } from 'lucide-react';
 
 import { Text } from '@coobrastur/ui/components/data-display/text';
 
+import { Dropdown } from './dropdown';
+
 export function CarrouselDetails() {
   return (
     <div className="flex flex-col h-full">
       <div className="w-full h-full bg-primary-200 rounded-lg shadow-sm flex flex-col relative px-7 py-8 gap-1">
+        <div className="absolute top-4 right-4">
+          <Dropdown />
+        </div>
         <Text size="lg" className="text-white font-bold">
           Meus Planos
         </Text>
