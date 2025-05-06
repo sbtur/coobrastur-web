@@ -15,8 +15,40 @@ import {
 import { Icon } from '@ui/components/data-display/icon';
 import { ChevronDown, ChevronUp } from '@ui/lib/icons';
 
-export const Dropdown = () => {
+interface Plan {
+  id: string;
+  name: string;
+  type: string;
+  badges: {
+    type: 'warning' | 'neutral';
+    label: string;
+  }[];
+  days: number;
+  validity: {
+    start: string;
+    end: string;
+  };
+  installment?: {
+    year: number;
+    number: number;
+  };
+}
+
+export interface DropdownProps {
+  plans: Plan[];
+  onClose?: () => void;
+}
+
+export const Dropdown = ({ plans, onClose }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<Plan | null>(
+    plans[0] || null
+  );
+
+  const handleClose = () => {
+    setIsOpen(false);
+    onClose?.();
+  };
 
   return (
     <div className="relative w-[280px] z-10">
@@ -77,32 +109,62 @@ export const Dropdown = () => {
               className="w-full p-6"
             >
               <motion.div variants={contentVariants} className="grid gap-4">
-                <button className="px-4 py-2 text-gray-500 text-left border-2 border-highlight hover:border-highlight rounded-md bg-white">
-                  <p>
-                    <span className="font-normal">Silver Master</span>{' '}
-                    <span className="font-semibold">(7 Diárias)</span>
-                  </p>
-                  <p className="text-xs">Ano 1 - Parcela 6</p>
-                </button>
+                {plans.map(plan => (
+                  <button
+                    key={plan.id}
+                    onClick={() => setSelectedPlan(plan)}
+                    className={`px-4 py-2 text-gray-500 text-left border-2 ${
+                      selectedPlan?.id === plan.id
+                        ? 'border-highlight'
+                        : 'border-transparent'
+                    } hover:border-highlight rounded-md bg-white`}
+                  >
+                    <p>
+                      <span className="font-normal">{plan.name}</span>{' '}
+                      <span className="font-semibold">
+                        ({plan.days} Diárias)
+                      </span>
+                    </p>
+                    {plan.installment && (
+                      <p className="text-xs">
+                        Ano {plan.installment.year} - Parcela{' '}
+                        {plan.installment.number}
+                      </p>
+                    )}
+                  </button>
+                ))}
 
                 <Separator className="my-4" />
 
-                <div className="space-y-1">
-                  <div className="space-x-2">
-                    <Badge variant="warning">Gold</Badge>
-                    <Badge variant="neutral">Master</Badge>
-                  </div>
-                </div>
+                {selectedPlan && (
+                  <>
+                    <div className="space-y-1">
+                      <div className="space-x-2">
+                        {selectedPlan.badges.map((badge, index) => (
+                          <Badge key={index} variant={badge.type}>
+                            {badge.label}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
 
-                <div className="my-4">
-                  <p className="font-primary font-bold text-lg text-white">
-                    7 Diárias
-                  </p>
-                  <p className="font-primary text-xs text-white">
-                    Validade : 01/09/2023 a 31/08/2026
-                  </p>
-                </div>
-                <Button variant="default" className="w-full">
+                    <div className="my-4">
+                      <p className="font-primary font-bold text-lg text-white">
+                        {selectedPlan.days} Diárias
+                      </p>
+                      <p className="font-primary text-xs text-white">
+                        Validade: {selectedPlan.validity.start} a{' '}
+                        {selectedPlan.validity.end}
+                      </p>
+                    </div>
+                  </>
+                )}
+
+                <Button
+                  variant="default"
+                  className="w-full"
+                  onClick={handleClose}
+                >
                   Fechar
                 </Button>
                 <Link
