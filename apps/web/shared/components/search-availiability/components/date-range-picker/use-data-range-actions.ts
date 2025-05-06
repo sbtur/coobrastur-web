@@ -14,7 +14,7 @@ export const useDataRangeActions = ({
   defaultValue,
   onSelectDate,
 }: UseDataRangeActionsProps): UseDataRangeActionsReturn => {
-  const [date, setDate] = useState<DateRange | undefined>(defaultValue);
+  const [date, setDate] = useState<DateRange>(defaultValue);
   const [isOpen, setIsOpen] = useState(false);
   const [isActiveButton, setIsActiveButton] = useState<
     keyof typeof DATE_FIELD_ID | null
@@ -27,10 +27,13 @@ export const useDataRangeActions = ({
 
   const handleSelectDate = (date: DateRange) => {
     setDate(date);
-    onSelectDate({
-      checkIn: format(date?.from, "dd'/'MM'/'yyyy", { locale: ptBR }),
-      checkOut: format(date?.to, "dd'/'MM'/'yyyy", { locale: ptBR }),
-    });
+
+    if (date?.from && date?.to) {
+      onSelectDate({
+        checkIn: format(date.from, "dd'/'MM'/'yyyy", { locale: ptBR }),
+        checkOut: format(date.to, "dd'/'MM'/'yyyy", { locale: ptBR }),
+      });
+    }
   };
 
   useEffect(() => {

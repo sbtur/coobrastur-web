@@ -1,5 +1,6 @@
 import { DateRange, DayPicker } from 'react-day-picker';
 
+import { DateRangeFormatted } from '../../search-availiability';
 import { DATE_FIELD_ID } from './date-range-picker.constants';
 
 export type DateRangePickerProps = React.ComponentProps<typeof DayPicker> & {
@@ -9,12 +10,12 @@ export type DateRangePickerProps = React.ComponentProps<typeof DayPicker> & {
   minDays?: number;
   maxDays?: number;
   defaultValue?: DateRange;
-  onSelectDate?: (date: DateRange | undefined) => void;
+  onSelectDate: (date: DateRangeFormatted) => void;
 };
 
 export type UseDataRangeActionsProps = {
   defaultValue?: DateRange;
-  onSelectDate?: (date: any | undefined) => void;
+  onSelectDate: (date: DateRangeFormatted) => void;
 };
 
 export type UseDataRangeActionsReturn = {

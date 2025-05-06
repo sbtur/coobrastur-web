@@ -1,25 +1,29 @@
 'use client';
 import { CalendarCheckIcon, PlusCircle } from 'lucide-react';
 
-import { Card } from '../../data-display/card';
-import { Icon } from '../../data-display/icon';
-import { Button } from '../button';
-import { Label } from '../label';
-import { useGuest } from './guest-provider';
 import { RoomSection } from './room-section';
+import { Room, useGuestSelect } from './use-guest-select';
 
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from '@radix-ui/react-popover';
+import { Card } from '@ui/components/data-display/card';
+import { Icon } from '@ui/components/data-display/icon';
+import { Button } from '@ui/components/data-entry/button';
+import { Label } from '@ui/components/data-entry/label';
 
-export function GuestCard() {
-  const { rooms, dispatch } = useGuest();
+interface GuestSelectProps {
+  onSelectGuest: (rooms: Room[]) => void;
+}
+
+export const GuestSelect = ({ onSelectGuest }: GuestSelectProps) => {
+  const { rooms, dispatch, isOpen, setIsOpen } = useGuestSelect();
 
   return (
     <div className="w-full relative z-10">
-      <Popover>
+      <Popover open={isOpen} onOpenChange={setIsOpen}>
         <div className="grid gap-1.5">
           <Label
             htmlFor="room-and-guests"
@@ -32,7 +36,7 @@ export function GuestCard() {
               id="room-and-guests"
               className="w-full font-secondary p-2 px-3 justify-start text-gray-600 text-left font-semibold bg-white items-center flex gap-2 whitespace-nowrap rounded-md text-base border-gray-200 border-2 hover:bg-secondary-100 data-[state=open]:border-highlight-100 data-[state=open]:ring-highlight-100 data-[state=open]:transition-all data-[state=open]:duration-300 data-[state=open]:scale-105"
               aria-label="Selecionar quarto e hóspedes"
-              onClick={() => null}
+              onClick={() => setIsOpen(!isOpen)}
             >
               <Icon icon={CalendarCheckIcon} variant="primary" />
               Quarto 1, Hóspedes 2
@@ -48,7 +52,7 @@ export function GuestCard() {
           <Card className="w-full h-fit p-4 bg-white rounded-md">
             <div className="space-y-4">
               {rooms.map(room => (
-                <RoomSection key={room.id} room={room} />
+                <RoomSection key={room.id} room={room} dispatch={dispatch} />
               ))}
 
               <div className="space-y-4">
@@ -60,7 +64,13 @@ export function GuestCard() {
                   <PlusCircle className="h-3 w-3 uppercase" />
                   Adicionar quarto
                 </Button>
-                <Button className="w-full" onClick={() => null}>
+                <Button
+                  className="w-full"
+                  onClick={() => {
+                    onSelectGuest(rooms);
+                    setIsOpen(false);
+                  }}
+                >
                   Salvar
                 </Button>
               </div>
@@ -70,4 +80,4 @@ export function GuestCard() {
       </Popover>
     </div>
   );
-}
+};

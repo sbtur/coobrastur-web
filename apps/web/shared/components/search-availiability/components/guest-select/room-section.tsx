@@ -2,8 +2,6 @@ import { Dispatch } from 'react';
 
 import { Trash } from 'lucide-react';
 
-import { Badge } from '../../data-display/badge';
-import { Text } from '../../data-display/text';
 import { CounterButton } from './counter-button';
 import {
   Action,
@@ -12,6 +10,9 @@ import {
   MINIMAL_GUEST_CHILDREN,
   Room,
 } from './use-guest-select';
+
+import { Badge } from '@ui/components/data-display/badge';
+import { Text } from '@ui/components/data-display/text';
 
 interface RoomSectionProps {
   room: Room;

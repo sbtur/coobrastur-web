@@ -12,7 +12,11 @@ import { Icon } from '@ui/components/data-display/icon';
 import { Text } from '@ui/components/data-display/text';
 import { MapPin } from '@ui/lib/icons';
 
-export const Search = () => {
+interface SearchProps {
+  onSelectSearch: (search: any) => void;
+}
+
+export const Search = ({ onSelectSearch }: SearchProps) => {
   const { onChangeAutoCompleteSearch, searchPlaceResults } = useSearch();
 
   const handleOnSearch = async (value: string) => {
@@ -20,7 +24,7 @@ export const Search = () => {
   };
 
   const handleOnSelect = (value: AccommodationSearchAutoComplete) => {
-    console.log(value);
+    onSelectSearch({ hotelId: value.id });
   };
 
   return (

@@ -1,5 +1,4 @@
-'use client';
-import { createContext, Dispatch, useContext, useReducer } from 'react';
+import { useReducer, useState } from 'react';
 
 export interface Room {
   id: number;
@@ -7,20 +6,7 @@ export interface Room {
   children: number;
 }
 
-interface GuestContextData {
-  rooms: Room[];
-  dispatch: Dispatch<Action>;
-}
-
-const GuestContext = createContext<GuestContextData | undefined>(undefined);
-
-const initialRoom = {
-  id: 0,
-  adults: 1,
-  children: 0,
-};
-
-interface Action {
+export interface Action {
   type:
     | 'addRoom'
     | 'removeRoom'
@@ -30,6 +16,12 @@ interface Action {
     | 'decreaseChildren';
   payload?: Room;
 }
+
+const initialRoom = {
+  id: 0,
+  adults: 1,
+  children: 0,
+};
 
 export const MINIMAL_GUEST_CHILDREN = 0;
 export const MINIMAL_GUEST = 1;
@@ -117,20 +109,9 @@ const manageRoom = (state: Room[], action: Action): Room[] => {
   }
 };
 
-export function GuestProvider({ children }: { children: React.ReactNode }) {
+export const useGuestSelect = () => {
   const [rooms, dispatch] = useReducer(manageRoom, [initialRoom]);
+  const [isOpen, setIsOpen] = useState(false);
 
-  return (
-    <GuestContext.Provider value={{ rooms, dispatch }}>
-      {children}
-    </GuestContext.Provider>
-  );
-}
-
-export function useGuest() {
-  const context = useContext(GuestContext);
-  if (!context) {
-    throw new Error('useGuest deve ser usado dentro de um GuestProvider');
-  }
-  return context;
-}
+  return { rooms, dispatch, isOpen, setIsOpen };
+};
