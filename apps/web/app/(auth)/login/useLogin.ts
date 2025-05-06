@@ -26,12 +26,11 @@ export const useLogin = () => {
     startTransition(async () => {
       const response = await authenticate(values);
 
-      if (response.message) {
+      if ('success' in response && response.success) {
+        router.push('/');
+      } else {
         setFeedbackMessage(response.message || 'Erro ao fazer login');
-        return;
       }
-
-      // router.push('/');
     });
   };
 

@@ -7,11 +7,12 @@ export function useSearch() {
   const [searchPlaceResults, setSearchPlaceResults] = useState<
     AccommodationSearchAutoComplete[]
   >([]);
+
   const onChangeAutoCompleteSearch = async ({ query }: { query: string }) => {
     try {
       const accommodationsUseCase = makeAccommodationsUseCase();
       setSearchPlaceResults(
-        await accommodationsUseCase.searchAutoCompleteUseCase.exec(query),
+        await accommodationsUseCase.searchAutoCompleteUseCase.exec(query)
       );
     } catch (err) {
       console.error('Error on auto complete search', err);

@@ -9,15 +9,16 @@ export type DateRangePickerProps = React.ComponentProps<typeof DayPicker> & {
   minDays?: number;
   maxDays?: number;
   defaultValue?: DateRange;
+  onSelectDate?: (date: DateRange | undefined) => void;
 };
 
 export type UseDataRangeActionsProps = {
   defaultValue?: DateRange;
+  onSelectDate?: (date: DateRange | undefined) => void;
 };
 
 export type UseDataRangeActionsReturn = {
   activeButtonClassName: string;
-  setDate: React.Dispatch<React.SetStateAction<DateRange | undefined>>;
   date: DateRange | undefined;
   setIsOpen: (isOpen: boolean) => void;
   isOpen: boolean;
@@ -26,4 +27,5 @@ export type UseDataRangeActionsReturn = {
   setIsActiveButton: React.Dispatch<
     React.SetStateAction<keyof typeof DATE_FIELD_ID | null>
   >;
+  handleSelectDate: (date: DateRange | undefined) => void;
 };

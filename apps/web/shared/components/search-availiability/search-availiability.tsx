@@ -1,3 +1,4 @@
+'use client';
 import { InfoIcon } from 'lucide-react';
 
 import { Icon } from '@coobrastur/ui/components/data-display/icon';
@@ -12,13 +13,17 @@ import { Section } from '@coobrastur/ui/components/layouts/section';
 import { Search } from './components/search';
 
 export function SearchAvailiability() {
+  const onSelectDate = (date: any) => {
+    console.log(date);
+  };
+
   return (
     <Section>
       <Container className="flex flex-col items-center justify-center">
         <div className="bg-primary-300 rounded-[10px] py-10 px-8 grid gap-4 lg:gap-6 w-full">
           <div className="grid gap-4 lg:grid-cols-[28.17%_34.87%_22.35%_96px] xl:grid-cols-[32.17%_34.87%_22.35%_96px] lg:items-center">
             <Search />
-            <DateRangePicker />
+            <DateRangePicker onSelectDate={onSelectDate} />
             <GuestSelect />
             <Button className="self-end">Buscar</Button>
           </div>

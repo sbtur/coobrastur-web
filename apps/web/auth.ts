@@ -9,6 +9,14 @@ declare module 'next-auth' {
     accessToken: string;
     user: string;
   }
+
+  interface Session {
+    user: {
+      isActive: boolean;
+      accessToken: string;
+      user: string;
+    };
+  }
 }
 
 const result = NextAuth({
@@ -17,6 +25,29 @@ const result = NextAuth({
   },
   session: {
     strategy: 'jwt',
+  },
+  callbacks: {
+    async session({ session, token }) {
+      return {
+        ...session,
+        user: {
+          isActive: token.isActive as boolean,
+          accessToken: token.accessToken as string,
+          user: token.user as string,
+        },
+      };
+    },
+    async jwt({ token, user }) {
+      if (user) {
+        return {
+          ...token,
+          isActive: user.isActive,
+          accessToken: user.accessToken,
+          user: user.user,
+        };
+      }
+      return token;
+    },
   },
   providers: [
     Credentials({
@@ -33,6 +64,7 @@ const result = NextAuth({
 
           return user;
         } catch (error) {
+          console.error('Error on AuthJS', error);
           return null;
         }
       },

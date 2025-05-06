@@ -9,6 +9,7 @@ import {
 
 export const useDataRangeActions = ({
   defaultValue,
+  onSelectDate,
 }: UseDataRangeActionsProps): UseDataRangeActionsReturn => {
   const [date, setDate] = useState<DateRange | undefined>(defaultValue);
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +21,11 @@ export const useDataRangeActions = ({
     'border-highlight-100 ring-highlight-100 transition-all duration-300 scale-105';
 
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleSelectDate = (date: DateRange | undefined) => {
+    setDate(date);
+    onSelectDate?.(date);
+  };
 
   useEffect(() => {
     function handleChangeDateButtonFocus(event: MouseEvent) {
@@ -63,7 +69,7 @@ export const useDataRangeActions = ({
 
   return {
     activeButtonClassName,
-    setDate,
+    handleSelectDate,
     date,
     setIsOpen,
     isOpen,

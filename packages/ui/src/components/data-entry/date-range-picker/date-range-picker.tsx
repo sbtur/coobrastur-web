@@ -24,17 +24,18 @@ export function DateRangePicker({
   minDays,
   maxDays,
   defaultValue,
+  onSelectDate,
 }: DateRangePickerProps) {
   const {
     activeButtonClassName,
-    setDate,
     date,
     setIsOpen,
     isOpen,
     containerRef,
     isActiveButton,
     setIsActiveButton,
-  } = useDataRangeActions({ defaultValue });
+    handleSelectDate,
+  } = useDataRangeActions({ defaultValue, onSelectDate });
 
   return (
     <div className="w-full flex flex-col" ref={containerRef}>
@@ -112,7 +113,7 @@ export function DateRangePicker({
       <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger />
         <PopoverContent
-          className="w-[340px] lg:w-[505px] p-0 bg-white rounded-xl shadow-lg border-0 lg:-ml-20"
+          className="w-[340px] lg:w-[505px] p-0 bg-white rounded-xl shadow-lg border-0 lg:-ml-5"
           align="start"
           side="bottom"
           sideOffset={8}
@@ -122,7 +123,7 @@ export function DateRangePicker({
             mode="range"
             defaultMonth={date?.from}
             selected={date}
-            onSelect={setDate}
+            onSelect={handleSelectDate}
             numberOfMonths={2}
             min={minDays}
             max={maxDays}

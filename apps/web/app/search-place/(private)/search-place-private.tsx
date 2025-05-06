@@ -21,7 +21,7 @@ export async function SearchPlacePrivate({
 }) {
   return (
     <>
-      {/* <HeaderPrivate /> */}
+      <HeaderPrivate />
       <SearchAvailiability />
       <main className="flex-1"></main>
       <Footer />
