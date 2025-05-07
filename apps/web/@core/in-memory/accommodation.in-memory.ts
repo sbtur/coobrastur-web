@@ -1,4 +1,4 @@
-import { httpClient } from '@/infra/http-client/http-client';
+import { accommodationsListDetailsMock } from '@/shared/mocks/accommodations-list-details';
 
 import {
   ApiAccommodationDetailListResponse,
@@ -7,22 +7,16 @@ import {
   ApiAccommodationItemResponse,
   ApiAccommodationSearchAutoCompleteResponse,
   IAccommodationService,
-} from './accommodation.interface';
+} from '../accommodations/accommodation.interface';
 
-export function accommodationService(): IAccommodationService {
+export function accommodationInMemory(): IAccommodationService {
   return {
     async getAccommodationsByCityId({
       cityId,
     }: {
       cityId: string;
     }): Promise<ApiAccommodationItemResponse[]> {
-      const response = await httpClient
-        .get<
-          ApiAccommodationItemResponse[]
-        >(`Hotel/ListHotels?CityID=${cityId}`)
-        .json();
-
-      return response;
+      return [];
     },
 
     async getAccommodationsAutoCompleteByQuery({
@@ -30,13 +24,7 @@ export function accommodationService(): IAccommodationService {
     }: {
       query: string;
     }): Promise<ApiAccommodationSearchAutoCompleteResponse[]> {
-      const response = await httpClient
-        .get<
-          ApiAccommodationSearchAutoCompleteResponse[]
-        >(`Hotel/SearchAutoComplete?Texto=${query}`)
-        .json();
-
-      return response;
+      return [];
     },
 
     async getAccommodationFeatures({
@@ -44,13 +32,7 @@ export function accommodationService(): IAccommodationService {
     }: {
       hotelId: string;
     }): Promise<ApiAccommodationFeaturesResponse[]> {
-      const response = await httpClient
-        .get<
-          ApiAccommodationFeaturesResponse[]
-        >(`Hotel/HotelFeatures?HotCode=${hotelId}`)
-        .json();
-
-      return response;
+      return [];
     },
 
     async getAccommodationDetail({
@@ -58,13 +40,7 @@ export function accommodationService(): IAccommodationService {
     }: {
       hotelId: string;
     }): Promise<ApiAccommodationDetailSummaryResponse> {
-      const response = await httpClient
-        .get<ApiAccommodationDetailSummaryResponse>(
-          `Hotel/InfoHotel?HotelID=${hotelId}`
-        )
-        .json();
-
-      return response;
+      return {};
     },
 
     toAccommodationStaticList(accommodation: any): Omit<any, 'city' | 'state'> {
@@ -77,11 +53,11 @@ export function accommodationService(): IAccommodationService {
     },
 
     async postAccommodationListDetailed(): Promise<ApiAccommodationDetailListResponse> {
-      const response = await httpClient
-        .post<ApiAccommodationDetailListResponse>(`Hotel/GetHotels`)
-        .json();
-
-      return response;
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve(accommodationsListDetailsMock);
+        }, 1000);
+      });
     },
   };
 }

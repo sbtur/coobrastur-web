@@ -1,4 +1,6 @@
 'use client';
+import { useMemo } from 'react';
+
 import { CalendarCheckIcon, PlusCircle } from 'lucide-react';
 
 import { RoomSection } from './room-section';
@@ -21,6 +23,10 @@ interface GuestSelectProps {
 export const GuestSelect = ({ onSelectGuest }: GuestSelectProps) => {
   const { rooms, dispatch, isOpen, setIsOpen } = useGuestSelect();
 
+  const totalGuest = useMemo(() => {
+    return rooms.reduce((acc, room) => acc + room.adults + room.children, 0);
+  }, [rooms]);
+
   return (
     <div className="w-full relative z-10">
       <Popover open={isOpen} onOpenChange={setIsOpen}>
@@ -39,7 +45,7 @@ export const GuestSelect = ({ onSelectGuest }: GuestSelectProps) => {
               onClick={() => setIsOpen(!isOpen)}
             >
               <Icon icon={CalendarCheckIcon} variant="primary" />
-              Quarto 1, Hóspedes 2
+              Quarto {rooms.length}, Hóspedes {totalGuest}
             </button>
           </PopoverTrigger>
         </div>

@@ -39,6 +39,47 @@ export type ApiAccommodationDetailSummaryResponse = {
   };
 };
 
+export type ApiAccommodationDetailListResponse = {
+  neighborhood: {
+    description: string;
+  };
+  hotelsInfo: {
+    id: number;
+    hotelCode: number;
+    hotelTradeName: string;
+    hotelNeighborhood: string;
+    address: string;
+    homePhone: string;
+    homeEmail: string;
+    hotelHomePage: string;
+    features: string[] | null;
+    roomFeatures: string[] | null;
+    byRequest: boolean;
+    availabilityLink: boolean;
+    datesLink: boolean;
+    newSearchLink: boolean;
+    network: number;
+    additionalHomePageNote: string;
+    additionalDescriptionForHomePage: string;
+    text: string | null;
+    additionalText: string;
+    promotion: number;
+    order: number;
+    errors: number;
+    totalPages: number;
+    totalHotels: number;
+    gallery: string[] | null;
+    category: string;
+    extra: number;
+    totalDays: number;
+    hotelValues: {
+      typeCode: number;
+      description: string;
+      value: number;
+    }[];
+  }[];
+};
+
 export interface IAccommodationService {
   getAccommodationsByCityId({
     cityId,
@@ -61,4 +102,5 @@ export interface IAccommodationService {
     hotelId: string;
   }): Promise<ApiAccommodationDetailSummaryResponse>;
   toAccommodationStaticList(accommodation: any): Omit<any, 'city' | 'state'>;
+  postAccommodationListDetailed(): Promise<ApiAccommodationDetailListResponse>;
 }
