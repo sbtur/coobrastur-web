@@ -39,10 +39,8 @@ export function SearchAvailiability() {
   };
 
   const onSubmit = () => {
-    console.log(dateRef.current, guestRef.current, searchRef.current);
-
     router.push(
-      `?hotel=${searchRef.current}&checkIn=${dateRef.current.checkIn}&checkOut=${dateRef.current.checkOut}`
+      `?code=${searchRef.current}&startDate=${dateRef.current.checkIn}&endDate=${dateRef.current.checkOut}`
     );
   };
   return (

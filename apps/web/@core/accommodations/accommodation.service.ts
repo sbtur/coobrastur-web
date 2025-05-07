@@ -6,6 +6,7 @@ import {
   ApiAccommodationFeaturesResponse,
   ApiAccommodationItemResponse,
   ApiAccommodationSearchAutoCompleteResponse,
+  ApiAccomodationDetailListParams,
   IAccommodationService,
 } from './accommodation.interface';
 
@@ -76,9 +77,13 @@ export function accommodationService(): IAccommodationService {
       };
     },
 
-    async postAccommodationListDetailed(): Promise<ApiAccommodationDetailListResponse> {
+    async postAccommodationListDetailed(
+      params: ApiAccomodationDetailListParams
+    ): Promise<ApiAccommodationDetailListResponse> {
       const response = await httpClient
-        .post<ApiAccommodationDetailListResponse>(`Hotel/GetHotels`)
+        .post<ApiAccommodationDetailListResponse>(`Hotel/GetHotels`, {
+          json: params,
+        })
         .json();
 
       return response;

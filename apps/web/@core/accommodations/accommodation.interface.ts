@@ -39,6 +39,49 @@ export type ApiAccommodationDetailSummaryResponse = {
   };
 };
 
+export enum ReservationType {
+  ALL = 0,
+  IMMEDIATE = 1,
+  ON_REQUEST = 2,
+}
+
+export enum ExtraType {
+  ALL = 0,
+  WITH_EXTRA = 1,
+  WITHOUT_EXTRA = 2,
+}
+
+export enum NetworkTypeCode {
+  Silver,
+  Gold,
+  Diamond,
+}
+
+export type ApiAccomodationDetailListParams = {
+  code: number;
+  startDate: string | null;
+  endDate: string | null;
+  roomQuantity: number;
+  characteristicCodes?: string;
+  networkTypeCode?: NetworkTypeCode;
+  divCode?: string;
+  planType?: string;
+  immediate?: ReservationType;
+  extras?: ExtraType;
+  neighborhood?: string;
+  adultsRoom1: number;
+  adultsRoom2: number;
+  adultsRoom3: number;
+  adultsRoom4: number;
+  childrenRoom1: number;
+  childrenRoom2: number;
+  childrenRoom3: number;
+  childrenRoom4: number;
+  childrenAges: string;
+  page?: number;
+  recordsPerPage?: number;
+};
+
 export type ApiAccommodationDetailListResponse = {
   neighborhood: {
     description: string;
@@ -102,5 +145,7 @@ export interface IAccommodationService {
     hotelId: string;
   }): Promise<ApiAccommodationDetailSummaryResponse>;
   toAccommodationStaticList(accommodation: any): Omit<any, 'city' | 'state'>;
-  postAccommodationListDetailed(): Promise<ApiAccommodationDetailListResponse>;
+  postAccommodationListDetailed(
+    params: ApiAccomodationDetailListParams
+  ): Promise<ApiAccommodationDetailListResponse>;
 }

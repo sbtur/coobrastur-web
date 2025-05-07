@@ -2,7 +2,10 @@ import { formatTextToCapitalizeCase } from '@/shared/helpers/format-text-to-capi
 import { FeatureKey, FEATURES_DATA } from '@/shared/utils/data/features';
 
 import { AccommodationError } from '../accommodation.errors';
-import { IAccommodationService } from '../accommodation.interface';
+import {
+  ApiAccomodationDetailListParams,
+  IAccommodationService,
+} from '../accommodation.interface';
 import { AccommodationFeatures } from './accommodation-features.use-case';
 
 export type AccommodationListDetailedUseCaseResponse = {
@@ -34,9 +37,11 @@ export function accommodationListDetailedUseCase(
   service: IAccommodationService
 ) {
   return {
-    async exec(): Promise<AccommodationListDetailedUseCaseResponse[]> {
+    async exec(
+      params: ApiAccomodationDetailListParams
+    ): Promise<AccommodationListDetailedUseCaseResponse[]> {
       try {
-        const response = await service.postAccommodationListDetailed();
+        const response = await service.postAccommodationListDetailed(params);
 
         const accommodationList = response.hotelsInfo.map(accommodation => {
           const features = accommodation.features?.map(feature => {

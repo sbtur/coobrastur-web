@@ -15,11 +15,7 @@ export const metadata: Metadata = {
   description: 'Busque pelos melhores hotéis do Brasil',
 };
 
-export async function SearchPlacePrivate({
-  searchParams,
-}: {
-  searchParams: Promise<{ s: string }>;
-}) {
+export async function SearchPlacePrivate() {
   return (
     <>
       <HeaderPrivate />
