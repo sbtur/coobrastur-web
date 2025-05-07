@@ -20,8 +20,36 @@ import {
 import { Container } from '@ui/components/layouts/container';
 
 export function CarousselPrivate() {
+  const plans = [
+    {
+      id: '1897854567',
+      name: 'Silver Master',
+      type: 'silver',
+      badges: [
+        { type: 'warning' as const, label: 'Gold' },
+        { type: 'neutral' as const, label: 'Master' },
+      ],
+      days: 7,
+      validity: {
+        start: '01/09/2023',
+        end: '31/08/2026',
+      },
+      installment: {
+        year: 1,
+        number: 6,
+      },
+    },
+  ];
+
+  const lastReservation = {
+    id: '1897854567',
+    name: 'Sky Borges Hotel Alpenharus',
+    checkin: '10/05/2025',
+    checkout: '10/05/2025',
+  };
+
   return (
-    <Container className="md:h-[450px] py-8 bg-gray-100 flex flex-col md:flex-row gap-1">
+    <Container className="md:h-[480px] py-8 bg-gray-100 flex flex-col md:flex-row gap-1">
       <div className="w-full flex flex-col md:flex-row gap-1 px-10">
         <Carousel className="w-full md:w-3/4 relative">
           <CarouselContent>
@@ -59,7 +87,7 @@ export function CarousselPrivate() {
         </Carousel>
 
         <div className="w-full md:w-1/4 hidden md:block">
-          <CarrouselDetails />
+          <CarrouselDetails plans={plans} lastReservation={lastReservation} />
         </div>
       </div>
     </Container>
