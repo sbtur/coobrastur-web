@@ -86,7 +86,7 @@ export function CarousselPrivate() {
           </div>
         </Carousel>
 
-        <div className="w-full md:w-1/4 hidden md:block">
+        <div className="w-full md:w-1/4 md:block">
           <CarrouselDetails plans={plans} lastReservation={lastReservation} />
         </div>
       </div>
