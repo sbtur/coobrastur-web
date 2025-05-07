@@ -6,6 +6,8 @@ import { Badge } from '@coobrastur/ui/components/data-display/badge';
 import { Separator } from '@coobrastur/ui/components/data-display/separator';
 import { Button } from '@coobrastur/ui/components/data-entry/button';
 
+import { DaysBadge } from './days-badge';
+
 import { AnimatePresence, motion } from '@lib/motion';
 import {
   buttonVariants,
@@ -137,27 +139,11 @@ export const Dropdown = ({ plans, onClose }: DropdownProps) => {
                 <Separator className="my-4" />
 
                 {selectedPlan && (
-                  <>
-                    <div className="space-y-1">
-                      <div className="space-x-2">
-                        {selectedPlan.badges.map((badge, index) => (
-                          <Badge key={index} variant={badge.type}>
-                            {badge.label}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="my-4">
-                      <p className="font-primary font-bold text-lg text-white">
-                        {selectedPlan.days} Diárias
-                      </p>
-                      <p className="font-primary text-xs text-white">
-                        Validade: {selectedPlan.validity.start} a{' '}
-                        {selectedPlan.validity.end}
-                      </p>
-                    </div>
-                  </>
+                  <DaysBadge
+                    days={selectedPlan.days}
+                    validity={selectedPlan.validity}
+                    badges={selectedPlan.badges}
+                  />
                 )}
 
                 <Button

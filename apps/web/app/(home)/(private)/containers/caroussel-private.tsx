@@ -1,4 +1,3 @@
-// import CarouselComponent from '@ui/components/data-display/caroussel';
 import Image from 'next/image';
 
 import { ArrowRightIcon } from 'lucide-react';

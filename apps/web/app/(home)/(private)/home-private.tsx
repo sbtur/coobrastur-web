@@ -1,5 +1,6 @@
 import { HeaderPrivate } from '@components/header';
 
+import { Partners } from '../(public)/containers/partners';
 import { Support } from '../(public)/containers/support';
 import { ButtonsMenu } from './containers/buttons-menu';
 import { CarousselPrivate } from './containers/caroussel-private';
@@ -20,6 +21,8 @@ export function HomePrivate() {
       <Support />
 
       <ShareForm />
+
+      <Partners />
     </>
   );
 }
