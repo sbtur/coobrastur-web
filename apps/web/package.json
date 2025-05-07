@@ -12,6 +12,7 @@
   "dependencies": {
     "@coobrastur/ui": "workspace:*",
     "class-variance-authority": "^0.7.0",
+    "date-fns": "^4.1.0",
     "embla-carousel-class-names": "^8.5.2",
     "jwt-decode": "^4.0.0",
     "ky": "^1.8.1",

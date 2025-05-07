@@ -22,7 +22,7 @@ const textVariants = cva('font-secondary', {
     variant: {
       base: 'text-text-body',
       primary: 'text-text-primary-300',
-      highlight: 'text-highlight-100',
+      highlight: 'text-text-highlight',
       success: 'text-text-success-300',
       warning: 'text-text-warning-300',
       danger: 'text-text-danger-300',

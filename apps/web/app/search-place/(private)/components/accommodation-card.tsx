@@ -1,9 +1,4 @@
-import {
-  ArrowRight,
-  CalendarClock,
-  CalendarMinus,
-  Receipt,
-} from 'lucide-react';
+import { ArrowRight, CalendarMinus, Receipt } from 'lucide-react';
 
 import { Badge } from '@coobrastur/ui/components/data-display/badge';
 import { Icon } from '@coobrastur/ui/components/data-display/icon';
@@ -20,6 +15,9 @@ import {
   CATEGORY_COLORS,
   CATEGORY_LABELS,
 } from '@/shared/utils/plans/categories';
+
+import { ByRequestButton } from './by-request-dialog/by-request-button';
+import { ByRequestDialog } from './by-request-dialog/by-request-dialog';
 
 import {
   Carousel,
@@ -48,6 +46,13 @@ export const AccommodationCard = ({
     extra,
     totalDays,
   } = accommodation;
+
+  const byResquestDialogDescription = {
+    name,
+    category,
+    street,
+    totalDays,
+  };
 
   return (
     <div className="flex min-h-[330px]">
@@ -129,10 +134,7 @@ export const AccommodationCard = ({
             ) : null}
 
             {byRequest ? (
-              <Button variant="secondary">
-                Solicitar Reserva{' '}
-                <Icon icon={CalendarClock} className="w-4 h-4 text-white" />
-              </Button>
+              <ByRequestButton accommodation={byResquestDialogDescription} />
             ) : null}
 
             {availability ? (
