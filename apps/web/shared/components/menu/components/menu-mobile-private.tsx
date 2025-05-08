@@ -1,4 +1,7 @@
 'use client';
+import { signOut } from 'next-auth/react';
+
+import { ArrowRight, Calendar, LogInIcon } from 'lucide-react';
 
 import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Title } from '@coobrastur/ui/components/data-display/title';
@@ -14,8 +17,9 @@ import {
   SheetContent,
   SheetTrigger,
 } from '@ui/components/data-display/sheet';
+import { Button } from '@ui/components/data-entry/button';
 import { NavigationMenu } from '@ui/components/navigation/menu';
-import { MenuIcon } from '@ui/lib/icons';
+import { Heart, MenuIcon, Plus, User } from '@ui/lib/icons';
 
 export const MenuMobilePrivate = ({ menus }: { menus: IMenuItem[] }) => {
   const plans = [
@@ -52,6 +56,51 @@ export const MenuMobilePrivate = ({ menus }: { menus: IMenuItem[] }) => {
             <Text size="sm">Seja bem-vindo(a)</Text>
 
             <CarrouselDetails plans={plans} displayLastReservation={false} />
+            <div className="flex w-full mt-4">
+              <div className="flex gap-2 flex-wrap">
+                <Button
+                  variant="outline-secondary"
+                  className="border-2 shadow-none border-width-2 border-gray-200 font-normal text-neutral-500 text-base flex flex-row justify-start gap-2 px-4 py-4 w-full"
+                >
+                  <User size={16} className="text-primary-300 w-6 h-6" />
+                  <span>Minha Conta</span>
+                </Button>
+
+                <Button
+                  variant="outline-secondary"
+                  className="border-2 shadow-none border-width-2 border-gray-200 font-normal text-neutral-500 text-base flex flex-row justify-start gap-2 px-4 py-4 w-full"
+                >
+                  <Calendar size={16} className="text-primary-300" />
+                  <span className="md:block">Minhas Reservas</span>
+                </Button>
+
+                <Button
+                  variant="outline-secondary"
+                  className="border-2 shadow-none border-width-2 border-gray-200 font-normal text-neutral-500 text-base flex flex-row justify-start gap-2 px-4 py-4 w-full"
+                >
+                  <Heart size={16} className="text-primary-300" />
+                  <span className="md:block">Meus Favoritos</span>
+                </Button>
+
+                <Button
+                  variant="outline-secondary"
+                  className="border-2 shadow-none border-width-2 border-gray-200 font-normal text-neutral-500 text-base flex flex-row justify-start gap-2 px-4 py-4 w-full"
+                >
+                  <Plus size={16} className="text-primary-300" />
+                  <span className="md:block">Indique Mais +</span>
+                </Button>
+
+                <div className="flex flex-col gap-2 w-full mt-4">
+                  <button
+                    onClick={() => signOut()}
+                    className="flex items-center justify-end gap-1 text-neutral-500 text-sm hover:text-primary-300 transition-colors"
+                  >
+                    Sair da conta
+                    <Icon icon={LogInIcon} className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </NavigationMenu>
       </SheetContent>
