@@ -34,14 +34,16 @@ interface LastReservation {
 export function CarrouselDetails({
   plans,
   lastReservation,
+  displayLastReservation = true,
 }: {
   plans: Plan[];
-  lastReservation: LastReservation;
+  lastReservation?: LastReservation;
+  displayLastReservation?: boolean;
 }) {
   return (
     <div className="flex flex-col h-full">
       <div className="w-full h-full bg-primary-200 rounded-lg shadow-sm flex flex-col relative px-7 py-8 gap-1">
-        <div className="absolute top-4 right-4">
+        <div className="absolute top-4 right-0">
           <Dropdown plans={plans} />
         </div>
         {plans.length > 1 ? (
@@ -82,37 +84,39 @@ export function CarrouselDetails({
           Saiba mais
         </Text>
       </div>
-      <div className="w-full h-full bg-secondary-200 rounded-lg shadow-sm flex flex-col relative -mt-[20px] px-7 py-8 gap-2">
-        {lastReservation ? (
-          <>
-            <Text size="lg" className="text-primary-300 font-bold truncate">
-              {lastReservation.name}
-            </Text>
-            <div className="flex gap-6">
-              <div className="flex items-center gap-2">
-                <Calendar size={16} />
-                {lastReservation.checkin}
+      {displayLastReservation && (
+        <div className="w-full h-full bg-secondary-200 rounded-lg shadow-sm flex flex-col relative -mt-[20px] px-7 py-8 gap-2">
+          {lastReservation ? (
+            <>
+              <Text size="lg" className="text-primary-300 font-bold truncate">
+                {lastReservation.name}
+              </Text>
+              <div className="flex gap-6">
+                <div className="flex items-center gap-2">
+                  <Calendar size={16} />
+                  {lastReservation.checkin}
+                </div>
+                <div className="flex items-center gap-2">
+                  <CalendarCheck size={16} />
+                  {lastReservation.checkout}
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <CalendarCheck size={16} />
-                {lastReservation.checkout}
-              </div>
-            </div>
-            <Text size="sm" className="text-primary-100 font-bold underline">
-              Ver Voucher
-            </Text>
-          </>
-        ) : (
-          <>
-            <Text size="sm" className="text-primary-100 font-bold underline">
-              Seu próximo destino começa aqui
-            </Text>
-            <Text size="sm" className="text-primary-100">
-              Garanta sua reserva
-            </Text>
-          </>
-        )}
-      </div>
+              <Text size="sm" className="text-primary-100 font-bold underline">
+                Ver Voucher
+              </Text>
+            </>
+          ) : (
+            <>
+              <Text size="sm" className="text-primary-100 font-bold underline">
+                Seu próximo destino começa aqui
+              </Text>
+              <Text size="sm" className="text-primary-100">
+                Garanta sua reserva
+              </Text>
+            </>
+          )}
+        </div>
+      )}
     </div>
   );
 }

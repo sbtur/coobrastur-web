@@ -82,7 +82,7 @@ export const HeaderPrivate = () => {
             </Link>
           </div>
           {/* <button onClick={() => signOut()}>Sair</button> */}
-          <Menu menuItems={MENU_PRIVATE_ITEMS} />
+          <Menu menuItems={MENU_PRIVATE_ITEMS} isAuthenticated={true} />
           <div className="hidden md:flex gap-8 items-center">
             <DropdownPlans />
             <div className="flex gap-2 items-center">
