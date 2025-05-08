@@ -1,15 +1,12 @@
 'use client';
 import { signOut } from 'next-auth/react';
 
-import { ArrowRight, Calendar, LogInIcon } from 'lucide-react';
+import { Calendar, LogInIcon } from 'lucide-react';
 
 import { Text } from '@coobrastur/ui/components/data-display/text';
 import { Title } from '@coobrastur/ui/components/data-display/title';
 
-import { Link } from '@components/link';
-
 import { CarrouselDetails } from '@/app/(home)/(private)/containers/carrousel-details';
-import { IMenuItem } from '@/shared/types/menu.types';
 
 import { Icon } from '@ui/components/data-display/icon';
 import {
@@ -21,7 +18,7 @@ import { Button } from '@ui/components/data-entry/button';
 import { NavigationMenu } from '@ui/components/navigation/menu';
 import { Heart, MenuIcon, Plus, User } from '@ui/lib/icons';
 
-export const MenuMobilePrivate = ({ menus }: { menus: IMenuItem[] }) => {
+export const MenuMobilePrivate = () => {
   const plans = [
     {
       id: '1897854567',
@@ -49,7 +46,7 @@ export const MenuMobilePrivate = ({ menus }: { menus: IMenuItem[] }) => {
           <Icon icon={MenuIcon} className="h-8 w-8 text-primary-200" />
         </button>
       </SheetTrigger>
-      <SheetContent className="bg-gray-100 rounded-l-lg">
+      <SheetContent className="bg-gray-100 rounded-l-lg h-full overflow-y-auto">
         <NavigationMenu>
           <div className="flex flex-col gap-2">
             <Title>Olá, Igor</Title>

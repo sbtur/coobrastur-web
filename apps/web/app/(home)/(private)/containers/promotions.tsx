@@ -82,10 +82,10 @@ export function Promotions() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="absolute lg:left-[20px] top-1/3 translate-y-1/2 z-10">
+        <div className="absolute lg:left-[20px] top-1/3 translate-y-1/2 z-10 hidden lg:block">
           <CarouselPrevious />
         </div>
-        <div className="absolute lg:right-[20px] top-1/3 translate-y-1/2 z-10">
+        <div className="absolute lg:right-[20px] top-1/3 translate-y-1/2 z-10 hidden lg:block">
           <CarouselNext />
         </div>
         <CarouselDot />
