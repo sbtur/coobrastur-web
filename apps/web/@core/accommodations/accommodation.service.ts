@@ -1,6 +1,8 @@
 import { httpClient } from '@/infra/http-client/http-client';
 
 import {
+  ApiAccommodationAvailableDatesParams,
+  ApiAccommodationAvailableDatesResponse,
   ApiAccommodationDetailListResponse,
   ApiAccommodationDetailSummaryResponse,
   ApiAccommodationFeaturesResponse,
@@ -84,6 +86,21 @@ export function accommodationService(): IAccommodationService {
         .post<ApiAccommodationDetailListResponse>(`Hotel/GetHotels`, {
           json: params,
         })
+        .json();
+
+      return response;
+    },
+
+    async getAvailableDates({
+      HotCode,
+      YearMonth,
+    }: ApiAccommodationAvailableDatesParams): Promise<
+      ApiAccommodationAvailableDatesResponse[]
+    > {
+      const response = await httpClient
+        .get<
+          ApiAccommodationAvailableDatesResponse[]
+        >(`Hotel/AvailableDate?HotCode=${HotCode}&YearMonth=${YearMonth}`)
         .json();
 
       return response;

@@ -123,6 +123,19 @@ export type ApiAccommodationDetailListResponse = {
   }[];
 };
 
+export type ApiAccommodationAvailableDatesParams = {
+  HotCode: number;
+  YearMonth: string;
+};
+
+export type ApiAccommodationAvailableDatesResponse = {
+  date: string;
+  color: number;
+  block: string;
+  situation: number;
+  text: string;
+};
+
 export interface IAccommodationService {
   getAccommodationsByCityId({
     cityId,
@@ -148,4 +161,7 @@ export interface IAccommodationService {
   postAccommodationListDetailed(
     params: ApiAccomodationDetailListParams
   ): Promise<ApiAccommodationDetailListResponse>;
+  getAvailableDates(
+    params: ApiAccommodationAvailableDatesParams
+  ): Promise<ApiAccommodationAvailableDatesResponse[]>;
 }

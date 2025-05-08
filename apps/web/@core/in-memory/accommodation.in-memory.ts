@@ -1,6 +1,9 @@
 import { accommodationsListDetailsMock } from '@/shared/mocks/accommodations-list-details';
+import { AVAILABLE_DATES_MOCK } from '@/shared/mocks/available-dates';
 
 import {
+  ApiAccommodationAvailableDatesParams,
+  ApiAccommodationAvailableDatesResponse,
   ApiAccommodationDetailListResponse,
   ApiAccommodationDetailSummaryResponse,
   ApiAccommodationFeaturesResponse,
@@ -56,6 +59,16 @@ export function accommodationInMemory(): IAccommodationService {
       return new Promise(resolve => {
         setTimeout(() => {
           resolve(accommodationsListDetailsMock);
+        }, 1000);
+      });
+    },
+
+    async getAvailableDates(
+      _: ApiAccommodationAvailableDatesParams
+    ): Promise<ApiAccommodationAvailableDatesResponse[]> {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve(AVAILABLE_DATES_MOCK);
         }, 1000);
       });
     },

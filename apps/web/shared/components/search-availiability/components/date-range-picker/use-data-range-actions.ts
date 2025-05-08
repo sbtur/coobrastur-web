@@ -25,13 +25,17 @@ export const useDataRangeActions = ({
 
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const handleSelectDate = (date: DateRange) => {
+  const handleSelectDate = (date: DateRange | undefined) => {
+    if (!date) {
+      return;
+    }
+
     setDate(date);
 
     if (date?.from && date?.to) {
       onSelectDate({
-        checkIn: format(date.from, "dd'/'MM'/'yyyy", { locale: ptBR }),
-        checkOut: format(date.to, "dd'/'MM'/'yyyy", { locale: ptBR }),
+        checkIn: format(date.from, 'yyyy-MM-dd', { locale: ptBR }),
+        checkOut: format(date.to, 'yyyy-MM-dd', { locale: ptBR }),
       });
     }
   };

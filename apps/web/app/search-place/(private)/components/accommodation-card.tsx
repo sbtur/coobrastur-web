@@ -16,8 +16,8 @@ import {
   CATEGORY_LABELS,
 } from '@/shared/utils/plans/categories';
 
+import { AvailableDatesButton } from './available-dates/available-dates-button';
 import { ByRequestButton } from './by-request-dialog/by-request-button';
-import { ByRequestDialog } from './by-request-dialog/by-request-dialog';
 
 import {
   Carousel,
@@ -52,6 +52,11 @@ export const AccommodationCard = ({
     category,
     street,
     totalDays,
+  };
+
+  const availableDatesDialogDescription = {
+    name,
+    street,
   };
 
   return (
@@ -130,7 +135,9 @@ export const AccommodationCard = ({
 
           <div className="flex gap-2">
             {availabilityDates ? (
-              <Button variant="outline-secondary">Datas disponíveis</Button>
+              <AvailableDatesButton
+                description={availableDatesDialogDescription}
+              />
             ) : null}
 
             {byRequest ? (

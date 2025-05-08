@@ -67,10 +67,10 @@ export const ByRequestDialog = ({
   let endDate = params.get('endDate');
 
   if (startDate && endDate) {
-    startDate = format(parse(startDate, 'dd/MM/yyyy', new Date()), 'd', {
+    startDate = format(parse(startDate, 'yyyy-MM-dd', new Date()), 'd', {
       locale: ptBR,
     });
-    endDate = format(parse(endDate, 'dd/MM/yyyy', new Date()), 'd MMM', {
+    endDate = format(parse(endDate, 'yyyy-MM-dd', new Date()), 'd MMM', {
       locale: ptBR,
     });
   }

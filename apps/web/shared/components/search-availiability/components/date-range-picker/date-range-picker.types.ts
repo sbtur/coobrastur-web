@@ -9,12 +9,12 @@ export type DateRangePickerProps = React.ComponentProps<typeof DayPicker> & {
   errorMessage?: string;
   minDays?: number;
   maxDays?: number;
-  defaultValue?: DateRange;
+  defaultValue: DateRange;
   onSelectDate: (date: DateRangeFormatted) => void;
 };
 
 export type UseDataRangeActionsProps = {
-  defaultValue?: DateRange;
+  defaultValue: DateRange;
   onSelectDate: (date: DateRangeFormatted) => void;
 };
 
