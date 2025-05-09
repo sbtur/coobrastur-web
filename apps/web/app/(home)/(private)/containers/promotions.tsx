@@ -48,48 +48,54 @@ export function Promotions() {
         </Text>
       </div>
 
-      <Carousel className="w-[340px] sm:w-[600px] md:w-[720px] lg:w-[980px] xl:w-[1200px] 2xl:w-[1500px]">
-        <CarouselContent>
-          {PLACES.map(slide => (
-            <CarouselItem
-              key={slide.name}
-              className="flex-[0_0_85%] sm:flex-[0_0_50%] md:flex-[0_0_50%] lg:flex-[0_0_25%]"
-            >
-              <HotelCard>
-                <HotelImageWrapper>
-                  <HotelImage>
-                    <Image
-                      src={slide.image}
-                      alt={slide.name}
-                      width={300}
-                      height={300}
-                    />
-                  </HotelImage>
-                </HotelImageWrapper>
-                <HotelDescription>
-                  <Title as="h3" size="xs" className="text-center lg:text-left">
-                    {slide.name}
-                  </Title>
-                  <Text size="sm" className="text-center lg:text-left">
-                    {slide.description}
-                  </Text>
-                  <Button variant="link" className="mx-auto lg:mx-0">
-                    Ver mais detalhes{' '}
-                    <Icon icon={ArrowRight} variant="primary" />
-                  </Button>
-                </HotelDescription>
-              </HotelCard>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <div className="absolute lg:left-[20px] top-1/3 translate-y-1/2 z-10 hidden lg:block">
-          <CarouselPrevious />
-        </div>
-        <div className="absolute lg:right-[20px] top-1/3 translate-y-1/2 z-10 hidden lg:block">
-          <CarouselNext />
-        </div>
-        <CarouselDot />
-      </Carousel>
+      <div className="flex justify-center">
+        <Carousel className="w-[340px] sm:w-[600px] md:w-[720px] lg:w-[980px] xl:w-[1200px] 2xl:w-[1500px]">
+          <CarouselContent>
+            {PLACES.map(slide => (
+              <CarouselItem
+                key={slide.name}
+                className="flex-[0_0_85%] sm:flex-[0_0_50%] md:flex-[0_0_50%] lg:flex-[0_0_25%]"
+              >
+                <HotelCard>
+                  <HotelImageWrapper>
+                    <HotelImage>
+                      <Image
+                        src={slide.image}
+                        alt={slide.name}
+                        width={300}
+                        height={300}
+                      />
+                    </HotelImage>
+                  </HotelImageWrapper>
+                  <HotelDescription>
+                    <Title
+                      as="h3"
+                      size="xs"
+                      className="text-center lg:text-left"
+                    >
+                      {slide.name}
+                    </Title>
+                    <Text size="sm" className="text-center lg:text-left">
+                      {slide.description}
+                    </Text>
+                    <Button variant="link" className="mx-auto lg:mx-0">
+                      Ver mais detalhes{' '}
+                      <Icon icon={ArrowRight} variant="primary" />
+                    </Button>
+                  </HotelDescription>
+                </HotelCard>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="absolute lg:left-[20px] top-1/3 translate-y-1/2 z-10 hidden lg:block">
+            <CarouselPrevious />
+          </div>
+          <div className="absolute lg:right-[20px] top-1/3 translate-y-1/2 z-10 hidden lg:block">
+            <CarouselNext />
+          </div>
+          <CarouselDot />
+        </Carousel>
+      </div>
     </Container>
   );
 }
