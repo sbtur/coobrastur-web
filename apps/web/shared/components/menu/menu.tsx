@@ -14,7 +14,7 @@ export const Menu = ({ menuItems, isAuthenticated = false }: MenuProps) => {
     <>
       <MenuDesktop menus={menuItems} />
       {isAuthenticated ? (
-        <MenuMobilePrivate menus={menuItems} />
+        <MenuMobilePrivate />
       ) : (
         <MenuMobile menus={menuItems} />
       )}
