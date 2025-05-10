@@ -50,7 +50,7 @@ export function CarousselPrivate() {
 
   return (
     <Container className="md:h-[480px] py-8 bg-gray-100 flex flex-col md:flex-row gap-1">
-      <div className="w-full flex flex-col md:flex-row gap-1 md:px-10">
+      <div className="w-full flex flex-col md:flex-row gap-1 md:px-2 lg:px-10">
         <Carousel className="w-full md:w-3/4 relative">
           <CarouselContent>
             <CarouselItem className="relative">
@@ -86,7 +86,7 @@ export function CarousselPrivate() {
           </div>
         </Carousel>
 
-        <div className="w-full md:w-1/4 md:block">
+        <div className="w-full md:w-[280px] md:block ">
           <CarrouselDetails plans={plans} lastReservation={lastReservation} />
         </div>
       </div>
