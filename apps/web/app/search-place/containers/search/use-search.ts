@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import { AccommodationSearchAutoComplete } from '@core/accommodations/accommodation.interface';
 import { makeAccommodationsUseCase } from '@core/accommodations/make-accommodations.use-cases';
+import { AccommodationSearchAutoComplete } from '@core/accommodations/use-cases/search-accommodation.use-case';
 
 export function useSearch() {
   const [searchPlaceResults, setSearchPlaceResults] = useState<

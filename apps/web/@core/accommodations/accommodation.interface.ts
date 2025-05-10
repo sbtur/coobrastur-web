@@ -1,28 +1,27 @@
-export type AccommodationSearchByCity = {
-  id: string;
-  name: string;
+export type ApiAccommodationItemResponse = {
+  hotCode: string;
+  commercialName: string;
   address: string;
-  city?: string;
-  state?: string;
-  image: string;
-};
-
-export type AccommodationSearchAutoComplete = {
-  id: string;
-  name: string;
-  state: string;
   city: string;
-  type: 'city' | 'hotel';
+  state: string;
+  photo: string;
 };
 
-export type AccommodationFeatures = {
-  id: string;
-  name: string;
-  icon: string;
+export type ApiAccommodationSearchAutoCompleteResponse = {
+  codigo: string;
+  texto: string;
+  tipo: 'Cidade' | 'Hotel';
+  cidade: string;
+  estado: string;
 };
 
-export type AccommodationDetailSummary = {
-  id: string;
+export type ApiAccommodationFeaturesResponse = {
+  code: string;
+  description: string;
+};
+
+export type ApiAccommodationDetailSummaryResponse = {
+  id: number;
   name: string;
   address: string;
   phone: string;
@@ -34,8 +33,10 @@ export type AccommodationDetailSummary = {
     longitude: number;
   };
   images: string[];
-  description: string;
-  additionalInfo: string;
+  additionalInfo: {
+    infoA: string;
+    infoB: string;
+  };
 };
 
 export interface IAccommodationService {
@@ -43,23 +44,21 @@ export interface IAccommodationService {
     cityId,
   }: {
     cityId: string;
-  }): Promise<AccommodationSearchByCity[]>;
+  }): Promise<ApiAccommodationItemResponse[]>;
   getAccommodationsAutoCompleteByQuery({
     query,
   }: {
     query: string;
-  }): Promise<AccommodationSearchAutoComplete[]>;
+  }): Promise<ApiAccommodationSearchAutoCompleteResponse[]>;
   getAccommodationFeatures({
     hotelId,
   }: {
     hotelId: string;
-  }): Promise<AccommodationFeatures[]>;
+  }): Promise<ApiAccommodationFeaturesResponse[]>;
   getAccommodationDetail({
     hotelId,
   }: {
     hotelId: string;
-  }): Promise<AccommodationDetailSummary>;
-  toAccommodationStaticList(
-    accommodation: AccommodationDetailSummary,
-  ): Omit<AccommodationSearchByCity, 'city' | 'state'>;
+  }): Promise<ApiAccommodationDetailSummaryResponse>;
+  toAccommodationStaticList(accommodation: any): Omit<any, 'city' | 'state'>;
 }

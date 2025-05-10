@@ -1,4 +1,4 @@
-import { AccommodationSearchAutoComplete } from '@/@core/accommodations/accommodation.interface';
+import { AccommodationSearchAutoComplete } from '@core/accommodations/use-cases/search-accommodation.use-case';
 
 export const SearchResultContainer = (
   item: AccommodationSearchAutoComplete,

@@ -4,12 +4,11 @@ import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 
 import { Section } from '@coobrastur/ui/components/layouts/section';
 
-import { AccommodationSearchAutoComplete } from '@/@core/accommodations/accommodation.interface';
-
 import { useSearchProvider } from '../../providers/search-provider';
 import { SearchResultContainer } from './search-result-container';
 import { useSearch } from './use-search';
 
+import { AccommodationSearchAutoComplete } from '@core/accommodations/use-cases/search-accommodation.use-case';
 import { Icon } from '@ui/components/data-display/icon';
 import { Text } from '@ui/components/data-display/text';
 import { Button } from '@ui/components/data-entry/button';

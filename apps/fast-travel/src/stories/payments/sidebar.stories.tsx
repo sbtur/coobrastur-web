@@ -1,6 +1,5 @@
 import { type BadgePlanValue } from '@coobrastur/ui/components/data-display/badge-plan/badge-plan';
-
-import { Sidebar } from '../../../../web/app/(pages)/checkout/components/sidebar';
+import { Sidebar } from '../../../../web/app/checkout/components/sidebar';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -9,11 +8,6 @@ const meta = {
   component: Sidebar,
   parameters: {
     layout: 'centered',
-    docs: {
-      description: {
-        component: 'Barra lateral do checkout',
-      },
-    },
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof Sidebar>;

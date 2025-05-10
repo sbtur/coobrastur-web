@@ -14,12 +14,19 @@ export const badgeVariants = cva(
         danger: 'bg-danger-100 text-danger-300',
         warning: 'bg-warning-100 text-warning-300',
         neutral: 'bg-neutral-200 text-neutral-500',
+        gold: 'bg-[var(--color-gold-background)] text-[var(--color-gold-foreground)]',
+        silver:
+          'bg-[var(--color-silver-background)] text-[var(--color-silver-foreground)]',
+        diamond:
+          'bg-[var(--color-diamond-background)] text-[var(--color-diamond-foreground)]',
+        vip: 'bg-success-100 text-success-300',
+        master: 'bg-warning-100 text-warning-300',
       },
     },
     defaultVariants: {
       variant: 'default',
     },
-  } as const,
+  } as const
 );
 
 export type BadgeProps = VariantProps<typeof badgeVariants> & {

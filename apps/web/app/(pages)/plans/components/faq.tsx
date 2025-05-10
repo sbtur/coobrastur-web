@@ -26,14 +26,14 @@ export const FAQ = () => {
               que serão disponibilizadas todos os anos de acordo com o plano de
               assinatura e quantidade que você escolher, podendo ser utilizadas
               nos mais de 2 mil hotéis credenciados em todo o Brasil. Todas as
-              diárias incluem café da manhã, sem custo adicional! 
+              diárias incluem café da manhã, sem custo adicional!
             </Text>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2" className="text-white">
           <AccordionTrigger>
             <Title as="h3" size="sm" className="text-white">
-              Por que ter uma Assinatura de Hotéis? 
+              Por que ter uma Assinatura de Hotéis?
             </Title>
           </AccordionTrigger>
           <AccordionContent>
