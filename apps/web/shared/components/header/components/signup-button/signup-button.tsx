@@ -12,7 +12,7 @@ export const SignupButton = ({ light }: { light?: boolean }) => {
 
   return (
     <Button
-      variant={isLight ? 'outline-white' : 'outline'}
+      variant={isLight ? 'outline-transparent' : 'outline'}
       className="hidden xl:flex"
       asChild
     >
