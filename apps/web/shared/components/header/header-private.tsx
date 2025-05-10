@@ -1,5 +1,4 @@
 'use client';
-import { signOut } from 'next-auth/react';
 
 import { Text } from '@coobrastur/ui/components/data-display/text';
 import { UserRoundCheck } from '@coobrastur/ui/lib/icons';
@@ -23,7 +22,7 @@ export const HeaderPrivate = () => {
   return (
     <Header>
       <Container>
-        <div className="flex items-center gap-7">
+        <div className="hidden md:flex items-center gap-7">
           <div className="h-[50px] flex items-center gap-3">
             <Link href={PAGE_NAME.home}>
               <Image
@@ -81,9 +80,8 @@ export const HeaderPrivate = () => {
               />
             </Link>
           </div>
-          <button onClick={() => signOut()}>Sair</button>
-          <Menu menuItems={MENU_PRIVATE_ITEMS} />
-          <div className="flex gap-8 items-center">
+          <Menu menuItems={MENU_PRIVATE_ITEMS} isAuthenticated={true} />
+          <div className="hidden md:flex gap-8 items-center">
             <DropdownPlans />
             <div className="flex gap-2 items-center">
               <span className="text-xs text-gray-400 uppercase underline">

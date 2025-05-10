@@ -30,7 +30,7 @@ export const MenuMobile = ({ menus }: { menus: IMenuItem[] }) => {
           <span className="text-xs text-white">Menu</span>
         </button>
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent className="bg-gray-100">
         <NavigationMenu>
           <NavigationMenuList>
             {menus.map(menu => (

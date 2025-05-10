@@ -1,23 +1,25 @@
 import { HeaderPrivate } from '@components/header';
 
-import { Accommodations } from '../(public)/containers/accommodations';
 import { Support } from '../(public)/containers/support';
-import { Testimonials } from '../(public)/containers/testimonials';
-
-import { Container } from '@ui/components/layouts/container';
+import { ButtonsMenu } from './containers/buttons-menu';
+import { CarousselPrivate } from './containers/caroussel-private';
+import { Promotions } from './containers/promotions';
+import { ShareForm } from './containers/share-form';
 
 export function HomePrivate() {
   return (
     <>
       <HeaderPrivate />
 
-      <Container as="main">
-        <Accommodations />
+      <CarousselPrivate />
 
-        <Support />
+      <ButtonsMenu />
 
-        <Testimonials />
-      </Container>
+      <Promotions />
+
+      <Support />
+
+      <ShareForm />
     </>
   );
 }
