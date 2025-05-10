@@ -1,5 +1,4 @@
 import { type BadgePlanValue } from '@coobrastur/ui/components/data-display/badge-plan/badge-plan';
-
 import { Sidebar } from '../../../../web/app/checkout/components/sidebar';
 
 import type { Meta, StoryObj } from '@storybook/react';

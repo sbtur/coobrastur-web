@@ -1,1 +1,1 @@
-export * from './guest-select';
+export * from './guest-select'

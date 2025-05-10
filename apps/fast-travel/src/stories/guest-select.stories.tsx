@@ -1,4 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react';
+
+import { Meta, StoryObj } from '@storybook/react'
 import { GuestSelect } from '@ui/components/data-entry/guest-select';
 
 const meta = {
