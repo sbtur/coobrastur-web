@@ -17,7 +17,11 @@ export const ByRequestButton = ({ accommodation }: ByRequestButtonProps) => {
 
   return (
     <>
-      <Button variant="secondary" onClick={() => setOpen(true)}>
+      <Button
+        variant="secondary"
+        className="px-2 lg:px-8"
+        onClick={() => setOpen(true)}
+      >
         Solicitar Reserva{' '}
         <Icon icon={CalendarClock} className="w-4 h-4 text-white" />
       </Button>

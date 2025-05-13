@@ -21,8 +21,8 @@ export async function SearchPlacePrivate() {
       <HeaderPrivate />
       <SearchAvailiability />
       <Container as="main" className="flex flex-col h-full pt-0 pb-8 lg:pb-14">
-        <Content className="flex px-4 lg:px-0">
-          <aside className="w-[315px]">
+        <Content className="lg:flex lg:px-0">
+          <aside className="w-full lg:w-[315px]">
             <div>
               <h1>Filtros</h1>
             </div>

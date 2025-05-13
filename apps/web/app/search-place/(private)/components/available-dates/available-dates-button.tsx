@@ -25,7 +25,11 @@ export const AvailableDatesButton = ({
         setIsOpen={setIsOpen}
       />
 
-      <Button variant="outline-secondary" onClick={() => setIsOpen(true)}>
+      <Button
+        variant="outline-secondary"
+        className="px-2 lg:px-8"
+        onClick={() => setIsOpen(true)}
+      >
         Datas disponíveis
       </Button>
     </>

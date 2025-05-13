@@ -22,7 +22,7 @@ import { Container } from '@ui/components/layouts/container';
 export const HeaderPrivate = () => {
   return (
     <Header>
-      <Container>
+      <Container className="hidden lg:block">
         <div className="flex items-center gap-7">
           <div className="h-[50px] flex items-center gap-3">
             <Link href={PAGE_NAME.home}>
@@ -67,7 +67,7 @@ export const HeaderPrivate = () => {
           </Text>
         </div>
       </Container>
-      <Separator className="w-[85%] md:w-full mx-auto [.isLight_&]:bg-white/20" />
+      <Separator className="hidden lg:block w-[85%] md:w-full mx-auto [.isLight_&]:bg-white/20" />
       <Container>
         <div className="flex items-center justify-between gap-8 py-6 px-4 ">
           <div className="w-[180px] lg:w-[245px]">
@@ -83,7 +83,7 @@ export const HeaderPrivate = () => {
           </div>
           <button onClick={() => signOut()}>Sair</button>
           <Menu menuItems={MENU_PRIVATE_ITEMS} />
-          <div className="flex gap-8 items-center">
+          <div className="hidden lg:flex gap-8 items-center">
             <DropdownPlans />
             <div className="flex gap-2 items-center">
               <span className="text-xs text-gray-400 uppercase underline">
