@@ -1,7 +1,10 @@
 'use client';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { DateRange } from 'react-day-picker';
 import { useRouter } from 'next/navigation';
 
+import { format } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 import { InfoIcon } from 'lucide-react';
 
 import { Icon } from '@coobrastur/ui/components/data-display/icon';
@@ -16,18 +19,24 @@ import { GuestSelect } from './components/guest-select';
 import { Search } from './components/search';
 
 export interface DateRangeFormatted {
-  checkIn: string;
-  checkOut: string;
+  startDate: string;
+  endDate: string;
 }
 
 export function SearchAvailiability() {
   const router = useRouter();
-  const dateRef = useRef<DateRangeFormatted>({ checkIn: '', checkOut: '' });
+  const dateRef = useRef<DateRangeFormatted>({ startDate: '', endDate: '' });
   const guestRef = useRef<HTMLInputElement>(null);
   const searchRef = useRef<string>('');
+  const [isDateUnselected, setIsDateUnselected] = useState(false);
 
-  const onSelectDate = ({ checkIn, checkOut }: DateRangeFormatted) => {
-    dateRef.current = { checkIn, checkOut };
+  const onSelectDate = (date: DateRange | undefined) => {
+    if (date?.from && date?.to) {
+      dateRef.current = {
+        startDate: format(date.from, 'yyyy-MM-dd', { locale: ptBR }),
+        endDate: format(date.to, 'yyyy-MM-dd', { locale: ptBR }),
+      };
+    }
   };
 
   const onSelectGuest = (guest: any) => {
@@ -39,8 +48,15 @@ export function SearchAvailiability() {
   };
 
   const onSubmit = () => {
+    if (isDateUnselected) {
+      dateRef.current = {
+        startDate: '',
+        endDate: '',
+      };
+    }
+
     router.push(
-      `?code=${searchRef.current}&startDate=${dateRef.current.checkIn}&endDate=${dateRef.current.checkOut}`
+      `?code=${searchRef.current}&startDate=${dateRef.current.startDate}&endDate=${dateRef.current.endDate}`
     );
   };
   return (
@@ -49,7 +65,10 @@ export function SearchAvailiability() {
         <div className="bg-primary-300 rounded-[10px] py-10 px-8 grid gap-4 lg:gap-6 w-full">
           <div className="grid gap-4 lg:grid-cols-[28.17%_34.87%_22.35%_96px] xl:grid-cols-[32.17%_34.87%_22.35%_96px] lg:items-center">
             <Search onSelectSearch={onSelectSearch} />
-            <DateRangePicker onSelectDate={onSelectDate} />
+            <DateRangePicker
+              onSelectDate={onSelectDate}
+              isDateUnselected={isDateUnselected}
+            />
             <GuestSelect onSelectGuest={onSelectGuest} />
             <Button className="self-end" onClick={onSubmit}>
               Buscar
@@ -60,8 +79,12 @@ export function SearchAvailiability() {
               as="div"
               className="flex items-center gap-2 font-secondary text-sm text-neutral-100"
             >
-              <Switch id="date-unselected" checked={false} /> Ainda não defini
-              as datas
+              <Switch
+                id="date-unselected"
+                checked={isDateUnselected}
+                onCheckedChange={setIsDateUnselected}
+              />
+              Ainda não defini as datas
             </Text>
             <Text
               as="div"

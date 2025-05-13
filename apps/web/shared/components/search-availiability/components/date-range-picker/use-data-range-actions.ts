@@ -1,20 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { DateRange } from 'react-day-picker';
 
-import { format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
-
 import { DATE_FIELD_ID } from './date-range-picker.constants';
-import {
-  UseDataRangeActionsProps,
-  UseDataRangeActionsReturn,
-} from './date-range-picker.types';
+import { UseDataRangeActionsReturn } from './date-range-picker.types';
 
-export const useDataRangeActions = ({
-  defaultValue,
-  onSelectDate,
-}: UseDataRangeActionsProps): UseDataRangeActionsReturn => {
-  const [date, setDate] = useState<DateRange>(defaultValue);
+export const useDataRangeActions = (): UseDataRangeActionsReturn => {
+  const [date, setDate] = useState<DateRange | undefined>(undefined);
   const [isOpen, setIsOpen] = useState(false);
   const [isActiveButton, setIsActiveButton] = useState<
     keyof typeof DATE_FIELD_ID | null
@@ -31,13 +22,6 @@ export const useDataRangeActions = ({
     }
 
     setDate(date);
-
-    if (date?.from && date?.to) {
-      onSelectDate({
-        checkIn: format(date.from, 'yyyy-MM-dd', { locale: ptBR }),
-        checkOut: format(date.to, 'yyyy-MM-dd', { locale: ptBR }),
-      });
-    }
   };
 
   useEffect(() => {

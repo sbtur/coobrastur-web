@@ -23,7 +23,7 @@ export function DateRangePicker({
   errorMessage,
   minDays,
   maxDays,
-  defaultValue,
+  isDateUnselected,
   onSelectDate,
 }: DateRangePickerProps) {
   const {
@@ -35,7 +35,7 @@ export function DateRangePicker({
     isActiveButton,
     setIsActiveButton,
     handleSelectDate,
-  } = useDataRangeActions({ defaultValue, onSelectDate });
+  } = useDataRangeActions();
 
   return (
     <div className="w-full flex flex-col" ref={containerRef}>
@@ -53,7 +53,7 @@ export function DateRangePicker({
           <button
             id="check-in"
             className={cn(
-              'w-full p-2 px-3 justify-start font-secondary text-gray-600 text-left font-semibold bg-white items-center flex gap-2 whitespace-nowrap rounded-md text-base border-gray-200 border-2 hover:bg-secondary-100',
+              'w-full p-2 px-3 justify-start font-secondary text-gray-600 text-left font-semibold bg-white items-center flex gap-2 whitespace-nowrap rounded-md text-base border-gray-200 border-2 hover:bg-secondary-100 disabled:opacity-50',
               error && 'border-destructive',
               isActiveButton === DATE_FIELD_ID.checkIn && activeButtonClassName
             )}
@@ -69,6 +69,7 @@ export function DateRangePicker({
                 return DATE_FIELD_ID.checkIn;
               });
             }}
+            disabled={isDateUnselected}
           >
             <Icon icon={CalendarIcon} variant="primary" />
             {date?.from ? format(date.from, 'dd/MM/yyyy') : 'Check-in'}
@@ -88,7 +89,7 @@ export function DateRangePicker({
           <button
             id="check-out"
             className={cn(
-              'w-full p-2 px-3 justify-start font-secondary text-gray-600 text-left font-semibold bg-white items-center flex gap-2 whitespace-nowrap rounded-md text-base border-gray-200 border-2 hover:bg-secondary-100',
+              'w-full p-2 px-3 justify-start font-secondary text-gray-600 text-left font-semibold bg-white items-center flex gap-2 whitespace-nowrap rounded-md text-base border-gray-200 border-2 hover:bg-secondary-100 disabled:opacity-50',
               error && 'border-destructive',
               isActiveButton === DATE_FIELD_ID.checkOut && activeButtonClassName
             )}
@@ -104,6 +105,7 @@ export function DateRangePicker({
               });
             }}
             aria-label="Selecione a data de check-out"
+            disabled={isDateUnselected}
           >
             <Icon icon={CalendarCheckIcon} variant="primary" />
             {date?.to ? format(date.to, 'dd/MM/yyyy') : 'Check-out'}
@@ -123,7 +125,10 @@ export function DateRangePicker({
             mode="range"
             defaultMonth={date?.from}
             selected={date}
-            onSelect={handleSelectDate}
+            onSelect={date => {
+              handleSelectDate(date);
+              onSelectDate(date);
+            }}
             numberOfMonths={2}
             min={minDays}
             max={maxDays}
