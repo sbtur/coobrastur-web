@@ -1,6 +1,11 @@
 import { ArrowRight, CalendarMinus, Receipt } from 'lucide-react';
 
 import { Badge } from '@coobrastur/ui/components/data-display/badge';
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@coobrastur/ui/components/data-display/collapsible';
 import { Icon } from '@coobrastur/ui/components/data-display/icon';
 import { Separator } from '@coobrastur/ui/components/data-display/separator';
 import { Text } from '@coobrastur/ui/components/data-display/text';
@@ -61,7 +66,7 @@ export const AccommodationCard = ({
 
   return (
     <div className="min-w-[350px] lg:flex min-h-[330px]">
-      <div className="w-full h-[180px] lg:h-auto lg:w-[290px] relative">
+      <div className="w-full h-[180px] lg:h-full lg:w-[290px] relative">
         <Badge
           variant={CATEGORY_COLORS[category as keyof typeof CATEGORY_COLORS]}
           className="lg:hidden absolute top-3 left-3 z-10"
@@ -95,7 +100,7 @@ export const AccommodationCard = ({
         >
           {CATEGORY_LABELS[category as keyof typeof CATEGORY_LABELS]}
         </Badge>
-        <Title>{name}</Title>
+        <Title className="text-[28px]">{name}</Title>
         <Text className="mt-3">{street}</Text>
 
         <Link
@@ -108,7 +113,7 @@ export const AccommodationCard = ({
 
         <div className="flex flex-wrap gap-2 mt-4">
           {features.map((feature: AccommodationFeatures) => (
-            <div className="space-x-2" key={feature.id}>
+            <div className="flex items-center gap-2" key={feature.id}>
               <Icon icon={feature.icon} size="lg" />
               <Text as="span" size="sm">
                 {feature.name}

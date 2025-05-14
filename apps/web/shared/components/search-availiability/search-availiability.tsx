@@ -59,8 +59,9 @@ export function SearchAvailiability() {
       `?code=${searchRef.current}&startDate=${dateRef.current.startDate}&endDate=${dateRef.current.endDate}`
     );
   };
+
   return (
-    <Section>
+    <Section className="lg:py-4">
       <Container className="flex flex-col items-center justify-center">
         <div className="bg-primary-300 rounded-[10px] py-10 px-8 grid gap-4 lg:gap-6 w-full">
           <div className="grid gap-4 lg:grid-cols-[28.17%_34.87%_22.35%_96px] xl:grid-cols-[32.17%_34.87%_22.35%_96px] lg:items-center">

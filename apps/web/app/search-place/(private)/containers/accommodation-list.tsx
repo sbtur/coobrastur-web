@@ -7,7 +7,7 @@ export const AccommodationList = () => {
   const { accommodations } = useAccommodationList();
 
   return (
-    <div className="w-full lg:flex-1 lg:px-4 grid gap-x-4 gap-y-10">
+    <div className="w-full grid gap-x-4 gap-y-10">
       {accommodations?.map(accommodation => (
         <AccommodationCard
           accommodation={accommodation}

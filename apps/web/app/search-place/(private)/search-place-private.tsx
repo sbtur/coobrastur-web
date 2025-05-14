@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 
-import { Container } from '@coobrastur/ui/components/layouts/container';
 import { Content } from '@coobrastur/ui/components/layouts/content';
 
 import { Footer } from '@/shared/components/footer';
@@ -8,6 +7,7 @@ import { HeaderPrivate } from '@/shared/components/header';
 import { SearchAvailiability } from '@/shared/components/search-availiability/search-availiability';
 import { UserMobileNavigation } from '@/shared/components/user-mobile-navigation';
 
+import { Filters } from './components/filters/filters';
 import { AccommodationList } from './containers/accommodation-list';
 
 export const metadata: Metadata = {
@@ -20,16 +20,12 @@ export async function SearchPlacePrivate() {
     <>
       <HeaderPrivate />
       <SearchAvailiability />
-      <Container as="main" className="flex flex-col h-full pt-0 pb-8 lg:pb-14">
-        <Content className="lg:flex lg:px-0">
-          <aside className="w-full lg:w-[315px]">
-            <div>
-              <h1>Filtros</h1>
-            </div>
-          </aside>
+      <main className="max-w-full flex flex-col h-full pb-8 lg:pb-14">
+        <Content className="lg:flex lg:justify-between gap-8 lg:py-0 mt-0 px-4">
+          <Filters />
           <AccommodationList />
         </Content>
-      </Container>
+      </main>
       <Footer />
       <UserMobileNavigation />
     </>
