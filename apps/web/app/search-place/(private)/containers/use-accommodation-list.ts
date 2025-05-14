@@ -14,6 +14,8 @@ export const useAccommodationList = () => {
   useEffect(() => {
     const entries = Object.fromEntries(searchParams.entries());
 
+    console.log('Fetching accommodation list', entries);
+
     const fetchAccommodationList = async () => {
       const params = {
         code: Number(entries.code),

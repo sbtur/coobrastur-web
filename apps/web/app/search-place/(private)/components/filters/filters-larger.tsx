@@ -1,3 +1,4 @@
+'use client';
 import { Separator } from '@coobrastur/ui/components/data-display/separator/separator';
 import { Title } from '@coobrastur/ui/components/data-display/title';
 import { Checkbox } from '@coobrastur/ui/components/data-entry/checkbox';
@@ -8,8 +9,11 @@ import { CATEGORIES_FILTERS } from '../../helpers/categories-filters';
 import { STYLE_FILTERS } from '../../helpers/style-filters';
 import { FilterContent } from './filter-content';
 import { FilterTitle } from './filter-title';
+import { useFilters } from './use-filters';
 
 export const FiltersLarger = () => {
+  const { handleSetFilterSearch, filtersInitialSelected } = useFilters();
+
   return (
     <aside className="w-full grid gap-6 lg:w-[315px] border border-neutral-300 rounded-[10px] p-6">
       <div>
@@ -28,7 +32,15 @@ export const FiltersLarger = () => {
             key={filter.value}
             className="flex items-center gap-2"
           >
-            <Checkbox id={filter.value} />
+            <Checkbox
+              id={filter.value}
+              name="category"
+              value={filter.value}
+              checked={filtersInitialSelected.category?.includes(filter.value)}
+              onCheckedChange={() => {
+                handleSetFilterSearch('category', filter.value);
+              }}
+            />
             {filter.name}
           </Label>
         ))}
@@ -44,7 +56,15 @@ export const FiltersLarger = () => {
             key={filter.value}
             className="flex items-center gap-2"
           >
-            <Checkbox id={filter.value} />
+            <Checkbox
+              id={filter.value}
+              name="service"
+              value={filter.value}
+              checked={filtersInitialSelected.service?.includes(filter.value)}
+              onCheckedChange={() => {
+                handleSetFilterSearch('service', filter.value);
+              }}
+            />
             {filter.name}
           </Label>
         ))}
@@ -60,7 +80,15 @@ export const FiltersLarger = () => {
             key={filter.value}
             className="flex items-center gap-2"
           >
-            <Checkbox id={filter.value} />
+            <Checkbox
+              id={filter.value}
+              name="extra"
+              value={filter.value}
+              checked={filtersInitialSelected.extra?.includes(filter.value)}
+              onCheckedChange={() => {
+                handleSetFilterSearch('extra', filter.value);
+              }}
+            />
             {filter.name}
           </Label>
         ))}
@@ -76,7 +104,17 @@ export const FiltersLarger = () => {
             key={filter.value}
             className="flex items-center gap-2"
           >
-            <Checkbox id={filter.value} />
+            <Checkbox
+              id={filter.value}
+              name="neighborhood"
+              value={filter.value}
+              checked={filtersInitialSelected.neighborhood?.includes(
+                filter.value
+              )}
+              onCheckedChange={() => {
+                handleSetFilterSearch('neighborhood', filter.value);
+              }}
+            />
             {filter.name}
           </Label>
         ))}
@@ -92,7 +130,17 @@ export const FiltersLarger = () => {
             key={filter.value}
             className="flex items-center gap-2"
           >
-            <Checkbox id={filter.value} />
+            <Checkbox
+              id={filter.value}
+              name="destination"
+              value={filter.value}
+              checked={filtersInitialSelected.destination?.includes(
+                filter.value
+              )}
+              onCheckedChange={() => {
+                handleSetFilterSearch('destination', filter.value);
+              }}
+            />
             {filter.name}
           </Label>
         ))}
