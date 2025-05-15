@@ -1,18 +1,38 @@
 import { useEffect, useRef, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useForm } from 'react-hook-form';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import {
   pushUrlParams,
   removeUrlParams,
 } from '@/shared/helpers/manage-url-params';
 
+type formFilters = {
+  category: string[];
+  service: string[];
+  extra: string[];
+  neighborhood: string[];
+  destination: string[];
+};
+
 export const useFilters = () => {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const [filtersInitialSelected, setFiltersInitialSelected] = useState<
     Record<string, string>
   >({});
+  const [openFilterDialogContent, setOpenFilterDialogContent] = useState(false);
 
   const urlParams = useRef<Record<string, string>>({});
+  const form = useForm<formFilters>({
+    defaultValues: {
+      category: [],
+      service: [],
+      extra: [],
+      neighborhood: [],
+      destination: [],
+    },
+  });
 
   useEffect(() => {
     urlParams.current = Object.fromEntries(searchParams.entries());
@@ -42,8 +62,29 @@ export const useFilters = () => {
     }
   };
 
+  const handleSubmitFilterSearch = (data: formFilters) => {
+    const newFilterValues = Object.entries(data)
+      .filter(
+        ([_, value]) => value && (Array.isArray(value) ? value.length : true)
+      )
+      .map(([key, value]) =>
+        Array.isArray(value) ? `${key}=${value.join(',')}` : `${key}=${value}`
+      )
+      .join('&');
+
+    setOpenFilterDialogContent(false);
+
+    router.push(
+      `?code=${urlParams.current.code}&startDate=${urlParams.current.startDate}&endDate=${urlParams.current.endDate}&${newFilterValues}`
+    );
+  };
+
   return {
     handleSetFilterSearch,
     filtersInitialSelected,
+    form,
+    handleSubmitFilterSearch,
+    openFilterDialogContent,
+    setOpenFilterDialogContent,
   };
 };

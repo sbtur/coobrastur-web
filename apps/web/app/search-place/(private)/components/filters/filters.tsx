@@ -1,15 +1,22 @@
+'use client';
+import {
+  ResponsiveLargerThan,
+  ResponsiveSmallerThan,
+} from '@/shared/components/responsive/responsive';
+
 import { FiltersLarger } from './filters-larger';
 import { FiltersMobile } from './filters-mobile';
 
 export const Filters = () => {
   return (
     <>
-      <div className="lg:hidden">
+      <ResponsiveSmallerThan breakpoint="lg">
         <FiltersMobile />
-      </div>
-      <div className="hidden lg:block">
+      </ResponsiveSmallerThan>
+
+      <ResponsiveLargerThan breakpoint="lg">
         <FiltersLarger />
-      </div>
+      </ResponsiveLargerThan>
     </>
   );
 };
