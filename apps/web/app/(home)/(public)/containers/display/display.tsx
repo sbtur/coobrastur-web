@@ -29,7 +29,7 @@ export const Display = () => {
           >
             Viaje mais todos os anos com a nossa Assinatura de hotéis
           </Title>
-          <Button variant="outline-white" className="mt-5">
+          <Button variant="outline-transparent" className="mt-5">
             Quero Viajar
           </Button>
         </Heading>
