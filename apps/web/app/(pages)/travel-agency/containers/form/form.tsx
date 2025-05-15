@@ -72,11 +72,11 @@ export const Form = () => {
             />
           </div>
         </div>
-        <div className="flex justify-between mt-6">
-          <Button variant="outline-white" className="shadow-none border">
+        <div className="flex justify-between items-center mt-6">
+          <Button variant="outline-white" className="shadow-none border h-10">
             Cancel
           </Button>
-          <Button type="submit" className="w-3/6 lg:w-fit">
+          <Button type="submit" className="w-3/6 lg:w-fit h-12">
             Falar com especialista
           </Button>
         </div>

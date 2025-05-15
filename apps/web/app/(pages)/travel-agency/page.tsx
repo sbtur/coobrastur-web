@@ -18,13 +18,13 @@ import { Icon } from '@coobrastur/ui/components/data-display/icon';
 export default async function TravelAgency() {
   return (
     <div>
-      <Section className="mt-8 bg-gradient-to-b from-white from-25% to-[#E2F2FF] rounded-[30px] mx-8 lg:h-[618px] lg:content-center overflow-hidden">
-        <Container>
-          <div className="flex flex-col lg:flex-row justify-between">
-            <div className=" lg:text-left lg:w-1/2">
+      <Section className="mt-8 bg-gradient-to-b from-white from-25% to-[#E2F2FF] rounded-[30px] max-w-[1376px] mx-auto w-full lg:h-[618px] flex items-center overflow-hidden">
+        <Container className="px-6">
+          <div className="flex flex-col lg:flex-row items-center justify-between w-full">
+            <div className="lg:text-left lg:w-1/2 flex flex-col justify-center">
               <Heading className="text-center items-center lg:text-left lg:items-start">
                 <Badge>AGÊNCIA DE VIAGENS</Badge>
-                <Title size="xl" className="mt-4">
+                <Title size="xl" className="w-[200px] lg:w-full mt-4">
                   Complemente sua viagem
                 </Title>
                 <Text size="sm" className="lg:text-[18px] mt-4">
@@ -35,9 +35,12 @@ export default async function TravelAgency() {
                 <Button className="mt-8 px-8 lg:w-2/6">
                   Fale com um agente
                 </Button>
-                <Link href="#produtos-servicos" className="text-sm text-blue-500 lg:hidden">
+                <Link
+                  href="#produtos-servicos"
+                  className="text-sm text-blue-500 lg:hidden underline gap-2 mt-2 mb-20"
+                >
                   Produtos & Serviços
-                  <ArrowDown />
+                  <Icon icon={ArrowDown} variant="primary" />
                 </Link>
                 <div className="hidden lg:flex w-full lg:w-[718px] mt-12 mx-auto gap-4 p-5 rounded-md bg-white shadow-lg justify-around">
                   {PARTNERS.map(partner => (
@@ -53,13 +56,13 @@ export default async function TravelAgency() {
                 </div>
               </Heading>
             </div>
-            <div className="hidden lg:flex lg:w-1/2 mt-8 lg:mt-0 justify-end relative bottom-96 left-36">
+            <div className="hidden lg:flex lg:w-1/2 justify-end items-center -mt-96">
               <Image
                 src="/images/pages/travel-agency/passaporte.png"
                 alt="Passaportes"
-                width={500}
-                height={400}
-                className="w-full h-[1030px] object-contain"
+                width={900}
+                height={900}
+                className="w-auto max-w-2xl h-auto object-contain -mr-32"
               />
             </div>
           </div>

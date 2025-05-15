@@ -38,10 +38,10 @@ export const ProductMobile = () => {
                     </Title>
                     <Link
                       href="#"
-                      className="text-highlight-200 flex gap-2 mt-2 mb-5"
+                      className="text-blue-500 flex items-center gap-2 mt-2 mb-5"
                     >
                       Ver mais detalhes
-                      <Icon icon={ArrowRight} variant="primary" />
+                      <Icon icon={ArrowRight} variant="secondary" />
                     </Link>
                   </div>
                 </div>

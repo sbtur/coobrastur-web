@@ -29,7 +29,7 @@ export const SectionProduct = () => {
         <ProductMobile />
 
         <div className="lg:hidden text-center mt-6">
-          <Link href="#formulario-consultor" className="gap-2">
+          <Link href="#formulario-consultor" className="underline gap-2">
             Quero falar com um consultor
             <Icon icon={ArrowDown} variant="primary" />
           </Link>
